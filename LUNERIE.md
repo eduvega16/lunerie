@@ -120,7 +120,7 @@ gafas con cámara IA (69,95-79,95 €) · descartados: micro-infusión, paddle s
 
 ## 6. Montaje de la tienda — estado
 - [x] Crear la tienda en Shopify (7-oct)
-- [ ] Datos: nombre Lunerie, español, EUR, **"Incluir impuestos en los precios"**
+- [x] Datos: nombre LUNERIE, España, EUR, impuestos incluidos en los precios (comprobado el 7-oct por API)
 - [x] Dominio **lunerie.es** conectado (visto el 7-oct; email de la tienda luneriecompany@gmail.com, plan Basic, EUR)
 - [ ] Reservar @lunerie en Instagram y TikTok
 - Claude está conectado a Shopify (conector de claude.ai) con la tienda Lunerie. Antes estaba Star Brick: al cambiar de tienda se desconecta la otra.
@@ -144,15 +144,21 @@ Meta Ads, ABO: 3 conjuntos (1 ángulo cada uno) × 10 €/día × 3 días. Cada 
 KILL si gastas 1× CPA BE sin carritos o 2× sin ventas · ESCALAR con ≥ 3 ventas a ≤ 70 % del CPA BE ·
 alertas si CTR < 1 % o CPC > 0,90 €. Máximo 2 productos en test a la vez.
 
-## 8. Pendientes (a 7-oct-2026)
-1. Configurar la tienda (apartado 6). Siguiente con Claude: **textos legales y páginas**.
-2. Escribir a Alibaba (reloj): precio DDP exprés para 20 y 50 uds (mensaje en la sesión 07-oct del radar).
-3. Escribir a Yiwu Shangjie (collar) y pedir muestra "Lune"; pasar el enlace de la tienda de 63 €.
-4. Decidir lo del "ajustado a tu muñeca" (5.1).
-5. Cuando lleguen las muestras: fotos y vídeos propios → anuncios → test del reloj.
+## 8. Pendientes (a 7-oct-2026, fin de la sesión 1 en esta carpeta)
+1. **Edu:** revisar el tema en `https://lunerie.es/?preview_theme_id=208665149779` y publicarlo
+   (Tienda online → Temas → «Lunerie · marca» → ⋯ → Publicar). Si algo se ve raro (sobre todo el logo), captura a Claude.
+2. Siguiente con Claude: **políticas y páginas legales**, creadas directamente en Shopify (solo existe la página Contacto).
+   Después: crear el reloj Lune como borrador a partir de `landing.md` del radar.
+3. Escribir a Alibaba (reloj): precio DDP exprés para 20 y 50 uds (mensaje en la sesión 07-oct del radar).
+4. Escribir a Yiwu Shangjie (collar) y pedir muestra "Lune"; pasar el enlace de la tienda de 63 €.
+5. Decidir lo del "ajustado a tu muñeca" (5.1). La tienda ya **no** lo promete en la barra; la página de marca
+   (artifact) aún dice «Te lo enviamos ajustado a tu muñeca» → actualizarla cuando se decida.
+6. Cuando lleguen las muestras: fotos y vídeos propios → anuncios → test del reloj.
 
 ## 9. Enlaces
 - Página de marca: https://claude.ai/artifact/MDZWWTrx5E6xxfgC8gfv2A
+- Repositorio (privado): https://github.com/eduvega16/lunerie — remoto con `eduvega16@` en la URL porque el PC
+  tiene guardada otra cuenta de GitHub (`kocoessence`). `git pull` al empezar, `git push` al terminar.
 - Calné (referencia): https://calne.co/products/uthai-womens-watch-ladies-bracelet-luxury-brand-waterproof-retro-natural-dongling-stone-hotan-jade-advanced-chain-watches-gift
 - Reloj AliExpress: https://es.aliexpress.com/item/1005008660299253.html
 - Reloj Alibaba: https://www.alibaba.com/product-detail/BS-Bee-Sister-1835-FA1835-Latest_1601607745947.html

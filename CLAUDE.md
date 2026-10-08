@@ -133,15 +133,19 @@ gafas con cámara IA (69,95-79,95 €) · descartados: micro-infusión, paddle s
 - [ ] Reservar @lunerie en Instagram y TikTok
 - [ ] Cobros: Shopify Payments + PayPal (pide datos de autónomo/empresa)
 - [ ] Envíos: zona España, gratis (decidir Baleares, apartado 4)
-- [~] Tema y marca (apartado 3): copia **"Lunerie · marca"** del tema Horizon (id 208665149779, SIN publicar) con
+- [x] Tema **"Lunerie · marca"** (id 208665149779) **publicado por Edu el 8-oct**.
+- **Cómo se cambia el tema publicado:** Claude no puede escribir en el tema publicado ni publicar. Antes de cada
+  tanda de cambios, Claude duplica el tema publicado (`themeDuplicate`), edita la copia **«Lunerie · borrador»**,
+  Edu la mira en `https://lunerie.es/?preview_theme_id=<id>` y la publica. Duplicar siempre del publicado *justo
+  antes*, para no perder lo que Edu haya tocado en el editor (fotos, favicon). Borrador actual: id 208747364691.
+- [~] Tema y marca (apartado 3): copia **"Lunerie · marca"** del tema Horizon (id 208665149779) con
       colores, Cormorant + Jost ligera, botones verdes rectos en mayúsculas, logo de texto espaciado y centrado, barra
       verde «Envío gratis a península · Devolución en 14 días» (sin prometer el ajuste de muñeca) y pie en español con
       fondo niebla. 8-oct: **inicio** (portada sin foto con fondo niebla «Para llevar cerca.» · las piezas en 3 columnas ·
       envío / 14 días / garantía) y **ficha de producto** como la maqueta (fotos 4:5 en carrusel con miniaturas, título
       en Cormorant, garantías con puntos dorados, desplegables Envío / Devoluciones y garantía / Cuidados) · menú
       principal «Piezas · Contacto» (el menú es de la tienda, no del tema).
-      Falta: que Edu la revise y la **publique** (Claude no puede publicar temas ni tocar el publicado), favicon,
-      foto de portada cuando haya muestras (editor → Portada → Fondo → Imagen) y cambiar **[PLAZO]** en el desplegable
+      Falta: favicon, foto de portada cuando haya muestras (editor → Portada → Fondo → Imagen) y cambiar **[PLAZO]** en el desplegable
       Envío. Ficheros fuente: `tema/` (`build.py` genera los JSON que se suben a la copia del tema; Shopify no acepta
       `content:` en el CSS personalizado ni `gap` > 48).
 - [ ] Políticas (devoluciones, envíos, privacidad, términos) + aviso legal + páginas Contacto / Preguntas frecuentes /
@@ -161,8 +165,7 @@ KILL si gastas 1× CPA BE sin carritos o 2× sin ventas · ESCALAR con ≥ 3 ven
 alertas si CTR < 1 % o CPC > 0,90 €. Máximo 2 productos en test a la vez.
 
 ## 8. Pendientes (a 7-oct-2026, fin de la sesión 1 en esta carpeta)
-1. **Edu:** revisar el tema en `https://lunerie.es/?preview_theme_id=208665149779` y publicarlo
-   (Tienda online → Temas → «Lunerie · marca» → ⋯ → Publicar). Si algo se ve raro (sobre todo el logo), captura a Claude.
+1. ~~Publicar el tema~~ (hecho el 8-oct). Pendiente: el plazo de envío para cambiar **[PLAZO]** (desplegable Envío).
 2. Siguiente con Claude: **políticas y páginas legales**, creadas directamente en Shopify (solo existe la página Contacto).
    Después: crear el reloj Lune como borrador a partir de `landing.md` del radar.
 3. Escribir a Alibaba (reloj): precio DDP exprés para 20 y 50 uds (mensaje en la sesión 07-oct del radar). No corre

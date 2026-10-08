@@ -134,10 +134,19 @@ gafas con cámara IA (69,95-79,95 €) · descartados: micro-infusión, paddle s
 - [ ] Cobros: Shopify Payments + PayPal (pide datos de autónomo/empresa)
 - [ ] Envíos: zona España, gratis (decidir Baleares, apartado 4)
 - [x] Tema **"Lunerie · marca"** (id 208665149779) **publicado por Edu el 8-oct**.
-- **Cómo se cambia el tema publicado:** Claude no puede escribir en el tema publicado ni publicar. Antes de cada
-  tanda de cambios, Claude duplica el tema publicado (`themeDuplicate`), edita la copia **«Lunerie · borrador»**,
-  Edu la mira en `https://lunerie.es/?preview_theme_id=<id>` y la publica. Duplicar siempre del publicado *justo
-  antes*, para no perder lo que Edu haya tocado en el editor (fotos, favicon). Borrador actual: id 208747364691.
+- **Cómo se cambia el tema publicado: con Shopify CLI** (instalada en este PC, v4.6.0; tienda
+  `qjxvnn-xq.myshopify.com`). El conector de Shopify de claude.ai **no** puede escribir en el tema publicado ni
+  publicar (solo en temas sin publicar); la CLI sí.
+  - **Primera vez en cada PC (Edu, en su terminal):** `shopify theme list --store qjxvnn-xq.myshopify.com` → se abre
+    el navegador → entrar con la cuenta de Lunerie. Claude no puede hacer este login (no abre navegador).
+  - Después Claude sube directo al publicado con
+    `shopify theme push --store qjxvnn-xq.myshopify.com --theme 208665149779 --allow-live --only <ficheros>`.
+  - Antes de subir, bajar del publicado lo que Edu haya tocado en el editor (fotos, favicon) con `shopify theme pull`
+    para no pisarlo.
+  - Mientras la tienda tenga contraseña, cambiar el publicado directamente no tiene riesgo. Con la tienda abierta,
+    los cambios grandes se prueban antes en una copia sin publicar (`themeDuplicate` o `shopify theme push --unpublished`)
+    y Edu la publica.
+  - Hay una copia «Lunerie · borrador» (id 208747364691) creada el 8-oct; sobra con la CLI → borrarla.
 - [~] Tema y marca (apartado 3): copia **"Lunerie · marca"** del tema Horizon (id 208665149779) con
       colores, Cormorant + Jost ligera, botones verdes rectos en mayúsculas, logo de texto espaciado y centrado, barra
       verde «Envío gratis a península · Devolución en 14 días» (sin prometer el ajuste de muñeca) y pie en español con
@@ -165,7 +174,8 @@ KILL si gastas 1× CPA BE sin carritos o 2× sin ventas · ESCALAR con ≥ 3 ven
 alertas si CTR < 1 % o CPC > 0,90 €. Máximo 2 productos en test a la vez.
 
 ## 8. Pendientes (a 7-oct-2026, fin de la sesión 1 en esta carpeta)
-1. ~~Publicar el tema~~ (hecho el 8-oct). Pendiente: el plazo de envío para cambiar **[PLAZO]** (desplegable Envío).
+1. ~~Publicar el tema~~ (hecho el 8-oct). **Edu, en su terminal:** login de Shopify CLI (comando en el apartado 6) y
+   `git push` entrando con eduvega16. Pendiente: el plazo de envío para cambiar **[PLAZO]** (desplegable Envío).
 2. Siguiente con Claude: **políticas y páginas legales**, creadas directamente en Shopify (solo existe la página Contacto).
    Después: crear el reloj Lune como borrador a partir de `landing.md` del radar.
 3. Escribir a Alibaba (reloj): precio DDP exprés para 20 y 50 uds (mensaje en la sesión 07-oct del radar). No corre

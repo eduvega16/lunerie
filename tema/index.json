@@ -1,0 +1,386 @@
+{
+  "sections": {
+    "portada": {
+      "type": "section",
+      "blocks": {
+        "antetitulo": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Joyas y relojes para regalar</p>",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "center",
+            "type_preset": "h6",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "titulo": {
+          "type": "text",
+          "settings": {
+            "text": "<h1>Para llevar cerca.</h1>",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "center",
+            "type_preset": "h1",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "boton": {
+          "type": "button",
+          "settings": {
+            "label": "Ver las piezas",
+            "link": "shopify://collections/all",
+            "style_class": "button",
+            "width": "fit-content"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "antetitulo",
+        "titulo",
+        "boton"
+      ],
+      "settings": {
+        "content_direction": "column",
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 20,
+        "section_width": "full-width",
+        "section_height": "medium",
+        "background_color": "#F2F4F2",
+        "padding-block-start": 64,
+        "padding-block-end": 64
+      }
+    },
+    "piezas": {
+      "type": "product-list",
+      "blocks": {
+        "static-header": {
+          "type": "_product-list-content",
+          "static": true,
+          "settings": {
+            "content_direction": "row",
+            "horizontal_alignment": "space-between",
+            "vertical_alignment": "flex-end",
+            "align_baseline": true
+          },
+          "blocks": {
+            "titulo": {
+              "type": "_product-list-text",
+              "settings": {
+                "text": "<h2>Las piezas</h2>",
+                "type_preset": "h3"
+              },
+              "blocks": {}
+            },
+            "ver_todo": {
+              "type": "_product-list-button",
+              "settings": {
+                "label": "Ver todo",
+                "style_class": "link"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "titulo",
+            "ver_todo"
+          ]
+        },
+        "static-product-card": {
+          "type": "_product-card",
+          "static": true,
+          "settings": {
+            "product_card_gap": 6
+          },
+          "blocks": {
+            "foto": {
+              "type": "_product-card-gallery",
+              "settings": {
+                "image_ratio": "adapt"
+              },
+              "blocks": {}
+            },
+            "nombre": {
+              "type": "product-title",
+              "settings": {
+                "type_preset": "rte"
+              },
+              "blocks": {}
+            },
+            "precio": {
+              "type": "price",
+              "settings": {
+                "type_preset": "paragraph"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "foto",
+            "nombre",
+            "precio"
+          ]
+        }
+      },
+      "settings": {
+        "collection": "all",
+        "layout_type": "grid",
+        "max_products": 6,
+        "columns": 3,
+        "mobile_columns": "2",
+        "columns_gap": 16,
+        "rows_gap": 32,
+        "section_width": "page-width",
+        "gap": 32,
+        "background_color": "{{ settings.color_palette.background }}",
+        "padding-block-start": 64,
+        "padding-block-end": 48
+      }
+    },
+    "promesas": {
+      "type": "section",
+      "blocks": {
+        "envio": {
+          "type": "group",
+          "settings": {
+            "content_direction": "column",
+            "horizontal_alignment_flex_direction_column": "center",
+            "gap": 8,
+            "width": "fill"
+          },
+          "blocks": {
+            "t": {
+              "type": "text",
+              "settings": {
+                "text": "<h3>Envío gratis</h3>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "center",
+                "type_preset": "h6",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "p": {
+              "type": "text",
+              "settings": {
+                "text": "<p>A península, con seguimiento por email.</p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "center",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "t",
+            "p"
+          ]
+        },
+        "devolucion": {
+          "type": "group",
+          "settings": {
+            "content_direction": "column",
+            "horizontal_alignment_flex_direction_column": "center",
+            "gap": 8,
+            "width": "fill"
+          },
+          "blocks": {
+            "t": {
+              "type": "text",
+              "settings": {
+                "text": "<h3>14 días para devolverlo</h3>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "center",
+                "type_preset": "h6",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "p": {
+              "type": "text",
+              "settings": {
+                "text": "<p>Si no te convence, nos lo devuelves. Salvo piezas personalizadas.</p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "center",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "t",
+            "p"
+          ]
+        },
+        "garantia": {
+          "type": "group",
+          "settings": {
+            "content_direction": "column",
+            "horizontal_alignment_flex_direction_column": "center",
+            "gap": 8,
+            "width": "fill"
+          },
+          "blocks": {
+            "t": {
+              "type": "text",
+              "settings": {
+                "text": "<h3>Garantía de 3 años</h3>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "center",
+                "type_preset": "h6",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "p": {
+              "type": "text",
+              "settings": {
+                "text": "<p>Si falla, te lo reparamos o te lo cambiamos.</p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "center",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "t",
+            "p"
+          ]
+        }
+      },
+      "block_order": [
+        "envio",
+        "devolucion",
+        "garantia"
+      ],
+      "settings": {
+        "content_direction": "row",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "space-between",
+        "vertical_alignment": "flex-start",
+        "gap": 32,
+        "section_width": "page-width",
+        "border": "solid",
+        "border_width": 1,
+        "border_color": "#E2E6E3",
+        "padding-block-start": 48,
+        "padding-block-end": 48
+      }
+    }
+  },
+  "order": [
+    "portada",
+    "piezas",
+    "promesas"
+  ]
+}

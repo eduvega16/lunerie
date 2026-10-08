@@ -136,8 +136,14 @@ gafas con cámara IA (69,95-79,95 €) · descartados: micro-infusión, paddle s
 - [~] Tema y marca (apartado 3): copia **"Lunerie · marca"** del tema Horizon (id 208665149779, SIN publicar) con
       colores, Cormorant + Jost ligera, botones verdes rectos en mayúsculas, logo de texto espaciado y centrado, barra
       verde «Envío gratis a península · Devolución en 14 días» (sin prometer el ajuste de muñeca) y pie en español con
-      fondo niebla. Falta: que Edu la revise y la **publique** (Claude no puede publicar temas ni tocar el publicado),
-      el menú principal y el favicon. Ficheros fuente: `tema/` (`build.py` genera los 3 JSON que se suben a la copia del tema).
+      fondo niebla. 8-oct: **inicio** (portada sin foto con fondo niebla «Para llevar cerca.» · las piezas en 3 columnas ·
+      envío / 14 días / garantía) y **ficha de producto** como la maqueta (fotos 4:5 en carrusel con miniaturas, título
+      en Cormorant, garantías con puntos dorados, desplegables Envío / Devoluciones y garantía / Cuidados) · menú
+      principal «Piezas · Contacto» (el menú es de la tienda, no del tema).
+      Falta: que Edu la revise y la **publique** (Claude no puede publicar temas ni tocar el publicado), favicon,
+      foto de portada cuando haya muestras (editor → Portada → Fondo → Imagen) y cambiar **[PLAZO]** en el desplegable
+      Envío. Ficheros fuente: `tema/` (`build.py` genera los JSON que se suben a la copia del tema; Shopify no acepta
+      `content:` en el CSS personalizado ni `gap` > 48).
 - [ ] Políticas (devoluciones, envíos, privacidad, términos) + aviso legal + páginas Contacto / Preguntas frecuentes /
       Envíos — **Claude las redacta** con huecos para nombre, NIF y dirección
 - [ ] Banner de cookies (Configuración → Privacidad del cliente)

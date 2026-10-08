@@ -130,9 +130,9 @@ header = {
 (OUT / "header-group.json").write_text(json.dumps(header, ensure_ascii=False, indent=2), encoding="utf8")
 
 
-def text_block(html, preset):
+def text_block(html, preset, align="left"):
     return {"type": "text", "settings": {
-        "text": html, "width": "100%", "max_width": "normal", "alignment": "left", "type_preset": preset,
+        "text": html, "width": "100%", "max_width": "normal", "alignment": align, "type_preset": preset,
         "font": "var(--font-body--family)", "font_size": "1rem", "line_height": "normal",
         "letter_spacing": "normal", "case": "none", "wrap": "pretty", "background": False,
         "background_color": "#00000026", "corner_radius": 0, "padding-block-start": 0,
@@ -194,4 +194,188 @@ footer = {
     "order": ["footer_m9NzUG", "footer_utilities_jLGE8U"],
 }
 (OUT / "footer-group.json").write_text(json.dumps(footer, ensure_ascii=False, indent=2), encoding="utf8")
+
+
+def group(blocks, align="center", gap=8):
+    """Columna de bloques (los ajustes que no se ponen toman el valor por defecto del tema)."""
+    return {"type": "group", "settings": {
+        "content_direction": "column", "horizontal_alignment_flex_direction_column": align,
+        "gap": gap, "width": "fill"},
+        "blocks": blocks, "block_order": list(blocks)}
+
+
+# ---------- Inicio: portada sin foto (fondo niebla) · las piezas · tres promesas ----------
+# Cuando haya fotos propias: en el editor, Portada → Fondo → Imagen.
+index = {
+    "sections": {
+        "portada": {
+            "type": "section",
+            "blocks": {
+                "antetitulo": text_block("<p>Joyas y relojes para regalar</p>", "h6", "center"),
+                "titulo": text_block("<h1>Para llevar cerca.</h1>", "h1", "center"),
+                "boton": {"type": "button", "settings": {
+                    "label": "Ver las piezas", "link": "shopify://collections/all",
+                    "style_class": "button", "width": "fit-content"}, "blocks": {}},
+            },
+            "block_order": ["antetitulo", "titulo", "boton"],
+            "settings": {
+                "content_direction": "column", "horizontal_alignment_flex_direction_column": "center",
+                "vertical_alignment_flex_direction_column": "center", "gap": 20,
+                "section_width": "full-width", "section_height": "medium", "background_color": MIST,
+                "padding-block-start": 64, "padding-block-end": 64},
+        },
+        "piezas": {
+            "type": "product-list",
+            "blocks": {
+                "static-header": {"type": "_product-list-content", "static": True, "settings": {
+                    "content_direction": "row", "horizontal_alignment": "space-between",
+                    "vertical_alignment": "flex-end", "align_baseline": True},
+                    "blocks": {
+                        "titulo": {"type": "_product-list-text", "settings": {
+                            "text": "<h2>Las piezas</h2>", "type_preset": "h3"}, "blocks": {}},
+                        "ver_todo": {"type": "_product-list-button", "settings": {
+                            "label": "Ver todo", "style_class": "link"}, "blocks": {}},
+                    },
+                    "block_order": ["titulo", "ver_todo"]},
+                "static-product-card": {"type": "_product-card", "static": True,
+                    "settings": {"product_card_gap": 6},
+                    "blocks": {
+                        "foto": {"type": "_product-card-gallery", "settings": {"image_ratio": "adapt"}, "blocks": {}},
+                        "nombre": {"type": "product-title", "settings": {"type_preset": "rte"}, "blocks": {}},
+                        "precio": {"type": "price", "settings": {"type_preset": "paragraph"}, "blocks": {}},
+                    },
+                    "block_order": ["foto", "nombre", "precio"]},
+            },
+            "settings": {
+                "collection": "all", "layout_type": "grid", "max_products": 6, "columns": 3,
+                "mobile_columns": "2", "columns_gap": 16, "rows_gap": 32, "section_width": "page-width",
+                "gap": 32, "background_color": BG, "padding-block-start": 64, "padding-block-end": 48},
+        },
+        "promesas": {
+            "type": "section",
+            "blocks": {
+                "envio": group({
+                    "t": text_block("<h3>Envío gratis</h3>", "h6", "center"),
+                    "p": text_block("<p>A península, con seguimiento por email.</p>", "rte", "center")}),
+                "devolucion": group({
+                    "t": text_block("<h3>14 días para devolverlo</h3>", "h6", "center"),
+                    "p": text_block("<p>Si no te convence, nos lo devuelves. Salvo piezas personalizadas.</p>", "rte", "center")}),
+                "garantia": group({
+                    "t": text_block("<h3>Garantía de 3 años</h3>", "h6", "center"),
+                    "p": text_block("<p>Si falla, te lo reparamos o te lo cambiamos.</p>", "rte", "center")}),
+            },
+            "block_order": ["envio", "devolucion", "garantia"],
+            "settings": {
+                "content_direction": "row", "vertical_on_mobile": True, "horizontal_alignment": "space-between",
+                "vertical_alignment": "flex-start", "gap": 32, "section_width": "page-width",
+                "border": "solid", "border_width": 1, "border_color": LINE,
+                "padding-block-start": 48, "padding-block-end": 48},
+        },
+    },
+    "order": ["portada", "piezas", "promesas"],
+}
+(OUT / "index.json").write_text(json.dumps(index, ensure_ascii=False, indent=2), encoding="utf8")
+
+
+# ---------- Ficha de producto (como la maqueta de la página de marca) ----------
+def row(heading, html):
+    return {"type": "_accordion-row", "settings": {"heading": heading, "icon": "none"},
+            "blocks": {"texto": text_block(html, "rte")}, "block_order": ["texto"]}
+
+
+# Puntos dorados en las listas de la ficha (garantías y descripción)
+# (Shopify no deja usar `content` en el CSS personalizado: por eso ::marker y no ::before)
+PRODUCT_CSS = f"ul {{ padding-inline-start: 1.1em; }} ul li::marker {{ color: {GOLD}; }}"
+
+product = {
+    "sections": {
+        "main": {
+            "type": "product-information",
+            "blocks": {
+                "media-gallery": {"type": "_product-media-gallery", "static": True, "settings": {
+                    "media_presentation": "carousel", "icons_style": "arrow",
+                    "slideshow_controls_style": "thumbnails", "slideshow_mobile_controls_style": "dots",
+                    "thumbnail_position": "bottom", "thumbnail_width": 56, "thumbnail_radius": 0,
+                    "aspect_ratio": "1/1.25", "media_radius": 0, "extend_media": False,
+                    "zoom": True, "hide_variants": True}, "blocks": {}},
+                "product-details": {"type": "_product-details", "static": True, "settings": {
+                    "gap": 24, "sticky_details_desktop": True,
+                    "padding-block-start": 24, "padding-block-end": 24},
+                    "blocks": {
+                        "cabecera": group({
+                            "titulo": text_block("<h1>{{ closest.product.title }}</h1>", "h2"),
+                            "precio": {"type": "price", "settings": {
+                                "show_sale_price_first": True, "show_installments": False,
+                                "show_tax_info": False, "type_preset": "paragraph"}, "blocks": {}},
+                        }, align="flex-start", gap=10),
+                        "variantes": {"type": "variant-picker", "settings": {
+                            "variant_style": "buttons", "show_swatches": True}, "blocks": {}},
+                        "comprar": {"type": "buy-buttons", "settings": {"stacking": True,
+                            "show_pickup_availability": False, "gift_card_form": True},
+                            "blocks": {
+                                "quantity": {"type": "quantity", "static": True, "settings": {
+                                    "border_width": 1, "border_radius": 0}, "blocks": {}},
+                                "add-to-cart": {"type": "add-to-cart", "static": True, "settings": {
+                                    "style_class": "button"}, "blocks": {}},
+                                "accelerated-checkout": {"type": "accelerated-checkout", "static": True,
+                                    "settings": {}, "blocks": {}},
+                            }, "block_order": []},
+                        "garantias": text_block(
+                            "<ul><li>Envío gratis a península, con seguimiento</li>"
+                            "<li>Devolución en 14 días · garantía legal de 3 años</li>"
+                            "<li>Pago con tarjeta, Apple Pay o Google Pay</li></ul>", "rte"),
+                        "descripcion": text_block("{{ closest.product.description }}", "rte"),
+                        "detalles": {"type": "accordion", "settings": {
+                            "icon": "plus", "dividers": True, "divider_color": C2, "type_preset": "h6"},
+                            "blocks": {
+                                "envio": row("Envío", "<p>Gratis a península, con número de seguimiento por email. "
+                                             "Plazo de entrega: [PLAZO] días laborables.</p>"
+                                             "<p>Por ahora no enviamos a Canarias, Ceuta ni Melilla.</p>"),
+                                "devoluciones": row("Devoluciones y garantía",
+                                             "<p>Tienes 14 días desde que lo recibes para devolverlo: escríbenos "
+                                             "y te explicamos cómo.</p><p>Las piezas personalizadas (con nombre o "
+                                             "grabado) no admiten devolución porque se hacen solo para ti. Si llegan "
+                                             "con un defecto o un error nuestro, las rehacemos.</p>"
+                                             "<p>Todas tienen la garantía legal de 3 años.</p>"),
+                                "cuidados": row("Cuidados",
+                                             "<p>Quítatelo para lavarte las manos, ducharte, nadar o hacer deporte. "
+                                             "Ponte el perfume y la crema antes que la pieza, y guárdala en su caja "
+                                             "cuando no la lleves.</p>"),
+                            },
+                            "block_order": ["envio", "devoluciones", "cuidados"]},
+                    },
+                    "block_order": ["cabecera", "variantes", "comprar", "garantias", "descripcion", "detalles"]},
+            },
+            "block_order": [],
+            "custom_css": [PRODUCT_CSS],
+            "settings": {
+                "content_width": "content-center-aligned", "desktop_media_position": "left",
+                "equal_columns": True, "limit_details_width": True, "gap": 48,
+                "enable_sticky_add_to_cart": True, "background_color": BG,
+                "padding-block-start": 24, "padding-block-end": 48},
+        },
+        "recomendados": {
+            "type": "product-recommendations",
+            "blocks": {
+                "titulo": text_block("<h2>También te puede gustar</h2>", "h4"),
+                "static-product-card": {"type": "_product-card", "static": True,
+                    "settings": {"product_card_gap": 6},
+                    "blocks": {
+                        "foto": {"type": "_product-card-gallery", "settings": {"image_ratio": "adapt"}, "blocks": {}},
+                        "nombre": {"type": "product-title", "settings": {"type_preset": "rte"}, "blocks": {}},
+                        "precio": {"type": "price", "settings": {"type_preset": "paragraph"}, "blocks": {}},
+                    },
+                    "block_order": ["foto", "nombre", "precio"]},
+            },
+            "block_order": ["titulo"],
+            "settings": {
+                "product": "{{ closest.product }}", "recommendation_type": "related", "layout_type": "grid",
+                "max_products": 3, "columns": 3, "mobile_columns": "2", "columns_gap": 16, "rows_gap": 32,
+                "section_width": "page-width", "gap": 28, "background_color": BG,
+                "padding-block-start": 48, "padding-block-end": 64},
+        },
+    },
+    "order": ["main", "recomendados"],
+}
+(OUT / "product.json").write_text(json.dumps(product, ensure_ascii=False, indent=2), encoding="utf8")
 print("ok")

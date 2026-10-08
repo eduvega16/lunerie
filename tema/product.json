@@ -1,0 +1,412 @@
+{
+  "sections": {
+    "main": {
+      "type": "product-information",
+      "blocks": {
+        "media-gallery": {
+          "type": "_product-media-gallery",
+          "static": true,
+          "settings": {
+            "media_presentation": "carousel",
+            "icons_style": "arrow",
+            "slideshow_controls_style": "thumbnails",
+            "slideshow_mobile_controls_style": "dots",
+            "thumbnail_position": "bottom",
+            "thumbnail_width": 56,
+            "thumbnail_radius": 0,
+            "aspect_ratio": "1/1.25",
+            "media_radius": 0,
+            "extend_media": false,
+            "zoom": true,
+            "hide_variants": true
+          },
+          "blocks": {}
+        },
+        "product-details": {
+          "type": "_product-details",
+          "static": true,
+          "settings": {
+            "gap": 24,
+            "sticky_details_desktop": true,
+            "padding-block-start": 24,
+            "padding-block-end": 24
+          },
+          "blocks": {
+            "cabecera": {
+              "type": "group",
+              "settings": {
+                "content_direction": "column",
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "gap": 10,
+                "width": "fill"
+              },
+              "blocks": {
+                "titulo": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<h1>{{ closest.product.title }}</h1>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "h2",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
+                "precio": {
+                  "type": "price",
+                  "settings": {
+                    "show_sale_price_first": true,
+                    "show_installments": false,
+                    "show_tax_info": false,
+                    "type_preset": "paragraph"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "titulo",
+                "precio"
+              ]
+            },
+            "variantes": {
+              "type": "variant-picker",
+              "settings": {
+                "variant_style": "buttons",
+                "show_swatches": true
+              },
+              "blocks": {}
+            },
+            "comprar": {
+              "type": "buy-buttons",
+              "settings": {
+                "stacking": true,
+                "show_pickup_availability": false,
+                "gift_card_form": true
+              },
+              "blocks": {
+                "quantity": {
+                  "type": "quantity",
+                  "static": true,
+                  "settings": {
+                    "border_width": 1,
+                    "border_radius": 0
+                  },
+                  "blocks": {}
+                },
+                "add-to-cart": {
+                  "type": "add-to-cart",
+                  "static": true,
+                  "settings": {
+                    "style_class": "button"
+                  },
+                  "blocks": {}
+                },
+                "accelerated-checkout": {
+                  "type": "accelerated-checkout",
+                  "static": true,
+                  "settings": {},
+                  "blocks": {}
+                }
+              },
+              "block_order": []
+            },
+            "garantias": {
+              "type": "text",
+              "settings": {
+                "text": "<ul><li>Envío gratis a península, con seguimiento</li><li>Devolución en 14 días · garantía legal de 3 años</li><li>Pago con tarjeta, Apple Pay o Google Pay</li></ul>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "descripcion": {
+              "type": "text",
+              "settings": {
+                "text": "{{ closest.product.description }}",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "detalles": {
+              "type": "accordion",
+              "settings": {
+                "icon": "plus",
+                "dividers": true,
+                "divider_color": "{{ settings.color_palette.color2 }}",
+                "type_preset": "h6"
+              },
+              "blocks": {
+                "envio": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "Envío",
+                    "icon": "none"
+                  },
+                  "blocks": {
+                    "texto": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Gratis a península, con número de seguimiento por email. Plazo de entrega: [PLAZO] días laborables.</p><p>Por ahora no enviamos a Canarias, Ceuta ni Melilla.</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "texto"
+                  ]
+                },
+                "devoluciones": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "Devoluciones y garantía",
+                    "icon": "none"
+                  },
+                  "blocks": {
+                    "texto": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Tienes 14 días desde que lo recibes para devolverlo: escríbenos y te explicamos cómo.</p><p>Las piezas personalizadas (con nombre o grabado) no admiten devolución porque se hacen solo para ti. Si llegan con un defecto o un error nuestro, las rehacemos.</p><p>Todas tienen la garantía legal de 3 años.</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "texto"
+                  ]
+                },
+                "cuidados": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "Cuidados",
+                    "icon": "none"
+                  },
+                  "blocks": {
+                    "texto": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Quítatelo para lavarte las manos, ducharte, nadar o hacer deporte. Ponte el perfume y la crema antes que la pieza, y guárdala en su caja cuando no la lleves.</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "texto"
+                  ]
+                }
+              },
+              "block_order": [
+                "envio",
+                "devoluciones",
+                "cuidados"
+              ]
+            }
+          },
+          "block_order": [
+            "cabecera",
+            "variantes",
+            "comprar",
+            "garantias",
+            "descripcion",
+            "detalles"
+          ]
+        }
+      },
+      "block_order": [],
+      "custom_css": [
+        "ul { padding-inline-start: 1.1em; } ul li::marker { color: #A6834A; }"
+      ],
+      "settings": {
+        "content_width": "content-center-aligned",
+        "desktop_media_position": "left",
+        "equal_columns": true,
+        "limit_details_width": true,
+        "gap": 48,
+        "enable_sticky_add_to_cart": true,
+        "background_color": "{{ settings.color_palette.background }}",
+        "padding-block-start": 24,
+        "padding-block-end": 48
+      }
+    },
+    "recomendados": {
+      "type": "product-recommendations",
+      "blocks": {
+        "titulo": {
+          "type": "text",
+          "settings": {
+            "text": "<h2>También te puede gustar</h2>",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "h4",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "static-product-card": {
+          "type": "_product-card",
+          "static": true,
+          "settings": {
+            "product_card_gap": 6
+          },
+          "blocks": {
+            "foto": {
+              "type": "_product-card-gallery",
+              "settings": {
+                "image_ratio": "adapt"
+              },
+              "blocks": {}
+            },
+            "nombre": {
+              "type": "product-title",
+              "settings": {
+                "type_preset": "rte"
+              },
+              "blocks": {}
+            },
+            "precio": {
+              "type": "price",
+              "settings": {
+                "type_preset": "paragraph"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "foto",
+            "nombre",
+            "precio"
+          ]
+        }
+      },
+      "block_order": [
+        "titulo"
+      ],
+      "settings": {
+        "product": "{{ closest.product }}",
+        "recommendation_type": "related",
+        "layout_type": "grid",
+        "max_products": 3,
+        "columns": 3,
+        "mobile_columns": "2",
+        "columns_gap": 16,
+        "rows_gap": 32,
+        "section_width": "page-width",
+        "gap": 28,
+        "background_color": "{{ settings.color_palette.background }}",
+        "padding-block-start": 48,
+        "padding-block-end": 64
+      }
+    }
+  },
+  "order": [
+    "main",
+    "recomendados"
+  ]
+}

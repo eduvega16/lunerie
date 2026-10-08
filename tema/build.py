@@ -378,4 +378,12 @@ product = {
     "order": ["main", "recomendados"],
 }
 (OUT / "product.json").write_text(json.dumps(product, ensure_ascii=False, indent=2), encoding="utf8")
+
+# Copia en tema/tienda/ (el tema publicado bajado con `shopify theme pull`, fuera de git) para subirlo con la CLI
+TIENDA = OUT / "tienda"
+DESTINO = {"settings_data.json": "config", "header-group.json": "sections", "footer-group.json": "sections",
+           "index.json": "templates", "product.json": "templates"}
+if TIENDA.exists():
+    for nombre, carpeta in DESTINO.items():
+        (TIENDA / carpeta / nombre).write_text((OUT / nombre).read_text(encoding="utf8"), encoding="utf8")
 print("ok")

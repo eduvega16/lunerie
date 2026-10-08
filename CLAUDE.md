@@ -1,7 +1,7 @@
 # Lunerie · tienda online de regalos para ella
 
-> **Cómo usar este fichero:** cópialo a la carpeta nueva de la tienda (p.ej. `D:\lunerie\`) con el nombre `CLAUDE.md`.
-> Claude Code lo lee solo al abrir esa carpeta. Actualízalo al final de cada sesión (apartado "Estado" y "Pendientes").
+> **Cómo usar este fichero:** es el `CLAUDE.md` de la carpeta de la tienda (`C:\Users\edu\lunerie`); Claude Code lo
+> lee solo al abrirla. Actualízalo al final de cada sesión (apartados 6 "Montaje" y 8 "Pendientes").
 > Creado el 7-oct-2026 a partir de las sesiones del radar (`D:\aura-ai-portfolio\projects\05_producto_ganador\contexto\`).
 
 ---
@@ -23,8 +23,8 @@
 
 ## 3. Identidad de marca
 - **Nombre:** Lunerie ("lu-ne-rí": luna + *-erie* de *joaillerie*). Comprobado el 7-oct: ninguna joyería con ese nombre;
-  lunerie.com aparcado; **lunerie.es sin web** (confirmar al comprar; alternativa lunerie.co, como Calné).
-  Pendiente: reservar **@lunerie** en Instagram y TikTok · buscar en la OEPM (consultas2.oepm.es/LocalizadorWeb).
+  lunerie.com aparcado. Dominio de la tienda: **lunerie.es** (ya conectado, ver apartado 6).
+  Pendiente: buscar la marca en la OEPM (consultas2.oepm.es/LocalizadorWeb).
 - **Estilo:** como **Calné** (calne.co): páginas limpias, fondo blanco, mucho aire, **la pieza manda y la marca casi
   no se ve** (logo pequeño, solo texto).
 - **Página de marca (maqueta + ajustes):** https://claude.ai/artifact/MDZWWTrx5E6xxfgC8gfv2A
@@ -50,8 +50,10 @@
 
 ## 4. Reglas legales y de negocio (España)
 - Precios **con IVA incluido** (21 %). Envío gratis a península (Canarias/Ceuta/Melilla fuera al principio: aduana).
-- **Sin precios tachados inventados** (el tachado debe ser un precio real de los últimos 30 días). El ahorro se
-  cuenta con packs ("2.º por X €").
+  **Baleares: por decidir** (gratis, con coste o fuera); la barra dice «península», así que hay que dejarlo claro
+  en la página de Envíos.
+- **Sin precios tachados inventados:** el precio tachado tiene que ser el **más bajo** que tuvo el producto en los
+  30 días anteriores a la rebaja (no vale uno cualquiera de esos 30 días). El ahorro se cuenta con packs ("2.º por X €").
 - **Devolución 14 días** (desistimiento) · **garantía legal 3 años** (no poner 2 años como hacen tiendas de fuera).
 - **Productos personalizados: sin derecho de desistimiento** (art. 103 c LGDCU), pero si llega defectuoso o mal hecho
   se rehace. Avisar en la ficha: "se graba tal cual lo escribes, mayúsculas incluidas" + casilla de revisión obligatoria.
@@ -68,7 +70,8 @@
 ### 5.1 Reloj Lune · reloj vintage de mujer con piedras — ✅ elegido (producto 1)
 - **Referencia / prueba de venta:** Calné lo vende desde nov-2025 a 39,95 € y es su n.º 5 en ventas (de 41).
   En Meta España nadie lo anuncia.
-- **Modelo:** BS Bee Sister **FA1835** (marca del fabricante, no es réplica; no venderlo como marca propia).
+- **Modelo:** BS Bee Sister **FA1835** (marca del fabricante, no es réplica). Llamarlo «Lune» está bien, pero no
+  decir que lo diseña o fabrica Lunerie. Con las muestras: mirar si la esfera lleva el logo BS (se verá en las fotos).
 - **PVP 44,95 €** · upsell "2.º reloj por 19,95 €" · variantes: Dorado·piedra verde, Dorado·piedra azul,
   Plateado·piedra verde (esta solo si la muestra llega bien).
 - **Cómo es:** cuarzo, esfera ovalada 12 mm, correa de eslabones 18 cm con piedras ovaladas (resina/vidrio),
@@ -76,11 +79,16 @@
 - **Avisos obligatorios:** no sumergible · esfera pequeña · correa 18 cm (muñecas < 16 cm: quitar eslabones) ·
   no es reloj de lujo.
 - **Objeciones (reseñas):** me quedará grande · se estropea con agua · el cierre · ¿parece barato? · ¿llega para Navidad?
-- **Proveedores:** muestra/test AliExpress "Face-Book Store" 5,59 € + 4,73 € envío
-  (https://es.aliexpress.com/item/1005008660299253.html) · stock Alibaba BS FA1835 ~7,21 € desde 1 ud
-  (Guangzhou Shiyi / Shihe / Taihe) o Shenzhen South America Watch 7,66 €.
-- **Cuentas (tarjeta, con aranceles):** CPA breakeven **~17,9 €** (AliExpress) / ~16,1 € (stock Alibaba).
-  Test: CPA ≤ 14 € escalar · 14-20 € iterar creativos · > 20 € o ~40 € sin ventas → matar.
+- **Proveedor (decidido el 8-oct):** de momento **AliExpress** "Face-Book Store" 5,59 € + 4,73 € envío
+  (https://es.aliexpress.com/item/1005008660299253.html), que envía directo al cliente con su caja.
+- **Objetivo: tienda con stock propio, no dropshipping.** Cuando el reloj funcione: stock en España + **packaging
+  Lunerie** (caja, tarjeta «Para llevar cerca.», bolsa/papel) y envío desde aquí. Opciones de stock: Alibaba BS FA1835
+  ~7,21 € desde 1 ud (Guangzhou Shiyi / Shihe / Taihe) o Shenzhen South America Watch 7,66 €. Antes de dar el paso,
+  recalcular el CPA breakeven con el radar (`cli.py calc`) sumando packaging + envío nacional + exprés/DDP.
+- **Cuentas (tarjeta, con aranceles, AliExpress):** CPA breakeven **~17,9 €**.
+  Test (mismas reglas que el apartado 7): **escalar** con ≥ 3 ventas a CPA ≤ 12,5 € (70 % del breakeven) ·
+  12,5-17,9 € iterar creativos · por encima de 17,9 € pierde dinero → matar si no baja ·
+  ~18 € gastados sin carritos o ~36 € sin ventas → matar.
 - **Muestras:** pedidas (dorado verde, dorado azul, plateado), llegan ~16-29 oct.
 - **Decisión pendiente (recomendado b):** "te lo enviamos ajustado a tu muñeca" no se puede cumplir mientras envíe el
   proveedor de AliExpress. (a) preguntar al vendedor si quita eslabones con una nota, o (b) durante el test vender
@@ -123,9 +131,8 @@ gafas con cámara IA (69,95-79,95 €) · descartados: micro-infusión, paddle s
 - [x] Datos: nombre LUNERIE, España, EUR, impuestos incluidos en los precios (comprobado el 7-oct por API)
 - [x] Dominio **lunerie.es** conectado (visto el 7-oct; email de la tienda luneriecompany@gmail.com, plan Basic, EUR)
 - [ ] Reservar @lunerie en Instagram y TikTok
-- Claude está conectado a Shopify (conector de claude.ai) con la tienda Lunerie. Antes estaba Star Brick: al cambiar de tienda se desconecta la otra.
 - [ ] Cobros: Shopify Payments + PayPal (pide datos de autónomo/empresa)
-- [ ] Envíos: zona España, gratis
+- [ ] Envíos: zona España, gratis (decidir Baleares, apartado 4)
 - [~] Tema y marca (apartado 3): copia **"Lunerie · marca"** del tema Horizon (id 208665149779, SIN publicar) con
       colores, Cormorant + Jost ligera, botones verdes rectos en mayúsculas, logo de texto espaciado y centrado, barra
       verde «Envío gratis a península · Devolución en 14 días» (sin prometer el ajuste de muñeca) y pie en español con
@@ -138,8 +145,11 @@ gafas con cámara IA (69,95-79,95 €) · descartados: micro-infusión, paddle s
 - [ ] Importar el reloj (CSV) → revisar "⚠️ Revisar" de `landing.md` → fotos propias → publicar
 - [ ] Quitar la contraseña de la tienda
 
-## 7. Test de 100 € (por producto)
-Meta Ads, ABO: 3 conjuntos (1 ángulo cada uno) × 10 €/día × 3 días. Cada día, en el radar:
+> Claude está conectado a Shopify (conector de claude.ai) con la tienda Lunerie. Antes estaba Star Brick: al cambiar
+> de tienda se desconecta la otra.
+
+## 7. Test de ~90 € (por producto)
+Meta Ads, ABO: 3 conjuntos (1 ángulo cada uno) × 10 €/día × 3 días = 90 €. Cada día, en el radar:
 `uv run python cli.py test <id> --dia N --gasto … --imp … --clicks … --atc … --compras …`
 KILL si gastas 1× CPA BE sin carritos o 2× sin ventas · ESCALAR con ≥ 3 ventas a ≤ 70 % del CPA BE ·
 alertas si CTR < 1 % o CPC > 0,90 €. Máximo 2 productos en test a la vez.
@@ -149,11 +159,14 @@ alertas si CTR < 1 % o CPC > 0,90 €. Máximo 2 productos en test a la vez.
    (Tienda online → Temas → «Lunerie · marca» → ⋯ → Publicar). Si algo se ve raro (sobre todo el logo), captura a Claude.
 2. Siguiente con Claude: **políticas y páginas legales**, creadas directamente en Shopify (solo existe la página Contacto).
    Después: crear el reloj Lune como borrador a partir de `landing.md` del radar.
-3. Escribir a Alibaba (reloj): precio DDP exprés para 20 y 50 uds (mensaje en la sesión 07-oct del radar).
-4. Escribir a Yiwu Shangjie (collar) y pedir muestra "Lune"; pasar el enlace de la tienda de 63 €.
-5. Decidir lo del "ajustado a tu muñeca" (5.1). La tienda ya **no** lo promete en la barra; la página de marca
+3. Escribir a Alibaba (reloj): precio DDP exprés para 20 y 50 uds (mensaje en la sesión 07-oct del radar). No corre
+   prisa: el test va con AliExpress; sirve para preparar el paso a stock propio + packaging.
+4. Pedir presupuesto de packaging Lunerie (caja, tarjeta, bolsa) para meterlo en las cuentas del stock propio.
+5. Escribir a Yiwu Shangjie (collar) y pedir muestra "Lune"; pasar el enlace de la tienda de 63 €.
+6. Decidir lo del "ajustado a tu muñeca" (5.1). La tienda ya **no** lo promete en la barra; la página de marca
    (artifact) aún dice «Te lo enviamos ajustado a tu muñeca» → actualizarla cuando se decida.
-6. Cuando lleguen las muestras: fotos y vídeos propios → anuncios → test del reloj.
+7. Decidir Baleares (apartado 4) antes de configurar los envíos.
+8. Cuando lleguen las muestras: fotos y vídeos propios → anuncios → test del reloj.
 
 ## 9. Enlaces
 - Página de marca: https://claude.ai/artifact/MDZWWTrx5E6xxfgC8gfv2A

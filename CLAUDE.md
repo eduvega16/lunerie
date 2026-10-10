@@ -172,8 +172,7 @@ gafas con cámara IA (69,95-79,95 €) · descartados: micro-infusión, paddle s
       **10-oct (subido a producción):** ficha con la estructura de Calné en versión verdadera — migas · título ·
       precio · línea · 4 ventajas (punto dorado «Para Navidad, pídelo antes del 1 de diciembre» [fecha a confirmar
       con el plazo real] · pila puesta y caja de regalo · envío gratis · 3 años + 14 días) · color · botón ancho sin
-      selector de cantidad · caja «Segundo reloj por 19,95 €» (niebla con borde oro; **crear ese descuento antes de
-      abrir**) · desplegables Descripción / Ajustar la correa / ¿Se puede mojar? / Envío / Devoluciones y garantía /
+      selector de cantidad · caja «Segundo reloj por 19,95 €» (descuento automático **creado el 10-oct**, ver abajo) · desplegables Descripción / Ajustar la correa / ¿Se puede mojar? / Envío / Devoluciones y garantía /
       Cuidados · galería ancha (columnas desiguales). La ficha es **la misma para todos los productos**: el collar
       necesitará su plantilla (`product.collar.json`). Inicio: arriba la pieza destacada `reloj-luna-noir` (producto
       de prueba de Edu: 195 € con tachado 245 €, sin stock, primer medio un vídeo) con ficha completa. Página de
@@ -205,6 +204,10 @@ gafas con cámara IA (69,95-79,95 €) · descartados: micro-infusión, paddle s
       (Cormorant), caja de oferta **verde con texto blanco** (Edu la prefirió así). Capturas reales de móvil:
       script de Chrome con devtools (`Emulation.setDeviceMetricsOverride` mobile) — las capturas headless normales
       a 390-440 px engañan (parecía que la ficha se salía por la derecha y no es así).
+      **Descuento «Segundo reloj por 19,95 €» (10-oct, activo):** automático, compra X lleva Y: por cada reloj Lune,
+      otro Lune con 25 € menos (44,95 + 19,95 = 64,90 €; probado en la cesta). Se repite por cada pareja (4 relojes →
+      2 descuentos) y se combina con descuentos de envío. Si se cambia el precio del Lune, ajustar los 25 € en
+      Descuentos.
 - [ ] Quitar la contraseña de la tienda
 
 > Claude está conectado a Shopify (conector de claude.ai) con la tienda Lunerie. Antes estaba Star Brick: al cambiar

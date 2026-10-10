@@ -182,11 +182,18 @@ gafas con cámara IA (69,95-79,95 €) · descartados: micro-infusión, paddle s
       Falta: favicon, foto de portada cuando haya muestras (editor → Portada → Fondo → Imagen) y cambiar **[PLAZO]** en el desplegable
       Envío. Ficheros fuente: `tema/` (`build.py` genera los JSON que se suben a la copia del tema; Shopify no acepta
       `content:` en el CSS personalizado ni `gap` > 48).
-- [ ] Políticas (devoluciones, envíos, privacidad, términos) + aviso legal + páginas Contacto / Preguntas frecuentes /
-      Envíos — **Claude las redacta** con huecos para nombre, NIF y dirección
+- [~] Políticas y páginas: textos en `legal/` (10-oct). Página **Preguntas frecuentes** creada y en el menú
+      principal («Piezas · Preguntas frecuentes · Contacto»). **Las 6 políticas las pega Edu** en Configuración →
+      Políticas: el conector **no tiene permiso** `write_legal_policies` (las páginas y menús sí). Rellenar los huecos
+      de `legal/README.md` en Shopify y en la página de FAQ ([PLAZO], [BALEARES]).
 - [ ] Banner de cookies (Configuración → Privacidad del cliente)
 - [ ] Apps: Facebook & Instagram (píxel Meta), TikTok
-- [ ] Importar el reloj (CSV) → revisar "⚠️ Revisar" de `landing.md` → fotos propias → publicar
+- [x] **Reloj Lune creado el 10-oct** (`reloj-lune`, activo y en Tienda online): 44,95 €, opción **Color** con
+      «Dorado · piedra verde» y «Plateado · piedra verde» (SKU LUNE-DOR-VER / LUNE-PLA-VER), sin control de stock
+      (dropshipping), coste 13,82 € (5,59 + 4,73 envío + 3,5 aranceles), fotos del proveedor de
+      `tema/fotos productos/reloj/` pasadas a 4:5. Anclado arriba en el inicio. **Falta:** la variante «Dorado · piedra
+      azul» (no había foto) y cambiar a fotos propias cuando lleguen las muestras. Cómo se suben fotos desde aquí:
+      `stagedUploadsCreate` (PUT) → `curl -X PUT` → `productSet` con `files`/`variants.file`. PayPal ya sale en la ficha.
 - [ ] Quitar la contraseña de la tienda
 
 > Claude está conectado a Shopify (conector de claude.ai) con la tienda Lunerie. Antes estaba Star Brick: al cambiar

@@ -204,7 +204,7 @@ def group(blocks, align="center", gap=8):
         "blocks": blocks, "block_order": list(blocks)}
 
 
-# ---------- Inicio: pieza destacada (la que Edu ancló el 9-oct) · portada sin foto (fondo niebla) · las piezas · tres promesas ----------
+# ---------- Inicio: pieza destacada (reloj Lune) · portada sin foto (fondo niebla) · las piezas · tres promesas ----------
 # Cuando haya fotos propias: en el editor, Portada → Fondo → Imagen.
 index = {
     "sections": {
@@ -263,7 +263,7 @@ index = {
             },
             "block_order": [],
             "settings": {
-                "product": "reloj-luna-noir", "content_width": "content-center-aligned",
+                "product": "reloj-lune", "content_width": "content-center-aligned",
                 "desktop_media_position": "left", "equal_columns": True, "limit_details_width": True,
                 "gap": 48, "background_color": BG, "padding-block-start": 56, "padding-block-end": 24},
         },

@@ -1,0 +1,17 @@
+{%- comment -%} Generado por tema/build.py: aviso del segundo reloj en la cesta {%- endcomment -%}
+{%- assign lu_qty = 0 -%}{%- assign lu_prod = nil -%}{%- for item in cart.items -%}{%- if item.product.handle == 'reloj-lune' -%}{%- assign lu_qty = lu_qty | plus: item.quantity -%}{%- assign lu_prod = item.product -%}{%- endif -%}{%- endfor -%}{%- assign lu_resto = lu_qty | modulo: 2 -%}
+{%- if lu_resto == 1 and lu_prod -%}
+<div class="lu-upsell">
+  <p class="lu-upsell__t">Añade un segundo reloj por 19,95&nbsp;€</p>
+  <p class="lu-upsell__p">Uno para ti y otro para regalar. Elige el color:</p>
+  {%- for v in lu_prod.variants -%}{%- if v.available -%}{%- assign c = '#E2E6E3' -%}{%- if v.title contains 'Dorado' -%}{%- assign c = '#D4AF5F' -%}{%- endif -%}{%- if v.title contains 'Plateado' -%}{%- assign c = '#C9CDD0' -%}{%- endif -%}{%- if v.title contains 'Oro rosa' -%}{%- assign c = '#D8A48F' -%}{%- endif -%}
+  <form class="lu-upsell__fila" action="{{ routes.cart_add_url }}" method="post">
+    <input type="hidden" name="id" value="{{ v.id }}"><input type="hidden" name="quantity" value="1"><input type="hidden" name="return_to" value="{{ routes.cart_url }}">
+    <span class="lu-upsell__bolita" style="background: {{ c }}"></span><span class="lu-upsell__color">{{ v.title }}</span>
+    <button type="submit" class="lu-upsell__btn">Añadir · 19,95&nbsp;€</button>
+  </form>
+  {%- endif -%}{%- endfor -%}
+</div>
+<style>.lu-upsell{margin:12px 0;padding:16px 18px;background:#006039;color:#fff;display:grid;gap:10px}.lu-upsell p{margin:0}.lu-upsell__t{font-weight:500;font-size:1.0625rem;letter-spacing:.02em;text-transform:uppercase}.lu-upsell__p{font-size:.875rem;opacity:.9}.lu-upsell__fila{display:flex;align-items:center;gap:10px;margin:0;padding-top:10px;border-top:1px solid rgba(255,255,255,.2)}.lu-upsell__bolita{flex:0 0 22px;height:22px;border-radius:50%;box-shadow:inset 0 0 0 2px #fff;border:1px solid rgba(255,255,255,.6)}.lu-upsell__color{flex:1;font-size:.875rem}.lu-upsell__btn{appearance:none;border:0;background:#fff;color:#006039;font:inherit;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;padding:10px 14px;cursor:pointer;white-space:nowrap}.lu-upsell__btn:focus-visible{outline:2px solid #fff;outline-offset:2px}</style>
+<script>document.addEventListener('submit',function(e){var f=e.target.closest&&e.target.closest('.lu-upsell__fila');if(!f)return;e.preventDefault();f.querySelector('button').disabled=true;fetch('{{ routes.cart_add_url }}.js',{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}}).then(function(){location.href='{{ routes.cart_url }}'}).catch(function(){f.submit()})});</script>
+{%- endif -%}

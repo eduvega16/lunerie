@@ -208,6 +208,15 @@ gafas con cámara IA (69,95-79,95 €) · descartados: micro-infusión, paddle s
       otro Lune con 25 € menos (44,95 + 19,95 = 64,90 €; probado en la cesta). Se repite por cada pareja (4 relojes →
       2 descuentos) y se combina con descuentos de envío. Si se cambia el precio del Lune, ajustar los 25 € en
       Descuentos.
+      **10-oct (en producción):** línea de Navidad con **bolita roja que late** (bloque `custom-liquid`, `NAVIDAD`
+      en `build.py`; quieta si el móvil pide reducir movimiento) · «Llega en su caja de regalo» con **icono de
+      regalo** SVG propio (`REGALO`; ya no se menciona la pila) · **aviso en la cesta** «Añade un segundo reloj por
+      19,95 €» con un botón por color y su bolita (`tema/codigo/snippets/lunerie-segundo-reloj.liquid`, generado por
+      `build.py`; se pinta en `cart-drawer.liquid` y `sections/main-cart.liquid`, copias en `tema/codigo/`). Sale con
+      un número impar de Lune; añade por `fetch` y va a /cart. Probado: 1 reloj → aviso → añadir → 64,90 € y el aviso
+      desaparece. Página de la cesta en español (`tema/cart.json`). En la vista previa local, el navegador de
+      pruebas con perfil nuevo acaba en /password (no tiene la cookie): probar el carrito con `curl` y cookie.
+      Shopify Payments ya activo (salen Shop Pay y Google Pay en la cesta).
 - [ ] Quitar la contraseña de la tienda
 
 > Claude está conectado a Shopify (conector de claude.ai) con la tienda Lunerie. Antes estaba Star Brick: al cambiar

@@ -118,78 +118,18 @@
               },
               "blocks": {
                 "navidad": {
-                  "type": "text",
+                  "type": "custom-liquid",
                   "settings": {
-                    "text": "<ul><li>Para Navidad, pídelo antes del 1 de diciembre</li></ul>",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "custom",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
+                    "custom_liquid": "<p class=\"lu-urgencia\"><span class=\"lu-punto\" aria-hidden=\"true\"></span>Para Navidad, pídelo antes del 1 de diciembre</p><style>.lu-urgencia,.lu-regalo{font-family:var(--font-body--family);font-weight:var(--font-body--weight)}.lu-urgencia{display:flex;align-items:center;gap:12px;margin:0;font-size:1rem;color:#B3261E}.lu-punto{position:relative;flex:0 0 9px;width:9px;height:9px;margin-inline:4px 5px;border-radius:50%;background:#B3261E}.lu-punto::after{content:'';position:absolute;inset:0;border-radius:50%;background:#B3261E;animation:lu-latido 1.6s ease-out infinite}@keyframes lu-latido{0%{transform:scale(1);opacity:.7}100%{transform:scale(2.6);opacity:0}}@media (prefers-reduced-motion:reduce){.lu-punto::after{animation:none;opacity:0}}</style>"
                   },
                   "blocks": {}
                 },
-                "pila": {
-                  "type": "group",
+                "regalo": {
+                  "type": "custom-liquid",
                   "settings": {
-                    "content_direction": "row",
-                    "vertical_on_mobile": false,
-                    "horizontal_alignment": "flex-start",
-                    "vertical_alignment": "center",
-                    "gap": 12,
-                    "width": "fill"
+                    "custom_liquid": "<p class=\"lu-regalo\"><svg aria-hidden=\"true\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3.5\" y=\"8.5\" width=\"17\" height=\"4\" rx=\".6\"/><path d=\"M5 12.5v8h14v-8M12 8.5v12\"/><path d=\"M12 8.5C10.2 4.6 6.6 4.7 6.9 7c.2 1.4 2.8 1.5 5.1 1.5M12 8.5c1.8-3.9 5.4-3.8 5.1-1.5-.2 1.4-2.8 1.5-5.1 1.5\"/></svg>Llega en su caja de regalo</p><style>.lu-regalo{display:flex;align-items:center;gap:12px;margin:0;font-size:1rem}.lu-regalo svg{flex:0 0 18px}</style>"
                   },
-                  "blocks": {
-                    "icono": {
-                      "type": "icon",
-                      "settings": {
-                        "icon": "stopwatch",
-                        "width": 18,
-                        "icon_color": "#16201B"
-                      },
-                      "blocks": {}
-                    },
-                    "texto": {
-                      "type": "text",
-                      "settings": {
-                        "text": "<p>Llega con la pila puesta y en su caja de regalo</p>",
-                        "width": "100%",
-                        "max_width": "normal",
-                        "alignment": "left",
-                        "type_preset": "custom",
-                        "font": "var(--font-body--family)",
-                        "font_size": "1rem",
-                        "line_height": "normal",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "background": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "padding-block-start": 0,
-                        "padding-block-end": 0,
-                        "padding-inline-start": 0,
-                        "padding-inline-end": 0
-                      },
-                      "blocks": {}
-                    }
-                  },
-                  "block_order": [
-                    "icono",
-                    "texto"
-                  ]
+                  "blocks": {}
                 },
                 "envio": {
                   "type": "group",
@@ -294,7 +234,7 @@
               },
               "block_order": [
                 "navidad",
-                "pila",
+                "regalo",
                 "envio",
                 "garantia"
               ]

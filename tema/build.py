@@ -358,6 +358,37 @@ def color(bloque, c, ancho="fit-content"):
     return bloque
 
 
+def liquid(codigo):
+    """Bloque de Liquid/HTML libre (para lo que los bloques del tema no permiten: animaciones, iconos propios)."""
+    return {"type": "custom-liquid", "settings": {"custom_liquid": codigo}, "blocks": {}}
+
+
+ROJO = "#B3261E"
+# Urgencia de Navidad: bolita roja que late (sin animación si el móvil pide «reducir movimiento»).
+# FECHA A CONFIRMAR con el plazo real del proveedor ([PLAZO]).
+NAVIDAD = liquid(
+    '<p class="lu-urgencia"><span class="lu-punto" aria-hidden="true"></span>'
+    'Para Navidad, pídelo antes del 1 de diciembre</p>'
+    "<style>.lu-urgencia,.lu-regalo{font-family:var(--font-body--family);font-weight:var(--font-body--weight)}"
+    ".lu-urgencia{display:flex;align-items:center;gap:12px;margin:0;font-size:1rem;color:" + ROJO + "}"
+    ".lu-punto{position:relative;flex:0 0 9px;width:9px;height:9px;margin-inline:4px 5px;border-radius:50%;"
+    "background:" + ROJO + "}"
+    ".lu-punto::after{content:'';position:absolute;inset:0;border-radius:50%;background:" + ROJO + ";"
+    "animation:lu-latido 1.6s ease-out infinite}"
+    "@keyframes lu-latido{0%{transform:scale(1);opacity:.7}100%{transform:scale(2.6);opacity:0}}"
+    "@media (prefers-reduced-motion:reduce){.lu-punto::after{animation:none;opacity:0}}</style>")
+
+# Caja de regalo con icono de regalo (Horizon no trae ese icono: SVG propio, trazo fino como los demás)
+REGALO = liquid(
+    '<p class="lu-regalo"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" '
+    'stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">'
+    '<rect x="3.5" y="8.5" width="17" height="4" rx=".6"/><path d="M5 12.5v8h14v-8M12 8.5v12"/>'
+    '<path d="M12 8.5C10.2 4.6 6.6 4.7 6.9 7c.2 1.4 2.8 1.5 5.1 1.5M12 8.5c1.8-3.9 5.4-3.8 5.1-1.5-.2 1.4-2.8 1.5-5.1 1.5"/>'
+    '</svg>Llega en su caja de regalo</p>'
+    "<style>.lu-regalo{display:flex;align-items:center;gap:12px;margin:0;font-size:1rem}"
+    ".lu-regalo svg{flex:0 0 18px}</style>")
+
+
 def icon_text(icono, html, ancho=18):
     """Fila icono + texto (las ventajas debajo del precio)."""
     return {"type": "group", "settings": {
@@ -426,13 +457,11 @@ ficha = {
                 "ventajas": {"type": "group", "settings": {
                     "content_direction": "column", "gap": 12, "width": "fill"},
                     "blocks": {
-                        # FECHA A CONFIRMAR con el plazo real del proveedor ([PLAZO]); viñeta dorada por PRODUCT_CSS
-                        "navidad": small(text_block(
-                            "<ul><li>Para Navidad, pídelo antes del 1 de diciembre</li></ul>", "paragraph"), "1rem"),
-                        "pila": icon_text("stopwatch", "<p>Llega con la pila puesta y en su caja de regalo</p>"),
+                        "navidad": NAVIDAD,
+                        "regalo": REGALO,
                         "envio": icon_text("truck", "<p>Envío gratis a península, con seguimiento</p>"),
                         "garantia": icon_text("star", "<p>Garantía de 3 años + 14 días para devolverlo</p>"),
-                    }, "block_order": ["navidad", "pila", "envio", "garantia"]},
+                    }, "block_order": ["navidad", "regalo", "envio", "garantia"]},
                 "variantes": {"type": "variant-picker", "settings": {
                     "variant_style": "buttons", "show_swatches": True}, "blocks": {}},
                 "comprar": {"type": "buy-buttons", "settings": {"stacking": True,
@@ -533,10 +562,61 @@ product = {
     "{%- comment -%} Generado por tema/build.py (BOLITAS): bolitas de color en el selector de variantes {%- endcomment -%}\n"
     "<style>" + SWATCH_CSS + "</style>\n", encoding="utf8")
 
+# ---------- Carrito: aviso «Añade un segundo reloj por 19,95 €» ----------
+# Sale cuando hay un número impar de relojes Lune en la cesta (el descuento automático va por parejas).
+# Un botón por color (con su bolita); al pulsar se añade y se va a /cart, donde ya aparece el descuento.
+OFERTA_PRODUCTO, OFERTA_PRECIO = "reloj-lune", "19,95&nbsp;€"
+_bolita = "".join(f"{{%- if v.title contains '{n}' -%}}{{%- assign c = '{col}' -%}}{{%- endif -%}}"
+                  for n, col in BOLITAS.items())
+UPSELL = (
+    "{%- comment -%} Generado por tema/build.py: aviso del segundo reloj en la cesta {%- endcomment -%}\n"
+    "{%- assign lu_qty = 0 -%}{%- assign lu_prod = nil -%}"
+    "{%- for item in cart.items -%}{%- if item.product.handle == '" + OFERTA_PRODUCTO + "' -%}"
+    "{%- assign lu_qty = lu_qty | plus: item.quantity -%}{%- assign lu_prod = item.product -%}"
+    "{%- endif -%}{%- endfor -%}"
+    "{%- assign lu_resto = lu_qty | modulo: 2 -%}\n"
+    "{%- if lu_resto == 1 and lu_prod -%}\n"
+    '<div class="lu-upsell">\n'
+    '  <p class="lu-upsell__t">Añade un segundo reloj por ' + OFERTA_PRECIO + "</p>\n"
+    '  <p class="lu-upsell__p">Uno para ti y otro para regalar. Elige el color:</p>\n'
+    "  {%- for v in lu_prod.variants -%}{%- if v.available -%}{%- assign c = '" + LINE + "' -%}" + _bolita + "\n"
+    '  <form class="lu-upsell__fila" action="{{ routes.cart_add_url }}" method="post">\n'
+    '    <input type="hidden" name="id" value="{{ v.id }}">'
+    '<input type="hidden" name="quantity" value="1">'
+    '<input type="hidden" name="return_to" value="{{ routes.cart_url }}">\n'
+    '    <span class="lu-upsell__bolita" style="background: {{ c }}"></span>'
+    '<span class="lu-upsell__color">{{ v.title }}</span>\n'
+    '    <button type="submit" class="lu-upsell__btn">Añadir · ' + OFERTA_PRECIO + "</button>\n"
+    "  </form>\n"
+    "  {%- endif -%}{%- endfor -%}\n"
+    "</div>\n"
+    "<style>"
+    ".lu-upsell{margin:12px 0;padding:16px 18px;background:" + GREEN + ";color:#fff;display:grid;gap:10px}"
+    ".lu-upsell p{margin:0}"
+    ".lu-upsell__t{font-weight:500;font-size:1.0625rem;letter-spacing:.02em;text-transform:uppercase}"
+    ".lu-upsell__p{font-size:.875rem;opacity:.9}"
+    ".lu-upsell__fila{display:flex;align-items:center;gap:10px;margin:0;padding-top:10px;"
+    "border-top:1px solid rgba(255,255,255,.2)}"
+    ".lu-upsell__bolita{flex:0 0 22px;height:22px;border-radius:50%;box-shadow:inset 0 0 0 2px #fff;"
+    "border:1px solid rgba(255,255,255,.6)}"
+    ".lu-upsell__color{flex:1;font-size:.875rem}"
+    ".lu-upsell__btn{appearance:none;border:0;background:#fff;color:" + GREEN + ";font:inherit;font-size:.75rem;"
+    "letter-spacing:.12em;text-transform:uppercase;padding:10px 14px;cursor:pointer;white-space:nowrap}"
+    ".lu-upsell__btn:focus-visible{outline:2px solid #fff;outline-offset:2px}"
+    "</style>\n"
+    # Añadir con fetch (como el resto del tema) y luego ir a la cesta; sin JS, el formulario normal hace lo mismo
+    "<script>document.addEventListener('submit',function(e){"
+    "var f=e.target.closest&&e.target.closest('.lu-upsell__fila');if(!f)return;"
+    "e.preventDefault();f.querySelector('button').disabled=true;"
+    "fetch('{{ routes.cart_add_url }}.js',{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}})"
+    ".then(function(){location.href='{{ routes.cart_url }}'}).catch(function(){f.submit()})});</script>\n"
+    "{%- endif -%}\n")
+(OUT / "codigo" / "snippets" / "lunerie-segundo-reloj.liquid").write_text(UPSELL, encoding="utf8")
+
 # Copia en tema/tienda/ (el tema publicado bajado con `shopify theme pull`, fuera de git) para subirlo con la CLI
 TIENDA = OUT / "tienda"
-# password.json no lo genera build.py: es la plantilla del tema con los textos en español
-DESTINO = {"password.json": "templates", "settings_data.json": "config", "header-group.json": "sections", "footer-group.json": "sections",
+# password.json y cart.json no los genera build.py: son plantillas del tema con los textos en español
+DESTINO = {"password.json": "templates", "cart.json": "templates", "settings_data.json": "config", "header-group.json": "sections", "footer-group.json": "sections",
            "index.json": "templates", "product.json": "templates"}
 if TIENDA.exists():
     # código del tema modificado (tema/codigo/<carpeta>/<fichero>), p. ej. snippets/variant-main-picker.liquid

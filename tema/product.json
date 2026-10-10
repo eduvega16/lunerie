@@ -52,7 +52,7 @@
             "media_presentation": "carousel",
             "icons_style": "arrow",
             "slideshow_controls_style": "thumbnails",
-            "slideshow_mobile_controls_style": "dots",
+            "slideshow_mobile_controls_style": "thumbnails",
             "thumbnail_position": "bottom",
             "thumbnail_width": 60,
             "thumbnail_radius": 0,
@@ -77,7 +77,12 @@
             "titulo": {
               "type": "product-title",
               "settings": {
-                "type_preset": "h3",
+                "type_preset": "custom",
+                "font": "var(--font-heading--family)",
+                "font_size": "1.5rem",
+                "case": "uppercase",
+                "letter_spacing": "loose",
+                "line_height": "tight",
                 "width": "100%"
               },
               "blocks": {}
@@ -113,71 +118,28 @@
               },
               "blocks": {
                 "navidad": {
-                  "type": "group",
+                  "type": "text",
                   "settings": {
-                    "content_direction": "row",
-                    "vertical_on_mobile": false,
-                    "horizontal_alignment": "flex-start",
-                    "vertical_alignment": "center",
-                    "gap": 10,
-                    "width": "fill",
-                    "padding-inline-start": 4
+                    "text": "<ul><li>Para Navidad, pídelo antes del 1 de diciembre</li></ul>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "custom",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
                   },
-                  "blocks": {
-                    "punto": {
-                      "type": "text",
-                      "settings": {
-                        "text": "<p>●</p>",
-                        "width": "fit-content",
-                        "max_width": "normal",
-                        "alignment": "left",
-                        "type_preset": "custom",
-                        "font": "var(--font-body--family)",
-                        "font_size": "0.625rem",
-                        "line_height": "normal",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "background": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "padding-block-start": 0,
-                        "padding-block-end": 0,
-                        "padding-inline-start": 0,
-                        "padding-inline-end": 0,
-                        "text_color": "#A6834A"
-                      },
-                      "blocks": {}
-                    },
-                    "texto": {
-                      "type": "text",
-                      "settings": {
-                        "text": "<p>Para Navidad, pídelo antes del 1 de diciembre</p>",
-                        "width": "100%",
-                        "max_width": "normal",
-                        "alignment": "left",
-                        "type_preset": "custom",
-                        "font": "var(--font-body--family)",
-                        "font_size": "1rem",
-                        "line_height": "normal",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "background": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "padding-block-start": 0,
-                        "padding-block-end": 0,
-                        "padding-inline-start": 0,
-                        "padding-inline-end": 0
-                      },
-                      "blocks": {}
-                    }
-                  },
-                  "block_order": [
-                    "punto",
-                    "texto"
-                  ]
+                  "blocks": {}
                 },
                 "pila": {
                   "type": "group",
@@ -385,10 +347,7 @@
                 "content_direction": "column",
                 "gap": 6,
                 "width": "fill",
-                "background_color": "#F2F4F2",
-                "border": "solid",
-                "border_width": 1,
-                "border_color": "#A6834A",
+                "background_color": "#006039",
                 "padding-block-start": 18,
                 "padding-block-end": 18,
                 "padding-inline-start": 20,
@@ -398,13 +357,13 @@
                 "t": {
                   "type": "text",
                   "settings": {
-                    "text": "<p><strong>Segundo reloj por 19,95 €</strong></p>",
+                    "text": "<p><strong>SEGUNDO RELOJ POR 19,95 €</strong></p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
-                    "type_preset": "paragraph",
+                    "type_preset": "custom",
                     "font": "var(--font-body--family)",
-                    "font_size": "1rem",
+                    "font_size": "1.125rem",
                     "line_height": "normal",
                     "letter_spacing": "normal",
                     "case": "none",
@@ -415,7 +374,8 @@
                     "padding-block-start": 0,
                     "padding-block-end": 0,
                     "padding-inline-start": 0,
-                    "padding-inline-end": 0
+                    "padding-inline-end": 0,
+                    "text_color": "#FFFFFF"
                   },
                   "blocks": {}
                 },
@@ -439,7 +399,8 @@
                     "padding-block-start": 0,
                     "padding-block-end": 0,
                     "padding-inline-start": 0,
-                    "padding-inline-end": 0
+                    "padding-inline-end": 0,
+                    "text_color": "#FFFFFF"
                   },
                   "blocks": {}
                 }

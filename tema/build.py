@@ -204,6 +204,24 @@ def group(blocks, align="center", gap=8):
         "blocks": blocks, "block_order": list(blocks)}
 
 
+# Bolitas de color (como Calné): los botones de la opción Color cuyo valor empieza por Dorado / Plateado /
+# Oro rosa se pintan como círculos. Shopify no deja enlazar los colores estándar por API (10-oct), por eso va
+# por CSS y vale para cualquier producto con esos nombres. «Color: valor» lo pone tema/codigo/snippets/
+# variant-main-picker.liquid, que además incluye estas reglas con {% render 'lunerie-bolitas' %} (el CSS
+# personalizado de una sección no admite más de 500 caracteres). Si se añade otro metal, añadirlo en BOLITAS.
+BOLITAS = {"Dorado": "#D4AF5F", "Plateado": "#C9CDD0", "Oro rosa": "#D8A48F"}
+_sel = ", ".join(f'input[value^="{v}"]' for v in BOLITAS)
+SWATCH_CSS = (
+    f".variant-option--buttons:has({_sel}) {{ display: flex; flex-wrap: wrap; gap: 12px; }} "
+    f".variant-option__button-label:has({_sel}) {{ flex: 0 0 auto; width: 40px; height: 40px; min-width: 40px; "
+    f"padding: 0; border-radius: 50%; border: 1px solid {LINE}; box-shadow: inset 0 0 0 4px #FFFFFF; "
+    f"font-size: 0; overflow: hidden; }} "
+    f".variant-option__button-label:has({_sel}) .variant-option__button-label__pill, "
+    f".variant-option__button-label:has({_sel}) .variant-option__button-label__text {{ display: none; }} "
+    f".variant-option__button-label:has({_sel}):has(input:checked) {{ border: 2px solid {INK}; }} "
+    + " ".join(f'.variant-option__button-label:has(input[value^="{v}"]) {{ background: {c} !important; }}'
+               for v, c in BOLITAS.items()))
+
 # ---------- Inicio: pieza destacada (reloj Lune) · portada sin foto (fondo niebla) · las piezas · tres promesas ----------
 # Cuando haya fotos propias: en el editor, Portada → Fondo → Imagen.
 index = {
@@ -383,7 +401,7 @@ ficha = {
     "blocks": {
         "media-gallery": {"type": "_product-media-gallery", "static": True, "settings": {
             "media_presentation": "carousel", "icons_style": "arrow",
-            "slideshow_controls_style": "thumbnails", "slideshow_mobile_controls_style": "dots",
+            "slideshow_controls_style": "thumbnails", "slideshow_mobile_controls_style": "thumbnails",
             "thumbnail_position": "bottom", "thumbnail_width": 60, "thumbnail_radius": 0,
             "aspect_ratio": "1/1.25", "media_radius": 0, "extend_media": False,
             "zoom": True, "hide_variants": False}, "blocks": {}},
@@ -392,7 +410,9 @@ ficha = {
             "padding-block-start": 8, "padding-block-end": 24},
             "blocks": {
                 "titulo": {"type": "product-title", "settings": {
-                    "type_preset": "h3", "width": "100%"}, "blocks": {}},
+                    "type_preset": "custom", "font": "var(--font-heading--family)", "font_size": "1.5rem",
+                    "case": "uppercase", "letter_spacing": "loose", "line_height": "tight",
+                    "width": "100%"}, "blocks": {}},
                 "precio": {"type": "price", "settings": {
                     "show_sale_price_first": True, "show_installments": False, "show_tax_info": False,
                     "type_preset": "custom", "font_size": "1.125rem", "width": "100%"}, "blocks": {}},
@@ -406,16 +426,9 @@ ficha = {
                 "ventajas": {"type": "group", "settings": {
                     "content_direction": "column", "gap": 12, "width": "fill"},
                     "blocks": {
-                        "navidad": {"type": "group", "settings": {
-                            "content_direction": "row", "vertical_on_mobile": False,
-                            "horizontal_alignment": "flex-start", "vertical_alignment": "center",
-                            "gap": 10, "width": "fill", "padding-inline-start": 4},
-                            "blocks": {
-                                "punto": color(small(text_block("<p>●</p>", "paragraph"), "0.625rem"), GOLD),
-                                # FECHA A CONFIRMAR con el plazo real del proveedor ([PLAZO])
-                                "texto": small(text_block(
-                                    "<p>Para Navidad, pídelo antes del 1 de diciembre</p>", "paragraph"), "1rem"),
-                            }, "block_order": ["punto", "texto"]},
+                        # FECHA A CONFIRMAR con el plazo real del proveedor ([PLAZO]); viñeta dorada por PRODUCT_CSS
+                        "navidad": small(text_block(
+                            "<ul><li>Para Navidad, pídelo antes del 1 de diciembre</li></ul>", "paragraph"), "1rem"),
                         "pila": icon_text("stopwatch", "<p>Llega con la pila puesta y en su caja de regalo</p>"),
                         "envio": icon_text("truck", "<p>Envío gratis a península, con seguimiento</p>"),
                         "garantia": icon_text("star", "<p>Garantía de 3 años + 14 días para devolverlo</p>"),
@@ -432,17 +445,18 @@ ficha = {
                         "accelerated-checkout": {"type": "accelerated-checkout", "static": True,
                             "settings": {}, "blocks": {}},
                     }, "block_order": []},
-                # Caja de oferta (en Calné es verde; aquí niebla: el verde solo en lo que se pulsa).
+                # Caja de oferta en verde con texto blanco, como Calné (Edu lo prefirió el 10-oct aunque la regla
+                # de marca era «verde solo en lo que se pulsa»). Sin «solo hoy».
                 # OJO: el descuento «2.º por 19,95 €» hay que crearlo en Descuentos antes de abrir la tienda.
                 "oferta": {"type": "group", "settings": {
-                    "content_direction": "column", "gap": 6, "width": "fill", "background_color": MIST,
-                    "border": "solid", "border_width": 1, "border_color": GOLD,
+                    "content_direction": "column", "gap": 6, "width": "fill", "background_color": GREEN,
                     "padding-block-start": 18, "padding-block-end": 18,
                     "padding-inline-start": 20, "padding-inline-end": 20},
                     "blocks": {
-                        "t": text_block("<p><strong>Segundo reloj por 19,95 €</strong></p>", "paragraph"),
-                        "p": text_block("<p>Añade dos a la cesta: el descuento se aplica solo al pagar. "
-                                        "Uno para ti y otro para regalar.</p>", "paragraph"),
+                        "t": color(small(text_block("<p><strong>SEGUNDO RELOJ POR 19,95 €</strong></p>",
+                                                    "paragraph"), "1.125rem"), "#FFFFFF", "100%"),
+                        "p": color(text_block("<p>Añade dos a la cesta: el descuento se aplica solo al pagar. "
+                                              "Uno para ti y otro para regalar.</p>", "paragraph"), "#FFFFFF", "100%"),
                     }, "block_order": ["t", "p"]},
                 "detalles": {"type": "accordion", "settings": {
                     "icon": "plus", "dividers": True, "divider_color": C2, "type_preset": "h6"},
@@ -514,12 +528,20 @@ product = {
 }
 (OUT / "product.json").write_text(json.dumps(product, ensure_ascii=False, indent=2), encoding="utf8")
 
+(OUT / "codigo" / "snippets").mkdir(parents=True, exist_ok=True)
+(OUT / "codigo" / "snippets" / "lunerie-bolitas.liquid").write_text(
+    "{%- comment -%} Generado por tema/build.py (BOLITAS): bolitas de color en el selector de variantes {%- endcomment -%}\n"
+    "<style>" + SWATCH_CSS + "</style>\n", encoding="utf8")
+
 # Copia en tema/tienda/ (el tema publicado bajado con `shopify theme pull`, fuera de git) para subirlo con la CLI
 TIENDA = OUT / "tienda"
 # password.json no lo genera build.py: es la plantilla del tema con los textos en español
 DESTINO = {"password.json": "templates", "settings_data.json": "config", "header-group.json": "sections", "footer-group.json": "sections",
            "index.json": "templates", "product.json": "templates"}
 if TIENDA.exists():
+    # código del tema modificado (tema/codigo/<carpeta>/<fichero>), p. ej. snippets/variant-main-picker.liquid
+    for f in (OUT / "codigo").rglob("*.liquid"):
+        (TIENDA / f.relative_to(OUT / "codigo")).write_text(f.read_text(encoding="utf8"), encoding="utf8")
     for nombre, carpeta in DESTINO.items():
         (TIENDA / carpeta / nombre).write_text((OUT / nombre).read_text(encoding="utf8"), encoding="utf8")
 print("ok")

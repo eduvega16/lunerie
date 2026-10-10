@@ -194,6 +194,17 @@ gafas con cámara IA (69,95-79,95 €) · descartados: micro-infusión, paddle s
       `tema/fotos productos/reloj/` pasadas a 4:5. Anclado arriba en el inicio. **Falta:** la variante «Dorado · piedra
       azul» (no había foto) y cambiar a fotos propias cuando lleguen las muestras. Cómo se suben fotos desde aquí:
       `stagedUploadsCreate` (PUT) → `curl -X PUT` → `productSet` con `files`/`variants.file`. PayPal ya sale en la ficha.
+      **Bolitas de color (10-oct, en producción):** la opción «Color» se ve como círculos (dorado / plateado / oro
+      rosa) con «Color  valor elegido» encima, como Calné. Va **por CSS** (`BOLITAS` en `build.py` →
+      `tema/codigo/snippets/lunerie-bolitas.liquid`) + un cambio en `tema/codigo/snippets/variant-main-picker.liquid`
+      (código del tema guardado en git; `build.py` lo copia a `tema/tienda/`). Funciona con cualquier valor que
+      empiece por «Dorado», «Plateado» u «Oro rosa». Las bolitas «oficiales» de Shopify no se pudieron enlazar por API
+      (error de restricción de categoría); quedaron creados los colores estándar Dorado/Plateado/Oro rosa y la
+      categoría «Relojes de pulsera» en el producto. **Límite:** el CSS personalizado de una sección no admite más
+      de 500 caracteres → lo largo va en un snippet. Ficha en móvil: miniaturas bajo la foto, título en mayúsculas
+      (Cormorant), caja de oferta **verde con texto blanco** (Edu la prefirió así). Capturas reales de móvil:
+      script de Chrome con devtools (`Emulation.setDeviceMetricsOverride` mobile) — las capturas headless normales
+      a 390-440 px engañan (parecía que la ficha se salía por la derecha y no es así).
 - [ ] Quitar la contraseña de la tienda
 
 > Claude está conectado a Shopify (conector de claude.ai) con la tienda Lunerie. Antes estaba Star Brick: al cambiar

@@ -200,8 +200,9 @@ alertas si CTR < 1 % o CPC > 0,90 €. Máximo 2 productos en test a la vez.
 
 ## 8. Pendientes (a 10-oct-2026)
 1. ~~Publicar el tema~~ (hecho el 8-oct). Login de Shopify CLI y de GitHub hechos en este PC. Pendiente: el plazo de envío para cambiar **[PLAZO]** (desplegable Envío).
-2. **Siguiente con Claude (necesita el conector de Shopify reconectado): políticas y páginas legales**, creadas
-   directamente en Shopify (solo existe la página Contacto). Después: crear el reloj Lune (`reloj-lune`, 44,95 €,
+2. **Siguiente con Claude (necesita el conector de Shopify reconectado): políticas y páginas legales.** Borradores
+   ya escritos en `legal/` (10-oct; huecos en `legal/README.md`: [NOMBRE], [NIF], [DIRECCIÓN], [PLAZO], [BALEARES],
+   quién paga la devolución). Falta que Edu rellene los huecos y crearlas en Shopify (solo existe la página Contacto). Después: crear el reloj Lune (`reloj-lune`, 44,95 €,
    3 variantes) a partir de `landing.md` del radar con las fotos provisionales de `tema/fotos_prueba.py`, y anclarlo
    en el inicio en vez de `reloj-luna-noir` (cambiar `"product"` en la sección `destacado` de `build.py`).
    **Edu, en el admin:** Shopify Payments + PayPal (empezar ya: tarda en aprobarse) · envíos + Baleares · foto como

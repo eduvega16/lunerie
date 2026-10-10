@@ -204,7 +204,7 @@ def group(blocks, align="center", gap=8):
         "blocks": blocks, "block_order": list(blocks)}
 
 
-# ---------- Inicio: portada sin foto (fondo niebla) · las piezas · tres promesas ----------
+# ---------- Inicio: pieza destacada (la que Edu ancló el 9-oct) · portada sin foto (fondo niebla) · las piezas · tres promesas ----------
 # Cuando haya fotos propias: en el editor, Portada → Fondo → Imagen.
 index = {
     "sections": {
@@ -223,6 +223,49 @@ index = {
                 "vertical_alignment_flex_direction_column": "center", "gap": 20,
                 "section_width": "full-width", "section_height": "medium", "background_color": MIST,
                 "padding-block-start": 64, "padding-block-end": 64},
+        },
+        # Pieza anclada en el inicio: ficha completa (fotos, precio, variantes, comprar)
+        "destacado": {
+            "type": "featured-product-information",
+            "blocks": {
+                "media-gallery": {"type": "_featured-product-information-carousel", "static": True, "settings": {
+                    "constrain_to_viewport": True, "media_fit": "cover", "media_radius": 0,
+                    "extend_media": False, "hide_variants": True, "slideshow_controls_style": "thumbnails",
+                    "slideshow_mobile_controls_style": "dots", "thumbnail_position": "bottom",
+                    "thumbnail_width": 56}, "blocks": {}},
+                "product-details": {"type": "_product-details", "static": True, "settings": {
+                    "gap": 24, "sticky_details_desktop": False,
+                    "padding-block-start": 24, "padding-block-end": 24},
+                    "blocks": {
+                        "cabecera": group({
+                            "titulo": {"type": "product-title", "settings": {"type_preset": "h2"}, "blocks": {}},
+                            "precio": {"type": "price", "settings": {
+                                "show_sale_price_first": True, "show_installments": False,
+                                "show_tax_info": False, "type_preset": "paragraph"}, "blocks": {}},
+                        }, align="flex-start", gap=10),
+                        "variantes": {"type": "variant-picker", "settings": {
+                            "variant_style": "buttons", "show_swatches": True}, "blocks": {}},
+                        "comprar": {"type": "buy-buttons", "settings": {"stacking": True,
+                            "show_pickup_availability": False},
+                            "blocks": {
+                                "quantity": {"type": "quantity", "static": True, "settings": {
+                                    "border_width": 1, "border_radius": 0}, "blocks": {}},
+                                "add-to-cart": {"type": "add-to-cart", "static": True, "settings": {
+                                    "style_class": "button"}, "blocks": {}},
+                                "accelerated-checkout": {"type": "accelerated-checkout", "static": True,
+                                    "settings": {}, "blocks": {}},
+                            }, "block_order": []},
+                        "ver_ficha": {"type": "button", "settings": {
+                            "label": "Ver la pieza", "link": "{{ closest.product.url }}",
+                            "style_class": "link", "width": "fit-content"}, "blocks": {}},
+                    },
+                    "block_order": ["cabecera", "variantes", "comprar", "ver_ficha"]},
+            },
+            "block_order": [],
+            "settings": {
+                "product": "reloj-luna-noir", "content_width": "content-center-aligned",
+                "desktop_media_position": "left", "equal_columns": True, "limit_details_width": True,
+                "gap": 48, "background_color": BG, "padding-block-start": 56, "padding-block-end": 24},
         },
         "piezas": {
             "type": "product-list",
@@ -272,88 +315,180 @@ index = {
                 "padding-block-start": 48, "padding-block-end": 48},
         },
     },
-    "order": ["portada", "piezas", "promesas"],
+    "order": ["destacado", "portada", "piezas", "promesas"],
 }
 (OUT / "index.json").write_text(json.dumps(index, ensure_ascii=False, indent=2), encoding="utf8")
 
 
-# ---------- Ficha de producto (como la maqueta de la página de marca) ----------
-def row(heading, html):
-    return {"type": "_accordion-row", "settings": {"heading": heading, "icon": "none"},
+# ---------- Ficha de producto (estructura de la de Calné, con las reglas de la marca) ----------
+# De Calné se copia el orden: migas · título · precio · línea · ventajas con icono · color · botón ancho ·
+# caja de oferta · tres iconos · desplegables. NO se copia: precio tachado, «stock limitado», «oferta solo hoy»,
+# «100 % resistente al agua», 2 años de garantía ni 100 días (en España: 14 días y 3 años; el reloj no es sumergible).
+def row(heading, html, abierto=False):
+    return {"type": "_accordion-row", "settings": {"heading": heading, "icon": "none", "open_by_default": abierto},
             "blocks": {"texto": text_block(html, "rte")}, "block_order": ["texto"]}
 
 
-# Puntos dorados en las listas de la ficha (garantías y descripción)
+def small(bloque, size="0.875rem"):
+    """Texto en tamaño propio (preset «custom»)."""
+    bloque["settings"].update({"type_preset": "custom", "font_size": size})
+    return bloque
+
+
+def color(bloque, c, ancho="fit-content"):
+    bloque["settings"].update({"text_color": c, "width": ancho})
+    return bloque
+
+
+def icon_text(icono, html, ancho=18):
+    """Fila icono + texto (las ventajas debajo del precio)."""
+    return {"type": "group", "settings": {
+        "content_direction": "row", "vertical_on_mobile": False, "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center", "gap": 12, "width": "fill"},
+        "blocks": {
+            "icono": {"type": "icon", "settings": {"icon": icono, "width": ancho, "icon_color": INK}, "blocks": {}},
+            "texto": small(text_block(html, "paragraph"), "1rem"),
+        }, "block_order": ["icono", "texto"]}
+
+
+def icon_col(icono, html):  # (sin uso ahora; para una fila de iconos en columnas)
+    """Columna icono encima de texto (la fila de tres promesas)."""
+    return {"type": "group", "settings": {
+        "content_direction": "column", "horizontal_alignment_flex_direction_column": "center",
+        "gap": 8, "width": "fill"},
+        "blocks": {
+            "icono": {"type": "icon", "settings": {"icon": icono, "width": 22, "icon_color": INK}, "blocks": {}},
+            "texto": small(text_block(html, "paragraph", "center")),
+        }, "block_order": ["icono", "texto"]}
+
+
+# Puntos dorados en las listas · sin selector de cantidad (como Calné; la cantidad se cambia en la cesta) ·
 # (Shopify no deja usar `content` en el CSS personalizado: por eso ::marker y no ::before)
-PRODUCT_CSS = f"ul {{ padding-inline-start: 1.1em; }} ul li::marker {{ color: {GOLD}; }}"
+PRODUCT_CSS = (f"ul {{ padding-inline-start: 1.1em; }} ul li::marker {{ color: {GOLD}; }} "
+               ".quantity-selector-wrapper { display: none; }")
+
+migas = {
+    "type": "section",
+    "blocks": {"migas": text_block(
+        '<p><a href="/">Inicio</a> › {{ closest.product.title }}</p>', "paragraph")},
+    "block_order": ["migas"],
+    "custom_css": [".text-block p { font-size: 0.75rem; letter-spacing: 0.04em; } "
+                   ".text-block a { color: inherit; text-decoration: none; }"],
+    "settings": {"content_direction": "column", "section_width": "page-width", "gap": 0,
+                 "padding-block-start": 20, "padding-block-end": 0},
+}
+
+ficha = {
+    "type": "product-information",
+    "blocks": {
+        "media-gallery": {"type": "_product-media-gallery", "static": True, "settings": {
+            "media_presentation": "carousel", "icons_style": "arrow",
+            "slideshow_controls_style": "thumbnails", "slideshow_mobile_controls_style": "dots",
+            "thumbnail_position": "bottom", "thumbnail_width": 60, "thumbnail_radius": 0,
+            "aspect_ratio": "1/1.25", "media_radius": 0, "extend_media": False,
+            "zoom": True, "hide_variants": False}, "blocks": {}},
+        "product-details": {"type": "_product-details", "static": True, "settings": {
+            "gap": 20, "sticky_details_desktop": True,
+            "padding-block-start": 8, "padding-block-end": 24},
+            "blocks": {
+                "titulo": {"type": "product-title", "settings": {
+                    "type_preset": "h3", "width": "100%"}, "blocks": {}},
+                "precio": {"type": "price", "settings": {
+                    "show_sale_price_first": True, "show_installments": False, "show_tax_info": False,
+                    "type_preset": "custom", "font_size": "1.125rem", "width": "100%"}, "blocks": {}},
+                "linea": {"type": "_divider", "settings": {"thickness": 1, "divider_color": C2,
+                    "padding-block-start": 4, "padding-block-end": 4}, "blocks": {}},
+                # Las líneas de Calné, en versión verdadera:
+                #   «Limited stock» (escasez inventada)  → fecha límite real para Navidad (punto dorado)
+                #   «100 % Waterproof & Everlasting»     → pila puesta + caja de regalo (no es sumergible)
+                #   «Order before 23:59…»                → envío gratis con seguimiento
+                #   «2-Year Warranty + 100-Days»         → 3 años (ley española) + 14 días
+                "ventajas": {"type": "group", "settings": {
+                    "content_direction": "column", "gap": 12, "width": "fill"},
+                    "blocks": {
+                        "navidad": {"type": "group", "settings": {
+                            "content_direction": "row", "vertical_on_mobile": False,
+                            "horizontal_alignment": "flex-start", "vertical_alignment": "center",
+                            "gap": 10, "width": "fill", "padding-inline-start": 4},
+                            "blocks": {
+                                "punto": color(small(text_block("<p>●</p>", "paragraph"), "0.625rem"), GOLD),
+                                # FECHA A CONFIRMAR con el plazo real del proveedor ([PLAZO])
+                                "texto": small(text_block(
+                                    "<p>Para Navidad, pídelo antes del 1 de diciembre</p>", "paragraph"), "1rem"),
+                            }, "block_order": ["punto", "texto"]},
+                        "pila": icon_text("stopwatch", "<p>Llega con la pila puesta y en su caja de regalo</p>"),
+                        "envio": icon_text("truck", "<p>Envío gratis a península, con seguimiento</p>"),
+                        "garantia": icon_text("star", "<p>Garantía de 3 años + 14 días para devolverlo</p>"),
+                    }, "block_order": ["navidad", "pila", "envio", "garantia"]},
+                "variantes": {"type": "variant-picker", "settings": {
+                    "variant_style": "buttons", "show_swatches": True}, "blocks": {}},
+                "comprar": {"type": "buy-buttons", "settings": {"stacking": True,
+                    "show_pickup_availability": False, "gift_card_form": True},
+                    "blocks": {
+                        "quantity": {"type": "quantity", "static": True, "settings": {
+                            "border_width": 1, "border_radius": 0}, "blocks": {}},
+                        "add-to-cart": {"type": "add-to-cart", "static": True, "settings": {
+                            "style_class": "button"}, "blocks": {}},
+                        "accelerated-checkout": {"type": "accelerated-checkout", "static": True,
+                            "settings": {}, "blocks": {}},
+                    }, "block_order": []},
+                # Caja de oferta (en Calné es verde; aquí niebla: el verde solo en lo que se pulsa).
+                # OJO: el descuento «2.º por 19,95 €» hay que crearlo en Descuentos antes de abrir la tienda.
+                "oferta": {"type": "group", "settings": {
+                    "content_direction": "column", "gap": 6, "width": "fill", "background_color": MIST,
+                    "border": "solid", "border_width": 1, "border_color": GOLD,
+                    "padding-block-start": 18, "padding-block-end": 18,
+                    "padding-inline-start": 20, "padding-inline-end": 20},
+                    "blocks": {
+                        "t": text_block("<p><strong>Segundo reloj por 19,95 €</strong></p>", "paragraph"),
+                        "p": text_block("<p>Añade dos a la cesta: el descuento se aplica solo al pagar. "
+                                        "Uno para ti y otro para regalar.</p>", "paragraph"),
+                    }, "block_order": ["t", "p"]},
+                "detalles": {"type": "accordion", "settings": {
+                    "icon": "plus", "dividers": True, "divider_color": C2, "type_preset": "h6"},
+                    "blocks": {
+                        "descripcion": {"type": "_accordion-row", "settings": {
+                            "heading": "Descripción", "icon": "none", "open_by_default": False},
+                            "blocks": {"texto": {"type": "product-description", "settings": {
+                                "width": "100%", "type_preset": "rte"}, "blocks": {}}},
+                            "block_order": ["texto"]},
+                        "medida": row("Ajustar la correa",
+                                      "<p>La correa mide 18 cm. Si tu muñeca es más fina (menos de 16 cm), quita "
+                                      "uno o dos eslabones con el extractor que va en la caja: son 2 minutos.</p>"),
+                        "agua": row("¿Se puede mojar?",
+                                    "<p>No. No es sumergible: quítatelo para lavarte las manos, ducharte o nadar. "
+                                    "Una gota de lluvia no le pasa nada.</p>"),
+                        "envio": row("Envío", "<p>Gratis a península, con número de seguimiento por email. "
+                                     "Plazo de entrega: [PLAZO] días laborables.</p>"
+                                     "<p>Por ahora no enviamos a Canarias, Ceuta ni Melilla.</p>"),
+                        "devoluciones": row("Devoluciones y garantía",
+                                     "<p>Tienes 14 días desde que lo recibes para devolverlo: escríbenos "
+                                     "y te explicamos cómo.</p><p>Las piezas personalizadas (con nombre o "
+                                     "grabado) no admiten devolución porque se hacen solo para ti. Si llegan "
+                                     "con un defecto o un error nuestro, las rehacemos.</p>"
+                                     "<p>Todas tienen la garantía legal de 3 años.</p>"),
+                        "cuidados": row("Cuidados",
+                                     "<p>Ponte el perfume y la crema antes que la pieza, quítatela para hacer "
+                                     "deporte y guárdala en su caja cuando no la lleves.</p>"),
+                    },
+                    "block_order": ["descripcion", "medida", "agua", "envio", "devoluciones", "cuidados"]},
+            },
+            "block_order": ["titulo", "precio", "linea", "ventajas", "variantes", "comprar", "oferta",
+                            "detalles"]},
+    },
+    "block_order": [],
+    "custom_css": [PRODUCT_CSS],
+    "settings": {
+        "content_width": "content-center-aligned", "desktop_media_position": "left",
+        "equal_columns": False, "limit_details_width": True, "gap": 48,
+        "enable_sticky_add_to_cart": True, "background_color": BG,
+        "padding-block-start": 16, "padding-block-end": 48},
+}
 
 product = {
     "sections": {
-        "main": {
-            "type": "product-information",
-            "blocks": {
-                "media-gallery": {"type": "_product-media-gallery", "static": True, "settings": {
-                    "media_presentation": "carousel", "icons_style": "arrow",
-                    "slideshow_controls_style": "thumbnails", "slideshow_mobile_controls_style": "dots",
-                    "thumbnail_position": "bottom", "thumbnail_width": 56, "thumbnail_radius": 0,
-                    "aspect_ratio": "1/1.25", "media_radius": 0, "extend_media": False,
-                    "zoom": True, "hide_variants": True}, "blocks": {}},
-                "product-details": {"type": "_product-details", "static": True, "settings": {
-                    "gap": 24, "sticky_details_desktop": True,
-                    "padding-block-start": 24, "padding-block-end": 24},
-                    "blocks": {
-                        "cabecera": group({
-                            "titulo": text_block("<h1>{{ closest.product.title }}</h1>", "h2"),
-                            "precio": {"type": "price", "settings": {
-                                "show_sale_price_first": True, "show_installments": False,
-                                "show_tax_info": False, "type_preset": "paragraph"}, "blocks": {}},
-                        }, align="flex-start", gap=10),
-                        "variantes": {"type": "variant-picker", "settings": {
-                            "variant_style": "buttons", "show_swatches": True}, "blocks": {}},
-                        "comprar": {"type": "buy-buttons", "settings": {"stacking": True,
-                            "show_pickup_availability": False, "gift_card_form": True},
-                            "blocks": {
-                                "quantity": {"type": "quantity", "static": True, "settings": {
-                                    "border_width": 1, "border_radius": 0}, "blocks": {}},
-                                "add-to-cart": {"type": "add-to-cart", "static": True, "settings": {
-                                    "style_class": "button"}, "blocks": {}},
-                                "accelerated-checkout": {"type": "accelerated-checkout", "static": True,
-                                    "settings": {}, "blocks": {}},
-                            }, "block_order": []},
-                        "garantias": text_block(
-                            "<ul><li>Envío gratis a península, con seguimiento</li>"
-                            "<li>Devolución en 14 días · garantía legal de 3 años</li>"
-                            "<li>Pago con tarjeta, Apple Pay o Google Pay</li></ul>", "rte"),
-                        "descripcion": text_block("{{ closest.product.description }}", "rte"),
-                        "detalles": {"type": "accordion", "settings": {
-                            "icon": "plus", "dividers": True, "divider_color": C2, "type_preset": "h6"},
-                            "blocks": {
-                                "envio": row("Envío", "<p>Gratis a península, con número de seguimiento por email. "
-                                             "Plazo de entrega: [PLAZO] días laborables.</p>"
-                                             "<p>Por ahora no enviamos a Canarias, Ceuta ni Melilla.</p>"),
-                                "devoluciones": row("Devoluciones y garantía",
-                                             "<p>Tienes 14 días desde que lo recibes para devolverlo: escríbenos "
-                                             "y te explicamos cómo.</p><p>Las piezas personalizadas (con nombre o "
-                                             "grabado) no admiten devolución porque se hacen solo para ti. Si llegan "
-                                             "con un defecto o un error nuestro, las rehacemos.</p>"
-                                             "<p>Todas tienen la garantía legal de 3 años.</p>"),
-                                "cuidados": row("Cuidados",
-                                             "<p>Quítatelo para lavarte las manos, ducharte, nadar o hacer deporte. "
-                                             "Ponte el perfume y la crema antes que la pieza, y guárdala en su caja "
-                                             "cuando no la lleves.</p>"),
-                            },
-                            "block_order": ["envio", "devoluciones", "cuidados"]},
-                    },
-                    "block_order": ["cabecera", "variantes", "comprar", "garantias", "descripcion", "detalles"]},
-            },
-            "block_order": [],
-            "custom_css": [PRODUCT_CSS],
-            "settings": {
-                "content_width": "content-center-aligned", "desktop_media_position": "left",
-                "equal_columns": True, "limit_details_width": True, "gap": 48,
-                "enable_sticky_add_to_cart": True, "background_color": BG,
-                "padding-block-start": 24, "padding-block-end": 48},
-        },
+        "migas": migas,
+        "main": ficha,
         "recomendados": {
             "type": "product-recommendations",
             "blocks": {
@@ -375,13 +510,14 @@ product = {
                 "padding-block-start": 48, "padding-block-end": 64},
         },
     },
-    "order": ["main", "recomendados"],
+    "order": ["migas", "main", "recomendados"],
 }
 (OUT / "product.json").write_text(json.dumps(product, ensure_ascii=False, indent=2), encoding="utf8")
 
 # Copia en tema/tienda/ (el tema publicado bajado con `shopify theme pull`, fuera de git) para subirlo con la CLI
 TIENDA = OUT / "tienda"
-DESTINO = {"settings_data.json": "config", "header-group.json": "sections", "footer-group.json": "sections",
+# password.json no lo genera build.py: es la plantilla del tema con los textos en español
+DESTINO = {"password.json": "templates", "settings_data.json": "config", "header-group.json": "sections", "footer-group.json": "sections",
            "index.json": "templates", "product.json": "templates"}
 if TIENDA.exists():
     for nombre, carpeta in DESTINO.items():

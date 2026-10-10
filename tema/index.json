@@ -79,6 +79,140 @@
         "padding-block-end": 64
       }
     },
+    "destacado": {
+      "type": "featured-product-information",
+      "blocks": {
+        "media-gallery": {
+          "type": "_featured-product-information-carousel",
+          "static": true,
+          "settings": {
+            "constrain_to_viewport": true,
+            "media_fit": "cover",
+            "media_radius": 0,
+            "extend_media": false,
+            "hide_variants": true,
+            "slideshow_controls_style": "thumbnails",
+            "slideshow_mobile_controls_style": "dots",
+            "thumbnail_position": "bottom",
+            "thumbnail_width": 56
+          },
+          "blocks": {}
+        },
+        "product-details": {
+          "type": "_product-details",
+          "static": true,
+          "settings": {
+            "gap": 24,
+            "sticky_details_desktop": false,
+            "padding-block-start": 24,
+            "padding-block-end": 24
+          },
+          "blocks": {
+            "cabecera": {
+              "type": "group",
+              "settings": {
+                "content_direction": "column",
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "gap": 10,
+                "width": "fill"
+              },
+              "blocks": {
+                "titulo": {
+                  "type": "product-title",
+                  "settings": {
+                    "type_preset": "h2"
+                  },
+                  "blocks": {}
+                },
+                "precio": {
+                  "type": "price",
+                  "settings": {
+                    "show_sale_price_first": true,
+                    "show_installments": false,
+                    "show_tax_info": false,
+                    "type_preset": "paragraph"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "titulo",
+                "precio"
+              ]
+            },
+            "variantes": {
+              "type": "variant-picker",
+              "settings": {
+                "variant_style": "buttons",
+                "show_swatches": true
+              },
+              "blocks": {}
+            },
+            "comprar": {
+              "type": "buy-buttons",
+              "settings": {
+                "stacking": true,
+                "show_pickup_availability": false
+              },
+              "blocks": {
+                "quantity": {
+                  "type": "quantity",
+                  "static": true,
+                  "settings": {
+                    "border_width": 1,
+                    "border_radius": 0
+                  },
+                  "blocks": {}
+                },
+                "add-to-cart": {
+                  "type": "add-to-cart",
+                  "static": true,
+                  "settings": {
+                    "style_class": "button"
+                  },
+                  "blocks": {}
+                },
+                "accelerated-checkout": {
+                  "type": "accelerated-checkout",
+                  "static": true,
+                  "settings": {},
+                  "blocks": {}
+                }
+              },
+              "block_order": []
+            },
+            "ver_ficha": {
+              "type": "button",
+              "settings": {
+                "label": "Ver la pieza",
+                "link": "{{ closest.product.url }}",
+                "style_class": "link",
+                "width": "fit-content"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "cabecera",
+            "variantes",
+            "comprar",
+            "ver_ficha"
+          ]
+        }
+      },
+      "block_order": [],
+      "settings": {
+        "product": "reloj-luna-noir",
+        "content_width": "content-center-aligned",
+        "desktop_media_position": "left",
+        "equal_columns": true,
+        "limit_details_width": true,
+        "gap": 48,
+        "background_color": "{{ settings.color_palette.background }}",
+        "padding-block-start": 56,
+        "padding-block-end": 24
+      }
+    },
     "piezas": {
       "type": "product-list",
       "blocks": {
@@ -379,6 +513,7 @@
     }
   },
   "order": [
+    "destacado",
     "portada",
     "piezas",
     "promesas"

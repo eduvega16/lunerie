@@ -1,6 +1,7 @@
 # Lunerie · tienda online de regalos para ella
 
-> **Cómo usar este fichero:** es el `CLAUDE.md` de la carpeta de la tienda (`C:\Users\edu\lunerie`); Claude Code lo
+> **Cómo usar este fichero:** es el `CLAUDE.md` de la carpeta de la tienda (repo git en 2 PCs:
+> `C:\Users\edu\lunerie` y `D:\LUNERIE`; `git pull` al empezar, `git push` al terminar); Claude Code lo
 > lee solo al abrirla. Actualízalo al final de cada sesión (apartados 6 "Montaje" y 8 "Pendientes").
 > Creado el 7-oct-2026 a partir de las sesiones del radar (`D:\aura-ai-portfolio\projects\05_producto_ganador\contexto\`).
 
@@ -18,6 +19,9 @@
 - En **español**, sencillo, paso a paso. Es una **brújula práctica**: acciones concretas; los riesgos en una línea y él decide.
 - No pedir ni guardar datos personales (dirección, teléfono, NIF): en textos legales dejar huecos `[NIF]`, `[DIRECCIÓN]`.
 - Claude **no puede abrir fichas de AliExpress** (captcha, no se fuerza) ni Amazon: Edu manda capturas.
+- **Regla fija: ejecutar siempre los comandos dentro de VS Code** (los largos en segundo plano, vigilados con su log o
+  `curl`). **Nunca abrir ventanas de terminal** (`Start-Process powershell` y similares). Si algo exige login en el
+  navegador, avisar antes y buscar primero la variante sin interacción.
 
 ---
 
@@ -136,7 +140,8 @@ gafas con cámara IA (69,95-79,95 €) · descartados: micro-infusión, paddle s
 - [x] Tema **"Lunerie · marca"** (id 208665149779) **publicado por Edu el 8-oct**.
 - **Cómo se cambia el tema publicado: con Shopify CLI** (v4.9; tienda `qjxvnn-xq.myshopify.com`). El conector de
   Shopify de claude.ai **no** puede escribir en el tema publicado ni publicar (solo en temas sin publicar); la CLI sí.
-  - **Login (hecho en este PC el 8-oct):** la CLI no hace login sin terminal interactiva, así que Claude abre una
+  - **Login hecho en los dos PCs** (`C:\Users\edu\lunerie` el 8-oct, `D:\LUNERIE` el 9-oct, CLI 4.8.4; allí tenía
+    sesión de otra cuenta → `shopify auth logout` antes). La CLI no hace login sin terminal interactiva, así que Claude abre una
     ventana: `Start-Process powershell -ArgumentList '-NoExit','-Command','shopify theme list --store qjxvnn-xq.myshopify.com'`
     y Edu entra en el navegador con la cuenta de Lunerie (si pregunta cuenta: «Log in with a different account»; las
     otras guardadas son Koco Essence y Star Brick). Lo mismo con `git push` si GitHub pide login: lanzarlo con
@@ -148,6 +153,15 @@ gafas con cámara IA (69,95-79,95 €) · descartados: micro-infusión, paddle s
     `shopify theme push --store qjxvnn-xq.myshopify.com --theme 208665149779 --path tema/tienda --allow-live --only <ficheros>`.
   - Mientras la tienda tenga contraseña, cambiar el publicado directamente no tiene riesgo. Con la tienda abierta,
     los cambios grandes se prueban antes en un tema sin publicar (`shopify theme push --unpublished`) y Edu lo publica.
+  - **Vista previa local:** `shopify theme dev --store qjxvnn-xq.myshopify.com --path tema/tienda` →
+    http://127.0.0.1:9292 (recarga sola al cambiar ficheros de `tema/tienda/`, sin tocar la tienda). **Edu no quiere
+    ventanas de terminal:** Claude la lanza en segundo plano desde VS Code (Bash con `run_in_background`):
+    `shopify theme dev --store qjxvnn-xq.myshopify.com --path tema/tienda --store-password "$(cat .claude/store-password)" 2>&1 | tee .claude/theme-dev.log`.
+    La contraseña de la tienda está en `.claude/store-password` (fuera de git; Edu la dio el 10-oct; en el otro PC
+    hay que crear ese fichero). Claude ve si arrancó con `curl http://127.0.0.1:9292` y el log `.claude/theme-dev.log`.
+    Crea un tema de desarrollo oculto en Shopify (no se publica). Capturas de pantalla para revisar: Chrome headless
+    (`chrome --headless=new --user-data-dir=<temporal> --window-size=1440,2600 --screenshot=… <url>`; Edge se cuelga).
+    Ojo: lo que se cambie en `tema/tienda/` a mano se pierde al ejecutar `build.py` si toca esos 5 JSON.
 - [~] Tema y marca (apartado 3): copia **"Lunerie · marca"** del tema Horizon (id 208665149779) con
       colores, Cormorant + Jost ligera, botones verdes rectos en mayúsculas, logo de texto espaciado y centrado, barra
       verde «Envío gratis a península · Devolución en 14 días» (sin prometer el ajuste de muñeca) y pie en español con
@@ -155,6 +169,16 @@ gafas con cámara IA (69,95-79,95 €) · descartados: micro-infusión, paddle s
       envío / 14 días / garantía) y **ficha de producto** como la maqueta (fotos 4:5 en carrusel con miniaturas, título
       en Cormorant, garantías con puntos dorados, desplegables Envío / Devoluciones y garantía / Cuidados) · menú
       principal «Piezas · Contacto» (el menú es de la tienda, no del tema).
+      **10-oct (subido a producción):** ficha con la estructura de Calné en versión verdadera — migas · título ·
+      precio · línea · 4 ventajas (punto dorado «Para Navidad, pídelo antes del 1 de diciembre» [fecha a confirmar
+      con el plazo real] · pila puesta y caja de regalo · envío gratis · 3 años + 14 días) · color · botón ancho sin
+      selector de cantidad · caja «Segundo reloj por 19,95 €» (niebla con borde oro; **crear ese descuento antes de
+      abrir**) · desplegables Descripción / Ajustar la correa / ¿Se puede mojar? / Envío / Devoluciones y garantía /
+      Cuidados · galería ancha (columnas desiguales). La ficha es **la misma para todos los productos**: el collar
+      necesitará su plantilla (`product.collar.json`). Inicio: arriba la pieza destacada `reloj-luna-noir` (producto
+      de prueba de Edu: 195 € con tachado 245 €, sin stock, primer medio un vídeo) con ficha completa. Página de
+      contraseña en español («Muy pronto… Avisarme», `tema/password.json`). NO copiar de Calné: tachado inventado,
+      «stock limitado», «solo hoy», «100 % waterproof», 2 años / 100 días.
       Falta: favicon, foto de portada cuando haya muestras (editor → Portada → Fondo → Imagen) y cambiar **[PLAZO]** en el desplegable
       Envío. Ficheros fuente: `tema/` (`build.py` genera los JSON que se suben a la copia del tema; Shopify no acepta
       `content:` en el CSS personalizado ni `gap` > 48).
@@ -174,10 +198,14 @@ Meta Ads, ABO: 3 conjuntos (1 ángulo cada uno) × 10 €/día × 3 días = 90 �
 KILL si gastas 1× CPA BE sin carritos o 2× sin ventas · ESCALAR con ≥ 3 ventas a ≤ 70 % del CPA BE ·
 alertas si CTR < 1 % o CPC > 0,90 €. Máximo 2 productos en test a la vez.
 
-## 8. Pendientes (a 7-oct-2026, fin de la sesión 1 en esta carpeta)
+## 8. Pendientes (a 10-oct-2026)
 1. ~~Publicar el tema~~ (hecho el 8-oct). Login de Shopify CLI y de GitHub hechos en este PC. Pendiente: el plazo de envío para cambiar **[PLAZO]** (desplegable Envío).
-2. Siguiente con Claude: **políticas y páginas legales**, creadas directamente en Shopify (solo existe la página Contacto).
-   Después: crear el reloj Lune como borrador a partir de `landing.md` del radar.
+2. **Siguiente con Claude (necesita el conector de Shopify reconectado): políticas y páginas legales**, creadas
+   directamente en Shopify (solo existe la página Contacto). Después: crear el reloj Lune (`reloj-lune`, 44,95 €,
+   3 variantes) a partir de `landing.md` del radar con las fotos provisionales de `tema/fotos_prueba.py`, y anclarlo
+   en el inicio en vez de `reloj-luna-noir` (cambiar `"product"` en la sección `destacado` de `build.py`).
+   **Edu, en el admin:** Shopify Payments + PayPal (empezar ya: tarda en aprobarse) · envíos + Baleares · foto como
+   primer medio del producto · formato de precio «195,00 €» (Configuración → General → Moneda) · @lunerie en redes.
 3. Escribir a Alibaba (reloj): precio DDP exprés para 20 y 50 uds (mensaje en la sesión 07-oct del radar). No corre
    prisa: el test va con AliExpress; sirve para preparar el paso a stock propio + packaging.
 4. Pedir presupuesto de packaging Lunerie (caja, tarjeta, bolsa) para meterlo en las cuentas del stock propio.

@@ -1,5 +1,47 @@
 {
   "sections": {
+    "migas": {
+      "type": "section",
+      "blocks": {
+        "migas": {
+          "type": "text",
+          "settings": {
+            "text": "<p><a href=\"/\">Inicio</a> › {{ closest.product.title }}</p>",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "paragraph",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "migas"
+      ],
+      "custom_css": [
+        ".text-block p { font-size: 0.75rem; letter-spacing: 0.04em; } .text-block a { color: inherit; text-decoration: none; }"
+      ],
+      "settings": {
+        "content_direction": "column",
+        "section_width": "page-width",
+        "gap": 0,
+        "padding-block-start": 20,
+        "padding-block-end": 0
+      }
+    },
     "main": {
       "type": "product-information",
       "blocks": {
@@ -12,13 +54,13 @@
             "slideshow_controls_style": "thumbnails",
             "slideshow_mobile_controls_style": "dots",
             "thumbnail_position": "bottom",
-            "thumbnail_width": 56,
+            "thumbnail_width": 60,
             "thumbnail_radius": 0,
             "aspect_ratio": "1/1.25",
             "media_radius": 0,
             "extend_media": false,
             "zoom": true,
-            "hide_variants": true
+            "hide_variants": false
           },
           "blocks": {}
         },
@@ -26,59 +68,273 @@
           "type": "_product-details",
           "static": true,
           "settings": {
-            "gap": 24,
+            "gap": 20,
             "sticky_details_desktop": true,
-            "padding-block-start": 24,
+            "padding-block-start": 8,
             "padding-block-end": 24
           },
           "blocks": {
-            "cabecera": {
+            "titulo": {
+              "type": "product-title",
+              "settings": {
+                "type_preset": "h3",
+                "width": "100%"
+              },
+              "blocks": {}
+            },
+            "precio": {
+              "type": "price",
+              "settings": {
+                "show_sale_price_first": true,
+                "show_installments": false,
+                "show_tax_info": false,
+                "type_preset": "custom",
+                "font_size": "1.125rem",
+                "width": "100%"
+              },
+              "blocks": {}
+            },
+            "linea": {
+              "type": "_divider",
+              "settings": {
+                "thickness": 1,
+                "divider_color": "{{ settings.color_palette.color2 }}",
+                "padding-block-start": 4,
+                "padding-block-end": 4
+              },
+              "blocks": {}
+            },
+            "ventajas": {
               "type": "group",
               "settings": {
                 "content_direction": "column",
-                "horizontal_alignment_flex_direction_column": "flex-start",
-                "gap": 10,
+                "gap": 12,
                 "width": "fill"
               },
               "blocks": {
-                "titulo": {
-                  "type": "text",
+                "navidad": {
+                  "type": "group",
                   "settings": {
-                    "text": "<h1>{{ closest.product.title }}</h1>",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "h2",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
+                    "content_direction": "row",
+                    "vertical_on_mobile": false,
+                    "horizontal_alignment": "flex-start",
+                    "vertical_alignment": "center",
+                    "gap": 10,
+                    "width": "fill",
+                    "padding-inline-start": 4
                   },
-                  "blocks": {}
+                  "blocks": {
+                    "punto": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>●</p>",
+                        "width": "fit-content",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "custom",
+                        "font": "var(--font-body--family)",
+                        "font_size": "0.625rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0,
+                        "text_color": "#A6834A"
+                      },
+                      "blocks": {}
+                    },
+                    "texto": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Para Navidad, pídelo antes del 1 de diciembre</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "custom",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "punto",
+                    "texto"
+                  ]
                 },
-                "precio": {
-                  "type": "price",
+                "pila": {
+                  "type": "group",
                   "settings": {
-                    "show_sale_price_first": true,
-                    "show_installments": false,
-                    "show_tax_info": false,
-                    "type_preset": "paragraph"
+                    "content_direction": "row",
+                    "vertical_on_mobile": false,
+                    "horizontal_alignment": "flex-start",
+                    "vertical_alignment": "center",
+                    "gap": 12,
+                    "width": "fill"
                   },
-                  "blocks": {}
+                  "blocks": {
+                    "icono": {
+                      "type": "icon",
+                      "settings": {
+                        "icon": "stopwatch",
+                        "width": 18,
+                        "icon_color": "#16201B"
+                      },
+                      "blocks": {}
+                    },
+                    "texto": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Llega con la pila puesta y en su caja de regalo</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "custom",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "icono",
+                    "texto"
+                  ]
+                },
+                "envio": {
+                  "type": "group",
+                  "settings": {
+                    "content_direction": "row",
+                    "vertical_on_mobile": false,
+                    "horizontal_alignment": "flex-start",
+                    "vertical_alignment": "center",
+                    "gap": 12,
+                    "width": "fill"
+                  },
+                  "blocks": {
+                    "icono": {
+                      "type": "icon",
+                      "settings": {
+                        "icon": "truck",
+                        "width": 18,
+                        "icon_color": "#16201B"
+                      },
+                      "blocks": {}
+                    },
+                    "texto": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Envío gratis a península, con seguimiento</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "custom",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "icono",
+                    "texto"
+                  ]
+                },
+                "garantia": {
+                  "type": "group",
+                  "settings": {
+                    "content_direction": "row",
+                    "vertical_on_mobile": false,
+                    "horizontal_alignment": "flex-start",
+                    "vertical_alignment": "center",
+                    "gap": 12,
+                    "width": "fill"
+                  },
+                  "blocks": {
+                    "icono": {
+                      "type": "icon",
+                      "settings": {
+                        "icon": "star",
+                        "width": 18,
+                        "icon_color": "#16201B"
+                      },
+                      "blocks": {}
+                    },
+                    "texto": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Garantía de 3 años + 14 días para devolverlo</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "custom",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "icono",
+                    "texto"
+                  ]
                 }
               },
               "block_order": [
-                "titulo",
-                "precio"
+                "navidad",
+                "pila",
+                "envio",
+                "garantia"
               ]
             },
             "variantes": {
@@ -123,53 +379,75 @@
               },
               "block_order": []
             },
-            "garantias": {
-              "type": "text",
+            "oferta": {
+              "type": "group",
               "settings": {
-                "text": "<ul><li>Envío gratis a península, con seguimiento</li><li>Devolución en 14 días · garantía legal de 3 años</li><li>Pago con tarjeta, Apple Pay o Google Pay</li></ul>",
-                "width": "100%",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
+                "content_direction": "column",
+                "gap": 6,
+                "width": "fill",
+                "background_color": "#F2F4F2",
+                "border": "solid",
+                "border_width": 1,
+                "border_color": "#A6834A",
+                "padding-block-start": 18,
+                "padding-block-end": 18,
+                "padding-inline-start": 20,
+                "padding-inline-end": 20
               },
-              "blocks": {}
-            },
-            "descripcion": {
-              "type": "text",
-              "settings": {
-                "text": "{{ closest.product.description }}",
-                "width": "100%",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
+              "blocks": {
+                "t": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p><strong>Segundo reloj por 19,95 €</strong></p>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "paragraph",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
+                "p": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Añade dos a la cesta: el descuento se aplica solo al pagar. Uno para ti y otro para regalar.</p>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "paragraph",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
               },
-              "blocks": {}
+              "block_order": [
+                "t",
+                "p"
+              ]
             },
             "detalles": {
               "type": "accordion",
@@ -180,11 +458,107 @@
                 "type_preset": "h6"
               },
               "blocks": {
+                "descripcion": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "Descripción",
+                    "icon": "none",
+                    "open_by_default": false
+                  },
+                  "blocks": {
+                    "texto": {
+                      "type": "product-description",
+                      "settings": {
+                        "width": "100%",
+                        "type_preset": "rte"
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "texto"
+                  ]
+                },
+                "medida": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "Ajustar la correa",
+                    "icon": "none",
+                    "open_by_default": false
+                  },
+                  "blocks": {
+                    "texto": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>La correa mide 18 cm. Si tu muñeca es más fina (menos de 16 cm), quita uno o dos eslabones con el extractor que va en la caja: son 2 minutos.</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "texto"
+                  ]
+                },
+                "agua": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "¿Se puede mojar?",
+                    "icon": "none",
+                    "open_by_default": false
+                  },
+                  "blocks": {
+                    "texto": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>No. No es sumergible: quítatelo para lavarte las manos, ducharte o nadar. Una gota de lluvia no le pasa nada.</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "texto"
+                  ]
+                },
                 "envio": {
                   "type": "_accordion-row",
                   "settings": {
                     "heading": "Envío",
-                    "icon": "none"
+                    "icon": "none",
+                    "open_by_default": false
                   },
                   "blocks": {
                     "texto": {
@@ -220,7 +594,8 @@
                   "type": "_accordion-row",
                   "settings": {
                     "heading": "Devoluciones y garantía",
-                    "icon": "none"
+                    "icon": "none",
+                    "open_by_default": false
                   },
                   "blocks": {
                     "texto": {
@@ -256,13 +631,14 @@
                   "type": "_accordion-row",
                   "settings": {
                     "heading": "Cuidados",
-                    "icon": "none"
+                    "icon": "none",
+                    "open_by_default": false
                   },
                   "blocks": {
                     "texto": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Quítatelo para lavarte las manos, ducharte, nadar o hacer deporte. Ponte el perfume y la crema antes que la pieza, y guárdala en su caja cuando no la lleves.</p>",
+                        "text": "<p>Ponte el perfume y la crema antes que la pieza, quítatela para hacer deporte y guárdala en su caja cuando no la lleves.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -290,6 +666,9 @@
                 }
               },
               "block_order": [
+                "descripcion",
+                "medida",
+                "agua",
                 "envio",
                 "devoluciones",
                 "cuidados"
@@ -297,28 +676,30 @@
             }
           },
           "block_order": [
-            "cabecera",
+            "titulo",
+            "precio",
+            "linea",
+            "ventajas",
             "variantes",
             "comprar",
-            "garantias",
-            "descripcion",
+            "oferta",
             "detalles"
           ]
         }
       },
       "block_order": [],
       "custom_css": [
-        "ul { padding-inline-start: 1.1em; } ul li::marker { color: #A6834A; }"
+        "ul { padding-inline-start: 1.1em; } ul li::marker { color: #A6834A; } .quantity-selector-wrapper { display: none; }"
       ],
       "settings": {
         "content_width": "content-center-aligned",
         "desktop_media_position": "left",
-        "equal_columns": true,
+        "equal_columns": false,
         "limit_details_width": true,
         "gap": 48,
         "enable_sticky_add_to_cart": true,
         "background_color": "{{ settings.color_palette.background }}",
-        "padding-block-start": 24,
+        "padding-block-start": 16,
         "padding-block-end": 48
       }
     },
@@ -406,6 +787,7 @@
     }
   },
   "order": [
+    "migas",
     "main",
     "recomendados"
   ]

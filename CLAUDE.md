@@ -59,8 +59,10 @@
 
 ## 4. Reglas legales y de negocio (España)
 - Precios **con IVA incluido** (21 %). Envío gratis a península (Canarias/Ceuta/Melilla fuera al principio: aduana).
-  **Baleares: por decidir** (gratis, con coste o fuera); la barra dice «península», así que hay que dejarlo claro
-  en la página de Envíos.
+  **Baleares: sí, con un pequeño coste de envío** (decidido el 12-oct; importe por fijar), ya explicado en la página
+  de Envíos.
+- **Devoluciones (12-oct):** por desistimiento, el envío de vuelta lo paga el cliente; si llega roto, defectuoso o
+  equivocado, Lunerie. Datos personales del titular: solo en Shopify (aviso legal), nunca en el repositorio.
 - **Sin precios tachados inventados:** el precio tachado tiene que ser el **más bajo** que tuvo el producto en los
   30 días anteriores a la rebaja (no vale uno cualquiera de esos 30 días). El ahorro se cuenta con packs ("2.º por X €").
 - **Devolución 14 días** (desistimiento) · **garantía legal 3 años** (no poner 2 años como hacen tiendas de fuera).
@@ -244,7 +246,33 @@ Meta Ads, ABO: 3 conjuntos (1 ángulo cada uno) × 10 €/día × 3 días = 90 �
 KILL si gastas 1× CPA BE sin carritos o 2× sin ventas · ESCALAR con ≥ 3 ventas a ≤ 70 % del CPA BE ·
 alertas si CTR < 1 % o CPC > 0,90 €. Máximo 2 productos en test a la vez.
 
-## 8. Calendario y pendientes (a 12-oct-2026)
+## 8. Calendario y pendientes (a 13-oct-2026)
+
+### Para empezar la próxima sesión
+- **Al abrir:** `git pull`. Shopify: el conector de claude.ai puede no cargar → usar `shopify store execute`
+  (apartado 6); tema publicado = **209073799507**.
+- **Esperando a Edu:**
+  1. Desactivar la **gestión automática de la política de privacidad** (Configuración → Políticas): la automática
+     muestra su dirección completa. Después Claude sube `legal/privacidad.md` con `legal/subir.py`.
+  2. **Dirección comercial / oficina virtual** (10-30 €/mes; darla de alta en Hacienda, 036/037) → Claude la pone en
+     todos los textos y Edu en Configuración → General. Ahora los textos solo dicen «41940 Tomares (Sevilla)»:
+     el aviso legal está incompleto hasta entonces (tiene que estar antes de abrir).
+  3. **Plazo de envío** → quitar [PLAZO] de envíos, FAQ y ficha del reloj (`build.py`).
+  4. Envíos en el admin: península gratis + **Baleares con coste** (¿3,95 €?) · @lunerie en Instagram/TikTok con
+     `marca/logos/oficial-avatar-redes.png` · página de Facebook + cuenta publicitaria de Meta.
+- **Siguiente con Claude:** cookies · app Facebook & Instagram + píxel · revisar la ficha del reloj con `landing.md`
+  · fotos del proveedor en 4:5 (si Edu las pasa) · anuncios cuando lleguen las muestras.
+
+### Resumen de la sesión 12-13 oct
+- Horizon actualizado a 1.0.5 por Edu → **copia nueva con otro id** (209073799507); se conservó todo; ids
+  cambiados aquí y `tema/tienda/` vuelto a bajar.
+- Shopify CLI ahora también hace de Admin API (`shopify store execute`, permisos dados por Edu).
+- Borrado el producto de prueba «Reloj Luna Noir». Cobros activados por Edu.
+- **Legales subidos a Shopify** con `legal/subir.py` (datos personales solo al ejecutar, nunca en git):
+  devolución por desistimiento la paga el cliente; roto/defectuoso/equivocado, Lunerie; personalizados sin
+  devolución salvo defecto; Baleares con un pequeño coste.
+- **Logos** (`marca/`): logo LUNERIE + monograma oficial (L cursiva + destello, verde) → favicon puesto.
+- Calendario hasta Navidad/Reyes (abajo). Fotos de Calné: Edu asume el riesgo; mejor las del proveedor.
 **Objetivo: tienda abierta y test del reloj en marcha el lunes 26-oct (como muy tarde el 2-nov)**, para decidir
 antes del 9-nov y llegar a Black Friday (27-30 nov) con un producto validado. Fechas límite: Navidad ~4-dic
 (AliExpress, ~2 semanas; afinar con el plazo real) · Reyes ~18-dic · después, tarjeta regalo.
@@ -261,9 +289,8 @@ antes del 9-nov y llegar a Black Friday (27-30 nov) con un producto validado. Fe
 1. ~~Publicar el tema~~ (8-oct). ~~Cobros~~ (12-oct). Login de Shopify CLI y de GitHub hechos en este PC. Pendiente:
    el plazo de envío para cambiar **[PLAZO]** (desplegable Envío).
 2. ~~Políticas y páginas legales~~ **subidas el 12-oct** con `legal/subir.py` (aviso legal, devoluciones, envíos,
-   términos, contacto + páginas Envíos y Preguntas frecuentes). Falta: **[PLAZO]** (en envíos, FAQ y la ficha) →
-   cambiar y volver a subir · número de la calle en la dirección (Edu la dio sin número) · privacidad: Shopify la
-   gestiona sola (se deja así, o Edu desactiva la gestión automática y se sube `privacidad.md`).
+   términos, contacto + páginas Envíos y Preguntas frecuentes). Falta: [PLAZO], dirección comercial y privacidad
+   (ver «Para empezar la próxima sesión»).
    **Edu, en el admin:** envíos (península gratis + Baleares con coste) · foto como primer medio del producto · formato de precio «44,95 €»
    (Configuración → General → Moneda) · @lunerie en redes.
 3. Escribir a Alibaba (reloj): precio DDP exprés para 20 y 50 uds (mensaje en la sesión 07-oct del radar). No corre
@@ -272,7 +299,7 @@ antes del 9-nov y llegar a Black Friday (27-30 nov) con un producto validado. Fe
 5. Escribir a Yiwu Shangjie (collar) y pedir muestra "Lune"; pasar el enlace de la tienda de 63 €.
 6. Decidir lo del "ajustado a tu muñeca" (5.1). La tienda ya **no** lo promete en la barra; la página de marca
    (artifact) aún dice «Te lo enviamos ajustado a tu muñeca» → actualizarla cuando se decida.
-7. Decidir Baleares (apartado 4) antes de configurar los envíos.
+7. ~~Decidir Baleares~~ (12-oct: con un pequeño coste de envío; falta fijar el importe).
 8. Cuando lleguen las muestras: fotos y vídeos propios → anuncios → test del reloj.
 
 ## 9. Enlaces

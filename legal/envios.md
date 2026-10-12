@@ -3,7 +3,7 @@
 ## A dónde enviamos
 
 - **España peninsular:** envío **gratis**.
-- **Baleares:** [BALEARES].
+- **Baleares:** sí enviamos, con un pequeño coste de envío que verás antes de pagar.
 - **Canarias, Ceuta y Melilla:** por ahora no enviamos (tienen aduana y no queremos que te lleguen cargos por
   sorpresa).
 

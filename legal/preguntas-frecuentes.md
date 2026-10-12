@@ -9,7 +9,8 @@
 Si lo pides antes del 1 de diciembre, sí. Si vas justa, escríbenos antes de comprar y te decimos si llega.
 
 **¿El envío es gratis?**
-Sí, a península. Baleares: [BALEARES]. Por ahora no enviamos a Canarias, Ceuta ni Melilla.
+Sí, a península. A Baleares también enviamos, con un pequeño coste que verás antes de pagar. Por ahora no enviamos
+a Canarias, Ceuta ni Melilla.
 
 **¿Llega envuelto para regalar?**
 Cada pieza viaja en su caja de regalo.
@@ -39,8 +40,9 @@ diario y para regalar.
 ## Devoluciones y garantía
 
 **¿Puedo devolverlo si no le gusta?**
-Sí, tienes 14 días desde que lo recibes. Escríbenos y te explicamos cómo. Las piezas personalizadas (con nombre o
-grabado) no se pueden devolver, salvo que lleguen con un defecto.
+Sí, tienes 14 días desde que lo recibes. Escríbenos y te explicamos cómo; el envío de vuelta corre de tu cuenta.
+Las piezas personalizadas (con nombre o grabado) no se pueden devolver, salvo que lleguen con un defecto: entonces
+las rehacemos y el envío lo pagamos nosotros.
 
 **¿Y si se estropea?**
 Tiene 3 años de garantía legal. Escríbenos con una foto y lo arreglamos, lo cambiamos o te devolvemos el dinero.

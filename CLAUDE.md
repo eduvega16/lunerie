@@ -255,10 +255,11 @@ antes del 9-nov y llegar a Black Friday (27-30 nov) con un producto validado. Fe
 
 1. ~~Publicar el tema~~ (8-oct). ~~Cobros~~ (12-oct). Login de Shopify CLI y de GitHub hechos en este PC. Pendiente:
    el plazo de envío para cambiar **[PLAZO]** (desplegable Envío).
-2. **Siguiente con Claude: políticas y páginas legales** (con la CLI, ver apartado 6). Borradores
-   ya escritos en `legal/` (10-oct; huecos en `legal/README.md`: [NOMBRE], [NIF], [DIRECCIÓN], [PLAZO], [BALEARES],
-   quién paga la devolución). Falta que Edu pase los datos y crearlas en Shopify (existen Contacto y Preguntas frecuentes).
-   **Edu, en el admin:** envíos + Baleares · foto como primer medio del producto · formato de precio «44,95 €»
+2. ~~Políticas y páginas legales~~ **subidas el 12-oct** con `legal/subir.py` (aviso legal, devoluciones, envíos,
+   términos, contacto + páginas Envíos y Preguntas frecuentes). Falta: **[PLAZO]** (en envíos, FAQ y la ficha) →
+   cambiar y volver a subir · número de la calle en la dirección (Edu la dio sin número) · privacidad: Shopify la
+   gestiona sola (se deja así, o Edu desactiva la gestión automática y se sube `privacidad.md`).
+   **Edu, en el admin:** envíos (península gratis + Baleares con coste) · foto como primer medio del producto · formato de precio «44,95 €»
    (Configuración → General → Moneda) · @lunerie en redes.
 3. Escribir a Alibaba (reloj): precio DDP exprés para 20 y 50 uds (mensaje en la sesión 07-oct del radar). No corre
    prisa: el test va con AliExpress; sirve para preparar el paso a stock propio + packaging.

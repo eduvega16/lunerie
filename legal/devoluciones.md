@@ -12,7 +12,8 @@ desistimiento, arts. 102 y siguientes de la Ley General para la Defensa de los C
 2. Te contestamos con la dirección de devolución: [DIRECCIÓN DE DEVOLUCIONES].
 3. Envía la pieza **en un plazo de 14 días** desde que nos avisas, en su caja y con todo lo que traía.
 
-**Gastos de envío de la devolución:** [QUIÉN PAGA LA DEVOLUCIÓN].
+**Gastos de envío de la devolución:** si lo devuelves porque no te convence, el envío de vuelta corre de tu cuenta.
+Si la pieza llega defectuosa, dañada o no es la que pediste, lo pagamos nosotros.
 
 **El reembolso:** te devolvemos el importe completo, incluido el envío inicial que hubieras pagado, como muy tarde
 **14 días después de saber que lo devuelves**, por el mismo medio de pago que usaste. Podemos esperar a recibir la

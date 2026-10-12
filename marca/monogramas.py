@@ -42,6 +42,25 @@ def luna(img, cx, cy, r, grosor, angulo, color):
     img.paste(Image.new("RGB", img.size, color), (0, 0), ImageChops.subtract(m1, m2))
 
 
+def destello(img, cx, cy, R, color, puntas=4, finura=3.0):
+    """Estrella de destello: astroide (lados curvos hacia dentro). finura 3 = clásica; más alto = más fina.
+    puntas=8 añade un segundo destello girado 45° y más corto (estrella polar)."""
+    import math
+    d = ImageDraw.Draw(img)
+    def astroide(r, giro):
+        pts = []
+        for i in range(720):
+            t = 2 * math.pi * i / 720
+            x = math.copysign(abs(math.cos(t)) ** finura, math.cos(t)) * r
+            y = math.copysign(abs(math.sin(t)) ** finura, math.sin(t)) * r
+            g = math.radians(giro)
+            pts.append((cx + x * math.cos(g) - y * math.sin(g), cy + x * math.sin(g) + y * math.cos(g)))
+        d.polygon(pts, fill=color)
+    astroide(R, 0)
+    if puntas == 8:  # puntas cortas en diagonal (a 0,5·R quedarían tapadas por la estrella grande)
+        astroide(R * 0.75, 45)
+
+
 def anillo(img, cx, cy, r, ancho, color):
     ImageDraw.Draw(img).ellipse([cx - r, cy - r, cx + r, cy + r], outline=color, width=int(ancho))
 
@@ -97,4 +116,49 @@ for i, n in enumerate(NOMBRES):
     hoja.paste(av.resize((32, 32), RES), (x + 120, y + 590))
     hoja.paste(av.resize((128, 128), RES), (x + 190, y + 590))
 hoja.save(OUT / "hoja-monogramas.png")
+
+
+# ---------- segunda ronda (12-oct): C7 en verde y versiones con estrella (destello de 4 puntas) ----------
+def ronda2(clave, L):
+    fondo, tinta = {"V": (VERDE, BLANCO), "N": (NIEBLA, TINTA), "T": (TINTA, NIEBLA)}[clave[-1]]
+    img = Image.new("RGB", (L, L), fondo)
+    c = L / 2
+    tipo = clave[:-1]
+    if tipo == "abrazo":
+        luna(img, c, c, L * 0.34, 0.16, 0, ORO)
+        letra(img, "L", c + L * 0.035, c, L * 0.36, tinta)
+    elif tipo == "destello":  # L + destello dorado arriba a la derecha
+        x0, y0, x1, y1 = letra(img, "L", c - L * 0.03, c + L * 0.02, L * 0.42, tinta)
+        destello(img, x1 - L * 0.01, y0 + L * 0.05, L * 0.075, ORO)
+    elif tipo == "polar":  # destello de 8 puntas
+        x0, y0, x1, y1 = letra(img, "L", c - L * 0.03, c + L * 0.02, L * 0.42, tinta)
+        destello(img, x1 - L * 0.01, y0 + L * 0.06, L * 0.085, ORO, puntas=8)
+    elif tipo == "cursiva":
+        x0, y0, x1, y1 = letra(img, "L", c - L * 0.03, c + L * 0.02, L * 0.44, tinta, 500, True)
+        destello(img, x1 + L * 0.01, y0 + L * 0.04, L * 0.07, ORO)
+    elif tipo == "pie":  # el destello hace de punto final: L✦
+        x0, y0, x1, y1 = letra(img, "L", c - L * 0.05, c, L * 0.42, tinta)
+        destello(img, x1 + L * 0.065, y1 - L * 0.045, L * 0.05, ORO)
+    elif tipo == "grande":  # destello grande y fino detrás, la L delante
+        destello(img, c, c, L * 0.36, ORO, finura=4.2)
+        letra(img, "L", c, c, L * 0.3, tinta)
+    return img
+
+
+R2 = {"abrazoV": "Abrazo verde", "destelloN": "Destello", "destelloV": "Destello verde",
+      "destelloT": "Destello oscuro", "polarV": "Polar verde", "cursivaV": "Cursiva verde",
+      "pieV": "Punto estrella verde", "grandeV": "Estrella grande verde"}
+for clave in R2:
+    ronda2(clave, 1080 * S).resize((1080, 1080), RES).save(OUT / f"{clave}-avatar.png")
+hoja = Image.new("RGB", (2400, 1780), BLANCO)
+d = ImageDraw.Draw(hoja)
+for i, clave in enumerate(R2):
+    col, fila = i % 4, i // 4
+    x, y = 90 + col * 570, 60 + fila * 860
+    av = Image.open(OUT / f"{clave}-avatar.png")
+    hoja.paste(av.resize((480, 480), RES), (x, y), mask)
+    d.text((x + 240, y + 520), R2[clave], font=rot, fill=TINTA, anchor="mm")
+    hoja.paste(av.resize((32, 32), RES), (x + 120, y + 590))
+    hoja.paste(av.resize((128, 128), RES), (x + 190, y + 590))
+hoja.save(OUT / "hoja-estrellas.png")
 print("ok →", OUT)

@@ -135,7 +135,7 @@ gafas con cámara IA (69,95-79,95 €) · descartados: micro-infusión, paddle s
 - [x] Datos: nombre LUNERIE, España, EUR, impuestos incluidos en los precios (comprobado el 7-oct por API)
 - [x] Dominio **lunerie.es** conectado (visto el 7-oct; email de la tienda luneriecompany@gmail.com, plan Basic, EUR)
 - [ ] Reservar @lunerie en Instagram y TikTok
-- [ ] Cobros: Shopify Payments + PayPal (pide datos de autónomo/empresa)
+- [x] Cobros activados por Edu (12-oct). Confirmar que PayPal también está.
 - [ ] Envíos: zona España, gratis (decidir Baleares, apartado 4)
 - [x] Tema publicado: **«Copia actualizada de Lunerie · marca» (id 209073799507)** = Horizon 1.0.5, actualizado por
   Edu el 12-oct. Shopify crea una **copia nueva con otro id** en cada actualización de Horizon: después de actualizar,
@@ -179,8 +179,8 @@ gafas con cámara IA (69,95-79,95 €) · descartados: micro-infusión, paddle s
       con el plazo real] · pila puesta y caja de regalo · envío gratis · 3 años + 14 días) · color · botón ancho sin
       selector de cantidad · caja «Segundo reloj por 19,95 €» (descuento automático **creado el 10-oct**, ver abajo) · desplegables Descripción / Ajustar la correa / ¿Se puede mojar? / Envío / Devoluciones y garantía /
       Cuidados · galería ancha (columnas desiguales). La ficha es **la misma para todos los productos**: el collar
-      necesitará su plantilla (`product.collar.json`). Inicio: arriba la pieza destacada `reloj-luna-noir` (producto
-      de prueba de Edu: 195 € con tachado 245 €, sin stock, primer medio un vídeo) con ficha completa. Página de
+      necesitará su plantilla (`product.collar.json`). Inicio: arriba la pieza destacada `reloj-lune` con ficha completa
+      (el producto de prueba `reloj-luna-noir` se borró el 12-oct). Página de
       contraseña en español («Muy pronto… Avisarme», `tema/password.json`). NO copiar de Calné: tachado inventado,
       «stock limitado», «solo hoy», «100 % waterproof», 2 años / 100 días.
       Falta: favicon, foto de portada cuando haya muestras (editor → Portada → Fondo → Imagen) y cambiar **[PLAZO]** en el desplegable
@@ -239,15 +239,27 @@ Meta Ads, ABO: 3 conjuntos (1 ángulo cada uno) × 10 €/día × 3 días = 90 �
 KILL si gastas 1× CPA BE sin carritos o 2× sin ventas · ESCALAR con ≥ 3 ventas a ≤ 70 % del CPA BE ·
 alertas si CTR < 1 % o CPC > 0,90 €. Máximo 2 productos en test a la vez.
 
-## 8. Pendientes (a 10-oct-2026)
-1. ~~Publicar el tema~~ (hecho el 8-oct). Login de Shopify CLI y de GitHub hechos en este PC. Pendiente: el plazo de envío para cambiar **[PLAZO]** (desplegable Envío).
-2. **Siguiente con Claude (necesita el conector de Shopify reconectado): políticas y páginas legales.** Borradores
+## 8. Calendario y pendientes (a 12-oct-2026)
+**Objetivo: tienda abierta y test del reloj en marcha el lunes 26-oct (como muy tarde el 2-nov)**, para decidir
+antes del 9-nov y llegar a Black Friday (27-30 nov) con un producto validado. Fechas límite: Navidad ~4-dic
+(AliExpress, ~2 semanas; afinar con el plazo real) · Reyes ~18-dic · después, tarjeta regalo.
+- 12-18 oct · tienda lista para cobrar: legales en Shopify, cookies, Meta (página FB + cuenta publicitaria + píxel),
+  @lunerie, envíos/Baleares, escribir a Yiwu (collar) si se quiere para Navidad.
+- 19-25 oct · muestras → fotos 4:5 y 4 vídeos → 3 anuncios.
+- 26 oct-1 nov · quitar contraseña + test de 90 € (3 días). 2-8 nov · decidir. 9-26 nov · escalar + Black Friday.
+- **No tocar el precio de 44,95 € hasta Black Friday** (un tachado en BF tiene que ser el precio más bajo de los 30 días anteriores).
+- **Fotos:** las de `tema/fotos productos/reloj/` son **de Calné** (Edu lo sabe y asume el riesgo). Plan: sustituirlas
+  por las del proveedor (AliExpress/Alibaba) o por fotos propias de las muestras. Mejorarlas con IA (Real-ESRGAN) no
+  hace falta a 4K (Shopify las sirve a ~2000 px; ideal 2048×2560): están blandas por compresión (42 KB) y el reloj
+  ocupa ~15 % del ancho.
+
+1. ~~Publicar el tema~~ (8-oct). ~~Cobros~~ (12-oct). Login de Shopify CLI y de GitHub hechos en este PC. Pendiente:
+   el plazo de envío para cambiar **[PLAZO]** (desplegable Envío).
+2. **Siguiente con Claude: políticas y páginas legales** (con la CLI, ver apartado 6). Borradores
    ya escritos en `legal/` (10-oct; huecos en `legal/README.md`: [NOMBRE], [NIF], [DIRECCIÓN], [PLAZO], [BALEARES],
-   quién paga la devolución). Falta que Edu rellene los huecos y crearlas en Shopify (solo existe la página Contacto). Después: crear el reloj Lune (`reloj-lune`, 44,95 €,
-   3 variantes) a partir de `landing.md` del radar con las fotos provisionales de `tema/fotos_prueba.py`, y anclarlo
-   en el inicio en vez de `reloj-luna-noir` (cambiar `"product"` en la sección `destacado` de `build.py`).
-   **Edu, en el admin:** Shopify Payments + PayPal (empezar ya: tarda en aprobarse) · envíos + Baleares · foto como
-   primer medio del producto · formato de precio «195,00 €» (Configuración → General → Moneda) · @lunerie en redes.
+   quién paga la devolución). Falta que Edu pase los datos y crearlas en Shopify (existen Contacto y Preguntas frecuentes).
+   **Edu, en el admin:** envíos + Baleares · foto como primer medio del producto · formato de precio «44,95 €»
+   (Configuración → General → Moneda) · @lunerie en redes.
 3. Escribir a Alibaba (reloj): precio DDP exprés para 20 y 50 uds (mensaje en la sesión 07-oct del radar). No corre
    prisa: el test va con AliExpress; sirve para preparar el paso a stock propio + packaging.
 4. Pedir presupuesto de packaging Lunerie (caja, tarjeta, bolsa) para meterlo en las cuentas del stock propio.

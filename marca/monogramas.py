@@ -161,4 +161,69 @@ for i, clave in enumerate(R2):
     hoja.paste(av.resize((32, 32), RES), (x + 120, y + 590))
     hoja.paste(av.resize((128, 128), RES), (x + 190, y + 590))
 hoja.save(OUT / "hoja-estrellas.png")
+
+
+# ---------- tercera ronda (12-oct): L gruesa, inclinada y con la base ancha (inspirada en el estilo de LV, ----------
+# ---------- sin copiar su monograma: nada de letras entrelazadas) ----------
+@functools.lru_cache(None)
+def fuente_ejes(nombre, ejes):
+    buf = io.BytesIO()
+    instancer.instantiateVariableFont(TTFont(DIR / "fuentes" / nombre), dict(ejes)).save(buf)
+    return buf.getvalue()
+
+
+def letra_forma(img, ch, nombre, ejes, cx, cy, alto, color, inclinar=0.0, ancho=1.0):
+    """Letra con inclinación (`inclinar` = desplazamiento horizontal por unidad de alto) y estirada en horizontal
+    (`ancho`), centrada en (cx, cy) con `alto` px. Devuelve la caja de tinta."""
+    f = ImageFont.truetype(io.BytesIO(fuente_ejes(nombre, tuple(sorted(ejes.items())))), 1600)
+    b = f.getbbox(ch, anchor="ls")
+    w, h = b[2] - b[0] + 40, b[3] - b[1] + 40
+    m = Image.new("L", (w, h), 0)
+    ImageDraw.Draw(m).text((20 - b[0], 20 - b[1]), ch, font=f, fill=255, anchor="ls")
+    W = int(w * ancho + inclinar * h) + 2
+    m = m.transform((W, h), Image.AFFINE, (1 / ancho, inclinar / ancho, -inclinar * h / ancho, 0, 1, 0), Image.BICUBIC)
+    m = m.crop(m.getbbox())
+    m = m.resize((int(m.width * alto / m.height), int(alto)), RES)
+    x, y = int(cx - m.width / 2), int(cy - m.height / 2)
+    img.paste(Image.new("RGB", m.size, color), (x, y), m)
+    return (x, y, x + m.width, y + m.height)
+
+
+R3 = {  # clave: (título, fuente, ejes, inclinar, ancho, fondo)
+    "corm-cursiva": ("Cormorant cursiva negrita", "Cormorant-Italic.ttf", {"wght": 700}, 0, 1.15, "V"),
+    "corm-inclinada": ("Cormorant inclinada ancha", "Cormorant.ttf", {"wght": 700}, 0.2, 1.3, "V"),
+    "bodoni-cursiva": ("Bodoni cursiva", "BodoniModa-Italic.ttf", {"wght": 900, "opsz": 96}, 0, 1.0, "V"),
+    "bodoni-inclinada": ("Bodoni inclinada ancha", "BodoniModa.ttf", {"wght": 900, "opsz": 96}, 0.22, 1.25, "V"),
+    "playfair": ("Playfair cursiva", "PlayfairDisplay-Italic.ttf", {"wght": 900}, 0, 1.1, "V"),
+    "bodoni-inclinada-clara": ("Bodoni inclinada ancha (claro)", "BodoniModa.ttf", {"wght": 900, "opsz": 96}, 0.22,
+                               1.25, "N"),
+    "bodoni-inclinada-oscura": ("Bodoni inclinada ancha (oscuro)", "BodoniModa.ttf", {"wght": 900, "opsz": 96}, 0.22,
+                                1.25, "T"),
+    "corm-inclinada-sin": ("Cormorant inclinada, sin estrella", "Cormorant.ttf", {"wght": 700}, 0.2, 1.3, "V"),
+}
+
+
+def ronda3(clave, L):
+    _, nombre, ejes, inc, anc, fnd = R3[clave]
+    fondo, tinta = {"V": (VERDE, BLANCO), "N": (NIEBLA, TINTA), "T": (TINTA, NIEBLA)}[fnd]
+    img = Image.new("RGB", (L, L), fondo)
+    x0, y0, x1, y1 = letra_forma(img, "L", nombre, ejes, L / 2 - L * 0.03, L / 2 + L * 0.01, L * 0.42, tinta, inc, anc)
+    if not clave.endswith("-sin"):
+        destello(img, x1 - L * 0.02, y0 + L * 0.06, L * 0.07, ORO)
+    return img
+
+
+for clave in R3:
+    ronda3(clave, 1080 * S).resize((1080, 1080), RES).save(OUT / f"{clave}-avatar.png")
+hoja = Image.new("RGB", (2400, 1780), BLANCO)
+d = ImageDraw.Draw(hoja)
+for i, clave in enumerate(R3):
+    col, fila = i % 4, i // 4
+    x, y = 90 + col * 570, 60 + fila * 860
+    av = Image.open(OUT / f"{clave}-avatar.png")
+    hoja.paste(av.resize((480, 480), RES), (x, y), mask)
+    d.text((x + 240, y + 520), R3[clave][0], font=rot, fill=TINTA, anchor="mm")
+    hoja.paste(av.resize((32, 32), RES), (x + 120, y + 590))
+    hoja.paste(av.resize((128, 128), RES), (x + 190, y + 590))
+hoja.save(OUT / "hoja-l-gruesa.png")
 print("ok →", OUT)

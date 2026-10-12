@@ -120,7 +120,7 @@ hoja.save(OUT / "hoja-monogramas.png")
 
 # ---------- segunda ronda (12-oct): C7 en verde y versiones con estrella (destello de 4 puntas) ----------
 def ronda2(clave, L):
-    fondo, tinta = {"V": (VERDE, BLANCO), "N": (NIEBLA, TINTA), "T": (TINTA, NIEBLA)}[clave[-1]]
+    fondo, tinta = {"V": (VERDE, BLANCO), "N": (NIEBLA, TINTA), "T": (TINTA, NIEBLA), "B": (BLANCO, TINTA)}[clave[-1]]
     img = Image.new("RGB", (L, L), fondo)
     c = L / 2
     tipo = clave[:-1]
@@ -293,4 +293,52 @@ for i, clave in enumerate(R4):
     hoja.paste(av.resize((32, 32), RES), (x + 120, y + 590))
     hoja.paste(av.resize((128, 128), RES), (x + 190, y + 590))
 hoja.save(OUT / "hoja-l-propia.png")
+print("ok →", OUT)
+
+
+# ---------- elegida (13-oct): «Cursiva» con destello. Verde o blanco, vistos donde se usan ----------
+for clave in ("cursivaV", "cursivaB"):
+    ronda2(clave, 1080 * S).resize((1080, 1080), RES).save(OUT / f"{clave}-avatar.png")
+
+
+def perfil_instagram(av, oscuro):
+    """Cabecera de perfil de Instagram simplificada (foto en círculo + nombre + cifras)."""
+    fondo, texto, gris = ((0, 0, 0), (245, 245, 245), (150, 150, 150)) if oscuro else (BLANCO, (20, 20, 20), (115, 115, 115))
+    W, H = 1080, 520
+    img = Image.new("RGB", (W, H), fondo)
+    d = ImageDraw.Draw(img)
+    sans = ImageFont.truetype("arial.ttf", 34)
+    sans_b = ImageFont.truetype("arialbd.ttf", 38)
+    m = Image.new("L", (300, 300), 0); ImageDraw.Draw(m).ellipse([0, 0, 299, 299], fill=255)
+    img.paste(av.resize((300, 300), RES), (60, 110), m)
+    d.text((60, 40), "lunerie", font=sans_b, fill=texto)
+    for i, (n, t) in enumerate([("12", "publicaciones"), ("1.204", "seguidores"), ("85", "seguidos")]):
+        d.text((470 + i * 200, 210), n, font=sans_b, fill=texto, anchor="mm")
+        d.text((470 + i * 200, 260), t, font=ImageFont.truetype("arial.ttf", 26), fill=gris, anchor="mm")
+    d.text((60, 440), "Joyas y relojes para regalar · Envío gratis a península", font=sans, fill=texto)
+    return img
+
+
+def pestana(av, oscuro):
+    """Pestaña del navegador con el favicon a tamaño real (32 px dibujado a 16 px de pestaña ×2)."""
+    barra, tab, texto = ((32, 33, 36), (53, 54, 58), (232, 234, 237)) if oscuro else ((222, 225, 230), BLANCO, (32, 33, 36))
+    img = Image.new("RGB", (1080, 120), barra)
+    d = ImageDraw.Draw(img)
+    d.rounded_rectangle([20, 24, 520, 140], radius=18, fill=tab)
+    img.paste(av.resize((32, 32), RES), (50, 56))
+    d.text((100, 72), "Lunerie · Joyas y relojes", font=ImageFont.truetype("arial.ttf", 26), fill=texto, anchor="lm")
+    return img
+
+
+hoja = Image.new("RGB", (2400, 1600), (236, 236, 236))
+d = ImageDraw.Draw(hoja)
+for col, clave in enumerate(("cursivaV", "cursivaB")):
+    av = Image.open(OUT / f"{clave}-avatar.png")
+    x = 80 + col * 1180
+    d.text((x, 40), "Fondo verde" if col == 0 else "Fondo blanco", font=rot, fill=TINTA)
+    hoja.paste(perfil_instagram(av, False), (x, 100))
+    hoja.paste(perfil_instagram(av, True), (x, 640))
+    hoja.paste(pestana(av, False), (x, 1190))
+    hoja.paste(pestana(av, True), (x, 1330))
+hoja.save(OUT / "hoja-cursiva-verde-o-blanco.png")
 print("ok →", OUT)

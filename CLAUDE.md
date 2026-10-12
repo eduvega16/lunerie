@@ -221,6 +221,12 @@ gafas con cámara IA (69,95-79,95 €) · descartados: micro-infusión, paddle s
 
 > Claude está conectado a Shopify (conector de claude.ai) con la tienda Lunerie. Antes estaba Star Brick: al cambiar
 > de tienda se desconecta la otra.
+> **Si el conector no carga** (pasó el 12-oct): usar la Admin API con la CLI, que no depende de él:
+> `shopify store execute -s qjxvnn-xq.myshopify.com -q "<query>" --json --no-input` (añadir `--allow-mutations` para
+> escribir; `--query-file` / `--variable-file` para operaciones largas). Permisos dados por Edu el 12-oct con
+> `shopify store auth` (productos, inventario, páginas, políticas, menús, archivos, temas, publicaciones, envíos,
+> pedidos en lectura, descuentos). Si caducan o falta un permiso: abrir ventana con
+> `Start-Process powershell -ArgumentList '-NoExit','-Command','shopify store auth --store qjxvnn-xq.myshopify.com --scopes <lista>'`.
 
 ## 7. Test de ~90 € (por producto)
 Meta Ads, ABO: 3 conjuntos (1 ángulo cada uno) × 10 €/día × 3 días = 90 €. Cada día, en el radar:

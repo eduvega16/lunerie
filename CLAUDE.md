@@ -32,6 +32,11 @@
 - **Estilo:** como **Calné** (calne.co): páginas limpias, fondo blanco, mucho aire, **la pieza manda y la marca casi
   no se ve** (logo pequeño, solo texto).
 - **Página de marca (maqueta + ajustes):** https://claude.ai/artifact/MDZWWTrx5E6xxfgC8gfv2A
+- **Logos (13-oct), en `marca/logos/`:** logo LUNERIE en tinta / blanco / oro (SVG + PNG, `marca/logos.py`).
+  **Monograma oficial: L cursiva (Cormorant Italic) + destello dorado de 4 puntas, fondo verde** →
+  `oficial-avatar-redes.png` (perfil de Instagram/TikTok) y `oficial-favicon.png` (pestaña, ya puesto en la tienda).
+  Versión en fondo blanco (`monogramas/cursivaB-avatar.png`) solo para lo físico: pegatinas, tarjeta, packaging.
+  Variantes descartadas en `marca/logos/monogramas/` (`marca/monogramas.py`). Nada de letras entrelazadas tipo LV.
 
 | Token | Color | Uso |
 |---|---|---|
@@ -183,7 +188,7 @@ gafas con cámara IA (69,95-79,95 €) · descartados: micro-infusión, paddle s
       (el producto de prueba `reloj-luna-noir` se borró el 12-oct). Página de
       contraseña en español («Muy pronto… Avisarme», `tema/password.json`). NO copiar de Calné: tachado inventado,
       «stock limitado», «solo hoy», «100 % waterproof», 2 años / 100 días.
-      Falta: favicon, foto de portada cuando haya muestras (editor → Portada → Fondo → Imagen) y cambiar **[PLAZO]** en el desplegable
+      Favicon puesto el 13-oct. Falta: foto de portada cuando haya muestras (editor → Portada → Fondo → Imagen) y cambiar **[PLAZO]** en el desplegable
       Envío. Ficheros fuente: `tema/` (`build.py` genera los JSON que se suben a la copia del tema; Shopify no acepta
       `content:` en el CSS personalizado ni `gap` > 48).
 - [~] Políticas y páginas: textos en `legal/` (10-oct). Página **Preguntas frecuentes** creada y en el menú

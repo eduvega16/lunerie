@@ -10,6 +10,9 @@ C2 = "{{ settings.color_palette.color2 }}"
 
 settings = {
     "logo_height": 36, "logo_height_mobile": 28,
+    # Icono de pestaña: monograma oficial (L cursiva + destello, fondo verde), marca/logos/oficial-favicon.png,
+    # subido a Contenido → Archivos el 13-oct
+    "favicon": "shopify://shop_images/lunerie-favicon.png",
     "color_palette": {"background": "#FFFFFF", "foreground": INK, "color1": SOFT, "color2": LINE},
     "page_background_color": BG, "page_text_color": FG, "page_width": "narrow",
     # Letras: Cormorant (títulos) + Jost ligera (texto)

@@ -226,4 +226,71 @@ for i, clave in enumerate(R3):
     hoja.paste(av.resize((32, 32), RES), (x + 120, y + 590))
     hoja.paste(av.resize((128, 128), RES), (x + 190, y + 590))
 hoja.save(OUT / "hoja-l-gruesa.png")
+
+
+# ---------- cuarta ronda (12-oct): L dibujada a medida (no es una tipografía) ----------
+# Palo y base visibles, remate en cuña al final de la base, remate fino arriba, todo inclinado.
+def l_propia(img, cx, cy, alto, color, inclinacion=20, palo=0.13, base=0.095, largo=0.62, cuna=0.17):
+    """Unidades: alto de la L = 1. inclinacion en grados; palo/base = grosores; largo = base desde el palo."""
+    import math
+    s = math.tan(math.radians(inclinacion))
+    t, f, F = palo, base, palo + largo
+    piezas = [
+        [(0, 0), (t, 0), (t, 1), (0, 1)],                       # palo
+        [(-0.05, 0), (F, 0), (F, f), (-0.05, f)],              # base (sale un poco a la izquierda)
+        [(-0.075, 1 - 0.03), (t + 0.05, 1 - 0.03), (t + 0.05, 1), (-0.075, 1)],  # remate de arriba, fino
+    ]
+    # cuña al final de la base: curva cóncava de (F - ancho, f) a (F, f + cuna)
+    an = cuna * 0.85
+    curva = [((1 - u) ** 2 * (F - an) + 2 * (1 - u) * u * (F - 0.01) + u ** 2 * F,
+              (1 - u) ** 2 * f + 2 * (1 - u) * u * (f + 0.01) + u ** 2 * (f + cuna)) for u in [i / 30 for i in range(31)]]
+    piezas.append([(F - an, f - 0.001)] + curva + [(F, f - 0.001)])
+    # a coordenadas de imagen: inclinar (x + s·y), escalar y centrar la caja
+    pts = [[(x + s * y, y) for x, y in p] for p in piezas]
+    xs = [x for p in pts for x, _ in p]
+    x0, x1 = min(xs), max(xs)
+    k = alto
+    ox, oy = cx - (x0 + x1) / 2 * k, cy + 0.5 * k
+    d = ImageDraw.Draw(img)
+    for p in pts:
+        d.polygon([(ox + x * k, oy - y * k) for x, y in p], fill=color)
+    return (ox + x0 * k, oy - k, ox + x1 * k, oy)
+
+
+R4 = {  # clave: (título, fondo, color L, estrella, parámetros)
+    "propia-equilibrada": ("Equilibrada", "V", BLANCO, False, {}),
+    "propia-fina": ("Fina y más inclinada", "V", BLANCO, False, {"inclinacion": 24, "palo": 0.105, "base": 0.08}),
+    "propia-remate": ("Con más remate", "V", BLANCO, False, {"palo": 0.14, "base": 0.105, "cuna": 0.22}),
+    "propia-fina-estrella": ("Fina + destello", "V", BLANCO, True, {"inclinacion": 24, "palo": 0.105, "base": 0.08}),
+    "propia-fina-oro": ("Fina, oro sobre tinta", "T", ORO, False, {"inclinacion": 24, "palo": 0.105, "base": 0.08}),
+    "propia-fina-clara": ("Fina, sobre claro", "N", TINTA, False, {"inclinacion": 24, "palo": 0.105, "base": 0.08}),
+    "propia-muy-inclinada": ("Muy inclinada", "V", BLANCO, False, {"inclinacion": 28, "palo": 0.1, "base": 0.075,
+                                                                    "largo": 0.66}),
+    "propia-equilibrada-estrella": ("Equilibrada + destello", "V", BLANCO, True, {}),
+}
+
+
+def ronda4(clave, L):
+    _, fnd, color, estrella, p = R4[clave]
+    fondo = {"V": VERDE, "N": NIEBLA, "T": TINTA}[fnd]
+    img = Image.new("RGB", (L, L), fondo)
+    x0, y0, x1, y1 = l_propia(img, L / 2 - (L * 0.03 if estrella else 0), L / 2, L * 0.44, color, **p)
+    if estrella:
+        destello(img, x1 + L * 0.02, y0 + L * 0.07, L * 0.065, ORO)
+    return img
+
+
+for clave in R4:
+    ronda4(clave, 1080 * S).resize((1080, 1080), RES).save(OUT / f"{clave}-avatar.png")
+hoja = Image.new("RGB", (2400, 1780), BLANCO)
+d = ImageDraw.Draw(hoja)
+for i, clave in enumerate(R4):
+    col, fila = i % 4, i // 4
+    x, y = 90 + col * 570, 60 + fila * 860
+    av = Image.open(OUT / f"{clave}-avatar.png")
+    hoja.paste(av.resize((480, 480), RES), (x, y), mask)
+    d.text((x + 240, y + 520), R4[clave][0], font=rot, fill=TINTA, anchor="mm")
+    hoja.paste(av.resize((32, 32), RES), (x + 120, y + 590))
+    hoja.paste(av.resize((128, 128), RES), (x + 190, y + 590))
+hoja.save(OUT / "hoja-l-propia.png")
 print("ok →", OUT)

@@ -137,7 +137,12 @@ gafas con cámara IA (69,95-79,95 €) · descartados: micro-infusión, paddle s
 - [ ] Reservar @lunerie en Instagram y TikTok
 - [ ] Cobros: Shopify Payments + PayPal (pide datos de autónomo/empresa)
 - [ ] Envíos: zona España, gratis (decidir Baleares, apartado 4)
-- [x] Tema **"Lunerie · marca"** (id 208665149779) **publicado por Edu el 8-oct**.
+- [x] Tema publicado: **«Copia actualizada de Lunerie · marca» (id 209073799507)** = Horizon 1.0.5, actualizado por
+  Edu el 12-oct. Shopify crea una **copia nueva con otro id** en cada actualización de Horizon: después de actualizar,
+  cambiar el id en este fichero y volver a bajar `tema/tienda/`. En la del 12-oct se conservaron los 5 ficheros de
+  `tema/codigo/` y todos los ajustes; esos 5 se quedan en su versión vieja (Shopify no actualiza ficheros
+  modificados), así que no reciben los arreglos de Horizon. La anterior «Lunerie · marca» (208665149779) queda sin
+  publicar como copia de seguridad.
 - **Cómo se cambia el tema publicado: con Shopify CLI** (v4.9; tienda `qjxvnn-xq.myshopify.com`). El conector de
   Shopify de claude.ai **no** puede escribir en el tema publicado ni publicar (solo en temas sin publicar); la CLI sí.
   - **Login hecho en los dos PCs** (`C:\Users\edu\lunerie` el 8-oct, `D:\LUNERIE` el 9-oct, CLI 4.8.4; allí tenía
@@ -147,10 +152,10 @@ gafas con cámara IA (69,95-79,95 €) · descartados: micro-infusión, paddle s
     otras guardadas son Koco Essence y Star Brick). Lo mismo con `git push` si GitHub pide login: lanzarlo con
     `GIT_TERMINAL_PROMPT=1` y `GCM_INTERACTIVE=always` y se abre la ventana de GitHub.
   - `tema/tienda/` = copia completa del tema publicado (fuera de git). Si no existe o Edu ha tocado el editor (fotos,
-    favicon): `shopify theme pull --store qjxvnn-xq.myshopify.com --theme 208665149779 --path tema/tienda` (la
+    favicon): `shopify theme pull --store qjxvnn-xq.myshopify.com --theme 209073799507 --path tema/tienda` (la
     carpeta tiene que existir) y pasar sus cambios de `config/settings_data.json` a `build.py`, que si no los pisa.
   - Para subir: `python tema/build.py` (genera los JSON y los copia a `tema/tienda/`) →
-    `shopify theme push --store qjxvnn-xq.myshopify.com --theme 208665149779 --path tema/tienda --allow-live --only <ficheros>`.
+    `shopify theme push --store qjxvnn-xq.myshopify.com --theme 209073799507 --path tema/tienda --allow-live --only <ficheros>`.
   - Mientras la tienda tenga contraseña, cambiar el publicado directamente no tiene riesgo. Con la tienda abierta,
     los cambios grandes se prueban antes en un tema sin publicar (`shopify theme push --unpublished`) y Edu lo publica.
   - **Vista previa local:** `shopify theme dev --store qjxvnn-xq.myshopify.com --path tema/tienda` →

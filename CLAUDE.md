@@ -141,7 +141,11 @@ gafas con cámara IA (69,95-79,95 €) · descartados: micro-infusión, paddle s
 - [x] Crear la tienda en Shopify (7-oct)
 - [x] Datos: nombre LUNERIE, España, EUR, impuestos incluidos en los precios (comprobado el 7-oct por API)
 - [x] Dominio **lunerie.es** conectado (visto el 7-oct; email de la tienda luneriecompany@gmail.com, plan Basic, EUR)
-- [ ] Reservar @lunerie en Instagram y TikTok
+- [~] Redes: **Instagram @lunerie_co** (13-oct; cuenta que Edu ya tenía, ~700 seguidores no orientados, se
+      reutiliza por imagen de marca: renombrar a «Lunerie», cuenta profesional, avatar `oficial-avatar-redes.png`,
+      bio «Joyas y relojes para regalar. / Para llevar cerca. / Envío gratis a península.», enlace lunerie.es,
+      archivar lo antiguo y subir 3-6 publicaciones propias antes de los anuncios). Falta: TikTok, página de
+      Facebook y cuenta publicitaria de Meta, y poner el enlace de Instagram en el pie de la tienda.
 - [x] Cobros activados por Edu (12-oct). Confirmar que PayPal también está.
 - [ ] Envíos: zona España, gratis (decidir Baleares, apartado 4)
 - [x] Tema publicado: **«Copia actualizada de Lunerie · marca» (id 209073799507)** = Horizon 1.0.5, actualizado por

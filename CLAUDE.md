@@ -145,8 +145,13 @@ gafas con cámara IA (69,95-79,95 €) · descartados: micro-infusión, paddle s
 - [~] Redes: **Instagram @lunerie_co** (13-oct; cuenta que Edu ya tenía, ~700 seguidores no orientados, se
       reutiliza por imagen de marca: renombrar a «Lunerie», cuenta profesional, avatar `oficial-avatar-redes.png`,
       bio «Joyas y relojes para regalar. / Para llevar cerca. / Envío gratis a península.», enlace lunerie.es,
-      archivar lo antiguo y subir 3-6 publicaciones propias antes de los anuncios). Falta: TikTok, página de
-      Facebook y cuenta publicitaria de Meta, y poner el enlace de Instagram en el pie de la tienda.
+      archivar lo antiguo y subir 3-6 publicaciones propias antes de los anuncios). Falta: TikTok y poner el
+      enlace de Instagram en el pie de la tienda.
+      **Meta (14-oct):** página de Facebook «L U N E R I E» (id 1311701355367588; recomendado renombrarla a
+      «Lunerie» para que salga al buscar) · cuenta publicitaria **1551796336759107** (EUR, activa) **sin método de
+      pago y sin portfolio comercial** (crearlo «Lunerie» si la app de Shopify lo pide). Claude la ve con el
+      conector **«Meta ads Koco»** de claude.ai (el nombre es antiguo; ahora es la cuenta de Lunerie). El conector
+      «pipeboard» solo ve las cuentas de LaFortuna: no usarlo para Lunerie.
 - [x] Cobros activados por Edu (12-oct). Confirmar que PayPal también está.
 - [ ] Envíos: zona España, gratis (decidir Baleares, apartado 4)
 - [x] Tema publicado: **«Copia actualizada de Lunerie · marca» (id 209073799507)** = Horizon 1.0.5, actualizado por
@@ -281,7 +286,8 @@ alertas si CTR < 1 % o CPC > 0,90 €. Máximo 2 productos en test a la vez.
   3. **Plazo de envío:** por definir cuando llegue la muestra (AliExpress dice ~14 días) → quitar [PLAZO] de envíos,
      FAQ y ficha del reloj (`build.py`).
   4. Envíos en el admin: península gratis + **Baleares con coste** (¿3,95 €?) · @lunerie en TikTok ·
-     **cuenta publicitaria de Meta** por terminar (la página de Facebook ya está conectada, 14-oct).
+     **cuenta publicitaria de Meta**: falta el método de pago (página conectada, 14-oct) → después, app
+     Facebook & Instagram en Shopify + píxel con Claude.
 - **Siguiente con Claude:** app Facebook & Instagram + píxel · revisar la ficha del reloj con `landing.md`
   · fotos del proveedor en 4:5 (si Edu las pasa) · anuncios cuando lleguen las muestras.
 

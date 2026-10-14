@@ -3,11 +3,11 @@
     "portada": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "{% render 'lunerie-inicio', parte: 'hero' %}",
+        "custom_liquid": "{% render 'lunerie-inicio', parte: 'hero-video' %}",
         "background_color": "",
-        "section_width": "page-width",
-        "padding-block-start": 8,
-        "padding-block-end": 40
+        "section_width": "full-width",
+        "padding-block-start": 0,
+        "padding-block-end": 0
       }
     },
     "como_es": {
@@ -41,6 +41,7 @@
       }
     },
     "destacado": {
+      "disabled": true,
       "type": "featured-product-information",
       "blocks": {
         "media-gallery": {

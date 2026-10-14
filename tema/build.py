@@ -251,12 +251,16 @@ def parte(nombre, fondo="", arriba=24, abajo=24, ancho="page-width"):
 
 index = {
     "sections": {
-        "portada": parte("hero", arriba=8, abajo=40),
+        # Portada con vídeo (prueba 14-oct). Para volver a la de la foto en óvalo: parte("hero", arriba=8, abajo=40)
+        "portada": parte("hero-video", arriba=0, abajo=0, ancho="full-width"),
         "como_es": parte("como-es", arriba=56, abajo=56),
         "oferta": parte("oferta", arriba=0, abajo=0, ancho="full-width"),
         "dudas": parte("dudas", arriba=64, abajo=56),
-        # Ficha rápida del reloj: color, comprar y enlace a la ficha completa
+        # Ficha rápida del reloj: color, comprar y enlace a la ficha completa.
+        # Desactivada el 14-oct a petición de Edu (el botón de la portada ya lleva a la ficha); "disabled" la oculta
+        # sin borrarla, por si vuelve a hacer falta.
         "destacado": {
+            "disabled": True,
             "type": "featured-product-information",
             "blocks": {
                 "media-gallery": {"type": "_featured-product-information-carousel", "static": True, "settings": {

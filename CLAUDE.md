@@ -240,7 +240,15 @@ gafas con cámara IA (69,95-79,95 €) · descartados: micro-infusión, paddle s
       para regalar.» · «Antes de comprar» (4 dudas + enlace a Preguntas frecuentes) · 3 promesas. Fuera «Para llevar
       cerca.» (a Edu no le gusta) y «Las piezas» con un solo producto. Las partes a medida están en
       `tema/codigo/snippets/lunerie-inicio.liquid` (se pintan con secciones «Liquid personalizado»: `parte()` en
-      `build.py`). Cuando llegue el collar: sección «Las piezas» de 2 columnas. **Pendiente:** el menú «Piezas» → «Reloj
+      `build.py`). Cuando llegue el collar: sección «Las piezas» de 2 columnas.
+      **Cambios del 14-oct (en producción):** titular nuevo «Un reloj que se lleva *como una joya.*» (a Edu no le
+      gustaba «parece heredado») · fuera la ficha rápida «Elige el tuyo» (sección `destacado` con `"disabled": true`,
+      se puede reactivar) · **portada con vídeo de fondo** (`parte('hero-video')`): vídeo del CDN de Shopify en bucle,
+      oscurecido (filtro brightness .72), con **grano de película** (SVG de ruido animado) y el óvalo dorado de línea
+      fina con titular, botón y «Segundo reloj por 19,95 €» dentro. **OJO: el vídeo muestra otro reloj (esfera
+      «NAIDU», piedras rosas): cambiarlo por uno de las muestras antes de abrir** (URL en `hero-video` de
+      `lunerie-inicio.liquid`). Volver a la portada con foto: `parte("hero", arriba=8, abajo=40)` en `build.py`.
+      **Pendiente:** el menú «Piezas» → «Reloj
       Lune» (enlace a la ficha): la CLI de este PC no tiene `shopify store auth` y el conector no cargaba.
 - [ ] Quitar la contraseña de la tienda
 

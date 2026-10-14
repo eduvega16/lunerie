@@ -10,7 +10,7 @@
     <div class="lu-hero">
       <div class="lu-hero__texto">
         <p class="lu-ceja">Reloj Lune</p>
-        <h1 class="lu-hero__titulo">El reloj que <em>parece heredado.</em></h1>
+        <h1 class="lu-hero__titulo">Un reloj que se lleva <em>como una joya.</em></h1>
         <p class="lu-hero__sub">
           Esfera ovalada, piedras verdes y eslabones finos. Llega en su caja, listo para regalar.
         </p>
@@ -32,6 +32,22 @@
           }}
         {%- endif -%}
       </a>
+    </div>
+
+  {%- when 'hero-video' -%}
+    {%- comment -%} Portada con vídeo de fondo, oscurecido y con grano de película; óvalo dorado como firma {%- endcomment -%}
+    <div class="lu-hv">
+      <video class="lu-hv__video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+        <source src="https://cdn.shopify.com/videos/c/o/v/8e20a3f4216245aa89a6b4fbf3d6ba36.mp4" type="video/mp4">
+      </video>
+      <div class="lu-hv__velo" aria-hidden="true"></div>
+      <div class="lu-hv__grano" aria-hidden="true"></div>
+      <div class="lu-hv__ovalo">
+        <p class="lu-hv__ceja">Reloj Lune</p>
+        <h1 class="lu-hv__titulo">Un reloj que se&nbsp;lleva <em>como una joya.</em></h1>
+        <a class="lu-boton" href="{{ lu.url }}">Ver el reloj · {{ lu.price | money }}</a>
+        <p class="lu-hv__nota">Segundo reloj por 19,95&nbsp;€</p>
+      </div>
     </div>
 
   {%- when 'como-es' -%}
@@ -108,10 +124,42 @@
     .lu-ovalo img{display:block;width:100%;height:100%;object-fit:cover;transform:scale(1.18);
       transition:transform .9s cubic-bezier(.2,.7,.2,1)}
     .lu-ovalo:hover img{transform:scale(1.24)}
+    /* Móvil: titular, reloj y botón en la primera pantalla (la frase va después) */
+    @media (max-width:749px){
+      .lu-hero{gap:0;justify-items:center;text-align:center;padding-block:0}
+      .lu-hero__texto{display:contents}
+      .lu-ceja{order:1;margin-bottom:10px}
+      .lu-hero__titulo{order:2;font-size:2.35rem}
+      .lu-ovalo{order:3;width:min(70vw,300px);margin:24px auto 26px}
+      .lu-hero__acciones{order:4;margin-top:0}
+      .lu-hero__sub{order:5;max-width:30ch;margin:24px auto 0;font-size:1rem}
+    }
     @media (min-width:750px){
       .lu-hero{grid-template-columns:1.1fr .9fr;gap:56px;padding-block:56px 40px}
       .lu-ovalo{width:min(38vw,480px)}
     }
+
+    /* Portada con vídeo: oscurecido, grano de película y óvalo dorado de línea fina */
+    .lu-hv{position:relative;display:grid;place-items:center;overflow:hidden;background:#1d1a17;
+      min-height:min(calc(100svh - 110px),780px);color:#fff;text-align:center}
+    .lu-hv__video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+      filter:brightness(.72) contrast(1.06) saturate(.88)}
+    .lu-hv__velo{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(22,32,27,.18) 0%,rgba(22,32,27,.55) 100%)}
+    .lu-hv__grano{position:absolute;inset:-50%;opacity:.16;mix-blend-mode:overlay;pointer-events:none;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+      animation:lu-grano .9s steps(6) infinite}
+    @keyframes lu-grano{0%{transform:translate(0,0)}20%{transform:translate(-3%,2%)}40%{transform:translate(2%,-3%)}
+      60%{transform:translate(-2%,-1%)}80%{transform:translate(3%,3%)}100%{transform:translate(0,0)}}
+    .lu-hv__ovalo{position:relative;display:grid;justify-items:center;align-content:center;gap:0;
+      width:min(88vw,520px);aspect-ratio:4/5;padding:0 5%;border:1px solid rgba(214,180,120,.85);border-radius:50%}
+    .lu-hv__ceja{margin:0 0 12px;font-family:var(--font-body--family);font-size:.75rem;letter-spacing:.22em;
+      text-transform:uppercase;color:#E2C58F}
+    .lu-hv__titulo{margin:0 0 26px;font-family:var(--font-heading--family);font-weight:400;
+      font-size:1.9rem;line-height:1.05;text-wrap:balance;color:#fff;text-shadow:0 1px 18px rgba(0,0,0,.25)}
+    .lu-hv__titulo em{display:block;font-style:italic}
+    .lu-hv__nota{margin:14px 0 0;font-size:.875rem;color:#E2C58F}
+    @media (min-width:750px){.lu-hv{min-height:min(86vh,820px)}.lu-hv__ovalo{width:min(44vw,560px)}.lu-hv__titulo{font-size:3rem}}
+    @media (prefers-reduced-motion:reduce){.lu-hv__grano{animation:none}}
 
     /* Cómo es: tres rasgos con un pequeño óvalo dorado (no son pasos: sin números) */
     .lu-como{padding-block:16px}

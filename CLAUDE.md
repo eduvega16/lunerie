@@ -233,6 +233,15 @@ gafas con cámara IA (69,95-79,95 €) · descartados: micro-infusión, paddle s
       desaparece. Página de la cesta en español (`tema/cart.json`). En la vista previa local, el navegador de
       pruebas con perfil nuevo acaba en /password (no tiene la cookie): probar el carrito con `curl` y cookie.
       Shopify Payments ya activo (salen Shop Pay y Google Pay en la cesta).
+- [x] **Portada nueva (14-oct, en producción), centrada en el reloj Lune** (crítica de diseño + rediseño):
+      portada «El reloj que *parece heredado.*» con la **foto en óvalo y filo dorado** (la firma visual, como la
+      esfera) y «Ver el reloj · 44,95 €» + «Segundo reloj por 19,95 €» · «Elige el tuyo» (ficha rápida sin cantidad;
+      en móvil sin foto, porque ya está en el óvalo) · «Cómo es» (3 rasgos reales) · franja verde «Uno para ti y otro
+      para regalar.» · «Antes de comprar» (4 dudas + enlace a Preguntas frecuentes) · 3 promesas. Fuera «Para llevar
+      cerca.» (a Edu no le gusta) y «Las piezas» con un solo producto. Las partes a medida están en
+      `tema/codigo/snippets/lunerie-inicio.liquid` (se pintan con secciones «Liquid personalizado»: `parte()` en
+      `build.py`). Cuando llegue el collar: sección «Las piezas» de 2 columnas. **Pendiente:** el menú «Piezas» → «Reloj
+      Lune» (enlace a la ficha): la CLI de este PC no tiene `shopify store auth` y el conector no cargaba.
 - [ ] Quitar la contraseña de la tienda
 
 > Claude está conectado a Shopify (conector de claude.ai) con la tienda Lunerie. Antes estaba Star Brick: al cambiar

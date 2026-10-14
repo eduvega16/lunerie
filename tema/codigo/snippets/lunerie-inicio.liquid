@@ -1,0 +1,144 @@
+{%- comment -%}
+  Lunerie · partes de la portada (se pintan desde secciones «Liquid personalizado» de templates/index.json).
+  Uso: {% render 'lunerie-inicio', parte: 'hero' %}  ·  partes: hero, como-es, oferta, dudas
+  Firma visual: la foto del reloj recortada en óvalo con filo dorado, como la esfera del Lune.
+  Producto: el reloj Lune (handle reloj-lune). Cuando haya un segundo producto, añadir aquí su parte.
+{%- endcomment -%}
+{%- assign lu = all_products['reloj-lune'] -%}
+{%- case parte -%}
+  {%- when 'hero' -%}
+    <div class="lu-hero">
+      <div class="lu-hero__texto">
+        <p class="lu-ceja">Reloj Lune</p>
+        <h1 class="lu-hero__titulo">El reloj que <em>parece heredado.</em></h1>
+        <p class="lu-hero__sub">
+          Esfera ovalada, piedras verdes y eslabones finos. Llega en su caja, listo para regalar.
+        </p>
+        <div class="lu-hero__acciones">
+          <a class="lu-boton" href="{{ lu.url }}">Ver el reloj · {{ lu.price | money }}</a>
+          <p class="lu-hero__nota">Segundo reloj por 19,95&nbsp;€</p>
+        </div>
+      </div>
+      <a class="lu-ovalo" href="{{ lu.url }}" aria-label="Ver el reloj Lune">
+        {%- if lu.featured_image -%}
+          {{
+            lu.featured_image
+            | image_url: width: 1400
+            | image_tag:
+              loading: 'eager',
+              fetchpriority: 'high',
+              sizes: '(min-width: 750px) 38vw, 78vw',
+              alt: 'Reloj Lune dorado con piedras verdes'
+          }}
+        {%- endif -%}
+      </a>
+    </div>
+
+  {%- when 'como-es' -%}
+    <div class="lu-como">
+      <h2 class="lu-titulo">Cómo es</h2>
+      <ul class="lu-como__lista" role="list">
+        <li>
+          <h3>Pequeño de verdad</h3>
+          <p>Esfera ovalada de 12&nbsp;mm. Se lleva como una pulsera fina, no como un reloj grande.</p>
+        </li>
+        <li>
+          <h3>Piedras en cada eslabón</h3>
+          <p>Piedras ovaladas verdes sobre dorado o sobre plateado. Son de resina: ligeras y sin miedo a llevarlo cada día.</p>
+        </li>
+        <li>
+          <h3>Listo para regalar</h3>
+          <p>Llega en su caja, con un extractor para ajustar la correa a la muñeca en dos minutos.</p>
+        </li>
+      </ul>
+    </div>
+
+  {%- when 'oferta' -%}
+    <div class="lu-oferta">
+      <p class="lu-oferta__titulo">Uno para ti y otro para regalar.</p>
+      <p class="lu-oferta__texto">Añade dos a la cesta y el segundo se queda en 19,95&nbsp;€.</p>
+      <a class="lu-boton lu-boton--claro" href="{{ lu.url }}">Elegir los dos</a>
+    </div>
+
+  {%- when 'dudas' -%}
+    <div class="lu-dudas">
+      <h2 class="lu-titulo">Antes de comprar</h2>
+      <details>
+        <summary>¿Me quedará grande?</summary>
+        <p>La correa mide 18&nbsp;cm. Si tu muñeca es más fina, quita uno o dos eslabones con el extractor que va en la caja: son dos minutos. Cualquier relojería también lo hace al momento.</p>
+      </details>
+      <details>
+        <summary>¿Se puede mojar?</summary>
+        <p>No es sumergible. Quítatelo para lavarte las manos, ducharte o nadar.</p>
+      </details>
+      <details>
+        <summary>¿Llega para Navidad?</summary>
+        <p>Si lo pides antes del 1 de diciembre, sí. Si vas justa de fecha, escríbenos antes de comprar y te decimos si llega.</p>
+      </details>
+      <details>
+        <summary>¿Y si no le gusta?</summary>
+        <p>Tiene 14 días para devolverlo y 3 años de garantía.</p>
+      </details>
+      <a class="lu-dudas__mas" href="/pages/preguntas-frecuentes">Todas las preguntas</a>
+    </div>
+{%- endcase -%}
+
+{% stylesheet %}
+    .lu-ceja{margin:0 0 14px;font-family:var(--font-body--family);font-size:.75rem;letter-spacing:.22em;
+      text-transform:uppercase;color:#A6834A}
+    .lu-titulo{margin:0 0 28px;font-family:var(--font-heading--family);font-weight:400;font-size:clamp(1.9rem,4vw,2.6rem);
+      line-height:1.05;color:#16201B}
+    .lu-boton{display:inline-block;padding:16px 28px;background:#006039;color:#fff;text-decoration:none;
+      font-family:var(--font-body--family);font-size:.8125rem;letter-spacing:.16em;text-transform:uppercase}
+    .lu-boton:hover{background:#004d2e}
+    .lu-boton:focus-visible,.lu-ovalo:focus-visible,.lu-dudas summary:focus-visible{outline:2px solid #006039;outline-offset:4px}
+    .lu-boton--claro{background:#fff;color:#006039}
+    .lu-boton--claro:hover{background:#F2F4F2}
+
+    /* Portada: texto + óvalo con filo dorado */
+    .lu-hero{display:grid;gap:36px;align-items:center;padding-block:20px 8px}
+    .lu-hero__titulo{margin:0;font-family:var(--font-heading--family);font-weight:400;
+      font-size:clamp(2.6rem,6.4vw,5.2rem);line-height:.98;letter-spacing:-.01em;color:#16201B}
+    .lu-hero__titulo em{display:block;font-style:italic;color:#16201B}
+    .lu-hero__sub{max-width:34ch;margin:22px 0 0;font-size:1.0625rem;line-height:1.55;color:#3D4842}
+    .lu-hero__acciones{margin-top:30px}
+    .lu-hero__nota{margin:14px 0 0;font-size:.875rem;color:#A6834A;letter-spacing:.02em}
+    .lu-ovalo{display:block;width:min(78vw,460px);justify-self:center;aspect-ratio:4/5;border-radius:50%;
+      overflow:hidden;background:#F2F4F2;outline:1px solid #A6834A;outline-offset:12px;margin:12px}
+    .lu-ovalo img{display:block;width:100%;height:100%;object-fit:cover;transform:scale(1.18);
+      transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+    .lu-ovalo:hover img{transform:scale(1.24)}
+    @media (min-width:750px){
+      .lu-hero{grid-template-columns:1.1fr .9fr;gap:56px;padding-block:56px 40px}
+      .lu-ovalo{width:min(38vw,480px)}
+    }
+
+    /* Cómo es: tres rasgos con un pequeño óvalo dorado (no son pasos: sin números) */
+    .lu-como{padding-block:16px}
+    .lu-como__lista{display:grid;gap:28px;margin:0;padding:0;list-style:none}
+    .lu-como__lista li{padding-top:22px;border-top:1px solid #E2E6E3;position:relative}
+    .lu-como__lista li::before{content:'';position:absolute;top:-5px;left:0;width:7px;height:9px;border-radius:50%;
+      background:#A6834A}
+    .lu-como h3{margin:0 0 8px;font-family:var(--font-heading--family);font-weight:400;font-size:1.5rem;color:#16201B}
+    .lu-como p{margin:0;max-width:36ch;line-height:1.55;color:#3D4842}
+    @media (min-width:750px){.lu-como__lista{grid-template-columns:repeat(3,1fr);gap:40px}}
+
+    /* Franja del segundo reloj */
+    .lu-oferta{display:grid;justify-items:center;gap:10px;padding:52px 20px;text-align:center;background:#006039;color:#fff}
+    .lu-oferta__titulo{margin:0;font-family:var(--font-heading--family);font-style:italic;font-size:clamp(1.9rem,4.4vw,2.8rem);line-height:1.1}
+    .lu-oferta__texto{margin:0 0 14px;opacity:.9}
+
+    /* Antes de comprar */
+    .lu-dudas{width:100%;max-width:720px;margin-inline:auto;padding-block:16px}
+    .lu-dudas details{border-top:1px solid #E2E6E3}
+    .lu-dudas details:last-of-type{border-bottom:1px solid #E2E6E3}
+    .lu-dudas summary{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;cursor:pointer;
+      list-style:none;font-family:var(--font-heading--family);font-size:1.35rem;color:#16201B}
+    .lu-dudas summary::-webkit-details-marker{display:none}
+    .lu-dudas summary::after{content:'+';font-family:var(--font-body--family);font-size:1.25rem;color:#A6834A;
+      transition:transform .3s}
+    .lu-dudas details[open] summary::after{transform:rotate(45deg)}
+    .lu-dudas p{margin:0 0 20px;max-width:56ch;line-height:1.6;color:#3D4842}
+    .lu-dudas__mas{display:inline-block;margin-top:22px;color:#16201B;text-underline-offset:4px}
+    @media (prefers-reduced-motion:reduce){.lu-ovalo img,.lu-dudas summary::after{transition:none}}
+{% endstylesheet %}

@@ -1,82 +1,43 @@
 {
   "sections": {
     "portada": {
-      "type": "section",
-      "blocks": {
-        "antetitulo": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Joyas y relojes para regalar</p>",
-            "width": "100%",
-            "max_width": "normal",
-            "alignment": "center",
-            "type_preset": "h6",
-            "font": "var(--font-body--family)",
-            "font_size": "1rem",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        },
-        "titulo": {
-          "type": "text",
-          "settings": {
-            "text": "<h1>Para llevar cerca.</h1>",
-            "width": "100%",
-            "max_width": "normal",
-            "alignment": "center",
-            "type_preset": "h1",
-            "font": "var(--font-body--family)",
-            "font_size": "1rem",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        },
-        "boton": {
-          "type": "button",
-          "settings": {
-            "label": "Ver las piezas",
-            "link": "shopify://collections/all",
-            "style_class": "button",
-            "width": "fit-content"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "antetitulo",
-        "titulo",
-        "boton"
-      ],
+      "type": "custom-liquid",
       "settings": {
-        "content_direction": "column",
-        "horizontal_alignment_flex_direction_column": "center",
-        "vertical_alignment_flex_direction_column": "center",
-        "gap": 20,
+        "custom_liquid": "{% render 'lunerie-inicio', parte: 'hero' %}",
+        "background_color": "",
+        "section_width": "page-width",
+        "padding-block-start": 8,
+        "padding-block-end": 40
+      }
+    },
+    "como_es": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{% render 'lunerie-inicio', parte: 'como-es' %}",
+        "background_color": "",
+        "section_width": "page-width",
+        "padding-block-start": 56,
+        "padding-block-end": 56
+      }
+    },
+    "oferta": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{% render 'lunerie-inicio', parte: 'oferta' %}",
+        "background_color": "",
         "section_width": "full-width",
-        "section_height": "medium",
-        "background_color": "#F2F4F2",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "dudas": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{% render 'lunerie-inicio', parte: 'dudas' %}",
+        "background_color": "",
+        "section_width": "page-width",
         "padding-block-start": 64,
-        "padding-block-end": 64
+        "padding-block-end": 56
       }
     },
     "destacado": {
@@ -108,6 +69,31 @@
             "padding-block-end": 24
           },
           "blocks": {
+            "ceja": {
+              "type": "text",
+              "settings": {
+                "text": "<p>ELIGE EL TUYO</p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "custom",
+                "font": "var(--font-body--family)",
+                "font_size": "0.75rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0,
+                "text_color": "#A6834A"
+              },
+              "blocks": {}
+            },
             "cabecera": {
               "type": "group",
               "settings": {
@@ -184,7 +170,7 @@
             "ver_ficha": {
               "type": "button",
               "settings": {
-                "label": "Ver la pieza",
+                "label": "Ver todos los detalles",
                 "link": "{{ closest.product.url }}",
                 "style_class": "link",
                 "width": "fit-content"
@@ -193,6 +179,7 @@
             }
           },
           "block_order": [
+            "ceja",
             "cabecera",
             "variantes",
             "comprar",
@@ -201,6 +188,9 @@
         }
       },
       "block_order": [],
+      "custom_css": [
+        ".quantity-selector-wrapper { display: none; } .button-unstyled, a.link { text-decoration: underline; text-underline-offset: 4px; } @media (max-width: 749px) { .product-information__media { display: none; } }"
+      ],
       "settings": {
         "product": "reloj-lune",
         "content_width": "content-center-aligned",
@@ -211,92 +201,6 @@
         "background_color": "{{ settings.color_palette.background }}",
         "padding-block-start": 56,
         "padding-block-end": 24
-      }
-    },
-    "piezas": {
-      "type": "product-list",
-      "blocks": {
-        "static-header": {
-          "type": "_product-list-content",
-          "static": true,
-          "settings": {
-            "content_direction": "row",
-            "horizontal_alignment": "space-between",
-            "vertical_alignment": "flex-end",
-            "align_baseline": true
-          },
-          "blocks": {
-            "titulo": {
-              "type": "_product-list-text",
-              "settings": {
-                "text": "<h2>Las piezas</h2>",
-                "type_preset": "h3"
-              },
-              "blocks": {}
-            },
-            "ver_todo": {
-              "type": "_product-list-button",
-              "settings": {
-                "label": "Ver todo",
-                "style_class": "link"
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "titulo",
-            "ver_todo"
-          ]
-        },
-        "static-product-card": {
-          "type": "_product-card",
-          "static": true,
-          "settings": {
-            "product_card_gap": 6
-          },
-          "blocks": {
-            "foto": {
-              "type": "_product-card-gallery",
-              "settings": {
-                "image_ratio": "adapt"
-              },
-              "blocks": {}
-            },
-            "nombre": {
-              "type": "product-title",
-              "settings": {
-                "type_preset": "rte"
-              },
-              "blocks": {}
-            },
-            "precio": {
-              "type": "price",
-              "settings": {
-                "type_preset": "paragraph"
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "foto",
-            "nombre",
-            "precio"
-          ]
-        }
-      },
-      "settings": {
-        "collection": "all",
-        "layout_type": "grid",
-        "max_products": 6,
-        "columns": 3,
-        "mobile_columns": "2",
-        "columns_gap": 16,
-        "rows_gap": 32,
-        "section_width": "page-width",
-        "gap": 32,
-        "background_color": "{{ settings.color_palette.background }}",
-        "padding-block-start": 64,
-        "padding-block-end": 48
       }
     },
     "promesas": {
@@ -513,9 +417,11 @@
     }
   },
   "order": [
-    "destacado",
     "portada",
-    "piezas",
+    "destacado",
+    "como_es",
+    "oferta",
+    "dudas",
     "promesas"
   ]
 }

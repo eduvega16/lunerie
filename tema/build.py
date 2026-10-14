@@ -225,27 +225,37 @@ SWATCH_CSS = (
     + " ".join(f'.variant-option__button-label:has(input[value^="{v}"]) {{ background: {c} !important; }}'
                for v, c in BOLITAS.items()))
 
-# ---------- Inicio: pieza destacada (reloj Lune) · portada sin foto (fondo niebla) · las piezas · tres promesas ----------
-# Cuando haya fotos propias: en el editor, Portada → Fondo → Imagen.
+def small(bloque, size="0.875rem"):
+    """Texto en tamaño propio (preset «custom»)."""
+    bloque["settings"].update({"type_preset": "custom", "font_size": size})
+    return bloque
+
+
+def color(bloque, c, ancho="fit-content"):
+    bloque["settings"].update({"text_color": c, "width": ancho})
+    return bloque
+
+
+
+# ---------- Inicio (14-oct): centrado en el reloj Lune ----------
+# portada (titular + foto en óvalo con filo dorado) · elige el tuyo (ficha rápida) · cómo es · franja del segundo
+# reloj · antes de comprar (dudas) · tres promesas. Las partes «a medida» están en
+# tema/codigo/snippets/lunerie-inicio.liquid. Cuando llegue el collar: añadir una sección «Las piezas» de 2 columnas.
+def parte(nombre, fondo="", arriba=24, abajo=24, ancho="page-width"):
+    """Sección «Liquid personalizado» que pinta una parte de lunerie-inicio.liquid."""
+    return {"type": "custom-liquid", "settings": {
+        "custom_liquid": "{% render 'lunerie-inicio', parte: '" + nombre + "' %}",
+        "background_color": fondo, "section_width": ancho,
+        "padding-block-start": arriba, "padding-block-end": abajo}}
+
+
 index = {
     "sections": {
-        "portada": {
-            "type": "section",
-            "blocks": {
-                "antetitulo": text_block("<p>Joyas y relojes para regalar</p>", "h6", "center"),
-                "titulo": text_block("<h1>Para llevar cerca.</h1>", "h1", "center"),
-                "boton": {"type": "button", "settings": {
-                    "label": "Ver las piezas", "link": "shopify://collections/all",
-                    "style_class": "button", "width": "fit-content"}, "blocks": {}},
-            },
-            "block_order": ["antetitulo", "titulo", "boton"],
-            "settings": {
-                "content_direction": "column", "horizontal_alignment_flex_direction_column": "center",
-                "vertical_alignment_flex_direction_column": "center", "gap": 20,
-                "section_width": "full-width", "section_height": "medium", "background_color": MIST,
-                "padding-block-start": 64, "padding-block-end": 64},
-        },
-        # Pieza anclada en el inicio: ficha completa (fotos, precio, variantes, comprar)
+        "portada": parte("hero", arriba=8, abajo=40),
+        "como_es": parte("como-es", arriba=56, abajo=56),
+        "oferta": parte("oferta", arriba=0, abajo=0, ancho="full-width"),
+        "dudas": parte("dudas", arriba=64, abajo=56),
+        # Ficha rápida del reloj: color, comprar y enlace a la ficha completa
         "destacado": {
             "type": "featured-product-information",
             "blocks": {
@@ -258,6 +268,7 @@ index = {
                     "gap": 24, "sticky_details_desktop": False,
                     "padding-block-start": 24, "padding-block-end": 24},
                     "blocks": {
+                        "ceja": color(small(text_block("<p>ELIGE EL TUYO</p>", "paragraph"), "0.75rem"), GOLD, "100%"),
                         "cabecera": group({
                             "titulo": {"type": "product-title", "settings": {"type_preset": "h2"}, "blocks": {}},
                             "precio": {"type": "price", "settings": {
@@ -277,43 +288,21 @@ index = {
                                     "settings": {}, "blocks": {}},
                             }, "block_order": []},
                         "ver_ficha": {"type": "button", "settings": {
-                            "label": "Ver la pieza", "link": "{{ closest.product.url }}",
+                            "label": "Ver todos los detalles", "link": "{{ closest.product.url }}",
                             "style_class": "link", "width": "fit-content"}, "blocks": {}},
                     },
-                    "block_order": ["cabecera", "variantes", "comprar", "ver_ficha"]},
+                    "block_order": ["ceja", "cabecera", "variantes", "comprar", "ver_ficha"]},
             },
             "block_order": [],
+            # sin selector de cantidad (como en la ficha) y el enlace subrayado para que se vea que se pulsa
+            "custom_css": [".quantity-selector-wrapper { display: none; } "
+                           ".button-unstyled, a.link { text-decoration: underline; text-underline-offset: 4px; } "
+                           # en móvil la foto ya está en el óvalo de la portada, justo encima
+                           "@media (max-width: 749px) { .product-information__media { display: none; } }"],
             "settings": {
                 "product": "reloj-lune", "content_width": "content-center-aligned",
                 "desktop_media_position": "left", "equal_columns": True, "limit_details_width": True,
                 "gap": 48, "background_color": BG, "padding-block-start": 56, "padding-block-end": 24},
-        },
-        "piezas": {
-            "type": "product-list",
-            "blocks": {
-                "static-header": {"type": "_product-list-content", "static": True, "settings": {
-                    "content_direction": "row", "horizontal_alignment": "space-between",
-                    "vertical_alignment": "flex-end", "align_baseline": True},
-                    "blocks": {
-                        "titulo": {"type": "_product-list-text", "settings": {
-                            "text": "<h2>Las piezas</h2>", "type_preset": "h3"}, "blocks": {}},
-                        "ver_todo": {"type": "_product-list-button", "settings": {
-                            "label": "Ver todo", "style_class": "link"}, "blocks": {}},
-                    },
-                    "block_order": ["titulo", "ver_todo"]},
-                "static-product-card": {"type": "_product-card", "static": True,
-                    "settings": {"product_card_gap": 6},
-                    "blocks": {
-                        "foto": {"type": "_product-card-gallery", "settings": {"image_ratio": "adapt"}, "blocks": {}},
-                        "nombre": {"type": "product-title", "settings": {"type_preset": "rte"}, "blocks": {}},
-                        "precio": {"type": "price", "settings": {"type_preset": "paragraph"}, "blocks": {}},
-                    },
-                    "block_order": ["foto", "nombre", "precio"]},
-            },
-            "settings": {
-                "collection": "all", "layout_type": "grid", "max_products": 6, "columns": 3,
-                "mobile_columns": "2", "columns_gap": 16, "rows_gap": 32, "section_width": "page-width",
-                "gap": 32, "background_color": BG, "padding-block-start": 64, "padding-block-end": 48},
         },
         "promesas": {
             "type": "section",
@@ -336,7 +325,7 @@ index = {
                 "padding-block-start": 48, "padding-block-end": 48},
         },
     },
-    "order": ["destacado", "portada", "piezas", "promesas"],
+    "order": ["portada", "destacado", "como_es", "oferta", "dudas", "promesas"],
 }
 (OUT / "index.json").write_text(json.dumps(index, ensure_ascii=False, indent=2), encoding="utf8")
 
@@ -348,17 +337,6 @@ index = {
 def row(heading, html, abierto=False):
     return {"type": "_accordion-row", "settings": {"heading": heading, "icon": "none", "open_by_default": abierto},
             "blocks": {"texto": text_block(html, "rte")}, "block_order": ["texto"]}
-
-
-def small(bloque, size="0.875rem"):
-    """Texto en tamaño propio (preset «custom»)."""
-    bloque["settings"].update({"type_preset": "custom", "font_size": size})
-    return bloque
-
-
-def color(bloque, c, ancho="fit-content"):
-    bloque["settings"].update({"text_color": c, "width": ancho})
-    return bloque
 
 
 def liquid(codigo):

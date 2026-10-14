@@ -3,7 +3,7 @@
 ## Quién trata tus datos
 
 - **Responsable:** [NOMBRE] · NIF [NIF] · [DIRECCIÓN]
-- **Email para cualquier tema de privacidad:** luneriecompany@gmail.com
+- **Email para cualquier tema de privacidad:** hola@lunerie.es
 
 ## Qué datos usamos y para qué
 
@@ -34,7 +34,7 @@ están algunos proveedores de producto). En esos casos los datos viajan con las 
 ## Tus derechos
 
 Puedes pedirnos ver tus datos, corregirlos, borrarlos, limitar u oponerte a su uso, llevártelos a otro servicio y
-retirar tu consentimiento cuando quieras. Escríbenos a luneriecompany@gmail.com.
+retirar tu consentimiento cuando quieras. Escríbenos a hola@lunerie.es.
 
 Si crees que no lo hemos hecho bien, puedes reclamar ante la **Agencia Española de Protección de Datos**
 (www.aepd.es).

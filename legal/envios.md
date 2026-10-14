@@ -21,7 +21,7 @@ Cada pieza viaja en su caja de regalo. El paquete puede llegar en más de un env
 
 ## Si hay algún problema
 
-- **No llega o el seguimiento no avanza:** escríbenos a luneriecompany@gmail.com con tu número de pedido y lo
+- **No llega o el seguimiento no avanza:** escríbenos a hola@lunerie.es con tu número de pedido y lo
   revisamos con el transportista.
 - **Llega dañado:** haz una foto del paquete y de la pieza y mándanosla; lo reponemos sin coste.
 - **Dirección incorrecta:** avísanos cuanto antes; si el pedido aún no ha salido, la cambiamos.

@@ -7,7 +7,7 @@ desistimiento, arts. 102 y siguientes de la Ley General para la Defensa de los C
 
 **Cómo hacerlo:**
 
-1. Escríbenos a **luneriecompany@gmail.com** con tu número de pedido y qué quieres devolver. Puedes usar el
+1. Escríbenos a **hola@lunerie.es** con tu número de pedido y qué quieres devolver. Puedes usar el
    formulario de abajo, pero no es obligatorio: basta con un email claro.
 2. Te contestamos con la dirección de devolución: [DIRECCIÓN DE DEVOLUCIONES].
 3. Envía la pieza **en un plazo de 14 días** desde que nos avisas, en su caja y con todo lo que traía.
@@ -50,7 +50,7 @@ Escríbenos en cuanto lo recibas con una foto y lo solucionamos sin coste para t
 
 (Solo tienes que rellenarlo y enviarlo si quieres devolver el pedido.)
 
-> A la atención de [NOMBRE], [DIRECCIÓN], luneriecompany@gmail.com:
+> A la atención de [NOMBRE], [DIRECCIÓN], hola@lunerie.es:
 >
 > Por la presente le comunico que desisto de mi contrato de venta del siguiente bien:
 >

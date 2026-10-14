@@ -6,7 +6,7 @@ te informamos de los datos del titular de esta web:
 - **Titular:** [NOMBRE]
 - **NIF:** [NIF]
 - **Domicilio:** [DIRECCIÓN]
-- **Email:** luneriecompany@gmail.com
+- **Email:** hola@lunerie.es
 - **Web:** lunerie.es
 - **Actividad:** venta online de joyas y relojes.
 

@@ -2,7 +2,7 @@
 
 ## 1. Quién vende
 
-[NOMBRE], con NIF [NIF] y domicilio en [DIRECCIÓN] («Lunerie»). Email: luneriecompany@gmail.com.
+[NOMBRE], con NIF [NIF] y domicilio en [DIRECCIÓN] («Lunerie»). Email: hola@lunerie.es.
 
 Estas condiciones se aplican a las compras en lunerie.es. Al hacer un pedido las aceptas. Están en español y
 se guardan con tu pedido.
@@ -49,7 +49,7 @@ no se acumulan con otras salvo que se diga.
 
 ## 9. Atención al cliente y reclamaciones
 
-Para cualquier duda o queja escríbenos a luneriecompany@gmail.com: contestamos en 1-2 días laborables. Tienes a tu
+Para cualquier duda o queja escríbenos a hola@lunerie.es: contestamos en 1-2 días laborables. Tienes a tu
 disposición hojas de reclamaciones; pídenoslas por email.
 
 ## 10. Ley aplicable

@@ -34,7 +34,7 @@ def html(fichero):
     titulo, cuerpo = texto.split("\n", 1)
     # «**Pregunta**» sola en su línea: salto de línea antes de la respuesta
     cuerpo = re.sub(r"^(\*\*[^\n]+\*\*)$", r"\1  ", cuerpo, flags=re.M)
-    return titulo.lstrip("# ").strip(), markdown.markdown(cuerpo.strip())
+    return titulo.lstrip("# ").strip(), markdown.markdown(cuerpo.strip(), extensions=["tables"])
 
 
 def gql(query, variables):

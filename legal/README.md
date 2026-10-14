@@ -4,7 +4,7 @@
 «Preguntas frecuentes» en **Tienda online → Páginas**). Para volver a subir tras cambiar un texto:
 `PYTHONIOENCODING=utf-8 LUNERIE_NOMBRE="…" LUNERIE_NIF="…" LUNERIE_DIRECCION="…" python legal/subir.py`
 (los datos personales se piden a Edu o se leen del aviso legal publicado; no se guardan en el repositorio).
-La política de privacidad no se sube mientras Shopify la gestione automáticamente.
+Privacidad subida el 14-oct (Edu desactivó la gestión automática de Shopify).
 Decidido el 12-oct: Baleares con un pequeño coste de envío · devolución por desistimiento la paga el cliente; si
 llega defectuoso, roto o equivocado, Lunerie · personalizados sin devolución salvo defecto. Sigue pendiente [PLAZO].
 

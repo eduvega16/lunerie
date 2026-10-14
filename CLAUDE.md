@@ -274,8 +274,7 @@ alertas si CTR < 1 % o CPC > 0,90 €. Máximo 2 productos en test a la vez.
 - **Al abrir:** `git pull`. Shopify: el conector de claude.ai puede no cargar → usar `shopify store execute`
   (apartado 6); tema publicado = **209073799507**.
 - **Esperando a Edu:**
-  1. Desactivar la **gestión automática de la política de privacidad** (Configuración → Políticas; el 14-oct seguía
-     activa). Después Claude sube `legal/privacidad.md` (la CLI ya tiene permiso en este PC).
+  1. ~~Política de privacidad~~: subida la nuestra el 14-oct (gestión automática desactivada).
   2. **Dirección (14-oct): Edu deja la de su casa**, sin oficina virtual. Los textos dicen solo «41940 Tomares
      (Sevilla)»; la LSSI pide el domicilio completo → si Edu quiere, Claude la pone completa al subir (nunca en git).
   3. **Plazo de envío:** por definir cuando llegue la muestra (AliExpress dice ~14 días) → quitar [PLAZO] de envíos,

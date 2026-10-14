@@ -173,7 +173,7 @@ gafas con cámara IA (69,95-79,95 €) · descartados: micro-infusión, paddle s
     http://127.0.0.1:9292 (recarga sola al cambiar ficheros de `tema/tienda/`, sin tocar la tienda). **Edu no quiere
     ventanas de terminal:** Claude la lanza en segundo plano desde VS Code (Bash con `run_in_background`):
     `shopify theme dev --store qjxvnn-xq.myshopify.com --path tema/tienda --store-password "$(cat .claude/store-password)" 2>&1 | tee .claude/theme-dev.log`.
-    La contraseña de la tienda está en `.claude/store-password` (fuera de git; Edu la dio el 10-oct; en el otro PC
+    La contraseña de la tienda está en `.claude/store-password` (fuera de git; Edu la dio el 10-oct y el 14-oct en `C:SERSEDUuNERIE`; EN UN PC NUEVO
     hay que crear ese fichero). Claude ve si arrancó con `curl http://127.0.0.1:9292` y el log `.claude/theme-dev.log`.
     Crea un tema de desarrollo oculto en Shopify (no se publica). Capturas de pantalla para revisar: Chrome headless
     (`chrome --headless=new --user-data-dir=<temporal> --window-size=1440,2600 --screenshot=… <url>`; Edge se cuelga).

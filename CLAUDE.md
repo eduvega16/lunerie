@@ -201,7 +201,8 @@ gafas con cámara IA (69,95-79,95 €) · descartados: micro-infusión, paddle s
       principal («Piezas · Preguntas frecuentes · Contacto»). **Las 6 políticas las pega Edu** en Configuración →
       Políticas: el conector **no tiene permiso** `write_legal_policies` (las páginas y menús sí). Rellenar los huecos
       de `legal/README.md` en Shopify y en la página de FAQ ([PLAZO], [BALEARES]).
-- [ ] Banner de cookies (Configuración → Privacidad del cliente)
+- [x] Banner de cookies de Shopify activado por Edu (14-oct; carga `privacy-banner/storefront-banner.js`). Falta que
+      Edu lo mire en incógnito (Aceptar y Rechazar a la vez, texto en español).
 - [ ] Apps: Facebook & Instagram (píxel Meta), TikTok
 - [x] **Reloj Lune creado el 10-oct** (`reloj-lune`, activo y en Tienda online): 44,95 €, opción **Color** con
       «Dorado · piedra verde» y «Plateado · piedra verde» (SKU LUNE-DOR-VER / LUNE-PLA-VER), sin control de stock
@@ -248,8 +249,7 @@ gafas con cámara IA (69,95-79,95 €) · descartados: micro-infusión, paddle s
       fina con titular, botón y «Segundo reloj por 19,95 €» dentro. **OJO: el vídeo muestra otro reloj (esfera
       «NAIDU», piedras rosas): cambiarlo por uno de las muestras antes de abrir** (URL en `hero-video` de
       `lunerie-inicio.liquid`). Volver a la portada con foto: `parte("hero", arriba=8, abajo=40)` en `build.py`.
-      **Pendiente:** el menú «Piezas» → «Reloj
-      Lune» (enlace a la ficha): la CLI de este PC no tiene `shopify store auth` y el conector no cargaba.
+      Menú principal (14-oct): «Reloj Lune» (ficha `/products/reloj-lune`) · Preguntas frecuentes · Contacto.
 - [ ] Quitar la contraseña de la tienda
 
 > Claude está conectado a Shopify (conector de claude.ai) con la tienda Lunerie. Antes estaba Star Brick: al cambiar
@@ -258,8 +258,9 @@ gafas con cámara IA (69,95-79,95 €) · descartados: micro-infusión, paddle s
 > `shopify store execute -s qjxvnn-xq.myshopify.com -q "<query>" --json --no-input` (añadir `--allow-mutations` para
 > escribir; `--query-file` / `--variable-file` para operaciones largas). Permisos dados por Edu el 12-oct con
 > `shopify store auth` (productos, inventario, páginas, políticas, menús, archivos, temas, publicaciones, envíos,
-> pedidos en lectura, descuentos). Si caducan o falta un permiso: abrir ventana con
-> `Start-Process powershell -ArgumentList '-NoExit','-Command','shopify store auth --store qjxvnn-xq.myshopify.com --scopes <lista>'`.
+> pedidos en lectura, descuentos); en `D:\LUNERIE` dados el 14-oct. **Sin ventana:** lanzar en segundo plano
+> `shopify store auth --store qjxvnn-xq.myshopify.com --scopes <lista> 2>&1 | tee .claude/store-auth.log`: abre el
+> navegador solo y Edu acepta (probado el 14-oct). El conector de claude.ai sigue sin `write_legal_policies`.
 
 ## 7. Test de ~90 € (por producto)
 Meta Ads, ABO: 3 conjuntos (1 ángulo cada uno) × 10 €/día × 3 días = 90 €. Cada día, en el radar:
@@ -267,21 +268,21 @@ Meta Ads, ABO: 3 conjuntos (1 ángulo cada uno) × 10 €/día × 3 días = 90 �
 KILL si gastas 1× CPA BE sin carritos o 2× sin ventas · ESCALAR con ≥ 3 ventas a ≤ 70 % del CPA BE ·
 alertas si CTR < 1 % o CPC > 0,90 €. Máximo 2 productos en test a la vez.
 
-## 8. Calendario y pendientes (a 13-oct-2026)
+## 8. Calendario y pendientes (a 14-oct-2026)
 
 ### Para empezar la próxima sesión
 - **Al abrir:** `git pull`. Shopify: el conector de claude.ai puede no cargar → usar `shopify store execute`
   (apartado 6); tema publicado = **209073799507**.
 - **Esperando a Edu:**
-  1. Desactivar la **gestión automática de la política de privacidad** (Configuración → Políticas): la automática
-     muestra su dirección completa. Después Claude sube `legal/privacidad.md` con `legal/subir.py`.
-  2. **Dirección comercial / oficina virtual** (10-30 €/mes; darla de alta en Hacienda, 036/037) → Claude la pone en
-     todos los textos y Edu en Configuración → General. Ahora los textos solo dicen «41940 Tomares (Sevilla)»:
-     el aviso legal está incompleto hasta entonces (tiene que estar antes de abrir).
-  3. **Plazo de envío** → quitar [PLAZO] de envíos, FAQ y ficha del reloj (`build.py`).
-  4. Envíos en el admin: península gratis + **Baleares con coste** (¿3,95 €?) · @lunerie en Instagram/TikTok con
-     `marca/logos/oficial-avatar-redes.png` · página de Facebook + cuenta publicitaria de Meta.
-- **Siguiente con Claude:** cookies · app Facebook & Instagram + píxel · revisar la ficha del reloj con `landing.md`
+  1. Desactivar la **gestión automática de la política de privacidad** (Configuración → Políticas; el 14-oct seguía
+     activa). Después Claude sube `legal/privacidad.md` (la CLI ya tiene permiso en este PC).
+  2. **Dirección (14-oct): Edu deja la de su casa**, sin oficina virtual. Los textos dicen solo «41940 Tomares
+     (Sevilla)»; la LSSI pide el domicilio completo → si Edu quiere, Claude la pone completa al subir (nunca en git).
+  3. **Plazo de envío:** por definir cuando llegue la muestra (AliExpress dice ~14 días) → quitar [PLAZO] de envíos,
+     FAQ y ficha del reloj (`build.py`).
+  4. Envíos en el admin: península gratis + **Baleares con coste** (¿3,95 €?) · @lunerie en TikTok ·
+     **cuenta publicitaria de Meta** por terminar (la página de Facebook ya está conectada, 14-oct).
+- **Siguiente con Claude:** app Facebook & Instagram + píxel · revisar la ficha del reloj con `landing.md`
   · fotos del proveedor en 4:5 (si Edu las pasa) · anuncios cuando lleguen las muestras.
 
 ### Resumen de la sesión 12-13 oct

@@ -111,6 +111,29 @@
 - Vídeos a grabar con las muestras: relojes en fila "elige tu piedra" · en la muñeca moviéndola · abriendo la caja ·
   quitando un eslabón.
 
+### 5.1b Plan de stock propio (15-oct) y reloj alternativo «NAIDU»
+- **Decisión de Edu (15-oct): pasar a stock propio** (el drop en Navidad no funciona: ~2 semanas de entrega). Orden:
+  **validar primero** (test de 90 € con las muestras y AliExpress enviando) → si pasa (~2-8 nov), pedir stock exprés
+  DDP → Black Friday y Navidad con entrega 24-72 h, packaging Lunerie y correa ajustada por Edu.
+- **Edu NO es autónomo ni está dado de alta en Hacienda** (15-oct). Hace falta antes de vender (036/037 + RETA, cuota
+  reducida ~80 €/mes el primer año); recomendado hablar con una gestoría online antes del test. Como particular, el IVA
+  de importación no se recupera.
+- **Reloj alternativo:** Foshan Daiyue Watch (Alibaba, 7 años, 4,7/5 con 981 valoraciones, n.º 2 en su categoría):
+  https://www.alibaba.com/product-detail/New-Vintage-Women-s-Watch-with_1601581449616.html · esfera **«NAIDU»**
+  (el reloj del vídeo de la portada) · correa con piedras ovaladas alternadas con anillas y monedas grabadas · colores
+  rosa, verde claro, verde oscuro, blanco, amarillo · **2,75 $/ud (30-50), 2,65 $ (100)** · muestras 7 $/ud + exprés
+  17,92 $ por 2 (9-19 días). Edu pide **muestras verde oscuro + verde claro** (15-oct) para comparar con el BS.
+  Pendiente que confirme: envío DDP del lote, plazo y **logo propio en esfera / tapa** (pedido mínimo y coste).
+  No es el modelo que vende Calné (demanda no probada, mismo estilo).
+- **Caja (packaging):** caja tipo cajón 9,5 × 9,5 × 3,5 cm interior con esponja negra con ranura. Edu prefiere la
+  **blanca con letras negras** (estilo «VOGUE», pero con LUNERIE en Cormorant en vertical; 1 tinta #16201B; opcional
+  destello en oro). Misma caja en Nihao (NH11567891, hasta 1,09 €, mínimo 20, «Nihao Prime» con impuestos incluidos)
+  y en Alibaba de fábrica (Yiwu Chunshen, VK-PON-C03, 0,07-0,77 €, mínimo 50, muestra 1,70 €). Pedir a los dos:
+  blanca lisa sin texto + impresión propia, pedido mínimo, cliché y DDP. Claude puede preparar el archivo de diseño.
+- **Importar:** pedir siempre «DDP to Spain (all taxes and duties included)» y pagar dentro de Alibaba (Trade
+  Assurance). < 150 €: Alibaba suele cobrar el IVA en el carrito; > 150 €: DDP del proveedor o pagar IVA + arancel +
+  comisión del mensajero al recibir.
+
 ### 5.2 Collar con nombre "firma" + lágrima de piedra del mes — 🟡 por validar (producto 2)
 - **Qué es:** cadena dorada, nombre en letra de firma (con trazos) a un lado y colgante de circonita en lágrima del
   color del mes de nacimiento. Plateado / dorado / oro rosa.

@@ -115,14 +115,15 @@
 - **Decisión de Edu (15-oct): pasar a stock propio** (el drop en Navidad no funciona: ~2 semanas de entrega). Orden:
   **validar primero** (test de 90 € con las muestras y AliExpress enviando) → si pasa (~2-8 nov), pedir stock exprés
   DDP → Black Friday y Navidad con entrega 24-72 h, packaging Lunerie y correa ajustada por Edu.
-- **Edu NO es autónomo ni está dado de alta en Hacienda** (15-oct). Hace falta antes de vender (036/037 + RETA, cuota
-  reducida ~80 €/mes el primer año); recomendado hablar con una gestoría online antes del test. Como particular, el IVA
-  de importación no se recupera.
+- **Alta de autónomo / Hacienda:** Edu no está dado de alta y **ha decidido no hacerlo hasta que empiece a vender**
+  (15-oct). Decisión tomada: no volver a plantearlo. Como particular, el IVA de importación no se recupera (y en
+  Alibaba no se pone NIF en «exención de impuestos»).
 - **Reloj alternativo:** Foshan Daiyue Watch (Alibaba, 7 años, 4,7/5 con 981 valoraciones, n.º 2 en su categoría):
   https://www.alibaba.com/product-detail/New-Vintage-Women-s-Watch-with_1601581449616.html · esfera **«NAIDU»**
   (el reloj del vídeo de la portada) · correa con piedras ovaladas alternadas con anillas y monedas grabadas · colores
   rosa, verde claro, verde oscuro, blanco, amarillo · **2,75 $/ud (30-50), 2,65 $ (100)** · muestras 7 $/ud + exprés
-  17,92 $ por 2 (9-19 días). Edu pide **muestras verde oscuro + verde claro** (15-oct) para comparar con el BS.
+  17,92 $ por 2 (9-19 días). **Muestras pagadas el 15-oct** (verde claro + verde oscuro, 32,77 € con IVA incluido; entrega más rápida
+  27-oct) para comparar con el BS. Las respuestas del chat del proveedor eran del asistente automático de Alibaba.
   Pendiente que confirme: envío DDP del lote, plazo y **logo propio en esfera / tapa** (pedido mínimo y coste).
   No es el modelo que vende Calné (demanda no probada, mismo estilo).
 - **Caja (packaging):** caja tipo cajón 9,5 × 9,5 × 3,5 cm interior con esponja negra con ranura. Edu prefiere la
@@ -259,7 +260,7 @@ gafas con cámara IA (69,95-79,95 €) · descartados: micro-infusión, paddle s
       marca `last_fired_time`. Banner en español con Aceptar / Rechazar / Administrar preferencias. **Pedido de prueba**
       (modo de prueba de Shopify Payments, tarjeta 4242…, pedidos #LUN1001-1003 marcados como prueba): sale
       AddPaymentInfo y **Purchase** con valor y moneda. Pendiente: eventos de servidor (API de conversiones) con la
-      primera venta real. **Apagar el modo de prueba** antes de abrir.
+      primera venta real. Modo de prueba **apagado** por Edu (15-oct).
 - [ ] App de TikTok
 - [x] **Reloj Lune creado el 10-oct** (`reloj-lune`, activo y en Tienda online): 44,95 €, opción **Color** con
       «Dorado · piedra verde» y «Plateado · piedra verde» (SKU LUNE-DOR-VER / LUNE-PLA-VER), sin control de stock

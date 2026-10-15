@@ -141,7 +141,8 @@ gafas con cámara IA (69,95-79,95 €) · descartados: micro-infusión, paddle s
 - [x] Crear la tienda en Shopify (7-oct)
 - [x] Datos: nombre LUNERIE, España, EUR, impuestos incluidos en los precios (comprobado el 7-oct por API)
 - [x] Dominio **lunerie.es** conectado (visto el 7-oct; cuenta de Shopify con luneriecompany@gmail.com, plan Basic, EUR).
-  **Correo de cara al cliente: hola@lunerie.es** (14-oct; ya en todos los textos legales y páginas)
+  **Correo de cara al cliente: hola@lunerie.es** (14-oct; en todos los textos legales y páginas, y como correo de
+  la tienda en Shopify, visto el 15-oct)
 - [~] Redes: **Instagram @lunerie_co** (13-oct; cuenta que Edu ya tenía, ~700 seguidores no orientados, se
       reutiliza por imagen de marca: renombrar a «Lunerie», cuenta profesional, avatar `oficial-avatar-redes.png`,
       bio «Joyas y relojes para regalar. / Para llevar cerca. / Envío gratis a península.», enlace lunerie.es,
@@ -149,8 +150,8 @@ gafas con cámara IA (69,95-79,95 €) · descartados: micro-infusión, paddle s
       enlace de Instagram en el pie de la tienda.
       **Meta (15-oct, comprobado con el conector):** porfolio empresarial **Lunerie** (1639315480899561), separado
       de LaFortuna · cuenta publicitaria **«LUNERIE PUBLI» 4565584937093443** (EUR, activa, **con método de pago**,
-      dentro del porfolio) → **es la que se usa** · página «L U N E R I E» **1376893392171782** (ojo: el 14-oct salía
-      otra con id 1311701355367588; comprobar que no quedan dos páginas) · Instagram **lunerie_co**
+      dentro del porfolio) → **es la que se usa** · página «L U N E R I E» **1376893392171782** (página **nueva** creada por Edu el
+      15-oct; la antigua 1311701355367588, en lafortuna.club, sobra → borrarla o archivarla) · Instagram **lunerie_co**
       (17841404549468255) enlazado a la cuenta publicitaria. La cuenta suelta 1551796336759107 (sin pago ni
       porfolio) sobra. Claude lo ve con el conector **«Meta ads Koco»** de claude.ai (nombre antiguo) · «pipeboard»
       solo ve LaFortuna: no usarlo para Lunerie.

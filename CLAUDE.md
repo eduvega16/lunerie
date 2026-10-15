@@ -59,7 +59,7 @@
 
 ## 4. Reglas legales y de negocio (España)
 - Precios **con IVA incluido** (21 %). Envío gratis a península (Canarias/Ceuta/Melilla fuera al principio: aduana).
-  **Baleares: sí, con un pequeño coste de envío** (decidido el 12-oct; importe por fijar), ya explicado en la página
+  **Baleares: sí, 3,95 € de envío** (decidido el 12-oct; importe fijado el 15-oct), ya explicado en la página
   de Envíos.
 - **Devoluciones (12-oct):** por desistimiento, el envío de vuelta lo paga el cliente; si llega roto, defectuoso o
   equivocado, Lunerie. Datos personales del titular: solo en Shopify (aviso legal), nunca en el repositorio.
@@ -156,11 +156,19 @@ gafas con cámara IA (69,95-79,95 €) · descartados: micro-infusión, paddle s
       porfolio) sobra. Claude lo ve con el conector **«Meta ads Koco»** de claude.ai (nombre antiguo) · «pipeboard»
       solo ve LaFortuna: no usarlo para Lunerie.
 - [x] Cobros activados por Edu (12-oct). Confirmar que PayPal también está.
-- [ ] **Envíos: MAL (visto el 15-oct).** Siguen los de Shopify por defecto: zona España con TODAS las provincias
-      (Canarias, Ceuta, Melilla y Baleares incluidas), «Estándar» 6,99 € y «Estándar» gratis **solo desde 55 €** →
-      un Lune solo (44,95 €) paga 6,99 € de envío, contra lo que dicen la barra, la ficha y la política. Además zonas
-      UE (8,99 €) e Internacional (12,99 €) activas. Propuesto a Edu: península gratis · Baleares 3,95 € · resto fuera
-      (Claude puede hacerlo con la CLI, permiso de envíos dado).
+- [x] **Envíos (15-oct, probado en el pago real):** península **gratis** · Baleares **3,95 €** · Canarias, Ceuta y
+      Melilla **sin envío** («El envío no está disponible»). **La tienda usa el sistema nuevo de Shopify, «envíos por
+      mercado»**: las tarifas viven en los **mercados**, no en los perfiles de envío (cambiar `deliveryProfile` no
+      afecta al pago; ahí quedaron unas zonas «Península»/«Baleares» de prueba que no se usan). Mercados: **España**
+      (opción «Envío gratis» 0 €; tenía «Estándar» 6,99 € gratis desde 55 €) · **Baleares** (provincia PM, «Envío a
+      Baleares» 3,95 €) · **Canarias, Ceuta y Melilla** (GC, TF, CE, ML, envíos desactivados). API: `marketUpdate` /
+      `marketCreate` con `--version unstable` (las provincias en `regionsCondition` solo existen ahí; al crear,
+      `delivery.shipping.optionDefinitions`) y **cada tarifa tiene que llevar la ubicación de la tienda**
+      (`conditions.originLocationsToAdd: gid://shopify/Location/127723929939`) o no sale en el pago. Permisos de la
+      CLI ampliados el 15-oct con `read_markets,write_markets,read_locations,read_delivery_customizations`.
+      **Ojo:** el pago promete entrega en **3-5 días** (`transitTime` 259200-432000 s) → ajustarlo al plazo real.
+      Comprobar envíos en el pago: script de Playwright con dirección y sin pagar (Madrid 28001 / Palma 07001 / Las
+      Palmas 35001).
 - [x] Tema publicado: **«Copia actualizada de Lunerie · marca» (id 209073799507)** = Horizon 1.0.5, actualizado por
   Edu el 12-oct. Shopify crea una **copia nueva con otro id** en cada actualización de Horizon: después de actualizar,
   cambiar el id en este fichero y volver a bajar `tema/tienda/`. En la del 12-oct se conservaron los 5 ficheros de
@@ -303,7 +311,7 @@ alertas si CTR < 1 % o CPC > 0,90 €. Máximo 2 productos en test a la vez.
      (Sevilla)»; la LSSI pide el domicilio completo → si Edu quiere, Claude la pone completa al subir (nunca en git).
   3. **Plazo de envío:** por definir cuando llegue la muestra (AliExpress dice ~14 días) → quitar [PLAZO] de envíos,
      FAQ y ficha del reloj (`build.py`).
-  4. Envíos en el admin: península gratis + **Baleares con coste** (¿3,95 €?) · @lunerie en TikTok ·
+  4. ~~Envíos~~ (15-oct: península gratis, Baleares 3,95 €, Canarias/Ceuta/Melilla fuera) · @lunerie en TikTok ·
      Meta listo (15-oct: porfolio Lunerie + cuenta «LUNERIE PUBLI» con pago + página + Instagram) → app
      Facebook & Instagram instalada → píxel asignado a LUNERIE PUBLI y probado (15-oct).
 - **Siguiente con Claude:** app Facebook & Instagram + píxel · revisar la ficha del reloj con `landing.md`

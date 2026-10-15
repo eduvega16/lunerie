@@ -156,7 +156,11 @@ gafas con cámara IA (69,95-79,95 €) · descartados: micro-infusión, paddle s
       porfolio) sobra. Claude lo ve con el conector **«Meta ads Koco»** de claude.ai (nombre antiguo) · «pipeboard»
       solo ve LaFortuna: no usarlo para Lunerie.
 - [x] Cobros activados por Edu (12-oct). Confirmar que PayPal también está.
-- [ ] Envíos: zona España, gratis (decidir Baleares, apartado 4)
+- [ ] **Envíos: MAL (visto el 15-oct).** Siguen los de Shopify por defecto: zona España con TODAS las provincias
+      (Canarias, Ceuta, Melilla y Baleares incluidas), «Estándar» 6,99 € y «Estándar» gratis **solo desde 55 €** →
+      un Lune solo (44,95 €) paga 6,99 € de envío, contra lo que dicen la barra, la ficha y la política. Además zonas
+      UE (8,99 €) e Internacional (12,99 €) activas. Propuesto a Edu: península gratis · Baleares 3,95 € · resto fuera
+      (Claude puede hacerlo con la CLI, permiso de envíos dado).
 - [x] Tema publicado: **«Copia actualizada de Lunerie · marca» (id 209073799507)** = Horizon 1.0.5, actualizado por
   Edu el 12-oct. Shopify crea una **copia nueva con otro id** en cada actualización de Horizon: después de actualizar,
   cambiar el id en este fichero y volver a bajar `tema/tienda/`. En la del 12-oct se conservaron los 5 ficheros de
@@ -219,8 +223,10 @@ gafas con cámara IA (69,95-79,95 €) · descartados: micro-infusión, paddle s
       datos «Máximo» · catálogo de Shopify sincronizado con Meta (2654127555016345). **Probado el 15-oct** con Chrome automático
       (Playwright, `ctx.request.post` a /password para entrar): antes de «Aceptar» no sale nada hacia Meta; después
       salen PageView, ViewContent, AddToCart, InitiateCheckout (y SubscribedButtonClick) con el id del píxel, y Meta
-      marca `last_fired_time`. Banner en español con Aceptar / Rechazar / Administrar preferencias. Pendiente: ver
-      eventos de servidor (API de conversiones) y Purchase con el primer pedido real o de prueba.
+      marca `last_fired_time`. Banner en español con Aceptar / Rechazar / Administrar preferencias. **Pedido de prueba**
+      (modo de prueba de Shopify Payments, tarjeta 4242…, pedidos #LUN1001-1003 marcados como prueba): sale
+      AddPaymentInfo y **Purchase** con valor y moneda. Pendiente: eventos de servidor (API de conversiones) con la
+      primera venta real. **Apagar el modo de prueba** antes de abrir.
 - [ ] App de TikTok
 - [x] **Reloj Lune creado el 10-oct** (`reloj-lune`, activo y en Tienda online): 44,95 €, opción **Color** con
       «Dorado · piedra verde» y «Plateado · piedra verde» (SKU LUNE-DOR-VER / LUNE-PLA-VER), sin control de stock

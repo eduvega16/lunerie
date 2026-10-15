@@ -215,8 +215,8 @@ gafas con cámara IA (69,95-79,95 €) · descartados: micro-infusión, paddle s
 - [x] **App Facebook & Instagram instalada por Edu (15-oct)**: píxel **«Lunerie's pixel» 1096538246614496** (porfolio
       Lunerie, uso «publicidad y analítica», cookie propia activa) puesto en la tienda por la app (apiClientId 2329312,
       compartir datos «optimized» + todos los eventos). Solo se activa **con consentimiento** (privacyPurposes
-      ANALYTICS/MARKETING → espera al «Aceptar» del banner). **Falta:** asignar el píxel a la cuenta «LUNERIE PUBLI»
-      (Configuración del negocio → Orígenes de datos → Conjuntos de datos → Añadir activos) y ver el primer evento
+      ANALYTICS/MARKETING → espera al «Aceptar» del banner). Píxel **asignado a «LUNERIE PUBLI»** (15-oct) · compartir
+      datos «Máximo» · catálogo de Shopify sincronizado con Meta (2654127555016345). **Falta:** ver el primer evento
       (Edu acepta cookies en incógnito y navega → Claude mira `ads_get_dataset_stats`).
 - [ ] App de TikTok
 - [x] **Reloj Lune creado el 10-oct** (`reloj-lune`, activo y en Tienda online): 44,95 €, opción **Color** con
@@ -296,7 +296,7 @@ alertas si CTR < 1 % o CPC > 0,90 €. Máximo 2 productos en test a la vez.
      FAQ y ficha del reloj (`build.py`).
   4. Envíos en el admin: península gratis + **Baleares con coste** (¿3,95 €?) · @lunerie en TikTok ·
      Meta listo (15-oct: porfolio Lunerie + cuenta «LUNERIE PUBLI» con pago + página + Instagram) → app
-     Facebook & Instagram instalada → falta asignar el píxel a LUNERIE PUBLI y ver el primer evento.
+     Facebook & Instagram instalada → píxel asignado a LUNERIE PUBLI; falta ver el primer evento.
 - **Siguiente con Claude:** app Facebook & Instagram + píxel · revisar la ficha del reloj con `landing.md`
   · fotos del proveedor en 4:5 (si Edu las pasa) · anuncios cuando lleguen las muestras.
 

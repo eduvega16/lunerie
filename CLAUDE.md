@@ -129,7 +129,9 @@
   **blanca con letras negras** (estilo «VOGUE», pero con LUNERIE en Cormorant en vertical; 1 tinta #16201B; opcional
   destello en oro). Misma caja en Nihao (NH11567891, hasta 1,09 €, mínimo 20, «Nihao Prime» con impuestos incluidos)
   y en Alibaba de fábrica (Yiwu Chunshen, VK-PON-C03, 0,07-0,77 €, mínimo 50, muestra 1,70 €). Pedir a los dos:
-  blanca lisa sin texto + impresión propia, pedido mínimo, cliché y DDP. Claude puede preparar el archivo de diseño.
+  blanca lisa sin texto + impresión propia, pedido mínimo, cliché y DDP. **Diseño hecho (15-oct):** `marca/caja.py` → `marca/caja/` (tapa-*.svg/.pdf a 100 × 100 mm con letras en
+  trazos + `maqueta.png`; 3 frases de banda × con/sin destello dorado; fuente Jost añadida a `marca/fuentes/`).
+  Nihao pidió el diseño para presupuestar (15-oct).
 - **Importar:** pedir siempre «DDP to Spain (all taxes and duties included)» y pagar dentro de Alibaba (Trade
   Assurance). < 150 €: Alibaba suele cobrar el IVA en el carrito; > 150 €: DDP del proveedor o pagar IVA + arancel +
   comisión del mensajero al recibir.

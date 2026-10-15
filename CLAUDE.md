@@ -216,8 +216,11 @@ gafas con cámara IA (69,95-79,95 €) · descartados: micro-infusión, paddle s
       Lunerie, uso «publicidad y analítica», cookie propia activa) puesto en la tienda por la app (apiClientId 2329312,
       compartir datos «optimized» + todos los eventos). Solo se activa **con consentimiento** (privacyPurposes
       ANALYTICS/MARKETING → espera al «Aceptar» del banner). Píxel **asignado a «LUNERIE PUBLI»** (15-oct) · compartir
-      datos «Máximo» · catálogo de Shopify sincronizado con Meta (2654127555016345). **Falta:** ver el primer evento
-      (Edu acepta cookies en incógnito y navega → Claude mira `ads_get_dataset_stats`).
+      datos «Máximo» · catálogo de Shopify sincronizado con Meta (2654127555016345). **Probado el 15-oct** con Chrome automático
+      (Playwright, `ctx.request.post` a /password para entrar): antes de «Aceptar» no sale nada hacia Meta; después
+      salen PageView, ViewContent, AddToCart, InitiateCheckout (y SubscribedButtonClick) con el id del píxel, y Meta
+      marca `last_fired_time`. Banner en español con Aceptar / Rechazar / Administrar preferencias. Pendiente: ver
+      eventos de servidor (API de conversiones) y Purchase con el primer pedido real o de prueba.
 - [ ] App de TikTok
 - [x] **Reloj Lune creado el 10-oct** (`reloj-lune`, activo y en Tienda online): 44,95 €, opción **Color** con
       «Dorado · piedra verde» y «Plateado · piedra verde» (SKU LUNE-DOR-VER / LUNE-PLA-VER), sin control de stock
@@ -296,7 +299,7 @@ alertas si CTR < 1 % o CPC > 0,90 €. Máximo 2 productos en test a la vez.
      FAQ y ficha del reloj (`build.py`).
   4. Envíos en el admin: península gratis + **Baleares con coste** (¿3,95 €?) · @lunerie en TikTok ·
      Meta listo (15-oct: porfolio Lunerie + cuenta «LUNERIE PUBLI» con pago + página + Instagram) → app
-     Facebook & Instagram instalada → píxel asignado a LUNERIE PUBLI; falta ver el primer evento.
+     Facebook & Instagram instalada → píxel asignado a LUNERIE PUBLI y probado (15-oct).
 - **Siguiente con Claude:** app Facebook & Instagram + píxel · revisar la ficha del reloj con `landing.md`
   · fotos del proveedor en 4:5 (si Edu las pasa) · anuncios cuando lleguen las muestras.
 

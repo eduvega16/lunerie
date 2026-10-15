@@ -3,7 +3,8 @@
 Composición como la caja «VOGUE» de Nihao / Yiwu Chunshen: palabra grande en vertical a la derecha, texto pequeño
 arriba a la izquierda y una línea en la banda del cajón (abajo). Cara de 100 × 100 mm (ajustar a la plantilla del
 proveedor). Letras convertidas a trazos: el archivo no depende de tener las fuentes.
-Salida en marca/caja/: tapa-<frase>.svg / .pdf (para imprimir, con y sin destello dorado) y maqueta.png.
+Salida en marca/caja/: tapa-<frase>.svg / .pdf (para imprimir, con y sin destello dorado), maqueta.png y, para la
+elegida (ELEGIDA), una capa por acabado: -capa-tinta (impresión negra) y -capa-oro (cliché del estampado en oro).
     python marca/caja.py
 """
 import functools, math, pathlib
@@ -21,6 +22,7 @@ LADO, BANDA = 100, 76  # mm: cara cuadrada; la banda del cajón empieza en y = 7
 ARRIBA = "JOYAS Y RELOJES"
 FRASES = {"para-ti": ["PARA TI"], "regalar": ["HECHO PARA", "REGALAR"],
           "joya": ["UN RELOJ QUE SE LLEVA", "COMO UNA JOYA"]}
+ELEGIDA = "para-ti"  # 15-oct: «PARA TI» + destello dorado
 
 
 @functools.lru_cache(None)
@@ -55,22 +57,25 @@ def destello(cx, cy, r, color, finura=3.0):
     return f'<polygon fill="{color}" points="{" ".join(f"{x:.3f},{y:.3f}" for x, y in pts)}"/>'
 
 
-def tapa(frase, con_oro, guias=False):
-    """SVG de la cara de la caja en mm."""
-    partes = []
+def tapa(frase, con_oro, guias=False, capa=None):
+    """SVG de la cara de la caja en mm. capa = "tinta" u "oro" deja solo ese acabado."""
+    partes, tinta = [], capa != "oro"
     if guias:  # solo para la maqueta: borde de la banda del cajón
         partes.append(f'<line x1="0" y1="{BANDA}" x2="{LADO}" y2="{BANDA}" stroke="#d9d9d9" stroke-width="0.35"/>')
     g, _, alto = texto(ARRIBA, "Jost.ttf", 400, 3.2, 0.32, TINTA)
-    partes.append(f'<g transform="translate(9 {9 + alto})">{g}</g>')
+    if tinta:
+        partes.append(f'<g transform="translate(9 {9 + alto})">{g}</g>')
     # LUNERIE en vertical, leyendo de abajo arriba, pegado al borde derecho y sin pasar a la banda
     g, ancho, alto = texto("LUNERIE", "Cormorant.ttf", 500, 10.5, 0.24, TINTA)
     x_base, y_ini = LADO - 9, BANDA - 6
-    partes.append(f'<g transform="translate({x_base} {y_ini}) rotate(-90)">{g}</g>')
-    if con_oro:
+    if tinta:
+        partes.append(f'<g transform="translate({x_base} {y_ini}) rotate(-90)">{g}</g>')
+    if con_oro and capa != "tinta":
         partes.append(destello(x_base - alto / 2, y_ini - ancho - 5.5, 2.3, ORO))
     for i, linea in enumerate(FRASES[frase]):
         g, _, alto = texto(linea, "Jost.ttf", 400, 2.9, 0.22, TINTA)
-        partes.append(f'<g transform="translate(9 {BANDA + 9 + i * 4.6})">{g}</g>')
+        if tinta:
+            partes.append(f'<g transform="translate(9 {BANDA + 9 + i * 4.6})">{g}</g>')
     return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{LADO}mm" height="{LADO}mm" '
             f'viewBox="0 0 {LADO} {LADO}">{"".join(partes)}</svg>')
 
@@ -79,14 +84,14 @@ def main():
     with sync_playwright() as p:
         nav = p.chromium.launch(channel="chrome", headless=True)
         pag = nav.new_page()
-        for frase in FRASES:
-            for con_oro in (False, True):
-                nombre = f"tapa-{frase}{'-oro' if con_oro else ''}"
-                svg = tapa(frase, con_oro)
-                (OUT / f"{nombre}.svg").write_text(svg, encoding="utf8")
-                pag.set_content(f"<html><body style='margin:0'>{svg}</body></html>")
-                pag.pdf(path=str(OUT / f"{nombre}.pdf"), width=f"{LADO}mm", height=f"{LADO}mm",
-                        print_background=True, page_ranges="1")
+        trabajos = [(f"tapa-{f}{'-oro' if o else ''}", f, o, None) for f in FRASES for o in (False, True)]
+        trabajos += [(f"tapa-{ELEGIDA}-oro-capa-{c}", ELEGIDA, True, c) for c in ("tinta", "oro")]
+        for nombre, frase, con_oro, capa in trabajos:
+            svg = tapa(frase, con_oro, capa=capa)
+            (OUT / f"{nombre}.svg").write_text(svg, encoding="utf8")
+            pag.set_content(f"<html><body style='margin:0'>{svg}</body></html>")
+            pag.pdf(path=str(OUT / f"{nombre}.pdf"), width=f"{LADO}mm", height=f"{LADO}mm",
+                    print_background=True, page_ranges="1")
         cajas = "".join(
             f"<figure><div class='caja'>{tapa(f, o, guias=True)}</div>"
             f"<figcaption>{' / '.join(FRASES[f])}{' · con destello dorado' if o else ''}</figcaption></figure>"

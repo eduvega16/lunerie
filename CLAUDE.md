@@ -124,7 +124,9 @@
   rosa, verde claro, verde oscuro, blanco, amarillo · **2,75 $/ud (30-50), 2,65 $ (100)** · muestras 7 $/ud + exprés
   17,92 $ por 2 (9-19 días). **Muestras pagadas el 15-oct** (verde claro + verde oscuro, 32,77 € con IVA incluido; entrega más rápida
   27-oct) para comparar con el BS. Las respuestas del chat del proveedor eran del asistente automático de Alibaba.
-  Pendiente que confirme: envío DDP del lote, plazo y **logo propio en esfera / tapa** (pedido mínimo y coste).
+  Pendiente que confirme: envío DDP del lote y plazo. **Logo propio (respuesta del 16-oct): 500 uds por modelo**;
+  con su logo NAIDU, 2-5 uds por modelo. **Decisión de Edu: empezar con NAIDU** y no preguntar más por el logo
+  (ni grabado en la tapa) hasta que el test funcione. La marca se nota en la caja, la tarjeta y el nombre «Lune».
   No es el modelo que vende Calné (demanda no probada, mismo estilo).
 - **Caja (packaging):** caja tipo cajón 9,5 × 9,5 × 3,5 cm interior con esponja negra con ranura. Edu prefiere la
   **blanca con letras negras** (estilo «VOGUE», pero con LUNERIE en Cormorant en vertical; 1 tinta #16201B; opcional
@@ -340,8 +342,12 @@ alertas si CTR < 1 % o CPC > 0,90 €. Máximo 2 productos en test a la vez.
   4. ~~Envíos~~ (15-oct: península gratis, Baleares 3,95 €, Canarias/Ceuta/Melilla fuera) · @lunerie en TikTok ·
      Meta listo (15-oct: porfolio Lunerie + cuenta «LUNERIE PUBLI» con pago + página + Instagram) → app
      Facebook & Instagram instalada → píxel asignado a LUNERIE PUBLI y probado (15-oct).
-- **Siguiente con Claude:** app Facebook & Instagram + píxel · revisar la ficha del reloj con `landing.md`
-  · fotos del proveedor en 4:5 (si Edu las pasa) · anuncios cuando lleguen las muestras.
+- **Prioridad (16-oct): darle caña al test.** Plan completo en **`anuncios/test-reloj-lune.md`**: lanzar en las 48 h
+  siguientes a que llegue la muestra del BS (lista de lo que hacer ese día, fotos y vídeos a grabar, campaña ABO
+  3 × 10 €/día y los textos de los 3 anuncios). Para montar la campaña desde aquí hace falta el conector
+  «Meta ads Koco» cargado en la sesión (si no, Edu la crea en el Administrador de anuncios con ese fichero).
+- **16-oct:** «Cómo es» de la portada reescrito («El reloj Lune, de cerca» · «Una esfera delicada»… sin decir de
+  qué son las piedras).
 
 ### Resumen de la sesión 12-13 oct
 - Horizon actualizado a 1.0.5 por Edu → **copia nueva con otro id** (209073799507); se conservó todo; ids

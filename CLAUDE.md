@@ -352,9 +352,21 @@ Meta Ads, ABO: 3 conjuntos (1 ángulo cada uno) × 10 €/día × 3 días = 90 �
 KILL si gastas 1× CPA BE sin carritos o 2× sin ventas · ESCALAR con ≥ 3 ventas a ≤ 70 % del CPA BE ·
 alertas si CTR < 1 % o CPC > 0,90 €. Máximo 2 productos en test a la vez.
 
-## 8. Calendario y pendientes (a 14-oct-2026)
+## 8. Calendario y pendientes (a 22-oct-2026)
 
-### Para empezar la próxima sesión
+### Para empezar la próxima sesión (22-oct)
+- **Hecho el 22-oct:** Reloj Lune unificado en 6 colores con fotos del proveedor y fase drop sin caja (apartado
+  5.1a) · Higgsfield preparado (`.env.local`) · el conector de Shopify de claude.ai apunta a **Star Brick**: para
+  Lunerie, solo la CLI.
+- **Siguiente con Claude:** prueba de imágenes con Higgsfield (2 del verde: producto limpio en fondo niebla 4:5 +
+  puesto en modelo, estética Olivia Jewelry) → si gusta, el resto de colores → fotos y vídeo de portada → montar
+  los anuncios (`anuncios/test-reloj-lune.md`; ojo, sus textos aún dicen «llega en su caja» y «dorado o plateado»:
+  ajustarlos a la fase drop) → quitar la contraseña y lanzar el test.
+- **Edu:** formato de precio «44,95 €» · Instagram · borrar la página de Facebook antigua · regenerar la clave de
+  Higgsfield · grabar los vídeos con las muestras (muñeca, dos colores, quitar eslabón) · recordar a Nihao el
+  presupuesto de las cajas · llega la muestra NAIDU de Alibaba (~31 oct-4 nov) y el collar.
+
+### Pendientes anteriores (14-16 oct)
 - **Al abrir:** `git pull`. Shopify: el conector de claude.ai puede no cargar → usar `shopify store execute`
   (apartado 6); tema publicado = **209073799507**.
 - **Esperando a Edu:**

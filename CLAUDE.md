@@ -312,8 +312,9 @@ gafas con cámara IA (69,95-79,95 €) · descartados: micro-infusión, paddle s
       Menú principal (14-oct): «Reloj Lune» (ficha `/products/reloj-lune`) · Preguntas frecuentes · Contacto.
 - [ ] Quitar la contraseña de la tienda
 
-> Claude está conectado a Shopify (conector de claude.ai) con la tienda Lunerie. Antes estaba Star Brick: al cambiar
-> de tienda se desconecta la otra.
+> **OJO (22-oct): el conector de Shopify de claude.ai está conectado a STAR BRICK (otra tienda de Edu), no a Lunerie.**
+> Solo puede estar en una tienda a la vez. **Para Lunerie, usar SIEMPRE la CLI** (`shopify store execute -s
+> qjxvnn-xq.myshopify.com`), que sí apunta a Lunerie. Comprobar con `get-shop-info` antes de usar el conector.
 > **Si el conector no carga** (pasó el 12-oct): usar la Admin API con la CLI, que no depende de él:
 > `shopify store execute -s qjxvnn-xq.myshopify.com -q "<query>" --json --no-input` (añadir `--allow-mutations` para
 > escribir; `--query-file` / `--variable-file` para operaciones largas). Permisos dados por Edu el 12-oct con

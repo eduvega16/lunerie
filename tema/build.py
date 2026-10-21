@@ -213,7 +213,12 @@ def group(blocks, align="center", gap=8):
 # variant-main-picker.liquid, que además incluye estas reglas con {% render 'lunerie-bolitas' %} (el CSS
 # personalizado de una sección no admite más de 500 caracteres). Si se añade otro metal, añadirlo en BOLITAS.
 BOLITAS = {"Dorado": "#D4AF5F", "Plateado": "#C9CDD0", "Oro rosa": "#D8A48F"}
-_sel = ", ".join(f'input[value^="{v}"]' for v in BOLITAS)
+# 22-oct: el Lune es siempre dorado y la opción Color es la piedra (valor exacto): bolita con la piedra en el
+# centro y el dorado alrededor. Si se añade un color de piedra, añadirlo aquí.
+PIEDRAS = {"Verde": "#3F7A55", "Azul": "#2D3F8F", "Rosa": "#E0A3AC", "Verde claro": "#A8CC8C",
+           "Crema": "#EDE3CF", "Rojo": "#A52A24"}
+_piedra = lambda c: f"radial-gradient(circle, {c} 0 44%, {BOLITAS['Dorado']} 47%)"
+_sel = ", ".join([f'input[value^="{v}"]' for v in BOLITAS] + [f'input[value="{v}"]' for v in PIEDRAS])
 SWATCH_CSS = (
     f".variant-option--buttons:has({_sel}) {{ display: flex; flex-wrap: wrap; gap: 12px; }} "
     f".variant-option__button-label:has({_sel}) {{ flex: 0 0 auto; width: 40px; height: 40px; min-width: 40px; "
@@ -223,7 +228,9 @@ SWATCH_CSS = (
     f".variant-option__button-label:has({_sel}) .variant-option__button-label__text {{ display: none; }} "
     f".variant-option__button-label:has({_sel}):has(input:checked) {{ border: 2px solid {INK}; }} "
     + " ".join(f'.variant-option__button-label:has(input[value^="{v}"]) {{ background: {c} !important; }}'
-               for v, c in BOLITAS.items()))
+               for v, c in BOLITAS.items())
+    + " " + " ".join(f'.variant-option__button-label:has(input[value="{v}"]) {{ background: {_piedra(c)} !important; }}'
+                     for v, c in PIEDRAS.items()))
 
 def small(bloque, size="0.875rem"):
     """Texto en tamaño propio (preset «custom»)."""
@@ -350,10 +357,10 @@ def liquid(codigo):
 
 ROJO = "#B3261E"
 # Urgencia de Navidad: bolita roja que late (sin animación si el móvil pide «reducir movimiento»).
-# FECHA A CONFIRMAR con el plazo real del proveedor ([PLAZO]).
+# Plazo real (22-oct): AliExpress tardó 6-7 días laborables → se promete 7-12; para Navidad, antes del 5-dic.
 NAVIDAD = liquid(
     '<p class="lu-urgencia"><span class="lu-punto" aria-hidden="true"></span>'
-    'Para Navidad, pídelo antes del 1 de diciembre</p>'
+    'Para Navidad, pídelo antes del 5 de diciembre</p>'
     "<style>.lu-urgencia,.lu-regalo{font-family:var(--font-body--family);font-weight:var(--font-body--weight)}"
     ".lu-urgencia{display:flex;align-items:center;gap:12px;margin:0;font-size:1rem;color:" + ROJO + "}"
     ".lu-punto{position:relative;flex:0 0 9px;width:9px;height:9px;margin-inline:4px 5px;border-radius:50%;"
@@ -363,6 +370,9 @@ NAVIDAD = liquid(
     "@keyframes lu-latido{0%{transform:scale(1);opacity:.7}100%{transform:scale(2.6);opacity:0}}"
     "@media (prefers-reduced-motion:reduce){.lu-punto::after{animation:none;opacity:0}}</style>")
 
+# Fase de test en drop (22-oct): AliExpress lo manda en bolsita, sin caja ni extractor → no se promete la caja.
+# Con stock propio y caja Lunerie: CAJA_REGALO = True (vuelve la línea «Llega en su caja de regalo»).
+CAJA_REGALO = False
 # Caja de regalo con icono de regalo (Horizon no trae ese icono: SVG propio, trazo fino como los demás)
 REGALO = liquid(
     '<p class="lu-regalo"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" '
@@ -443,10 +453,10 @@ ficha = {
                     "content_direction": "column", "gap": 12, "width": "fill"},
                     "blocks": {
                         "navidad": NAVIDAD,
-                        "regalo": REGALO,
+                        **({"regalo": REGALO} if CAJA_REGALO else {}),
                         "envio": icon_text("truck", "<p>Envío gratis a península, con seguimiento</p>"),
                         "garantia": icon_text("star", "<p>Garantía de 3 años + 14 días para devolverlo</p>"),
-                    }, "block_order": ["navidad", "regalo", "envio", "garantia"]},
+                    }, "block_order": ["navidad"] + (["regalo"] if CAJA_REGALO else []) + ["envio", "garantia"]},
                 "variantes": {"type": "variant-picker", "settings": {
                     "variant_style": "buttons", "show_swatches": True}, "blocks": {}},
                 "comprar": {"type": "buy-buttons", "settings": {"stacking": True,
@@ -482,12 +492,12 @@ ficha = {
                             "block_order": ["texto"]},
                         "medida": row("Ajustar la correa",
                                       "<p>La correa mide 18 cm. Si tu muñeca es más fina (menos de 16 cm), quita "
-                                      "uno o dos eslabones con el extractor que va en la caja: son 2 minutos.</p>"),
+                                      "uno o dos eslabones: en cualquier relojería te lo hacen al momento.</p>"),
                         "agua": row("¿Se puede mojar?",
                                     "<p>No. No es sumergible: quítatelo para lavarte las manos, ducharte o nadar. "
                                     "Una gota de lluvia no le pasa nada.</p>"),
                         "envio": row("Envío", "<p>Gratis a península, con número de seguimiento por email. "
-                                     "Plazo de entrega: [PLAZO] días laborables.</p>"
+                                     "Plazo de entrega: 7-12 días laborables.</p>"
                                      "<p>Por ahora no enviamos a Canarias, Ceuta ni Melilla.</p>"),
                         "devoluciones": row("Devoluciones y garantía",
                                      "<p>Tienes 14 días desde que lo recibes para devolverlo: escríbenos "
@@ -552,7 +562,8 @@ product = {
 # Un botón por color (con su bolita); al pulsar se añade y se va a /cart, donde ya aparece el descuento.
 OFERTA_PRODUCTO, OFERTA_PRECIO = "reloj-lune", "19,95&nbsp;€"
 _bolita = "".join(f"{{%- if v.title contains '{n}' -%}}{{%- assign c = '{col}' -%}}{{%- endif -%}}"
-                  for n, col in BOLITAS.items())
+                  for n, col in BOLITAS.items()) + "".join(
+    f"{{%- if v.title == '{n}' -%}}{{%- assign c = '{_piedra(col)}' -%}}{{%- endif -%}}" for n, col in PIEDRAS.items())
 UPSELL = (
     "{%- comment -%} Generado por tema/build.py: aviso del segundo reloj en la cesta {%- endcomment -%}\n"
     "{%- assign lu_qty = 0 -%}{%- assign lu_prod = nil -%}"

@@ -3,23 +3,23 @@
 ## Pedidos y envíos
 
 **¿Cuánto tarda en llegar?**
-[PLAZO] días laborables a península, con número de seguimiento por email.
+7-12 días laborables a península, con número de seguimiento por email.
 
 **¿Llega a tiempo para Navidad?**
-Si lo pides antes del 1 de diciembre, sí. Si vas justa, escríbenos antes de comprar y te decimos si llega.
+Si lo pides antes del 5 de diciembre, sí. Si vas justa, escríbenos antes de comprar y te decimos si llega.
 
 **¿El envío es gratis?**
 Sí, a península. A Baleares también enviamos, con un pequeño coste que verás antes de pagar. Por ahora no enviamos
 a Canarias, Ceuta ni Melilla.
 
 **¿Llega envuelto para regalar?**
-Cada pieza viaja en su caja de regalo.
+Cada pieza viaja protegida en su funda.
 
 ## El reloj Lune
 
 **¿Me va a quedar grande la correa?**
-La correa mide 18 cm. Si tu muñeca mide menos de 16 cm, tendrás que quitar uno o dos eslabones: en la caja va un
-extractor y se hace en 2 minutos. Cualquier relojería también te lo hace al momento.
+La correa mide 18 cm. Si tu muñeca mide menos de 16 cm, tendrás que quitar uno o dos eslabones: cualquier relojería
+te lo hace al momento.
 
 **¿Se puede mojar?**
 No. No es sumergible: quítatelo para lavarte las manos, ducharte o nadar.

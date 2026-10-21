@@ -9,15 +9,15 @@
 
 ## Cuánto tarda
 
-Preparamos tu pedido y te llega en **[PLAZO] días laborables**. En cuanto sale, te mandamos por email el
+Preparamos tu pedido y te llega en **7-12 días laborables**. En cuanto sale, te mandamos por email el
 **número de seguimiento** para que sepas dónde está.
 
-**Para Navidad:** pídelo **antes del 1 de diciembre** para que llegue a tiempo. Si vas justa de fecha, escríbenos
+**Para Navidad:** pídelo **antes del 5 de diciembre** para que llegue a tiempo. Si vas justa de fecha, escríbenos
 antes de comprar y te decimos si llega.
 
 ## Cómo llega
 
-Cada pieza viaja en su caja de regalo. El paquete puede llegar en más de un envío si pides varias piezas.
+Cada pieza viaja protegida en su funda. El paquete puede llegar en más de un envío si pides varias piezas.
 
 ## Si hay algún problema
 

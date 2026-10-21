@@ -3,3 +3,7 @@ __pycache__/
 .claude/
 tema/tienda/
 tema/fotos_prueba/
+
+# Claves locales (Higgsfield, etc.): nunca en git
+.env
+.env.local

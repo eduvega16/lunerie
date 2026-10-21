@@ -111,6 +111,29 @@
 - Vídeos a grabar con las muestras: relojes en fila "elige tu piedra" · en la muñeca moviéndola · abriendo la caja ·
   quitando un eslabón.
 
+### 5.1a Estado real del Reloj Lune (22-oct) — manda sobre lo de arriba
+- **Muestras llegadas el 15-16 oct (pedidas el 7): 8-9 días, todas en bolsita, sin caja ni extractor.** NAIDU y BS
+  son **el mismo reloj** (misma correa de piedras ovaladas seguidas y misma caja); solo cambia la marca de la esfera.
+  Calidad y peso iguales. **Se vende el NAIDU** (5,27 € en AliExpress frente a ~14 € el BS).
+- **Plan A (decidido por Edu el 22-oct): test en drop.** Edu hace los pedidos **a mano en AliExpress** (sin mapear
+  DSers por ahora). Si funciona, stock propio (5.1b).
+- **Ficha unificada (22-oct):** un solo producto `reloj-lune`, opción **Color = piedra**, siempre dorado:
+  **Verde** (LUNE-VERDE, de Face-Book Store «Dark green», coste real 13,95 €) · **Azul, Rosa, Verde claro, Crema,
+  Rojo** (LUNE-AZUL/ROSA/VCLARO/CREMA/ROJO, de la tienda de 9 colores del producto DSers «New Colored Gemstones…»,
+  coste ~9,61 €). Fotos del proveedor (diseño de piedras seguidas) con su variante + muñeca + medida 18 cm; **fuera
+  las fotos de Calné y el plateado**. **Ojo:** en los anuncios del proveedor se mezcla otro diseño (piedras con
+  anillas y monedas: «Dark Green»/«Green»/«Yellow» de la tienda de 9 colores) que **no** se vende; la foto del
+  anuncio de Face-Book «Dark green» es de ese diseño pero llegó el bueno.
+- Los 2 productos importados por DSers entraron **activos y a precio de coste** → pasados a **borrador** (no
+  borrarlos). Al importar con DSers: revisar siempre estado y precio.
+- **Fase drop en la tienda:** sin prometer caja ni extractor (`CAJA_REGALO = False` en `build.py`; con stock y caja
+  → `True`), plazo **7-12 días laborables**, Navidad **antes del 5 de diciembre**, entrega del pago 5-10 días de
+  tránsito (sale «30 oct-9 nov» pidiendo el 22). Bolitas = color de la piedra con aro dorado (`PIEDRAS` en
+  `build.py`).
+- **Imágenes con IA (siguiente paso):** Higgsfield por API (`higgsfield-client`, clave `HF_KEY` en `.env.local`,
+  fuera de git; **Edu pegó la clave en el chat el 22-oct → regenerarla**). Estética: como **Olivia Jewelry** (limpia,
+  producto mejorado + puesta en modelo). Revisar que la IA no cambie piedras/esfera y dejar siempre una foto real.
+
 ### 5.1b Plan de stock propio (15-oct) y reloj alternativo «NAIDU»
 - **Decisión de Edu (15-oct): pasar a stock propio** (el drop en Navidad no funciona: ~2 semanas de entrega). Orden:
   **validar primero** (test de 90 € con las muestras y AliExpress enviando) → si pasa (~2-8 nov), pedir stock exprés

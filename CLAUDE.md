@@ -120,8 +120,7 @@
 - **Ficha unificada (22-oct):** un solo producto `reloj-lune`, opción **Color = piedra**, siempre dorado:
   **Verde** (LUNE-VERDE, de Face-Book Store «Dark green», coste real 13,95 €) · **Azul, Rosa, Verde claro, Crema,
   Rojo** (LUNE-AZUL/ROSA/VCLARO/CREMA/ROJO, de la tienda de 9 colores del producto DSers «New Colored Gemstones…»,
-  coste ~9,61 €) · **Plateado** (23-oct, LUNE-PLATA: el BS en plata con piedra verde clara, coste ~14 €, para ver
-  qué prefiere la gente; foto provisional recortada de la foto de Edu; falta el enlace de su tienda de AliExpress). Fotos del proveedor (diseño de piedras seguidas) con su variante + muñeca + medida 18 cm; **fuera
+  coste ~9,61 €). El **plateado** (BS) se probó el 23-oct y se quitó ese mismo día: cuesta encontrarlo en AliExpress. Fotos del proveedor (diseño de piedras seguidas) con su variante + muñeca + medida 18 cm; **fuera
   las fotos de Calné y el plateado**. **Ojo:** en los anuncios del proveedor se mezcla otro diseño (piedras con
   anillas y monedas: «Dark Green»/«Green»/«Yellow» de la tienda de 9 colores) que **no** se vende; la foto del
   anuncio de Face-Book «Dark green» es de ese diseño pero llegó el bueno.

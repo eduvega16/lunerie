@@ -374,11 +374,10 @@ alertas si CTR < 1 % o CPC > 0,90 €. Máximo 2 productos en test a la vez.
   en este PC los scripts van con `python`, no `python3`) · collar recibido en 14 días, muy bien, con caja de
   terciopelo verde · **fotos IA del verde** con Higgsfield/Nano Banana (`marca/fotos-ia/`: modelo estilo Olivia con
   «NAIDU» en la esfera + muñeca), todavía **no subidas a la tienda**.
-- **Higgsfield:** cuenta del conector en plan gratis con **9,3 créditos** (Nano Banana 2K = 2 créditos; GPT Image
-  2.5 necesita plan de pago). Edu intentó activar la prueba de 3 días (100 créditos, luego 49 €/mes) pero **no
-  aparece activa** en la cuenta conectada → Edu revisa su correo (¿pago a medias, otra cuenta o plan Plus de 49 €?).
-  Si se activa: **cancelar la renovación al momento** (`cancel_trial_auto_renewal`, primero sin confirmar y luego
-  `confirm=true` cuando Edu lo diga). API: sin saldo; por imagen Qwen Edit 0,075 $, Grok 0,09 $ (no tiene Nano Banana).
+- **Higgsfield (25-oct):** prueba Plus de 3 días **activa** (2.º intento, con tarjeta; con Apple Pay no entró) →
+  **109,3 créditos hasta el 28-oct 21:15** (hora de España); **renovación cancelada** (no se cobran los 49 €). Los
+  créditos de la prueba solo se ven por el conector, no en la web. Con Plus también hay GPT Image 2.5. Después
+  vuelve al plan gratis. API: sin saldo; por imagen Qwen Edit 0,075 $, Grok 0,09 $ (no tiene Nano Banana).
 - **Siguiente con Claude:** fotos del resto de colores (empezar por el azul, que Edu tiene en mano) → subir las
   fotos IA a la ficha (modelo primero, muñeca segunda, la del proveedor detrás como foto real) → bio de Instagram
   con `ig-profile` y guiones de vídeo con `ig-reel` → anuncios (ajustar `anuncios/test-reloj-lune.md` a la fase

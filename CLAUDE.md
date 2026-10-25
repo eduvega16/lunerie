@@ -130,7 +130,10 @@
   → `True`), plazo **7-12 días laborables**, Navidad **antes del 5 de diciembre**, entrega del pago 5-10 días de
   tránsito (sale «30 oct-9 nov» pidiendo el 22). Bolitas = color de la piedra con aro dorado (`PIEDRAS` en
   `build.py`).
-- **Imágenes con IA (siguiente paso):** Higgsfield por API (`higgsfield-client`, clave `HF_KEY` en `.env.local`,
+- **Imágenes con IA (siguiente paso):** script `marca/higgsfield.py` (Marketing Studio 2.5 Flare = GPT Image 2.5,
+  referencias: foto del proveedor + foto real de Edu; tomas «producto» en fondo niebla y «modelo» en muñeca). **25-oct:
+  la cuenta de la API no tiene créditos** (`not_enough_credits`); la cuenta web (conector de claude.ai) tiene 19,3
+  créditos, plan gratis. Higgsfield por API (`higgsfield-client`, clave `HF_KEY` en `.env.local`,
   fuera de git; **Edu pegó la clave en el chat el 22-oct → regenerarla**). Estética: como **Olivia Jewelry** (limpia,
   producto mejorado + puesta en modelo). Revisar que la IA no cambie piedras/esfera y dejar siempre una foto real.
 
@@ -179,6 +182,9 @@
 - **Cómo funcionará la personalización:** campo "Nombre a grabar" (máx. 10-12 letras) con una app de opciones de
   producto (Easify, Globo… plan gratis) + mes/piedra y metal como variantes + casilla "he revisado el nombre" →
   el pedido llega con el nombre → cada mañana se pasa la lista al proveedor → se pega el seguimiento en Shopify.
+- **Muestra recibida (25-oct):** pedida el 9-oct, llegó el 23-oct → **14 días (10 laborables)**. La foto del
+  proveedor antes de enviar: letra «firma» y lágrima azul muy bien, caja de terciopelo verde; sobra la tarjeta
+  «THANK YOU» con huellas → pedir tarjeta neutra.
 - **Plazos Navidad:** "hecho a mano en 3-5 días · entrega 10-15 días laborables"; fecha límite ~**1 de diciembre**
   (Black Friday 27-nov entra); en diciembre opción "envío exprés +9,95 €"; para rezagados, tarjeta regalo imprimible.
 

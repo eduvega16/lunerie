@@ -366,9 +366,25 @@ Meta Ads, ABO: 3 conjuntos (1 ángulo cada uno) × 10 €/día × 3 días = 90 �
 KILL si gastas 1× CPA BE sin carritos o 2× sin ventas · ESCALAR con ≥ 3 ventas a ≤ 70 % del CPA BE ·
 alertas si CTR < 1 % o CPC > 0,90 €. Máximo 2 productos en test a la vez.
 
-## 8. Calendario y pendientes (a 22-oct-2026)
+## 8. Calendario y pendientes (a 25-oct-2026)
 
-### Para empezar la próxima sesión (22-oct)
+### Para empezar la próxima sesión (25-oct) — abrir conversación nueva por sesión
+- **Hecho el 23-25 oct:** plateado (BS) puesto y quitado (difícil de encontrar) · skills de Instagram instaladas
+  (`~/.claude/skills/ig-*`, del repo Jakeschincariol/instagram-agent-skill, revisadas: solo escriben, no publican;
+  en este PC los scripts van con `python`, no `python3`) · collar recibido en 14 días, muy bien, con caja de
+  terciopelo verde · **fotos IA del verde** con Higgsfield/Nano Banana (`marca/fotos-ia/`: modelo estilo Olivia con
+  «NAIDU» en la esfera + muñeca), todavía **no subidas a la tienda**.
+- **Higgsfield:** cuenta del conector en plan gratis con **9,3 créditos** (Nano Banana 2K = 2 créditos; GPT Image
+  2.5 necesita plan de pago). Edu intentó activar la prueba de 3 días (100 créditos, luego 49 €/mes) pero **no
+  aparece activa** en la cuenta conectada → Edu revisa su correo (¿pago a medias, otra cuenta o plan Plus de 49 €?).
+  Si se activa: **cancelar la renovación al momento** (`cancel_trial_auto_renewal`, primero sin confirmar y luego
+  `confirm=true` cuando Edu lo diga). API: sin saldo; por imagen Qwen Edit 0,075 $, Grok 0,09 $ (no tiene Nano Banana).
+- **Siguiente con Claude:** fotos del resto de colores (empezar por el azul, que Edu tiene en mano) → subir las
+  fotos IA a la ficha (modelo primero, muñeca segunda, la del proveedor detrás como foto real) → bio de Instagram
+  con `ig-profile` y guiones de vídeo con `ig-reel` → anuncios (ajustar `anuncios/test-reloj-lune.md` a la fase
+  drop) → cambiar el vídeo de la portada → quitar la contraseña y lanzar (el plan era el 26-oct; como muy tarde 2-nov).
+
+### Sesión del 22-oct
 - **Hecho el 22-oct:** Reloj Lune unificado en 6 colores con fotos del proveedor y fase drop sin caja (apartado
   5.1a) · Higgsfield preparado (`.env.local`) · el conector de Shopify de claude.ai apunta a **Star Brick**: para
   Lunerie, solo la CLI.

@@ -139,7 +139,9 @@
   y `lune-verde-muneca.jpg`. Referencias: foto del proveedor (Face-Book, verde sobre lino) + foto real de Edu.
   **Fallos de la IA:** cuenta mal las piedras (el reloj tiene **3 y 3**; descartadas 2 fotos de producto con 2+2 y
   3+2) y escribe una marca inventada en la esfera → se borra con OpenCV (inpaint solo de píxeles oscuros y grises,
-  sin tocar las agujas doradas). Higgsfield por API (`higgsfield-client`, clave `HF_KEY` en `.env.local`,
+  sin tocar las agujas doradas). Edu quiere que **se vea «NAIDU»** en la esfera: se consigue editando la foto con
+  Nano Banana (foto + recorte de la esfera real como referencias, «spell N-A-I-D-U») y borrando con OpenCV la palabra
+  inventada de abajo. Hecho en `lune-verde-modelo-cara.jpg`. Higgsfield por API (`higgsfield-client`, clave `HF_KEY` en `.env.local`,
   fuera de git; **Edu pegó la clave en el chat el 22-oct → regenerarla**). Estética: como **Olivia Jewelry** (limpia,
   producto mejorado + puesta en modelo). Revisar que la IA no cambie piedras/esfera y dejar siempre una foto real.
 

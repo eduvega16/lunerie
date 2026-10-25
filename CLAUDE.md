@@ -133,7 +133,13 @@
 - **Imágenes con IA (siguiente paso):** script `marca/higgsfield.py` (Marketing Studio 2.5 Flare = GPT Image 2.5,
   referencias: foto del proveedor + foto real de Edu; tomas «producto» en fondo niebla y «modelo» en muñeca). **25-oct:
   la cuenta de la API no tiene créditos** (`not_enough_credits`); la cuenta web (conector de claude.ai) tiene 19,3
-  créditos, plan gratis. Higgsfield por API (`higgsfield-client`, clave `HF_KEY` en `.env.local`,
+  créditos, plan gratis. **Fotos IA (25-oct, `marca/fotos-ia/`):** con el conector de claude.ai y **Nano Banana 2.1**
+  (2 créditos/imagen 2K; GPT Image 2.5 pide plan de pago; el gratis solo deja 1 imagen a la vez):
+  `lune-verde-modelo-cara.jpg` (estilo Olivia: chica delgada, top blanco, mano al cuello, cara cortada por la nariz)
+  y `lune-verde-muneca.jpg`. Referencias: foto del proveedor (Face-Book, verde sobre lino) + foto real de Edu.
+  **Fallos de la IA:** cuenta mal las piedras (el reloj tiene **3 y 3**; descartadas 2 fotos de producto con 2+2 y
+  3+2) y escribe una marca inventada en la esfera → se borra con OpenCV (inpaint solo de píxeles oscuros y grises,
+  sin tocar las agujas doradas). Higgsfield por API (`higgsfield-client`, clave `HF_KEY` en `.env.local`,
   fuera de git; **Edu pegó la clave en el chat el 22-oct → regenerarla**). Estética: como **Olivia Jewelry** (limpia,
   producto mejorado + puesta en modelo). Revisar que la IA no cambie piedras/esfera y dejar siempre una foto real.
 

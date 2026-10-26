@@ -159,6 +159,12 @@
   abajo, puño agarrando una toalla de lino blanca, manga de punto crema, hormigón claro y cielo azul). Fotos
   `lune-verde-toalla-a/b.jpg` (Nano Banana 2.1, 9:16) animadas con **Kling 3.0** (10 créditos / 5 s; Seedance 2.5
   cuesta 35). Higgsfield propone la plantilla «IN THE DARK»: descartarla (`declined_preset_id`).
+  **Anuncio 1 (26-oct): `lune-verde-anuncio-1.mp4`**, 13,4 s, 1080x1920, sin audio (música en TikTok/Meta), copia el
+  ritmo de un anuncio de Vacier (`ssstik.io_…mp4`): toalla → perfil con mano en la clavícula → macro del reloj →
+  mano en el pelo → cielo **al revés** con «LUNERIE» pequeño. Planos en `anuncios/planos/` (foto fija Nano Banana +
+  Kling 3.0 **pro, 4 s, `sound: off` = 7 créditos**). Montaje con **`marca/montaje.py`** (cortes secos, giro 180° y
+  logo blanco con fundido; `python marca/montaje.py salida.mp4 clip,inicio,duración[,180] … --logo-y 0.72`).
+  Ojo: al final de los clips Kling a veces deforma la esfera → usar los primeros 2,5 s.
 
 ### 5.1b Plan de stock propio (15-oct) y reloj alternativo «NAIDU»
 - **Decisión de Edu (15-oct): pasar a stock propio** (el drop en Navidad no funciona: ~2 semanas de entrega). Orden:

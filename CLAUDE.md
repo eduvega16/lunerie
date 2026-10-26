@@ -153,7 +153,17 @@
   cambia el número de piedras) y las otras usan esa como referencia. **Cómo es el real:** 3 piedras a cada lado
   (la del medio de arriba, color crema), en las puntas anillas trenzadas vacías (gancho + anilla arriba, anilla +
   cierre abajo), piedras **verde jade claro con vetas blancas** (la IA tiende a malaquita oscura: corregirlo),
-  caja **ovalada** (la IA la hace redonda) y pequeña (esfera 12 mm). Edu prefiere la esfera **sin marca**. El CSS de bolitas (`PIEDRAS` en `build.py`) sigue con los 6 colores: no molesta.
+  caja **ovalada** (la IA la hace redonda) y pequeña (esfera 12 mm). Edu prefiere la esfera **sin marca** en los
+  anuncios, pero en el **detalle** de producto sí quiere «NAIDU» y «QUARTZ» (escritos a mano con Jost siguiendo
+  el giro de la esfera: `marca/esfera_texto.py` → `lune-verde-detalle.jpg`).
+- **Sección «historia» bajo la ficha (26-oct, en producción), como Olivia Jewelry:** foto grande del detalle (2:1 en
+  PC, 4:5 en móvil) · franja niebla con 3 datos e iconos dorados (esfera de 12 mm · correa de 18 cm ajustable ·
+  garantía de 3 años; **nada de waterproof/hipoalergénico/2 años** como Olivia) · «Pequeño, ovalado *y con
+  piedras.*» + texto · collage 2×2 (perfil, curva, toalla, pelo). Código: `tema/codigo/snippets/lunerie-ficha.liquid`
+  (`parte('historia', snippet='lunerie-ficha')` en `build.py`); solo sale en `reloj-lune`. Las fotos son **archivos
+  de Shopify** con nombre fijo (`lune-editorial-*.jpg`, se leen con `images['…']`); para cambiar una, subir otra
+  con el mismo nombre. Las del collage son las de los anuncios **editadas con el reloj ~35 % más pequeño y piedras
+  jade claro** (`marca/fotos-ia/editorial/`), porque en los vídeos el reloj sale demasiado grande. El CSS de bolitas (`PIEDRAS` en `build.py`) sigue con los 6 colores: no molesta.
   Fotos IA del azul hechas el 25-oct (`marca/fotos-ia/lune-azul-*.jpg`), aparcadas. `marca/naidu.py` escribe
   «NAIDU» en la esfera cuando la IA inventa letras (inpaint + Jost, con giro).
   **Plateado:** Edu encontró en Alibaba un proveedor con el mismo diseño en dorado y plata (verdes). Aparcado: solo

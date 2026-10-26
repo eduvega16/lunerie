@@ -251,10 +251,10 @@ def color(bloque, c, ancho="fit-content"):
 # portada (titular + foto en óvalo con filo dorado) · elige el tuyo (ficha rápida) · cómo es · franja del segundo
 # reloj · antes de comprar (dudas) · tres promesas. Las partes «a medida» están en
 # tema/codigo/snippets/lunerie-inicio.liquid. Cuando llegue el collar: añadir una sección «Las piezas» de 2 columnas.
-def parte(nombre, fondo="", arriba=24, abajo=24, ancho="page-width"):
-    """Sección «Liquid personalizado» que pinta una parte de lunerie-inicio.liquid."""
+def parte(nombre, fondo="", arriba=24, abajo=24, ancho="page-width", snippet="lunerie-inicio", extra=""):
+    """Sección «Liquid personalizado» que pinta una parte de un snippet a medida (lunerie-inicio por defecto)."""
     return {"type": "custom-liquid", "settings": {
-        "custom_liquid": "{% render 'lunerie-inicio', parte: '" + nombre + "' %}",
+        "custom_liquid": "{% render '" + snippet + "', parte: '" + nombre + "'" + extra + " %}",
         "background_color": fondo, "section_width": ancho,
         "padding-block-start": arriba, "padding-block-end": abajo}}
 
@@ -530,6 +530,10 @@ product = {
     "sections": {
         "migas": migas,
         "main": ficha,
+        # Debajo de la ficha, como Olivia Jewelry (26-oct): foto grande · tres datos · texto · collage.
+        # Solo sale en el reloj Lune (tema/codigo/snippets/lunerie-ficha.liquid).
+        "historia": parte("historia", arriba=0, abajo=24, ancho="full-width", snippet="lunerie-ficha",
+                          extra=", product: product"),
         "recomendados": {
             "type": "product-recommendations",
             "blocks": {
@@ -551,7 +555,7 @@ product = {
                 "padding-block-start": 48, "padding-block-end": 64},
         },
     },
-    "order": ["migas", "main", "recomendados"],
+    "order": ["migas", "main", "historia", "recomendados"],
 }
 (OUT / "product.json").write_text(json.dumps(product, ensure_ascii=False, indent=2), encoding="utf8")
 

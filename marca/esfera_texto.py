@@ -1,7 +1,12 @@
+"""Escribe «NAIDU» y «QUARTZ» en la esfera de la foto de detalle (lune-verde-detalle), siguiendo su giro.
+    python marca/esfera_texto.py entrada.png salida.png   (C, v12 y u3 = centro y direcciones de esa foto)
+"""
 import cv2, numpy as np
 from PIL import Image, ImageDraw, ImageFont
 F = 'D:/LUNERIE/marca/fuentes/Jost.ttf'
-img = cv2.imread('prodD2.png')
+import sys
+ENT, SAL = (sys.argv[1], sys.argv[2]) if len(sys.argv) > 2 else ('prodD2.png', 'prodD3.png')
+img = cv2.imread(ENT)
 C = np.array([940., 1152.])                 # eje de las agujas
 v12 = np.array([1093., 1015.]) - C          # hacia las 12 (índice doble)
 u3 = np.array([1070., 1245.]) - C           # hacia las 3
@@ -33,5 +38,5 @@ out = img.astype(np.float32)
 for t, alto, peso, esp, k, al in (('NAIDU', 17, 500, 3.2, 0.42, 0.88), ('QUARTZ', 9, 400, 2.4, -0.47, 0.75)):
     a, col = texto(t, alto, peso, esp, C + k * v12, al)
     out = out * (1 - a) + col * a
-cv2.imwrite('prodD3.png', out.clip(0, 255).astype(np.uint8))
-Image.open('prodD3.png').crop((700, 700, 1400, 1450)).save('dial-detalle2.png')
+cv2.imwrite(SAL, out.clip(0, 255).astype(np.uint8))
+Image.open(SAL).crop((700, 700, 1400, 1450)).save('dial-detalle2.png')

@@ -150,10 +150,12 @@
   (26-oct): modelo IA → **producto en niebla** → muñeca IA → **detalle** → **curva** → foto del proveedor → muñeca
   del proveedor → correa 18 cm; la de la modelo es la de la variante. Fotos de producto (`lune-verde-producto/
   detalle/curva.jpg`): la de niebla sale **editando la foto real del proveedor** (cambiar solo el fondo; así no
-  cambia el número de piedras) y las otras usan esa como referencia. **Cómo es el real:** 3 piedras a cada lado
-  (la del medio de arriba, color crema), en las puntas anillas trenzadas vacías (gancho + anilla arriba, anilla +
-  cierre abajo), piedras **verde jade claro con vetas blancas** (la IA tiende a malaquita oscura: corregirlo),
-  caja **ovalada** (la IA la hace redonda) y pequeña (esfera 12 mm). Edu prefiere la esfera **sin marca** en los
+  cambia el número de piedras) y las otras usan esa como referencia. **Cómo es el real:** 3 piedras a cada lado,
+  en las puntas anillas trenzadas vacías (gancho + anilla arriba, anilla + cierre abajo), caja **ovalada** (la IA
+  la hace redonda) y pequeña (esfera 12 mm). **Color que se vende (Edu, 26-oct): verde medio-oscuro con vetas
+  claras, las 6 iguales** (la foto del proveedor trae una crema: no; ni jade pálido ni malaquita a rayas). Todas
+  las fotos de la ficha y del collage corregidas a ese verde el 26-oct (ediciones de 2 créditos con la foto de
+  producto como referencia de color). Edu prefiere la esfera **sin marca** en los
   anuncios, pero en el **detalle** de producto sí quiere «NAIDU» y «QUARTZ» (escritos a mano con Jost siguiendo
   el giro de la esfera: `marca/esfera_texto.py` → `lune-verde-detalle.jpg`).
 - **Sección «historia» bajo la ficha (26-oct, en producción), como Olivia Jewelry:** foto grande del detalle (2:1 en
@@ -162,8 +164,10 @@
   piedras.*» + texto · collage 2×2 (perfil, curva, toalla, pelo). Código: `tema/codigo/snippets/lunerie-ficha.liquid`
   (`parte('historia', snippet='lunerie-ficha')` en `build.py`); solo sale en `reloj-lune`. Las fotos son **archivos
   de Shopify** con nombre fijo (`lune-editorial-*.jpg`, se leen con `images['…']`); para cambiar una, subir otra
-  con el mismo nombre. Las del collage son las de los anuncios **editadas con el reloj ~35 % más pequeño y piedras
-  jade claro** (`marca/fotos-ia/editorial/`), porque en los vídeos el reloj sale demasiado grande. El CSS de bolitas (`PIEDRAS` en `build.py`) sigue con los 6 colores: no molesta.
+  con el mismo nombre, o mejor `fileUpdate` con `originalSource` (cambia la imagen y conserva nombre y posición).
+  Las del collage son las de los anuncios **editadas con el reloj ~35 % más pequeño** (`marca/fotos-ia/editorial/`),
+  porque en los vídeos el reloj sale demasiado grande (los vídeos siguen así).
+  El CSS de bolitas (`PIEDRAS` en `build.py`) sigue con los 6 colores: no molesta.
   Fotos IA del azul hechas el 25-oct (`marca/fotos-ia/lune-azul-*.jpg`), aparcadas. `marca/naidu.py` escribe
   «NAIDU» en la esfera cuando la IA inventa letras (inpaint + Jost, con giro).
   **Plateado:** Edu encontró en Alibaba un proveedor con el mismo diseño en dorado y plata (verdes). Aparcado: solo

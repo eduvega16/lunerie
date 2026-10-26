@@ -146,9 +146,14 @@
   producto mejorado + puesta en modelo). Revisar que la IA no cambie piedras/esfera y dejar siempre una foto real.
 
 - **Decisión de Edu (26-oct): el test va SOLO con el verde (dorado).** Quitadas de la ficha las variantes azul,
-  rosa, verde claro, crema y rojo (sus fotos siguen en Archivos de Shopify; se recrean si hace falta). Galería:
-  modelo IA → muñeca IA → foto del proveedor → muñeca del proveedor → correa 18 cm; la de la modelo es la de la
-  variante. El CSS de bolitas (`PIEDRAS` en `build.py`) sigue con los 6 colores: no molesta.
+  rosa, verde claro, crema y rojo (sus fotos siguen en Archivos de Shopify; se recrean si hace falta). Galería
+  (26-oct): modelo IA → **producto en niebla** → muñeca IA → **detalle** → **curva** → foto del proveedor → muñeca
+  del proveedor → correa 18 cm; la de la modelo es la de la variante. Fotos de producto (`lune-verde-producto/
+  detalle/curva.jpg`): la de niebla sale **editando la foto real del proveedor** (cambiar solo el fondo; así no
+  cambia el número de piedras) y las otras usan esa como referencia. **Cómo es el real:** 3 piedras a cada lado
+  (la del medio de arriba, color crema), en las puntas anillas trenzadas vacías (gancho + anilla arriba, anilla +
+  cierre abajo), piedras **verde jade claro con vetas blancas** (la IA tiende a malaquita oscura: corregirlo),
+  caja **ovalada** (la IA la hace redonda) y pequeña (esfera 12 mm). Edu prefiere la esfera **sin marca**. El CSS de bolitas (`PIEDRAS` en `build.py`) sigue con los 6 colores: no molesta.
   Fotos IA del azul hechas el 25-oct (`marca/fotos-ia/lune-azul-*.jpg`), aparcadas. `marca/naidu.py` escribe
   «NAIDU» en la esfera cuando la IA inventa letras (inpaint + Jost, con giro).
   **Plateado:** Edu encontró en Alibaba un proveedor con el mismo diseño en dorado y plata (verdes). Aparcado: solo

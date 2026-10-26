@@ -1,0 +1,219 @@
+{%- comment -%}
+  Lunerie · rasca con 10 % de descuento (como el de Olivia Jewelry). Se pinta desde una sección «Liquid
+  personalizado» del pie (footer-group.json, generado por tema/build.py), así sale en todas las páginas.
+  · Solo en el inicio y en las fichas; sale una vez por visitante (a los 8 s o al bajar media página) y espera a
+    que se conteste el banner de cookies.
+  · Al rascar casi la mitad (o pulsar «Descúbrelo aquí») mete el código en la cesta por cart/update.js, como hace
+    el propio Horizon con su campo de descuento. El código existe en Shopify (Descuentos → «Rasca · 10 %»):
+    un uso por cliente y no se suma al «Segundo reloj por 19,95 €».
+  · Es un regalo igual para todos, no un sorteo: no decir «prueba suerte» ni «a ver qué te toca».
+{%- endcomment -%}
+{%- liquid
+  assign codigo = 'LUNERIE10'
+  assign mostrar = false
+  if template.name == 'index' or template.name == 'product'
+    assign mostrar = true
+  endif
+  for d in cart.discount_applications
+    if d.title == codigo
+      assign mostrar = false
+    endif
+  endfor
+-%}
+{%- if mostrar -%}
+  <dialog class="lu-rasca" id="lu-rasca" aria-labelledby="lu-rasca-titulo" data-codigo="{{ codigo }}" autofocus>
+    <button type="button" class="lu-rasca__cerrar" aria-label="Cerrar" data-cerrar>
+      <svg aria-hidden="true" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 2l14 14M16 2L2 16"/></svg>
+    </button>
+    <div class="lu-rasca__texto">
+      <p class="lu-rasca__logo">LUNERIE</p>
+      <h2 class="lu-rasca__titulo" id="lu-rasca-titulo">Rasca y descubre</h2>
+      <p class="lu-rasca__sub" data-antes>Tenemos un regalo para tu primer pedido.</p>
+      <p class="lu-rasca__sub" data-despues hidden>Ya está aplicado en tu cesta.</p>
+
+      <div class="lu-rasca__carta">
+        <div class="lu-rasca__premio">
+          <span class="lu-rasca__cifra">10&nbsp;%</span>
+          <span class="lu-rasca__de">de descuento</span>
+        </div>
+        <canvas class="lu-rasca__capa" aria-hidden="true"></canvas>
+      </div>
+
+      <button type="button" class="lu-rasca__alt" data-antes data-descubrir>¿Prefieres no rascar? Descúbrelo aquí</button>
+      <div class="lu-rasca__fin" data-despues hidden>
+        <p class="lu-rasca__codigo">Código <strong>{{ codigo }}</strong></p>
+        {%- if template.name == 'product' -%}
+          <button type="button" class="lu-rasca__boton" data-cerrar>Seguir mirando</button>
+        {%- else -%}
+          <a class="lu-rasca__boton" href="{{ all_products['reloj-lune'].url }}">Ver el reloj Lune</a>
+        {%- endif -%}
+        <p class="lu-rasca__letra">Un uso por cliente. No se suma a otras promociones.</p>
+      </div>
+    </div>
+    <div class="lu-rasca__fotos" aria-hidden="true">
+      {%- assign nombres = 'lune-editorial-perfil.jpg,lune-editorial-toalla.jpg,lune-editorial-curva.jpg,lune-editorial-pelo.jpg' | split: ',' -%}
+      {%- for nombre in nombres -%}
+        {%- assign foto = images[nombre] -%}
+        {%- if foto -%}
+          {{ foto | image_url: width: 600 | image_tag: loading: 'lazy', alt: '', sizes: '230px', widths: '300, 460, 600' }}
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </dialog>
+
+  <script>
+    (() => {
+      const dlg = document.getElementById('lu-rasca');
+      if (!dlg || typeof dlg.showModal !== 'function') return;
+      const CLAVE = 'lu-rasca', codigo = dlg.dataset.codigo;
+      const leer = () => { try { return JSON.parse(localStorage.getItem(CLAVE) || 'null'); } catch (e) { return null; } };
+      const guardar = (v) => { try { localStorage.setItem(CLAVE, JSON.stringify(v)); } catch (e) {} };
+      const visto = leer();
+      // Ya descubierto: nunca más. Cerrado sin rascar: vuelve a salir a los 7 días.
+      if (visto && (visto.hecho || Date.now() - visto.t < 7 * 864e5)) return;
+
+      const lienzo = dlg.querySelector('canvas');
+      const ctx = lienzo.getContext('2d', { willReadFrequently: true });
+      let listo = false, abierto = false, trazos = 0, ultimo = null;
+
+      function pintarCapa() {
+        const r = lienzo.getBoundingClientRect(), k = window.devicePixelRatio || 1;
+        lienzo.width = Math.round(r.width * k); lienzo.height = Math.round(r.height * k);
+        const g = ctx.createLinearGradient(0, 0, lienzo.width, lienzo.height);
+        g.addColorStop(0, '#B8955A'); g.addColorStop(.35, '#E8D3A0'); g.addColorStop(.6, '#A6834A');
+        g.addColorStop(.85, '#DCC28C'); g.addColorStop(1, '#A98850');
+        ctx.globalCompositeOperation = 'source-over';
+        ctx.fillStyle = g; ctx.fillRect(0, 0, lienzo.width, lienzo.height);
+        for (let i = 0; i < 1400; i++) {   // brillo de lámina
+          ctx.fillStyle = `rgba(255,255,255,${Math.random() * .12})`;
+          ctx.fillRect(Math.random() * lienzo.width, Math.random() * lienzo.height, k, k);
+        }
+        const letra = getComputedStyle(document.body).getPropertyValue('--font-body--family') || 'sans-serif';
+        ctx.fillStyle = 'rgba(255,255,255,.82)'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+        ctx.font = `500 ${15 * k}px ${letra}`;
+        if ('letterSpacing' in ctx) ctx.letterSpacing = `${4 * k}px`;
+        ctx.fillText('RASCA AQUÍ', lienzo.width / 2, lienzo.height / 2);
+        ctx.globalCompositeOperation = 'destination-out';
+        ctx.lineCap = ctx.lineJoin = 'round'; ctx.lineWidth = 46 * k;
+      }
+
+      function punto(e) {
+        const r = lienzo.getBoundingClientRect(), k = lienzo.width / r.width;
+        return [(e.clientX - r.left) * k, (e.clientY - r.top) * k];
+      }
+      function rascar(e) {
+        if (listo) return;
+        const p = punto(e);
+        ctx.beginPath(); ctx.moveTo(...(ultimo || p)); ctx.lineTo(...p); ctx.stroke();
+        ultimo = p;
+        if (++trazos % 6 === 0 && rascado() > .45) descubrir();
+      }
+      function rascado() {
+        const d = ctx.getImageData(0, 0, lienzo.width, lienzo.height).data;
+        let vacio = 0, total = 0;
+        for (let i = 3; i < d.length; i += 64) { total++; if (d[i] === 0) vacio++; }
+        return vacio / total;
+      }
+
+      lienzo.addEventListener('pointerdown', (e) => { lienzo.setPointerCapture(e.pointerId); ultimo = null; rascar(e); });
+      lienzo.addEventListener('pointermove', (e) => { if (lienzo.hasPointerCapture(e.pointerId)) rascar(e); });
+      lienzo.addEventListener('pointerup', () => { ultimo = null; });
+
+      async function aplicar() {
+        try {
+          const raiz = (window.Shopify && Shopify.routes && Shopify.routes.root) || '/';
+          const cesta = await (await fetch(raiz + 'cart.js')).json();
+          const codigos = (cesta.discount_codes || []).map((d) => d.code).filter((c) => c !== codigo);
+          await fetch(raiz + 'cart/update.js', {
+            method: 'POST', headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ discount: [...codigos, codigo].join(',') }),
+          });
+        } catch (e) {}
+      }
+
+      function descubrir() {
+        if (listo) return;
+        listo = true;
+        dlg.classList.add('is-descubierto');
+        dlg.querySelectorAll('[data-antes]').forEach((n) => (n.hidden = true));
+        dlg.querySelectorAll('[data-despues]').forEach((n) => (n.hidden = false));
+        guardar({ hecho: true, t: Date.now() });
+        aplicar();
+      }
+      dlg.querySelector('[data-descubrir]').addEventListener('click', descubrir);
+
+      dlg.querySelectorAll('[data-cerrar]').forEach((b) => b.addEventListener('click', () => dlg.close()));
+      dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });   // clic fuera
+      dlg.addEventListener('close', () => document.documentElement.classList.remove('lu-rasca-abierto'));
+
+      function abrir() {
+        if (abierto) return;
+        abierto = true;
+        guardar({ hecho: false, t: Date.now() });
+        document.documentElement.classList.add('lu-rasca-abierto');
+        dlg.showModal();
+        (document.fonts ? document.fonts.ready : Promise.resolve()).then(pintarCapa);
+      }
+      // Espera al banner de cookies de Shopify: no se abre encima de él
+      function cuandoNoHayBanner(fn) {
+        const b = document.getElementById('shopify-pc__banner');
+        const visible = b && b.getClientRects().length > 0 && getComputedStyle(b).visibility !== 'hidden';   // es fixed: sin offsetParent
+        if (visible) return setTimeout(() => cuandoNoHayBanner(fn), 1000);
+        fn();
+      }
+      function disparar() {
+        removeEventListener('scroll', alBajar);
+        clearTimeout(reloj);
+        cuandoNoHayBanner(() => setTimeout(abrir, 600));
+      }
+      function alBajar() {
+        if (scrollY > (document.documentElement.scrollHeight - innerHeight) * .5) disparar();
+      }
+      const reloj = setTimeout(disparar, 8000);
+      addEventListener('scroll', alBajar, { passive: true });
+    })();
+  </script>
+{%- endif -%}
+
+{% stylesheet %}
+  html.lu-rasca-abierto{overflow:hidden}
+  .lu-rasca{width:min(1040px,calc(100vw - 32px));max-width:none;max-height:calc(100dvh - 32px);padding:0;border:0;
+    background:#fff;color:#16201B;overflow:auto;outline:none}
+  .lu-rasca[open]{display:grid;grid-template-columns:1fr}
+  .lu-rasca::backdrop{background:rgba(22,32,27,.45)}
+  .lu-rasca__cerrar{position:absolute;top:10px;right:10px;z-index:2;display:grid;place-items:center;width:40px;height:40px;
+    padding:0;border:0;background:transparent;color:#16201B;cursor:pointer}
+  .lu-rasca__texto{display:grid;justify-items:center;align-content:center;padding:48px 24px 36px;text-align:center}
+  .lu-rasca__logo{margin:0 0 22px;font-family:var(--font-heading--family);font-size:1rem;letter-spacing:.42em;
+    padding-left:.42em}
+  .lu-rasca__titulo{margin:0 0 10px;font-family:var(--font-heading--family);font-weight:400;
+    font-size:clamp(2.1rem,4vw,2.8rem);line-height:1.05}
+  .lu-rasca__sub{margin:0 0 26px;max-width:30ch;line-height:1.5;color:#3D4842}
+  .lu-rasca__carta{position:relative;width:min(100%,320px);aspect-ratio:16/10;overflow:hidden;background:#F2F4F2;
+    outline:1px solid #A6834A;outline-offset:6px}
+  .lu-rasca__premio{position:absolute;inset:0;display:grid;place-content:center;gap:2px}
+  .lu-rasca__cifra{font-family:var(--font-heading--family);font-size:3.4rem;line-height:1;color:#16201B}
+  .lu-rasca__de{font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;color:#A6834A}
+  .lu-rasca__capa{position:absolute;inset:0;width:100%;height:100%;cursor:grab;touch-action:none;
+    transition:opacity .6s ease}
+  .lu-rasca.is-descubierto .lu-rasca__capa{opacity:0;pointer-events:none}
+  .lu-rasca__alt{margin-top:22px;padding:6px;border:0;background:none;color:#3D4842;font:inherit;font-size:.8125rem;
+    text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+  .lu-rasca__fin{display:grid;justify-items:center;gap:14px;margin-top:24px}
+  .lu-rasca__fin[hidden],.lu-rasca [hidden]{display:none}
+  .lu-rasca__codigo{margin:0;font-size:.875rem;letter-spacing:.06em}
+  .lu-rasca__codigo strong{font-weight:500;letter-spacing:.14em}
+  .lu-rasca__boton{display:inline-block;padding:15px 30px;border:0;background:#006039;color:#fff;cursor:pointer;
+    text-decoration:none;font-family:var(--font-body--family);font-size:.8125rem;letter-spacing:.16em;text-transform:uppercase}
+  .lu-rasca__boton:hover{background:#004d2e}
+  .lu-rasca__letra{margin:0;font-size:.6875rem;color:#6B746F}
+  .lu-rasca__fotos{display:none}
+  .lu-rasca :focus-visible{outline:2px solid #006039;outline-offset:3px}
+  @media (min-width:750px){
+    .lu-rasca[open]{grid-template-columns:1fr 1fr}
+    .lu-rasca__texto{padding:56px 40px}
+    .lu-rasca__fotos{display:grid;grid-template-columns:1fr 1fr;align-content:center;gap:14px;padding:36px;background:#F2F4F2}
+    .lu-rasca__fotos img{display:block;width:100%;aspect-ratio:1;object-fit:cover}
+  }
+  @media (prefers-reduced-motion:reduce){.lu-rasca__capa{transition:none}}
+{% endstylesheet %}

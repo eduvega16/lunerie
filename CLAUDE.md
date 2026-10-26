@@ -390,6 +390,18 @@ gafas con cámara IA (69,95-79,95 €) · descartados: micro-infusión, paddle s
       subir los vídeos como archivo de Shopify (VIDEO, staged upload POST) y cambiar las 2 URL en `hero-video` de
       `lunerie-inicio.liquid`. Volver a la portada con foto: `parte("hero", arriba=8, abajo=40)` en `build.py`.
       Menú principal (14-oct): «Reloj Lune» (ficha `/products/reloj-lune`) · Preguntas frecuentes · Contacto.
+- [x] **Rasca del 10 % (27-oct, en producción)**, como el de Olivia Jewelry: ventana «Rasca y descubre · Tenemos
+      un regalo para tu primer pedido» con lámina dorada (canvas) y, en PC, 4 fotos editoriales a la derecha. Sale
+      **una vez** en el inicio y en las fichas, a los 8 s o al bajar media página, y **espera a que se conteste el
+      banner de cookies** (`#shopify-pc__banner`; es `fixed`, así que se mira con `getClientRects`, no con
+      `offsetParent`). Al rascar ~45 % (o «¿Prefieres no rascar? Descúbrelo aquí») mete el código en la cesta con
+      `cart/update.js` + `discount` (igual que Horizon), aunque esté vacía: al añadir el reloj, 44,95 → 40,46 €.
+      Cerrado sin rascar, vuelve a los 7 días (`localStorage` «lu-rasca»). Código **LUNERIE10** (Descuentos →
+      «Rasca · 10 %», DiscountCodeNode 1859009708371): 10 % a todo, un uso por cliente, **no se suma** al «Segundo
+      reloj» (con dos relojes Shopify se queda con el mejor, 64,90 €). Código: `tema/codigo/snippets/lunerie-rasca.liquid`,
+      pintado desde la sección `rasca` del pie (`footer-group.json` en `build.py`). **Es un regalo igual para todos,
+      no un sorteo: nada de «prueba suerte»** (engañoso si a todos les toca lo mismo). Con el código, el CPA
+      breakeven baja ~3,7 € (de ~17,9 a ~14,2 €) en los pedidos que lo usan.
 - [ ] Quitar la contraseña de la tienda
 
 > **OJO (22-oct): el conector de Shopify de claude.ai está conectado a STAR BRICK (otra tienda de Edu), no a Lunerie.**
@@ -422,7 +434,12 @@ alertas si CTR < 1 % o CPC > 0,90 €. Máximo 2 productos en test a la vez.
   créditos de la prueba solo se ven por el conector, no en la web. Con Plus también hay GPT Image 2.5. Después
   vuelve al plan gratis. API: sin saldo; por imagen Qwen Edit 0,075 $, Grok 0,09 $ (no tiene Nano Banana).
 - **Hecho el 26-27 oct:** ficha solo en verde con fotos IA y sección estilo Olivia · anuncio 1 (Kling) · **portada
-  con vídeo del Lune verde** (27-oct) y textos del inicio sin «seis colores» ni «llega en su caja».
+  con vídeo del Lune verde** (27-oct) y textos del inicio sin «seis colores» ni «llega en su caja» · galería de la
+  ficha en cuadrícula (Edu) y sin la foto de 18 cm · **rasca del 10 %** (apartado 6).
+- **Pendiente de Edu (27-oct):** a Edu no le gusta el «Segundo reloj por 19,95 €» (da sensación de barato).
+  Propuesta: quitarlo para el test y dejar solo el rasca; más adelante, quizá un pack «Lune para dos» a 79,90 €.
+  Está en la portada (nota y franja verde), la caja verde de la ficha, el aviso de la cesta, el descuento
+  automático y los anuncios.
 - **Siguiente con Claude:** anuncios (ajustar `anuncios/test-reloj-lune.md` a la fase drop: solo verde, sin caja,
   7-12 días) → bio de Instagram con `ig-profile` → quitar la contraseña y lanzar (como muy tarde 2-nov).
   **Edu:** formato de precio «44,95 €» (la portada aún sale «€44,95»: Configuración → General → Moneda).

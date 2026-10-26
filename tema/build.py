@@ -193,8 +193,12 @@ footer = {
                          "divider_color": LINE, "background_color": MIST,
                          "padding-block-start": 20, "padding-block-end": 40},
         },
+        # Rasca del 10 % (27-oct): ventana que sale una vez en el inicio y las fichas (tema/codigo/snippets/lunerie-rasca.liquid)
+        "rasca": {"type": "custom-liquid", "name": "Rasca 10 %", "settings": {
+            "custom_liquid": "{% render 'lunerie-rasca' %}", "section_width": "full-width",
+            "padding-block-start": 0, "padding-block-end": 0}},
     },
-    "order": ["footer_m9NzUG", "footer_utilities_jLGE8U"],
+    "order": ["footer_m9NzUG", "footer_utilities_jLGE8U", "rasca"],
 }
 (OUT / "footer-group.json").write_text(json.dumps(footer, ensure_ascii=False, indent=2), encoding="utf8")
 

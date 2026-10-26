@@ -263,6 +263,11 @@ def parte(nombre, fondo="", arriba=24, abajo=24, ancho="page-width", snippet="lu
         "padding-block-start": arriba, "padding-block-end": abajo}}
 
 
+# «Segundo reloj por 19,95 €»: quitado el 27-oct (a Edu le daba sensación de barato; ahora va el rasca del 10 %).
+# Con False no salen la franja verde del inicio, la caja verde de la ficha ni el aviso de la cesta. El descuento
+# automático está desactivado en Shopify (no borrado): para volver, True aquí y reactivarlo en Descuentos.
+SEGUNDO_RELOJ = False
+
 index = {
     "sections": {
         # Portada con vídeo (prueba 14-oct). Para volver a la de la foto en óvalo: parte("hero", arriba=8, abajo=40)
@@ -345,6 +350,9 @@ index = {
     },
     "order": ["portada", "destacado", "como_es", "oferta", "dudas", "promesas"],
 }
+if not SEGUNDO_RELOJ:
+    del index["sections"]["oferta"]
+    index["order"].remove("oferta")
 (OUT / "index.json").write_text(json.dumps(index, ensure_ascii=False, indent=2), encoding="utf8")
 
 
@@ -563,6 +571,10 @@ product = {
     },
     "order": ["migas", "main", "historia", "recomendados"],
 }
+if not SEGUNDO_RELOJ:
+    _det = product["sections"]["main"]["blocks"]["product-details"]
+    del _det["blocks"]["oferta"]
+    _det["block_order"].remove("oferta")
 (OUT / "product.json").write_text(json.dumps(product, ensure_ascii=False, indent=2), encoding="utf8")
 
 (OUT / "codigo" / "snippets").mkdir(parents=True, exist_ok=True)
@@ -620,6 +632,8 @@ UPSELL = (
     "fetch('{{ routes.cart_add_url }}.js',{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}})"
     ".then(function(){location.href='{{ routes.cart_url }}'}).catch(function(){f.submit()})});</script>\n"
     "{%- endif -%}\n")
+if not SEGUNDO_RELOJ:
+    UPSELL = "{%- comment -%} Generado por tema/build.py: aviso del segundo reloj, apagado (SEGUNDO_RELOJ = False) {%- endcomment -%}\n"
 (OUT / "codigo" / "snippets" / "lunerie-segundo-reloj.liquid").write_text(UPSELL, encoding="utf8")
 
 # Copia en tema/tienda/ (el tema publicado bajado con `shopify theme pull`, fuera de git) para subirlo con la CLI

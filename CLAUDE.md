@@ -83,8 +83,9 @@
   En Meta España nadie lo anuncia.
 - **Modelo:** BS Bee Sister **FA1835** (marca del fabricante, no es réplica). Llamarlo «Lune» está bien, pero no
   decir que lo diseña o fabrica Lunerie. Con las muestras: mirar si la esfera lleva el logo BS (se verá en las fotos).
-- **PVP 44,95 €** · upsell "2.º reloj por 19,95 €" · variantes: Dorado·piedra verde, Dorado·piedra azul,
-  Plateado·piedra verde (esta solo si la muestra llega bien).
+- **PVP 49,95 € desde el 27-oct** (antes 44,95 €; subido un 10 % para compensar el rasca del 10 %: con el código,
+  44,96 €) · **sin upsell** (el «2.º reloj por 19,95 €» se quitó el 27-oct: daba sensación de barato) ·
+  variantes: solo Dorado·piedra verde (ver 5.1a).
 - **Cómo es:** cuarzo, esfera ovalada 12 mm, correa de eslabones 18 cm con piedras ovaladas (resina/vidrio),
   aleación dorada o plateada, pila puesta. Incluye caja de regalo + extractor de eslabones + tarjeta.
 - **Avisos obligatorios:** no sumergible · esfera pequeña · correa 18 cm (muñecas < 16 cm: quitar eslabones) ·
@@ -395,13 +396,17 @@ gafas con cámara IA (69,95-79,95 €) · descartados: micro-infusión, paddle s
       **una vez** en el inicio y en las fichas, a los 8 s o al bajar media página, y **espera a que se conteste el
       banner de cookies** (`#shopify-pc__banner`; es `fixed`, así que se mira con `getClientRects`, no con
       `offsetParent`). Al rascar ~45 % (o «¿Prefieres no rascar? Descúbrelo aquí») mete el código en la cesta con
-      `cart/update.js` + `discount` (igual que Horizon), aunque esté vacía: al añadir el reloj, 44,95 → 40,46 €.
+      `cart/update.js` + `discount` (igual que Horizon), aunque esté vacía: al añadir el reloj, 49,95 → 44,96 €.
       Cerrado sin rascar, vuelve a los 7 días (`localStorage` «lu-rasca»). Código **LUNERIE10** (Descuentos →
-      «Rasca · 10 %», DiscountCodeNode 1859009708371): 10 % a todo, un uso por cliente, **no se suma** al «Segundo
-      reloj» (con dos relojes Shopify se queda con el mejor, 64,90 €). Código: `tema/codigo/snippets/lunerie-rasca.liquid`,
+      «Rasca · 10 %», DiscountCodeNode 1859009708371): 10 % a todo, un uso por cliente, no se suma a otros
+      descuentos de producto ni de pedido. Código: `tema/codigo/snippets/lunerie-rasca.liquid`,
       pintado desde la sección `rasca` del pie (`footer-group.json` en `build.py`). **Es un regalo igual para todos,
-      no un sorteo: nada de «prueba suerte»** (engañoso si a todos les toca lo mismo). Con el código, el CPA
-      breakeven baja ~3,7 € (de ~17,9 a ~14,2 €) en los pedidos que lo usan.
+      no un sorteo: nada de «prueba suerte»** (engañoso si a todos les toca lo mismo). CPA breakeven a 49,95 €:
+      ~22 € sin código y ~17,9 € con el código (lo mismo que antes a 44,95 €); para el test, contar con ~17,9 €.
+- [x] **«Segundo reloj por 19,95 €» quitado (27-oct):** `SEGUNDO_RELOJ = False` en `build.py` (fuera la franja verde
+      del inicio, la caja verde de la ficha y el aviso de la cesta; bajo el botón de la portada ahora pone «Envío
+      gratis a península») · descuento automático **desactivado** (no borrado) · quitado de Preguntas frecuentes y
+      del ejemplo de los Términos. Volver: `True` + reactivarlo en Descuentos.
 - [ ] Quitar la contraseña de la tienda
 
 > **OJO (22-oct): el conector de Shopify de claude.ai está conectado a STAR BRICK (otra tienda de Edu), no a Lunerie.**
@@ -436,10 +441,14 @@ alertas si CTR < 1 % o CPC > 0,90 €. Máximo 2 productos en test a la vez.
 - **Hecho el 26-27 oct:** ficha solo en verde con fotos IA y sección estilo Olivia · anuncio 1 (Kling) · **portada
   con vídeo del Lune verde** (27-oct) y textos del inicio sin «seis colores» ni «llega en su caja» · galería de la
   ficha en cuadrícula (Edu) y sin la foto de 18 cm · **rasca del 10 %** (apartado 6).
-- **Pendiente de Edu (27-oct):** a Edu no le gusta el «Segundo reloj por 19,95 €» (da sensación de barato).
-  Propuesta: quitarlo para el test y dejar solo el rasca; más adelante, quizá un pack «Lune para dos» a 79,90 €.
-  Está en la portada (nota y franja verde), la caja verde de la ficha, el aviso de la cesta, el descuento
-  automático y los anuncios.
+- **27-oct:** fuera el «Segundo reloj por 19,95 €» y **precio a 49,95 €** (con el rasca, 44,96 €). Falta quitarlo
+  de los anuncios (`anuncios/test-reloj-lune.md`: ángulo «Uno para ti y otro para regalar» y precio 44,95 €).
+- **Opiniones:** Edu propuso opiniones inventadas con fotos de compradoras de AliExpress → **no** (reseñas falsas:
+  práctica desleal prohibida, Ley 3/1991 de Competencia Desleal tras el RDL 24/2021, y fotos de otras personas
+  sin permiso). Alternativas: app de reseñas (Judge.me gratis) que pida opinión tras la entrega · reseñas
+  reales de gente a la que Edu dé una muestra (marcadas como «recibido como regalo») · lo que dicen las reseñas
+  de AliExpress (peso, sensación de lujo, ajuste con vídeo) usado como texto de producto que Edu comprueba con su
+  muestra, no como testimonio.
 - **Siguiente con Claude:** anuncios (ajustar `anuncios/test-reloj-lune.md` a la fase drop: solo verde, sin caja,
   7-12 días) → bio de Instagram con `ig-profile` → quitar la contraseña y lanzar (como muy tarde 2-nov).
   **Edu:** formato de precio «44,95 €» (la portada aún sale «€44,95»: Configuración → General → Moneda).
@@ -492,7 +501,9 @@ antes del 9-nov y llegar a Black Friday (27-30 nov) con un producto validado. Fe
   @lunerie, envíos/Baleares, escribir a Yiwu (collar) si se quiere para Navidad.
 - 19-25 oct · muestras → fotos 4:5 y 4 vídeos → 3 anuncios.
 - 26 oct-1 nov · quitar contraseña + test de 90 € (3 días). 2-8 nov · decidir. 9-26 nov · escalar + Black Friday.
-- **No tocar el precio de 44,95 € hasta Black Friday** (un tachado en BF tiene que ser el precio más bajo de los 30 días anteriores).
+- **No tocar el precio de 49,95 € (puesto el 27-oct) hasta Black Friday** (un tachado en BF tiene que ser el precio
+  más bajo de los 30 días anteriores; del 27-oct al 27-nov son 31 días). Como el rasca da un 10 % a todo el que
+  rasca, en BF es más seguro un **código** («−20 % con BLACK20») que un precio tachado.
 - **Fotos:** las de `tema/fotos productos/reloj/` son **de Calné** (Edu lo sabe y asume el riesgo). Plan: sustituirlas
   por las del proveedor (AliExpress/Alibaba) o por fotos propias de las muestras. Mejorarlas con IA (Real-ESRGAN) no
   hace falta a 4K (Shopify las sirve a ~2000 px; ideal 2048×2560): están blandas por compresión (42 KB) y el reloj

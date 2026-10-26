@@ -46,6 +46,3 @@ las rehacemos y el envío lo pagamos nosotros.
 
 **¿Y si se estropea?**
 Tiene 3 años de garantía legal. Escríbenos con una foto y lo arreglamos, lo cambiamos o te devolvemos el dinero.
-
-**¿El «segundo reloj por 19,95 €» cómo funciona?**
-Añade dos relojes a la cesta: el descuento se aplica solo al pagar.

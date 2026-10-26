@@ -44,8 +44,8 @@ derecho de desistimiento. Todo el detalle está en la [política de devoluciones
 
 ## 8. Ofertas
 
-Las promociones (por ejemplo, «segundo reloj por 19,95 €») se aplican solas en la cesta mientras estén activas y
-no se acumulan con otras salvo que se diga.
+Las promociones (por ejemplo, un código de descuento) se aplican en la cesta mientras estén activas y no se
+acumulan con otras salvo que se diga.
 
 ## 9. Atención al cliente y reclamaciones
 

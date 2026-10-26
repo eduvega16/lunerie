@@ -12,7 +12,7 @@
         <p class="lu-ceja">Reloj Lune</p>
         <h1 class="lu-hero__titulo">Un reloj que se lleva <em>como una joya.</em></h1>
         <p class="lu-hero__sub">
-          Esfera ovalada, piedras verdes y eslabones finos. Llega en su caja, listo para regalar.
+          Esfera ovalada, piedras verdes y eslabones finos. Para llevarlo cada día o para regalar.
         </p>
         <div class="lu-hero__acciones">
           <a class="lu-boton" href="{{ lu.url }}">Ver el reloj · {{ lu.price | money }}</a>
@@ -35,10 +35,19 @@
     </div>
 
   {%- when 'hero-video' -%}
-    {%- comment -%} Portada con vídeo de fondo, oscurecido y con grano de película; óvalo dorado como firma {%- endcomment -%}
+    {%- comment -%}
+      Portada con vídeo de fondo, oscurecido y con grano de película; óvalo dorado como firma.
+      Vídeos hechos con marca/portada.py: vertical en móvil, tres planos en fila en PC. Mientras cargan se ve su
+      primer fotograma (archivos lune-portada-movil.jpg / lune-portada-pc.jpg).
+    {%- endcomment -%}
     <div class="lu-hv">
-      <video class="lu-hv__video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
-        <source src="https://cdn.shopify.com/videos/c/o/v/8e20a3f4216245aa89a6b4fbf3d6ba36.mp4" type="video/mp4">
+      <picture class="lu-hv__poster" aria-hidden="true">
+        <source media="(min-width: 750px)" srcset="{{ images['lune-portada-pc.jpg'] | image_url: width: 1920 }}">
+        <img src="{{ images['lune-portada-movil.jpg'] | image_url: width: 720 }}" alt="" width="720" height="1280" fetchpriority="high">
+      </picture>
+      <video class="lu-hv__video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+        <source media="(min-width: 750px)" src="https://cdn.shopify.com/videos/c/o/v/d29d7fdb5b1841bc9c8d4dc903f66895.mp4" type="video/mp4">
+        <source src="https://cdn.shopify.com/videos/c/o/v/05487d1973ec4bf88410e2649865d12f.mp4" type="video/mp4">
       </video>
       <div class="lu-hv__velo" aria-hidden="true"></div>
       <div class="lu-hv__grano" aria-hidden="true"></div>
@@ -60,11 +69,11 @@
         </li>
         <li>
           <h3>Piedra a piedra</h3>
-          <p>Cada eslabón guarda una piedra ovalada sobre dorado, en seis colores. Ligero, para llevarlo cada día.</p>
+          <p>Cada eslabón guarda una piedra ovalada verde sobre dorado. Ligero, para llevarlo cada día.</p>
         </li>
         <li>
           <h3>Pensado para regalar</h3>
-          <p>Con la pila puesta y en el color que elijas. Solo falta decir para quién es.</p>
+          <p>Llega con la pila puesta. Solo falta decir para quién es.</p>
         </li>
       </ul>
     </div>
@@ -142,7 +151,8 @@
     /* Portada con vídeo: oscurecido, grano de película y óvalo dorado de línea fina */
     .lu-hv{position:relative;display:grid;place-items:center;overflow:hidden;background:#1d1a17;
       min-height:min(calc(100svh - 110px),780px);color:#fff;text-align:center}
-    .lu-hv__video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+    .lu-hv__poster{position:absolute;inset:0}
+    .lu-hv__video,.lu-hv__poster img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
       filter:brightness(.72) contrast(1.06) saturate(.88)}
     .lu-hv__velo{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(22,32,27,.18) 0%,rgba(22,32,27,.55) 100%)}
     .lu-hv__grano{position:absolute;inset:-50%;opacity:.16;mix-blend-mode:overlay;pointer-events:none;

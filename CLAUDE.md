@@ -383,9 +383,12 @@ gafas con cámara IA (69,95-79,95 €) · descartados: micro-infusión, paddle s
       gustaba «parece heredado») · fuera la ficha rápida «Elige el tuyo» (sección `destacado` con `"disabled": true`,
       se puede reactivar) · **portada con vídeo de fondo** (`parte('hero-video')`): vídeo del CDN de Shopify en bucle,
       oscurecido (filtro brightness .72), con **grano de película** (SVG de ruido animado) y el óvalo dorado de línea
-      fina con titular, botón y «Segundo reloj por 19,95 €» dentro. **OJO: el vídeo muestra otro reloj (esfera
-      «NAIDU», piedras rosas): cambiarlo por uno de las muestras antes de abrir** (URL en `hero-video` de
-      `lunerie-inicio.liquid`). Volver a la portada con foto: `parte("hero", arriba=8, abajo=40)` en `build.py`.
+      fina con titular, botón y «Segundo reloj por 19,95 €» dentro. **27-oct: vídeo nuevo del Lune verde**
+      (`marca/portada.py` con los clips de Kling → `marca/portada/`): en móvil, vertical con fundidos (8 s); en PC,
+      tres planos en fila de ida y vuelta (5,2 s); los dos en bucle sin salto. Se elige con `<source media>`; mientras
+      carga se ve su primer fotograma (archivos `lune-portada-movil.jpg` / `lune-portada-pc.jpg`). Si se rehacen,
+      subir los vídeos como archivo de Shopify (VIDEO, staged upload POST) y cambiar las 2 URL en `hero-video` de
+      `lunerie-inicio.liquid`. Volver a la portada con foto: `parte("hero", arriba=8, abajo=40)` en `build.py`.
       Menú principal (14-oct): «Reloj Lune» (ficha `/products/reloj-lune`) · Preguntas frecuentes · Contacto.
 - [ ] Quitar la contraseña de la tienda
 
@@ -418,10 +421,11 @@ alertas si CTR < 1 % o CPC > 0,90 €. Máximo 2 productos en test a la vez.
   **109,3 créditos hasta el 28-oct 21:15** (hora de España); **renovación cancelada** (no se cobran los 49 €). Los
   créditos de la prueba solo se ven por el conector, no en la web. Con Plus también hay GPT Image 2.5. Después
   vuelve al plan gratis. API: sin saldo; por imagen Qwen Edit 0,075 $, Grok 0,09 $ (no tiene Nano Banana).
-- **Siguiente con Claude:** fotos del resto de colores (empezar por el azul, que Edu tiene en mano) → subir las
-  fotos IA a la ficha (modelo primero, muñeca segunda, la del proveedor detrás como foto real) → bio de Instagram
-  con `ig-profile` y guiones de vídeo con `ig-reel` → anuncios (ajustar `anuncios/test-reloj-lune.md` a la fase
-  drop) → cambiar el vídeo de la portada → quitar la contraseña y lanzar (el plan era el 26-oct; como muy tarde 2-nov).
+- **Hecho el 26-27 oct:** ficha solo en verde con fotos IA y sección estilo Olivia · anuncio 1 (Kling) · **portada
+  con vídeo del Lune verde** (27-oct) y textos del inicio sin «seis colores» ni «llega en su caja».
+- **Siguiente con Claude:** anuncios (ajustar `anuncios/test-reloj-lune.md` a la fase drop: solo verde, sin caja,
+  7-12 días) → bio de Instagram con `ig-profile` → quitar la contraseña y lanzar (como muy tarde 2-nov).
+  **Edu:** formato de precio «44,95 €» (la portada aún sale «€44,95»: Configuración → General → Moneda).
 
 ### Sesión del 22-oct
 - **Hecho el 22-oct:** Reloj Lune unificado en 6 colores con fotos del proveedor y fase drop sin caja (apartado

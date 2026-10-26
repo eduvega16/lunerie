@@ -145,6 +145,21 @@
   fuera de git; **Edu pegó la clave en el chat el 22-oct → regenerarla**). Estética: como **Olivia Jewelry** (limpia,
   producto mejorado + puesta en modelo). Revisar que la IA no cambie piedras/esfera y dejar siempre una foto real.
 
+- **Decisión de Edu (26-oct): el test va SOLO con el verde (dorado).** Quitadas de la ficha las variantes azul,
+  rosa, verde claro, crema y rojo (sus fotos siguen en Archivos de Shopify; se recrean si hace falta). Galería:
+  modelo IA → muñeca IA → foto del proveedor → muñeca del proveedor → correa 18 cm; la de la modelo es la de la
+  variante. El CSS de bolitas (`PIEDRAS` en `build.py`) sigue con los 6 colores: no molesta.
+  Fotos IA del azul hechas el 25-oct (`marca/fotos-ia/lune-azul-*.jpg`), aparcadas. `marca/naidu.py` escribe
+  «NAIDU» en la esfera cuando la IA inventa letras (inpaint + Jost, con giro).
+  **Plateado:** Edu encontró en Alibaba un proveedor con el mismo diseño en dorado y plata (verdes). Aparcado: solo
+  entra si envía pedidos sueltos a España a buen precio (mensaje en inglés preparado: dropshipping, precio 20/50 uds
+  DDP, marca en la esfera, caja, logo propio y mínimo). Para stock propio, buen candidato. Ángulo de anuncio
+  «¿dorado o plata?» solo cuando el plateado se pueda comprar.
+- **Anuncios con IA (26-oct, `marca/fotos-ia/anuncios/`):** estética de un anuncio de Vacier en TikTok (plano desde
+  abajo, puño agarrando una toalla de lino blanca, manga de punto crema, hormigón claro y cielo azul). Fotos
+  `lune-verde-toalla-a/b.jpg` (Nano Banana 2.1, 9:16) animadas con **Kling 3.0** (10 créditos / 5 s; Seedance 2.5
+  cuesta 35). Higgsfield propone la plantilla «IN THE DARK»: descartarla (`declined_preset_id`).
+
 ### 5.1b Plan de stock propio (15-oct) y reloj alternativo «NAIDU»
 - **Decisión de Edu (15-oct): pasar a stock propio** (el drop en Navidad no funciona: ~2 semanas de entrega). Orden:
   **validar primero** (test de 90 € con las muestras y AliExpress enviando) → si pasa (~2-8 nov), pedir stock exprés

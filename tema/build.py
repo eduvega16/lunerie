@@ -429,7 +429,9 @@ ficha = {
     "type": "product-information",
     "blocks": {
         "media-gallery": {"type": "_product-media-gallery", "static": True, "settings": {
-            "media_presentation": "carousel", "icons_style": "arrow",
+            # Cuadrícula (Edu, 27-oct): fotos una debajo de otra al bajar, la primera grande, como Olivia
+            "media_presentation": "grid", "media_columns": "two", "image_gap": 0, "large_first_image": True,
+            "media_fit": "cover", "constrain_to_viewport": False, "icons_style": "arrow",
             "slideshow_controls_style": "thumbnails", "slideshow_mobile_controls_style": "thumbnails",
             "thumbnail_position": "bottom", "thumbnail_width": 60, "thumbnail_radius": 0,
             "aspect_ratio": "1/1.25", "media_radius": 0, "extend_media": False,

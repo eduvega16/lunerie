@@ -445,9 +445,23 @@ Meta Ads, ABO: 3 conjuntos (1 ángulo cada uno) × 10 €/día × 3 días = 90 �
 KILL si gastas 1× CPA BE sin carritos o 2× sin ventas · ESCALAR con ≥ 3 ventas a ≤ 70 % del CPA BE ·
 alertas si CTR < 1 % o CPC > 0,90 €. Máximo 2 productos en test a la vez.
 
-## 8. Calendario y pendientes (a 25-oct-2026)
+## 8. Calendario y pendientes (a 27-oct-2026)
 
-### Para empezar la próxima sesión (25-oct) — abrir conversación nueva por sesión
+### Para empezar la próxima sesión (después del 27-oct) — abrir conversación nueva por sesión
+- **Lo primero: quitar las 6 opiniones de EJEMPLO de la tienda** (apartado 6, «Opiniones»): caducan solas el
+  28-oct a las 12:00, pero el snippet y las 5 fotos siguen en el tema publicado → `python tema/build.py` → push de
+  `templates/product.json` → `themeFilesDelete` de `snippets/lunerie-opiniones-ejemplos.liquid` y
+  `assets/opinion-ejemplo-1..5.jpg`. Nunca abrir la tienda con ellos.
+- **Estado al cerrar el 27-oct:** todo subido al tema publicado (209073799507) y en git. Precio 49,95 € · rasca del
+  10 % a pantalla completa (LUNERIE10, lo añade la clienta con el botón) · opiniones con metaobjetos + formulario a
+  hola@lunerie.es (Edu tiene que mandarse una de prueba para ver que llega) · portada con vídeo del verde ·
+  formato de precio «49,95 €» ya cambiado por Edu. Higgsfield: quedan 6,55 créditos hasta el 28-oct 21:15.
+- **Siguiente con Claude:** anuncios (ajustar `anuncios/test-reloj-lune.md` a la fase drop: solo verde, sin caja,
+  sin «segundo reloj», 49,95 € y el 10 % del rasca, 7-12 días) → opiniones reales de amigas con las muestras →
+  vídeo de 2 min ajustando la correa → bio de Instagram con `ig-profile` → quitar la contraseña y lanzar (como
+  muy tarde 2-nov).
+
+### Sesión del 25-27 oct
 - **Hecho el 23-25 oct:** plateado (BS) puesto y quitado (difícil de encontrar) · skills de Instagram instaladas
   (`~/.claude/skills/ig-*`, del repo Jakeschincariol/instagram-agent-skill, revisadas: solo escriben, no publican;
   en este PC los scripts van con `python`, no `python3`) · collar recibido en 14 días, muy bien, con caja de
@@ -468,9 +482,7 @@ alertas si CTR < 1 % o CPC > 0,90 €. Máximo 2 productos en test a la vez.
   reales de gente a la que Edu dé una muestra (marcadas como «recibido como regalo») · lo que dicen las reseñas
   de AliExpress (peso, sensación de lujo, ajuste con vídeo) usado como texto de producto que Edu comprueba con su
   muestra, no como testimonio.
-- **Siguiente con Claude:** anuncios (ajustar `anuncios/test-reloj-lune.md` a la fase drop: solo verde, sin caja,
-  7-12 días) → bio de Instagram con `ig-profile` → quitar la contraseña y lanzar (como muy tarde 2-nov).
-  **Edu:** formato de precio «44,95 €» (la portada aún sale «€44,95»: Configuración → General → Moneda).
+- **Formato de precio:** cambiado por Edu el 27-oct a `{{amount_with_comma_separator}} €` (sale «49,95 €»).
 
 ### Sesión del 22-oct
 - **Hecho el 22-oct:** Reloj Lune unificado en 6 colores con fotos del proveedor y fase drop sin caja (apartado

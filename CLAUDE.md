@@ -403,6 +403,25 @@ gafas con cámara IA (69,95-79,95 €) · descartados: micro-infusión, paddle s
       pintado desde la sección `rasca` del pie (`footer-group.json` en `build.py`). **Es un regalo igual para todos,
       no un sorteo: nada de «prueba suerte»** (engañoso si a todos les toca lo mismo). CPA breakeven a 49,95 €:
       ~22 € sin código y ~17,9 € con el código (lo mismo que antes a 44,95 €); para el test, contar con ~17,9 €.
+      **Cambios del 27-oct (noche):** a **pantalla completa** (PC: texto a la izquierda y 4 fotos a la derecha;
+      móvil: 2 fotos arriba), lámina con **purpurina que brilla** (canvas animado) y **brochazos** detrás de «RASCA
+      AQUÍ», y el código **solo entra en la cesta cuando la clienta pulsa «Añadir el descuento a mi cesta»**.
+- [x] **Opiniones (27-oct, en producción)** bajo la ficha, como Olivia: arriba a la izquierda «Añadir opinión»,
+      a la derecha la media; tarjetas en niebla con la foto a la derecha; estrellas y número bajo el título (solo si
+      hay opiniones). **Las publicadas son metaobjetos «Opinión»** (Contenido → Metaobjetos → Opinión → Añadir
+      entrada: nombre, estrellas, texto, foto, fecha, origen «Compra verificada» / «Recibido como regalo», producto;
+      solo salen las «Activas»). El botón abre un **formulario de contacto de Shopify que llega a hola@lunerie.es**
+      (nombre, email, estrellas, opinión y permiso para publicar; la foto la mandan por email). Código:
+      `tema/codigo/snippets/lunerie-opiniones.liquid` (sección `opiniones` y bloque `estrellas` en `build.py`).
+      Permisos de metaobjetos dados a la CLI el 27-oct (si `shopify store auth` dice «Port 13387 is already in use»,
+      matar el `node` que lo ocupa). `shopify theme dev` da «you don't have access to this dev store»: para ver algo
+      sin tocar la tienda, `shopify theme push --unpublished` y el enlace `?preview_theme_id=`.
+      **EJEMPLOS EN LA TIENDA (27-oct, a petición de Edu, para ver cómo quedan):** 6 opiniones marcadas «Ejemplo»
+      con fotos de compradoras de AliExpress (`snippets/lunerie-opiniones-ejemplos.liquid` + `assets/opinion-
+      ejemplo-1..5.jpg`, solo en la tienda y en `tema/tienda/`, no en git). **Caducan solas el 28-oct a las 12:00**,
+      pero hay que quitarlas: `python tema/build.py` (sin `LUNERIE_EJEMPLOS`) → push de `templates/product.json` →
+      borrar el snippet y las 5 fotos del tema (`themeFilesDelete`). Nunca abrir la tienda con ejemplos: serían
+      opiniones falsas.
 - [x] **«Segundo reloj por 19,95 €» quitado (27-oct):** `SEGUNDO_RELOJ = False` en `build.py` (fuera la franja verde
       del inicio, la caja verde de la ficha y el aviso de la cesta; bajo el botón de la portada ahora pone «Envío
       gratis a península») · descuento automático **desactivado** (no borrado) · quitado de Preguntas frecuentes y

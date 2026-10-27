@@ -1,11 +1,12 @@
 {%- comment -%}
-  Lunerie · rasca con 10 % de descuento (como el de Olivia Jewelry). Se pinta desde una sección «Liquid
-  personalizado» del pie (footer-group.json, generado por tema/build.py), así sale en todas las páginas.
+  Lunerie · rasca con 10 % de descuento (como el de Olivia Jewelry), a pantalla completa. Se pinta desde una sección
+  «Liquid personalizado» del pie (footer-group.json, generado por tema/build.py), así sale en todas las páginas.
   · Solo en el inicio y en las fichas; sale una vez por visitante (a los 8 s o al bajar media página) y espera a
     que se conteste el banner de cookies.
-  · Al rascar casi la mitad (o pulsar «Descúbrelo aquí») mete el código en la cesta por cart/update.js, como hace
-    el propio Horizon con su campo de descuento. El código existe en Shopify (Descuentos → «Rasca · 10 %»):
-    un uso por cliente y no se suma a otras promociones.
+  · Lámina dorada en canvas: degradado + manchas de rascado + purpurina que brilla (quieta si se pide reducir
+    movimiento). Al rascar casi la mitad (o pulsar «Descúbrelo aquí») sale el 10 %, y es la clienta la que pulsa
+    «Añadir el descuento a mi cesta»: entonces se mete el código por cart/update.js, como hace el propio Horizon.
+    El código existe en Shopify (Descuentos → «Rasca · 10 %»): un uso por cliente y no se suma a otras promociones.
   · Es un regalo igual para todos, no un sorteo: no decir «prueba suerte» ni «a ver qué te toca».
 {%- endcomment -%}
 {%- liquid
@@ -23,13 +24,14 @@
 {%- if mostrar -%}
   <dialog class="lu-rasca" id="lu-rasca" aria-labelledby="lu-rasca-titulo" data-codigo="{{ codigo }}" autofocus>
     <button type="button" class="lu-rasca__cerrar" aria-label="Cerrar" data-cerrar>
-      <svg aria-hidden="true" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 2l14 14M16 2L2 16"/></svg>
+      <svg aria-hidden="true" width="20" height="20" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M2 2l14 14M16 2L2 16"/></svg>
     </button>
     <div class="lu-rasca__texto">
       <p class="lu-rasca__logo">LUNERIE</p>
       <h2 class="lu-rasca__titulo" id="lu-rasca-titulo">Rasca y descubre</h2>
-      <p class="lu-rasca__sub" data-antes>Tenemos un regalo para tu primer pedido.</p>
-      <p class="lu-rasca__sub" data-despues hidden>Ya está aplicado en tu cesta.</p>
+      <p class="lu-rasca__sub" data-paso="rascar">Tenemos un regalo para tu primer pedido.</p>
+      <p class="lu-rasca__sub" data-paso="descubierto" hidden>Es tuyo. Añádelo a la cesta y se descuenta al pagar.</p>
+      <p class="lu-rasca__sub" data-paso="anadido" hidden>Listo: ya está en tu cesta.</p>
 
       <div class="lu-rasca__carta">
         <div class="lu-rasca__premio">
@@ -39,14 +41,16 @@
         <canvas class="lu-rasca__capa" aria-hidden="true"></canvas>
       </div>
 
-      <button type="button" class="lu-rasca__alt" data-antes data-descubrir>¿Prefieres no rascar? Descúbrelo aquí</button>
-      <div class="lu-rasca__fin" data-despues hidden>
+      <button type="button" class="lu-rasca__alt" data-paso="rascar" data-descubrir>¿Prefieres no rascar? Descúbrelo aquí</button>
+      <div class="lu-rasca__fin" data-paso="descubierto anadido" hidden>
         <p class="lu-rasca__codigo">Código <strong>{{ codigo }}</strong></p>
+        <button type="button" class="lu-rasca__boton" data-paso="descubierto" data-anadir>Añadir el descuento a mi cesta</button>
         {%- if template.name == 'product' -%}
-          <button type="button" class="lu-rasca__boton" data-cerrar>Seguir mirando</button>
+          <button type="button" class="lu-rasca__boton" data-paso="anadido" data-cerrar hidden>Seguir mirando</button>
         {%- else -%}
-          <a class="lu-rasca__boton" href="{{ all_products['reloj-lune'].url }}">Ver el reloj Lune</a>
+          <a class="lu-rasca__boton" data-paso="anadido" href="{{ all_products['reloj-lune'].url }}" hidden>Ver el reloj Lune</a>
         {%- endif -%}
+        <p class="lu-rasca__error" role="alert" hidden>No se ha podido añadir. Escribe {{ codigo }} al pagar.</p>
         <p class="lu-rasca__letra">Un uso por cliente. No se suma a otras promociones.</p>
       </div>
     </div>
@@ -55,7 +59,7 @@
       {%- for nombre in nombres -%}
         {%- assign foto = images[nombre] -%}
         {%- if foto -%}
-          {{ foto | image_url: width: 600 | image_tag: loading: 'lazy', alt: '', sizes: '230px', widths: '300, 460, 600' }}
+          {{ foto | image_url: width: 900 | image_tag: loading: 'lazy', alt: '', sizes: '(min-width: 750px) 25vw, 50vw', widths: '400, 600, 900' }}
         {%- endif -%}
       {%- endfor -%}
     </div>
@@ -69,81 +73,146 @@
       const leer = () => { try { return JSON.parse(localStorage.getItem(CLAVE) || 'null'); } catch (e) { return null; } };
       const guardar = (v) => { try { localStorage.setItem(CLAVE, JSON.stringify(v)); } catch (e) {} };
       const visto = leer();
-      // Ya descubierto: nunca más. Cerrado sin rascar: vuelve a salir a los 7 días.
+      // Añadido a la cesta: nunca más. Cerrado sin añadirlo: vuelve a salir a los 7 días.
       if (visto && (visto.hecho || Date.now() - visto.t < 7 * 864e5)) return;
 
-      const lienzo = dlg.querySelector('canvas');
-      const ctx = lienzo.getContext('2d', { willReadFrequently: true });
-      let listo = false, abierto = false, trazos = 0, ultimo = null;
+      const quieto = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const lienzo = dlg.querySelector('canvas'), ctx = lienzo.getContext('2d');
+      const lamina = document.createElement('canvas'), mascara = document.createElement('canvas');
+      let k = 1, brillos = [], descubierto = false, abierto = false, trazos = 0, ultimo = null;
 
-      function pintarCapa() {
-        const r = lienzo.getBoundingClientRect(), k = window.devicePixelRatio || 1;
-        lienzo.width = Math.round(r.width * k); lienzo.height = Math.round(r.height * k);
-        const g = ctx.createLinearGradient(0, 0, lienzo.width, lienzo.height);
-        g.addColorStop(0, '#B8955A'); g.addColorStop(.35, '#E8D3A0'); g.addColorStop(.6, '#A6834A');
-        g.addColorStop(.85, '#DCC28C'); g.addColorStop(1, '#A98850');
-        ctx.globalCompositeOperation = 'source-over';
-        ctx.fillStyle = g; ctx.fillRect(0, 0, lienzo.width, lienzo.height);
-        for (let i = 0; i < 1400; i++) {   // brillo de lámina
-          ctx.fillStyle = `rgba(255,255,255,${Math.random() * .12})`;
-          ctx.fillRect(Math.random() * lienzo.width, Math.random() * lienzo.height, k, k);
-        }
-        const letra = getComputedStyle(document.body).getPropertyValue('--font-body--family') || 'sans-serif';
-        ctx.fillStyle = 'rgba(255,255,255,.82)'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-        ctx.font = `500 ${15 * k}px ${letra}`;
-        if ('letterSpacing' in ctx) ctx.letterSpacing = `${4 * k}px`;
-        ctx.fillText('RASCA AQUÍ', lienzo.width / 2, lienzo.height / 2);
-        ctx.globalCompositeOperation = 'destination-out';
-        ctx.lineCap = ctx.lineJoin = 'round'; ctx.lineWidth = 46 * k;
+      function pasos(nombre) {   // enseña solo lo del paso actual (rascar → descubierto → anadido)
+        dlg.querySelectorAll('[data-paso]').forEach((n) => (n.hidden = !n.dataset.paso.split(' ').includes(nombre)));
       }
 
+      // ---------- Lámina dorada: degradado + manchas + texto (se pinta una vez) ----------
+      function prepararLamina() {
+        const r = lienzo.getBoundingClientRect();
+        k = window.devicePixelRatio || 1;
+        const w = Math.round(r.width * k), h = Math.round(r.height * k);
+        for (const c of [lienzo, lamina, mascara]) { c.width = w; c.height = h; }
+        const l = lamina.getContext('2d');
+        const g = l.createLinearGradient(0, 0, w, h);
+        g.addColorStop(0, '#B38F55'); g.addColorStop(.3, '#E6CF98'); g.addColorStop(.55, '#B8955A');
+        g.addColorStop(.8, '#E2C98F'); g.addColorStop(1, '#A9874F');
+        l.fillStyle = g; l.fillRect(0, 0, w, h);
+        // Grano metálico fino
+        for (let i = 0; i < w * h / 30; i++) {
+          const claro = Math.random() < .5;
+          l.fillStyle = claro ? `rgba(255,248,225,${Math.random() * .22})` : `rgba(90,62,20,${Math.random() * .16})`;
+          l.fillRect(Math.random() * w, Math.random() * h, k, k);
+        }
+        // Manchas de rascado: brochazos inclinados hechos de muchas cerdas finas, detrás del texto
+        l.lineCap = 'round';
+        const n = 6, ancho = w * .08, x0 = w * .5 - (n - 1) * ancho * .6;
+        for (let i = 0; i < n; i++) {
+          const inc = w * (.03 + Math.random() * .035);
+          const xa = x0 + i * ancho * 1.2 + (Math.random() - .5) * ancho * .35;
+          const y1 = h * (.15 + Math.random() * .1), y2 = h * (.75 + Math.random() * .12);
+          for (let c = 0; c < 22; c++) {
+            const off = (c / 21 - .5) * ancho;
+            l.strokeStyle = `rgba(104,75,30,${.025 + Math.random() * .075})`;
+            l.lineWidth = ancho * (.05 + Math.random() * .11);
+            l.beginPath();
+            l.moveTo(xa + inc + off, y1 + Math.random() * h * .06);
+            l.quadraticCurveTo(xa + off + (Math.random() - .5) * ancho * .4, (y1 + y2) / 2, xa - inc + off, y2 - Math.random() * h * .07);
+            l.stroke();
+          }
+        }
+        // Texto
+        const letra = getComputedStyle(document.body).getPropertyValue('--font-body--family') || 'sans-serif';
+        l.textAlign = 'center'; l.textBaseline = 'middle';
+        l.font = `600 ${Math.round(h * .13)}px ${letra}`;
+        if ('letterSpacing' in l) l.letterSpacing = `${Math.round(h * .012)}px`;
+        l.shadowColor = 'rgba(80,55,15,.25)'; l.shadowBlur = 3 * k; l.shadowOffsetY = k;
+        l.fillStyle = 'rgba(255,253,245,.9)';
+        l.fillText('RASCA AQUÍ', w / 2, h / 2);
+        // Purpurina: puntos que se encienden y apagan
+        brillos = Array.from({ length: Math.round(w * h / 900) }, () => ({
+          x: Math.random() * w, y: Math.random() * h, r: (.5 + Math.random() * 1.3) * k,
+          fase: Math.random() * 6.28, vel: .6 + Math.random() * 2.2, oro: Math.random() < .35,
+        }));
+        const m = mascara.getContext('2d');
+        m.lineCap = m.lineJoin = 'round'; m.lineWidth = 46 * k; m.strokeStyle = m.fillStyle = '#000';
+      }
+
+      function pintar(t) {
+        const w = lienzo.width, h = lienzo.height;
+        ctx.globalCompositeOperation = 'source-over';
+        ctx.clearRect(0, 0, w, h);
+        ctx.drawImage(lamina, 0, 0);
+        for (const b of brillos) {
+          const a = quieto ? .55 : Math.pow(Math.max(0, Math.sin(t / 1000 * b.vel + b.fase)), 6);
+          if (a < .04) continue;
+          ctx.fillStyle = b.oro ? `rgba(255,232,170,${a})` : `rgba(255,255,255,${a})`;
+          ctx.beginPath(); ctx.arc(b.x, b.y, b.r, 0, 6.28); ctx.fill();
+          if (b.r > 1.4 * k && a > .6) {   // destello en cruz en los más grandes
+            ctx.fillRect(b.x - b.r * 3, b.y - k * .4, b.r * 6, k * .8);
+            ctx.fillRect(b.x - k * .4, b.y - b.r * 3, k * .8, b.r * 6);
+          }
+        }
+        ctx.globalCompositeOperation = 'destination-out';
+        ctx.drawImage(mascara, 0, 0);
+      }
+      function bucle(t) {
+        if (descubierto || !dlg.open) return;
+        pintar(t);
+        if (!quieto) requestAnimationFrame(bucle);
+      }
+
+      // ---------- Rascar ----------
       function punto(e) {
-        const r = lienzo.getBoundingClientRect(), k = lienzo.width / r.width;
-        return [(e.clientX - r.left) * k, (e.clientY - r.top) * k];
+        const r = lienzo.getBoundingClientRect(), f = lienzo.width / r.width;
+        return [(e.clientX - r.left) * f, (e.clientY - r.top) * f];
       }
       function rascar(e) {
-        if (listo) return;
-        const p = punto(e);
-        ctx.beginPath(); ctx.moveTo(...(ultimo || p)); ctx.lineTo(...p); ctx.stroke();
+        if (descubierto) return;
+        const p = punto(e), m = mascara.getContext('2d');
+        m.beginPath(); m.moveTo(...(ultimo || p)); m.lineTo(...p); m.stroke();
         ultimo = p;
+        if (quieto) pintar(0);
         if (++trazos % 6 === 0 && rascado() > .45) descubrir();
       }
       function rascado() {
-        const d = ctx.getImageData(0, 0, lienzo.width, lienzo.height).data;
-        let vacio = 0, total = 0;
-        for (let i = 3; i < d.length; i += 64) { total++; if (d[i] === 0) vacio++; }
-        return vacio / total;
+        const d = mascara.getContext('2d').getImageData(0, 0, mascara.width, mascara.height).data;
+        let hecho = 0, total = 0;
+        for (let i = 3; i < d.length; i += 64) { total++; if (d[i] > 0) hecho++; }
+        return hecho / total;
       }
-
       lienzo.addEventListener('pointerdown', (e) => { lienzo.setPointerCapture(e.pointerId); ultimo = null; rascar(e); });
       lienzo.addEventListener('pointermove', (e) => { if (lienzo.hasPointerCapture(e.pointerId)) rascar(e); });
       lienzo.addEventListener('pointerup', () => { ultimo = null; });
 
-      async function aplicar() {
+      function descubrir() {
+        if (descubierto) return;
+        descubierto = true;
+        dlg.classList.add('is-descubierto');
+        pasos('descubierto');
+      }
+      dlg.querySelector('[data-descubrir]').addEventListener('click', descubrir);
+
+      // ---------- Añadir el código a la cesta (lo pulsa la clienta) ----------
+      const boton = dlg.querySelector('[data-anadir]');
+      boton.addEventListener('click', async () => {
+        boton.disabled = true;
         try {
           const raiz = (window.Shopify && Shopify.routes && Shopify.routes.root) || '/';
           const cesta = await (await fetch(raiz + 'cart.js')).json();
           const codigos = (cesta.discount_codes || []).map((d) => d.code).filter((c) => c !== codigo);
-          await fetch(raiz + 'cart/update.js', {
+          const r = await fetch(raiz + 'cart/update.js', {
             method: 'POST', headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ discount: [...codigos, codigo].join(',') }),
           });
-        } catch (e) {}
-      }
-
-      function descubrir() {
-        if (listo) return;
-        listo = true;
-        dlg.classList.add('is-descubierto');
-        dlg.querySelectorAll('[data-antes]').forEach((n) => (n.hidden = true));
-        dlg.querySelectorAll('[data-despues]').forEach((n) => (n.hidden = false));
-        guardar({ hecho: true, t: Date.now() });
-        aplicar();
-      }
-      dlg.querySelector('[data-descubrir]').addEventListener('click', descubrir);
+          if (!r.ok) throw new Error(r.status);
+          guardar({ hecho: true, t: Date.now() });
+          pasos('anadido');
+        } catch (e) {
+          boton.disabled = false;
+          dlg.querySelector('.lu-rasca__error').hidden = false;
+        }
+      });
 
       dlg.querySelectorAll('[data-cerrar]').forEach((b) => b.addEventListener('click', () => dlg.close()));
-      dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });   // clic fuera
       dlg.addEventListener('close', () => document.documentElement.classList.remove('lu-rasca-abierto'));
 
       function abrir() {
@@ -152,7 +221,10 @@
         guardar({ hecho: false, t: Date.now() });
         document.documentElement.classList.add('lu-rasca-abierto');
         dlg.showModal();
-        (document.fonts ? document.fonts.ready : Promise.resolve()).then(pintarCapa);
+        (document.fonts ? document.fonts.ready : Promise.resolve()).then(() => {
+          prepararLamina();
+          requestAnimationFrame(bucle);
+        });
       }
       // Espera al banner de cookies de Shopify: no se abre encima de él
       function cuandoNoHayBanner(fn) {
@@ -177,43 +249,53 @@
 
 {% stylesheet %}
   html.lu-rasca-abierto{overflow:hidden}
-  .lu-rasca{width:min(1040px,calc(100vw - 32px));max-width:none;max-height:calc(100dvh - 32px);padding:0;border:0;
-    background:#fff;color:#16201B;overflow:auto;outline:none}
-  .lu-rasca[open]{display:grid;grid-template-columns:1fr}
-  .lu-rasca::backdrop{background:rgba(22,32,27,.45)}
-  .lu-rasca__cerrar{position:absolute;top:10px;right:10px;z-index:2;display:grid;place-items:center;width:40px;height:40px;
-    padding:0;border:0;background:transparent;color:#16201B;cursor:pointer}
-  .lu-rasca__texto{display:grid;justify-items:center;align-content:center;padding:48px 24px 36px;text-align:center}
-  .lu-rasca__logo{margin:0 0 22px;font-family:var(--font-heading--family);font-size:1rem;letter-spacing:.42em;
+  .lu-rasca{position:fixed;inset:0;width:100vw;height:100dvh;max-width:none;max-height:none;margin:0;padding:0;
+    border:0;background:#fff;color:#16201B;overflow:auto;outline:none}
+  .lu-rasca[open]{display:flex;flex-direction:column}
+  .lu-rasca::backdrop{background:#fff}
+  .lu-rasca__cerrar{position:absolute;top:14px;left:14px;z-index:2;display:grid;place-items:center;width:44px;height:44px;
+    padding:0;border:0;background:rgba(255,255,255,.85);color:#16201B;cursor:pointer}
+  .lu-rasca__texto{order:2;flex:1 0 auto;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    padding:24px 24px 32px;text-align:center}
+  .lu-rasca__logo{margin:0 0 18px;font-family:var(--font-heading--family);font-size:1rem;letter-spacing:.42em;
     padding-left:.42em}
   .lu-rasca__titulo{margin:0 0 10px;font-family:var(--font-heading--family);font-weight:400;
-    font-size:clamp(2.1rem,4vw,2.8rem);line-height:1.05}
-  .lu-rasca__sub{margin:0 0 26px;max-width:30ch;line-height:1.5;color:#3D4842}
-  .lu-rasca__carta{position:relative;width:min(100%,320px);aspect-ratio:16/10;overflow:hidden;background:#F2F4F2;
-    outline:1px solid #A6834A;outline-offset:6px}
-  .lu-rasca__premio{position:absolute;inset:0;display:grid;place-content:center;gap:2px}
-  .lu-rasca__cifra{font-family:var(--font-heading--family);font-size:3.4rem;line-height:1;color:#16201B}
+    font-size:clamp(2.2rem,4.4vw,3.6rem);line-height:1.02}
+  .lu-rasca__sub{margin:0 0 24px;max-width:32ch;line-height:1.5;color:#3D4842}
+  .lu-rasca__carta{position:relative;width:min(100%,380px);aspect-ratio:16/11;overflow:hidden;border-radius:14px;
+    background:#F2F4F2;box-shadow:0 1px 0 rgba(255,255,255,.6) inset,0 10px 30px -18px rgba(70,50,15,.55)}
+  .lu-rasca__premio{position:absolute;inset:0;display:grid;place-content:center;gap:4px;
+    outline:1px solid #A6834A;outline-offset:-10px;border-radius:14px}
+  .lu-rasca__cifra{font-family:var(--font-heading--family);font-size:3.8rem;line-height:1;color:#16201B}
   .lu-rasca__de{font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;color:#A6834A}
   .lu-rasca__capa{position:absolute;inset:0;width:100%;height:100%;cursor:grab;touch-action:none;
     transition:opacity .6s ease}
   .lu-rasca.is-descubierto .lu-rasca__capa{opacity:0;pointer-events:none}
-  .lu-rasca__alt{margin-top:22px;padding:6px;border:0;background:none;color:#3D4842;font:inherit;font-size:.8125rem;
+  .lu-rasca__alt{margin-top:20px;padding:6px;border:0;background:none;color:#3D4842;font:inherit;font-size:.8125rem;
     text-decoration:underline;text-underline-offset:3px;cursor:pointer}
   .lu-rasca__fin{display:grid;justify-items:center;gap:14px;margin-top:24px}
-  .lu-rasca__fin[hidden],.lu-rasca [hidden]{display:none}
+  .lu-rasca [hidden]{display:none !important}
   .lu-rasca__codigo{margin:0;font-size:.875rem;letter-spacing:.06em}
   .lu-rasca__codigo strong{font-weight:500;letter-spacing:.14em}
-  .lu-rasca__boton{display:inline-block;padding:15px 30px;border:0;background:#006039;color:#fff;cursor:pointer;
+  .lu-rasca__boton{display:inline-block;padding:16px 30px;border:0;background:#006039;color:#fff;cursor:pointer;
     text-decoration:none;font-family:var(--font-body--family);font-size:.8125rem;letter-spacing:.16em;text-transform:uppercase}
   .lu-rasca__boton:hover{background:#004d2e}
+  .lu-rasca__boton:disabled{opacity:.6;cursor:wait}
+  .lu-rasca__error{margin:0;font-size:.8125rem;color:#B3261E}
   .lu-rasca__letra{margin:0;font-size:.6875rem;color:#6B746F}
-  .lu-rasca__fotos{display:none}
+  .lu-rasca__fotos{order:1;flex:0 0 auto;display:grid;grid-template-columns:1fr 1fr;gap:6px;height:22vh;min-height:140px;
+    background:#F2F4F2}
+  .lu-rasca__fotos img:nth-child(n+3){display:none}
+  .lu-rasca__fotos img{display:block;width:100%;height:100%;object-fit:cover}
   .lu-rasca :focus-visible{outline:2px solid #006039;outline-offset:3px}
   @media (min-width:750px){
-    .lu-rasca[open]{grid-template-columns:1fr 1fr}
-    .lu-rasca__texto{padding:56px 40px}
-    .lu-rasca__fotos{display:grid;grid-template-columns:1fr 1fr;align-content:center;gap:14px;padding:36px;background:#F2F4F2}
-    .lu-rasca__fotos img{display:block;width:100%;aspect-ratio:1;object-fit:cover}
+    .lu-rasca[open]{display:grid;grid-template-columns:1fr 1fr}
+    .lu-rasca__cerrar{top:22px;left:22px}
+    .lu-rasca__texto{order:1;padding:64px 48px}
+    .lu-rasca__fotos{order:2;height:auto;grid-template-rows:1fr 1fr;gap:clamp(14px,2vw,28px);
+      padding:clamp(28px,4vw,64px)}
+    .lu-rasca__fotos img:nth-child(n+3){display:block}
+    .lu-rasca__fotos img{min-height:0}
   }
   @media (prefers-reduced-motion:reduce){.lu-rasca__capa{transition:none}}
 {% endstylesheet %}

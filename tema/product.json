@@ -92,6 +92,13 @@
               },
               "blocks": {}
             },
+            "estrellas": {
+              "type": "custom-liquid",
+              "settings": {
+                "custom_liquid": "{% render 'lunerie-opiniones', parte: 'mini', product: product %}"
+              },
+              "blocks": {}
+            },
             "precio": {
               "type": "price",
               "settings": {
@@ -506,6 +513,7 @@
           },
           "block_order": [
             "titulo",
+            "estrellas",
             "precio",
             "linea",
             "ventajas",
@@ -539,6 +547,16 @@
         "section_width": "full-width",
         "padding-block-start": 0,
         "padding-block-end": 24
+      }
+    },
+    "opiniones": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{% render 'lunerie-opiniones', parte: 'lista', product: product %}",
+        "background_color": "",
+        "section_width": "page-width",
+        "padding-block-start": 48,
+        "padding-block-end": 32
       }
     },
     "recomendados": {
@@ -628,6 +646,7 @@
     "migas",
     "main",
     "historia",
+    "opiniones",
     "recomendados"
   ]
 }

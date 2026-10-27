@@ -268,6 +268,12 @@ def parte(nombre, fondo="", arriba=24, abajo=24, ancho="page-width", snippet="lu
 # automático está desactivado en Shopify (no borrado): para volver, True aquí y reactivarlo en Descuentos.
 SEGUNDO_RELOJ = False
 
+# Opiniones de ejemplo SOLO para la vista previa local (shopify theme dev): `LUNERIE_EJEMPLOS=1 python tema/build.py`.
+# Pintan tema/tienda/snippets/lunerie-opiniones-ejemplos.liquid, que no está en git ni se sube. Antes de subir nada,
+# volver a ejecutar build.py sin la variable: en la tienda nunca hay opiniones inventadas.
+import os
+EJEMPLOS = ", ejemplos: true" if os.environ.get("LUNERIE_EJEMPLOS") == "1" else ""
+
 index = {
     "sections": {
         # Portada con vídeo (prueba 14-oct). Para volver a la de la foto en óvalo: parte("hero", arriba=8, abajo=40)
@@ -456,6 +462,8 @@ ficha = {
                     "type_preset": "custom", "font": "var(--font-heading--family)", "font_size": "1.5rem",
                     "case": "uppercase", "letter_spacing": "loose", "line_height": "tight",
                     "width": "100%"}, "blocks": {}},
+                # Estrellas y número de opiniones bajo el título (no sale nada mientras no haya opiniones)
+                "estrellas": liquid("{% render 'lunerie-opiniones', parte: 'mini', product: product" + EJEMPLOS + " %}"),
                 "precio": {"type": "price", "settings": {
                     "show_sale_price_first": True, "show_installments": False, "show_tax_info": False,
                     "type_preset": "custom", "font_size": "1.125rem", "width": "100%"}, "blocks": {}},
@@ -528,7 +536,7 @@ ficha = {
                     },
                     "block_order": ["descripcion", "medida", "agua", "envio", "devoluciones", "cuidados"]},
             },
-            "block_order": ["titulo", "precio", "linea", "ventajas", "variantes", "comprar", "oferta",
+            "block_order": ["titulo", "estrellas", "precio", "linea", "ventajas", "variantes", "comprar", "oferta",
                             "detalles"]},
     },
     "block_order": [],
@@ -548,6 +556,9 @@ product = {
         # Solo sale en el reloj Lune (tema/codigo/snippets/lunerie-ficha.liquid).
         "historia": parte("historia", arriba=0, abajo=24, ancho="full-width", snippet="lunerie-ficha",
                           extra=", product: product"),
+        # Opiniones (27-oct): metaobjetos «Opinión» + formulario que llega a hola@lunerie.es (lunerie-opiniones.liquid)
+        "opiniones": parte("lista", arriba=48, abajo=32, snippet="lunerie-opiniones",
+                           extra=", product: product" + EJEMPLOS),
         "recomendados": {
             "type": "product-recommendations",
             "blocks": {
@@ -569,7 +580,7 @@ product = {
                 "padding-block-start": 48, "padding-block-end": 64},
         },
     },
-    "order": ["migas", "main", "historia", "recomendados"],
+    "order": ["migas", "main", "historia", "opiniones", "recomendados"],
 }
 if not SEGUNDO_RELOJ:
     _det = product["sections"]["main"]["blocks"]["product-details"]

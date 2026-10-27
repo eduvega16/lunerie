@@ -1,0 +1,228 @@
+{%- comment -%}
+  Lunerie · opiniones de la ficha (como las de Olivia Jewelry: tarjetas con la foto a la derecha).
+  · Las publicadas son metaobjetos «Opinión» (Contenido → Metaobjetos → Opinión): nombre, estrellas, texto, foto,
+    fecha, origen («Compra verificada» / «Recibido como regalo») y producto. Solo salen las que están en «Activo».
+  · «Añadir opinión» abre un formulario de contacto de Shopify: llega a hola@lunerie.es como un mensaje más. Edu la
+    lee y, si es de verdad, la da de alta como metaobjeto (la foto la mandan por email).
+  · NUNCA opiniones inventadas: es práctica desleal. `ejemplos: true` (solo en la vista previa local, con
+    LUNERIE_EJEMPLOS=1 python tema/build.py) pinta tarjetas de muestra marcadas «Ejemplo» desde un snippet que
+    solo existe en tema/tienda/ y no se sube nunca.
+  Partes: lista (la sección) · mini (estrellas bajo el título) · cabecera · tarjeta · estrellas.
+{%- endcomment -%}
+{%- liquid
+  # Seguro: los ejemplos caducan solos (28-oct-2026 12:00 hora de España) aunque se olvide quitarlos
+  if ejemplos
+    assign ahora = 'now' | date: '%s' | plus: 0
+    if ahora > 1793185200
+      assign ejemplos = false
+    endif
+  endif
+  if parte == 'lista' or parte == 'mini'
+    assign total = 0
+    assign suma = 0
+    for o in shop.metaobjects.opinion.values
+      if o.producto.value == blank or o.producto.value.id == product.id
+        assign total = total | plus: 1
+        assign suma = suma | plus: o.estrellas.value
+      endif
+    endfor
+    assign media = 0
+    if total > 0
+      assign media = suma | times: 1.0 | divided_by: total
+    endif
+  endif
+-%}
+{%- case parte -%}
+  {%- when 'estrellas' -%}
+    {%- assign pct = valor | times: 20 -%}
+    <span class="lu-estrellas" style="--v: {{ pct }}%" role="img" aria-label="{{ valor | round: 1 }} de 5 estrellas"></span>
+
+  {%- when 'mini' -%}
+    {%- if ejemplos -%}
+      {%- render 'lunerie-opiniones-ejemplos', parte: 'mini' -%}
+    {%- elsif total > 0 -%}
+      <a class="lu-op-mini" href="#opiniones">
+        {%- render 'lunerie-opiniones', parte: 'estrellas', valor: media -%}
+        <span>{{ media | round: 1 | replace: '.', ',' }} · {{ total }} {% if total == 1 %}opinión{% else %}opiniones{% endif %}</span>
+      </a>
+    {%- endif -%}
+
+  {%- when 'cabecera' -%}
+    <div class="lu-op__cabecera">
+      <button type="button" class="lu-op__anadir" data-op-abrir>Añadir opinión</button>
+      {%- if total > 0 -%}
+        <p class="lu-op__resumen">
+          {%- render 'lunerie-opiniones', parte: 'estrellas', valor: media -%}
+          <span>{{ media | round: 1 | replace: '.', ',' }} · {{ total }} {% if total == 1 %}opinión{% else %}opiniones{% endif %}</span>
+        </p>
+      {%- endif -%}
+    </div>
+    <p class="lu-op__nota">
+      Publicamos todas las opiniones que nos llegan, buenas y malas. Las marcadas «Recibido como regalo» son de
+      personas a las que dimos el reloj para probarlo.
+    </p>
+
+  {%- when 'tarjeta' -%}
+    <article class="lu-op__tarjeta{% if foto != blank or foto_url != blank %} lu-op__tarjeta--foto{% endif %}">
+      <div class="lu-op__cuerpo">
+        <p class="lu-op__quien">
+          <strong>{{ nombre }}</strong>
+          {%- if origen == 'Compra verificada' -%}
+            <span class="lu-op__origen lu-op__origen--compra">
+              <svg aria-hidden="true" width="13" height="13" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="currentColor"/><path d="M4.6 8.2l2.2 2.2 4.6-4.6" fill="none" stroke="#fff" stroke-width="1.6"/></svg>
+              Compra verificada</span>
+          {%- elsif origen != blank -%}
+            <span class="lu-op__origen">{{ origen }}</span>
+          {%- endif -%}
+          {%- if ejemplo -%}<span class="lu-op__ejemplo">Ejemplo</span>{%- endif -%}
+        </p>
+        {%- render 'lunerie-opiniones', parte: 'estrellas', valor: estrellas -%}
+        <p class="lu-op__texto">{{ texto | escape | newline_to_br }}</p>
+        {%- if fecha != blank -%}<p class="lu-op__fecha">{{ fecha | date: '%d/%m/%Y' }}</p>{%- endif -%}
+      </div>
+      {%- if foto != blank -%}
+        <figure class="lu-op__foto">{{ foto | image_url: width: 700 | image_tag: loading: 'lazy', alt: 'Foto de ' | append: nombre, sizes: '(min-width: 750px) 200px, 38vw', widths: '300, 500, 700' }}</figure>
+      {%- elsif foto_url != blank -%}
+        <figure class="lu-op__foto"><img src="{{ foto_url }}" alt="Foto de {{ nombre }}" loading="lazy" width="720" height="960"></figure>
+      {%- endif -%}
+    </article>
+
+  {%- when 'lista' -%}
+    <div class="lu-op" id="opiniones">
+      {%- if ejemplos -%}
+        {%- render 'lunerie-opiniones-ejemplos', parte: 'lista' -%}
+      {%- else -%}
+        {%- render 'lunerie-opiniones', parte: 'cabecera', total: total, media: media -%}
+        {%- if total > 0 -%}
+          <div class="lu-op__lista">
+            {%- for o in shop.metaobjects.opinion.values -%}
+              {%- if o.producto.value == blank or o.producto.value.id == product.id -%}
+                {%- render 'lunerie-opiniones', parte: 'tarjeta', nombre: o.nombre.value, estrellas: o.estrellas.value,
+                  texto: o.texto.value, foto: o.foto.value, fecha: o.fecha.value, origen: o.origen.value -%}
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+        {%- else -%}
+          <p class="lu-op__vacio">Todavía no hay opiniones. Si ya tienes el tuyo, nos encantará saber qué tal.</p>
+        {%- endif -%}
+      {%- endif -%}
+
+      <dialog class="lu-op__dialogo" aria-labelledby="lu-op-titulo">
+        <button type="button" class="lu-op__cerrar" aria-label="Cerrar" data-op-cerrar>
+          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M2 2l14 14M16 2L2 16"/></svg>
+        </button>
+        {%- form 'contact', class: 'lu-op__form', id: 'lu-op-form' -%}
+          {%- if form.posted_successfully? -%}
+            <div class="lu-op__gracias" data-op-auto>
+              <h2 class="lu-op__h">Gracias</h2>
+              <p>Hemos recibido tu opinión. La leemos y la publicamos en unos días.</p>
+              <p>¿Tienes una foto con él? Mándanosla a <a href="mailto:hola@lunerie.es">hola@lunerie.es</a> y la añadimos.</p>
+            </div>
+          {%- else -%}
+            <h2 class="lu-op__h" id="lu-op-titulo">Tu opinión</h2>
+            {%- if form.errors -%}<div class="lu-op__errores" data-op-auto>{{ form.errors | default_errors }}</div>{%- endif -%}
+            <input type="hidden" name="contact[Tipo]" value="Opinión">
+            <input type="hidden" name="contact[Producto]" value="{{ product.title | escape }}">
+            <fieldset class="lu-op__puntos">
+              <legend>Puntuación</legend>
+              <div class="lu-op__radios">
+                {%- for n in (1..5) reversed -%}
+                  <input type="radio" id="lu-op-e{{ n }}" name="contact[Estrellas]" value="{{ n }}" required>
+                  <label for="lu-op-e{{ n }}" title="{{ n }} de 5"><span class="visually-hidden">{{ n }} estrellas</span></label>
+                {%- endfor -%}
+              </div>
+            </fieldset>
+            <label class="lu-op__campo">Nombre <small>(como quieres que salga: «Lucía M.»)</small>
+              <input type="text" name="contact[name]" autocomplete="name" required maxlength="40">
+            </label>
+            <label class="lu-op__campo">Email <small>(no se publica)</small>
+              <input type="email" name="contact[email]" autocomplete="email" required>
+            </label>
+            <label class="lu-op__campo">Tu opinión
+              <textarea name="contact[body]" rows="5" required maxlength="1200"></textarea>
+            </label>
+            <label class="lu-op__permiso">
+              <input type="checkbox" name="contact[Permiso para publicar]" value="Sí" required>
+              <span>Acepto que Lunerie publique mi opinión con este nombre. Mi email no se publica
+                (<a href="{{ shop.privacy_policy.url }}" target="_blank">privacidad</a>).</span>
+            </label>
+            <p class="lu-op__foto-nota">¿Tienes una foto con él? Después de enviar, mándala a hola@lunerie.es y la añadimos.</p>
+            <button type="submit" class="lu-op__enviar">Enviar opinión</button>
+          {%- endif -%}
+        {%- endform -%}
+      </dialog>
+      <script>
+        (() => {
+          const caja = document.getElementById('opiniones'), dlg = caja && caja.querySelector('.lu-op__dialogo');
+          if (!dlg || typeof dlg.showModal !== 'function') return;
+          caja.querySelectorAll('[data-op-abrir]').forEach((b) => b.addEventListener('click', () => dlg.showModal()));
+          dlg.querySelector('[data-op-cerrar]').addEventListener('click', () => dlg.close());
+          if (dlg.querySelector('[data-op-auto]')) dlg.showModal();   // al volver de enviar (gracias o errores)
+        })();
+      </script>
+    </div>
+{%- endcase -%}
+
+{% stylesheet %}
+  .lu-estrellas{display:inline-block;width:5.6em;height:1em;font-size:14px;vertical-align:-2px;
+    background:linear-gradient(90deg,#A6834A var(--v),#DDD5C6 var(--v));
+    -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z'/%3E%3C/svg%3E") left/1.12em 1em repeat-x;
+    mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z'/%3E%3C/svg%3E") left/1.12em 1em repeat-x}
+  .lu-op-mini{display:inline-flex;align-items:center;gap:8px;color:#3D4842;font-size:.8125rem;text-decoration:none}
+  .lu-op-mini:hover span{text-decoration:underline;text-underline-offset:3px}
+
+  .lu-op{color:#16201B}
+  .lu-op__cabecera{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px 24px}
+  .lu-op__anadir{padding:12px 22px;border:1px solid #16201B;background:#fff;color:#16201B;cursor:pointer;
+    font-family:var(--font-body--family);font-size:.75rem;letter-spacing:.16em;text-transform:uppercase}
+  .lu-op__anadir:hover{background:#16201B;color:#fff}
+  .lu-op__resumen{display:flex;align-items:center;gap:10px;margin:0;font-size:.9375rem}
+  .lu-op__resumen .lu-estrellas{font-size:18px}
+  .lu-op__nota{margin:14px 0 24px;max-width:70ch;font-size:.75rem;line-height:1.5;color:#6B746F}
+  .lu-op__vacio{margin:0;padding:28px 20px;background:#F2F4F2;text-align:center;color:#3D4842}
+  .lu-op__lista{columns:2 360px;column-gap:14px}
+  .lu-op__tarjeta{display:grid;gap:14px;break-inside:avoid;margin:0 0 14px;padding:16px;background:#F2F4F2}
+  .lu-op__tarjeta--foto{grid-template-columns:1fr 38%}
+  .lu-op__cuerpo{display:grid;align-content:start;gap:8px;min-width:0}
+  .lu-op__quien{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:0;font-size:.875rem}
+  .lu-op__quien strong{font-weight:500}
+  .lu-op__origen{display:inline-flex;align-items:center;gap:4px;font-size:.6875rem;letter-spacing:.04em;color:#6B746F}
+  .lu-op__origen--compra{color:#006039}
+  .lu-op__ejemplo{padding:2px 6px;background:#B3261E;color:#fff;font-size:.625rem;letter-spacing:.12em;text-transform:uppercase}
+  .lu-op__texto{margin:0;font-size:.875rem;line-height:1.55;color:#2B3530;overflow-wrap:anywhere}
+  .lu-op__fecha{margin:0;font-size:.6875rem;color:#8A928D}
+  .lu-op__foto{margin:0;align-self:start}
+  .lu-op__foto img{display:block;width:100%;aspect-ratio:3/4;height:auto;object-fit:cover}
+
+  .lu-op__dialogo{width:min(520px,calc(100vw - 24px));max-height:calc(100dvh - 24px);padding:0;border:0;background:#fff;
+    color:#16201B;overflow:auto}
+  .lu-op__dialogo::backdrop{background:rgba(22,32,27,.45)}
+  .lu-op__cerrar{position:absolute;top:8px;right:8px;display:grid;place-items:center;width:40px;height:40px;padding:0;
+    border:0;background:none;color:inherit;cursor:pointer}
+  .lu-op__form{display:grid;gap:16px;padding:36px 28px 28px}
+  .lu-op__h{margin:0;font-family:var(--font-heading--family);font-weight:400;font-size:2rem}
+  .lu-op__gracias p{margin:12px 0 0;line-height:1.55;color:#3D4842}
+  .lu-op__errores{padding:10px 12px;background:#FBEAEA;color:#B3261E;font-size:.8125rem}
+  .lu-op__puntos{margin:0;padding:0;border:0}
+  .lu-op__puntos legend{margin-bottom:6px;font-size:.8125rem}
+  .lu-op__radios{display:inline-flex;flex-direction:row-reverse;gap:4px}
+  .lu-op__radios input{position:absolute;opacity:0;width:1px;height:1px}
+  .lu-op__radios label{width:30px;height:30px;cursor:pointer;background:#DDD5C6;
+    -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z'/%3E%3C/svg%3E") center/contain no-repeat;
+    mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z'/%3E%3C/svg%3E") center/contain no-repeat}
+  .lu-op__radios label:hover,.lu-op__radios label:hover~label,
+  .lu-op__radios input:checked~label{background:#A6834A}
+  .lu-op__radios input:focus-visible+label{outline:2px solid #006039;outline-offset:2px}
+  .lu-op__campo{display:grid;gap:6px;font-size:.8125rem}
+  .lu-op__campo small{color:#6B746F;font-size:.75rem}
+  .lu-op__campo input,.lu-op__campo textarea{width:100%;padding:12px;border:1px solid #C9CFCB;background:#fff;color:#16201B;
+    font:inherit;font-size:1rem}
+  .lu-op__campo input:focus,.lu-op__campo textarea:focus{outline:none;border-color:#16201B}
+  .lu-op__permiso{display:flex;gap:10px;align-items:flex-start;font-size:.75rem;line-height:1.45;color:#3D4842}
+  .lu-op__permiso input{margin-top:2px;accent-color:#006039}
+  .lu-op__foto-nota{margin:0;font-size:.75rem;color:#6B746F}
+  .lu-op__enviar{padding:16px;border:0;background:#006039;color:#fff;cursor:pointer;font-family:var(--font-body--family);
+    font-size:.8125rem;letter-spacing:.16em;text-transform:uppercase}
+  .lu-op__enviar:hover{background:#004d2e}
+  @media (max-width:749px){.lu-op__lista{columns:1}.lu-op__tarjeta--foto{grid-template-columns:1fr 36%}}
+{% endstylesheet %}

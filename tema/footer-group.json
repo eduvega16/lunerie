@@ -5,54 +5,28 @@
     "footer_m9NzUG": {
       "type": "footer",
       "blocks": {
-        "group_H6VpwJ": {
+        "sobre": {
           "type": "group",
           "settings": {
             "content_direction": "column",
-            "vertical_on_mobile": true,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
-            "align_baseline": false,
             "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 6,
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
-            "open_in_new_tab": false,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
+            "gap": 14,
+            "width": "fill"
           },
           "blocks": {
-            "text_LWt8Pz": {
+            "t": {
               "type": "text",
               "settings": {
-                "text": "<h2>Cartas de Lunerie</h2>",
+                "text": "<p>Sobre Lunerie</p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "left",
-                "type_preset": "h4",
+                "type_preset": "custom",
                 "font": "var(--font-body--family)",
-                "font_size": "1rem",
+                "font_size": "0.75rem",
                 "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
+                "letter_spacing": "loose",
+                "case": "uppercase",
                 "wrap": "pretty",
                 "background": false,
                 "background_color": "#00000026",
@@ -64,10 +38,10 @@
               },
               "blocks": {}
             },
-            "text_f9CFLH": {
+            "p": {
               "type": "text",
               "settings": {
-                "text": "<p>Piezas nuevas y fechas de envío para regalar. Pocas veces al mes.</p>",
+                "text": "<p>Joyas y relojes pequeños para regalar, o para quedártelos. Piezas con detalle, elegidas una a una, para llevar todos los días.</p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "left",
@@ -90,30 +64,165 @@
             }
           },
           "block_order": [
-            "text_LWt8Pz",
-            "text_f9CFLH"
+            "t",
+            "p"
           ]
         },
-        "email_signup_crihX7": {
-          "type": "email-signup",
+        "tienda": {
+          "type": "menu",
           "settings": {
-            "width": "fill",
-            "custom_width": 100,
-            "heading_preset": "h3",
-            "border_style": "all",
-            "input_style": "custom",
-            "border_width": 1,
-            "border_radius": 0,
-            "input_background_color": "{{ settings.color_palette.background }}",
-            "input_text_color": "{{ settings.color_palette.foreground }}",
-            "input_border_color": "{{ settings.color_palette.color2 }}",
-            "input_type_preset": "paragraph",
-            "style_class": "button-unstyled",
-            "display_type": "arrow",
-            "label": "Tu email",
-            "integrated_button": true,
-            "button_type_preset": "paragraph",
+            "menu": "pie-tienda",
+            "heading": "",
+            "menu_spacing": 10,
+            "show_as_accordion": true,
+            "accordion_icon": "plus",
+            "accordion_dividers": true,
+            "heading_preset": "paragraph",
+            "link_preset": "paragraph",
             "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "info": {
+          "type": "menu",
+          "settings": {
+            "menu": "pie-informacion",
+            "heading": "",
+            "menu_spacing": 10,
+            "show_as_accordion": true,
+            "accordion_icon": "plus",
+            "accordion_dividers": true,
+            "heading_preset": "paragraph",
+            "link_preset": "paragraph",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "cartas": {
+          "type": "group",
+          "settings": {
+            "content_direction": "column",
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "gap": 14,
+            "width": "fill"
+          },
+          "blocks": {
+            "t": {
+              "type": "text",
+              "settings": {
+                "text": "<p>Cartas de Lunerie</p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "custom",
+                "font": "var(--font-body--family)",
+                "font_size": "0.75rem",
+                "line_height": "normal",
+                "letter_spacing": "loose",
+                "case": "uppercase",
+                "wrap": "pretty",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "p": {
+              "type": "text",
+              "settings": {
+                "text": "<p>Piezas nuevas y fechas de envío para regalar. Pocas veces al mes.</p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "email": {
+              "type": "email-signup",
+              "settings": {
+                "width": "fill",
+                "border_style": "all",
+                "input_style": "custom",
+                "border_width": 1,
+                "border_radius": 0,
+                "input_background_color": "{{ settings.color_palette.background }}",
+                "input_text_color": "{{ settings.color_palette.foreground }}",
+                "input_border_color": "{{ settings.color_palette.color2 }}",
+                "input_type_preset": "paragraph",
+                "style_class": "button",
+                "display_type": "text",
+                "label": "Apuntarme",
+                "integrated_button": false,
+                "button_type_preset": "paragraph",
+                "padding-block-start": 4,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "aviso": {
+              "type": "text",
+              "settings": {
+                "text": "<p>Puedes darte de baja cuando quieras. <a href=\"/policies/privacy-policy\">Privacidad</a>.</p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "custom",
+                "font": "var(--font-body--family)",
+                "font_size": "0.75rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "t",
+            "p",
+            "email",
+            "aviso"
+          ]
+        },
+        "pagos": {
+          "type": "payment-icons",
+          "settings": {
+            "horizontal_alignment": "center",
+            "gap": 8,
+            "padding-block-start": 28,
             "padding-block-end": 0,
             "padding-inline-start": 0,
             "padding-inline-end": 0
@@ -122,16 +231,22 @@
         }
       },
       "block_order": [
-        "group_H6VpwJ",
-        "email_signup_crihX7"
+        "sobre",
+        "tienda",
+        "info",
+        "cartas",
+        "pagos"
       ],
       "name": "t:names.footer",
+      "custom_css": [
+        "@media (min-width:990px){.footer-content{grid-template-columns:1.4fr 1fr 1fr 1.6fr;column-gap:56px} .menu__heading{padding-block:0!important;line-height:1.4!important}}.menu__heading>*{font-size:.75rem!important;letter-spacing:.03em!important;font-weight:300!important;line-height:1.4!important;text-transform:uppercase!important} .menu__item a{text-decoration:none} .menu__item a:hover{text-decoration:underline;text-underline-offset:3px} .menu--dividers .menu__details{border-color:#E2E6E3}"
+      ],
       "settings": {
         "section_width": "page-width",
-        "gap": 20,
+        "gap": 32,
         "background_color": "#F2F4F2",
-        "padding-block-start": 40,
-        "padding-block-end": 30
+        "padding-block-start": 64,
+        "padding-block-end": 32
       }
     },
     "footer_utilities_jLGE8U": {
@@ -146,18 +261,19 @@
           },
           "blocks": {}
         },
-        "footer_policy_list_VCdnpa": {
-          "type": "footer-policy-list",
+        "redes": {
+          "type": "social-links",
           "settings": {
-            "font_size": "0.75rem",
-            "case": "none"
+            "icon_color": "#16201B",
+            "instagram_url": "https://www.instagram.com/luneriejewelry",
+            "facebook_url": "https://www.facebook.com/1376893392171782"
           },
           "blocks": {}
         }
       },
       "block_order": [
         "footer_copyright_jweRK8",
-        "footer_policy_list_VCdnpa"
+        "redes"
       ],
       "name": "t:names.utilities",
       "settings": {
@@ -166,8 +282,8 @@
         "divider_thickness": 1,
         "divider_color": "#E2E6E3",
         "background_color": "#F2F4F2",
-        "padding-block-start": 20,
-        "padding-block-end": 40
+        "padding-block-start": 24,
+        "padding-block-end": 32
       }
     },
     "rasca": {
@@ -179,11 +295,22 @@
         "padding-block-start": 0,
         "padding-block-end": 0
       }
+    },
+    "cookies": {
+      "type": "custom-liquid",
+      "name": "Preferencias de cookies",
+      "settings": {
+        "custom_liquid": "<script>document.addEventListener('click', (e) => { const a = e.target.closest('a[href$=\"#preferencias-cookies\"]'); if (a && window.privacyBanner) { e.preventDefault(); window.privacyBanner.showPreferences(); } });</script>",
+        "section_width": "full-width",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
     }
   },
   "order": [
     "footer_m9NzUG",
     "footer_utilities_jLGE8U",
-    "rasca"
+    "rasca",
+    "cookies"
   ]
 }

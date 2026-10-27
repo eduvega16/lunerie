@@ -1,18 +1,30 @@
 # Política de privacidad
 
-## Quién trata tus datos
-
-- **Responsable:** [NOMBRE] · NIF [NIF] · [DIRECCIÓN]
-- **Email para cualquier tema de privacidad:** hola@lunerie.es
-
 ## Qué datos usamos y para qué
 
-| Para qué | Qué datos | Por qué podemos (base legal) | Cuánto tiempo |
-|---|---|---|---|
-| Gestionar tu pedido, el envío, las devoluciones y la garantía | Nombre, dirección, email, teléfono, pedido | Es necesario para cumplir el contrato de compra | Lo que exige la ley fiscal y mercantil (hasta 6 años) |
-| Contestar tus mensajes | Lo que nos escribas | Tu interés en que te respondamos | Hasta resolver la consulta y 1 año más |
-| Mandarte «Cartas de Lunerie» (novedades) | Email | Tu consentimiento al suscribirte; te puedes dar de baja en cada email | Hasta que te des de baja |
-| Medir la web y mostrar anuncios de Lunerie (píxeles de Meta y TikTok, cookies) | Datos de navegación y de compra | Tu consentimiento en el aviso de cookies | Según cada cookie (ver el aviso de cookies) |
+### Gestionar tu pedido, el envío, las devoluciones y la garantía
+
+- **Qué datos:** nombre, dirección, email, teléfono y pedido.
+- **Por qué podemos (base legal):** es necesario para cumplir el contrato de compra.
+- **Cuánto tiempo:** lo que exige la ley fiscal y mercantil (hasta 6 años).
+
+### Contestar tus mensajes
+
+- **Qué datos:** lo que nos escribas.
+- **Por qué podemos (base legal):** tu interés en que te respondamos.
+- **Cuánto tiempo:** hasta resolver la consulta y 1 año más.
+
+### Mandarte «Cartas de Lunerie» (novedades)
+
+- **Qué datos:** tu email.
+- **Por qué podemos (base legal):** tu consentimiento al suscribirte; te puedes dar de baja en cada email.
+- **Cuánto tiempo:** hasta que te des de baja.
+
+### Medir la web y mostrar anuncios de Lunerie (píxeles de Meta y TikTok, cookies)
+
+- **Qué datos:** datos de navegación y de compra.
+- **Por qué podemos (base legal):** tu consentimiento en el aviso de cookies.
+- **Cuánto tiempo:** según cada cookie (ver el aviso de cookies).
 
 No tomamos decisiones automáticas sobre ti ni vendemos tus datos.
 
@@ -42,4 +54,9 @@ Si crees que no lo hemos hecho bien, puedes reclamar ante la **Agencia Española
 ## Cookies
 
 Usamos cookies técnicas (necesarias para que funcione la cesta) y, solo si las aceptas, cookies de análisis y de
-publicidad. Puedes cambiar tu elección en cualquier momento desde el aviso de cookies.
+publicidad. Puedes cambiar tu elección en cualquier momento desde «Preferencias de cookies», al pie de la web.
+
+## Quién trata tus datos
+
+- **Responsable:** [NOMBRE] · NIF [NIF] · [DIRECCIÓN]
+- **Email para cualquier tema de privacidad:** hola@lunerie.es

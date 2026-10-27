@@ -128,8 +128,9 @@
 - Los 2 productos importados por DSers entraron **activos y a precio de coste** → pasados a **borrador** (no
   borrarlos). Al importar con DSers: revisar siempre estado y precio.
 - **Fase drop en la tienda:** sin prometer caja ni extractor (`CAJA_REGALO = False` en `build.py`; con stock y caja
-  → `True`), plazo **7-12 días laborables**, Navidad **antes del 5 de diciembre**, entrega del pago 5-10 días de
-  tránsito (sale «30 oct-9 nov» pidiendo el 22). Bolitas = color de la piedra con aro dorado (`PIEDRAS` en
+  → `True`), plazo **7-12 días laborables**, Navidad **antes del 5 de diciembre**, entrega del pago 4-9 días de
+  tránsito, que con la preparación que suma Shopify sale como 7-12 laborables (pidiendo el 27-oct: «5 nov-12 nov»,
+  comprobado en el pago). Bolitas = color de la piedra con aro dorado (`PIEDRAS` en
   `build.py`).
 - **Imágenes con IA (siguiente paso):** script `marca/higgsfield.py` (Marketing Studio 2.5 Flare = GPT Image 2.5,
   referencias: foto del proveedor + foto real de Edu; tomas «producto» en fondo niebla y «modelo» en muñeca). **25-oct:
@@ -249,15 +250,18 @@ gafas con cámara IA (69,95-79,95 €) · descartados: micro-infusión, paddle s
 - [x] Dominio **lunerie.es** conectado (visto el 7-oct; cuenta de Shopify con luneriecompany@gmail.com, plan Basic, EUR).
   **Correo de cara al cliente: hola@lunerie.es** (14-oct; en todos los textos legales y páginas, y como correo de
   la tienda en Shopify, visto el 15-oct)
-- [~] Redes: **Instagram @lunerie_co** (13-oct; cuenta que Edu ya tenía, ~700 seguidores no orientados, se
-      reutiliza por imagen de marca: renombrar a «Lunerie», cuenta profesional, avatar `oficial-avatar-redes.png`,
-      bio «Joyas y relojes para regalar. / Para llevar cerca. / Envío gratis a península.», enlace lunerie.es,
-      archivar lo antiguo y subir 3-6 publicaciones propias antes de los anuncios). Falta: TikTok y poner el
-      enlace de Instagram en el pie de la tienda.
+- [~] Redes: **Instagram @luneriejewelry** (antes @lunerie_co; usuario cambiado por Edu el 27-oct, mismo id;
+      nombre del perfil **«Lunerie | Relojes y joyas»**, que es lo que mira el buscador de Instagram). Cuenta que
+      Edu ya tenía (~700 seguidores no orientados), profesional, avatar `oficial-avatar-redes.png`, enlace
+      lunerie.es. Bio propuesta (estilo Olivia, sin emojis ni «waterproof»): «Relojes y joyas para regalar. /
+      Envío gratis a península · 3 años de garantía · Devolución en 14 días». 27-oct: 6 publicaciones de IA
+      subidas (textos propuestos en la sesión: 3 hashtags por post, «reloj de mujer»/«reloj dorado» en el texto);
+      los 3 posts viejos enseñan relojes que no se venden (plateado, piedras claras) → archivarlos si Edu quiere.
+      Enlace de Instagram en el pie: `INSTAGRAM` en `build.py`. Falta: TikTok.
       **Meta (15-oct, comprobado con el conector):** porfolio empresarial **Lunerie** (1639315480899561), separado
       de LaFortuna · cuenta publicitaria **«LUNERIE PUBLI» 4565584937093443** (EUR, activa, **con método de pago**,
       dentro del porfolio) → **es la que se usa** · página «L U N E R I E» **1376893392171782** (página **nueva** creada por Edu el
-      15-oct; la antigua 1311701355367588, en lafortuna.club, sobra → borrarla o archivarla) · Instagram **lunerie_co**
+      15-oct; la antigua 1311701355367588, en lafortuna.club, sobra → borrarla o archivarla) · Instagram **luneriejewelry**
       (17841404549468255) enlazado a la cuenta publicitaria. La cuenta suelta 1551796336759107 (sin pago ni
       porfolio) sobra. Claude lo ve con el conector **«Meta ads Koco»** de claude.ai (nombre antiguo) · «pipeboard»
       solo ve LaFortuna: no usarlo para Lunerie.
@@ -272,8 +276,10 @@ gafas con cámara IA (69,95-79,95 €) · descartados: micro-infusión, paddle s
       `delivery.shipping.optionDefinitions`) y **cada tarifa tiene que llevar la ubicación de la tienda**
       (`conditions.originLocationsToAdd: gid://shopify/Location/127723929939`) o no sale en el pago. Permisos de la
       CLI ampliados el 15-oct con `read_markets,write_markets,read_locations,read_delivery_customizations`.
-      **Ojo:** el pago promete entrega en **3-5 días** (`transitTime` 259200-432000 s) → ajustarlo al plazo real.
-      Comprobar envíos en el pago: script de Playwright con dirección y sin pagar (Madrid 28001 / Palma 07001 / Las
+      **Plazo en el pago (27-oct):** `transitTime` 345600-777600 s (4-9 días) en España y Baleares; Shopify le suma
+      ~3 días laborables de preparación y el pago muestra fechas a 7-12 días laborables, como la ficha. Se cambia con
+      `marketUpdate` → `optionDefinitionsToUpdate.flatRate.rateGroupsToUpdate` (grupos 684876366163 España y
+      690779095379 Baleares; repetir nombre, precio y `isActive`). Comprobar envíos en el pago: script de Playwright con dirección y sin pagar (Madrid 28001 / Palma 07001 / Las
       Palmas 35001).
 - [x] Tema publicado: **«Copia actualizada de Lunerie · marca» (id 209073799507)** = Horizon 1.0.5, actualizado por
   Edu el 12-oct. Shopify crea una **copia nueva con otro id** en cada actualización de Horizon: después de actualizar,
@@ -328,6 +334,10 @@ gafas con cámara IA (69,95-79,95 €) · descartados: micro-infusión, paddle s
       principal («Piezas · Preguntas frecuentes · Contacto»). **Las 6 políticas las pega Edu** en Configuración →
       Políticas: el conector **no tiene permiso** `write_legal_policies` (las páginas y menús sí). Rellenar los huecos
       de `legal/README.md` en Shopify y en la página de FAQ ([PLAZO], [BALEARES]).
+      **27-oct:** privacidad sin tabla (en móvil descuadraba la página: un bloque por uso de los datos) y «Quién
+      trata tus datos» al final. `legal/subir.py` ahora sube solo lo que se le diga (`python legal/subir.py
+      privacidad.md`) y, sin las variables LUNERIE_*, coge nombre/NIF/dirección de la política publicada.
+      **Nada de tablas en los textos legales** (no caben en el móvil).
 - [x] Banner de cookies de Shopify activado por Edu (14-oct; carga `privacy-banner/storefront-banner.js`). Falta que
       Edu lo mire en incógnito (Aceptar y Rechazar a la vez, texto en español).
 - [x] **App Facebook & Instagram instalada por Edu (15-oct)**: píxel **«Lunerie's pixel» 1096538246614496** (porfolio
@@ -416,17 +426,40 @@ gafas con cámara IA (69,95-79,95 €) · descartados: micro-infusión, paddle s
       Permisos de metaobjetos dados a la CLI el 27-oct (si `shopify store auth` dice «Port 13387 is already in use»,
       matar el `node` que lo ocupa). `shopify theme dev` da «you don't have access to this dev store»: para ver algo
       sin tocar la tienda, `shopify theme push --unpublished` y el enlace `?preview_theme_id=`.
-      **EJEMPLOS EN LA TIENDA (27-oct, a petición de Edu, para ver cómo quedan):** 6 opiniones marcadas «Ejemplo»
+      **EJEMPLOS EN LA TIENDA (27-oct, a petición de Edu, para ver cómo quedan):** 6 opiniones inventadas
+      (**sin la etiqueta «Ejemplo» desde la tarde del 27-oct**, para enseñárselas a un compañero: parecen reales)
       con fotos de compradoras de AliExpress (`snippets/lunerie-opiniones-ejemplos.liquid` + `assets/opinion-
-      ejemplo-1..5.jpg`, solo en la tienda y en `tema/tienda/`, no en git). **Caducan solas el 28-oct a las 12:00**,
-      pero hay que quitarlas: `python tema/build.py` (sin `LUNERIE_EJEMPLOS`) → push de `templates/product.json` →
-      borrar el snippet y las 5 fotos del tema (`themeFilesDelete`). Nunca abrir la tienda con ejemplos: serían
-      opiniones falsas.
+      ejemplo-1..5.jpg`, solo en la tienda y en `tema/tienda/`, no en git). **Ya NO caducan solas** (Edu quitó la
+      caducidad el 27-oct): hay que quitarlas a mano: `python tema/build.py` (sin `LUNERIE_EJEMPLOS`) → push de `templates/product.json` →
+      borrar el snippet y las 5 fotos del tema (`themeFilesDelete`).
+- [x] **Pie nuevo (27-oct, en producción), como el de Olivia Jewelry:** 4 columnas (Sobre Lunerie · La tienda ·
+      Información · Cartas de Lunerie con suscripción y «Puedes darte de baja cuando quieras. Privacidad») + medios
+      de pago (los activos en Shopify, salen solos) + línea con © y redes (Instagram luneriejewelry y la página de
+      Facebook; **TikTok: añadir `tiktok_url` en `build.py` cuando exista**). Menús de la tienda **«pie-tienda»**
+      (Reloj Lune, Preguntas frecuentes, Contacto) y **«pie-informacion»** (Envíos, Devoluciones, Privacidad,
+      Términos, Aviso legal, **Preferencias de cookies** → `/#preferencias-cookies`, que reabre el panel del banner
+      con `window.privacyBanner.showPreferences()`, sección `cookies` del pie). En móvil, los menús son
+      desplegables. El texto del campo de email («Tu email») es un cambio en `locales/es.json` que hace `build.py`
+      (si se vuelve a bajar el tema, se vuelve a aplicar al ejecutarlo). El menú «footer» (Buscar) ya no se usa.
+- [x] **Vídeo en el collage (27-oct, en producción):** la foto de la toalla del collage de la historia es ahora
+      un vídeo en bucle recortado a 4:5 (`marca/videos-ficha/lune-collage-toalla.mp4`, toalla-a, que no repite la
+      foto). La fila «De cerca» de abajo se **ocultó** el mismo día tras una crítica de diseño: era más estrecha que
+      todo lo de alrededor, metía el azul del cielo justo antes de la foto de detalle y repetía la escena de la
+      toalla del collage. Volver a enseñarla (quitar `"disabled"` en `build.py`) cuando haya **vídeos reales**.
+- [x] **«De cerca» + envío gratis junto al precio (27-oct, en producción):** bajo la ficha, fila de 3 vídeos
+      verticales (toalla-a, macro, toalla-b; `marca/videos-ficha/`, subidos a Archivos de Shopify) que se reproducen
+      solos al verse (con «reducir movimiento», con controles). `parte('videos')` en `lunerie-ficha.liquid`; para
+      añadir uno (los reales de Edu: muñeca, quitar un eslabón), subir mp4 + primer fotograma .jpg y añadir su URL a
+      la lista. Título honesto «De cerca», no «As seen on you» (no son de clientas). Solo clips donde el reloj se ve
+      de su tamaño (en perfil/pelo de Kling sale grande; el macro, solo los primeros 2,5 s en ida y vuelta porque al
+      final deforma la esfera). Etiqueta «Envío gratis a península» al lado del precio (grupo `precio` en `build.py`).
+      **Rasca arreglado en móvil:** las fotos de arriba se salían de su franja y tapaban el texto.
 - [x] **«Segundo reloj por 19,95 €» quitado (27-oct):** `SEGUNDO_RELOJ = False` en `build.py` (fuera la franja verde
       del inicio, la caja verde de la ficha y el aviso de la cesta; bajo el botón de la portada ahora pone «Envío
       gratis a península») · descuento automático **desactivado** (no borrado) · quitado de Preguntas frecuentes y
       del ejemplo de los Términos. Volver: `True` + reactivarlo en Descuentos.
-- [ ] Quitar la contraseña de la tienda
+- [x] Contraseña de la tienda **quitada** (visto el 27-oct por la noche). **Ojo: las opiniones de ejemplo siguen
+      puestas** (ver «Opiniones» y apartado 8): quitarlas es lo primero.
 
 > **OJO (22-oct): el conector de Shopify de claude.ai está conectado a STAR BRICK (otra tienda de Edu), no a Lunerie.**
 > Solo puede estar en una tienda a la vez. **Para Lunerie, usar SIEMPRE la CLI** (`shopify store execute -s
@@ -440,26 +473,44 @@ gafas con cámara IA (69,95-79,95 €) · descartados: micro-infusión, paddle s
 > navegador solo y Edu acepta (probado el 14-oct). El conector de claude.ai sigue sin `write_legal_policies`.
 
 ## 7. Test de ~90 € (por producto)
-Meta Ads, ABO: 3 conjuntos (1 ángulo cada uno) × 10 €/día × 3 días = 90 €. Cada día, en el radar:
+Meta Ads **Advantage+ de ventas** (cambiado el 27-oct, como recomienda Meta ahora): **1 campaña con presupuesto de
+campaña 30 €/día × 3 días = 90 €, 1 solo conjunto con público abierto** (solo país, exclusiones de envío y 18+,
+sin intereses ni edades sugeridas; ubicaciones automáticas) y **varios anuncios distintos dentro** (ángulos y
+formatos diferentes: la creatividad hace de segmentación). Meta reparte el gasto hacia el anuncio que vende; no
+apagar anuncios las primeras 48 h. El antiguo ABO de 3 conjuntos × 10 € ya no se usa. Cada día, en el radar:
 `uv run python cli.py test <id> --dia N --gasto … --imp … --clicks … --atc … --compras …`
-KILL si gastas 1× CPA BE sin carritos o 2× sin ventas · ESCALAR con ≥ 3 ventas a ≤ 70 % del CPA BE ·
-alertas si CTR < 1 % o CPC > 0,90 €. Máximo 2 productos en test a la vez.
+KILL (se mira en la campaña) si gastas 1× CPA BE sin carritos o 2× sin ventas · ESCALAR con ≥ 3 ventas a ≤ 70 %
+del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alertas si CTR < 1 % o CPC > 0,90 €.
+«Aprendizaje limitado» es normal con este presupuesto (Meta pide ~50 compras/semana). Máximo 2 productos en test.
 
 ## 8. Calendario y pendientes (a 27-oct-2026)
 
-### Para empezar la próxima sesión (después del 27-oct) — abrir conversación nueva por sesión
-- **Lo primero: quitar las 6 opiniones de EJEMPLO de la tienda** (apartado 6, «Opiniones»): caducan solas el
-  28-oct a las 12:00, pero el snippet y las 5 fotos siguen en el tema publicado → `python tema/build.py` → push de
-  `templates/product.json` → `themeFilesDelete` de `snippets/lunerie-opiniones-ejemplos.liquid` y
-  `assets/opinion-ejemplo-1..5.jpg`. Nunca abrir la tienda con ellos.
-- **Estado al cerrar el 27-oct:** todo subido al tema publicado (209073799507) y en git. Precio 49,95 € · rasca del
-  10 % a pantalla completa (LUNERIE10, lo añade la clienta con el botón) · opiniones con metaobjetos + formulario a
-  hola@lunerie.es (Edu tiene que mandarse una de prueba para ver que llega) · portada con vídeo del verde ·
-  formato de precio «49,95 €» ya cambiado por Edu. Higgsfield: quedan 6,55 créditos hasta el 28-oct 21:15.
-- **Siguiente con Claude:** anuncios (ajustar `anuncios/test-reloj-lune.md` a la fase drop: solo verde, sin caja,
-  sin «segundo reloj», 49,95 € y el 10 % del rasca, 7-12 días) → opiniones reales de amigas con las muestras →
-  vídeo de 2 min ajustando la correa → bio de Instagram con `ig-profile` → quitar la contraseña y lanzar (como
-  muy tarde 2-nov).
+### Para empezar la próxima sesión (después del 27-oct) — abrir conversación nueva por sesión.
+**Dónde nos quedamos (cierre del 27-oct, noche): todo listo para lanzar menos las opiniones de ejemplo.**
+- **La tienda YA ESTÁ ABIERTA** (sin contraseña, comprobado el 27-oct por la noche) **y sigue enseñando las 6
+  opiniones de EJEMPLO** (inventadas, sin etiqueta, con fotos de compradoras de AliExpress). Edu pidió «no toques
+  nada de las reseñas por ahora» (su compañero aún tiene que verlas). **Lo primero: preguntarle** y ofrecer
+  (a) copia del tema **sin publicar** con los ejemplos para el compañero (enlace `?preview_theme_id=`) y quitarlos
+  de la publicada, o (b) quitarlos ya. Cómo quitarlos: apartado 6, «Opiniones».
+- **Campaña de Meta SIN ACTIVAR** (lista, en borrador): «Lune · Lanzamiento · Ventas (Advantage+)»
+  (52564454147994), 30 €/día de campaña, 1 conjunto abierto, 6 anuncios de IA. Edu dijo «activa la nueva», pero
+  Claude **no la activó** porque la ficha enseña las opiniones inventadas a quien llegue desde el anuncio. En cuanto
+  se quiten: `ads_get_ad_entities` con `object_state=draft` y `object_ids=[52564454147994]` → `ads_activate_entity`
+  con esos ids y `publish_as_active=true` → comprobar en vivo. Después, 48 h sin tocar nada (apartado 7).
+- **Campaña vieja** «Lune · Test 90 € · Ventas (ABO)» (52564402827594): Edu dijo borrarla, pero la herramienta
+  **no puede borrar una campaña que nunca se publicó** (error 1487564 «New campaigns need to be either active or
+  paused»; se volvió a dejar en pausa, sin errores). **La borra Edu** en el Administrador de anuncios: marcar solo
+  esa → papelera (no «Descartar todos los borradores», que se llevaría la nueva). Mientras exista, no usar el botón
+  «Publicar» del Administrador.
+- **Instagram (27-oct):** usuario **@luneriejewelry**, nombre «Lunerie | Relojes y joyas», enlace del pie de la
+  tienda ya cambiado. Bio y textos de las 6 publicaciones de IA en **`anuncios/instagram.md`** (Edu los pega;
+  fijar 3; archivar los 3 posts viejos con relojes que no se venden).
+- **Resto, hecho y subido:** tema publicado 209073799507 · precio 49,95 € · rasca del 10 % (LUNERIE10) · opiniones
+  con metaobjetos + formulario a hola@lunerie.es (Edu tiene que mandarse una de prueba) · portada con vídeo del
+  verde · plazo del pago 7-12 días laborables (comprobado). Higgsfield: quedan 6,55 créditos hasta el 28-oct 21:15.
+- **Siguiente con Claude:** quitar los ejemplos → activar la campaña → apuntar cada día gasto, clics, carritos y
+  compras en el radar (`cli.py test`) → vídeos reales de Edu como anuncios nuevos en el mismo conjunto → opiniones
+  reales de amigas con las muestras → vídeo de 2 min ajustando la correa.
 
 ### Sesión del 25-27 oct
 - **Hecho el 23-25 oct:** plateado (BS) puesto y quitado (difícil de encontrar) · skills de Instagram instaladas
@@ -476,12 +527,6 @@ alertas si CTR < 1 % o CPC > 0,90 €. Máximo 2 productos en test a la vez.
   ficha en cuadrícula (Edu) y sin la foto de 18 cm · **rasca del 10 %** (apartado 6).
 - **27-oct:** fuera el «Segundo reloj por 19,95 €» y **precio a 49,95 €** (con el rasca, 44,96 €). Falta quitarlo
   de los anuncios (`anuncios/test-reloj-lune.md`: ángulo «Uno para ti y otro para regalar» y precio 44,95 €).
-- **Opiniones:** Edu propuso opiniones inventadas con fotos de compradoras de AliExpress → **no** (reseñas falsas:
-  práctica desleal prohibida, Ley 3/1991 de Competencia Desleal tras el RDL 24/2021, y fotos de otras personas
-  sin permiso). Alternativas: app de reseñas (Judge.me gratis) que pida opinión tras la entrega · reseñas
-  reales de gente a la que Edu dé una muestra (marcadas como «recibido como regalo») · lo que dicen las reseñas
-  de AliExpress (peso, sensación de lujo, ajuste con vídeo) usado como texto de producto que Edu comprueba con su
-  muestra, no como testimonio.
 - **Formato de precio:** cambiado por Edu el 27-oct a `{{amount_with_comma_separator}} €` (sale «49,95 €»).
 
 ### Sesión del 22-oct

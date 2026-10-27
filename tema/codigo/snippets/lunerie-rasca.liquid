@@ -283,10 +283,11 @@
   .lu-rasca__boton:disabled{opacity:.6;cursor:wait}
   .lu-rasca__error{margin:0;font-size:.8125rem;color:#B3261E}
   .lu-rasca__letra{margin:0;font-size:.6875rem;color:#6B746F}
-  .lu-rasca__fotos{order:1;flex:0 0 auto;display:grid;grid-template-columns:1fr 1fr;gap:6px;height:22vh;min-height:140px;
-    background:#F2F4F2}
+  /* La fila mide lo que la franja (minmax 0): si no, las fotos crecen a su tamaño y tapan el texto en el móvil */
+  .lu-rasca__fotos{order:1;flex:0 0 auto;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:minmax(0,1fr);
+    gap:6px;height:22vh;min-height:140px;overflow:hidden;background:#F2F4F2}
   .lu-rasca__fotos img:nth-child(n+3){display:none}
-  .lu-rasca__fotos img{display:block;width:100%;height:100%;object-fit:cover}
+  .lu-rasca__fotos img{display:block;width:100%;height:100%;min-height:0;object-fit:cover}
   .lu-rasca :focus-visible{outline:2px solid #006039;outline-offset:3px}
   @media (min-width:750px){
     .lu-rasca[open]{display:grid;grid-template-columns:1fr 1fr}

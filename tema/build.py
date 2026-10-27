@@ -142,65 +142,6 @@ def text_block(html, preset, align="left"):
         "padding-block-end": 0, "padding-inline-start": 0, "padding-inline-end": 0}, "blocks": {}}
 
 
-footer = {
-    "type": "footer", "name": "t:names.footer",
-    "sections": {
-        "footer_m9NzUG": {
-            "type": "footer",
-            "blocks": {
-                "group_H6VpwJ": {"type": "group", "settings": {
-                    "content_direction": "column", "vertical_on_mobile": True,
-                    "horizontal_alignment": "flex-start", "vertical_alignment": "center",
-                    "align_baseline": False, "horizontal_alignment_flex_direction_column": "flex-start",
-                    "vertical_alignment_flex_direction_column": "center", "gap": 6, "width": "fill",
-                    "custom_width": 100, "width_mobile": "fill", "custom_width_mobile": 100,
-                    "height": "fit", "custom_height": 100, "background_media": "none",
-                    "video_position": "cover", "background_image_position": "cover", "border": "none",
-                    "border_width": 1, "border_opacity": 100, "border_radius": 0, "toggle_overlay": False,
-                    "overlay_color": "#00000026", "overlay_style": "solid", "gradient_direction": "to top",
-                    "open_in_new_tab": False, "padding-block-start": 0, "padding-block-end": 0,
-                    "padding-inline-start": 0, "padding-inline-end": 0},
-                    "blocks": {
-                        "text_LWt8Pz": text_block("<h2>Cartas de Lunerie</h2>", "h4"),
-                        "text_f9CFLH": text_block("<p>Piezas nuevas y fechas de envío para regalar. Pocas veces al mes.</p>", "rte"),
-                    },
-                    "block_order": ["text_LWt8Pz", "text_f9CFLH"]},
-                "email_signup_crihX7": {"type": "email-signup", "settings": {
-                    "width": "fill", "custom_width": 100, "heading_preset": "h3", "border_style": "all",
-                    "input_style": "custom", "border_width": 1, "border_radius": 0,
-                    "input_background_color": BG, "input_text_color": FG, "input_border_color": C2,
-                    "input_type_preset": "paragraph", "style_class": "button-unstyled",
-                    "display_type": "arrow", "label": "Tu email", "integrated_button": True,
-                    "button_type_preset": "paragraph", "padding-block-start": 0, "padding-block-end": 0,
-                    "padding-inline-start": 0, "padding-inline-end": 0}, "blocks": {}},
-            },
-            "block_order": ["group_H6VpwJ", "email_signup_crihX7"],
-            "name": "t:names.footer",
-            "settings": {"section_width": "page-width", "gap": 20, "background_color": MIST,
-                         "padding-block-start": 40, "padding-block-end": 30},
-        },
-        "footer_utilities_jLGE8U": {
-            "type": "footer-utilities",
-            "blocks": {
-                "footer_copyright_jweRK8": {"type": "footer-copyright", "settings": {
-                    "show_powered_by": False, "font_size": "0.75rem", "case": "none"}, "blocks": {}},
-                "footer_policy_list_VCdnpa": {"type": "footer-policy-list", "settings": {
-                    "font_size": "0.75rem", "case": "none"}, "blocks": {}},
-            },
-            "block_order": ["footer_copyright_jweRK8", "footer_policy_list_VCdnpa"],
-            "name": "t:names.utilities",
-            "settings": {"section_width": "page-width", "gap": 24, "divider_thickness": 1,
-                         "divider_color": LINE, "background_color": MIST,
-                         "padding-block-start": 20, "padding-block-end": 40},
-        },
-        # Rasca del 10 % (27-oct): ventana que sale una vez en el inicio y las fichas (tema/codigo/snippets/lunerie-rasca.liquid)
-        "rasca": {"type": "custom-liquid", "name": "Rasca 10 %", "settings": {
-            "custom_liquid": "{% render 'lunerie-rasca' %}", "section_width": "full-width",
-            "padding-block-start": 0, "padding-block-end": 0}},
-    },
-    "order": ["footer_m9NzUG", "footer_utilities_jLGE8U", "rasca"],
-}
-(OUT / "footer-group.json").write_text(json.dumps(footer, ensure_ascii=False, indent=2), encoding="utf8")
 
 
 def group(blocks, align="center", gap=8):
@@ -248,6 +189,103 @@ def small(bloque, size="0.875rem"):
 def color(bloque, c, ancho="fit-content"):
     bloque["settings"].update({"text_color": c, "width": ancho})
     return bloque
+
+
+# ---------- Pie (27-oct), como el de Olivia Jewelry ----------
+# Cuatro columnas: sobre Lunerie · La tienda · Información · cartas (suscripción); debajo, los medios de pago (los
+# que están activos en Shopify, salen solos) y una línea con el © y las redes. Los menús «pie-tienda» y
+# «pie-informacion» son de la tienda (Contenido → Menús), no del tema. En móvil, los dos menús son desplegables.
+# «Preferencias de cookies» reabre el panel del banner de Shopify (la ley pide poder cambiar la elección).
+def ceja(texto):
+    """Título pequeño en mayúsculas espaciadas (encima de cada columna del pie)."""
+    b = small(text_block(f"<p>{texto}</p>", "paragraph"), "0.75rem")
+    b["settings"].update({"case": "uppercase", "letter_spacing": "loose"})
+    return b
+
+
+def menu_pie(handle):
+    return {"type": "menu", "settings": {
+        "menu": handle, "heading": "", "menu_spacing": 10, "show_as_accordion": True, "accordion_icon": "plus",
+        "accordion_dividers": True, "heading_preset": "paragraph", "link_preset": "paragraph",
+        "padding-block-start": 0, "padding-block-end": 0, "padding-inline-start": 0, "padding-inline-end": 0},
+        "blocks": {}}
+
+
+INSTAGRAM, FACEBOOK = "https://www.instagram.com/luneriejewelry", "https://www.facebook.com/1376893392171782"
+
+footer = {
+    "type": "footer", "name": "t:names.footer",
+    "sections": {
+        "footer_m9NzUG": {
+            "type": "footer",
+            "blocks": {
+                "sobre": group({
+                    "t": ceja("Sobre Lunerie"),
+                    "p": text_block("<p>Joyas y relojes pequeños para regalar, o para quedártelos. Piezas con "
+                                    "detalle, elegidas una a una, para llevar todos los días.</p>", "rte"),
+                }, align="flex-start", gap=14),
+                "tienda": menu_pie("pie-tienda"),
+                "info": menu_pie("pie-informacion"),
+                "cartas": group({
+                    "t": ceja("Cartas de Lunerie"),
+                    "p": text_block("<p>Piezas nuevas y fechas de envío para regalar. Pocas veces al mes.</p>", "rte"),
+                    "email": {"type": "email-signup", "settings": {
+                        "width": "fill", "border_style": "all", "input_style": "custom", "border_width": 1,
+                        "border_radius": 0, "input_background_color": BG, "input_text_color": FG,
+                        "input_border_color": C2, "input_type_preset": "paragraph", "style_class": "button",
+                        "display_type": "text", "label": "Apuntarme", "integrated_button": False,
+                        "button_type_preset": "paragraph", "padding-block-start": 4, "padding-block-end": 0,
+                        "padding-inline-start": 0, "padding-inline-end": 0}, "blocks": {}},
+                    "aviso": small(text_block(
+                        '<p>Puedes darte de baja cuando quieras. <a href="/policies/privacy-policy">Privacidad</a>.</p>',
+                        "paragraph"), "0.75rem"),
+                }, align="flex-start", gap=14),
+                "pagos": {"type": "payment-icons", "settings": {
+                    "horizontal_alignment": "center", "gap": 8, "padding-block-start": 28,
+                    "padding-block-end": 0, "padding-inline-start": 0, "padding-inline-end": 0}, "blocks": {}},
+            },
+            "block_order": ["sobre", "tienda", "info", "cartas", "pagos"],
+            "name": "t:names.footer",
+            # Columnas desiguales en PC (texto y cartas más anchas), títulos de los menús como las cejas (el tema
+            # pone el tamaño en los hijos: `.paragraph > *`) y líneas de los desplegables del móvil en gris claro
+            "custom_css": ["@media (min-width:990px){.footer-content{grid-template-columns:1.4fr 1fr 1fr 1.6fr;"
+                           "column-gap:56px} .menu__heading{padding-block:0!important;line-height:1.4!important}}.menu__heading>*{font-size:.75rem!important;"
+                           "letter-spacing:.03em!important;font-weight:300!important;line-height:1.4!important;"
+                           "text-transform:uppercase!important} .menu__item a{text-decoration:none} "
+                           ".menu__item a:hover{text-decoration:underline;text-underline-offset:3px} "
+                           ".menu--dividers .menu__details{border-color:" + LINE + "}"],
+            "settings": {"section_width": "page-width", "gap": 32, "background_color": MIST,
+                         "padding-block-start": 64, "padding-block-end": 32},
+        },
+        "footer_utilities_jLGE8U": {
+            "type": "footer-utilities",
+            "blocks": {
+                "footer_copyright_jweRK8": {"type": "footer-copyright", "settings": {
+                    "show_powered_by": False, "font_size": "0.75rem", "case": "none"}, "blocks": {}},
+                # TikTok: añadir tiktok_url cuando exista la cuenta
+                "redes": {"type": "social-links", "settings": {
+                    "icon_color": INK, "instagram_url": INSTAGRAM, "facebook_url": FACEBOOK}, "blocks": {}},
+            },
+            "block_order": ["footer_copyright_jweRK8", "redes"],
+            "name": "t:names.utilities",
+            "settings": {"section_width": "page-width", "gap": 24, "divider_thickness": 1,
+                         "divider_color": LINE, "background_color": MIST,
+                         "padding-block-start": 24, "padding-block-end": 32},
+        },
+        # Rasca del 10 % (27-oct): ventana que sale una vez en el inicio y las fichas (tema/codigo/snippets/lunerie-rasca.liquid)
+        "rasca": {"type": "custom-liquid", "name": "Rasca 10 %", "settings": {
+            "custom_liquid": "{% render 'lunerie-rasca' %}", "section_width": "full-width",
+            "padding-block-start": 0, "padding-block-end": 0}},
+        # «Preferencias de cookies» (menú pie-informacion, enlace /#preferencias-cookies) reabre el panel del banner
+        "cookies": {"type": "custom-liquid", "name": "Preferencias de cookies", "settings": {
+            "custom_liquid": "<script>document.addEventListener('click', (e) => { const a = e.target.closest("
+                             "'a[href$=\"#preferencias-cookies\"]'); if (a && window.privacyBanner) { "
+                             "e.preventDefault(); window.privacyBanner.showPreferences(); } });</script>",
+            "section_width": "full-width", "padding-block-start": 0, "padding-block-end": 0}},
+    },
+    "order": ["footer_m9NzUG", "footer_utilities_jLGE8U", "rasca", "cookies"],
+}
+(OUT / "footer-group.json").write_text(json.dumps(footer, ensure_ascii=False, indent=2), encoding="utf8")
 
 
 
@@ -464,9 +502,20 @@ ficha = {
                     "width": "100%"}, "blocks": {}},
                 # Estrellas y número de opiniones bajo el título (no sale nada mientras no haya opiniones)
                 "estrellas": liquid("{% render 'lunerie-opiniones', parte: 'mini', product: product" + EJEMPLOS + " %}"),
-                "precio": {"type": "price", "settings": {
-                    "show_sale_price_first": True, "show_installments": False, "show_tax_info": False,
-                    "type_preset": "custom", "font_size": "1.125rem", "width": "100%"}, "blocks": {}},
+                # Precio con la etiqueta «Envío gratis a península» al lado (27-oct; sin precio tachado)
+                "precio": {"type": "group", "settings": {
+                    "content_direction": "row", "vertical_on_mobile": False, "horizontal_alignment": "flex-start",
+                    "vertical_alignment": "center", "gap": 14, "width": "fill"},
+                    "blocks": {
+                        "importe": {"type": "price", "settings": {
+                            "show_sale_price_first": True, "show_installments": False, "show_tax_info": False,
+                            "type_preset": "custom", "font_size": "1.125rem", "width": "fit-content"}, "blocks": {}},
+                        "envio": liquid(
+                            '<span class="lu-envio">Envío gratis a península</span>'
+                            "<style>.lu-envio{display:inline-block;padding:5px 10px;background:" + MIST + ";"
+                            "font-family:var(--font-body--family);font-size:.75rem;letter-spacing:.04em;"
+                            "color:" + SOFT + ";white-space:nowrap}</style>"),
+                    }, "block_order": ["importe", "envio"]},
                 "linea": {"type": "_divider", "settings": {"thickness": 1, "divider_color": C2,
                     "padding-block-start": 4, "padding-block-end": 4}, "blocks": {}},
                 # Las líneas de Calné, en versión verdadera:
@@ -552,6 +601,11 @@ product = {
     "sections": {
         "migas": migas,
         "main": ficha,
+        # «De cerca» (27-oct): fila de vídeos verticales del Lune (parte 'videos' de lunerie-ficha.liquid).
+        # Oculta el mismo día: con clips de IA repetía el collage de la historia (ahora la toalla se mueve ahí).
+        # Volver a enseñarla (quitar "disabled") cuando haya vídeos reales: en la muñeca, quitando un eslabón.
+        "videos": {**parte("videos", arriba=40, abajo=48, ancho="full-width", snippet="lunerie-ficha",
+                           extra=", product: product"), "disabled": True},
         # Debajo de la ficha, como Olivia Jewelry (26-oct): foto grande · tres datos · texto · collage.
         # Solo sale en el reloj Lune (tema/codigo/snippets/lunerie-ficha.liquid).
         "historia": parte("historia", arriba=0, abajo=24, ancho="full-width", snippet="lunerie-ficha",
@@ -580,7 +634,7 @@ product = {
                 "padding-block-start": 48, "padding-block-end": 64},
         },
     },
-    "order": ["migas", "main", "historia", "opiniones", "recomendados"],
+    "order": ["migas", "main", "videos", "historia", "opiniones", "recomendados"],
 }
 if not SEGUNDO_RELOJ:
     _det = product["sections"]["main"]["blocks"]["product-details"]
@@ -658,4 +712,11 @@ if TIENDA.exists():
         (TIENDA / f.relative_to(OUT / "codigo")).write_text(f.read_text(encoding="utf8"), encoding="utf8")
     for nombre, carpeta in DESTINO.items():
         (TIENDA / carpeta / nombre).write_text((OUT / nombre).read_text(encoding="utf8"), encoding="utf8")
+    # Textos del tema que cambiamos (locales/es.json de Horizon). El del email del pie no cabía en la columna.
+    es = TIENDA / "locales" / "es.json"
+    if es.exists():
+        t = es.read_text(encoding="utf8")
+        t2 = t.replace('"placeholder": "Dirección de correo electrónico"', '"placeholder": "Tu email"', 1)
+        if t2 != t:
+            es.write_text(t2, encoding="utf8")
 print("ok")

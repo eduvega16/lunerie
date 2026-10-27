@@ -6,6 +6,12 @@
     Solo para el reloj Lune (el collar tendrá la suya). Las fotos son archivos de Shopify (Contenido → Archivos)
     con nombre fijo: lune-editorial-detalle / perfil / curva / toalla / pelo .jpg. Para cambiar una foto, subir otra
     con el mismo nombre (o cambiar aquí el nombre).
+  · videos: fila «De cerca» de vídeos verticales, justo debajo de la ficha (como el «As Seen On You» de otras
+    tiendas, pero con título honesto: son nuestros, no de clientas). Se reproducen solos, sin sonido, al verse.
+    OCULTA desde el 27-oct (sección con "disabled" en build.py): con clips de IA repetía el collage y cortaba el
+    ritmo de la página. Volver a usarla cuando haya vídeos reales (en la muñeca, quitando un eslabón).
+    Cada vídeo es «URL del mp4|foto del primer fotograma» (archivos de Shopify; los ficheros, en marca/videos-ficha/).
+    Solo clips donde el reloj se ve de su tamaño real (en los de perfil y pelo de Kling sale demasiado grande).
   OJO: nada de «resistente al agua» ni «hipoalergénico» (no está confirmado por escrito) ni 2 años de garantía.
 {%- endcomment -%}
 {%- case parte -%}
@@ -44,8 +50,19 @@
         </div>
 
         <div class="lu-hist__collage">
-          {%- assign nombres = 'lune-editorial-perfil.jpg,lune-editorial-curva.jpg,lune-editorial-toalla.jpg,lune-editorial-pelo.jpg' | split: ',' -%}
+          {%- comment -%} La toalla es un vídeo (27-oct): una «foto que se mueve» en el collage, en lugar de la fila
+            «De cerca», que repetía la misma escena. Recortado a 4:5 en marca/videos-ficha/lune-collage-toalla.mp4. {%- endcomment -%}
+          {%- assign nombres = 'lune-editorial-perfil.jpg,lune-editorial-curva.jpg,video-toalla,lune-editorial-pelo.jpg' | split: ',' -%}
           {%- for nombre in nombres -%}
+            {%- if nombre == 'video-toalla' -%}
+              <figure>
+                <video data-lu-auto muted loop playsinline preload="none" aria-hidden="true"
+                  {% if images['lune-collage-toalla.jpg'] %}poster="{{ images['lune-collage-toalla.jpg'] | image_url: width: 716 }}"{% endif %}>
+                  <source src="https://cdn.shopify.com/videos/c/o/v/a8b7a140ff1840eda2d6d3114da8177b.mp4" type="video/mp4">
+                </video>
+              </figure>
+              {%- continue -%}
+            {%- endif -%}
             {%- assign foto = images[nombre] -%}
             {%- if foto -%}
               <figure>
@@ -55,13 +72,55 @@
           {%- endfor -%}
         </div>
       </div>
+      {%- render 'lunerie-ficha', parte: 'reproducir' -%}
     {%- endif -%}
+
+  {%- when 'videos' -%}
+    {%- if product.handle == 'reloj-lune' -%}
+      {%- comment -%} Para añadir un vídeo (p. ej. los reales de Edu con la muestra): subir el mp4 y su .jpg a
+        Contenido → Archivos y añadir aquí su URL y el nombre del .jpg. {%- endcomment -%}
+      {%- assign videos = 'https://cdn.shopify.com/videos/c/o/v/b73822059aae467fbc44bdfb69e4d337.mp4|lune-video-toalla-a.jpg,https://cdn.shopify.com/videos/c/o/v/116882ac1673478c8c097726237b8d75.mp4|lune-video-macro.jpg,https://cdn.shopify.com/videos/c/o/v/103adadc4f164cab98f110ae5c84637f.mp4|lune-video-toalla-b.jpg' | split: ',' -%}
+      <div class="lu-vid">
+        <h2 class="lu-vid__titulo">De cerca</h2>
+        <div class="lu-vid__fila">
+          {%- for v in videos -%}
+            {%- assign partes = v | split: '|' -%}
+            {%- assign poster = images[partes[1]] -%}
+            <figure class="lu-vid__item">
+              <video data-lu-auto muted loop playsinline preload="none" aria-hidden="true"
+                {% if poster %}poster="{{ poster | image_url: width: 540 }}"{% endif %}>
+                <source src="{{ partes[0] }}" type="video/mp4">
+              </video>
+            </figure>
+          {%- endfor -%}
+        </div>
+      </div>
+      {%- render 'lunerie-ficha', parte: 'reproducir' -%}
+    {%- endif -%}
+
+  {%- when 'reproducir' -%}
+    {%- comment -%} Vídeos con data-lu-auto: se reproducen solos (sin sonido) mientras se ven y se paran al salir.
+      Si el móvil pide «reducir movimiento», no se mueven solos: se quedan en la foto con los controles. {%- endcomment -%}
+    <script>
+      (() => {
+        const vids = [...document.querySelectorAll('video[data-lu-auto]:not([data-lu-visto])')];
+        vids.forEach((v) => v.setAttribute('data-lu-visto', ''));
+        if (matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
+          vids.forEach((v) => { v.controls = true; v.removeAttribute('aria-hidden'); });
+          return;
+        }
+        const io = new IntersectionObserver((es) => es.forEach((e) => {
+          if (e.isIntersecting) e.target.play().catch(() => {}); else e.target.pause();
+        }), { threshold: 0.4 });
+        vids.forEach((v) => io.observe(v));
+      })();
+    </script>
 {%- endcase -%}
 
 {% stylesheet %}
   .lu-hist{display:grid;gap:6px;padding-inline:clamp(0px,1.6vw,24px)}
   .lu-hist figure{margin:0;overflow:hidden;background:#F2F4F2}
-  .lu-hist img{display:block;width:100%;height:100%;object-fit:cover}
+  .lu-hist img,.lu-hist video{display:block;width:100%;height:100%;object-fit:cover}
   .lu-hist__grande{aspect-ratio:4/5}
   @media (min-width:750px){.lu-hist__grande{aspect-ratio:2/1}}
 
@@ -88,4 +147,17 @@
   /* Collage: dos columnas, fotos 4:5 con una línea fina de separación */
   .lu-hist__collage{display:grid;grid-template-columns:1fr 1fr;gap:6px}
   .lu-hist__collage figure{aspect-ratio:4/5}
+
+  /* «De cerca»: vídeos 9:16 en fila (en móvil se pasan con el dedo) */
+  .lu-vid__titulo{margin:0 0 22px;text-align:center;font-family:var(--font-heading--family);font-weight:400;
+    font-size:clamp(1.75rem,3.2vw,2.25rem);line-height:1.1;color:#16201B}
+  .lu-vid__fila{display:flex;justify-content:center;gap:6px;overflow-x:auto;scroll-snap-type:x mandatory;
+    scrollbar-width:none;padding-inline:16px;scroll-padding-inline:16px}
+  .lu-vid__fila::-webkit-scrollbar{display:none}
+  .lu-vid__item{flex:0 0 250px;margin:0;aspect-ratio:9/16;overflow:hidden;background:#F2F4F2;scroll-snap-align:start}
+  .lu-vid video{display:block;width:100%;height:100%;object-fit:cover}
+  @media (max-width:749px){
+    .lu-vid__fila{justify-content:flex-start}
+    .lu-vid__item{flex-basis:44vw}
+  }
 {% endstylesheet %}

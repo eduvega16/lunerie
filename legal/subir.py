@@ -2,6 +2,8 @@
 
 Los datos personales NO se guardan en el repositorio: se pasan al ejecutar, por variables de entorno.
     LUNERIE_NOMBRE="…" LUNERIE_NIF="…" LUNERIE_DIRECCION="…" python legal/subir.py
+Sin esas variables, se leen de la política de privacidad que ya está en Shopify (línea «Responsable»).
+Con nombres de fichero, sube solo esos:  python legal/subir.py privacidad.md
 Requiere `shopify store auth` hecho para la tienda (ver CLAUDE.md, apartado 6).
 """
 import json, os, pathlib, re, subprocess, sys, tempfile
@@ -18,12 +20,12 @@ POLITICAS = {  # fichero → tipo de política de Shopify (Configuración → Po
     "contacto.md": "CONTACT_INFORMATION",
 }
 PAGINAS = {"envios.md": "envios", "preguntas-frecuentes.md": "preguntas-frecuentes"}  # fichero → handle
-
-datos = {k: os.environ.get(f"LUNERIE_{k}", "").strip() for k in ("NOMBRE", "NIF", "DIRECCION")}
-if not all(datos.values()):
-    sys.exit("Faltan LUNERIE_NOMBRE, LUNERIE_NIF o LUNERIE_DIRECCION")
-HUECOS = {"[NOMBRE]": datos["NOMBRE"], "[NIF]": datos["NIF"], "[DIRECCIÓN]": datos["DIRECCION"],
-          "[DIRECCIÓN DE DEVOLUCIONES]": datos["DIRECCION"]}
+SOLO = set(sys.argv[1:])  # vacío = todo
+if SOLO - set(POLITICAS) - set(PAGINAS):
+    sys.exit(f"No conozco: {', '.join(sorted(SOLO - set(POLITICAS) - set(PAGINAS)))}")
+if SOLO:
+    POLITICAS = {f: t for f, t in POLITICAS.items() if f in SOLO}
+    PAGINAS = {f: h for f, h in PAGINAS.items() if f in SOLO}
 
 
 def html(fichero):
@@ -50,6 +52,19 @@ def gql(query, variables):
         return json.loads(salida)
     except json.JSONDecodeError:
         sys.exit(f"Error de Shopify CLI:\n{salida}\n{r.stderr}")
+
+
+datos = {k: os.environ.get(f"LUNERIE_{k}", "").strip() for k in ("NOMBRE", "NIF", "DIRECCION")}
+if not all(datos.values()):
+    # Los mismos que ya están publicados: «Responsable: [NOMBRE] · NIF [NIF] · [DIRECCIÓN]» (no se imprimen)
+    politicas = gql("query { shop { shopPolicies { type body } } }", {})["shop"]["shopPolicies"]
+    privacidad = next((p["body"] for p in politicas if p["type"] == "PRIVACY_POLICY"), "")
+    m = re.search(r"Responsable:</strong>\s*(.+?)\s*·\s*NIF\s*(.+?)\s*·\s*(.+?)\s*</li>", privacidad, re.S)
+    if not m:
+        sys.exit("Faltan LUNERIE_NOMBRE, LUNERIE_NIF o LUNERIE_DIRECCION (y no están en la política publicada)")
+    datos = dict(zip(("NOMBRE", "NIF", "DIRECCION"), m.groups()))
+HUECOS = {"[NOMBRE]": datos["NOMBRE"], "[NIF]": datos["NIF"], "[DIRECCIÓN]": datos["DIRECCION"],
+          "[DIRECCIÓN DE DEVOLUCIONES]": datos["DIRECCION"]}
 
 
 for fichero, tipo in POLITICAS.items():

@@ -10,13 +10,7 @@
   Partes: lista (la sección) · mini (estrellas bajo el título) · cabecera · tarjeta · estrellas.
 {%- endcomment -%}
 {%- liquid
-  # Seguro: los ejemplos caducan solos (28-oct-2026 12:00 hora de España) aunque se olvide quitarlos
-  if ejemplos
-    assign ahora = 'now' | date: '%s' | plus: 0
-    if ahora > 1793185200
-      assign ejemplos = false
-    endif
-  endif
+  # Los ejemplos ya no caducan solos (Edu, 27-oct): hay que quitarlos a mano antes de abrir la tienda
   if parte == 'lista' or parte == 'mini'
     assign total = 0
     assign suma = 0

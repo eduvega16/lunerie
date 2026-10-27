@@ -1,78 +1,96 @@
-# Test del reloj Lune · plan de lanzamiento
+# Test del reloj Lune · campaña de Meta
 
-**Objetivo:** lanzar el test de ~90 € **en las 48 h siguientes a que llegue la muestra del BS** (llega entre el 16 y el
-29-oct) y decidir con datos antes del 9-nov. Reglas de decisión: CLAUDE.md, apartados 5.1 y 7.
+**Estado (cierre del 27-oct, noche):** campaña **rehecha al formato Advantage+**, **en borrador y SIN ACTIVAR** en
+«LUNERIE PUBLI» (no gasta nada). Falta solo quitar las opiniones de ejemplo de la ficha: la tienda ya está abierta y
+no se mandan anuncios a una página con opiniones inventadas. La campaña vieja (ABO) la borra Edu a mano.
+Fase drop: solo el verde, 49,95 € (44,96 € con el rasca del 10 %), sin caja, entrega 7-12 días laborables.
+Reglas de decisión: CLAUDE.md, apartados 5.1 y 7.
 
-## 1. Antes de que llegue la muestra (ya)
+## 1. Antes de activarla (en este orden)
 
-| Quién | Qué | Estado |
-|---|---|---|
-| Edu | Formato de moneda «44,95 €»: Configuración → General → Moneda → `{{amount_with_comma_separator}} €` | |
-| Edu | Decidir la dirección del aviso legal (completa o como está) | |
-| Edu | Instagram @lunerie_co: archivar lo antiguo, bio, avatar, enlace lunerie.es | |
-| Edu | Borrar/archivar la página de Facebook antigua (1311701355367588) | |
-| Claude | Textos de los anuncios (abajo) y estructura de la campaña | ✅ |
-| Claude | Portada: preparada la vuelta a la foto en óvalo si el vídeo nuevo no está a tiempo | |
-
-## 2. El día que llega la muestra (2-3 h de trabajo)
-
-1. **Apuntar cuántos días ha tardado** desde el pedido → ese es el plazo real → Claude quita [PLAZO] de envíos,
-   preguntas frecuentes y ficha.
-2. **Mirar la pieza:** ¿piedras de resina o vidrio? ¿logo BS en la esfera? ¿el cierre aguanta? ¿parece barato?
-   Si algo falla, se para aquí.
-3. **Fotos** (móvil, luz de ventana, cartulina blanca o niebla, formato 4:5): reloj entero de frente · detalle de
-   la esfera · detalle de las piedras · en la muñeca · en la caja.
-4. **Vídeos** (vertical 9:16, 10-15 s cada uno, sin música; la música se pone en Meta):
-   - **A** en la muñeca, girándola despacio para que brillen las piedras.
-   - **B** abriendo la caja: tapa, reloj dentro, sacarlo.
-   - **C** dos relojes juntos (los dos colores) sobre la mesa, la mano coge uno.
-   - **D** quitando un eslabón con el extractor (para la duda «¿me quedará grande?»).
-5. Pasármelo todo → Claude: fotos a 4:5 y a la ficha, vídeo de portada, anuncios montados.
-6. **Quitar la contraseña** de la tienda y **lanzar**.
-
-## 3. Campaña (Meta, cuenta «LUNERIE PUBLI»)
-
-- **Objetivo:** Ventas · evento **Compra** (píxel ya probado).
-- **Presupuesto por conjunto (ABO):** 3 conjuntos × 10 €/día × 3 días.
-- **Público:** España (península + Baleares), mujeres y hombres 25-60 (mucho regalo lo compran ellos), sin
-  intereses (Advantage+ / amplio). Ubicaciones automáticas.
-- **Un ángulo por conjunto**, 2 anuncios en cada uno (vídeo + foto). El enlace va a la ficha del reloj.
-- **Cada día:** gasto, impresiones, clics, carritos y compras al radar (`cli.py test`). No tocar nada las
-  primeras 48 h salvo que un conjunto pase de ~18 € sin un solo carrito.
-
-## 4. Anuncios
-
-Reglas: pocas palabras, sin emojis, sin «¡OFERTA!», sin cuenta atrás, sin «jade», «piedras preciosas» ni «resistente
-al agua», sin precio tachado.
-
-### Conjunto 1 · Regalo («para ella»)
-- **Texto:** Un reloj que se lleva como una joya. Esfera ovalada, piedras verdes y eslabones finos. Llega en su
-  caja, listo para regalar. Envío gratis a península.
-- **Titular:** Reloj Lune · 44,95 €
-- **Descripción:** Para Navidad, pídelo antes del 1 de diciembre.
-- **Creatividades:** vídeo B (abriendo la caja) · foto del reloj en la caja.
-
-### Conjunto 2 · Estilo («vintage que se siente actual»)
-- **Texto:** Pequeño, ovalado y con piedras. Un aire vintage que se siente actual, para llevarlo cada día como
-  una pulsera fina.
-- **Titular:** El reloj Lune
-- **Descripción:** Dorado o plateado · envío gratis a península.
-- **Creatividades:** vídeo A (en la muñeca) · foto de detalle de la esfera.
-
-### Conjunto 3 · Dos («uno para ti y otro para regalar»)
-- **Texto:** Uno para ti y otro para regalar. Añade dos a la cesta y el segundo se queda en 19,95 €.
-- **Titular:** El segundo reloj, por 19,95 €
-- **Descripción:** Reloj Lune · envío gratis a península.
-- **Creatividades:** vídeo C (los dos colores juntos) · foto de los dos relojes.
-
-**Botón:** «Comprar» en los tres.
-
-## 5. Cuándo se para o se sube (resumen)
-
-| Situación | Qué se hace |
+| Quién | Qué |
 |---|---|
-| ~18 € gastados en un conjunto sin carritos | Apagar ese conjunto |
-| ~36 € gastados en total sin ventas | Parar el test |
-| CTR < 1 % o CPC > 0,90 € | Cambiar el vídeo o el texto de ese conjunto |
+| Claude | Quitar las **opiniones de ejemplo** de la ficha (en cuanto Edu diga que su compañero ya las vio) |
+| ~~Claude~~ | ~~Plazo del pago en 7-12 días~~ **Hecho el 27-oct** (pago probado: Madrid y Palma «5 nov-12 nov», Las Palmas sin envío) |
+| Edu | Instagram **@luneriejewelry** (cambiado el 27-oct; nombre «Lunerie \| Relojes y joyas»): pegar la bio y los textos de `anuncios/instagram.md`, fijar 3 y archivar lo antiguo (los anuncios salen con esa cuenta) |
+| ~~Edu~~ | ~~Quitar la contraseña de la tienda~~ **Hecho el 27-oct** (la tienda ya está abierta) |
+| Edu | **Borrar la campaña vieja** «Lune · Test 90 € · Ventas (ABO)» (52564402827594) en el Administrador de anuncios: marcar solo esa → papelera. El conector no puede borrar una campaña que nunca se publicó |
+| Claude | **Publicar solo la campaña nueva** con el conector (`ads_activate_entity` sobre 52564454147994, `publish_as_active=true`). No usar «Publicar» en el Administrador de anuncios mientras exista el borrador viejo |
+
+## 2. Por qué está montada así (tendencia de Meta, octubre de 2026)
+
+- Meta recomienda **campañas de ventas Advantage+**: presupuesto a nivel de campaña, público Advantage+ y
+  ubicaciones automáticas. Según Meta, bajan de media un 9 % el coste por compra frente a campañas con restricciones.
+- **No segmentar:** con el sistema de anuncios actual (Andromeda), Meta elige a quién enseñar cada anuncio según
+  el propio anuncio. Los intereses y las edades estrechas le quitan margen. Lo que sí se fija: país, zonas sin
+  envío y mayores de 18.
+- **Pocos conjuntos y anuncios variados:** dividir 30 €/día en 3 conjuntos deja cada uno sin datos. Con un solo
+  conjunto, Meta mueve el dinero al anuncio que funciona. La variedad tiene que estar en los anuncios (ángulos,
+  escenas y formatos distintos), no en el público.
+- Lo que cambia para leer el test: ya no se compara «conjunto contra conjunto». Se mira la campaña entera (¿vende
+  el reloj?) y, dentro, qué anuncio se lleva el gasto y las ventas.
+
+Fuentes: [Meta: Advantage+ sales campaigns](https://www.facebook.com/business/help/1362234537597370) ·
+[Meta: volumen de anuncios](https://www.facebook.com/business/help/2720085414702598) ·
+[Techsist Labs: presupuestos pequeños 2026](https://techsistlabs.com/insights/meta-ads-small-budgets-2026/) ·
+[Skaleit: estructura tras Andromeda](https://skaleit.agency/blog/meta-ads-testing-structure-post-andromeda/) ·
+[Superscale: CBO vs ABO 2026](https://superscale.ai/learn/cbo-vs-abo-advantage-plus/)
+
+## 3. Campaña montada
+
+- **Campaña:** «Lune · Lanzamiento · Ventas (Advantage+)» · id **52564454147994** · objetivo Ventas · compra del
+  píxel 1096538246614496 · **30 €/día a nivel de campaña** (3 días = 90 €) · puja de volumen máximo, sin tope.
+- **1 conjunto:** «España península y Baleares · abierto» (52564454188194) · España sin Canarias, Ceuta ni Melilla
+  (excluidas con círculos sobre cada isla y ciudad: no enviamos allí) · 18+ · **sin edades, sexo ni intereses
+  sugeridos** · ubicaciones automáticas · página «L U N E R I E» + Instagram luneriejewelry (antes lunerie_co; mismo id).
+- **6 anuncios** (vídeo 9:16 + foto 4:5 de cada ángulo), botón «Comprar», a
+  `lunerie.es/products/reloj-lune?utm_source=meta&utm_medium=paid&utm_campaign=test-lune&utm_content=<ángulo>-<formato>`:
+
+  | Anuncio | id |
+  |---|---|
+  | Regalo · vídeo | 52564454220194 |
+  | Regalo · foto | 52564454223594 |
+  | Estilo · vídeo | 52564454224394 |
+  | Estilo · foto | 52564454225994 |
+  | Para ti · vídeo | 52564454227794 |
+  | Para ti · foto | 52564454233794 |
+
+- Mejoras automáticas de Meta (Advantage+ creativo) **desactivadas**: no reescribe los textos ni toca las fotos
+  (se quedan así por la voz de marca).
+- **Aviso de IA:** Edu decidió no declararlo (27-oct).
+- **Borrador viejo:** «Lune · Test 90 € · Ventas (ABO)» (52564402827594, 3 conjuntos × 10 €) sigue en borrador sin
+  publicar. No publicarlo; borrarlo cuando Edu diga.
+- **Creatividades** (`marca/fotos-ia/anuncios/test-lune/`; copias en Archivos de Shopify como `anuncio-lune-*`):
+  - Regalo: vídeo toalla → macro → toalla → cielo con «LUNERIE» (10 s) · foto editorial de perfil.
+  - Estilo: vídeo macro en ida y vuelta (10 s) · foto del reloj en curva sobre gris.
+  - Para ti: vídeo toalla-a en ida y vuelta (12 s) · foto de la muñeca con jersey.
+  - Solo clips donde el reloj se ve de su tamaño (en perfil y pelo de Kling sale demasiado grande).
+
+## 4. Textos
+
+Reglas: pocas palabras, sin emojis, sin «¡OFERTA!», sin cuenta atrás, sin «jade», «piedras preciosas» ni
+«resistente al agua», sin precio tachado. Descripción en los tres: «Envío gratis a península».
+
+| Ángulo | Texto principal | Titular |
+|---|---|---|
+| Regalo | Un reloj que se lleva como una joya. Esfera ovalada de 12 mm, piedras verdes y eslabones finos. Para Navidad, pídelo antes del 5 de diciembre. Y un 10 % de regalo en tu primer pedido. | Reloj Lune · 49,95 € |
+| Estilo | Pequeño, ovalado y con piedras. Un aire vintage que se siente actual, para llevarlo cada día como una pulsera fina. Y un 10 % de regalo en tu primer pedido. | El reloj Lune · 49,95 € |
+| Para ti | No hace falta esperar a que te lo regalen. Un reloj pequeño, con piedras verdes y eslabones finos, para llevarlo todos los días. Y un 10 % de regalo en tu primer pedido. | Para ti, el reloj Lune |
+
+## 5. Después
+
+- **Lo que más mueve la aguja ahora es la variedad de anuncios.** Los 6 actuales son de IA y casi todos con la
+  misma escena (toalla). Los **vídeos reales de Edu** con la muestra (en la muñeca girándola, quitando un eslabón,
+  abriendo el paquete) entran como **anuncios nuevos en el mismo conjunto**, sin tocar los que ya corren.
+- **Cada día:** gasto, impresiones, clics, carritos y compras al radar (`cli.py test`). **No tocar nada las
+  primeras 48 h** (ni presupuesto ni anuncios) salvo que la campaña pase de ~18 € sin un solo carrito.
+- «Aprendizaje limitado» saldrá casi seguro: es normal con 30 €/día. No es motivo para cambiar nada.
+
+| Situación (se mira en la campaña) | Qué se hace |
+|---|---|
+| ~18 € gastados sin carritos | Revisar la ficha y los anuncios; si nada falla, parar |
+| ~36 € gastados sin ventas | Parar el test |
+| Un anuncio con gasto y CTR < 1 % tras 48 h | Apagar ese anuncio y meter uno nuevo |
+| CPC > 0,90 € en la campaña | Cambiar vídeos o textos |
 | Coste por venta entre 12,5 y 17,9 € | Probar otras creatividades |
-| ≥ 3 ventas a ≤ 12,5 € cada una | Escalar: subir presupuesto un 20-30 % cada 2 días |
+| ≥ 3 ventas a ≤ 12,5 € cada una | Escalar: subir el presupuesto de la campaña un 20 % cada 2-3 días |

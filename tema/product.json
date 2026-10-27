@@ -95,21 +95,45 @@
             "estrellas": {
               "type": "custom-liquid",
               "settings": {
-                "custom_liquid": "{% render 'lunerie-opiniones', parte: 'mini', product: product %}"
+                "custom_liquid": "{% render 'lunerie-opiniones', parte: 'mini', product: product, ejemplos: true %}"
               },
               "blocks": {}
             },
             "precio": {
-              "type": "price",
+              "type": "group",
               "settings": {
-                "show_sale_price_first": true,
-                "show_installments": false,
-                "show_tax_info": false,
-                "type_preset": "custom",
-                "font_size": "1.125rem",
-                "width": "100%"
+                "content_direction": "row",
+                "vertical_on_mobile": false,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "gap": 14,
+                "width": "fill"
               },
-              "blocks": {}
+              "blocks": {
+                "importe": {
+                  "type": "price",
+                  "settings": {
+                    "show_sale_price_first": true,
+                    "show_installments": false,
+                    "show_tax_info": false,
+                    "type_preset": "custom",
+                    "font_size": "1.125rem",
+                    "width": "fit-content"
+                  },
+                  "blocks": {}
+                },
+                "envio": {
+                  "type": "custom-liquid",
+                  "settings": {
+                    "custom_liquid": "<span class=\"lu-envio\">Envío gratis a península</span><style>.lu-envio{display:inline-block;padding:5px 10px;background:#F2F4F2;font-family:var(--font-body--family);font-size:.75rem;letter-spacing:.04em;color:#3D4842;white-space:nowrap}</style>"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "importe",
+                "envio"
+              ]
             },
             "linea": {
               "type": "_divider",
@@ -539,6 +563,17 @@
         "padding-block-end": 48
       }
     },
+    "videos": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{% render 'lunerie-ficha', parte: 'videos', product: product %}",
+        "background_color": "",
+        "section_width": "full-width",
+        "padding-block-start": 40,
+        "padding-block-end": 48
+      },
+      "disabled": true
+    },
     "historia": {
       "type": "custom-liquid",
       "settings": {
@@ -552,7 +587,7 @@
     "opiniones": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "{% render 'lunerie-opiniones', parte: 'lista', product: product %}",
+        "custom_liquid": "{% render 'lunerie-opiniones', parte: 'lista', product: product, ejemplos: true %}",
         "background_color": "",
         "section_width": "page-width",
         "padding-block-start": 48,
@@ -645,6 +680,7 @@
   "order": [
     "migas",
     "main",
+    "videos",
     "historia",
     "opiniones",
     "recomendados"

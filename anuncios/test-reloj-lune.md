@@ -43,20 +43,41 @@ Fuentes: [Meta: Advantage+ sales campaigns](https://www.facebook.com/business/he
 - **1 conjunto:** «España península y Baleares · abierto» (52564454188194) · España sin Canarias, Ceuta ni Melilla
   (excluidas con círculos sobre cada isla y ciudad: no enviamos allí) · 18+ · **sin edades, sexo ni intereses
   sugeridos** · ubicaciones automáticas · página «L U N E R I E» + Instagram luneriejewelry (antes lunerie_co; mismo id).
-- **6 anuncios** (vídeo 9:16 + foto 4:5 de cada ángulo), botón «Comprar», a
-  `lunerie.es/products/reloj-lune?utm_source=meta&utm_medium=paid&utm_campaign=test-lune&utm_content=<ángulo>-<formato>`:
+- **6 anuncios** (vídeo 9:16 + foto 4:5 de cada ángulo), botón **«Más información»** (Edu, 27-oct; antes
+  «Comprar»), a
+  `lunerie.es/products/reloj-lune?utm_source=meta&utm_medium=paid&utm_campaign=test-lune&utm_content=<ángulo>-<formato>`.
+  **Los que corren** (28-oct, ~00 h): fotos «· v3» y vídeos «· v4 música»:
 
   | Anuncio | id |
   |---|---|
-  | Regalo · vídeo | 52564454220194 |
-  | Regalo · foto | 52564454223594 |
-  | Estilo · vídeo | 52564454224394 |
-  | Estilo · foto | 52564454225994 |
-  | Para ti · vídeo | 52564454227794 |
-  | Para ti · foto | 52564454233794 |
+  | Regalo · vídeo · v4 música | 52564510681994 |
+  | Regalo · foto · v3 | 52564508051194 |
+  | Estilo · vídeo · v4 música | 52564510653794 |
+  | Estilo · foto · v3 | 52564508048994 |
+  | Para ti · vídeo · v4 música | 52564510638394 |
+  | Para ti · foto · v3 | 52564507938794 |
 
+  En pausa, con 0 € gastados: los 6 originales (sin «v2/v3»; Meta no los sacaba en 18 ubicaciones porque el
+  título y la descripción iban también dentro del botón, un campo obsoleto), los 6 «· v2» (botón «Comprar») y
+  los 3 vídeos «· v3» (sin música: 52564508053394, 52564508062194, 52564508065594).
 - Mejoras automáticas de Meta (Advantage+ creativo) **desactivadas**: no reescribe los textos ni toca las fotos
-  (se quedan así por la voz de marca).
+  (se quedan así por la voz de marca). **Excepción: música automática de Meta (`audio`) activada en las 3 fotos**
+  (Meta solo pone música a anuncios de foto: Reels, Historias y Feed de Instagram; en vídeo no se puede).
+- **Música de los vídeos:** «Miracles» de Spatial (elegida por Edu el 27-oct; `marca/musica/miracles-spatial.m4a`,
+  4 min, de Meta Sound Collection, confirmado por Edu). Mezclada en `test-lune/con-musica/*.mp4`: tramo desde
+  **1:12** (Edu: «ese cachito es más suave»; 1:12-1:14 es el final de la parte fuerte y de 1:14 a 1:35 la suave),
+  entrada 0,4 s, salida 1,5 s, −14 LUFS; la imagen no se toca. Primera mezcla (desde 0:21,85) descartada.
+  **Al final no se usa:** Edu eligió otra (abajo). Se queda de recambio.
+- **Música que va en los vídeos «· v4» (27-oct, ~23:55): `marca/musica/agua-mariano.mp3`** («Agua», Mariano;
+  24,5 s). Ojo: el archivo es el audio de un TikTok bajado con ssstik.io y renombrado (mismo tamaño, hora y
+  codificador), no una descarga de la biblioteca de Meta. Claude avisó del riesgo de derechos; **Edu dice que lo
+  comprobó con una herramienta y no tiene copyright, y decidió usarla.** Si Meta silencia o rechaza un vídeo,
+  cambiar a «Miracles» (`test-lune/con-musica/`). Mezcla en `test-lune/con-musica-agua/` desde el segundo 3,3
+  (antes hay un fundido), −14 LUFS (el original venía a −33: subido ~19 dB). Subidos a Archivos de Shopify
+  (`anuncio-lune-agua-*.mp4`; para Meta se usa `originalSource.url`, 1080×1920, porque las copias de Shopify
+  bajan a 606×1080) y de ahí a Meta: vídeos 1663797128692857 (para ti), 1674516044056794 (estilo),
+  1679453257127833 (regalo).
+  Nada de canciones conocidas ni de TikTok (sin licencia para anuncios).
 - **Aviso de IA:** Edu decidió no declararlo (27-oct).
 - **Borrador viejo:** «Lune · Test 90 € · Ventas (ABO)» (52564402827594, 3 conjuntos × 10 €) sigue en borrador sin
   publicar. No publicarlo; borrarlo cuando Edu diga.

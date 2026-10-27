@@ -426,12 +426,6 @@ gafas con cámara IA (69,95-79,95 €) · descartados: micro-infusión, paddle s
       Permisos de metaobjetos dados a la CLI el 27-oct (si `shopify store auth` dice «Port 13387 is already in use»,
       matar el `node` que lo ocupa). `shopify theme dev` da «you don't have access to this dev store»: para ver algo
       sin tocar la tienda, `shopify theme push --unpublished` y el enlace `?preview_theme_id=`.
-      **EJEMPLOS EN LA TIENDA (27-oct, a petición de Edu, para ver cómo quedan):** 6 opiniones inventadas
-      (**sin la etiqueta «Ejemplo» desde la tarde del 27-oct**, para enseñárselas a un compañero: parecen reales)
-      con fotos de compradoras de AliExpress (`snippets/lunerie-opiniones-ejemplos.liquid` + `assets/opinion-
-      ejemplo-1..5.jpg`, solo en la tienda y en `tema/tienda/`, no en git). **Ya NO caducan solas** (Edu quitó la
-      caducidad el 27-oct): hay que quitarlas a mano: `python tema/build.py` (sin `LUNERIE_EJEMPLOS`) → push de `templates/product.json` →
-      borrar el snippet y las 5 fotos del tema (`themeFilesDelete`).
 - [x] **Pie nuevo (27-oct, en producción), como el de Olivia Jewelry:** 4 columnas (Sobre Lunerie · La tienda ·
       Información · Cartas de Lunerie con suscripción y «Puedes darte de baja cuando quieras. Privacidad») + medios
       de pago (los activos en Shopify, salen solos) + línea con © y redes (Instagram luneriejewelry y la página de
@@ -458,8 +452,7 @@ gafas con cámara IA (69,95-79,95 €) · descartados: micro-infusión, paddle s
       del inicio, la caja verde de la ficha y el aviso de la cesta; bajo el botón de la portada ahora pone «Envío
       gratis a península») · descuento automático **desactivado** (no borrado) · quitado de Preguntas frecuentes y
       del ejemplo de los Términos. Volver: `True` + reactivarlo en Descuentos.
-- [x] Contraseña de la tienda **quitada** (visto el 27-oct por la noche). **Ojo: las opiniones de ejemplo siguen
-      puestas** (ver «Opiniones» y apartado 8): quitarlas es lo primero.
+- [x] Contraseña de la tienda **quitada** (visto el 27-oct por la noche).
 
 > **OJO (22-oct): el conector de Shopify de claude.ai está conectado a STAR BRICK (otra tienda de Edu), no a Lunerie.**
 > Solo puede estar en una tienda a la vez. **Para Lunerie, usar SIEMPRE la CLI** (`shopify store execute -s
@@ -486,17 +479,23 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
 ## 8. Calendario y pendientes (a 27-oct-2026)
 
 ### Para empezar la próxima sesión (después del 27-oct) — abrir conversación nueva por sesión.
-**Dónde nos quedamos (cierre del 27-oct, noche): todo listo para lanzar menos las opiniones de ejemplo.**
-- **La tienda YA ESTÁ ABIERTA** (sin contraseña, comprobado el 27-oct por la noche) **y sigue enseñando las 6
-  opiniones de EJEMPLO** (inventadas, sin etiqueta, con fotos de compradoras de AliExpress). Edu pidió «no toques
-  nada de las reseñas por ahora» (su compañero aún tiene que verlas). **Lo primero: preguntarle** y ofrecer
-  (a) copia del tema **sin publicar** con los ejemplos para el compañero (enlace `?preview_theme_id=`) y quitarlos
-  de la publicada, o (b) quitarlos ya. Cómo quitarlos: apartado 6, «Opiniones».
-- **Campaña de Meta SIN ACTIVAR** (lista, en borrador): «Lune · Lanzamiento · Ventas (Advantage+)»
-  (52564454147994), 30 €/día de campaña, 1 conjunto abierto, 6 anuncios de IA. Edu dijo «activa la nueva», pero
-  Claude **no la activó** porque la ficha enseña las opiniones inventadas a quien llegue desde el anuncio. En cuanto
-  se quiten: `ads_get_ad_entities` con `object_state=draft` y `object_ids=[52564454147994]` → `ads_activate_entity`
-  con esos ids y `publish_as_active=true` → comprobar en vivo. Después, 48 h sin tocar nada (apartado 7).
+**Dónde nos quedamos (27-oct, ~23 h): CAMPAÑA LANZADA.**
+- **La tienda YA ESTÁ ABIERTA** (sin contraseña, comprobado el 27-oct por la noche). **Ojo: las 6 opiniones de
+  ejemplo inventadas siguen en la ficha publicada** (comprobado con `curl` el 27-oct a las 23 h: 4 con «Compra
+  verificada», fotos `opinion-ejemplo-1..5.jpg`). Cómo quitarlas: `python tema/build.py` (sin `LUNERIE_EJEMPLOS`)
+  → push de `templates/product.json` → borrar `snippets/lunerie-opiniones-ejemplos.liquid` y las 5 fotos del tema.
+- **Campaña de Meta ACTIVA desde el 27-oct (~23 h):** «Lune · Lanzamiento · Ventas (Advantage+)»
+  (52564454147994), 30 €/día, conjunto «España península y Baleares · abierto» (52564454188194).
+  **Anuncios que corren (28-oct, ~00 h): fotos «· v3» y vídeos «· v4 música»**, todos con botón **«Más
+  información»** (Edu); las fotos con música automática de Meta (solo se puede en fotos) y los vídeos con
+  «Agua» (Mariano) metida en el archivo. Ids, origen de la música y el aviso de derechos en
+  `anuncios/test-reloj-lune.md`. El resto (originales, «v2», vídeos «v3»), en pausa con 0 €.
+  Los 6 originales están **en pausa** con 0 € gastados: Meta avisaba «no se entregará en
+  18 ubicaciones» (Reels in-stream +17) porque llevaban título y descripción dentro del botón (`call_to_action.value.
+  link_title/link_description`, obsoletos). **Al crear anuncios por API: el botón solo con `link`** (título en
+  `video_data.title` / `link_data.name`, descripción en `link_description` / `description`) y las mejoras
+  automáticas en `OPT_OUT` (`degrees_of_freedom_spec`). Queda un borrador «NO PUBLICAR · borrador de prueba
+  sobrante» (52564507156794) en pausa: no publicarlo. A partir de aquí, 48 h sin tocar nada (apartado 7).
 - **Campaña vieja** «Lune · Test 90 € · Ventas (ABO)» (52564402827594): Edu dijo borrarla, pero la herramienta
   **no puede borrar una campaña que nunca se publicó** (error 1487564 «New campaigns need to be either active or
   paused»; se volvió a dejar en pausa, sin errores). **La borra Edu** en el Administrador de anuncios: marcar solo
@@ -508,7 +507,7 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
 - **Resto, hecho y subido:** tema publicado 209073799507 · precio 49,95 € · rasca del 10 % (LUNERIE10) · opiniones
   con metaobjetos + formulario a hola@lunerie.es (Edu tiene que mandarse una de prueba) · portada con vídeo del
   verde · plazo del pago 7-12 días laborables (comprobado). Higgsfield: quedan 6,55 créditos hasta el 28-oct 21:15.
-- **Siguiente con Claude:** quitar los ejemplos → activar la campaña → apuntar cada día gasto, clics, carritos y
+- **Siguiente con Claude:** apuntar cada día gasto, clics, carritos y
   compras en el radar (`cli.py test`) → vídeos reales de Edu como anuncios nuevos en el mismo conjunto → opiniones
   reales de amigas con las muestras → vídeo de 2 min ajustando la correa.
 

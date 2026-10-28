@@ -242,7 +242,7 @@
 Collar de familia / árbol de la vida con nombres (Bervi lo vende 1 año; Amazon 42-57 €; AliExpress 1-7 €) ·
 gafas con cámara IA (69,95-79,95 €) · descartados: micro-infusión, paddle surf, pulsera tipo WHOOP, bolso hobo (réplica).
 
-### 5.4 Joyas de AliExpress (28-oct) — normalizadas, en BORRADOR (Edu: rehacer fotos con IA antes de publicar)
+### 5.4 Joyas de AliExpress (28-oct) — normalizadas y **PUBLICADAS el 28-oct** (solo Tienda online)
 Edu las empujó con DSers (12, entraron **activas, a precio de coste y con tachado = coste** → todas a borrador).
 Elegidas 4 (Edu, precios medios); las otras 8 se quedan en borrador sin tocar (anillos arcoíris y pavé, set de 4
 pendientes «para una oreja», collar de piedras «naturales», collar/pulsera de estrellas, el 2.º anillo del mes,
@@ -569,7 +569,19 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
     mitad con 34 rem de ancho (`PRODUCT_CSS`). Medido contra oliviajewelry.com a 2554 px (la pantalla de Edu): casi igual.
     Para ver la web con Playwright en este PC: `chromium.launch(executable_path=<Chrome instalado>)`, no hay navegador
     propio descargado; `wait_until='domcontentloaded'` (Olivia nunca queda «idle»).
-  - **Joyas siguen en borrador.** Falta: foto IA de Étoile, producto en niebla IA, y los pasos de «Al publicar» (5.4).
+  - **Joyas PUBLICADAS (Edu, 28-oct tarde):** las 4 ACTIVE solo en Tienda online (no en Facebook e Instagram) ·
+    «Joyas» en `main-menu` y `pie-tienda` · sección «Las joyas» del inicio activada · foto IA de Étoile (2.ª foto) ·
+    plantilla **`product.anillo.json`** (los dos anillos; es la de joya + desplegable «¿Cuál es tu talla?» bajo el selector:
+    contorno del dedo en mm → talla 12 = 52 mm, 14-15 = 54,5 mm, 17 = 57 mm; fuera de 51-59 mm, escribir a hola@) ·
+    SEO y descripción del Lune sin «dorado o plateado», «caja de regalo» ni «seis colores».
+  - **TRAMPA DE DSERS (28-oct): las variantes importadas salían «NO DISPONIBLE» en la tienda** aunque Admin decía
+    `availableForSale: true`. Su inventario estaba solo en el «almacén» `dsers-fulfillment-service`. Arreglo (como el
+    Lune): `tracked: false` en las variantes, `inventoryActivate` en el almacén de la tienda (Location 127723929939)
+    y `inventoryDeactivate` del nivel de DSers. **Las mutaciones de inventario exigen `@idempotent(key: "<uuid>")`**.
+    Al importar con DSers, hacerlo siempre antes de publicar y comprobar con `https://lunerie.es/products/<handle>.js`
+    (`available`) y que el botón de la ficha diga «AGREGAR AL CARRITO».
+  - **Trampa de mi script `gql.py`:** el CLI devuelve los fallos como `{"error": …}` (sin «s») y no los detectaba:
+    comprobar siempre el resultado leyendo el dato otra vez.
 - **Siguiente con Claude:** apuntar cada día gasto, clics, carritos y
   compras en el radar (`cli.py test`) → vídeos reales de Edu como anuncios nuevos en el mismo conjunto → ~~opiniones
   de amigas~~ (hechas el 28-oct, apartado 6; falta el OK de cada una a su texto) → vídeo de 2 min ajustando la correa.

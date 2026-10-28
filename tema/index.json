@@ -195,7 +195,6 @@
       }
     },
     "joyas": {
-      "disabled": true,
       "type": "product-list",
       "blocks": {
         "static-header": {

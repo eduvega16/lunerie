@@ -379,10 +379,9 @@ index = {
         },
         # Las joyas (28-oct): anillos, pendientes y collar de la colección «joyas» (tipo de producto Anillos,
         # Pendientes o Collares), para que la tienda no sea solo el reloj. 4 columnas en PC, 2 en móvil.
-        # Oculta mientras las joyas estén en borrador: con la colección vacía, Horizon pinta 4 productos de relleno.
-        # Quitar "disabled" al publicarlas.
+        # Publicada con las joyas el 28-oct. Si se vuelven a pasar a borrador, poner "disabled": True: con la
+        # colección vacía, Horizon pinta 4 productos de relleno.
         "joyas": {
-            "disabled": True,
             "type": "product-list",
             "blocks": {
                 "static-header": {"type": "_product-list-content", "static": True, "settings": {
@@ -709,6 +708,28 @@ _ficha = joya["sections"]["main"]["settings"]
 _ficha.update({"content_width": "content-full-width", "equal_columns": True, "limit_details_width": True, "gap": 0})
 (OUT / "product.joya.json").write_text(json.dumps(joya, ensure_ascii=False, indent=2), encoding="utf8")
 
+# Plantilla «anillo» (28-oct): la de las joyas + guía de tallas desplegable justo bajo el selector de talla (en la
+# descripción, que va cerrada, nadie la veía). Spanish talla = contorno del dedo en mm − 40: 52 → 12, 54,5 → 14-15, 57 → 17.
+anillo = copy.deepcopy(joya)
+_det = anillo["sections"]["main"]["blocks"]["product-details"]
+_det["blocks"]["guia_talla"] = liquid(
+    '<details class="lu-tallas"><summary>¿Cuál es tu talla?</summary><div>'
+    "<p>Rodea la base del dedo con un hilo o una tira de papel, marca donde se junta y mide la longitud en "
+    "milímetros. Mejor al final del día, cuando el dedo está algo más grande.</p>"
+    "<ul><li>52 mm: talla 12</li><li>54,5 mm: talla 14-15</li><li>57 mm: talla 17</li></ul>"
+    "<p>Si dudas entre dos, elige la mayor. Si ya tienes un anillo que te va bien, mide su diámetro interior y "
+    "multiplícalo por 3,14: ese es tu contorno.</p>"
+    "<p>Si tu contorno es menor de 51 mm o mayor de 59 mm, escríbenos a hola@lunerie.es y lo miramos. Y si al "
+    "recibirlo no te queda bien, tienes 14 días para devolverlo.</p></div></details>"
+    "<style>.lu-tallas{font-family:var(--font-body--family);font-size:.875rem;color:" + SOFT + "}"
+    ".lu-tallas summary{cursor:pointer;list-style:none;text-decoration:underline;text-underline-offset:4px}"
+    ".lu-tallas summary::-webkit-details-marker{display:none}"
+    ".lu-tallas div{padding-top:10px}.lu-tallas p{margin:0 0 10px}"
+    ".lu-tallas ul{margin:0 0 10px;padding-inline-start:1.1em}.lu-tallas li::marker{color:" + GOLD + "}</style>")
+_orden = _det["block_order"]
+_orden.insert(_orden.index("variantes") + 1, "guia_talla")
+(OUT / "product.anillo.json").write_text(json.dumps(anillo, ensure_ascii=False, indent=2), encoding="utf8")
+
 (OUT / "codigo" / "snippets").mkdir(parents=True, exist_ok=True)
 (OUT / "codigo" / "snippets" / "lunerie-bolitas.liquid").write_text(
     "{%- comment -%} Generado por tema/build.py (BOLITAS): bolitas de color en el selector de variantes {%- endcomment -%}\n"
@@ -772,7 +793,8 @@ if not SEGUNDO_RELOJ:
 TIENDA = OUT / "tienda"
 # password.json y cart.json no los genera build.py: son plantillas del tema con los textos en español
 DESTINO = {"password.json": "templates", "cart.json": "templates", "settings_data.json": "config", "header-group.json": "sections", "footer-group.json": "sections",
-           "index.json": "templates", "product.json": "templates", "product.joya.json": "templates"}
+           "index.json": "templates", "product.json": "templates", "product.joya.json": "templates",
+           "product.anillo.json": "templates"}
 if TIENDA.exists():
     # código del tema modificado (tema/codigo/<carpeta>/<fichero>), p. ej. snippets/variant-main-picker.liquid
     for f in (OUT / "codigo").rglob("*.liquid"):

@@ -75,7 +75,8 @@
         {%- if fecha != blank -%}<p class="lu-op__fecha">{{ fecha | date: '%d/%m/%Y' }}</p>{%- endif -%}
       </div>
       {%- if foto != blank -%}
-        <figure class="lu-op__foto">{{ foto | image_url: width: 700 | image_tag: loading: 'lazy', alt: 'Foto de ' | append: nombre, sizes: '(min-width: 750px) 200px, 38vw', widths: '300, 500, 700' }}</figure>
+        {%- assign alt_foto = 'Foto de ' | append: nombre -%}
+        <figure class="lu-op__foto">{{ foto | image_url: width: 700 | image_tag: loading: 'lazy', alt: alt_foto, sizes: '(min-width: 750px) 200px, 38vw', widths: '300, 500, 700' }}</figure>
       {%- elsif foto_url != blank -%}
         <figure class="lu-op__foto"><img src="{{ foto_url }}" alt="Foto de {{ nombre }}" loading="lazy" width="720" height="960"></figure>
       {%- endif -%}

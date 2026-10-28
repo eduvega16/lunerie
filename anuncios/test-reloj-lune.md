@@ -57,6 +57,10 @@ Fuentes: [Meta: Advantage+ sales campaigns](https://www.facebook.com/business/he
   | Para ti · vídeo · v4 música | 52564510638394 |
   | Para ti · foto · v3 | 52564507938794 |
 
+  **28-oct (12:10-13:08):** Edu les aplicó en el Administrador la música y otras recomendaciones de Meta. Meta
+  generó vídeos nuevos (1453802080087465 regalo, 1145325581356601 para ti, 1862931217923569 estilo) y las 3 fotos
+  pasaron al botón «Ver detalles». Mismos textos. Aprobados de nuevo a las 13:10.
+
   En pausa, con 0 € gastados: los 6 originales (sin «v2/v3»; Meta no los sacaba en 18 ubicaciones porque el
   título y la descripción iban también dentro del botón, un campo obsoleto), los 6 «· v2» (botón «Comprar») y
   los 3 vídeos «· v3» (sin música: 52564508053394, 52564508062194, 52564508065594).

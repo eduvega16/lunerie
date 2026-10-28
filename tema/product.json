@@ -95,7 +95,7 @@
             "estrellas": {
               "type": "custom-liquid",
               "settings": {
-                "custom_liquid": "{% render 'lunerie-opiniones', parte: 'mini', product: product, ejemplos: true %}"
+                "custom_liquid": "{% render 'lunerie-opiniones', parte: 'mini', product: product %}"
               },
               "blocks": {}
             },
@@ -549,14 +549,14 @@
       },
       "block_order": [],
       "custom_css": [
-        "ul { padding-inline-start: 1.1em; } ul li::marker { color: #A6834A; } .quantity-selector-wrapper { display: none; }"
+        "ul { padding-inline-start: 1.1em; } ul li::marker { color: #A6834A; } .quantity-selector-wrapper { display: none; } @media (min-width: 750px) { .product-information__grid--half .product-information__media { box-sizing: border-box; padding-inline-start: 30px; } .product-information__grid--half.product-information__grid--limit-details .product-details > .group-block { --details-max-width: 34rem; } }"
       ],
       "settings": {
-        "content_width": "content-center-aligned",
+        "content_width": "content-full-width",
         "desktop_media_position": "left",
-        "equal_columns": false,
+        "equal_columns": true,
         "limit_details_width": true,
-        "gap": 48,
+        "gap": 0,
         "enable_sticky_add_to_cart": true,
         "background_color": "{{ settings.color_palette.background }}",
         "padding-block-start": 16,
@@ -587,7 +587,7 @@
     "opiniones": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "{% render 'lunerie-opiniones', parte: 'lista', product: product, ejemplos: true %}",
+        "custom_liquid": "{% render 'lunerie-opiniones', parte: 'lista', product: product %}",
         "background_color": "",
         "section_width": "page-width",
         "padding-block-start": 48,

@@ -242,6 +242,39 @@
 Collar de familia / árbol de la vida con nombres (Bervi lo vende 1 año; Amazon 42-57 €; AliExpress 1-7 €) ·
 gafas con cámara IA (69,95-79,95 €) · descartados: micro-infusión, paddle surf, pulsera tipo WHOOP, bolso hobo (réplica).
 
+### 5.4 Joyas de AliExpress (28-oct) — normalizadas, en BORRADOR (Edu: rehacer fotos con IA antes de publicar)
+Edu las empujó con DSers (12, entraron **activas, a precio de coste y con tachado = coste** → todas a borrador).
+Elegidas 4 (Edu, precios medios); las otras 8 se quedan en borrador sin tocar (anillos arcoíris y pavé, set de 4
+pendientes «para una oreja», collar de piedras «naturales», collar/pulsera de estrellas, el 2.º anillo del mes,
+aros con perla y collar de perlas «plata 925»). Plantilla `joya`, vendor Lunerie, sin tachado, SKU sin tocar.
+- **Anillo Nuit** `anillo-nuit` (11036461891923) · sello con circonita marquesa · Color: Verde oliva / Champán /
+  Blanco / Morado × Talla 12 / 14-15 / 17 · coste 3,34-4,71 € · **29,95 €**.
+- **Pendientes Larme** `pendientes-larme` (11036461629779) · aro con lágrima · 7 colores · coste 1,88 € · **24,95 €**.
+  La ficha de AliExpress no dice «Choice»: mirar el plazo a España.
+- **Collar Lune** `collar-lune` (11036462121299) · cadena con piedras ovaladas, «a juego con el reloj» · De colores /
+  Blanco · 45 + 6 cm · coste 4,93 € · **34,95 €**.
+- **Anillo Étoile** `anillo-etoile` (11036462154067) · piedra del mes · Mes (12) × Talla · coste 3,82-4,36 € · **29,95 €**.
+- Tallas US 6/7/8 = contorno 52 / 54,5 / 57 mm → «12», «14-15», «17» (explicado en la descripción).
+- Textos: «acero inoxidable con acabado dorado», «circonita»; **nada** de «oro 18K», hipoalergénico, waterproof,
+  «no se oscurece» ni nombres de gemas (los colores del mes van como «rojo oscuro», «azul agua»…).
+- Fotos actuales: las del proveedor sin logos ni textos en inglés (OpenCV) y las de producto en
+  niebla 4:5 (blanco × color niebla). Se sustituyen en su sitio con `fileUpdate` + `originalSource` para no perder
+  la foto de cada variante. Script: scratchpad de la sesión (`normalizar.py`).
+  **Orden de la galería (Edu, 28-oct, como Olivia): 1.ª el producto suelto en niebla, 2.ª puesto en persona.**
+  **Fotos IA puestas en persona (28-oct, `marca/fotos-ia/joyas/`)**, ya subidas como 2.ª foto de cada ficha (sin
+  variante asignada): Nuit (verde oliva en la mano), Larme (pendiente verde en la oreja) y Collar Lune (cuello).
+  Étoile aún sin foto IA. Ojo con el collar: la 1.ª versión (Nano Banana) colgaba las piedras como dijes y se
+  descartó; el real las lleva **engastadas en la cadena, en línea**. La v2 (API, `marketing-studio/image/flare`,
+  prompt insistiendo en «integrated into the chain… never hanging») salió bien.
+- Ya montado: colección automática **«Joyas»** (`joyas`, tipo Anillos/Pendientes/Collares, publicada) · plantilla
+  `product.joya.json` (sin correa ni «¿se puede mojar?») · bolitas de los colores nuevos (`PIEDRAS`) · sección
+  «Las joyas» del inicio en `build.py` **oculta** (`"disabled": True`: con la colección vacía Horizon pinta productos
+  de relleno).
+- **Al publicar:** quitar `"disabled"` de `joyas` en `build.py` y subir `templates/index.json` · ACTIVE + publicar
+  solo en **Tienda online** (no en Facebook & Instagram hasta acabar el test: el catálogo podría colarse en los
+  anuncios) · «Joyas» en los menús `main-menu` y `pie-tienda` · `curl -sI` de cada ficha = 200 · pedir una muestra
+  de cada una.
+
 ---
 
 ## 6. Montaje de la tienda — estado
@@ -426,6 +459,16 @@ gafas con cámara IA (69,95-79,95 €) · descartados: micro-infusión, paddle s
       Permisos de metaobjetos dados a la CLI el 27-oct (si `shopify store auth` dice «Port 13387 is already in use»,
       matar el `node` que lo ocupa). `shopify theme dev` da «you don't have access to this dev store»: para ver algo
       sin tocar la tienda, `shopify theme push --unpublished` y el enlace `?preview_theme_id=`.
+      **28-oct: 4 opiniones de amigas publicadas** (origen «Recibido como regalo», producto `reloj-lune`, fecha
+      28-oct, media 4,8): **María R.** 5 · **Lucía S.** 5 · **Carla R.** 4 (la de los eslabones) · **Silvia F.** 5.
+      Las fotos (de WhatsApp, 720×960, sin EXIF) son archivos de Shopify `lune-opinion-1/2/3/5.jpg`. Edu dio los
+      nombres y las estrellas, dijo que daba igual quién llevara cada texto y pidió retocarlos: el contenido sale de
+      lo que contaron (chulo, parece una joya, eslabones en 5 min con el vídeo, invierno con la ropa); el reparto y
+      la redacción son de Claude, así que **cada amiga tendría que dar el OK a su texto**. Se subieron con la CLI
+      (`stagedUploadsCreate` → `fileCreate` → `metaobjectCreate` con `capabilities.publishable.status: ACTIVE`);
+      para cambiar un texto, `metaobjectUpdate`. La foto n.º 5 enseña la marca «BS Bee Sister» en la esfera y la
+      del detalle de la ficha pone «NAIDU» (Edu aún no ha decidido nada). Para añadir más: Contenido →
+      Metaobjetos → Opinión, o la CLI.
 - [x] **Pie nuevo (27-oct, en producción), como el de Olivia Jewelry:** 4 columnas (Sobre Lunerie · La tienda ·
       Información · Cartas de Lunerie con suscripción y «Puedes darte de baja cuando quieras. Privacidad») + medios
       de pago (los activos en Shopify, salen solos) + línea con © y redes (Instagram luneriejewelry y la página de
@@ -480,10 +523,18 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
 
 ### Para empezar la próxima sesión (después del 27-oct) — abrir conversación nueva por sesión.
 **Dónde nos quedamos (27-oct, ~23 h): CAMPAÑA LANZADA.**
-- **La tienda YA ESTÁ ABIERTA** (sin contraseña, comprobado el 27-oct por la noche). **Ojo: las 6 opiniones de
-  ejemplo inventadas siguen en la ficha publicada** (comprobado con `curl` el 27-oct a las 23 h: 4 con «Compra
-  verificada», fotos `opinion-ejemplo-1..5.jpg`). Cómo quitarlas: `python tema/build.py` (sin `LUNERIE_EJEMPLOS`)
-  → push de `templates/product.json` → borrar `snippets/lunerie-opiniones-ejemplos.liquid` y las 5 fotos del tema.
+- **28-oct: la campaña tardó ~12 h en arrancar** (a las 11 h, 0 € y 1 impresión, sin errores, con 5 anuncios en
+  «pending · preparing»). Al mediodía ya gastaba sola, sin tocar nada: **1,51 €, 227 impresiones, 2 clics**
+  (Estilo · vídeo y Para ti · foto, CTR ~3 %), 0 carritos. Es normal en una cuenta nueva: Meta suelta poco a poco.
+  Algunos anuncios siguen «preparing» aunque ya gastan. **El test de 3 días cuenta desde el 28-oct** (día 1).
+  12:10-13:08 Edu aplicó en el Administrador la música y otras recomendaciones de Meta a los 6 anuncios: volvieron
+  a revisión (aprobados 12:13 y 13:10) y el aprendizaje se reinició, sin coste (solo llevaba 1,5 €). Meta generó
+  vídeos nuevos (1453802080087465 regalo, 1145325581356601 para ti, 1862931217923569 estilo) y las fotos pasaron
+  al botón «Ver detalles» (SEE_DETAILS); los vídeos siguen con «Más información». **Desde aquí, no tocar nada
+  hasta el 30-oct**: cada cambio en un anuncio lo manda a revisión y reinicia el aprendizaje.
+- **28-oct:** en `settings_data.json` del tema hay un bloque de la app **Loox** que `build.py` no tiene: no subir
+  `config/settings_data.json` sin añadirlo antes.
+- **La tienda YA ESTÁ ABIERTA** (sin contraseña, comprobado el 27-oct por la noche).
 - **Campaña de Meta ACTIVA desde el 27-oct (~23 h):** «Lune · Lanzamiento · Ventas (Advantage+)»
   (52564454147994), 30 €/día, conjunto «España península y Baleares · abierto» (52564454188194).
   **Anuncios que corren (28-oct, ~00 h): fotos «· v3» y vídeos «· v4 música»**, todos con botón **«Más
@@ -506,10 +557,22 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
   fijar 3; archivar los 3 posts viejos con relojes que no se venden).
 - **Resto, hecho y subido:** tema publicado 209073799507 · precio 49,95 € · rasca del 10 % (LUNERIE10) · opiniones
   con metaobjetos + formulario a hola@lunerie.es (Edu tiene que mandarse una de prueba) · portada con vídeo del
-  verde · plazo del pago 7-12 días laborables (comprobado). Higgsfield: quedan 6,55 créditos hasta el 28-oct 21:15.
+  verde · plazo del pago 7-12 días laborables (comprobado). Higgsfield (conector): quedan 0,55 créditos.
+- **28-oct (tarde): fotos IA y ficha a pantalla completa.**
+  - **API de Higgsfield con saldo** (Edu puso 10 € el 28-oct; la clave de `.env.local` es la misma de siempre).
+    Modelo `marketing-studio/image/flare` (GPT Image 2.5): 2k, calidad alta, **~0,13 $ por foto**; acepta 3:4 pero
+    **no 4:5** (recortar luego a 4:5 con PIL). **Nano Banana solo va por el conector** (no está en la API).
+  - **Reloj Lune (en producción):** galería con el reloj suelto en niebla primero y la modelo segunda; la variante
+    «Verde» pasó a la foto del producto suelto (una variante solo admite una foto: quitar la vieja y luego poner la nueva).
+  - **Ficha a pantalla completa en PC, como Olivia** (`ficha` en `build.py`, vale para reloj y joyas): sección a
+    todo el ancho (`content-full-width`, `equal_columns`, `gap` 0), foto con 48 px de margen y detalles centrados en su
+    mitad con 34 rem de ancho (`PRODUCT_CSS`). Medido contra oliviajewelry.com a 2554 px (la pantalla de Edu): casi igual.
+    Para ver la web con Playwright en este PC: `chromium.launch(executable_path=<Chrome instalado>)`, no hay navegador
+    propio descargado; `wait_until='domcontentloaded'` (Olivia nunca queda «idle»).
+  - **Joyas siguen en borrador.** Falta: foto IA de Étoile, producto en niebla IA, y los pasos de «Al publicar» (5.4).
 - **Siguiente con Claude:** apuntar cada día gasto, clics, carritos y
-  compras en el radar (`cli.py test`) → vídeos reales de Edu como anuncios nuevos en el mismo conjunto → opiniones
-  reales de amigas con las muestras → vídeo de 2 min ajustando la correa.
+  compras en el radar (`cli.py test`) → vídeos reales de Edu como anuncios nuevos en el mismo conjunto → ~~opiniones
+  de amigas~~ (hechas el 28-oct, apartado 6; falta el OK de cada una a su texto) → vídeo de 2 min ajustando la correa.
 
 ### Sesión del 25-27 oct
 - **Hecho el 23-25 oct:** plateado (BS) puesto y quitado (difícil de encontrar) · skills de Instagram instaladas
@@ -520,7 +583,8 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
 - **Higgsfield (25-oct):** prueba Plus de 3 días **activa** (2.º intento, con tarjeta; con Apple Pay no entró) →
   **109,3 créditos hasta el 28-oct 21:15** (hora de España); **renovación cancelada** (no se cobran los 49 €). Los
   créditos de la prueba solo se ven por el conector, no en la web. Con Plus también hay GPT Image 2.5. Después
-  vuelve al plan gratis. API: sin saldo; por imagen Qwen Edit 0,075 $, Grok 0,09 $ (no tiene Nano Banana).
+  vuelve al plan gratis. API: con saldo desde el 28-oct (ver arriba); por imagen Qwen Edit 0,075 $, Grok 0,09 $
+  (no tiene Nano Banana).
 - **Hecho el 26-27 oct:** ficha solo en verde con fotos IA y sección estilo Olivia · anuncio 1 (Kling) · **portada
   con vídeo del Lune verde** (27-oct) y textos del inicio sin «seis colores» ni «llega en su caja» · galería de la
   ficha en cuadrícula (Edu) y sin la foto de 18 cm · **rasca del 10 %** (apartado 6).

@@ -1,5 +1,5 @@
 """Genera los JSON del tema 'Lunerie · marca' (Horizon 4.2) a partir de la página de marca."""
-import json, pathlib
+import copy, json, pathlib
 
 OUT = pathlib.Path(__file__).parent
 INK, GREEN, GOLD, MIST, LINE, SOFT = "#16201B", "#006039", "#A6834A", "#F2F4F2", "#E2E6E3", "#3D4842"
@@ -162,9 +162,15 @@ BOLITAS = {"Dorado": "#D4AF5F", "Plateado": "#C9CDD0", "Oro rosa": "#D8A48F"}
 # centro y el dorado alrededor. Si se añade un color de piedra, añadirlo aquí.
 # «Plateado» (23-oct): el BS en plata con piedra verde clara → aro plateado (valor: color o (color, aro)).
 PIEDRAS = {"Verde": "#3F7A55", "Azul": "#2D3F8F", "Rosa": "#E0A3AC", "Verde claro": "#A8CC8C",
-           "Crema": "#EDE3CF", "Rojo": "#A52A24", "Plateado": ("#9FB5A4", BOLITAS["Plateado"])}
+           "Crema": "#EDE3CF", "Rojo": "#A52A24", "Plateado": ("#9FB5A4", BOLITAS["Plateado"]),
+           # Joyas (28-oct): anillo Nuit, pendientes Larme y collar Lune (el anillo Étoile va por meses, sin bolitas)
+           "Verde oliva": "#6B6A2C", "Champán": "#E6C7A1", "Blanco": "#EEF1F4", "Morado": "#5E3F8C",
+           "Fucsia": "#D12F7F", "Turquesa": "#36A9C9", "Negro": "#1E1F1E",
+           "De colores": "conic-gradient(#A52A24, #D9A441, #3F7A55, #36A9C9, #2D3F8F, #8E5AA8, #A52A24)"}
 def _piedra(c):
     piedra, aro = c if isinstance(c, tuple) else (c, BOLITAS["Dorado"])
+    if piedra.startswith("conic"):  # varias piedras: el aro dorado encima y los colores debajo
+        return f"radial-gradient(circle, transparent 0 44%, {aro} 47%), {piedra}"
     return f"radial-gradient(circle, {piedra} 0 44%, {aro} 47%)"
 _sel = ", ".join([f'input[value^="{v}"]' for v in BOLITAS] + [f'input[value="{v}"]' for v in PIEDRAS])
 SWATCH_CSS = (
@@ -292,7 +298,7 @@ footer = {
 # ---------- Inicio (14-oct): centrado en el reloj Lune ----------
 # portada (titular + foto en óvalo con filo dorado) · elige el tuyo (ficha rápida) · cómo es · franja del segundo
 # reloj · antes de comprar (dudas) · tres promesas. Las partes «a medida» están en
-# tema/codigo/snippets/lunerie-inicio.liquid. Cuando llegue el collar: añadir una sección «Las piezas» de 2 columnas.
+# tema/codigo/snippets/lunerie-inicio.liquid. 28-oct: debajo de «cómo es», las joyas (colección «joyas»).
 def parte(nombre, fondo="", arriba=24, abajo=24, ancho="page-width", snippet="lunerie-inicio", extra=""):
     """Sección «Liquid personalizado» que pinta una parte de un snippet a medida (lunerie-inicio por defecto)."""
     return {"type": "custom-liquid", "settings": {
@@ -371,6 +377,40 @@ index = {
                 "desktop_media_position": "left", "equal_columns": True, "limit_details_width": True,
                 "gap": 48, "background_color": BG, "padding-block-start": 56, "padding-block-end": 24},
         },
+        # Las joyas (28-oct): anillos, pendientes y collar de la colección «joyas» (tipo de producto Anillos,
+        # Pendientes o Collares), para que la tienda no sea solo el reloj. 4 columnas en PC, 2 en móvil.
+        # Oculta mientras las joyas estén en borrador: con la colección vacía, Horizon pinta 4 productos de relleno.
+        # Quitar "disabled" al publicarlas.
+        "joyas": {
+            "disabled": True,
+            "type": "product-list",
+            "blocks": {
+                "static-header": {"type": "_product-list-content", "static": True, "settings": {
+                    "content_direction": "row", "vertical_on_mobile": False, "horizontal_alignment": "space-between",
+                    "vertical_alignment": "flex-end", "align_baseline": True, "gap": 12, "width": "fill"},
+                    "blocks": {
+                        "titulo": {"type": "_product-list-text", "settings": {
+                            "text": "<h2>Las joyas</h2>", "type_preset": "h3", "width": "fit-content"}, "blocks": {}},
+                        "boton": {"type": "_product-list-button", "settings": {
+                            "label": "Ver todas", "style_class": "button-unstyled", "width": "fit-content"},
+                            "blocks": {}},
+                    }, "block_order": ["titulo", "boton"]},
+                "static-product-card": {"type": "_product-card", "static": True,
+                    "settings": {"product_card_gap": 6},
+                    "blocks": {
+                        "foto": {"type": "_product-card-gallery", "settings": {"image_ratio": "portrait"}, "blocks": {}},
+                        "nombre": {"type": "product-title", "settings": {"type_preset": "rte"}, "blocks": {}},
+                        "precio": {"type": "price", "settings": {"type_preset": "paragraph"}, "blocks": {}},
+                    },
+                    "block_order": ["foto", "nombre", "precio"]},
+            },
+            "block_order": [],
+            "custom_css": [".button-unstyled, a.link { text-decoration: underline; text-underline-offset: 4px; }"],
+            "settings": {
+                "collection": "joyas", "layout_type": "grid", "max_products": 4, "columns": 4, "mobile_columns": "2",
+                "columns_gap": 16, "rows_gap": 32, "section_width": "page-width", "gap": 28,
+                "background_color": BG, "padding-block-start": 16, "padding-block-end": 64},
+        },
         "promesas": {
             "type": "section",
             "blocks": {
@@ -392,7 +432,7 @@ index = {
                 "padding-block-start": 48, "padding-block-end": 48},
         },
     },
-    "order": ["portada", "destacado", "como_es", "oferta", "dudas", "promesas"],
+    "order": ["portada", "destacado", "como_es", "joyas", "oferta", "dudas", "promesas"],
 }
 if not SEGUNDO_RELOJ:
     del index["sections"]["oferta"]
@@ -468,7 +508,12 @@ def icon_col(icono, html):  # (sin uso ahora; para una fila de iconos en columna
 # Puntos dorados en las listas · sin selector de cantidad (como Calné; la cantidad se cambia en la cesta) ·
 # (Shopify no deja usar `content` en el CSS personalizado: por eso ::marker y no ::before)
 PRODUCT_CSS = (f"ul {{ padding-inline-start: 1.1em; }} ul li::marker {{ color: {GOLD}; }} "
-               ".quantity-selector-wrapper { display: none; }")
+               ".quantity-selector-wrapper { display: none; } "
+               # Proporciones de Olivia en PC (28-oct): foto con 48 px de margen y detalles centrados en su mitad, algo más anchos
+               "@media (min-width: 750px) { .product-information__grid--half .product-information__media "
+               "{ box-sizing: border-box; padding-inline-start: 30px; } "
+               ".product-information__grid--half.product-information__grid--limit-details .product-details > .group-block "
+               "{ --details-max-width: 34rem; } }")
 
 migas = {
     "type": "section",
@@ -591,8 +636,10 @@ ficha = {
     "block_order": [],
     "custom_css": [PRODUCT_CSS],
     "settings": {
-        "content_width": "content-center-aligned", "desktop_media_position": "left",
-        "equal_columns": False, "limit_details_width": True, "gap": 48,
+        # Foto a pantalla completa en PC (Edu, 28-oct, como Olivia): sección a todo el ancho, foto en la mitad
+        # izquierda pegada al borde y detalles en la derecha. En móvil no cambia nada.
+        "content_width": "content-full-width", "desktop_media_position": "left",
+        "equal_columns": True, "limit_details_width": True, "gap": 0,
         "enable_sticky_add_to_cart": True, "background_color": BG,
         "padding-block-start": 16, "padding-block-end": 48},
 }
@@ -641,6 +688,26 @@ if not SEGUNDO_RELOJ:
     del _det["blocks"]["oferta"]
     _det["block_order"].remove("oferta")
 (OUT / "product.json").write_text(json.dumps(product, ensure_ascii=False, indent=2), encoding="utf8")
+
+# ---------- Ficha de las joyas (28-oct): plantilla «joya» (templateSuffix de anillos, pendientes y collares) ----------
+# La misma ficha que la del reloj sin lo que es solo del reloj: «Ajustar la correa», «¿Se puede mojar?», la fila de
+# vídeos y la historia. Las tallas de los anillos van en la descripción de cada producto.
+joya = copy.deepcopy(product)
+_det = joya["sections"]["main"]["blocks"]["product-details"]["blocks"]["detalles"]
+for _k in ("medida", "agua"):
+    del _det["blocks"][_k]
+    _det["block_order"].remove(_k)
+_det["blocks"]["cuidados"] = row("Cuidados",
+                                 "<p>Ponte el perfume y la crema antes que la joya, quítatela para ducharte, nadar "
+                                 "o hacer deporte y guárdala por separado para que no se raye.</p>")
+for _k in ("videos", "historia"):
+    del joya["sections"][_k]
+    joya["order"].remove(_k)
+# Foto a pantalla completa en PC (Edu, 28-oct, como Olivia): sección a todo el ancho, foto en la mitad izquierda
+# pegada al borde y detalles en la derecha. En móvil no cambia nada.
+_ficha = joya["sections"]["main"]["settings"]
+_ficha.update({"content_width": "content-full-width", "equal_columns": True, "limit_details_width": True, "gap": 0})
+(OUT / "product.joya.json").write_text(json.dumps(joya, ensure_ascii=False, indent=2), encoding="utf8")
 
 (OUT / "codigo" / "snippets").mkdir(parents=True, exist_ok=True)
 (OUT / "codigo" / "snippets" / "lunerie-bolitas.liquid").write_text(
@@ -705,7 +772,7 @@ if not SEGUNDO_RELOJ:
 TIENDA = OUT / "tienda"
 # password.json y cart.json no los genera build.py: son plantillas del tema con los textos en español
 DESTINO = {"password.json": "templates", "cart.json": "templates", "settings_data.json": "config", "header-group.json": "sections", "footer-group.json": "sections",
-           "index.json": "templates", "product.json": "templates"}
+           "index.json": "templates", "product.json": "templates", "product.joya.json": "templates"}
 if TIENDA.exists():
     # código del tema modificado (tema/codigo/<carpeta>/<fichero>), p. ej. snippets/variant-main-picker.liquid
     for f in (OUT / "codigo").rglob("*.liquid"):

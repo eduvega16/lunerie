@@ -78,6 +78,18 @@
         lista.addEventListener('scroll', estado, { passive: true });
         addEventListener('resize', estado);
         // el navegador a veces la deja desplazada unos píxeles al cargar las fotos: siempre empieza por la primera
+        // Como en Olivia: la columna de detalles es más alta que la pantalla, así que en vez de fijarla arriba (y no
+        // ver nunca su final) se fija cuando su final toca el borde de abajo. Si cabe entera, se queda fija arriba.
+        const col = raiz.closest('.product-details');
+        if (col) {
+          const ajustar = () => {
+            const sobra = col.offsetHeight - innerHeight + 16;
+            col.style.top = innerWidth >= 750 && sobra > 0 ? (-sobra) + 'px' : '';
+          };
+          if (window.ResizeObserver) new ResizeObserver(ajustar).observe(col);
+          addEventListener('resize', ajustar);
+          ajustar();
+        }
         const alInicio = () => { lista.style.scrollBehavior = 'auto'; lista.scrollLeft = 0; lista.style.scrollBehavior = ''; estado(); };
         alInicio();
         addEventListener('load', alInicio);

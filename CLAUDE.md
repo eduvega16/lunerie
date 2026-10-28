@@ -573,9 +573,18 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
     propio descargado; `wait_until='domcontentloaded'` (Olivia nunca queda «idle»).
   - **«Te puede interesar» (28-oct, como el «Pairs well with» de Olivia):** carrusel de 4 tarjetas (foto, nombre, precio,
     «Ver») al final de la columna de detalles, con los demás productos de la colección `joyas` sin el actual (incluye el
-    Reloj Lune). Solo en **Reloj Lune y anillos** (`product.json`, `product.anillo.json`); pendientes y collar no lo llevan:
-    para añadirlo, `_con_combina(joya)` en `build.py`. Código: `tema/codigo/snippets/lunerie-combina.liquid`. Ojo: el
-    `ul { padding-inline-start }` de `PRODUCT_CSS` afecta a cualquier lista de la ficha (por eso lleva `padding:0!important`).
+    Reloj Lune). Va en el Reloj Lune y en **todas las joyas** (`_con_combina` en `build.py`). Código:
+    `tema/codigo/snippets/lunerie-combina.liquid`. Ojo: el `ul { padding-inline-start }` de `PRODUCT_CSS` afecta a
+    cualquier lista de la ficha (por eso lleva `padding:0!important`).
+  - **Columna de detalles fija «como Olivia» (28-oct):** la columna medía más que la pantalla y, fija arriba, no se veía
+    nunca su final. El mismo snippet calcula `top = -(alto − pantalla + 16)` (ResizeObserver): la columna sube con el
+    scroll hasta que su final toca el borde de abajo y ahí se queda; si cabe entera, queda fija arriba como antes.
+  - **«La leyenda» de las joyas (28-oct, idea de Edu):** texto corto sobre los desplegables con una historia inventada
+    del castillo de **Lunerie «donde la luna guarda sus joyas»** (Nuit: la reina y las noches sin luna · Larme: lágrimas
+    de alegría hechas piedra · Collar Lune: la luz de la luna prendida en la cadena · Étoile: una estrella por mes en la
+    torre más alta) + «Por qué lo elegimos». Está en `tema/codigo/snippets/lunerie-leyenda.liquid` (un `when` por handle).
+    **Regla:** es un cuento («cuentan que», «dicen que»), nunca un dato: nada de «hecha a mano», oro, piedras preciosas
+    ni un origen real. El Reloj Lune no la lleva todavía; Edu quiere darle forma más adelante (mundo del castillo).
   - **Joyas PUBLICADAS (Edu, 28-oct tarde):** las 4 ACTIVE solo en Tienda online (no en Facebook e Instagram) ·
     «Joyas» en `main-menu` y `pie-tienda` · sección «Las joyas» del inicio activada · foto IA de Étoile (2.ª foto) ·
     plantilla **`product.anillo.json`** (los dos anillos; es la de joya + desplegable «¿Cuál es tu talla?» bajo el selector:

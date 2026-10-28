@@ -687,8 +687,7 @@ if not SEGUNDO_RELOJ:
     del _det["blocks"]["oferta"]
     _det["block_order"].remove("oferta")
 # «Te puede interesar» (28-oct, como el «Pairs well with» de Olivia): carrusel con los demás productos de la
-# colección «joyas» al final de la columna de detalles. Solo en el Reloj Lune y en los anillos (Edu); las plantillas
-# de pendientes y collar (joya) no lo llevan: para añadirlo, llamar a _con_combina(joya).
+# colección «joyas» al final de la columna de detalles, en el Reloj Lune y en todas las joyas (Edu, 28-oct).
 def _con_combina(plantilla):
     _d = plantilla["sections"]["main"]["blocks"]["product-details"]
     _d["blocks"]["combina"] = liquid("{% render 'lunerie-combina', product: product %}")
@@ -713,9 +712,11 @@ _det["blocks"]["cuidados"] = row("Cuidados",
 for _k in ("videos", "historia"):
     del joya["sections"][_k]
     joya["order"].remove(_k)
+# «Te puede interesar» (heredado de product, 28-oct) en todas las joyas y la leyenda de cada pieza (28-oct):
+# texto corto sobre los desplegables, con la historia inventada del castillo de Lunerie + por qué la elegimos.
 _dj = joya["sections"]["main"]["blocks"]["product-details"]
-del _dj["blocks"]["combina"]          # la hereda de product (Lune) y pendientes/collar no la llevan
-_dj["block_order"].remove("combina")
+_dj["blocks"]["leyenda"] = liquid("{% render 'lunerie-leyenda', product: product %}")
+_dj["block_order"].insert(_dj["block_order"].index("detalles"), "leyenda")
 # Foto a pantalla completa en PC (Edu, 28-oct, como Olivia): sección a todo el ancho, foto en la mitad izquierda
 # pegada al borde y detalles en la derecha. En móvil no cambia nada.
 _ficha = joya["sections"]["main"]["settings"]
@@ -742,7 +743,6 @@ _det["blocks"]["guia_talla"] = liquid(
     ".lu-tallas ul{margin:0 0 10px;padding-inline-start:1.1em}.lu-tallas li::marker{color:" + GOLD + "}</style>")
 _orden = _det["block_order"]
 _orden.insert(_orden.index("variantes") + 1, "guia_talla")
-_con_combina(anillo)
 (OUT / "product.anillo.json").write_text(json.dumps(anillo, ensure_ascii=False, indent=2), encoding="utf8")
 
 (OUT / "codigo" / "snippets").mkdir(parents=True, exist_ok=True)

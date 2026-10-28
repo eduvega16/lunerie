@@ -1,0 +1,87 @@
+{%- comment -%}
+  Lunerie · «Te puede interesar» (28-oct, como el «Pairs well with» de Olivia Jewelry): carrusel con los demás productos
+  de la colección «joyas» (que incluye el Reloj Lune), sin el que se está viendo → siempre 4. Va dentro de la columna de
+  detalles de la ficha (bloque «combina» de product.json y product.anillo.json, generado por tema/build.py).
+  · Desplazamiento táctil con imán; en PC, flechas a los lados (solo si hay algo a ese lado).
+  · Foto = la primera del producto (fondo niebla 4:5), nombre, precio y botón «Ver».
+{%- endcomment -%}
+{%- assign actual = product.handle -%}
+{%- capture tarjetas -%}
+  {%- assign n = 0 -%}
+  {%- for p in collections['joyas'].products -%}
+    {%- if p.handle != actual and p.available and n < 4 -%}
+      {%- assign n = n | plus: 1 -%}
+      <li class="lu-comb__item">
+        <a class="lu-comb__link" href="{{ p.url }}">
+          <span class="lu-comb__foto">
+            {{- p.featured_image | image_url: width: 400 | image_tag: loading: 'lazy', alt: p.title, sizes: '(min-width: 750px) 190px, 42vw', widths: '200, 300, 400' -}}
+          </span>
+          <span class="lu-comb__nombre">{{ p.title }}</span>
+          <span class="lu-comb__precio">{% if p.price_varies %}Desde {% endif %}{{ p.price_min | money }}</span>
+          <span class="lu-comb__boton">Ver</span>
+        </a>
+      </li>
+    {%- endif -%}
+  {%- endfor -%}
+{%- endcapture -%}
+{%- if tarjetas contains 'lu-comb__item' -%}
+  <section class="lu-comb" aria-label="Te puede interesar" data-lu-comb>
+    <h2 class="lu-comb__titulo">Te puede interesar</h2>
+    <div class="lu-comb__marco">
+      <button type="button" class="lu-comb__flecha lu-comb__flecha--ant" aria-label="Ver los anteriores" data-dir="-1" hidden>
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+      <ul class="lu-comb__lista" tabindex="0">{{ tarjetas }}</ul>
+      <button type="button" class="lu-comb__flecha lu-comb__flecha--sig" aria-label="Ver los siguientes" data-dir="1" hidden>
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+    </div>
+  </section>
+  <style>
+    .lu-comb{margin:8px 0 0;font-family:var(--font-body--family);color:#16201B}
+    .lu-comb__titulo{margin:0 0 14px;font-family:var(--font-heading--family);font-size:1.25rem;font-weight:400;
+      letter-spacing:.06em;text-transform:uppercase}
+    .lu-comb__marco{position:relative}
+    .lu-comb .lu-comb__lista{display:flex;gap:12px;margin:0;padding:0!important;list-style:none;overflow-x:auto;scroll-snap-type:x mandatory;
+      scrollbar-width:none;-webkit-overflow-scrolling:touch}
+    .lu-comb__lista::-webkit-scrollbar{display:none}
+    .lu-comb__item{flex:0 0 calc((100% - 24px) / 3);scroll-snap-align:start;min-width:0}
+    .lu-comb__link{display:flex;flex-direction:column;height:100%;color:inherit;text-decoration:none;background:#F2F4F2;padding:0 0 12px}
+    .lu-comb__foto{display:block;aspect-ratio:4/5;overflow:hidden}
+    .lu-comb__foto img{display:block;width:100%;height:100%;object-fit:cover}
+    .lu-comb__nombre{padding:10px 10px 0;font-size:.875rem;line-height:1.3;text-align:center}
+    .lu-comb__precio{padding:4px 10px 10px;font-size:.8125rem;text-align:center;color:#3D4842}
+    .lu-comb__boton{margin:auto 10px 0;padding:9px 0;border:1px solid #006039;color:#006039;text-align:center;font-size:.75rem;
+      letter-spacing:.1em;text-transform:uppercase;transition:background .2s,color .2s}
+    .lu-comb__link:hover .lu-comb__boton,.lu-comb__link:focus-visible .lu-comb__boton{background:#006039;color:#fff}
+    .lu-comb__flecha{position:absolute;top:calc(50% - 40px);z-index:2;display:flex;align-items:center;justify-content:center;
+      width:34px;height:34px;padding:0;border:1px solid #E2E6E3;border-radius:50%;background:#fff;color:#16201B;cursor:pointer}
+    .lu-comb__flecha[hidden]{display:none}
+    .lu-comb__flecha--ant{left:-12px}.lu-comb__flecha--sig{right:-12px}
+    @media (max-width:749px){.lu-comb__item{flex-basis:calc((100% - 12px) / 2.3)}.lu-comb__flecha{display:none}}
+    @media (prefers-reduced-motion:no-preference){.lu-comb__lista{scroll-behavior:smooth}}
+  </style>
+  <script>
+    (() => {
+      document.querySelectorAll('[data-lu-comb]:not([data-lu-ok])').forEach((raiz) => {
+        raiz.setAttribute('data-lu-ok', '');
+        const lista = raiz.querySelector('.lu-comb__lista');
+        const ant = raiz.querySelector('[data-dir="-1"]'), sig = raiz.querySelector('[data-dir="1"]');
+        const estado = () => {
+          ant.hidden = lista.scrollLeft < 4;
+          sig.hidden = lista.scrollLeft + lista.clientWidth >= lista.scrollWidth - 4;
+        };
+        [ant, sig].forEach((b) => b.addEventListener('click', () => {
+          const paso = lista.querySelector('.lu-comb__item').getBoundingClientRect().width + 12;
+          lista.scrollBy({ left: Number(b.dataset.dir) * paso * 2 });
+        }));
+        lista.addEventListener('scroll', estado, { passive: true });
+        addEventListener('resize', estado);
+        // el navegador a veces la deja desplazada unos píxeles al cargar las fotos: siempre empieza por la primera
+        const alInicio = () => { lista.style.scrollBehavior = 'auto'; lista.scrollLeft = 0; lista.style.scrollBehavior = ''; estado(); };
+        alInicio();
+        addEventListener('load', alInicio);
+      });
+    })();
+  </script>
+{%- endif -%}

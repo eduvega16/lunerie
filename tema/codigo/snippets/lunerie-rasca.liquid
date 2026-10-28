@@ -1,8 +1,8 @@
 {%- comment -%}
   Lunerie · rasca con 10 % de descuento (como el de Olivia Jewelry), a pantalla completa. Se pinta desde una sección
   «Liquid personalizado» del pie (footer-group.json, generado por tema/build.py), así sale en todas las páginas.
-  · Solo en el inicio y en las fichas; sale una vez por visitante (a los 8 s o al bajar media página) y espera a
-    que se conteste el banner de cookies.
+  · Solo en el inicio y en las fichas; sale una vez por visitante, a los 25 s de estar en la web (cambiado el
+    28-oct: antes a los 8 s o al bajar media página) y espera a que se conteste el banner de cookies.
   · Lámina dorada en canvas: degradado + manchas de rascado + purpurina que brilla (quieta si se pide reducir
     movimiento). Al rascar casi la mitad (o pulsar «Descúbrelo aquí») sale el 10 %, y es la clienta la que pulsa
     «Añadir el descuento a mi cesta»: entonces se mete el código por cart/update.js, como hace el propio Horizon.
@@ -226,23 +226,20 @@
           requestAnimationFrame(bucle);
         });
       }
-      // Espera al banner de cookies de Shopify: no se abre encima de él
-      function cuandoNoHayBanner(fn) {
+      // Espera al banner de cookies de Shopify: no se abre encima de él, ni nada más contestarlo (3 s de margen)
+      function cuandoNoHayBanner(fn, hubo) {
         const b = document.getElementById('shopify-pc__banner');
         const visible = b && b.getClientRects().length > 0 && getComputedStyle(b).visibility !== 'hidden';   // es fixed: sin offsetParent
-        if (visible) return setTimeout(() => cuandoNoHayBanner(fn), 1000);
-        fn();
+        if (visible) return setTimeout(() => cuandoNoHayBanner(fn, true), 1000);
+        fn(hubo);
       }
-      function disparar() {
-        removeEventListener('scroll', alBajar);
-        clearTimeout(reloj);
-        cuandoNoHayBanner(() => setTimeout(abrir, 600));
-      }
-      function alBajar() {
-        if (scrollY > (document.documentElement.scrollHeight - innerHeight) * .5) disparar();
-      }
-      const reloj = setTimeout(disparar, 8000);
-      addEventListener('scroll', alBajar, { passive: true });
+      // Sale a los 25 s de estar en la web (el tiempo cuenta entre páginas de la misma visita, y nunca antes de
+      // 5 s en la página actual). Ya no sale al bajar la página: solo por tiempo.
+      const ESPERA = 25000;
+      let t0 = Date.now();
+      try { t0 = Number(sessionStorage.getItem('lu-rasca-t0')) || t0; sessionStorage.setItem('lu-rasca-t0', String(t0)); } catch (e) {}
+      const falta = Math.max(ESPERA - (Date.now() - t0), 5000);
+      setTimeout(() => cuandoNoHayBanner((hubo) => setTimeout(abrir, hubo ? 3000 : 600)), falta);
     })();
   </script>
 {%- endif -%}

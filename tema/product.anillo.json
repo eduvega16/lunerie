@@ -464,6 +464,13 @@
                 "custom_liquid": "<details class=\"lu-tallas\"><summary>¿Cuál es tu talla?</summary><div><p>Rodea la base del dedo con un hilo o una tira de papel, marca donde se junta y mide la longitud en milímetros. Mejor al final del día, cuando el dedo está algo más grande.</p><ul><li>52 mm: talla 12</li><li>54,5 mm: talla 14-15</li><li>57 mm: talla 17</li></ul><p>Si dudas entre dos, elige la mayor. Si ya tienes un anillo que te va bien, mide su diámetro interior y multiplícalo por 3,14: ese es tu contorno.</p><p>Si tu contorno es menor de 51 mm o mayor de 59 mm, escríbenos a hola@lunerie.es y lo miramos. Y si al recibirlo no te queda bien, tienes 14 días para devolverlo.</p></div></details><style>.lu-tallas{font-family:var(--font-body--family);font-size:.875rem;color:#3D4842}.lu-tallas summary{cursor:pointer;list-style:none;text-decoration:underline;text-underline-offset:4px}.lu-tallas summary::-webkit-details-marker{display:none}.lu-tallas div{padding-top:10px}.lu-tallas p{margin:0 0 10px}.lu-tallas ul{margin:0 0 10px;padding-inline-start:1.1em}.lu-tallas li::marker{color:#A6834A}</style>"
               },
               "blocks": {}
+            },
+            "combina": {
+              "type": "custom-liquid",
+              "settings": {
+                "custom_liquid": "{% render 'lunerie-combina', product: product %}"
+              },
+              "blocks": {}
             }
           },
           "block_order": [
@@ -475,7 +482,8 @@
             "variantes",
             "guia_talla",
             "comprar",
-            "detalles"
+            "detalles",
+            "combina"
           ]
         }
       },

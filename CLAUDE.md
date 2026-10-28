@@ -437,7 +437,8 @@ aros con perla y collar de perlas «plata 925»). Plantilla `joya`, vendor Luner
       Menú principal (14-oct): «Reloj Lune» (ficha `/products/reloj-lune`) · Preguntas frecuentes · Contacto.
 - [x] **Rasca del 10 % (27-oct, en producción)**, como el de Olivia Jewelry: ventana «Rasca y descubre · Tenemos
       un regalo para tu primer pedido» con lámina dorada (canvas) y, en PC, 4 fotos editoriales a la derecha. Sale
-      **una vez** en el inicio y en las fichas, a los 8 s o al bajar media página, y **espera a que se conteste el
+      **una vez** en el inicio y en las fichas, a los **25 s** de estar en la web (cambiado el 28-oct; antes 8 s o al bajar media página; el tiempo cuenta entre
+      páginas de la visita y no sale al bajar), y **espera a que se conteste el
       banner de cookies** (`#shopify-pc__banner`; es `fixed`, así que se mira con `getClientRects`, no con
       `offsetParent`). Al rascar ~45 % (o «¿Prefieres no rascar? Descúbrelo aquí») mete el código en la cesta con
       `cart/update.js` + `discount` (igual que Horizon), aunque esté vacía: al añadir el reloj, 49,95 → 44,96 €.
@@ -570,6 +571,11 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
     mitad con 34 rem de ancho (`PRODUCT_CSS`). Medido contra oliviajewelry.com a 2554 px (la pantalla de Edu): casi igual.
     Para ver la web con Playwright en este PC: `chromium.launch(executable_path=<Chrome instalado>)`, no hay navegador
     propio descargado; `wait_until='domcontentloaded'` (Olivia nunca queda «idle»).
+  - **«Te puede interesar» (28-oct, como el «Pairs well with» de Olivia):** carrusel de 4 tarjetas (foto, nombre, precio,
+    «Ver») al final de la columna de detalles, con los demás productos de la colección `joyas` sin el actual (incluye el
+    Reloj Lune). Solo en **Reloj Lune y anillos** (`product.json`, `product.anillo.json`); pendientes y collar no lo llevan:
+    para añadirlo, `_con_combina(joya)` en `build.py`. Código: `tema/codigo/snippets/lunerie-combina.liquid`. Ojo: el
+    `ul { padding-inline-start }` de `PRODUCT_CSS` afecta a cualquier lista de la ficha (por eso lleva `padding:0!important`).
   - **Joyas PUBLICADAS (Edu, 28-oct tarde):** las 4 ACTIVE solo en Tienda online (no en Facebook e Instagram) ·
     «Joyas» en `main-menu` y `pie-tienda` · sección «Las joyas» del inicio activada · foto IA de Étoile (2.ª foto) ·
     plantilla **`product.anillo.json`** (los dos anillos; es la de joya + desplegable «¿Cuál es tu talla?» bajo el selector:

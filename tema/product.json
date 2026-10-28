@@ -533,6 +533,13 @@
                 "devoluciones",
                 "cuidados"
               ]
+            },
+            "combina": {
+              "type": "custom-liquid",
+              "settings": {
+                "custom_liquid": "{% render 'lunerie-combina', product: product %}"
+              },
+              "blocks": {}
             }
           },
           "block_order": [
@@ -543,7 +550,8 @@
             "ventajas",
             "variantes",
             "comprar",
-            "detalles"
+            "detalles",
+            "combina"
           ]
         }
       },

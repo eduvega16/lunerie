@@ -266,7 +266,8 @@ aros con perla y collar de perlas «plata 925»). Plantilla `joya`, vendor Luner
   Étoile aún sin foto IA. Ojo con el collar: la 1.ª versión (Nano Banana) colgaba las piedras como dijes y se
   descartó; el real las lleva **engastadas en la cadena, en línea**. La v2 (API, `marketing-studio/image/flare`,
   prompt insistiendo en «integrated into the chain… never hanging») salió bien.
-- Ya montado: colección automática **«Joyas»** (`joyas`, tipo Anillos/Pendientes/Collares, publicada) · plantilla
+- Ya montado: colección automática **«Joyas»** (`joyas`, tipo Relojes/Anillos/Pendientes/Collares, publicada; el Reloj Lune entró el 28-oct
+  a petición de Edu, en último lugar, así que la fila de 4 del inicio sigue enseñando solo las joyas) · plantilla
   `product.joya.json` (sin correa ni «¿se puede mojar?») · bolitas de los colores nuevos (`PIEDRAS`) · sección
   «Las joyas» del inicio en `build.py` **oculta** (`"disabled": True`: con la colección vacía Horizon pinta productos
   de relleno).

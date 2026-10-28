@@ -1,6 +1,7 @@
 {%- comment -%}
   Lunerie · «La leyenda» de cada joya (28-oct, idea de Edu): un texto corto justo encima de los desplegables con la
-  historia inventada del castillo de Lunerie («donde la luna guarda sus joyas») y, debajo, por qué la hemos elegido.
+  historia inventada del castillo de Lunerie («donde la luna guarda sus joyas»). (El párrafo «Por qué lo elegimos»
+  se quitó el 28-oct: a Edu no le gustaba.)
   · Es un cuento, no un dato: siempre en tono de «cuentan que / dicen que». Nada de afirmar que existió, que es
     «hecha a mano», de oro o de piedras preciosas (apartado 4 de CLAUDE.md).
   · Los textos están aquí, por handle. Para una joya nueva, añadir su `when`. Edu quiere darles forma más adelante.
@@ -8,35 +9,25 @@
 {%- endcomment -%}
 {%- liquid
   assign leyenda = ''
-  assign porque = ''
-  assign etiqueta = 'Por qué lo elegimos.'
   case product.handle
     when 'anillo-nuit'
       assign leyenda = 'Cuentan que la reina de Lunerie lo llevaba las noches sin luna. Un sello pequeño con una piedra en forma de ojo, que lo mira todo con calma.'
-      assign porque = 'Lo elegimos porque se lleva solo o con otros anillos, a diario, y tiene el aire de una joya con historia.'
     when 'pendientes-larme'
-      assign etiqueta = 'Por qué los elegimos.'
       assign leyenda = 'Dicen que en el castillo de Lunerie las lágrimas de alegría se volvían piedra de color antes de llegar al suelo. Cada aro guarda una.'
-      assign porque = 'Los elegimos porque son pequeños, van con todo y se pueden llevar de la mañana a la noche sin pensarlo.'
     when 'collar-lune'
       assign leyenda = 'Una noche la luna dejó caer su luz sobre una cadena fina y se quedó prendida en piedras de colores. Así nació el collar del castillo.'
-      assign porque = 'Lo elegimos para acompañar al reloj Lune: es fino, discreto y se lleva todos los días. Solo o a juego, siempre queda bien.'
     when 'anillo-etoile'
       assign leyenda = 'En la torre más alta de Lunerie vive una estrella por cada mes del año. Cada anillo guarda una de ellas.'
-      assign porque = 'Lo elegimos porque es un regalo pequeño y personal: el color de tu mes, o el de alguien a quien quieres. Es fácil acertar.'
   endcase
 -%}
 {%- if leyenda != blank -%}
   <div class="lu-ley">
     <p class="lu-ley__sello">La leyenda</p>
     <p class="lu-ley__texto">{{ leyenda }}</p>
-    <p class="lu-ley__porque"><strong>{{ etiqueta }}</strong> {{ porque }}</p>
   </div>
   <style>
     .lu-ley{margin:4px 0 0;padding:18px 0 4px;border-top:1px solid #E2E6E3;font-family:var(--font-body--family);color:#3D4842}
     .lu-ley__sello{margin:0 0 8px;font-size:.6875rem;letter-spacing:.18em;text-transform:uppercase;color:#A6834A}
-    .lu-ley__texto{margin:0 0 10px;font-family:var(--font-heading--family);font-style:italic;font-size:1.1875rem;line-height:1.4;color:#16201B}
-    .lu-ley__porque{margin:0;font-size:.875rem;line-height:1.55}
-    .lu-ley__porque strong{font-weight:500;color:#16201B}
+    .lu-ley__texto{margin:0 0 6px;font-family:var(--font-heading--family);font-style:italic;font-size:1.1875rem;line-height:1.4;color:#16201B}
   </style>
 {%- endif -%}

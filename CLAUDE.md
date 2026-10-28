@@ -582,9 +582,14 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
   - **«La leyenda» de las joyas (28-oct, idea de Edu):** texto corto sobre los desplegables con una historia inventada
     del castillo de **Lunerie «donde la luna guarda sus joyas»** (Nuit: la reina y las noches sin luna · Larme: lágrimas
     de alegría hechas piedra · Collar Lune: la luz de la luna prendida en la cadena · Étoile: una estrella por mes en la
-    torre más alta) + «Por qué lo elegimos». Está en `tema/codigo/snippets/lunerie-leyenda.liquid` (un `when` por handle).
+    torre más alta). El párrafo «Por qué lo elegimos» se quitó el 28-oct (no le gustaba a Edu). Está en `tema/codigo/snippets/lunerie-leyenda.liquid` (un `when` por handle).
     **Regla:** es un cuento («cuentan que», «dicen que»), nunca un dato: nada de «hecha a mano», oro, piedras preciosas
     ni un origen real. El Reloj Lune no la lleva todavía; Edu quiere darle forma más adelante (mundo del castillo).
+  - **Zoom de las fotos en móvil (28-oct):** al tocar una foto, el tema (Horizon) abría la ventana de zoom ya ampliada
+    a **1,5×** (`DEFAULT_ZOOM` en `assets/drag-zoom-wrapper.js`, solo móvil). Ahora abre a 1× (`START_ZOOM`); el doble
+    toque amplía a 1,5× y se puede pellizcar. Es un fichero de Horizon **modificado**: la copia buena está en
+    `tema/codigo/assets/` (`build.py` copia ahí también los `*.js`) y, como los otros ficheros modificados, no recibe
+    los arreglos de Horizon al actualizar el tema.
   - **Joyas PUBLICADAS (Edu, 28-oct tarde):** las 4 ACTIVE solo en Tienda online (no en Facebook e Instagram) ·
     «Joyas» en `main-menu` y `pie-tienda` · sección «Las joyas» del inicio activada · foto IA de Étoile (2.ª foto) ·
     plantilla **`product.anillo.json`** (los dos anillos; es la de joya + desplegable «¿Cuál es tu talla?» bajo el selector:

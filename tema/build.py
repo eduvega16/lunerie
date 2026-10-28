@@ -812,7 +812,7 @@ DESTINO = {"password.json": "templates", "cart.json": "templates", "settings_dat
            "product.anillo.json": "templates"}
 if TIENDA.exists():
     # código del tema modificado (tema/codigo/<carpeta>/<fichero>), p. ej. snippets/variant-main-picker.liquid
-    for f in (OUT / "codigo").rglob("*.liquid"):
+    for f in [*(OUT / "codigo").rglob("*.liquid"), *(OUT / "codigo" / "assets").glob("*.js")]:   # también assets/*.js (zoom del móvil)
         (TIENDA / f.relative_to(OUT / "codigo")).write_text(f.read_text(encoding="utf8"), encoding="utf8")
     for nombre, carpeta in DESTINO.items():
         (TIENDA / carpeta / nombre).write_text((OUT / nombre).read_text(encoding="utf8"), encoding="utf8")

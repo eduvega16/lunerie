@@ -612,7 +612,7 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
   - **Trampa de mi script `gql.py`:** el CLI devuelve los fallos como `{"error": …}` (sin «s») y no los detectaba:
     comprobar siempre el resultado leyendo el dato otra vez.
 - **29-oct: revisión de Sidekick (el asistente de Shopify) de las fichas de joyas.** Hecho: las opiniones ya dicen lo
-  suyo en cada pieza (la frase de «el reloj para probarlo» solo sale en el Lune; el mensaje vacío dice «tus pendientes /
+  suyo en cada pieza (la frase de «el reloj para probarlo» la quitó Edu el 29-oct del todo; cada tarjeta sigue llevando su etiqueta «Recibido como regalo»; el mensaje vacío dice «tus pendientes /
   tu anillo / tu collar»: `lunerie-opiniones.liquid`) y la línea de ventajas lleva el plazo: «Envío gratis a península,
   con seguimiento · llega en 7-12 días laborables» (todas las fichas). **Pendiente, necesita datos reales:** medidas y
   peso de Larme (captura de la ficha de AliExpress), qué presentación recibe la clienta (foto real y frase cuando

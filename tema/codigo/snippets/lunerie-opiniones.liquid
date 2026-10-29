@@ -25,6 +25,21 @@
       assign media = suma | times: 1.0 | divided_by: total
     endif
   endif
+  # Textos que dependen de la pieza (28-oct): lo del «reloj para probarlo» solo vale en el Reloj Lune
+  if parte == 'lista'
+    assign es_reloj = false
+    assign tuyo = 'el tuyo'
+    case product.handle
+      when 'reloj-lune'
+        assign es_reloj = true
+      when 'pendientes-larme'
+        assign tuyo = 'tus pendientes'
+      when 'anillo-nuit', 'anillo-etoile'
+        assign tuyo = 'tu anillo'
+      when 'collar-lune'
+        assign tuyo = 'tu collar'
+    endcase
+  endif
 -%}
 {%- case parte -%}
   {%- when 'estrellas' -%}
@@ -52,8 +67,8 @@
       {%- endif -%}
     </div>
     <p class="lu-op__nota">
-      Publicamos todas las opiniones que nos llegan, buenas y malas. Las marcadas «Recibido como regalo» son de
-      personas a las que dimos el reloj para probarlo.
+      Publicamos todas las opiniones que nos llegan, buenas y malas.
+      {%- if reloj %} Las marcadas «Recibido como regalo» son de personas a las que dimos el reloj para probarlo.{% endif %}
     </p>
 
   {%- when 'tarjeta' -%}
@@ -87,7 +102,7 @@
       {%- if ejemplos -%}
         {%- render 'lunerie-opiniones-ejemplos', parte: 'lista' -%}
       {%- else -%}
-        {%- render 'lunerie-opiniones', parte: 'cabecera', total: total, media: media -%}
+        {%- render 'lunerie-opiniones', parte: 'cabecera', total: total, media: media, reloj: es_reloj -%}
         {%- if total > 0 -%}
           <div class="lu-op__lista">
             {%- for o in shop.metaobjects.opinion.values -%}
@@ -98,7 +113,7 @@
             {%- endfor -%}
           </div>
         {%- else -%}
-          <p class="lu-op__vacio">Todavía no hay opiniones. Si ya tienes el tuyo, nos encantará saber qué tal.</p>
+          <p class="lu-op__vacio">Todavía no hay opiniones. Si ya tienes {{ tuyo }}, nos encantará saber qué tal.</p>
         {%- endif -%}
       {%- endif -%}
 

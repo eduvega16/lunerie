@@ -611,6 +611,15 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
     (`available`) y que el botón de la ficha diga «AGREGAR AL CARRITO».
   - **Trampa de mi script `gql.py`:** el CLI devuelve los fallos como `{"error": …}` (sin «s») y no los detectaba:
     comprobar siempre el resultado leyendo el dato otra vez.
+- **29-oct: revisión de Sidekick (el asistente de Shopify) de las fichas de joyas.** Hecho: las opiniones ya dicen lo
+  suyo en cada pieza (la frase de «el reloj para probarlo» solo sale en el Lune; el mensaje vacío dice «tus pendientes /
+  tu anillo / tu collar»: `lunerie-opiniones.liquid`) y la línea de ventajas lleva el plazo: «Envío gratis a península,
+  con seguimiento · llega en 7-12 días laborables» (todas las fichas). **Pendiente, necesita datos reales:** medidas y
+  peso de Larme (captura de la ficha de AliExpress), qué presentación recibe la clienta (foto real y frase cuando
+  lleguen las muestras: hoy van en bolsita, sin caja) y opiniones de las joyas (no se rellenan; solo reales). Decididos
+  por Edu/Claude: no reorientar la portada (el reloj es el producto del test) y no bajar precios (apartado 5.4).
+  **Pedidos reales: ninguno** (solo los 3 de prueba del 15-oct, reembolsados); los «checkouts completados» del informe de
+  tráfico son pruebas, y las visitas del navegador automático de Claude también suman en ese informe.
 - **Siguiente con Claude:** apuntar cada día gasto, clics, carritos y
   compras en el radar (`cli.py test`) → vídeos reales de Edu como anuncios nuevos en el mismo conjunto → ~~opiniones
   de amigas~~ (hechas el 28-oct, apartado 6; falta el OK de cada una a su texto) → vídeo de 2 min ajustando la correa.

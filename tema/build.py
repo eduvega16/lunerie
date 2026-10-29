@@ -542,7 +542,7 @@ ficha = {
                     "blocks": {
                         "navidad": NAVIDAD,
                         **({"regalo": REGALO} if CAJA_REGALO else {}),
-                        "envio": icon_text("truck", "<p>Envío gratis a península, con seguimiento</p>"),
+                        "envio": icon_text("truck", "<p>Envío gratis a península, con seguimiento · llega en 7-12 días laborables</p>"),
                         "garantia": icon_text("star", "<p>Garantía de 3 años + 14 días para devolverlo</p>"),
                     }, "block_order": ["navidad"] + (["regalo"] if CAJA_REGALO else []) + ["envio", "garantia"]},
                 "variantes": {"type": "variant-picker", "settings": {

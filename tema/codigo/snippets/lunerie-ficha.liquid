@@ -51,14 +51,17 @@
 
         <div class="lu-hist__collage">
           {%- comment -%} La toalla es un vídeo (27-oct): una «foto que se mueve» en el collage, en lugar de la fila
-            «De cerca», que repetía la misma escena. Recortado a 4:5 en marca/videos-ficha/lune-collage-toalla.mp4. {%- endcomment -%}
+            «De cerca», que repetía la misma escena. Recortado a 4:5 en marca/videos-ficha/lune-collage-toalla.mp4.
+            OJO (29-oct): el fichero «original» de Shopify (cdn.shopify.com/videos/c/o/v/…) se sirve como
+            application/octet-stream y el iPhone no lo reproduce (la casilla salía vacía). Usar SIEMPRE la versión
+            transcodificada (…/c/vp/<id>/<id>.HD-720p-….mp4, video/mp4): sale de `Video.sources` en la API. {%- endcomment -%}
           {%- assign nombres = 'lune-editorial-perfil.jpg,lune-editorial-curva.jpg,video-toalla,lune-editorial-pelo.jpg' | split: ',' -%}
           {%- for nombre in nombres -%}
             {%- if nombre == 'video-toalla' -%}
               <figure>
                 <video data-lu-auto muted loop playsinline preload="none" aria-hidden="true"
                   {% if images['lune-collage-toalla.jpg'] %}poster="{{ images['lune-collage-toalla.jpg'] | image_url: width: 716 }}"{% endif %}>
-                  <source src="https://cdn.shopify.com/videos/c/o/v/a8b7a140ff1840eda2d6d3114da8177b.mp4" type="video/mp4">
+                  <source src="https://cdn.shopify.com/videos/c/vp/a8b7a140ff1840eda2d6d3114da8177b/a8b7a140ff1840eda2d6d3114da8177b.HD-720p-1.6Mbps-99045785.mp4" type="video/mp4">
                 </video>
               </figure>
               {%- continue -%}
@@ -79,7 +82,7 @@
     {%- if product.handle == 'reloj-lune' -%}
       {%- comment -%} Para añadir un vídeo (p. ej. los reales de Edu con la muestra): subir el mp4 y su .jpg a
         Contenido → Archivos y añadir aquí su URL y el nombre del .jpg. {%- endcomment -%}
-      {%- assign videos = 'https://cdn.shopify.com/videos/c/o/v/b73822059aae467fbc44bdfb69e4d337.mp4|lune-video-toalla-a.jpg,https://cdn.shopify.com/videos/c/o/v/116882ac1673478c8c097726237b8d75.mp4|lune-video-macro.jpg,https://cdn.shopify.com/videos/c/o/v/103adadc4f164cab98f110ae5c84637f.mp4|lune-video-toalla-b.jpg' | split: ',' -%}
+      {%- assign videos = 'https://cdn.shopify.com/videos/c/vp/b73822059aae467fbc44bdfb69e4d337/b73822059aae467fbc44bdfb69e4d337.HD-720p-1.6Mbps-99043937.mp4|lune-video-toalla-a.jpg,https://cdn.shopify.com/videos/c/vp/116882ac1673478c8c097726237b8d75/116882ac1673478c8c097726237b8d75.HD-720p-1.6Mbps-99043900.mp4|lune-video-macro.jpg,https://cdn.shopify.com/videos/c/vp/103adadc4f164cab98f110ae5c84637f/103adadc4f164cab98f110ae5c84637f.HD-720p-1.6Mbps-99043971.mp4|lune-video-toalla-b.jpg' | split: ',' -%}
       <div class="lu-vid">
         <h2 class="lu-vid__titulo">De cerca</h2>
         <div class="lu-vid__fila">

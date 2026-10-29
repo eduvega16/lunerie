@@ -620,6 +620,14 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
   por Edu/Claude: no reorientar la portada (el reloj es el producto del test) y no bajar precios (apartado 5.4).
   **Pedidos reales: ninguno** (solo los 3 de prueba del 15-oct, reembolsados); los «checkouts completados» del informe de
   tráfico son pruebas, y las visitas del navegador automático de Claude también suman en ese informe.
+- **29-oct: vídeo del collage vacío en iPhone.** Los mp4 subidos a Archivos de Shopify se sirven desde su URL
+  «original» (`cdn.shopify.com/videos/c/o/v/<id>.mp4`) con `Content-Type: application/octet-stream` + `nosniff`: Chrome
+  los reproduce, **Safari del iPhone no** (la casilla salía vacía en la ficha del Lune). Arreglo: usar la versión
+  transcodificada (`…/c/vp/<id>/<id>.HD-720p-….mp4`, `video/mp4`, con rangos), que sale de `Video.sources` en la API
+  (`query{files(query:"media_type:VIDEO"){nodes{... on Video{sources{url mimeType}}}}}`). Cambiado en el collage y en la
+  fila «De cerca» (oculta). **Sin comprobar en un iPhone real** (Playwright no tiene WebKit útil en este PC).
+  **Pendiente:** el vídeo de la portada (`parte('hero-video')` en `lunerie-inicio.liquid`) usa las mismas URLs
+  «originales» → mismo riesgo en iPhone.
 - **Siguiente con Claude:** apuntar cada día gasto, clics, carritos y
   compras en el radar (`cli.py test`) → vídeos reales de Edu como anuncios nuevos en el mismo conjunto → ~~opiniones
   de amigas~~ (hechas el 28-oct, apartado 6; falta el OK de cada una a su texto) → vídeo de 2 min ajustando la correa.

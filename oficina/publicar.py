@@ -93,6 +93,31 @@ def subir_publico(jpg):
     raise RuntimeError("Shopify tardó demasiado en procesar la imagen")
 
 
+def url_lista(url, intentos=8):
+    """Espera a que el CDN sirva la imagen (200 + image/jpeg) antes de dársela a Instagram, que la descarga nada más recibirla."""
+    for _ in range(intentos):
+        try:
+            with urllib.request.urlopen(urllib.request.Request(url, method="HEAD"), timeout=20) as r:
+                if r.status == 200 and "image" in r.headers.get("Content-Type", ""):
+                    time.sleep(5)
+                    return
+        except Exception:
+            pass
+        time.sleep(5)
+    raise RuntimeError(f"La URL pública no responde como imagen: {url}")
+
+
+def crear(ruta, intentos=4, **params):
+    """POST a /media con reintentos: Instagram a veces no consigue bajar la imagen a la primera (error 2207052)."""
+    for i in range(intentos):
+        try:
+            return api("POST", ruta, **params)["id"]
+        except RuntimeError as e:
+            if "2207052" not in str(e) or i == intentos - 1:
+                raise
+            time.sleep(20)
+
+
 def api(metodo, ruta, **params):
     token = os.environ["IG_TOKEN"]
     url = f"https://{HOST}/{VERSION}/{ruta}"
@@ -129,6 +154,8 @@ def publicar(fichero, p, confirmar):
         urls = list(pub["urls"])
     elif confirmar:
         urls = [subir_publico(a_jpeg(a))[0] for a in pub["archivos"]]
+        for u in urls:
+            url_lista(u)
     else:
         urls = [f"<URL pública de {a} (JPEG)>" for a in pub["archivos"]]
     video = tipo in ("REELS", "STORIES") and urls[0].lower().split("?")[0].endswith((".mp4", ".mov"))
@@ -154,11 +181,11 @@ def publicar(fichero, p, confirmar):
         print(f"  POST /{ig}/media_publish creation_id=<contenedor>\n  (ensayo: no se ha publicado nada)")
         return
     if tipo == "CAROUSEL":
-        hijos = [api("POST", f"{ig}/media", **par)["id"] for _, par in pasos]
+        hijos = [crear(f"{ig}/media", **par) for _, par in pasos]
         for h in hijos:
             esperar(h, False)
         raiz["children"] = ",".join(hijos)
-    cont = api("POST", f"{ig}/media", **raiz)["id"]
+    cont = crear(f"{ig}/media", **raiz)
     esperar(cont, video)
     media = api("POST", f"{ig}/media_publish", creation_id=cont)["id"]
     p["estado"] = "publicado"

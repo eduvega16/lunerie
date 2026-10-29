@@ -1,6 +1,6 @@
 {
   "id": "2026-W44-08-mercado-lune-nuit",
-  "estado": "borrador",
+  "estado": "publicado",
   "plataforma": "instagram",
   "formato": "foto",
   "pieza": "reloj-lune",
@@ -32,7 +32,11 @@
     ],
     "urls": [],
     "alt_text": "Mano de mujer cogiendo un melocotón de una bolsa de red con fruta, con el reloj Lune dorado de piedras verdes en la muñeca y el anillo Nuit de piedra verde oliva.",
-    "ia": true
+    "ia": true,
+    "resultado": {
+      "media_id": "18113160125333143",
+      "fecha": "2026-10-29T14:35:27+0100"
+    }
   },
   "musica": {
     "origen": "ninguna",
@@ -50,8 +54,8 @@
     "No decir que el reloj sea sumergible ni prometer plazos de Navidad."
   ],
   "revision": {
-    "notas": "",
-    "aprobado_por": null,
-    "fecha": null
+    "notas": "Texto y foto aprobados por Edu en el chat (29-oct).",
+    "aprobado_por": "Edu",
+    "fecha": "2026-10-29"
   }
 }

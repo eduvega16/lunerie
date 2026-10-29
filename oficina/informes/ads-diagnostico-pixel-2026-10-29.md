@@ -26,3 +26,12 @@ Pregunta de Edu: ¿está bien enlazada la cuenta de Meta al píxel y viceversa? 
 
 ## Lectura
 Con el banner arreglado se medirán más visitas, pero **eso no cambia por sí solo el resultado de ventas**: 0 pedidos en Shopify y 0 checkouts abandonados desde el lanzamiento. El número de clics (147) aún es pequeño para sacar conclusiones sobre la oferta.
+
+## Añadido (29-oct, tarde): de dónde salían los clics
+Desglose por ubicación del conjunto de anuncios, últimos 7 días (Meta, solo lectura):
+
+- **Audience Network** (anuncios dentro de apps y juegos de terceros): 44 de los 64 clics salientes (69 %), por **0,37 €** en total (≈ 0,01 € por clic), 1.104 impresiones y **0 visitas a la página**. Son clics accidentales o de baja calidad.
+- **Ubicaciones reales** (feed, reels y stories de Facebook e Instagram): ~20 clics salientes por ~21,8 € → **~1,09 € por clic saliente**, CTR saliente ≈ 0,5 % (20 clics / 3.836 impresiones) y 4 visitas medidas. Es decir, ~20 % de esos clics aparece como visita, que ya es compatible con el banner de cookies.
+- **Corrección a lo dicho antes:** la conclusión «los vídeos funcionan mucho mejor que las fotos (CTR 3-6 %, 0,10-0,19 € por clic)» está **contaminada por Audience Network**: sus clics baratos inflan el CTR y abaratan el CPC. No hay base para decir que el vídeo supera a la foto.
+- **Lectura honesta:** hay solo unos ~20 clics reales y 4 visitas medidas. Con eso la campaña **no ha probado ni desmentido el producto**. Lo que sí se ve es un CTR real bajo (< 1 %), que apunta a creatividad u oferta poco atractivas en el anuncio.
+- **Propuesta (pendiente del OK de Edu, porque toca una campaña en marcha):** excluir Audience Network del conjunto (ubicaciones manuales: Facebook e Instagram). Reinicia el aprendizaje otra vez.

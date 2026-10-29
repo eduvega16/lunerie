@@ -1,0 +1,42 @@
+{
+ "id": "2026-W46-03-ajustar-correa-real",
+ "estado": "borrador",
+ "plataforma": "instagram",
+ "formato": "reel",
+ "pieza": "reloj-lune",
+ "fecha_sugerida": null,
+ "gancho": "¿Muy grande para tu muñeca? Se arregla en minutos.",
+ "copy": "La correa mide 18 cm. Si tu muñeca es más pequeña, se quitan uno o dos eslabones. Así se hace.",
+ "hashtags": ["#relojdemujer", "#regaloparaella", "#lunerie"],
+ "guion": [
+  {"segundos": "0-3", "imagen": "Manos reales, el reloj Lune suelto en la muñeca (se le nota holgura)", "texto_en_pantalla": "¿Muy grande para tu muñeca? Se arregla en minutos.", "voz": ""},
+  {"segundos": "3-5", "imagen": "Plano cenital de la correa abierta sobre la mesa, con la herramienta que Edu confirme", "texto_en_pantalla": "La correa mide 18 cm.", "voz": ""},
+  {"segundos": "5-10", "imagen": "Quitar un eslabón (plano corto, sin cortes dentro del gesto)", "texto_en_pantalla": "Se quita un eslabón.", "voz": ""},
+  {"segundos": "10-13", "imagen": "Volver a cerrar el reloj y ponérselo: ajustado", "texto_en_pantalla": "Y se ajusta a tu muñeca.", "voz": ""},
+  {"segundos": "13-15", "imagen": "Reloj ya puesto, plano fijo. Logo LUNERIE pequeño con fundido", "texto_en_pantalla": "Reloj Lune.", "voz": ""}
+ ],
+ "assets": {
+  "existentes": [
+   "marca/videos-ficha/lune-video-macro.mp4"
+  ],
+  "generar": [
+   {"que": "Vídeo real grabado por Edu con el móvil: manos, reloj suelto, quitar un eslabón y volver a ponerlo (3 o 4 tomas verticales de 10-15 s, luz de ventana, fondo niebla o lino claro)", "herramienta": "grabación propia (Edu)", "coste_estimado_usd": 0}
+  ]
+ },
+ "musica": {"origen": "ninguna | biblioteca de Meta (la añade Edu dentro de la app al publicar)", "pista": "", "licencia": "Sin música en el archivo. No reutilizar el audio «Agua» de los anuncios actuales (viene de TikTok)."},
+ "montaje": [],
+ "origen": {
+  "biblioteca": "principiantes-14",
+  "referencia": "Forma: «la mayor trampa y cómo evitarla» / consejos-10. Idea 2 de oficina/ideas/2026-W44.md. Responde a la objeción n.º 1 del reloj («me quedará grande», CLAUDE.md 5.1). Hueco en el radar: ninguno de los 28 anuncios de relojes habla de mujer, pequeño ni talla."
+ },
+ "riesgos": [
+  "NO PROGRAMAR NI SUBIR como anuncio antes del 30-oct. Como reel orgánico no toca la campaña, pero la fecha la pone Edu cuando esté grabado.",
+  "No decir que el reloj lleva extractor ni que Lunerie lo ajusta: en fase drop no llega con caja ni herramienta y nadie ajusta la correa antes de enviar (CLAUDE.md 5.1 y 5.1a). Se enseña cómo se hace, no lo que incluye el pedido.",
+  "Pendiente de Edu: con qué herramienta se quitan de verdad esos eslabones en su reloj y si funciona en casa. La pieza W45-01 dice «en cualquier relojería»; hay que decidir una versión única y que las dos piezas coincidan.",
+  "Decir «minutos», no «2 minutos»: la amiga que lo probó habló de 5. Y solo si en el vídeo se ve que tarda eso.",
+  "Pocas muñecas necesitan quitar eslabones (muñecas de menos de 16 cm según la ficha). No afirmar que «cualquiera» queda ajustada.",
+  "Manos de una persona real: si no son las de Edu, su permiso. Sin voz en primera persona que no sea cierta.",
+  "No citar la opinión de Carla (4 estrellas, los eslabones) con su nombre en el vídeo: sería un testimonio en pantalla sin su OK."
+ ],
+ "revision": {"notas": "Faltan: grabar el vídeo (no existe material), confirmar herramienta y tiempo real, unificar la frase con W45-01 y montar con marca/montaje.py. Si la toma queda bien, también sirve como anuncio nuevo tras el 30-oct, con la misma salvedad de añadirlo en tanda. Coste: 0.", "aprobado_por": null, "fecha": null}
+}

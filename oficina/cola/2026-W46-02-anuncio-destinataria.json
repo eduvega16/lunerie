@@ -1,0 +1,43 @@
+{
+ "id": "2026-W46-02-anuncio-destinataria",
+ "estado": "borrador",
+ "plataforma": "meta-ads",
+ "formato": "anuncio-imagen",
+ "pieza": "reloj-lune",
+ "fecha_sugerida": null,
+ "gancho": "Para tu madre. · Para tu hermana. · Para tu pareja, cuando no sabes qué regalar.",
+ "copy": "Un reloj que se lleva como una joya. Esfera ovalada de 12 mm, piedras verdes y eslabones finos. Envío gratis a península.",
+ "hashtags": [],
+ "guion": [
+  {"segundos": "variante A", "imagen": "Foto 4:5 con jersey y mano en el cuello (marca/fotos-ia/anuncios/test-lune/regalo-foto.jpg), versión 9:16 recortada para Stories/Reels", "texto_en_pantalla": "Para tu madre.", "voz": ""},
+  {"segundos": "variante B", "imagen": "Foto de la muñeca con jersey crema (marca/fotos-ia/anuncios/test-lune/para-ti-foto.jpg) o el perfil editorial (marca/fotos-ia/editorial/lune-editorial-perfil.jpg)", "texto_en_pantalla": "Para tu hermana.", "voz": ""},
+  {"segundos": "variante C", "imagen": "Foto de producto suelto en niebla (marca/fotos-ia/anuncios/test-lune/estilo-foto.jpg)", "texto_en_pantalla": "Para tu pareja, cuando no sabes qué regalar.", "voz": ""}
+ ],
+ "assets": {
+  "existentes": [
+   "marca/fotos-ia/anuncios/test-lune/regalo-foto.jpg",
+   "marca/fotos-ia/anuncios/test-lune/para-ti-foto.jpg",
+   "marca/fotos-ia/anuncios/test-lune/estilo-foto.jpg",
+   "marca/fotos-ia/editorial/lune-editorial-perfil.jpg"
+  ],
+  "generar": [
+   {"que": "3 imágenes 4:5 y sus versiones 9:16 con la frase sobre la foto (Cormorant, texto en la zona central, logo pequeño)", "herramienta": "script local (Pillow)", "coste_estimado_usd": 0}
+  ]
+ },
+ "musica": {"origen": "ninguna", "pista": "", "licencia": ""},
+ "montaje": [],
+ "origen": {
+  "biblioteca": "instantaneos-18",
+  "referencia": "Idea 1 de oficina/ideas/2026-W44.md. Forma tomada del radar (Luxury Love repite un vídeo con «hija / hijo / mujer / pareja»; El Doblao, madre e hija, n.º 1 de su cuenta). Solo la forma: ni el texto ni la «nota dedicada». Para ver los anuncios reales, enlaces de biblioteca en oficina/referencias/radar-joyeria.json."
+ },
+ "riesgos": [
+  "NO PROGRAMAR NI SUBIR antes del 30-oct: cada anuncio nuevo en el conjunto reinicia el aprendizaje de una campaña que ya sale «aprendizaje limitado». Decide Edu y se añaden los 3 en una sola tanda.",
+  "Es un test de ángulo (a quién se lo regalas) sobre el mismo producto; la evidencia del radar viene de 2 anunciantes y que un anuncio dure no prueba que venda.",
+  "El texto principal no menciona el 10 % de regalo, el plazo ni Navidad a propósito (los actuales sí dicen «pídelo antes del 5 de diciembre»). Si Edu quiere mantenerlos por coherencia con los otros 6 anuncios, que los añada él.",
+  "Sin nota dedicada, tarjeta ni caja: en fase drop no hay (CAJA_REGALO = False). No sugerir que el regalo llega «listo para regalar» con una frase.",
+  "Fotos de IA: contar las piedras (3 y 3, en regalo-foto y para-ti-foto se ven parciales) y mirar la palabra pequeña de la esfera en para-ti-foto.jpg: Edu prefiere la esfera sin marca en los anuncios.",
+  "«Para tu madre / hermana / pareja» usa siempre la misma modelo: no la presentamos como la madre ni como la hermana de nadie; solo la frase sobre la foto.",
+  "Meta puede etiquetarlos «hecho con IA»: las imágenes tienen que ser fieles al producto real."
+ ],
+ "revision": {"notas": "Faltan: decisión de Edu sobre si entran en el test tras el 30-oct, qué foto va con cada frase y si el texto lleva o no la línea del 10 % y el plazo. Botón: «Más información», como los demás. Coste de producción: 0.", "aprobado_por": null, "fecha": null}
+}

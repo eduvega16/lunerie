@@ -1,0 +1,47 @@
+{
+ "id": "2026-W46-01-regalo-por-precio",
+ "estado": "borrador",
+ "plataforma": "instagram",
+ "formato": "carrusel",
+ "pieza": "catalogo",
+ "fecha_sugerida": "2026-11-10T19:00:00+01:00",
+ "gancho": "Regalos para ella, de 25 a 50 euros.",
+ "copy": "Regalos para ella, de 25 a 50 euros. Una pieza por tramo de precio, con su precio de verdad. Guárdalo para cuando tengas que elegir.",
+ "hashtags": ["#regaloparaella", "#joyas", "#lunerie"],
+ "guion": [
+  {"segundos": "1", "imagen": "Portada: el reloj en niebla con las joyas en fila, o foto del reloj (marca/fotos-ia/lune-verde-producto.jpg). Texto grande dentro de la zona central (margen de 120 px).", "texto_en_pantalla": "Regalos para ella, de 25 a 50 euros.", "voz": ""},
+  {"segundos": "2", "imagen": "Pendientes Larme en la oreja (marca/fotos-ia/joyas/larme-verde-oreja-v1.png)", "texto_en_pantalla": "Hasta 25 euros. Pendientes Larme, 24,95 €. Un aro con una lágrima.", "voz": ""},
+  {"segundos": "3", "imagen": "Anillo Nuit en la mano (marca/fotos-ia/joyas/nuit-verde-mano-v1.png); Étoile en recorte pequeño o como segunda foto de la diapositiva", "texto_en_pantalla": "Hasta 30 euros. Anillos Nuit y Étoile, 29,95 €. Uno con circonita, otro con la piedra del mes.", "voz": ""},
+  {"segundos": "4", "imagen": "Collar Lune en el cuello (marca/fotos-ia/joyas/collar-lune-cuello-v2-api.png)", "texto_en_pantalla": "Hasta 35 euros. Collar Lune, 34,95 €. Piedras en la cadena, a juego con el reloj.", "voz": ""},
+  {"segundos": "5", "imagen": "Reloj Lune en la muñeca (marca/fotos-ia/lune-verde-muneca.jpg)", "texto_en_pantalla": "Hasta 50 euros. Reloj Lune, 49,95 €. Pequeño, ovalado y con piedras.", "voz": ""},
+  {"segundos": "6", "imagen": "Fondo niebla liso con el logo LUNERIE pequeño", "texto_en_pantalla": "Envío gratis a península. 14 días para devolverlo. 3 años de garantía legal.", "voz": ""}
+ ],
+ "assets": {
+  "existentes": [
+   "marca/fotos-ia/lune-verde-producto.jpg",
+   "marca/fotos-ia/lune-verde-muneca.jpg",
+   "marca/fotos-ia/joyas/larme-verde-oreja-v1.png",
+   "marca/fotos-ia/joyas/nuit-verde-mano-v1.png",
+   "marca/fotos-ia/joyas/etoile-mayo-mano-v1-api.png",
+   "marca/fotos-ia/joyas/collar-lune-cuello-v2-api.png"
+  ],
+  "generar": [
+   {"que": "6 diapositivas 1080x1350 con texto sobre las fotos (Cormorant + Jost, logo pequeño, número de diapositiva 2/6 y usuario en una esquina)", "herramienta": "script local (Pillow)", "coste_estimado_usd": 0}
+  ]
+ },
+ "musica": {"origen": "ninguna", "pista": "", "licencia": ""},
+ "montaje": [],
+ "origen": {
+  "biblioteca": "consejos-7",
+  "referencia": "Forma: «cómo reducir a la mitad tu tiempo en ___», pasada a «cómo acertar con el regalo». Idea 4 de oficina/ideas/2026-W44.md. El radar no tiene datos de guías de regalo por precio: es una apuesta apoyada en la biblioteca y en las tendencias de TikTok de #navidad y #blackfriday (datos del 6-oct)."
+ },
+ "riesgos": [
+  "Las joyas no tienen muestra física y el plazo de Larme no está confirmado: la pieza no dice plazo ni Navidad en ninguna diapositiva, solo precio, envío gratis a península, 14 días y garantía legal.",
+  "Fotos de IA: comprobar que el collar lleva las piedras engastadas en la cadena (la versión v1 las colgaba y está descartada, por eso se usa la v2), que el reloj tiene 3 piedras a cada lado y que la esfera no lleva una marca inventada.",
+  "Textos: «circonita» y «piedra del mes»; nada de oro, piedras preciosas, nombres de gemas ni «hecho a mano». El anillo Étoile lleva 12 meses y el Nuit 4 colores: no enseñar un color como si fuera el único.",
+  "Los precios son los de la tienda hoy (24,95 / 29,95 / 34,95 / 49,95 €). Si cambian antes del 10-nov, rehacer las diapositivas.",
+  "No dice «10 % de regalo»: el código del rasca no se suma a otros descuentos y no conviene que parezca una oferta.",
+  "Se publica después de las 7 piezas de W45 (esas son leyenda y guía de tallas); no se solapan."
+ ],
+ "revision": {"notas": "Faltan: OK de Edu al texto, diseño de las 6 diapositivas con el script y revisar las fotos de IA de las joyas una a una. Alt text de la portada: «Cinco piezas de Lunerie con su precio, de 24,95 a 49,95 euros».", "aprobado_por": null, "fecha": null}
+}

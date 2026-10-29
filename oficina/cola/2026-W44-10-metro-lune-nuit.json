@@ -1,0 +1,57 @@
+{
+  "estado": "borrador",
+  "plataforma": "instagram",
+  "formato": "foto",
+  "pieza": "reloj-lune",
+  "fecha_sugerida": null,
+  "musica": {
+    "origen": "ninguna",
+    "pista": "",
+    "licencia": ""
+  },
+  "montaje": [],
+  "assets": {
+    "existentes": [
+      "marca/fotos-ia/combinados/metro-ojo.jpg"
+    ],
+    "generar": []
+  },
+  "publicacion": {
+    "archivos": [
+      "marca/fotos-ia/combinados/metro-ojo.jpg"
+    ],
+    "urls": [],
+    "alt_text": "Mano de mujer agarrada a la barra de un vagón de metro, con el reloj Lune dorado de piedras verdes en la muñeca y el anillo Nuit de piedra verde oliva.",
+    "ia": true
+  },
+  "origen": {
+    "biblioteca": "idea de Edu: reloj + joya en el día a día (estilo juvenil, ojo de pez)",
+    "referencia": "marca/estilo-contenido.md"
+  },
+  "riesgos": [
+    "Imagen hecha con IA: se publica con la etiqueta de IA y el producto debe ser fiel al real.",
+    "Se recorta a 4:5 al publicar.",
+    "No decir que el reloj sea sumergible ni prometer plazos de Navidad."
+  ],
+  "revision": {
+    "notas": "",
+    "aprobado_por": null,
+    "fecha": null
+  },
+  "id": "2026-W44-10-metro-lune-nuit",
+  "gancho": "Una mano en la barra y el reloj a la vista.",
+  "copy": "Una mano en la barra y el reloj a la vista.\nEl reloj Lune con el anillo Nuit, para el día a día.\n\nReloj Lune, 49,95 €. Anillo Nuit, 29,95 €.\nEnvío gratis a península. lunerie.es",
+  "hashtags": [
+    "#relojdorado",
+    "#regaloparaella",
+    "#lunerie"
+  ],
+  "guion": [
+    {
+      "segundos": "-",
+      "imagen": "Mano agarrada a la barra del metro con ojo de pez; reloj Lune en la muñeca y anillo Nuit",
+      "texto_en_pantalla": "",
+      "voz": ""
+    }
+  ]
+}

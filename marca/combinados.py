@@ -44,10 +44,10 @@ JUVENIL = (" Youthful social-media photography, shot on a phone-style wide lens 
 ESCENAS = {
     "metro-ojo": dict(
         refs=["lune-verde-producto.jpg", "joyas/nuit-verde-mano-v1.png", "lune-verde-detalle.jpg"],
-        prompt=RELOJ2 + ANILLO + COLOR3 + "A woman's fist gripping a vertical steel pole inside a generic subway car, shot from "
+        prompt=RELOJ2 + ANILLO + COLOR3 + "A young woman's slender, feminine hand and slim wrist with smooth hairless skin (small hands, delicate fingers) gripping a vertical steel pole inside a generic subway car, shot from "
                "just below and very close with a fisheye lens, so the curved ceiling lights and the seats bend around "
                "the hand. The watch on her wrist is in the foreground, facing the camera, and the ring is on the "
-               "finger on the pole. Passengers blurred in the background, no signs, no readable text." + JUVENIL),
+               "finger on the pole, its stone a vivid olive-green peridot colour, never amber or brown. Passengers blurred in the background, no signs, no readable text." + JUVENIL),
     "mercado": dict(
         refs=["lune-verde-producto.jpg", "joyas/nuit-verde-mano-v1.png", "lune-verde-detalle.jpg"],
         prompt=RELOJ2 + ANILLO + COLOR3 + "Overhead fisheye shot of a woman's hand reaching into a black mesh tote bag full of "

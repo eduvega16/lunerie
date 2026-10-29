@@ -21,7 +21,7 @@ Pregunta de Edu: ¿está bien enlazada la cuenta de Meta al píxel y viceversa? 
 
 ## Pendiente de comprobar por Edu (yo no puedo)
 1. **Shopify → Analíticas → Informes → Sesiones por fuente/UTM** desde el 28-oct: cuántas sesiones llegan con `utm_source=meta`. Eso no depende del banner y dice si el tráfico llega de verdad.
-2. **Verificación del dominio `lunerie.es`** en Meta (Configuración del negocio → Seguridad de la marca → Dominios). Meta la pide para medir bien en iPhone. No he podido consultarla con mis permisos.
+2. ~~Verificación del dominio `lunerie.es`~~ **Hecha el 29-oct** (etiqueta meta en la cabecera del tema; Edu pulsó «Verificar» y quedó verificado).
 3. En el Administrador de eventos de Meta, abrir «Probar eventos» desde el móvil y comprobar que llegan PageView y ViewContent tras aceptar.
 
 ## Lectura

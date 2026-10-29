@@ -1,6 +1,10 @@
 __pycache__/
 *.pyc
-.claude/
+.claude/*
+# la oficina (29-oct): los agentes y el comando sí se versionan; el resto de .claude (contraseña de la tienda, logs, tmp) no
+!.claude/agents/
+!.claude/commands/
+oficina/salida/
 tema/tienda/
 tema/fotos_prueba/
 

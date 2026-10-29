@@ -633,6 +633,27 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
   (13 skills de @lucasacosta.ia, **sin instalar ni revisar**) y un `README.md` con reglas y cómo ampliarla. Se usa al
   escribir anuncios y guiones: se adapta la FORMA del gancho, y los de primera persona solo si son verdad (nada de
   testimonios inventados). Cada captura nueva de Edu = una entrada nueva con su `fuente`.
+- **29-oct: LA OFICINA (`oficina/`, agentes en `.claude/agents/`, comando `/oficina-semana`).** Equipo de 4 agentes de Claude Code
+  para contenido y ads; **Edu aprueba, los agentes proponen**: `estratega-creativo` (ideas: radar + Biblioteca de anuncios de Meta +
+  `biblioteca/`), `community-manager` (piezas en `oficina/cola/`, JSON con estados `borrador→revisado→aprobado→publicado`),
+  `editor-video` (ffmpeg con `marca/montaje.py`, que desde hoy admite `--musica pista.mp3 [--vol] [--musica-inicio]`) y `experto-ads`
+  (solo herramientas de LECTURA de Meta: no puede tocar presupuestos ni anuncios). Reglas y diagrama en `oficina/README.md`.
+  Primera semana de contenido: 7 piezas en `borrador` (`oficina/cola/2026-W45-*`), pendientes de tu OK de gasto: 0,91 $.
+  **Aún no publica nada**: falta conectar la API oficial de Instagram y una pista de música con licencia. `.gitignore`: `.claude/agents/` y
+  `.claude/commands/` ahora SÍ van a git (el resto de `.claude/` no). **Verla «estilo Habbo»:** extensión de VS Code *Pixel Agents*
+  (pablodelucca, MIT, v1.5.0, instalada el 29-oct): abrir su panel con la paleta de comandos y aceptar que instale sus ganchos en Claude Code;
+  solo muestra lo que corre en este PC (no rutinas en la nube) y las salas se pintan en su editor de diseño.
+- **Radar (`D:\aura-ai-portfolio\projects\05_producto_ganador`), revisado a fondo el 29-oct.** Funciona (20 tests OK; embudo Meta → Claude → Shopify →
+  AliExpress → informe) pero los datos son del **6-7 oct**: 2.435 anuncios, **177 de joyería y relojes de 31 tiendas** (que la oficina lee con
+  `python oficina/radar_a_oficina.py`, en solo lectura) y la tabla `tests` **vacía** (la campaña del Lune no se registró con `cli.py test`).
+  Hallazgos: (1) el **lanzador y su ficha `reloj-vintage.toml` están desfasados** respecto a Lunerie («ajustado a su muñeca», caja de regalo, plateado,
+  2.º reloj por 19,95 €, emojis en los guiones): no reutilizar su `anuncios.md`; la verdad es ESTE fichero. (2) Usa la **API de Anthropic** (clave en
+  `D:\aura-ai-portfolio\.env`, coste aparte de la suscripción). (3) Raspa la Biblioteca de anuncios de Meta y el Creative Center de TikTok con un navegador
+  (riesgo con sus términos de uso; la alternativa oficial es la herramienta `ads_library_search` del conector de Meta, que usa el estratega). (4) Su
+  `contexto/LUNERIE.md` es una copia vieja (sin commit). (5) `data/.browser_profile` guarda la sesión de TikTok: está fuera de git, no subirla.
+  Lo que enseñan los datos: los anuncios de joyería con más de 60 días son casi todos **vídeo + botón «Comprar»** con **contrareembolso, envío gratis,
+  «últimas unidades» y emojis** (ZafiroMadrid 36 anuncios y 472 días; MF Watches 25 y 197). Lunerie hace lo contrario por diseño: hay hueco
+  para un tono más sobrio. Pendiente: volver a ejecutar el radar con keywords de regalo y joyería.
 - **Siguiente con Claude:** apuntar cada día gasto, clics, carritos y
   compras en el radar (`cli.py test`) → vídeos reales de Edu como anuncios nuevos en el mismo conjunto → ~~opiniones
   de amigas~~ (hechas el 28-oct, apartado 6; falta el OK de cada una a su texto) → vídeo de 2 min ajustando la correa.

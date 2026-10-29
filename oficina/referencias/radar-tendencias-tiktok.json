@@ -1,0 +1,151 @@
+{
+ "meta": {
+  "generado": "2026-10-29T11:15:33+00:00",
+  "datos_del_radar_de": "2026-10-06",
+  "anuncios_de_joyeria_y_relojes": 177,
+  "tiendas": 31,
+  "origen": "D:\\aura-ai-portfolio\\projects\\05_producto_ganador\\data\\productos.db"
+ },
+ "tendencias": [
+  {
+   "nombre": "#samurai",
+   "industria": "Games",
+   "crecimiento": 4.85,
+   "publicaciones": 1381,
+   "vistas": 6086162
+  },
+  {
+   "nombre": "#lluvia",
+   "industria": "News & Entertainment",
+   "crecimiento": 3.56,
+   "publicaciones": 12078,
+   "vistas": 103489640
+  },
+  {
+   "nombre": "#lluvias",
+   "industria": "News & Entertainment",
+   "crecimiento": 3.4,
+   "publicaciones": 2150,
+   "vistas": 35040868
+  },
+  {
+   "nombre": "#rawayana",
+   "industria": "News & Entertainment",
+   "crecimiento": 3.26,
+   "publicaciones": 2442,
+   "vistas": 4688279
+  },
+  {
+   "nombre": "#newborn",
+   "industria": "Baby, Kids & Maternity",
+   "crecimiento": 3.06,
+   "publicaciones": 4749,
+   "vistas": 26285521
+  },
+  {
+   "nombre": "#october",
+   "industria": "News & Entertainment",
+   "crecimiento": 2.59,
+   "publicaciones": 3396,
+   "vistas": 20104351
+  },
+  {
+   "nombre": "#puertadelsol",
+   "industria": "News & Entertainment",
+   "crecimiento": 2.55,
+   "publicaciones": 2094,
+   "vistas": 41888784
+  },
+  {
+   "nombre": "#janedoe",
+   "industria": "Games, News & Entertainment",
+   "crecimiento": 2.18,
+   "publicaciones": 1916,
+   "vistas": 13608302
+  },
+  {
+   "nombre": "#babyessentials",
+   "industria": "Baby, Kids & Maternity",
+   "crecimiento": 2.13,
+   "publicaciones": 5097,
+   "vistas": 2908377
+  },
+  {
+   "nombre": "#halloweenmakeup",
+   "industria": "Beauty & Personal Care, News & Entertainment",
+   "crecimiento": 2.07,
+   "publicaciones": 1628,
+   "vistas": 25178860
+  },
+  {
+   "nombre": "#halloween2026",
+   "industria": "News & Entertainment",
+   "crecimiento": 1.64,
+   "publicaciones": 3337,
+   "vistas": 22146081
+  },
+  {
+   "nombre": "#halloweenlook",
+   "industria": "Apparel & Accessories",
+   "crecimiento": 1.63,
+   "publicaciones": 4031,
+   "vistas": 25103468
+  },
+  {
+   "nombre": "#hallowen",
+   "industria": "News & Entertainment",
+   "crecimiento": 1.56,
+   "publicaciones": 2337,
+   "vistas": 7393625
+  },
+  {
+   "nombre": "#blackfriday",
+   "industria": null,
+   "crecimiento": 1.55,
+   "publicaciones": 18152,
+   "vistas": 51847517
+  },
+  {
+   "nombre": "#vivienda",
+   "industria": "Home Improvement",
+   "crecimiento": 1.46,
+   "publicaciones": 15531,
+   "vistas": 265709977
+  },
+  {
+   "nombre": "#instituto",
+   "industria": "Sports & Outdoor, News & Entertainment",
+   "crecimiento": 1.45,
+   "publicaciones": 21316,
+   "vistas": 177383621
+  },
+  {
+   "nombre": "#calendariodeadviento",
+   "industria": "Food & Beverage",
+   "crecimiento": 1.39,
+   "publicaciones": 3184,
+   "vistas": 49341993
+  },
+  {
+   "nombre": "#navidad",
+   "industria": "News & Entertainment",
+   "crecimiento": 1.37,
+   "publicaciones": 17850,
+   "vistas": 113130758
+  },
+  {
+   "nombre": "#runtok",
+   "industria": "Sports & Outdoor",
+   "crecimiento": 1.29,
+   "publicaciones": 3425,
+   "vistas": 9131467
+  },
+  {
+   "nombre": "#abrigo",
+   "industria": "Apparel & Accessories",
+   "crecimiento": 1.29,
+   "publicaciones": 2164,
+   "vistas": 6483934
+  }
+ ]
+}

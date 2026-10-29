@@ -1,0 +1,48 @@
+{
+ "id": "2026-W45-02-lune-reel",
+ "plataforma": "instagram",
+ "formato": "reel",
+ "pieza": "reloj-lune",
+ "fecha_sugerida": "2026-11-03T19:00:00+01:00",
+ "gancho": "Pequeño, ovalado y con piedras.",
+ "copy": "Pequeño, ovalado y con piedras. El reloj que se lleva como una joya.",
+ "hashtags": [
+  "#relojdemujer",
+  "#regaloparaella",
+  "#lunerie"
+ ],
+ "guion": [
+  {
+   "segundos": "0-13",
+   "imagen": "El anuncio 1 ya montado (toalla, perfil, macro, pelo, cielo al revés con el logo)",
+   "texto_en_pantalla": "",
+   "voz": ""
+  }
+ ],
+ "assets": {
+  "existentes": [
+   "marca/fotos-ia/anuncios/lune-verde-anuncio-1.mp4"
+  ],
+  "generar": []
+ },
+ "musica": {
+  "origen": "biblioteca de Meta (la añade Edu dentro de la app al publicar)",
+  "pista": "",
+  "licencia": "de Meta, solo dentro de sus apps"
+ },
+ "montaje": [],
+ "origen": {
+  "biblioteca": "",
+  "referencia": "Es el creativo del test: se reutiliza como orgánico."
+ },
+ "riesgos": [
+  "En estos vídeos el reloj sale más grande que el real: no prometer tamaño con ellos.",
+  "La música no se puede añadir por la API de Instagram: publicar en la app o llevar la pista dentro del archivo con licencia."
+ ],
+ "estado": "borrador",
+ "revision": {
+  "notas": "",
+  "aprobado_por": null,
+  "fecha": null
+ }
+}

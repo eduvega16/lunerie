@@ -1,0 +1,47 @@
+{
+ "id": "2026-W45-03-nuit-leyenda",
+ "plataforma": "instagram",
+ "formato": "foto",
+ "pieza": "anillo-nuit",
+ "fecha_sugerida": "2026-11-04T19:00:00+01:00",
+ "gancho": "Cuentan que la reina de Lunerie lo llevaba las noches sin luna.",
+ "copy": "Cuentan que la reina de Lunerie lo llevaba las noches sin luna. Un sello pequeño con una piedra en forma de ojo, que lo mira todo con calma.\n\nAnillo Nuit, 29,95 €.",
+ "hashtags": [
+  "#anillodorado",
+  "#regaloparaella",
+  "#lunerie"
+ ],
+ "guion": [
+  {
+   "segundos": "-",
+   "imagen": "Foto en la mano del anillo Nuit (verde oliva)",
+   "texto_en_pantalla": "",
+   "voz": ""
+  }
+ ],
+ "assets": {
+  "existentes": [
+   "marca/fotos-ia/joyas/nuit-verde-mano-v1.png"
+  ],
+  "generar": []
+ },
+ "musica": {
+  "origen": "ninguna",
+  "pista": "",
+  "licencia": ""
+ },
+ "montaje": [],
+ "origen": {
+  "biblioteca": "",
+  "referencia": "Leyenda del castillo de Lunerie (CLAUDE.md, apartado 8). Es un cuento, no un dato."
+ },
+ "riesgos": [
+  "Foto hecha con IA: Meta puede etiquetarla; el anillo es fiel al real (comprobado)."
+ ],
+ "estado": "borrador",
+ "revision": {
+  "notas": "",
+  "aprobado_por": null,
+  "fecha": null
+ }
+}

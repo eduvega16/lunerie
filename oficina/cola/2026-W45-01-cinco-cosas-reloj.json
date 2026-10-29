@@ -1,0 +1,86 @@
+{
+ "id": "2026-W45-01-cinco-cosas-reloj",
+ "plataforma": "instagram",
+ "formato": "carrusel",
+ "pieza": "reloj-lune",
+ "fecha_sugerida": "2026-11-02T19:00:00+01:00",
+ "gancho": "Cinco cosas que conviene saber antes de regalar un reloj pequeño.",
+ "copy": "Cinco cosas que conviene saber antes de regalar un reloj pequeño. Guárdalo para cuando lo necesites.",
+ "hashtags": [
+  "#relojdemujer",
+  "#regaloparaella",
+  "#lunerie"
+ ],
+ "guion": [
+  {
+   "segundos": "1",
+   "imagen": "Portada: foto del reloj en niebla (marca/fotos-ia/lune-verde-producto.jpg)",
+   "texto_en_pantalla": "5 cosas antes de regalar un reloj pequeño",
+   "voz": ""
+  },
+  {
+   "segundos": "2",
+   "imagen": "Detalle de la esfera",
+   "texto_en_pantalla": "1. La esfera mide 12 mm. Es pequeña a propósito.",
+   "voz": ""
+  },
+  {
+   "segundos": "3",
+   "imagen": "Correa de eslabones",
+   "texto_en_pantalla": "2. La correa mide 18 cm. Si su muñeca mide menos de 16 cm, se quitan uno o dos eslabones en cualquier relojería.",
+   "voz": ""
+  },
+  {
+   "segundos": "4",
+   "imagen": "Reloj en la muñeca",
+   "texto_en_pantalla": "3. No es sumergible. Fuera para ducharse, nadar o fregar.",
+   "voz": ""
+  },
+  {
+   "segundos": "5",
+   "imagen": "Mecanismo / esfera",
+   "texto_en_pantalla": "4. Es de cuarzo y llega con la pila puesta.",
+   "voz": ""
+  },
+  {
+   "segundos": "6",
+   "imagen": "Reloj en la muñeca, foto final",
+   "texto_en_pantalla": "5. Llega en 7-12 días laborables. Para Navidad, pídelo antes del 5 de diciembre.",
+   "voz": ""
+  }
+ ],
+ "assets": {
+  "existentes": [
+   "marca/fotos-ia/lune-verde-producto.jpg",
+   "marca/fotos-ia/lune-verde-detalle.jpg",
+   "marca/fotos-ia/lune-verde-curva.jpg",
+   "marca/fotos-ia/lune-verde-muneca.jpg"
+  ],
+  "generar": [
+   {
+    "que": "6 diapositivas de texto sobre las fotos (diseño con script, fuentes de la marca)",
+    "herramienta": "script local (Pillow)",
+    "coste_estimado_usd": 0
+   }
+  ]
+ },
+ "musica": {
+  "origen": "ninguna",
+  "pista": "",
+  "licencia": ""
+ },
+ "montaje": [],
+ "origen": {
+  "biblioteca": "principiantes-9",
+  "referencia": "Forma: «las 5 cosas que me habría gustado saber antes de empezar», adaptada a regalo. Sin primera persona."
+ },
+ "riesgos": [
+  "Todos los datos salen de la ficha y de CLAUDE.md (apartado 5.1): comprobar plazo y fecha de Navidad antes de publicar."
+ ],
+ "estado": "borrador",
+ "revision": {
+  "notas": "",
+  "aprobado_por": null,
+  "fecha": null
+ }
+}

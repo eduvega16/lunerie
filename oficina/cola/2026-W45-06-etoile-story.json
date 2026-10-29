@@ -1,0 +1,55 @@
+{
+ "id": "2026-W45-06-etoile-story",
+ "plataforma": "instagram",
+ "formato": "story",
+ "pieza": "anillo-etoile",
+ "fecha_sugerida": "2026-11-07T12:00:00+01:00",
+ "gancho": "¿De qué mes eres?",
+ "copy": "¿De qué mes eres? Cada anillo Étoile guarda la piedra de un mes.",
+ "hashtags": [],
+ "guion": [
+  {
+   "segundos": "1",
+   "imagen": "Foto del anillo Étoile en la mano",
+   "texto_en_pantalla": "¿De qué mes eres?",
+   "voz": ""
+  },
+  {
+   "segundos": "2",
+   "imagen": "Encuesta: enero a junio / julio a diciembre",
+   "texto_en_pantalla": "",
+   "voz": ""
+  },
+  {
+   "segundos": "3",
+   "imagen": "El anillo del mes más votado (por ejemplo, mayo, verde)",
+   "texto_en_pantalla": "Cada mes, su piedra.",
+   "voz": ""
+  }
+ ],
+ "assets": {
+  "existentes": [
+   "marca/fotos-ia/joyas/etoile-mayo-mano-v1-api.png"
+  ],
+  "generar": []
+ },
+ "musica": {
+  "origen": "ninguna",
+  "pista": "",
+  "licencia": ""
+ },
+ "montaje": [],
+ "origen": {
+  "biblioteca": "",
+  "referencia": "Interacción: pregunta y encuesta."
+ },
+ "riesgos": [
+  "Las pegatinas interactivas (encuesta) no se pueden poner por API: publicar a mano en la app."
+ ],
+ "estado": "borrador",
+ "revision": {
+  "notas": "",
+  "aprobado_por": null,
+  "fecha": null
+ }
+}

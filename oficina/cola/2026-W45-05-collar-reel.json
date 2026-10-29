@@ -1,0 +1,55 @@
+{
+ "id": "2026-W45-05-collar-reel",
+ "plataforma": "instagram",
+ "formato": "reel",
+ "pieza": "collar-lune",
+ "fecha_sugerida": "2026-11-06T19:00:00+01:00",
+ "gancho": "Una noche la luna dejó caer su luz sobre una cadena fina.",
+ "copy": "Una noche la luna dejó caer su luz sobre una cadena fina y se quedó prendida en piedras de colores. Así nació el collar del castillo.\n\nCollar Lune, 34,95 €.",
+ "hashtags": [
+  "#collar",
+  "#regaloparaella",
+  "#lunerie"
+ ],
+ "guion": [
+  {
+   "segundos": "0-4",
+   "imagen": "Plano lento sobre el cuello con el collar; la luz recorre las piedras",
+   "texto_en_pantalla": "",
+   "voz": ""
+  }
+ ],
+ "assets": {
+  "existentes": [
+   "marca/fotos-ia/joyas/collar-lune-cuello-v2-api.png"
+  ],
+  "generar": [
+   {
+    "que": "clip de 4 s animando la foto (Kling 3.0 pro, sin sonido): 7 créditos",
+    "herramienta": "conector Higgsfield",
+    "coste_estimado_usd": 0.39,
+    "nota": "La cuenta del conector tiene 0,55 créditos: hace falta recarga o plan. Vigilar que no deforme las piedras."
+   }
+  ]
+ },
+ "musica": {
+  "origen": "biblioteca de Meta (la añade Edu dentro de la app al publicar)",
+  "pista": "",
+  "licencia": "de Meta, solo dentro de sus apps"
+ },
+ "montaje": [],
+ "origen": {
+  "biblioteca": "",
+  "referencia": "Leyenda del castillo de Lunerie."
+ },
+ "riesgos": [
+  "Kling a veces deforma el producto al final: usar solo los primeros 2,5 s.",
+  "Música en la app (no por API)."
+ ],
+ "estado": "borrador",
+ "revision": {
+  "notas": "",
+  "aprobado_por": null,
+  "fecha": null
+ }
+}

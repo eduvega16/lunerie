@@ -534,6 +534,14 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
   vídeos nuevos (1453802080087465 regalo, 1145325581356601 para ti, 1862931217923569 estilo) y las fotos pasaron
   al botón «Ver detalles» (SEE_DETAILS); los vídeos siguen con «Más información». **Desde aquí, no tocar nada
   hasta el 30-oct**: cada cambio en un anuncio lo manda a revisión y reinicia el aprendizaje.
+- **29-oct: home integrada con las joyas (en producción).** Portada con el mismo vídeo y titular de marca «Relojes y
+  joyas *para regalar.*» (botón «Ver el reloj · 49,95 €» + enlace «Ver las joyas») · sección **«Las piezas»**
+  (`parte('piezas')` en `lunerie-inicio.liquid`, cuadrícula propia con la colección `joyas`: Lune grande a la izquierda
+  y 4 joyas en 2×2; móvil: Lune a todo el ancho) que sustituye a la fila «Las joyas» de Horizon (ya no existe en
+  `build.py`) · «Así son las piezas» (rasgos para todo, no solo el reloj) · «Antes de comprar» con Navidad / «¿Me
+  quedará bien?» (correa + guía de tallas) / «¿Se pueden mojar?». Probado antes en el tema sin publicar «Prueba home
+  29-oct» (210513527123), que sigue ahí y se puede borrar. Para ver el scroll en PC con Playwright hay que mover
+  `.page-wrapper` (el `body` tiene `overflow:hidden`); en móvil, capturar con `locator(...).screenshot()`.
 - **28-oct:** en `settings_data.json` del tema hay un bloque de la app **Loox** que `build.py` no tiene: no subir
   `config/settings_data.json` sin añadirlo antes.
 - **La tienda YA ESTÁ ABIERTA** (sin contraseña, comprobado el 27-oct por la noche).

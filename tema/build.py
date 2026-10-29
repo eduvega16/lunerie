@@ -322,7 +322,10 @@ index = {
     "sections": {
         # Portada con vídeo (prueba 14-oct). Para volver a la de la foto en óvalo: parte("hero", arriba=8, abajo=40)
         "portada": parte("hero-video", arriba=0, abajo=0, ancho="full-width"),
-        "como_es": parte("como-es", arriba=56, abajo=56),
+        # 29-oct: «Las piezas» junta el Lune (grande) y las 4 joyas en una sola cuadrícula; «Así son las piezas»
+        # va debajo con rasgos que valen para todo.
+        "piezas": parte("piezas", fondo=BG, arriba=56, abajo=24),
+        "como_es": parte("como-es", arriba=48, abajo=56),
         "oferta": parte("oferta", arriba=0, abajo=0, ancho="full-width"),
         "dudas": parte("dudas", arriba=64, abajo=56),
         # Ficha rápida del reloj: color, comprar y enlace a la ficha completa.
@@ -377,39 +380,6 @@ index = {
                 "desktop_media_position": "left", "equal_columns": True, "limit_details_width": True,
                 "gap": 48, "background_color": BG, "padding-block-start": 56, "padding-block-end": 24},
         },
-        # Las joyas (28-oct): anillos, pendientes y collar de la colección «joyas» (tipo de producto Anillos,
-        # Pendientes o Collares), para que la tienda no sea solo el reloj. 4 columnas en PC, 2 en móvil.
-        # Publicada con las joyas el 28-oct. Si se vuelven a pasar a borrador, poner "disabled": True: con la
-        # colección vacía, Horizon pinta 4 productos de relleno.
-        "joyas": {
-            "type": "product-list",
-            "blocks": {
-                "static-header": {"type": "_product-list-content", "static": True, "settings": {
-                    "content_direction": "row", "vertical_on_mobile": False, "horizontal_alignment": "space-between",
-                    "vertical_alignment": "flex-end", "align_baseline": True, "gap": 12, "width": "fill"},
-                    "blocks": {
-                        "titulo": {"type": "_product-list-text", "settings": {
-                            "text": "<h2>Las joyas</h2>", "type_preset": "h3", "width": "fit-content"}, "blocks": {}},
-                        "boton": {"type": "_product-list-button", "settings": {
-                            "label": "Ver todas", "style_class": "button-unstyled", "width": "fit-content"},
-                            "blocks": {}},
-                    }, "block_order": ["titulo", "boton"]},
-                "static-product-card": {"type": "_product-card", "static": True,
-                    "settings": {"product_card_gap": 6},
-                    "blocks": {
-                        "foto": {"type": "_product-card-gallery", "settings": {"image_ratio": "portrait"}, "blocks": {}},
-                        "nombre": {"type": "product-title", "settings": {"type_preset": "rte"}, "blocks": {}},
-                        "precio": {"type": "price", "settings": {"type_preset": "paragraph"}, "blocks": {}},
-                    },
-                    "block_order": ["foto", "nombre", "precio"]},
-            },
-            "block_order": [],
-            "custom_css": [".button-unstyled, a.link { text-decoration: underline; text-underline-offset: 4px; }"],
-            "settings": {
-                "collection": "joyas", "layout_type": "grid", "max_products": 4, "columns": 4, "mobile_columns": "2",
-                "columns_gap": 16, "rows_gap": 32, "section_width": "page-width", "gap": 28,
-                "background_color": BG, "padding-block-start": 16, "padding-block-end": 64},
-        },
         "promesas": {
             "type": "section",
             "blocks": {
@@ -431,7 +401,7 @@ index = {
                 "padding-block-start": 48, "padding-block-end": 48},
         },
     },
-    "order": ["portada", "destacado", "como_es", "joyas", "oferta", "dudas", "promesas"],
+    "order": ["portada", "destacado", "piezas", "como_es", "oferta", "dudas", "promesas"],
 }
 if not SEGUNDO_RELOJ:
     del index["sections"]["oferta"]

@@ -1,8 +1,8 @@
 {%- comment -%}
   Lunerie · partes de la portada (se pintan desde secciones «Liquid personalizado» de templates/index.json).
-  Uso: {% render 'lunerie-inicio', parte: 'hero' %}  ·  partes: hero, como-es, oferta, dudas
+  Uso: {% render 'lunerie-inicio', parte: 'hero' %}  ·  partes: hero, hero-video, piezas, como-es, oferta, dudas
   Firma visual: la foto del reloj recortada en óvalo con filo dorado, como la esfera del Lune.
-  Producto: el reloj Lune (handle reloj-lune). Cuando haya un segundo producto, añadir aquí su parte.
+  Producto estrella: el reloj Lune (handle reloj-lune). Las joyas salen de la colección «joyas» (parte «piezas»).
 {%- endcomment -%}
 {%- assign lu = all_products['reloj-lune'] -%}
 {%- case parte -%}
@@ -52,28 +52,72 @@
       <div class="lu-hv__velo" aria-hidden="true"></div>
       <div class="lu-hv__grano" aria-hidden="true"></div>
       <div class="lu-hv__ovalo">
-        <p class="lu-hv__ceja">Reloj Lune</p>
-        <h1 class="lu-hv__titulo">Un reloj que se&nbsp;lleva <em>como una joya.</em></h1>
+        <p class="lu-hv__ceja">Lunerie</p>
+        <h1 class="lu-hv__titulo">Relojes y joyas <em>para regalar.</em></h1>
         <a class="lu-boton" href="{{ lu.url }}">Ver el reloj · {{ lu.price | money }}</a>
+        <a class="lu-hv__enlace" href="/collections/joyas">Ver las joyas</a>
         <p class="lu-hv__nota">Envío gratis a península</p>
+      </div>
+    </div>
+
+  {%- when 'piezas' -%}
+    {%- comment -%}
+      Todas las piezas juntas (29-oct): el reloj Lune grande a la izquierda (en PC) y las joyas de la colección
+      «joyas» al lado, en 2×2. En móvil, el Lune ocupa todo el ancho y debajo las joyas de dos en dos.
+      Foto por defecto y foto al pasar el ratón: en el Lune, la modelo y el producto suelto; en las joyas, al revés.
+    {%- endcomment -%}
+    <div class="lu-piezas" id="piezas">
+      <div class="lu-piezas__cab">
+        <h2 class="lu-titulo">Las piezas</h2>
+        <a class="lu-piezas__todas" href="/collections/joyas">Ver todas</a>
+      </div>
+      <div class="lu-piezas__grid">
+        <a class="lu-card lu-card--grande" href="{{ lu.url }}">
+          <span class="lu-card__foto">
+            {%- assign foto_a = lu.images[1] | default: lu.featured_image -%}
+            {%- assign foto_b = lu.featured_image -%}
+            {{ foto_a | image_url: width: 1100 | image_tag: loading: 'eager', sizes: '(min-width: 750px) 46vw, 92vw', alt: lu.title }}
+            {%- if lu.images[1] -%}
+              {{ foto_b | image_url: width: 1100 | image_tag: loading: 'lazy', sizes: '(min-width: 750px) 46vw, 92vw', alt: '', class: 'lu-card__otra' }}
+            {%- endif -%}
+          </span>
+          <span class="lu-card__nombre">{{ lu.title }}</span>
+          <span class="lu-card__precio">{{ lu.price | money }}</span>
+        </a>
+        {%- assign n = 0 -%}
+        {%- for p in collections['joyas'].products -%}
+          {%- if p.handle == 'reloj-lune' -%}{%- continue -%}{%- endif -%}
+          {%- assign n = n | plus: 1 -%}
+          {%- if n > 4 -%}{%- break -%}{%- endif -%}
+          <a class="lu-card" href="{{ p.url }}">
+            <span class="lu-card__foto">
+              {{ p.featured_image | image_url: width: 700 | image_tag: loading: 'lazy', sizes: '(min-width: 750px) 22vw, 46vw', alt: p.title }}
+              {%- if p.images[1] -%}
+                {{ p.images[1] | image_url: width: 700 | image_tag: loading: 'lazy', sizes: '(min-width: 750px) 22vw, 46vw', alt: '', class: 'lu-card__otra' }}
+              {%- endif -%}
+            </span>
+            <span class="lu-card__nombre">{{ p.title }}</span>
+            <span class="lu-card__precio">{{ p.price | money }}</span>
+          </a>
+        {%- endfor -%}
       </div>
     </div>
 
   {%- when 'como-es' -%}
     <div class="lu-como">
-      <h2 class="lu-titulo">El reloj Lune, de cerca</h2>
+      <h2 class="lu-titulo">Así son las piezas</h2>
       <ul class="lu-como__lista" role="list">
         <li>
-          <h3>Una esfera delicada</h3>
-          <p>Ovalada, de 12&nbsp;mm, con un aire vintage que se siente actual. Se lleva como una pulsera fina: elegante, sin necesidad de llamar la atención.</p>
+          <h3>Pequeñas y delicadas</h3>
+          <p>Una esfera de 12&nbsp;mm, un anillo fino, un aro discreto. Para llevarlas cada día sin llamar la atención.</p>
         </li>
         <li>
-          <h3>Piedra a piedra</h3>
-          <p>Cada eslabón guarda una piedra ovalada verde sobre dorado. Ligero, para llevarlo cada día.</p>
+          <h3>Piedras de color</h3>
+          <p>Verdes, champán, azul agua o rojo oscuro sobre un acabado dorado. Cada pieza lleva el suyo.</p>
         </li>
         <li>
-          <h3>Pensado para regalar</h3>
-          <p>Llega con la pila puesta. Solo falta decir para quién es.</p>
+          <h3>Pensadas para regalar</h3>
+          <p>Eliges la pieza y solo falta decir para quién es.</p>
         </li>
       </ul>
     </div>
@@ -89,16 +133,16 @@
     <div class="lu-dudas">
       <h2 class="lu-titulo">Antes de comprar</h2>
       <details>
-        <summary>¿Me quedará grande?</summary>
-        <p>La correa mide 18&nbsp;cm. Si tu muñeca es más fina, quita uno o dos eslabones: cualquier relojería lo hace al momento.</p>
-      </details>
-      <details>
-        <summary>¿Se puede mojar?</summary>
-        <p>No es sumergible. Quítatelo para lavarte las manos, ducharte o nadar.</p>
-      </details>
-      <details>
         <summary>¿Llega para Navidad?</summary>
         <p>Si lo pides antes del 5 de diciembre, sí. Si vas justa de fecha, escríbenos antes de comprar y te decimos si llega.</p>
+      </details>
+      <details>
+        <summary>¿Me quedará bien?</summary>
+        <p>La correa del reloj mide 18&nbsp;cm: si tu muñeca es más fina, quita uno o dos eslabones, cualquier relojería lo hace al momento. En los anillos, cada ficha trae una guía para medir tu talla.</p>
+      </details>
+      <details>
+        <summary>¿Se pueden mojar?</summary>
+        <p>El reloj no es sumergible. Y las joyas duran más si te las quitas para ducharte, nadar o hacer deporte, y te pones el perfume y la crema antes.</p>
       </details>
       <details>
         <summary>¿Y si no le gusta?</summary>
@@ -167,9 +211,37 @@
     .lu-hv__titulo{margin:0 0 26px;font-family:var(--font-heading--family);font-weight:400;
       font-size:1.9rem;line-height:1.05;text-wrap:balance;color:#fff;text-shadow:0 1px 18px rgba(0,0,0,.25)}
     .lu-hv__titulo em{display:block;font-style:italic}
-    .lu-hv__nota{margin:14px 0 0;font-size:.875rem;color:#E2C58F}
+    .lu-hv__enlace{margin-top:16px;color:#fff;font-size:.875rem;letter-spacing:.04em;text-decoration:underline;
+      text-underline-offset:5px;text-decoration-color:rgba(226,197,143,.8)}
+    .lu-hv__enlace:hover{text-decoration-color:#fff}
+    .lu-hv__enlace:focus-visible{outline:2px solid #fff;outline-offset:4px}
+    .lu-hv__nota{margin:12px 0 0;font-size:.875rem;color:#E2C58F}
     @media (min-width:750px){.lu-hv{min-height:min(86vh,820px)}.lu-hv__ovalo{width:min(44vw,560px)}.lu-hv__titulo{font-size:3rem}}
     @media (prefers-reduced-motion:reduce){.lu-hv__grano{animation:none}}
+
+    /* Las piezas: el Lune grande + las 4 joyas (móvil: Lune a todo el ancho y las joyas de dos en dos) */
+    .lu-piezas__cab{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:28px}
+    .lu-piezas__cab .lu-titulo{margin:0}
+    .lu-piezas__todas{color:#16201B;text-underline-offset:4px;text-decoration:underline}
+    .lu-piezas__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px 16px}
+    .lu-card{display:flex;flex-direction:column;gap:2px;color:#16201B;text-decoration:none}
+    .lu-card--grande{grid-column:1/-1}
+    .lu-card__foto{position:relative;display:block;aspect-ratio:4/5;overflow:hidden;background:#F2F4F2;margin-bottom:10px}
+    .lu-card--grande .lu-card__foto{flex:1 1 auto}
+    .lu-card__foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .5s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+    .lu-card__otra{opacity:0}
+    .lu-card__nombre{font-family:var(--font-heading--family);font-size:1.3rem;line-height:1.2}
+    .lu-card--grande .lu-card__nombre{font-size:1.6rem}
+    .lu-card__precio{font-size:.9375rem;color:#3D4842}
+    .lu-card:focus-visible{outline:2px solid #006039;outline-offset:4px}
+    @media (hover:hover){
+      .lu-card:hover .lu-card__otra{opacity:1}
+      .lu-card:hover .lu-card__foto img{transform:scale(1.03)}
+    }
+    @media (min-width:750px){
+      .lu-piezas__grid{grid-template-columns:repeat(4,1fr);gap:32px 16px}
+      .lu-card--grande{grid-column:1/3;grid-row:1/3}
+    }
 
     /* Cómo es: tres rasgos con un pequeño óvalo dorado (no son pasos: sin números) */
     .lu-como{padding-block:16px}
@@ -198,5 +270,5 @@
     .lu-dudas details[open] summary::after{transform:rotate(45deg)}
     .lu-dudas p{margin:0 0 20px;max-width:56ch;line-height:1.6;color:#3D4842}
     .lu-dudas__mas{display:inline-block;margin-top:22px;color:#16201B;text-underline-offset:4px}
-    @media (prefers-reduced-motion:reduce){.lu-ovalo img,.lu-dudas summary::after{transition:none}}
+    @media (prefers-reduced-motion:reduce){.lu-ovalo img,.lu-dudas summary::after,.lu-card__foto img{transition:none}}
 {% endstylesheet %}

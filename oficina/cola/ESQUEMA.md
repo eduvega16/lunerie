@@ -22,11 +22,18 @@ Un fichero JSON por pieza en `oficina/cola/`, con nombre `AAAA-Wss-NN-slug.json`
   },
   "musica": {"origen": "ninguna | pista con licencia | biblioteca de Meta (la añade Edu)", "pista": "", "licencia": ""},
   "montaje": [],
+  "publicacion": {"archivos": ["oficina/salida/portada.jpg", "oficina/salida/2.jpg"], "urls": [], "alt_text": "", "ia": true},
   "origen": {"biblioteca": "instantaneos-6", "referencia": "URL de la Biblioteca de anuncios, si la hay"},
   "riesgos": ["lo que podría salir mal: legal, marca, derechos…"],
   "revision": {"notas": "", "aprobado_por": null, "fecha": null}
 }
 ```
+
+## Publicar (`oficina/publicar.py`)
+`publicacion` es lo que se sube a Instagram: `archivos` (rutas del repo; las imágenes se pasan a JPEG y se alojan en Archivos de Shopify) o
+`urls` (ya públicas; **obligatorio en los reels**, con el MP4 transcodificado). `ia: true` (por defecto) marca la publicación como contenido hecho con IA.
+En un carrusel, todas las imágenes deben tener la misma proporción (se recortan según la primera).
+`python oficina/publicar.py` lista lo aprobado; con un id hace un ensayo; con `--confirmar` publica y deja `estado: publicado` y `publicacion.resultado`.
 
 ## Estados
 `idea` → `borrador` (la ha escrito el community manager) → `revisado` (material y montaje listos) → **`aprobado`** (Edu) → `publicado` · o `descartado`.

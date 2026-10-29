@@ -1,0 +1,57 @@
+{
+  "id": "2026-W44-08-mercado-lune-nuit",
+  "estado": "borrador",
+  "plataforma": "instagram",
+  "formato": "foto",
+  "pieza": "reloj-lune",
+  "fecha_sugerida": null,
+  "gancho": "Pequeño, ovalado y con piedras.",
+  "copy": "Pequeño, ovalado y con piedras.\nEl reloj Lune con el anillo Nuit, para los días de calle.\n\nReloj Lune, 49,95 €. Anillo Nuit, 29,95 €.\nEnvío gratis a península. lunerie.es",
+  "hashtags": [
+    "#relojdemujer",
+    "#regaloparaella",
+    "#lunerie"
+  ],
+  "guion": [
+    {
+      "segundos": "-",
+      "imagen": "Mano cogiendo un melocotón de una bolsa de red con fruta; reloj Lune en la muñeca y anillo Nuit (verde oliva)",
+      "texto_en_pantalla": "",
+      "voz": ""
+    }
+  ],
+  "assets": {
+    "existentes": [
+      "marca/fotos-ia/combinados/mercado.jpg"
+    ],
+    "generar": []
+  },
+  "publicacion": {
+    "archivos": [
+      "marca/fotos-ia/combinados/mercado.jpg"
+    ],
+    "urls": [],
+    "alt_text": "Mano de mujer cogiendo un melocotón de una bolsa de red con fruta, con el reloj Lune dorado de piedras verdes en la muñeca y el anillo Nuit de piedra verde oliva.",
+    "ia": true
+  },
+  "musica": {
+    "origen": "ninguna",
+    "pista": "",
+    "licencia": ""
+  },
+  "montaje": [],
+  "origen": {
+    "biblioteca": "idea de Edu: reloj + joya en el día a día (estilo juvenil, ojo de pez)",
+    "referencia": "marca/estilo-contenido.md"
+  },
+  "riesgos": [
+    "Imagen hecha con IA: se publica con la etiqueta de IA y el producto tiene que ser fiel al real (piedras verde oscuro, 3 a cada lado).",
+    "Se recorta a 4:5 al publicar.",
+    "No decir que el reloj sea sumergible ni prometer plazos de Navidad."
+  ],
+  "revision": {
+    "notas": "",
+    "aprobado_por": null,
+    "fecha": null
+  }
+}

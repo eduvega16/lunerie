@@ -54,7 +54,12 @@ def a_jpeg(ruta):
     """Instagram solo acepta JPEG para imágenes: convierte a oficina/salida/ (carpeta que no va a git)."""
     SALIDA.mkdir(exist_ok=True)
     destino = SALIDA / (pathlib.Path(ruta).stem + ".jpg")
-    Image.open(RAIZ / ruta).convert("RGB").save(destino, quality=92)
+    im = Image.open(RAIZ / ruta).convert("RGB")
+    ancho, alto = im.size
+    if ancho / alto < 0.8:                                  # Instagram no admite fotos más estrechas que 4:5: recorte centrado
+        nuevo = round(ancho / 0.8); arriba = (alto - nuevo) // 2
+        im = im.crop((0, arriba, ancho, arriba + nuevo))
+    im.save(destino, quality=92)
     return destino
 
 

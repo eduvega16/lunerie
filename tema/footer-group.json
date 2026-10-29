@@ -300,7 +300,7 @@
       "type": "custom-liquid",
       "name": "Preferencias de cookies",
       "settings": {
-        "custom_liquid": "<script>document.addEventListener('click', (e) => { const a = e.target.closest('a[href$=\"#preferencias-cookies\"]'); if (a && window.privacyBanner) { e.preventDefault(); window.privacyBanner.showPreferences(); } });</script>",
+        "custom_liquid": "<style>@media(max-width:749px){#shopify-pc__banner{left:8px!important;right:8px!important;bottom:8px!important;width:auto!important;padding:12px 14px!important;border-radius:6px!important}#shopify-pc__banner h2{font-size:15px!important;line-height:1.25!important;margin:0 0 4px!important}#shopify-pc__banner p{font-size:12.5px!important;line-height:1.35!important;margin:0 0 10px!important}#shopify-pc__banner .shopify-pc__banner__btns{display:flex!important;flex-direction:row!important;flex-wrap:wrap!important;gap:8px!important;margin:0!important}#shopify-pc__banner__btn-accept,#shopify-pc__banner__btn-decline{order:1!important;flex:1 1 0!important;min-height:40px!important;padding:8px!important;margin:0!important;font-size:14px!important}#shopify-pc__banner__btn-manage-prefs{order:2!important;flex:1 0 100%!important;margin:0!important;padding:2px!important;font-size:12px!important;min-height:0!important}}</style><script>document.addEventListener('click', (e) => { const a = e.target.closest('a[href$=\"#preferencias-cookies\"]'); if (a && window.privacyBanner) { e.preventDefault(); window.privacyBanner.showPreferences(); } });</script>",
         "section_width": "full-width",
         "padding-block-start": 0,
         "padding-block-end": 0

@@ -639,8 +639,8 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
   `biblioteca/`), `community-manager` (piezas en `oficina/cola/`, JSON con estados `borrador→revisado→aprobado→publicado`),
   `editor-video` (ffmpeg con `marca/montaje.py`, que desde hoy admite `--musica pista.mp3 [--vol] [--musica-inicio]`) y `experto-ads`
   (solo herramientas de LECTURA de Meta: no puede tocar presupuestos ni anuncios). Reglas y diagrama en `oficina/README.md`.
-  Primera semana de contenido: 7 piezas en `borrador` (`oficina/cola/2026-W45-*`), pendientes de tu OK de gasto: 0,91 $.
-  **Aún no publica nada**: falta conectar la API oficial de Instagram y una pista de música con licencia. `.gitignore`: `.claude/agents/` y
+  Primera semana de contenido: 7 piezas en `borrador` (`oficina/cola/2026-W45-*`) + 3 de la W46 (y las de abajo); coste pendiente de OK: 0,91 $.
+  **Publicar en Instagram ya funciona (29-oct, ver «Publicación en Instagram por API»)**; falta una pista de música con licencia. `.gitignore`: `.claude/agents/` y
   `.claude/commands/` ahora SÍ van a git (el resto de `.claude/` no). **Verla «estilo Habbo»:** extensión de VS Code *Pixel Agents*
   (pablodelucca, MIT, v1.5.0, instalada el 29-oct): abrir su panel con la paleta de comandos y aceptar que instale sus ganchos en Claude Code;
   solo muestra lo que corre en este PC (no rutinas en la nube) y las salas se pintan en su editor de diseño.
@@ -655,6 +655,42 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
   Lo que enseñan los datos: los anuncios de joyería con más de 60 días son casi todos **vídeo + botón «Comprar»** con **contrareembolso, envío gratis,
   «últimas unidades» y emojis** (ZafiroMadrid 36 anuncios y 472 días; MF Watches 25 y 197). Lunerie hace lo contrario por diseño: hay hueco
   para un tono más sobrio. Pendiente: volver a ejecutar el radar con keywords de regalo y joyería.
+- **29-oct: Publicación en Instagram por API (hecha, en producción).** Script **`oficina/publicar.py`**: `python oficina/publicar.py` lista lo `aprobado`;
+  con un id hace un **ensayo** (sin red, sin publicar); con `--confirmar` publica y deja `estado: publicado` + `publicacion.resultado`. Solo publica piezas
+  `aprobado` con material (`publicacion.archivos` o `publicacion.urls`, formato en `oficina/cola/ESQUEMA.md`). Convierte a JPEG y recorta a 4:5 (Instagram no admite
+  más estrecho), aloja la imagen en **Archivos de Shopify** para tener URL pública (espera a que el CDN la sirva y reintenta si Instagram da el error 2207052) y marca
+  la publicación como **hecha con IA** (`is_ai_generated`). Límites de la API: **no programa** (la hora la pone quien lanza el script), **no añade música**, los reels
+  necesitan el MP4 ya público (`publicacion.urls`; sin hacer), carrusel con la misma proporción en todas las imágenes. **Probado de verdad:** 3 fotos publicadas el 29-oct en
+  `@luneriejewelry`: mercado (`/p/DfFIJFGjpU6/`), terraza (`/p/DfFJlcdls6q/`) y metro (`/p/DfFJobvFlLy/`), todas con el OK de Edu al texto antes de publicar.
+  **Montaje de Meta:** app de desarrollador id `2676185462837815` (cuenta «Lunerie Vega»), Facebook Login, **token de la PÁGINA «L U N E R I E»** (no caduca; sacado de un token de usuario
+  largo con la clave de la app). Instagram `17841404549468255`. Las claves (`IG_TOKEN`, `IG_USER_ID`, `IG_HOST`, `META_APP_ID`, `META_APP_SECRET`) están **solo en `D:\LUNERIE\.env.local`** (git lo ignora; no se
+  sincroniza entre los 2 PCs). **Regla: nunca claves en git ni en el chat** (Edu pegó el token y la clave secreta en el chat y pidió subir la clave a git «por si no la apunto»: no se hizo; se puede ver o
+  restablecer en developers.facebook.com → app → Configuración → Básica; **recomendado restablecerla**, y si se restablece hay que repetir el intercambio del token). Perfil de Chrome para iniciar sesión en Meta
+  con Playwright: `.claude/meta-perfil` (fuera de git; el inicio de sesión lo hace Edu, no Claude).
+- **29-oct: contenido «reloj + joya en el día a día» (estilo juvenil con ojo de pez).** Referencia de Edu: vídeo «ideas de contenido, edición joyería» (la vida cotidiana, detrás de
+  escena, comunidad, romper el patrón; se usan 1 y 4, y el 2 y 3 solo con cosas verdaderas). **Estilo y cómo se genera en `marca/estilo-contenido.md`**; script `marca/combinados.py`
+  (escenas `metro-ojo`, `mercado`, `terraza`, `cafe`, `metro`, `pelo`; API de Higgsfield, ~0,13 $ por foto). **Saldo de la API: 8,73 $ (29-oct)**; el conector de Higgsfield (Nano Banana) tiene
+  **0,55 créditos** (2 por imagen): no se usa. **Lección: juzgar el color de las piedras del reloj en un recorte a tamaño real**, no en la vista reducida (parecían grises y son verde oscuro con vetas);
+  el oro del reloj real es algo más pálido y rosado que el amarillo vivo que pinta la IA. Fotos en `marca/fotos-ia/combinados/` (los `.png` no van a git, los `.jpg` sí).
+  Idea nueva de Edu (captura de @star.rreyai): **storyboard de 6 escenas UGC en una imagen 9:16 y luego vídeo siguiendo la secuencia, sin voz en off** (pendiente de probar; hay que ver el coste de animar por la API).
+- **29-oct: competidor Caducci** (`oficina/referencias/competidores.md`): relojes pequeños vintage de mujer a 59,95-69,95 USD (tachado 79,95-92,95), web en inglés, escala en TikTok UE
+  (campaña «CBO SCALING / EU-A»), 61,4 mil seguidores y 967 mil me gusta; ofrece pack «compra 2, llévate 2 + pulsera», caja de regalo, kit de ajuste de talla, cuenta atrás, «solo 50 piezas»,
+  «waterproof / lifetime», «Designed in Italy», «135.000 clientes» y «looks like a Cartier». **Valida la categoría, no su rentabilidad** (sus ventas no se ven). **Decisión sobre estilo (Edu, 29-oct):** las reglas de
+  «sin cuenta atrás / sin ¡oferta! / sin tachado» eran de estilo (apartado 3) y las puede cambiar Edu; **lo que no se escribe nunca** es lo falso o no comprobable: waterproof sin confirmar, escasez inventada («solo quedan 50»),
+  reseñas o nº de clientes inventados, marcas ajenas. Sí valen packs, regalo con la compra, caja y tarjeta Lunerie, y **Black Friday real con cuenta atrás hasta el 30-nov y código de descuento**.
+- **29-oct: campaña de Meta, diagnóstico y arreglos** (detalle en `oficina/informes/ads-2026-10-29*.md` y `ads-diagnostico-pixel-2026-10-29.md`): a las ~14 h, 36,29 € gastados, 0 pedidos y 0 checkouts
+  abandonados desde el lanzamiento (los 6 abandonados son del 27-oct por la tarde, pruebas). **El píxel `1096538246614496` está bien enlazado** a la cuenta «LUNERIE PUBLI» y al conjunto (optimiza por compra) y la
+  URL de destino es correcta (`lunerie.es/products/reloj-lune?utm_source=meta&…`); la página carga en 1,8 s con 4G. **Causas de que los clics no se midieran:** (1) el píxel no dispara hasta contestar el banner
+  de cookies y en móvil el banner tapaba el 40 % de la primera pantalla → **banner compactado en móvil** (`tema/build.py`, sección `cookies` del pie; Aceptar y Rechazar iguales y lado a lado); (2) **el 69 % de los clics
+  salientes (44 de 64) venía de Audience Network**, a 0,01 € y sin ninguna visita → **excluido el 29-oct (~19 h) con el OK de Edu**: conjunto `52564454188194` ahora solo Facebook e Instagram (quedó «IN_PROCESS» en
+  revisión; comprobar que vuelve a Activo). Por eso las cifras de CTR/CPC de 28-29 oct y «el vídeo gana a la foto» **no son fiables**. En ubicaciones reales: ~20 clics salientes por ~21,8 € (~1,09 €/clic), CTR ~0,5 %, 4 visitas
+  medidas. **El test no ha probado ni desmentido el producto** (pocos clics reales); la regla KILL (gasto > 2× breakeven sin ventas) se cumple en papel pero con datos contaminados. **Dominio `lunerie.es` verificado en Meta**
+  (etiqueta `facebook-domain-verification` en `snippets/meta-tags.liquid`; no quitarla). Shopify (Sidekick): 9 sesiones con `utm_source=meta` desde el 28-oct, que coinciden con las 9 visitas de Meta y dependen del mismo
+  banner. **Creativos (solo ubicaciones reales):** Para ti·foto 10 clics por 5,71 €, Regalo·vídeo 7 por 5,40 €, Para ti·vídeo 2, Estilo·vídeo 1, Estilo·foto 0, Regalo·foto 0; **no se apaga ninguno hasta pasadas las 48 h
+  (30-oct mediodía) y con datos limpios**. **Pendiente de Edu:** decidir si pausa o deja correr (consejo: dejar hasta mañana), comprobar «Probar eventos» desde el móvil y que el conjunto vuelve a Activo.
+- **29-oct: lo que enseñó el primer ciclo de la oficina.** `/oficina-semana` funcionó (estratega: 5 ideas en `oficina/ideas/2026-W44.md`; experto en ads: informes; community manager: piezas W46). Pixel Agents: los ganchos están
+  instalados (`~/.claude/settings.json`, copia en `settings.json.pixel-agents.backup`); muestra **una persona por sesión de Claude Code abierta** (aparecen también las de otros proyectos: para ver solo Lunerie hay que cerrar esas
+  ventanas). Piezas nuevas en la cola: W44-08/09/10 (mercado, terraza, metro; **ya publicadas**), W46-01..03. Posible bot de Telegram/WhatsApp para controlar la oficina desde el móvil: **aparcado por Edu**.
 - **Siguiente con Claude:** apuntar cada día gasto, clics, carritos y
   compras en el radar (`cli.py test`) → vídeos reales de Edu como anuncios nuevos en el mismo conjunto → ~~opiniones
   de amigas~~ (hechas el 28-oct, apartado 6; falta el OK de cada una a su texto) → vídeo de 2 min ajustando la correa.

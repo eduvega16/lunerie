@@ -55,8 +55,9 @@ Extensión de VS Code **Pixel Agents** (MIT): cada agente es un personaje que se
 (no rutinas en la nube). Las salas se pintan en su editor de diseño (Layout): una por rol.
 
 ## Qué falta (por orden)
-1. Publicar por la API oficial de Instagram lo `aprobado`: **el script `publicar.py` está hecho y probado en ensayo** (29-oct) y la subida de imágenes a una URL
-   pública también; falta el token de Instagram en `.env.local` (`IG_TOKEN`, `IG_USER_ID`) y probar una publicación real. La API **no programa**: quien lanza el
+1. Publicar por la API oficial de Instagram lo `aprobado`: **el script `publicar.py` está hecho** (29-oct) y probado hasta el contenedor «FINISHED» (sin publicar). El token es el de la
+   página «L U N E R I E» (no caduca) y vive en `.env.local` (`IG_TOKEN`, `IG_USER_ID`, `META_APP_ID`, `META_APP_SECRET`; nunca en git). Falta probar una publicación real
+   cuando haya una pieza `aprobado`. La API **no programa**: quien lanza el
    script pone la hora. Los reels necesitan además el MP4 ya alojado y la música no se puede añadir por API.
 2. Pista de música libre con licencia comercial y registrada.
 3. Volver a ejecutar el radar y refrescar `referencias/`.

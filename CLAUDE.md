@@ -542,6 +542,7 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
   quedará bien?» (correa + guía de tallas) / «¿Se pueden mojar?». Probado antes en el tema sin publicar «Prueba home
   29-oct» (210513527123), que sigue ahí y se puede borrar. Para ver el scroll en PC con Playwright hay que mover
   `.page-wrapper` (el `body` tiene `overflow:hidden`); en móvil, capturar con `locator(...).screenshot()`.
+- **29-oct: diagnóstico del píxel** (`oficina/informes/ads-diagnostico-pixel-2026-10-29.md`): el píxel 1096538246614496 está bien enlazado a la cuenta y al conjunto de anuncios (optimiza por compra) y la URL de destino es correcta; la página carga rápido. El problema de medir clics: el píxel no dispara hasta contestar el banner de cookies y en móvil el banner tapaba el 40 % de la primera pantalla. **Banner compactado en móvil** (build.py, sección `cookies` del pie; Aceptar y Rechazar iguales). Pendiente de Edu: sesiones por UTM en Shopify, verificar el dominio lunerie.es en Meta.
 - **28-oct:** en `settings_data.json` del tema hay un bloque de la app **Loox** que `build.py` no tiene: no subir
   `config/settings_data.json` sin añadirlo antes.
 - **La tienda YA ESTÁ ABIERTA** (sin contraseña, comprobado el 27-oct por la noche).

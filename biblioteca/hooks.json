@@ -1,0 +1,379 @@
+{
+  "fuente": {
+    "cuenta": "@karoempowerment (Instagram)",
+    "tipo": "carrusel de 6 diapositivas «300 hooks»",
+    "captura": "29 oct 2026",
+    "nota": "Faltan las diapositivas 1/6 y 6/6 (portada y cierre; no estaban en las capturas). El pie del post es un gancho de captación: «Comenta OCTUBRE y te envío más de 300 hooks»."
+  },
+  "para_que_sirve": "Fórmulas de ganchos con huecos (___) para vídeos, carruseles y anuncios. Están pensadas para creadores y coaches, no para una tienda de regalos: se copia la FORMA del gancho, no el texto.",
+  "reglas_lunerie": [
+    "Los ganchos en primera persona («probé», «me enseñó») solo si son verdad. Nada de testimonios inventados, ni siquiera de la marca.",
+    "Voz de Lunerie (CLAUDE.md, apartado 3): pocas palabras, cálida, sin gritar; sin emojis, sin «¡OFERTA!», sin contadores.",
+    "Nada que prometa lo que no se puede decir: oro, piedras preciosas, waterproof, hipoalergénico (CLAUDE.md, apartado 4).",
+    "El campo «lunerie» es una idea de adaptación para regalo de joyas y relojes: un borrador para trabajar juntos."
+  ],
+  "categorias": [
+    {
+      "id": "instantaneos",
+      "nombre": "Hooks instantáneos",
+      "para_que_sirve": "Úsalos para captar atención en los primeros 2 segundos",
+      "diapositiva": "2/6",
+      "hooks": [
+        {
+          "n": 1,
+          "plantilla": "Todos me dijeron que esto no iba a funcionar… hasta que funcionó."
+        },
+        {
+          "n": 2,
+          "plantilla": "Si eres nuevo en ___, necesitas escuchar esto."
+        },
+        {
+          "n": 3,
+          "plantilla": "Esta es la verdad que nadie te cuenta sobre ___.",
+          "lunerie": "La verdad sobre los regalos de última hora: lo pequeño y bonito casi siempre acierta."
+        },
+        {
+          "n": 4,
+          "plantilla": "Cometí este error durante meses — no hagas lo mismo."
+        },
+        {
+          "n": 5,
+          "plantilla": "Este pequeño cambio transformó por completo mis resultados."
+        },
+        {
+          "n": 6,
+          "plantilla": "Probablemente estás haciendo ___ mal (y ni siquiera te das cuenta).",
+          "lunerie": "Probablemente llevas años regalando lo mismo (y ella lo sabe)."
+        },
+        {
+          "n": 7,
+          "plantilla": "Pensé que me quedaría estancado en ___ para siempre hasta que probé esto."
+        },
+        {
+          "n": 8,
+          "plantilla": "Ojalá alguien me hubiera dicho esto antes de empezar ___.",
+          "lunerie": "Ojalá alguien me hubiera dicho antes cómo elegir el regalo de Navidad sin dudar."
+        },
+        {
+          "n": 9,
+          "plantilla": "Si te sientes perdido en ___, esto fue lo que me ayudó."
+        },
+        {
+          "n": 10,
+          "plantilla": "Por qué tu ___ no está funcionando (y cómo arreglarlo).",
+          "lunerie": "Por qué tu regalo no la emociona (y cómo acertar con una pieza pequeña)."
+        },
+        {
+          "n": 11,
+          "plantilla": "Este ajuste simple en mi rutina cambió todo."
+        },
+        {
+          "n": 12,
+          "plantilla": "Por qué casi renuncié a ___ (pero no lo hice)."
+        },
+        {
+          "n": 13,
+          "plantilla": "El consejo que ignoré durante años — y ahora me arrepiento."
+        },
+        {
+          "n": 14,
+          "plantilla": "Todo el mundo complica demasiado ___. Este es el verdadero secreto."
+        },
+        {
+          "n": 15,
+          "plantilla": "Lo que estaba arruinando mi progreso en silencio en ___."
+        },
+        {
+          "n": 16,
+          "plantilla": "Este tip infravalorado disparó ___ de la noche a la mañana."
+        },
+        {
+          "n": 17,
+          "plantilla": "El mito sobre ___ que mantiene a la mayoría estancada."
+        },
+        {
+          "n": 18,
+          "plantilla": "Si estás haciendo ___, haz esto en su lugar.",
+          "lunerie": "Si ibas a regalar un reloj grande y brillante, mira esto en su lugar."
+        },
+        {
+          "n": 19,
+          "plantilla": "Nadie me dijo que ___ iba a ser así de difícil."
+        },
+        {
+          "n": 20,
+          "plantilla": "Probé 3 estrategias para ___ — esto fue lo que realmente funcionó."
+        }
+      ]
+    },
+    {
+      "id": "consejos",
+      "nombre": "Consejos, herramientas y hacks",
+      "para_que_sirve": "Valor práctico que genera guardados y compartidos",
+      "diapositiva": "3/6",
+      "hooks": [
+        {
+          "n": 1,
+          "plantilla": "5 pequeños hábitos que mejoraron mi ___ al instante."
+        },
+        {
+          "n": 2,
+          "plantilla": "La rutina de 10 minutos que cambió mi forma de abordar ___."
+        },
+        {
+          "n": 3,
+          "plantilla": "Esta app simplificó por completo mi proceso de ___."
+        },
+        {
+          "n": 4,
+          "plantilla": "3 herramientas para principiantes que uso a diario para ___."
+        },
+        {
+          "n": 5,
+          "plantilla": "La checklist que sigo antes de cada ___."
+        },
+        {
+          "n": 6,
+          "plantilla": "La forma perezosa en la que organizo ___ (pero funciona)."
+        },
+        {
+          "n": 7,
+          "plantilla": "Cómo reducir a la mitad tu tiempo en ___ sin perder calidad.",
+          "lunerie": "Cómo acertar con el regalo en 2 minutos, sin saber su gusto."
+        },
+        {
+          "n": 8,
+          "plantilla": "Mi sistema paso a paso para mantenerme constante con ___."
+        },
+        {
+          "n": 9,
+          "plantilla": "La forma más fácil de medir el progreso en ___."
+        },
+        {
+          "n": 10,
+          "plantilla": "Si siempre se te olvida ___, prueba esto.",
+          "lunerie": "Si siempre se te olvida su talla, mira esto: cómo medir un anillo con un hilo."
+        },
+        {
+          "n": 11,
+          "plantilla": "Mi herramienta favorita infravalorada para creadores que hacen ___."
+        },
+        {
+          "n": 12,
+          "plantilla": "Deja de complicar ___. Aquí tienes una forma más simple."
+        },
+        {
+          "n": 13,
+          "plantilla": "El setup que uso para grabar/editar/crear ___."
+        },
+        {
+          "n": 14,
+          "plantilla": "El atajo que me ahorra tiempo cuando hago ___."
+        },
+        {
+          "n": 15,
+          "plantilla": "Cómo automaticé parte de mi proceso de ___."
+        },
+        {
+          "n": 16,
+          "plantilla": "El hack que me ayuda a mantener el foco en ___."
+        },
+        {
+          "n": 17,
+          "plantilla": "3 errores que hicieron que ___ fuera más difícil de lo necesario."
+        },
+        {
+          "n": 18,
+          "plantilla": "El truco de productividad que siempre uso cuando hago ___."
+        },
+        {
+          "n": 19,
+          "plantilla": "Cómo planeo una semana de contenido de ___ en 1 hora."
+        },
+        {
+          "n": 20,
+          "plantilla": "La fórmula que uso cada vez que creo ___."
+        }
+      ]
+    },
+    {
+      "id": "principiantes",
+      "nombre": "Principiantes y paso a paso",
+      "para_que_sirve": "Enseñar + simplificar = autoridad",
+      "diapositiva": "4/6",
+      "hooks": [
+        {
+          "n": 1,
+          "plantilla": "Cómo empezar ___ sin abrumarte."
+        },
+        {
+          "n": 2,
+          "plantilla": "La guía para principiantes que me habría gustado tener cuando empecé ___."
+        },
+        {
+          "n": 3,
+          "plantilla": "El método de 3 pasos que uso para simplificar ___."
+        },
+        {
+          "n": 4,
+          "plantilla": "Cómo planifico todo mi proceso de ___ de principio a fin."
+        },
+        {
+          "n": 5,
+          "plantilla": "Mi flujo de trabajo exacto para ___ (puedes copiarlo)."
+        },
+        {
+          "n": 6,
+          "plantilla": "Cómo construir un hábito alrededor de ___ que de verdad se mantenga."
+        },
+        {
+          "n": 7,
+          "plantilla": "El error que todo principiante comete en ___.",
+          "lunerie": "El error que todos cometemos al regalar un anillo: la talla (y cómo evitarlo)."
+        },
+        {
+          "n": 8,
+          "plantilla": "Cómo mantenerte constante con ___ sin agotarte."
+        },
+        {
+          "n": 9,
+          "plantilla": "Las 5 cosas que me habría gustado saber antes de empezar ___.",
+          "lunerie": "Las 5 cosas que conviene saber antes de regalar un reloj pequeño de mujer."
+        },
+        {
+          "n": 10,
+          "plantilla": "Cómo obtener resultados más rápidos en ___ usando este método."
+        },
+        {
+          "n": 11,
+          "plantilla": "Cómo arreglar tu rutina de ___ de una vez por todas."
+        },
+        {
+          "n": 12,
+          "plantilla": "Las herramientas que uso todos los días para hacer ___ más fácil."
+        },
+        {
+          "n": 13,
+          "plantilla": "Cómo organizo mi semana para mantenerme constante con ___."
+        },
+        {
+          "n": 14,
+          "plantilla": "La mayor trampa para principiantes en ___ y cómo evitarla.",
+          "lunerie": "La mayor trampa al regalar joyas por internet y cómo evitarla."
+        },
+        {
+          "n": 15,
+          "plantilla": "Cómo planear tu primer ___ como un profesional."
+        },
+        {
+          "n": 16,
+          "plantilla": "Cómo construir tu primer sistema de ___."
+        },
+        {
+          "n": 17,
+          "plantilla": "Mi forma simple de medir el progreso en ___."
+        },
+        {
+          "n": 18,
+          "plantilla": "La habilidad que hace que todo en ___ sea mucho más fácil."
+        },
+        {
+          "n": 19,
+          "plantilla": "Cómo recuperarte cuando fallas en ___."
+        },
+        {
+          "n": 20,
+          "plantilla": "Cómo empezar ___ incluso sin experiencia."
+        }
+      ]
+    },
+    {
+      "id": "narrativa",
+      "nombre": "Narrativa y mentalidad",
+      "para_que_sirve": "Muestra tu lado humano. Conecta más profundo",
+      "diapositiva": "5/6",
+      "hooks": [
+        {
+          "n": 1,
+          "plantilla": "Cuando empecé ___, no tenía idea de lo que estaba haciendo."
+        },
+        {
+          "n": 2,
+          "plantilla": "Este fracaso en ___ me enseñó más que cualquier éxito."
+        },
+        {
+          "n": 3,
+          "plantilla": "Antes pensaba que ___ era egoísta — ahora lo veo como autocuidado."
+        },
+        {
+          "n": 4,
+          "plantilla": "Esto es lo que aprendí al hacer ___ todos los días durante 30 días."
+        },
+        {
+          "n": 5,
+          "plantilla": "Ojalá hubiera sabido esto sobre ___ antes de empezar."
+        },
+        {
+          "n": 6,
+          "plantilla": "El día que casi renuncié a ___, pero no lo hice."
+        },
+        {
+          "n": 7,
+          "plantilla": "Mi mayor revelación después de meses de ___."
+        },
+        {
+          "n": 8,
+          "plantilla": "Cómo manejo el agotamiento mientras hago ___."
+        },
+        {
+          "n": 9,
+          "plantilla": "La lección más dura sobre empezar ___ (no es lo que la gente cree)."
+        },
+        {
+          "n": 10,
+          "plantilla": "Pensé que ___ me haría feliz. Estaba equivocado."
+        },
+        {
+          "n": 11,
+          "plantilla": "Por qué dejé de perseguir la perfección en ___."
+        },
+        {
+          "n": 12,
+          "plantilla": "Cómo convertí mi peor momento en motivación para ___."
+        },
+        {
+          "n": 13,
+          "plantilla": "Este cambio de mentalidad lo cambió todo en ___."
+        },
+        {
+          "n": 14,
+          "plantilla": "Así es como realmente se ve el progreso en ___."
+        },
+        {
+          "n": 15,
+          "plantilla": "Nadie habla de lo solitario que a veces puede sentirse ___."
+        },
+        {
+          "n": 16,
+          "plantilla": "Cómo ___ me ayudó a reconstruir mi confianza."
+        },
+        {
+          "n": 17,
+          "plantilla": "Lo que aprendí sobre la paciencia al hacer ___."
+        },
+        {
+          "n": 18,
+          "plantilla": "Cómo encontré mi propósito a través de ___."
+        },
+        {
+          "n": 19,
+          "plantilla": "La lección que cambió por completo mi forma de ver ___."
+        },
+        {
+          "n": 20,
+          "plantilla": "Lo que me digo a mí mismo cuando quiero rendirme con ___."
+        }
+      ]
+    }
+  ]
+}

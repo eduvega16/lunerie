@@ -1,0 +1,123 @@
+{
+  "fuente": {
+    "cuenta": "@lucasacosta.ia (Instagram, reel)",
+    "captura": "29 oct 2026",
+    "gancho_del_post": "«Comentá SKILLS y recibí la lista entera» (3.826 me gusta y 2.820 comentarios: ejemplo de gancho que pide comentar)"
+  },
+  "aviso": "Son nombres y lo que dice el reel que hace cada skill. NO están instaladas ni revisadas: antes de instalar ninguna hay que leer su código, como se hizo con las ig-* (memoria skills-instagram).",
+  "grupos": [
+    {
+      "id": "que-claude-trabaje-mejor",
+      "orden": "Grupo 1 de 5",
+      "nombre": "Que Claude trabaje mejor",
+      "skills": [
+        {
+          "nombre": "Grill Me",
+          "dice_que": "te entrevista hasta que el prompt queda perfecto",
+          "uso_en_lunerie": "Antes de un encargo grande (campaña, ficha, texto): que me haga preguntas hasta tener el brief completo.",
+          "instalada": "no comprobado"
+        },
+        {
+          "nombre": "Caveman",
+          "dice_que": "hace que Claude gaste menos tokens",
+          "uso_en_lunerie": "Sesiones largas como las de la tienda: respuestas más cortas y menos gasto.",
+          "instalada": "no comprobado"
+        },
+        {
+          "nombre": "Agent Browser",
+          "dice_que": "abre el navegador y lo usa solo",
+          "uso_en_lunerie": "Ya lo hacemos con Playwright (comprobar fichas, el pago, la web de Olivia).",
+          "instalada": "no comprobado"
+        },
+        {
+          "nombre": "Find Skills",
+          "dice_que": "te busca la mejor s… (la descripción sale cortada en la captura; seguramente «skill» para cada tarea)",
+          "uso_en_lunerie": "Descubrir skills nuevas sin buscarlas a mano.",
+          "instalada": "no comprobado"
+        }
+      ]
+    },
+    {
+      "id": "diseno",
+      "orden": "Grupo 2 de 5",
+      "nombre": "Diseño",
+      "skills": [
+        {
+          "nombre": "Anti UI Slop",
+          "dice_que": "le saca la cara de inteligencia artificial",
+          "uso_en_lunerie": "Revisar el tema de la tienda para que no parezca «hecho con IA».",
+          "instalada": "no comprobado"
+        },
+        {
+          "nombre": "Web Design Guidelines",
+          "dice_que": "deja tu web muy profesional",
+          "uso_en_lunerie": "Revisión de la tienda frente a buenas prácticas de diseño web.",
+          "instalada": "no comprobado"
+        },
+        {
+          "nombre": "Canvas Design",
+          "dice_que": "te ayuda a mejorar los diseños de tus webs",
+          "uso_en_lunerie": "Mejorar fichas y portada; también piezas gráficas (anuncios, packaging).",
+          "instalada": "no comprobado"
+        }
+      ]
+    },
+    {
+      "id": "que-te-encuentren",
+      "orden": "Grupo 3 de 5",
+      "nombre": "Que te encuentren",
+      "skills": [
+        {
+          "nombre": "SEO Audit",
+          "dice_que": "mejora cómo te encuentran en Google",
+          "uso_en_lunerie": "Títulos, descripciones y colecciones de lunerie.es (en este PC ya hay una skill parecida: marketing:seo-audit).",
+          "instalada": "no comprobado"
+        },
+        {
+          "nombre": "AI SEO",
+          "dice_que": "hace lo mismo, pero con inteligencia artificial",
+          "uso_en_lunerie": "Que los buscadores con IA recomienden la tienda: fichas claras, datos verdaderos, preguntas frecuentes.",
+          "instalada": "no comprobado"
+        }
+      ]
+    },
+    {
+      "id": "video",
+      "orden": "Grupo 4 de 5",
+      "nombre": "Video",
+      "skills": [
+        {
+          "nombre": "Video Lens",
+          "dice_que": "te resume un video de YouTube directo en el chat",
+          "uso_en_lunerie": "Resumir vídeos de la competencia o de tendencias antes de grabar.",
+          "instalada": "no comprobado"
+        },
+        {
+          "nombre": "Video Use",
+          "dice_que": "te lo edita ahí mismo",
+          "uso_en_lunerie": "Editar los vídeos de los anuncios (hoy se hace con marca/montaje.py y Kling).",
+          "instalada": "no comprobado"
+        }
+      ]
+    },
+    {
+      "id": "negocio",
+      "orden": "Grupo 5 de 5",
+      "nombre": "Negocio",
+      "skills": [
+        {
+          "nombre": "Content Strategy",
+          "dice_que": "te arma toda la estrategia de tu contenido",
+          "uso_en_lunerie": "Plan de contenido de Instagram/TikTok (ya hay skills ig-plan e ig-viral instaladas).",
+          "instalada": "no comprobado"
+        },
+        {
+          "nombre": "Pricing",
+          "dice_que": "te dice cuánto cobrar por tu servicio o por tu producto",
+          "uso_en_lunerie": "Precios de las joyas y del Lune, junto a la calculadora del radar (cli.py calc).",
+          "instalada": "no comprobado"
+        }
+      ]
+    }
+  ]
+}

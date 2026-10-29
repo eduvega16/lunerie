@@ -628,6 +628,11 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
   fila «De cerca» (oculta). **Sin comprobar en un iPhone real** (Playwright no tiene WebKit útil en este PC).
   **Pendiente:** el vídeo de la portada (`parte('hero-video')` en `lunerie-inicio.liquid`) usa las mismas URLs
   «originales» → mismo riesgo en iPhone.
+- **29-oct: `biblioteca/`** (idea de Edu: «una base de datos para crear contigo y para las campañas»): `hooks.json` (80
+  ganchos con huecos de @karoempowerment, 4 categorías de 20; 10 con idea de adaptación a Lunerie), `skills-claude.json`
+  (13 skills de @lucasacosta.ia, **sin instalar ni revisar**) y un `README.md` con reglas y cómo ampliarla. Se usa al
+  escribir anuncios y guiones: se adapta la FORMA del gancho, y los de primera persona solo si son verdad (nada de
+  testimonios inventados). Cada captura nueva de Edu = una entrada nueva con su `fuente`.
 - **Siguiente con Claude:** apuntar cada día gasto, clics, carritos y
   compras en el radar (`cli.py test`) → vídeos reales de Edu como anuncios nuevos en el mismo conjunto → ~~opiniones
   de amigas~~ (hechas el 28-oct, apartado 6; falta el OK de cada una a su texto) → vídeo de 2 min ajustando la correa.

@@ -79,6 +79,38 @@ ESCENAS = {
                "on the collarbone, a simple cream top. Shallow depth of field, light neutral background." + CIERRE),
 }
 
+# Campaña «Un reloj que solo da la hora» (30-oct): moda del «reloj de la abuela» (Gen Z, desconectar del smartwatch).
+# 3 planos para un vídeo 9:16 sin voz: antes (smartwatch con avisos) → se lo quita → el Lune, en calma.
+# El smartwatch es genérico: sin marca, sin forma reconocible de un modelo concreto, sin texto legible en la pantalla.
+# Mismo escenario en los 3 (mesa de madera clara, manga de punto crema, luz de mañana) para que parezcan un mismo vídeo.
+# «smartwatch-despues» y «smartwatch-calma» usan «antes» como referencia de escena: generar primero «antes».
+HORA = "campana-hora/"
+SMARTWATCH = ("a generic unbranded black smartwatch with a plain black silicone strap and a rectangular screen glowing "
+              "with several blurred notification bubbles (no readable text, no logos, no recognisable brand design)")
+ESCENA_HORA = ("Morning light from a window, a light oak table, a cream chunky-knit sweater sleeve, a phone lying face "
+               "down at the edge of the frame. Vertical phone video still, shot from slightly above, close to the "
+               "wrist. Young woman, slender wrist, nude manicure, no face visible.")
+REAL = (" Photorealistic, natural skin with real texture, no text, no logos, no brand names, no extra jewelry. Calm, "
+        "soft and warm.")
+ESCENAS.update({
+    "smartwatch-antes": dict(aspect="9:16", refs=["lune-verde-producto.jpg"],
+        prompt=f"A woman's left wrist resting on the table wearing {SMARTWATCH}. Her other hand's fingers are on the "
+               f"smartwatch buckle, about to take it off. {ESCENA_HORA} The image is a little cooler and busier, the "
+               f"screen light reflecting on the skin." + REAL),
+    "smartwatch-despues": dict(aspect="9:16",
+        refs=["lune-verde-producto.jpg", HORA + "smartwatch-antes.png", "lune-verde-detalle.jpg"],
+        prompt=RELOJ2 + COLOR3 + "The second reference image is the previous shot of the same video: keep the same "
+               "table, sweater sleeve, light and framing. Now the same woman's wrist wears the watch from the first "
+               f"reference instead, and {SMARTWATCH.replace('glowing with several blurred notification bubbles', 'with a dark, switched-off screen')} "
+               "lies face down on the table next to her hand. Warmer, calmer light than before." + REAL),
+    "smartwatch-calma": dict(aspect="9:16",
+        refs=["lune-verde-producto.jpg", HORA + "smartwatch-antes.png", "lune-verde-detalle.jpg"],
+        prompt=RELOJ2 + COLOR3 + "The second reference image shows the setting: keep the same oak table, cream knit "
+               "sleeve and morning light. The woman's hand, wearing the watch from the first reference, holds a "
+               "white ceramic coffee cup near an open paperback book, unhurried. No smartwatch and no phone in sight. "
+               "Golden warm light." + REAL),
+})
+
 
 def referencia(nombre):
     return higgsfield_client.upload_file(FOTOS / nombre)
@@ -88,7 +120,7 @@ def generar(nombre, salida):
     e = ESCENAS[nombre]
     try:
         res = higgsfield_client.subscribe(MODELO, arguments={
-            "prompt": e["prompt"], "image_urls": [referencia(r) for r in e["refs"]], "aspect_ratio": "3:4",
+            "prompt": e["prompt"], "image_urls": [referencia(r) for r in e["refs"]], "aspect_ratio": e.get("aspect", "3:4"),
             "resolution": "2k", "quality": "high", "enhance_prompt": False})
     except Exception as ex:  # fallo, cancelación, moderación o sin créditos: no se da por bueno
         return nombre, f"ERROR {type(ex).__name__}: {ex}"
@@ -96,6 +128,7 @@ def generar(nombre, salida):
     if not imgs:
         return nombre, f"SIN IMAGEN: {res}"
     destino = salida / f"{nombre}.png"
+    destino.parent.mkdir(parents=True, exist_ok=True)
     urllib.request.urlretrieve(imgs[0]["url"], destino)
     return nombre, str(destino)
 

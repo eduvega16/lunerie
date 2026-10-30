@@ -11,3 +11,7 @@ tema/fotos_prueba/
 # Claves locales (Higgsfield, etc.): nunca en git
 .env
 .env.local
+
+# Originales PNG de las fotos IA (30-oct): en git van las copias JPG
+marca/fotos-ia/fichas/*.png
+marca/fotos-ia/campana-hora/*.png

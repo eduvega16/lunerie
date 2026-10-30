@@ -83,7 +83,7 @@
   En Meta España nadie lo anuncia.
 - **Modelo:** BS Bee Sister **FA1835** (marca del fabricante, no es réplica). Llamarlo «Lune» está bien, pero no
   decir que lo diseña o fabrica Lunerie. Con las muestras: mirar si la esfera lleva el logo BS (se verá en las fotos).
-- **PVP 49,95 € desde el 27-oct** (antes 44,95 €; subido un 10 % para compensar el rasca del 10 %: con el código,
+- **PVP 39,95 € desde el 30-oct (Edu, tras el test sin ventas: igual que Calné) y SIN rasca** (sección `rasca` del pie con `"disabled": True`; el código LUNERIE10 sigue existiendo en Descuentos). Antes: **PVP 49,95 € desde el 27-oct** (antes 44,95 €; subido un 10 % para compensar el rasca del 10 %: con el código,
   44,96 €) · **sin upsell** (el «2.º reloj por 19,95 €» se quitó el 27-oct: daba sensación de barato) ·
   variantes: solo Dorado·piedra verde (ver 5.1a).
 - **Cómo es:** cuarzo, esfera ovalada 12 mm, correa de eslabones 18 cm con piedras ovaladas (resina/vidrio),
@@ -524,6 +524,7 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
 ## 8. Calendario y pendientes (a 27-oct-2026)
 
 ### Para empezar la próxima sesión (después del 27-oct) — abrir conversación nueva por sesión.
+- **30-oct: resultado del test de Meta (65,54 € hasta las 10 h): 0 ventas, 0 pagos empezados, 0 carritos medidos.** Solo FB+IG: ~82 clics salientes a ~0,79 €/clic, CTR ~0,9 %, pero solo 11 visitas medidas por el píxel. Por clics gana **«Para ti · foto»** (37 clics, 0,60 €/clic), luego «Regalo · vídeo» (19, 0,69 €); «Estilo» es el peor. Según la regla KILL, no pasa; el atasco está después del clic (precio, plazo, ventanas, confianza o medición). **Edu bajó el Lune a 39,95 € y quitó el rasca.** Ojo: los anuncios aún dicen «49,95 €» y «10 % de regalo». Pendiente: sesiones reales de Meta en Shopify (falta el permiso `read_reports` en la CLI).
 **Dónde nos quedamos (27-oct, ~23 h): CAMPAÑA LANZADA.**
 - **28-oct: la campaña tardó ~12 h en arrancar** (a las 11 h, 0 € y 1 impresión, sin errores, con 5 anuncios en
   «pending · preparing»). Al mediodía ya gastaba sola, sin tocar nada: **1,51 €, 227 impresiones, 2 clics**

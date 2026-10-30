@@ -279,7 +279,8 @@ footer = {
                          "padding-block-start": 24, "padding-block-end": 32},
         },
         # Rasca del 10 % (27-oct): ventana que sale una vez en el inicio y las fichas (tema/codigo/snippets/lunerie-rasca.liquid)
-        "rasca": {"type": "custom-liquid", "name": "Rasca 10 %", "settings": {
+        # 30-oct: desactivado (Edu) al bajar el Lune a 39,95 €. Volver: quitar "disabled".
+        "rasca": {"type": "custom-liquid", "name": "Rasca 10 %", "disabled": True, "settings": {
             "custom_liquid": "{% render 'lunerie-rasca' %}", "section_width": "full-width",
             "padding-block-start": 0, "padding-block-end": 0}},
         # «Preferencias de cookies» (menú pie-informacion, enlace /#preferencias-cookies) reabre el panel del banner

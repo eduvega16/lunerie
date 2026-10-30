@@ -83,7 +83,7 @@
   En Meta España nadie lo anuncia.
 - **Modelo:** BS Bee Sister **FA1835** (marca del fabricante, no es réplica). Llamarlo «Lune» está bien, pero no
   decir que lo diseña o fabrica Lunerie. Con las muestras: mirar si la esfera lleva el logo BS (se verá en las fotos).
-- **PVP 39,95 € desde el 30-oct (Edu, tras el test sin ventas: igual que Calné) y SIN rasca** (sección `rasca` del pie con `"disabled": True`; el código LUNERIE10 sigue existiendo en Descuentos). Antes: **PVP 49,95 € desde el 27-oct** (antes 44,95 €; subido un 10 % para compensar el rasca del 10 %: con el código,
+- **PVP 39,95 € desde el 30-oct (Edu, tras el test sin ventas: igual que Calné), **tachado 44,95 €** (el precio más bajo de los 30 días anteriores; 49,95 € no se puede tachar porque solo duró 3 días) y SIN rasca** (sección `rasca` del pie con `"disabled": True`; el código LUNERIE10 sigue existiendo en Descuentos). Antes: **PVP 49,95 € desde el 27-oct** (antes 44,95 €; subido un 10 % para compensar el rasca del 10 %: con el código,
   44,96 €) · **sin upsell** (el «2.º reloj por 19,95 €» se quitó el 27-oct: daba sensación de barato) ·
   variantes: solo Dorado·piedra verde (ver 5.1a).
 - **Cómo es:** cuarzo, esfera ovalada 12 mm, correa de eslabones 18 cm con piedras ovaladas (resina/vidrio),

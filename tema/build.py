@@ -166,6 +166,8 @@ PIEDRAS = {"Verde": "#3F7A55", "Azul": "#2D3F8F", "Rosa": "#E0A3AC", "Verde clar
            # Joyas (28-oct): anillo Nuit, pendientes Larme y collar Lune (el anillo Étoile va por meses, sin bolitas)
            "Verde oliva": "#6B6A2C", "Champán": "#E6C7A1", "Blanco": "#EEF1F4", "Morado": "#5E3F8C",
            "Fucsia": "#D12F7F", "Turquesa": "#36A9C9", "Negro": "#1E1F1E",
+           # Relojes (30-oct): color de la correa del Sépia
+           "Marrón": "#6B3A24",
            "De colores": "conic-gradient(#A52A24, #D9A441, #3F7A55, #36A9C9, #2D3F8F, #8E5AA8, #A52A24)"}
 def _piedra(c):
     piedra, aro = c if isinstance(c, tuple) else (c, BOLITAS["Dorado"])
@@ -729,6 +731,17 @@ _orden = _det["block_order"]
 _orden.insert(_orden.index("variantes") + 1, "guia_talla")
 (OUT / "product.anillo.json").write_text(json.dumps(anillo, ensure_ascii=False, indent=2), encoding="utf8")
 
+# Plantilla «reloj» (30-oct): para los relojes de la colección (Sépia, Maille…). Es la de las joyas + «¿Se puede
+# mojar?» (ninguno es sumergible). La medida y el ajuste de la correa van en la descripción de cada reloj, porque
+# cambian de uno a otro (piel con hebilla, eslabones, malla). El Lune sigue con product.json.
+reloj = copy.deepcopy(joya)
+_det = reloj["sections"]["main"]["blocks"]["product-details"]["blocks"]["detalles"]
+_det["blocks"]["agua"] = row("¿Se puede mojar?",
+                             "<p>No. No es sumergible: quítatelo para lavarte las manos, ducharte o nadar. "
+                             "Una gota de lluvia no le pasa nada.</p>")
+_det["block_order"].insert(_det["block_order"].index("descripcion") + 1, "agua")
+(OUT / "product.reloj.json").write_text(json.dumps(reloj, ensure_ascii=False, indent=2), encoding="utf8")
+
 (OUT / "codigo" / "snippets").mkdir(parents=True, exist_ok=True)
 (OUT / "codigo" / "snippets" / "lunerie-bolitas.liquid").write_text(
     "{%- comment -%} Generado por tema/build.py (BOLITAS): bolitas de color en el selector de variantes {%- endcomment -%}\n"
@@ -793,7 +806,7 @@ TIENDA = OUT / "tienda"
 # password.json y cart.json no los genera build.py: son plantillas del tema con los textos en español
 DESTINO = {"password.json": "templates", "cart.json": "templates", "settings_data.json": "config", "header-group.json": "sections", "footer-group.json": "sections",
            "index.json": "templates", "product.json": "templates", "product.joya.json": "templates",
-           "product.anillo.json": "templates"}
+           "product.anillo.json": "templates", "product.reloj.json": "templates"}
 if TIENDA.exists():
     # código del tema modificado (tema/codigo/<carpeta>/<fichero>), p. ej. snippets/variant-main-picker.liquid
     for f in [*(OUT / "codigo").rglob("*.liquid"), *(OUT / "codigo" / "assets").glob("*.js")]:   # también assets/*.js (zoom del móvil)

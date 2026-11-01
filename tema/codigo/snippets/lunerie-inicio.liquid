@@ -207,7 +207,7 @@
                     <p class="lu-esc__op-texto">{{ o.texto.value | escape | truncate: 220 }}</p>
                     <p class="lu-esc__op-quien">
                       <span class="lu-esc__op-raya" aria-hidden="true"></span>{{ o.nombre.value }}
-                      {%- if o.origen.value != blank -%}<small>{{ o.origen.value }}</small>{%- endif -%}
+                      {%- if o.origen.value == 'Compra verificada' -%}<small>{{ o.origen.value }}</small>{%- endif -%}
                     </p>
                     {%- if o.producto.value != blank -%}
                       <a class="lu-esc__op-pieza" href="{{ o.producto.value.url }}">{{ o.producto.value.title }}</a>

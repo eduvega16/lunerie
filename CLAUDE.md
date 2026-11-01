@@ -559,7 +559,9 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
   según el número de piezas (`snippets/lunerie-segundo-reloj.liquid`, nombre antiguo). En Preguntas frecuentes:
   «¿Cómo funciona el 3x2?» y «¿Llegan juntas?» (pueden llegar en paquetes distintos). Quitarla: `PROMO = False` +
   desactivar los dos descuentos. Los anuncios nuevos pueden usarla.
-- **Opiniones: las 4 amigas dieron el OK a sus textos (1-nov)**; ya no es un pendiente.
+- **Opiniones: las 4 amigas dieron el OK a sus textos (1-nov)**; ya no es un pendiente. La etiqueta «Recibido como
+  regalo» ya **no se enseña** (Edu, 1-nov; en la ficha y en el inicio); el dato sigue en el metaobjeto y «Compra
+  verificada» sí sale cuando la haya.
 - Sigue pendiente de Edu: coste del envío del Maille, muestras de los nuevos, regenerar la clave de Higgsfield.
   Siguiente con Claude: la campaña «Un reloj que solo da la hora» (punto 2 de abajo).
 

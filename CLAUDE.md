@@ -523,7 +523,21 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
 
 ## 8. Calendario y pendientes (a 30-oct-2026)
 
-### Para empezar la próxima sesión (después del 30-oct) — abrir conversación nueva por sesión.
+### Para empezar la próxima sesión (después del 1-nov) — abrir conversación nueva por sesión.
+**1-NOV (manda sobre el bloque del 30-oct de abajo):**
+- **Publicados los 6 nuevos** (OK de Edu): Sépia, Maille, Galet, Perle, aros Boucle (con **los dos tamaños**, decidido) y
+  anillo Duo → ACTIVE solo en Tienda online; fichas 200 y «Agregar al carrito» comprobados (`/products/<handle>.js`).
+- **Borrados todos los demás borradores** (14, a petición de Edu): los 4 relojes descartados, las 8 joyas de DSers del
+  28-oct y los 2 productos DSers del 21-oct (los de la fuente del Lune; antes se decía «no borrarlos»; Edu pide los
+  pedidos a mano en AliExpress). Ninguna foto suya la usaba otro producto (comprobado antes de borrar).
+- **Colección nueva «Relojes»** (`relojes`, automática por tipo = Relojes, orden manual: Lune, Sépia, Maille, Galet,
+  Perle, publicada en Tienda online). En `main-menu` y `pie-tienda`, «Reloj Lune» → **«Relojes»**.
+- Colección `joyas` (todas las piezas, orden manual) reordenada: **los 5 relojes primero** y luego las joyas → «Las
+  piezas» del inicio enseña el Lune grande + Sépia, Maille, Galet y Perle (sin tocar el tema). Ojo: el menú «Joyas»
+  apunta a esa colección, que también tiene los relojes (si molesta, crear una de solo joyas y cambiar el menú).
+- Sigue pendiente de Edu: coste del envío del Maille, muestras de los nuevos, regenerar la clave de Higgsfield.
+  Siguiente con Claude: la campaña «Un reloj que solo da la hora» (punto 2 de abajo).
+
 **DÓNDE NOS QUEDAMOS (30-oct, noche) — leer esto primero; el detalle de cada punto está en las entradas del 30-oct de abajo.**
 - **Estado:** tienda abierta · **campaña de Meta PAUSADA** (66,40 €, 0 ventas; no reactivar sus anuncios: dicen 49,95 € y
   «10 % de regalo») · Reloj Lune a **39,95 € con tachado 44,95 €** (quitar el tachado hacia mediados de noviembre o antes de

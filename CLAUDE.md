@@ -554,8 +554,8 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
   pieza más barata y aplica el que más ahorra (probado en cestas reales: Sépia + Boucle 69,90 → 44,93 €; Lune +
   Boucle + Duo 79,85 → 59,90 €). Cuentas: con la promo ningún pedido deja menos que una pieza sola (~18 € un reloj
   barato, ~14,5 € el Lune), salvo Lune + Maille (~11,6 €); 2.º gratis NO (~8 €) y un 20 % fijo con código tampoco
-  (guardarlo para Black Friday). En el tema: **`PROMO = True`** en `build.py` → frase en la barra de arriba (se alterna
-  con el envío gratis), caja verde «3x2 EN TODA LA TIENDA» en todas las fichas (bloque `oferta`) y aviso en la cesta
+  (guardarlo para Black Friday). En el tema: **`PROMO = True`** en `build.py` → frase en la barra de arriba (**sola y fija**:
+  Edu quitó el envío gratis y las devoluciones de la barra el 1-nov; con `PROMO = False` vuelven), caja verde «3x2 EN TODA LA TIENDA» en todas las fichas (bloque `oferta`) y aviso en la cesta
   según el número de piezas (`snippets/lunerie-segundo-reloj.liquid`, nombre antiguo). En Preguntas frecuentes:
   «¿Cómo funciona el 3x2?» y «¿Llegan juntas?» (pueden llegar en paquetes distintos). Quitarla: `PROMO = False` +
   desactivar los dos descuentos. Los anuncios nuevos pueden usarla.

@@ -137,11 +137,8 @@ header = {
     },
     "order": ["header_announcements_9jGBFp", "header_section"],
 }
-if PROMO:   # la promo va primero en la barra y se alterna con el envío gratis (Horizon las pasa cada 5 s)
-    _barra = header["sections"]["header_announcements_9jGBFp"]
-    _barra["blocks"]["promo"] = copy.deepcopy(_barra["blocks"]["announcement_BxgCk9"])
-    _barra["blocks"]["promo"]["settings"]["text"] = PROMO_BARRA
-    _barra["block_order"].insert(0, "promo")
+if PROMO:   # 1-nov (Edu): en la barra solo la promo, fija (sin el envío gratis ni las devoluciones)
+    header["sections"]["header_announcements_9jGBFp"]["blocks"]["announcement_BxgCk9"]["settings"]["text"] = PROMO_BARRA
 (OUT / "header-group.json").write_text(json.dumps(header, ensure_ascii=False, indent=2), encoding="utf8")
 
 

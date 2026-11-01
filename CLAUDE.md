@@ -535,14 +535,14 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
 - Colección `joyas` (todas las piezas, orden manual) reordenada: **los 5 relojes primero** y luego las joyas → «Las
   piezas» del inicio enseña el Lune grande + Sépia, Maille, Galet y Perle (sin tocar el tema). Ojo: el menú «Joyas»
   apunta a esa colección, que también tiene los relojes (si molesta, crear una de solo joyas y cambiar el menú).
-- **Inicio nuevo (1-nov, en el tema sin publicar «Prueba home 29-oct» 210513527123, falta el OK de Edu para subirlo
-  al publicado):** como el carrusel de Caducci, dos **escaparates** que se deslizan (`parte('escaparate')` en
+- **Inicio nuevo (1-nov, EN PRODUCCIÓN con el OK de Edu; probado antes en «Prueba home 29-oct» 210513527123):** como el carrusel de Caducci, dos **escaparates** que se deslizan (`parte('escaparate')` en
   `lunerie-inicio.liquid`, `coleccion: 'relojes'` / `'joyas'`): tarjeta partida con la foto en persona (2.ª del
   producto) + el producto en niebla (1.ª), etiqueta con el nombre, nombre, **«Frase corta»** (campo de producto
   `custom.frase`, se cambia en el Admin) y precio con el tachado si lo hay. Relojes en tarjeta alta (4:5); joyas en
   tarjeta ancha (8:5: aros, anillos y collar son anchos). Debajo, **«Lo que nos cuentan»** (`parte('opiniones')`):
   las opiniones activas en fila, con la media real (sin cifras inventadas tipo «135.000 mujeres»). «Las piezas»
-  queda con `"disabled"`. **Colección `joyas` = solo Anillos/Pendientes/Collares desde el 1-nov** (el menú «Joyas» ya
+  queda con `"disabled"`. **«Así son las piezas» (`como_es`) oculta** (a Edu no le gusta): hueco tras las opiniones
+  para otra cosa, por decidir. **Colección `joyas` = solo Anillos/Pendientes/Collares desde el 1-nov** (el menú «Joyas» ya
   no enseña relojes); «Te puede interesar» recomienda por tanto solo joyas. Para subirlo: `python tema/build.py` →
   push de `templates/index.json`, `snippets/lunerie-inicio.liquid` y `snippets/lunerie-combina.liquid`.
   El validador de la skill `shopify-liquid` no funciona en este PC (le falta `@shopify/theme-check-common`): usar

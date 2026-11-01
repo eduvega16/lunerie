@@ -59,7 +59,8 @@
         "section_width": "page-width",
         "padding-block-start": 48,
         "padding-block-end": 56
-      }
+      },
+      "disabled": true
     },
     "dudas": {
       "type": "custom-liquid",

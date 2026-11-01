@@ -80,6 +80,13 @@ LOGO_CSS = (".header-logo { font-family: var(--font-heading--family); font-weigh
             "font-size: 1.5rem; letter-spacing: 0.38em; text-transform: uppercase; padding-inline-start: 0.38em; } "
             "@media screen and (max-width: 749px) { .header-logo { font-size: 1.2rem; letter-spacing: 0.3em; } }")
 
+# Promo de toda la tienda (1-nov, Edu: «que sea atractiva y saquemos pasta»): dos descuentos automáticos en Shopify
+# («2.ª pieza al 50 %» y «3x2: la 3.ª pieza, gratis», colecciones Relojes + Joyas; Shopify aplica el que más ahorra
+# y siempre descuenta la pieza más barata). Con True: frase en la barra de arriba, caja verde en todas las fichas y
+# aviso en la cesta. Para quitarla: False aquí y desactivar los dos descuentos en Shopify.
+PROMO = True
+PROMO_BARRA = "3x2 en toda la tienda · 2.ª pieza al 50 %"
+
 header = {
     "type": "header", "name": "t:names.header",
     "sections": {
@@ -130,6 +137,11 @@ header = {
     },
     "order": ["header_announcements_9jGBFp", "header_section"],
 }
+if PROMO:   # la promo va primero en la barra y se alterna con el envío gratis (Horizon las pasa cada 5 s)
+    _barra = header["sections"]["header_announcements_9jGBFp"]
+    _barra["blocks"]["promo"] = copy.deepcopy(_barra["blocks"]["announcement_BxgCk9"])
+    _barra["blocks"]["promo"]["settings"]["text"] = PROMO_BARRA
+    _barra["block_order"].insert(0, "promo")
 (OUT / "header-group.json").write_text(json.dumps(header, ensure_ascii=False, indent=2), encoding="utf8")
 
 
@@ -327,6 +339,7 @@ def parte(nombre, fondo="", arriba=24, abajo=24, ancho="page-width", snippet="lu
 # Con False no salen la franja verde del inicio, la caja verde de la ficha ni el aviso de la cesta. El descuento
 # automático está desactivado en Shopify (no borrado): para volver, True aquí y reactivarlo en Descuentos.
 SEGUNDO_RELOJ = False
+
 
 # Opiniones de ejemplo SOLO para la vista previa local (shopify theme dev): `LUNERIE_EJEMPLOS=1 python tema/build.py`.
 # Pintan tema/tienda/snippets/lunerie-opiniones-ejemplos.liquid, que no está en git ni se sube. Antes de subir nada,
@@ -587,10 +600,15 @@ ficha = {
                     "padding-block-start": 18, "padding-block-end": 18,
                     "padding-inline-start": 20, "padding-inline-end": 20},
                     "blocks": {
-                        "t": color(small(text_block("<p><strong>SEGUNDO RELOJ POR 19,95 €</strong></p>",
-                                                    "paragraph"), "1.125rem"), "#FFFFFF", "100%"),
-                        "p": color(text_block("<p>Añade dos a la cesta: el descuento se aplica solo al pagar. "
-                                              "Uno para ti y otro para regalar.</p>", "paragraph"), "#FFFFFF", "100%"),
+                        "t": color(small(text_block(
+                            "<p><strong>3x2 EN TODA LA TIENDA</strong></p>" if PROMO else
+                            "<p><strong>SEGUNDO RELOJ POR 19,95 €</strong></p>",
+                            "paragraph"), "1.125rem"), "#FFFFFF", "100%"),
+                        "p": color(text_block(
+                            "<p>Con 2 piezas, la más barata al 50 %. Con 3, la más barata gratis. Mezcla relojes "
+                            "y joyas como quieras: se descuenta solo en la cesta.</p>" if PROMO else
+                            "<p>Añade dos a la cesta: el descuento se aplica solo al pagar. "
+                            "Uno para ti y otro para regalar.</p>", "paragraph"), "#FFFFFF", "100%"),
                     }, "block_order": ["t", "p"]},
                 "detalles": {"type": "accordion", "settings": {
                     "icon": "plus", "dividers": True, "divider_color": C2, "type_preset": "h6"},
@@ -674,7 +692,7 @@ product = {
     },
     "order": ["migas", "main", "videos", "historia", "opiniones", "recomendados"],
 }
-if not SEGUNDO_RELOJ:
+if not SEGUNDO_RELOJ and not PROMO:
     _det = product["sections"]["main"]["blocks"]["product-details"]
     del _det["blocks"]["oferta"]
     _det["block_order"].remove("oferta")
@@ -805,6 +823,34 @@ UPSELL = (
     "{%- endif -%}\n")
 if not SEGUNDO_RELOJ:
     UPSELL = "{%- comment -%} Generado por tema/build.py: aviso del segundo reloj, apagado (SEGUNDO_RELOJ = False) {%- endcomment -%}\n"
+# Promo (1-nov): con 1 pieza en la cesta invita a la 2.ª al 50 %; con 2, a la 3.ª gratis; con 3 o más, avisa de que
+# ya está aplicado. Enlaces a Relojes y Joyas para seguir comprando. (El snippet conserva su nombre antiguo.)
+if PROMO:
+    UPSELL = (
+        "{%- comment -%} Generado por tema/build.py (PROMO): aviso de la promo en la cesta {%- endcomment -%}\n"
+        "{%- assign lu_n = cart.item_count -%}\n"
+        "{%- if lu_n > 0 -%}\n"
+        '<div class="lu-promo">\n'
+        "  {%- if lu_n == 1 -%}\n"
+        '    <p class="lu-promo__t">Añade otra pieza y la más barata te sale al 50 %</p>\n'
+        "  {%- elsif lu_n == 2 -%}\n"
+        '    <p class="lu-promo__t">Añade una tercera y la más barata te sale gratis</p>\n'
+        "  {%- else -%}\n"
+        '    <p class="lu-promo__t">Tu descuento ya está en la cesta</p>\n'
+        "  {%- endif -%}\n"
+        "  {%- if lu_n < 3 -%}\n"
+        '    <p class="lu-promo__enlaces"><a href="{{ collections.relojes.url }}">Ver relojes</a>'
+        '<a href="{{ collections.joyas.url }}">Ver joyas</a></p>\n'
+        "  {%- endif -%}\n"
+        "</div>\n"
+        "<style>"
+        ".lu-promo{margin:12px 0;padding:14px 18px;background:" + GREEN + ";color:#fff;display:grid;gap:8px}"
+        ".lu-promo p{margin:0}"
+        ".lu-promo__t{font-size:.875rem;letter-spacing:.06em;text-transform:uppercase}"
+        ".lu-promo__enlaces{display:flex;gap:18px;font-size:.8125rem}"
+        ".lu-promo__enlaces a{color:#fff;text-underline-offset:3px}"
+        "</style>\n"
+        "{%- endif -%}\n")
 (OUT / "codigo" / "snippets" / "lunerie-segundo-reloj.liquid").write_text(UPSELL, encoding="utf8")
 
 # Copia en tema/tienda/ (el tema publicado bajado con `shopify theme pull`, fuera de git) para subirlo con la CLI

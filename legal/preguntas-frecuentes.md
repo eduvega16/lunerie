@@ -15,6 +15,15 @@ a Canarias, Ceuta ni Melilla.
 **¿Llega envuelto para regalar?**
 Cada pieza viaja protegida en su funda.
 
+**¿Cómo funciona el 3x2?**
+Vale para toda la tienda y puedes mezclar relojes y joyas. Con 2 piezas, la más barata te sale al 50 %; con 3, la
+más barata es gratis. No hace falta código: el descuento se aplica solo en la cesta. No se suma a otros códigos de
+descuento.
+
+**Si pido varias piezas, ¿llegan juntas?**
+No siempre. Cada pieza puede salir de un almacén distinto, así que a veces llegan en paquetes separados y en días
+distintos. Te mandamos el seguimiento de cada uno por email.
+
 ## El reloj Lune
 
 **¿Me va a quedar grande la correa?**

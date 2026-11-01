@@ -1,1 +1,17 @@
-{%- comment -%} Generado por tema/build.py: aviso del segundo reloj, apagado (SEGUNDO_RELOJ = False) {%- endcomment -%}
+{%- comment -%} Generado por tema/build.py (PROMO): aviso de la promo en la cesta {%- endcomment -%}
+{%- assign lu_n = cart.item_count -%}
+{%- if lu_n > 0 -%}
+<div class="lu-promo">
+  {%- if lu_n == 1 -%}
+    <p class="lu-promo__t">Añade otra pieza y la más barata te sale al 50 %</p>
+  {%- elsif lu_n == 2 -%}
+    <p class="lu-promo__t">Añade una tercera y la más barata te sale gratis</p>
+  {%- else -%}
+    <p class="lu-promo__t">Tu descuento ya está en la cesta</p>
+  {%- endif -%}
+  {%- if lu_n < 3 -%}
+    <p class="lu-promo__enlaces"><a href="{{ collections.relojes.url }}">Ver relojes</a><a href="{{ collections.joyas.url }}">Ver joyas</a></p>
+  {%- endif -%}
+</div>
+<style>.lu-promo{margin:12px 0;padding:14px 18px;background:#006039;color:#fff;display:grid;gap:8px}.lu-promo p{margin:0}.lu-promo__t{font-size:.875rem;letter-spacing:.06em;text-transform:uppercase}.lu-promo__enlaces{display:flex;gap:18px;font-size:.8125rem}.lu-promo__enlaces a{color:#fff;text-underline-offset:3px}</style>
+{%- endif -%}

@@ -466,7 +466,7 @@ aros con perla y collar de perlas «plata 925»). Plantilla `joya`, vendor Luner
       Las fotos (de WhatsApp, 720×960, sin EXIF) son archivos de Shopify `lune-opinion-1/2/3/5.jpg`. Edu dio los
       nombres y las estrellas, dijo que daba igual quién llevara cada texto y pidió retocarlos: el contenido sale de
       lo que contaron (chulo, parece una joya, eslabones en 5 min con el vídeo, invierno con la ropa); el reparto y
-      la redacción son de Claude, así que **cada amiga tendría que dar el OK a su texto**. Se subieron con la CLI
+      la redacción son de Claude, así que cada amiga tenía que dar el OK a su texto (**dado el 1-nov**). Se subieron con la CLI
       (`stagedUploadsCreate` → `fileCreate` → `metaobjectCreate` con `capabilities.publishable.status: ACTIVE`);
       para cambiar un texto, `metaobjectUpdate`. La foto n.º 5 enseña la marca «BS Bee Sister» en la esfera y la
       del detalle de la ficha pone «NAIDU» (Edu aún no ha decidido nada). Para añadir más: Contenido →
@@ -547,9 +547,19 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
   push de `templates/index.json`, `snippets/lunerie-inicio.liquid` y `snippets/lunerie-combina.liquid`.
   El validador de la skill `shopify-liquid` no funciona en este PC (le falta `@shopify/theme-check-common`): usar
   `shopify theme check --path tema/tienda`. Playwright para Python instalado el 1-nov en este PC.
-- **Promo (1-nov, pendiente de que Edu elija):** cuentas en la sesión. 2.º reloj gratis no renta (con un reloj de
-  34,95 € quedan ~8 € por pedido antes de anuncios, frente a ~18 € con uno solo); «2.º al 50 %» ~22 €; 3x2 ~26 €.
-  Recomendado: «2.º reloj al 50 %» (descuento automático compra X lleva Y en la colección Relojes).
+- **PROMO EN MARCHA (1-nov, Edu: «que sea atractiva y saquemos pasta»): «3x2 en toda la tienda · 2.ª pieza al 50 %»**,
+  mezclando relojes y joyas. Dos descuentos automáticos en Shopify sobre las colecciones Relojes + Joyas:
+  **«2.ª pieza al 50 %»** (DiscountAutomaticNode 1860761354579, compra 1 → 1 al 50 %) y **«3x2: la 3.ª pieza, gratis»**
+  (1860761387347, compra 2 → 1 gratis); no se combinan entre sí ni con códigos (sí con envío). Shopify descuenta la
+  pieza más barata y aplica el que más ahorra (probado en cestas reales: Sépia + Boucle 69,90 → 44,93 €; Lune +
+  Boucle + Duo 79,85 → 59,90 €). Cuentas: con la promo ningún pedido deja menos que una pieza sola (~18 € un reloj
+  barato, ~14,5 € el Lune), salvo Lune + Maille (~11,6 €); 2.º gratis NO (~8 €) y un 20 % fijo con código tampoco
+  (guardarlo para Black Friday). En el tema: **`PROMO = True`** en `build.py` → frase en la barra de arriba (se alterna
+  con el envío gratis), caja verde «3x2 EN TODA LA TIENDA» en todas las fichas (bloque `oferta`) y aviso en la cesta
+  según el número de piezas (`snippets/lunerie-segundo-reloj.liquid`, nombre antiguo). En Preguntas frecuentes:
+  «¿Cómo funciona el 3x2?» y «¿Llegan juntas?» (pueden llegar en paquetes distintos). Quitarla: `PROMO = False` +
+  desactivar los dos descuentos. Los anuncios nuevos pueden usarla.
+- **Opiniones: las 4 amigas dieron el OK a sus textos (1-nov)**; ya no es un pendiente.
 - Sigue pendiente de Edu: coste del envío del Maille, muestras de los nuevos, regenerar la clave de Higgsfield.
   Siguiente con Claude: la campaña «Un reloj que solo da la hora» (punto 2 de abajo).
 

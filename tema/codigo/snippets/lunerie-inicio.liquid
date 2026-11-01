@@ -103,6 +103,152 @@
       </div>
     </div>
 
+  {%- when 'escaparate' -%}
+    {%- comment -%}
+      Escaparate (1-nov, como el carrusel de Caducci): tarjetas partidas con la foto puesta en persona (images[1]) a la
+      izquierda y el producto en niebla (la primera) a la derecha, con el nombre, la «Frase corta» del producto
+      (campo custom.frase, se cambia en el Admin) y el precio. `coleccion`: 'relojes' (tarjeta alta, como Caducci)
+      o 'joyas' (tarjeta ancha: los aros, anillos y el collar son anchos y no caben en una tira estrecha).
+    {%- endcomment -%}
+    {%- assign col = collections[coleccion] -%}
+    <section class="lu-esc lu-esc--{{ coleccion }}" data-lu-esc aria-labelledby="lu-esc-{{ coleccion }}">
+      <div class="lu-esc__cab">
+        {%- if coleccion == 'relojes' -%}
+          <p class="lu-ceja">Relojes pequeños</p>
+          <h2 class="lu-titulo" id="lu-esc-relojes">Un reloj que <em>solo da la hora.</em></h2>
+          <p class="lu-esc__texto">Sin pantalla y sin avisos.<br>Una esfera pequeña, eslabones finos y el dorado de los de antes.<br>Para llevarlo cada día o para regalarlo.</p>
+        {%- else -%}
+          <p class="lu-ceja">Las joyas</p>
+          <h2 class="lu-titulo" id="lu-esc-joyas">Para llevar <em>junto al reloj.</em></h2>
+          <p class="lu-esc__texto">Anillos, aros y un collar con piedras de color, en el mismo dorado.<br>Solas o con el reloj, para cada día.</p>
+        {%- endif -%}
+      </div>
+      <div class="lu-esc__marco">
+        <button type="button" class="lu-esc__flecha lu-esc__flecha--ant" aria-label="Ver los anteriores" data-dir="-1" hidden>
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+        </button>
+        <ul class="lu-esc__lista" role="list" tabindex="0">
+          {%- for p in col.products limit: 16 -%}
+            {%- unless p.available -%}{%- continue -%}{%- endunless -%}
+            {%- assign escena = p.images[1] | default: p.featured_image -%}
+            <li class="lu-esc__item">
+              <a class="lu-esc__tarjeta" href="{{ p.url }}">
+                <span class="lu-esc__fotos">
+                  <span class="lu-esc__escena">
+                    {{- escena | image_url: width: 900 | image_tag: loading: 'lazy', alt: '', sizes: '(min-width: 750px) 240px, 45vw', widths: '400, 600, 900' -}}
+                    <span class="lu-esc__etiqueta">{{ p.title | split: ' ' | last | upcase }}</span>
+                  </span>
+                  <span class="lu-esc__producto">
+                    {{- p.featured_image | image_url: width: 900 | image_tag: loading: 'lazy', alt: p.title, sizes: '(min-width: 750px) 240px, 45vw', widths: '400, 600, 900' -}}
+                  </span>
+                </span>
+                <span class="lu-esc__nombre">{{ p.title }}</span>
+                {%- if p.metafields.custom.frase.value != blank -%}
+                  <span class="lu-esc__frase">{{ p.metafields.custom.frase.value }}</span>
+                {%- endif -%}
+                <span class="lu-esc__precio">
+                  {%- if p.price_varies -%}Desde {% endif -%}
+                  {{ p.price | money }}
+                  {%- if p.compare_at_price > p.price -%}
+                    <s><span class="visually-hidden">Antes </span>{{ p.compare_at_price | money }}</s>
+                  {%- endif -%}
+                </span>
+              </a>
+            </li>
+          {%- endfor -%}
+        </ul>
+        <button type="button" class="lu-esc__flecha lu-esc__flecha--sig" aria-label="Ver los siguientes" data-dir="1" hidden>
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+        </button>
+      </div>
+      <p class="lu-esc__pie">
+        <a class="lu-esc__todos" href="{{ col.url }}">{% if coleccion == 'relojes' %}Ver todos los relojes{% else %}Ver todas las joyas{% endif %}</a>
+      </p>
+    </section>
+    {%- render 'lunerie-inicio', parte: 'carrusel-js' -%}
+
+  {%- when 'opiniones' -%}
+    {%- comment -%}
+      Reseñas del inicio (1-nov, como la fila de Caducci pero solo con las de verdad): los metaobjetos «Opinión»
+      activos, con la foto a la izquierda. Sin cifras de clientas inventadas: la media y el número salen de las que hay.
+    {%- endcomment -%}
+    {%- liquid
+      assign total = 0
+      assign suma = 0
+      for o in shop.metaobjects.opinion.values
+        assign total = total | plus: 1
+        assign suma = suma | plus: o.estrellas.value
+      endfor
+    -%}
+    {%- if total > 0 -%}
+      {%- assign media = suma | times: 1.0 | divided_by: total -%}
+      <section class="lu-esc lu-esc--opiniones" data-lu-esc aria-labelledby="lu-esc-opiniones">
+        <div class="lu-esc__cab">
+          <h2 class="lu-titulo" id="lu-esc-opiniones">Lo que <em>nos cuentan.</em></h2>
+          <p class="lu-esc__media">
+            {%- render 'lunerie-opiniones', parte: 'estrellas', valor: media -%}
+            <span>{{ media | round: 1 | replace: '.', ',' }} · {{ total }} {% if total == 1 %}opinión{% else %}opiniones{% endif %}</span>
+          </p>
+        </div>
+        <div class="lu-esc__marco">
+          <button type="button" class="lu-esc__flecha lu-esc__flecha--ant" aria-label="Ver las anteriores" data-dir="-1" hidden>
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+          </button>
+          <ul class="lu-esc__lista" role="list" tabindex="0">
+            {%- for o in shop.metaobjects.opinion.values -%}
+              <li class="lu-esc__item">
+                <article class="lu-esc__op">
+                  {%- if o.foto.value != blank -%}
+                    {%- assign alt_foto = 'Foto de ' | append: o.nombre.value -%}
+                    <span class="lu-esc__op-foto">{{ o.foto.value | image_url: width: 600 | image_tag: loading: 'lazy', alt: alt_foto, sizes: '(min-width: 750px) 180px, 34vw', widths: '300, 600' }}</span>
+                  {%- endif -%}
+                  <div class="lu-esc__op-cuerpo">
+                    {%- render 'lunerie-opiniones', parte: 'estrellas', valor: o.estrellas.value -%}
+                    <p class="lu-esc__op-texto">{{ o.texto.value | escape | truncate: 220 }}</p>
+                    <p class="lu-esc__op-quien">
+                      <span class="lu-esc__op-raya" aria-hidden="true"></span>{{ o.nombre.value }}
+                      {%- if o.origen.value != blank -%}<small>{{ o.origen.value }}</small>{%- endif -%}
+                    </p>
+                    {%- if o.producto.value != blank -%}
+                      <a class="lu-esc__op-pieza" href="{{ o.producto.value.url }}">{{ o.producto.value.title }}</a>
+                    {%- endif -%}
+                  </div>
+                </article>
+              </li>
+            {%- endfor -%}
+          </ul>
+          <button type="button" class="lu-esc__flecha lu-esc__flecha--sig" aria-label="Ver las siguientes" data-dir="1" hidden>
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+          </button>
+        </div>
+      </section>
+      {%- render 'lunerie-inicio', parte: 'carrusel-js' -%}
+    {%- endif -%}
+
+  {%- when 'carrusel-js' -%}
+    <script>
+      (() => {
+        document.querySelectorAll('[data-lu-esc]:not([data-lu-ok])').forEach((raiz) => {
+          raiz.setAttribute('data-lu-ok', '');
+          const lista = raiz.querySelector('.lu-esc__lista');
+          const ant = raiz.querySelector('[data-dir="-1"]'), sig = raiz.querySelector('[data-dir="1"]');
+          const estado = () => {
+            ant.hidden = lista.scrollLeft < 4;
+            sig.hidden = lista.scrollLeft + lista.clientWidth >= lista.scrollWidth - 4;
+          };
+          [ant, sig].forEach((b) => b.addEventListener('click', () => {
+            const item = lista.querySelector('.lu-esc__item');
+            const paso = item ? item.getBoundingClientRect().width + 14 : lista.clientWidth;
+            lista.scrollBy({ left: Number(b.dataset.dir) * paso * 2 });
+          }));
+          lista.addEventListener('scroll', estado, { passive: true });
+          addEventListener('resize', estado);
+          addEventListener('load', estado);
+          estado();
+        });
+      })();
+    </script>
+
   {%- when 'como-es' -%}
     <div class="lu-como">
       <h2 class="lu-titulo">Así son las piezas</h2>
@@ -271,4 +417,60 @@
     .lu-dudas p{margin:0 0 20px;max-width:56ch;line-height:1.6;color:#3D4842}
     .lu-dudas__mas{display:inline-block;margin-top:22px;color:#16201B;text-underline-offset:4px}
     @media (prefers-reduced-motion:reduce){.lu-ovalo img,.lu-dudas summary::after,.lu-card__foto img{transition:none}}
+
+    /* Escaparates y reseñas del inicio (1-nov): fila que se desliza, a todo el ancho, con flechas en PC */
+    .lu-esc{--lu-esc-margen:clamp(16px,4vw,48px);color:#16201B}
+    .lu-esc__cab{max-width:46rem;margin:0 auto 32px;padding-inline:var(--lu-esc-margen);text-align:center}
+    .lu-esc__cab .lu-titulo{margin:0 0 16px}
+    .lu-esc__texto{margin:0;font-size:.9375rem;line-height:1.7;color:#3D4842}
+    .lu-esc__marco{position:relative}
+    .lu-esc__lista{display:flex;gap:14px;margin:0;padding:0 var(--lu-esc-margen) 4px;list-style:none;overflow-x:auto;
+      scroll-snap-type:x mandatory;scroll-padding-inline:var(--lu-esc-margen);scrollbar-width:none;-webkit-overflow-scrolling:touch}
+    .lu-esc__lista::-webkit-scrollbar{display:none}
+    .lu-esc__lista:focus-visible{outline:2px solid #006039;outline-offset:2px}
+    .lu-esc__item{flex:0 0 62vw;scroll-snap-align:start;min-width:0}
+    .lu-esc--joyas .lu-esc__item{flex-basis:84vw}
+    .lu-esc__tarjeta{display:flex;flex-direction:column;gap:3px;color:inherit;text-decoration:none}
+    .lu-esc__fotos{display:grid;grid-template-columns:1fr 1fr;aspect-ratio:4/5;margin-bottom:10px;overflow:hidden;background:#F2F4F2}
+    .lu-esc--joyas .lu-esc__fotos{aspect-ratio:8/5}
+    .lu-esc__escena,.lu-esc__producto{position:relative;display:block;min-width:0;overflow:hidden}
+    .lu-esc__fotos img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+      transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+    .lu-esc__etiqueta{position:absolute;top:10px;left:10px;padding:5px 8px;background:rgba(22,32,27,.62);color:#fff;
+      font-size:.625rem;letter-spacing:.18em;line-height:1}
+    .lu-esc__nombre{font-family:var(--font-heading--family);font-size:1.2rem;line-height:1.2}
+    .lu-esc__frase{font-family:var(--font-heading--family);font-style:italic;font-size:.95rem;line-height:1.3;color:#6B746F}
+    .lu-esc__precio{display:flex;gap:8px;align-items:baseline;margin-top:2px;font-size:.9375rem}
+    .lu-esc__precio s{font-size:.8125rem;color:#8A928D}
+    .lu-esc__tarjeta:focus-visible{outline:2px solid #006039;outline-offset:4px}
+    .lu-esc__pie{margin:28px 0 0;text-align:center}
+    .lu-esc__todos{color:#16201B;text-underline-offset:4px;font-size:.875rem;letter-spacing:.06em}
+    .lu-esc__flecha{position:absolute;top:calc(50% - 44px);z-index:2;display:flex;align-items:center;justify-content:center;
+      width:40px;height:40px;padding:0;border:1px solid #E2E6E3;border-radius:50%;background:#fff;color:#16201B;cursor:pointer;
+      box-shadow:0 2px 10px rgba(22,32,27,.08)}
+    .lu-esc__flecha[hidden]{display:none}
+    .lu-esc__flecha--ant{left:calc(var(--lu-esc-margen) - 20px)}
+    .lu-esc__flecha--sig{right:calc(var(--lu-esc-margen) - 20px)}
+    .lu-esc__media{display:inline-flex;align-items:center;gap:10px;margin:0;font-size:.9375rem;color:#3D4842}
+    .lu-esc__media .lu-estrellas{font-size:18px}
+    .lu-esc--opiniones .lu-esc__item{flex-basis:86vw}
+    .lu-esc__op{display:grid;grid-template-columns:38% 1fr;height:100%;background:#F2F4F2}
+    .lu-esc__op-foto{position:relative;display:block;min-height:220px;overflow:hidden}
+    .lu-esc__op-foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .lu-esc__op-cuerpo{display:flex;flex-direction:column;gap:10px;padding:20px 18px}
+    .lu-esc__op-texto{margin:0;font-size:.875rem;line-height:1.6;color:#3D4842}
+    .lu-esc__op-quien{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;margin:auto 0 0;font-size:.8125rem}
+    .lu-esc__op-quien small{flex-basis:100%;padding-left:34px;font-size:.6875rem;color:#6B746F}
+    .lu-esc__op-raya{width:24px;height:1px;background:#16201B}
+    .lu-esc__op-pieza{font-size:.75rem;color:#16201B;text-underline-offset:3px}
+    @media (min-width:750px){
+      .lu-esc__item{flex-basis:clamp(220px,19vw,290px)}
+      .lu-esc--joyas .lu-esc__item{flex-basis:clamp(340px,30vw,460px)}
+      .lu-esc--opiniones .lu-esc__item{flex-basis:clamp(380px,32vw,480px)}
+      .lu-esc__op-foto{min-height:260px}
+    }
+    @media (max-width:749px){.lu-esc__flecha{display:none}}
+    @media (hover:hover){.lu-esc__tarjeta:hover .lu-esc__fotos img{transform:scale(1.04)}}
+    @media (prefers-reduced-motion:no-preference){.lu-esc__lista{scroll-behavior:smooth}}
+    @media (prefers-reduced-motion:reduce){.lu-esc__fotos img{transition:none}}
 {% endstylesheet %}

@@ -18,6 +18,37 @@
         "section_width": "page-width",
         "padding-block-start": 56,
         "padding-block-end": 24
+      },
+      "disabled": true
+    },
+    "relojes": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{% render 'lunerie-inicio', parte: 'escaparate', coleccion: 'relojes' %}",
+        "background_color": "",
+        "section_width": "full-width",
+        "padding-block-start": 64,
+        "padding-block-end": 24
+      }
+    },
+    "joyas": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{% render 'lunerie-inicio', parte: 'escaparate', coleccion: 'joyas' %}",
+        "background_color": "",
+        "section_width": "full-width",
+        "padding-block-start": 56,
+        "padding-block-end": 24
+      }
+    },
+    "opiniones": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{% render 'lunerie-inicio', parte: 'opiniones' %}",
+        "background_color": "",
+        "section_width": "full-width",
+        "padding-block-start": 56,
+        "padding-block-end": 24
       }
     },
     "como_es": {
@@ -421,6 +452,9 @@
     "portada",
     "destacado",
     "piezas",
+    "relojes",
+    "joyas",
+    "opiniones",
     "como_es",
     "dudas",
     "promesas"

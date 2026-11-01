@@ -340,7 +340,11 @@ index = {
         "portada": parte("hero-video", arriba=0, abajo=0, ancho="full-width"),
         # 29-oct: «Las piezas» junta el Lune (grande) y las 4 joyas en una sola cuadrícula; «Así son las piezas»
         # va debajo con rasgos que valen para todo.
-        "piezas": parte("piezas", fondo=BG, arriba=56, abajo=24),
+        # 1-nov: «Las piezas» se sustituye por dos escaparates partidos (como Caducci) y la fila de reseñas.
+        "piezas": {**parte("piezas", fondo=BG, arriba=56, abajo=24), "disabled": True},
+        "relojes": parte("escaparate", arriba=64, abajo=24, ancho="full-width", extra=", coleccion: 'relojes'"),
+        "joyas": parte("escaparate", arriba=56, abajo=24, ancho="full-width", extra=", coleccion: 'joyas'"),
+        "opiniones": parte("opiniones", arriba=56, abajo=24, ancho="full-width"),
         "como_es": parte("como-es", arriba=48, abajo=56),
         "oferta": parte("oferta", arriba=0, abajo=0, ancho="full-width"),
         "dudas": parte("dudas", arriba=64, abajo=56),
@@ -417,7 +421,8 @@ index = {
                 "padding-block-start": 48, "padding-block-end": 48},
         },
     },
-    "order": ["portada", "destacado", "piezas", "como_es", "oferta", "dudas", "promesas"],
+    "order": ["portada", "destacado", "piezas", "relojes", "joyas", "opiniones", "como_es", "oferta", "dudas",
+              "promesas"],
 }
 if not SEGUNDO_RELOJ:
     del index["sections"]["oferta"]

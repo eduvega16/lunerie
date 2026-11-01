@@ -521,10 +521,31 @@ KILL (se mira en la campaña) si gastas 1× CPA BE sin carritos o 2× sin ventas
 del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alertas si CTR < 1 % o CPC > 0,90 €.
 «Aprendizaje limitado» es normal con este presupuesto (Meta pide ~50 compras/semana). Máximo 2 productos en test.
 
-## 8. Calendario y pendientes (a 30-oct-2026)
+## 8. Calendario y pendientes (a 1-nov-2026)
 
 ### Para empezar la próxima sesión (después del 1-nov) — abrir conversación nueva por sesión.
-**1-NOV (manda sobre el bloque del 30-oct de abajo):**
+**DÓNDE NOS QUEDAMOS (1-nov, tarde) — leer esto primero; manda sobre el bloque del 30-oct de abajo.**
+- **En producción (lunerie.es):** 11 productos activos (5 relojes: Lune, Sépia, Maille, Galet, Perle · 6 joyas: Larme,
+  Nuit, Collar Lune, Étoile, Boucle, Duo), colecciones **Relojes** y **Joyas** (esta, solo joyas) en el menú, inicio
+  con escaparates partidos + reseñas, **promo «3x2 en toda la tienda · 2.ª pieza al 50 %»** (descuentos automáticos,
+  barra fija, caja en fichas, aviso en la cesta y FAQ) y reseñas sin «Recibido como regalo». Campaña de Meta sigue
+  **pausada**. No quedan borradores.
+- **Sin decidir (Edu): la portada de Navidad** (3 fotos con flash + franja de la promo) está **solo en el tema de
+  prueba** «Prueba home 29-oct» (210513527123): https://lunerie.es/?preview_theme_id=210513527123. En producción
+  sigue la portada con **vídeo**. Edu aún no sabe si se queda con estas fotos. Para publicarla: `build.py` ya la tiene
+  (`parte("hero-navidad")`), así que basta con `python tema/build.py` + push de `templates/index.json` y
+  `snippets/lunerie-inicio.liquid` al tema publicado. **Ojo:** mientras no se decida, cualquier push de
+  `templates/index.json` o `lunerie-inicio.liquid` al publicado sube también la portada nueva → si hay que subir otra
+  cosa antes, volver a poner `parte("hero-video", …)` en `build.py`. Para rehacer fotos: `python marca/portada_navidad.py
+  <refs> [izquierda|centro|derecha] --n 2` (refs = 1.ª foto de cada producto con su handle de nombre).
+- **Hueco libre en el inicio** tras las reseñas (donde estaba «Así son las piezas»): Edu pensará qué poner.
+- **Siguiente con Claude:** decidir la portada → campaña nueva de Meta con la promo como gancho («3x2 en relojes y joyas
+  para regalar», todos los anuncios a los precios nuevos; los viejos dicen 49,95 € y «10 % de regalo») → Black
+  Friday (el 20 % con código va ahí, con fecha de fin).
+- **Pendiente de Edu:** coste del envío del Maille · muestras de los productos nuevos · regenerar la clave de
+  Higgsfield (en este PC funcionó el 1-nov con la de `.env.local`).
+
+**Detalle del 1-nov:**
 - **Publicados los 6 nuevos** (OK de Edu): Sépia, Maille, Galet, Perle, aros Boucle (con **los dos tamaños**, decidido) y
   anillo Duo → ACTIVE solo en Tienda online; fichas 200 y «Agregar al carrito» comprobados (`/products/<handle>.js`).
 - **Borrados todos los demás borradores** (14, a petición de Edu): los 4 relojes descartados, las 8 joyas de DSers del

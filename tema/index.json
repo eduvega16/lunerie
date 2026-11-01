@@ -3,7 +3,7 @@
     "portada": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "{% render 'lunerie-inicio', parte: 'hero-video' %}",
+        "custom_liquid": "{% render 'lunerie-inicio', parte: 'hero-navidad' %}",
         "background_color": "",
         "section_width": "full-width",
         "padding-block-start": 0,

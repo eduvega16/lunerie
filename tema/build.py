@@ -347,7 +347,8 @@ EJEMPLOS = ", ejemplos: true" if os.environ.get("LUNERIE_EJEMPLOS") == "1" else 
 index = {
     "sections": {
         # Portada con vídeo (prueba 14-oct). Para volver a la de la foto en óvalo: parte("hero", arriba=8, abajo=40)
-        "portada": parte("hero-video", arriba=0, abajo=0, ancho="full-width"),
+        # 1-nov: portada de Navidad (3 fotos + franja de la promo). Volver al vídeo: parte("hero-video", …)
+        "portada": parte("hero-navidad", arriba=0, abajo=0, ancho="full-width"),
         # 29-oct: «Las piezas» junta el Lune (grande) y las 4 joyas en una sola cuadrícula; «Así son las piezas»
         # va debajo con rasgos que valen para todo.
         # 1-nov: «Las piezas» se sustituye por dos escaparates partidos (como Caducci) y la fila de reseñas.

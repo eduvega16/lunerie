@@ -60,6 +60,44 @@
       </div>
     </div>
 
+  {%- when 'hero-navidad' -%}
+    {%- comment -%}
+      Portada de Navidad (1-nov, como la de Caducci): tres fotos de noche con flash (marca/portada_navidad.py; archivos
+      de Shopify portada-navidad-izquierda/centro/derecha.jpg: para cambiar una, subir otra con el mismo nombre) y
+      debajo la franja de la promo en tinta. En móvil, la del centro arriba y las otras dos debajo.
+      Nada de «solo 50 piezas», «135.000 clientas» ni estrellas: solo lo que es verdad.
+    {%- endcomment -%}
+    <div class="lu-hn">
+      <div class="lu-hn__fotos">
+        {%- for n in (1..3) -%}
+          {%- case n -%}
+            {%- when 1 -%}{%- assign lado = 'izquierda' -%}{%- assign alt = 'Chica hablando por un teléfono antiguo con un reloj dorado y un anillo con piedra verde' -%}
+            {%- when 2 -%}{%- assign lado = 'centro' -%}{%- assign alt = 'Dos amigas en un sofá de terciopelo verde con relojes y un collar de Lunerie' -%}
+            {%- when 3 -%}{%- assign lado = 'derecha' -%}{%- assign alt = 'Chica con una copa, reloj de correa marrón y pendientes con piedra verde' -%}
+          {%- endcase -%}
+          {%- assign archivo = 'portada-navidad-' | append: lado | append: '.jpg' -%}
+          <figure class="lu-hn__foto lu-hn__foto--{{ lado }}">
+            {%- if n == 2 -%}
+              {{ images[archivo] | image_url: width: 2000 | image_tag: loading: 'eager', fetchpriority: 'high', alt: alt, sizes: '(min-width: 750px) 46vw, 100vw', widths: '600, 900, 1300, 2000' }}
+            {%- else -%}
+              {{ images[archivo] | image_url: width: 1300 | image_tag: loading: 'lazy', alt: alt, sizes: '(min-width: 750px) 27vw, 50vw', widths: '400, 700, 1000, 1300' }}
+            {%- endif -%}
+          </figure>
+        {%- endfor -%}
+      </div>
+      <div class="lu-hn__promo">
+        <p class="lu-hn__ceja">Regalos para esta Navidad</p>
+        <h1 class="lu-hn__marca">Relojes y joyas <em>para regalar</em></h1>
+        <p class="lu-hn__oferta"><span class="lu-hn__num">3x2</span> en toda la tienda</p>
+        <p class="lu-hn__sub"><em>y la 2.ª pieza al 50 %</em> · mezcla relojes y joyas</p>
+        <div class="lu-hn__acciones">
+          <a class="lu-boton" href="{{ collections.relojes.url }}">Ver los relojes</a>
+          <a class="lu-hn__enlace" href="{{ collections.joyas.url }}">Ver las joyas</a>
+        </div>
+        <p class="lu-hn__nota">Envío gratis a península · Para Navidad, pídelo antes del 5 de diciembre</p>
+      </div>
+    </div>
+
   {%- when 'piezas' -%}
     {%- comment -%}
       Todas las piezas juntas (29-oct): el reloj Lune grande a la izquierda (en PC) y las joyas de la colección
@@ -417,6 +455,33 @@
     .lu-dudas p{margin:0 0 20px;max-width:56ch;line-height:1.6;color:#3D4842}
     .lu-dudas__mas{display:inline-block;margin-top:22px;color:#16201B;text-underline-offset:4px}
     @media (prefers-reduced-motion:reduce){.lu-ovalo img,.lu-dudas summary::after,.lu-card__foto img{transition:none}}
+
+    /* Portada de Navidad (1-nov): tres fotos y franja de la promo en tinta */
+    .lu-hn{background:#16201B;color:#fff}
+    .lu-hn__fotos{display:grid;grid-template-columns:1fr 1fr;gap:4px;background:#16201B}
+    .lu-hn__foto{position:relative;margin:0;overflow:hidden;aspect-ratio:3/4}
+    .lu-hn__foto--centro{grid-column:1/-1;aspect-ratio:4/3}
+    .lu-hn__foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .lu-hn__promo{display:grid;justify-items:center;gap:10px;padding:34px 20px 40px;text-align:center}
+    .lu-hn__ceja{margin:0;font-family:var(--font-body--family);font-size:.75rem;letter-spacing:.28em;text-transform:uppercase}
+    .lu-hn__marca{margin:0;font-family:var(--font-heading--family);font-weight:400;font-size:clamp(1.3rem,2.4vw,1.75rem);
+      line-height:1.1;color:#C9A66B}
+    .lu-hn__marca em{font-style:italic}
+    .lu-hn__oferta{margin:4px 0 0;font-family:var(--font-heading--family);font-weight:500;
+      font-size:clamp(2.4rem,6vw,4.2rem);line-height:1;letter-spacing:.04em;text-transform:uppercase}
+    .lu-hn__num{text-transform:none;font-variant-numeric:lining-nums}
+    .lu-hn__sub{margin:0;font-family:var(--font-heading--family);font-size:clamp(1.15rem,2vw,1.5rem);color:#E7E1D6}
+    .lu-hn__acciones{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px 24px;margin-top:14px}
+    .lu-hn__enlace{color:#fff;text-underline-offset:4px;font-size:.875rem;letter-spacing:.08em}
+    .lu-hn__nota{margin:8px 0 0;font-size:.75rem;letter-spacing:.06em;color:#B9C0BC}
+    @media (min-width:750px){
+      .lu-hn__fotos{grid-template-columns:27fr 46fr 27fr;height:clamp(380px,38vw,600px)}
+      .lu-hn__foto,.lu-hn__foto--centro{grid-column:auto;aspect-ratio:auto;height:100%}
+      .lu-hn__foto--centro{order:2}.lu-hn__foto--izquierda{order:1}.lu-hn__foto--derecha{order:3}
+      .lu-hn__promo{padding:40px 24px 48px}
+    }
+    /* en móvil solo la del centro, para que la promo se vea sin bajar casi */
+    @media (max-width:749px){.lu-hn__foto--izquierda,.lu-hn__foto--derecha{display:none}}
 
     /* Escaparates y reseñas del inicio (1-nov): fila que se desliza, a todo el ancho, con flechas en PC */
     .lu-esc{--lu-esc-margen:clamp(16px,4vw,48px);color:#16201B}

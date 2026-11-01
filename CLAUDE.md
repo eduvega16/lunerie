@@ -559,6 +559,16 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
   según el número de piezas (`snippets/lunerie-segundo-reloj.liquid`, nombre antiguo). En Preguntas frecuentes:
   «¿Cómo funciona el 3x2?» y «¿Llegan juntas?» (pueden llegar en paquetes distintos). Quitarla: `PROMO = False` +
   desactivar los dos descuentos. Los anuncios nuevos pueden usarla.
+- **Portada de Navidad (1-nov, en el tema de prueba 210513527123; falta el OK de Edu para producción):** como la de
+  Caducci pero con los colores de Lunerie. Tres fotos de noche con flash (terciopelo verde botella, dorados, velas)
+  con piezas reales: izquierda Galet + anillo Nuit + aros Boucle · centro Lune + collar Lune + Maille · derecha Sépia +
+  pendientes Larme. Script `marca/portada_navidad.py` (API de Higgsfield, 6 fotos ≈ 0,80 $; salen en
+  `marca/fotos-ia/portada-navidad/`, elegidas izquierda-1, centro-1 y derecha-2). Archivos de Shopify
+  `portada-navidad-izquierda/centro/derecha.jpg`. Debajo, franja en tinta: «Regalos para esta Navidad · Relojes y
+  joyas para regalar · 3x2 EN TODA LA TIENDA · y la 2.ª pieza al 50 %» + «Ver los relojes» / «Ver las joyas» + envío
+  gratis y fecha de Navidad (nada de estrellas, «135.000» ni «solo 50 piezas»). En móvil solo la foto del centro, para
+  que la promo se vea arriba. `parte('hero-navidad')` en `lunerie-inicio.liquid`; volver al vídeo: `parte("hero-video")`
+  en `build.py`. Fidelidad revisada en recortes a tamaño real (el Lune sale pequeño; la esfera algo redonda).
 - **Opiniones: las 4 amigas dieron el OK a sus textos (1-nov)**; ya no es un pendiente. La etiqueta «Recibido como
   regalo» ya **no se enseña** (Edu, 1-nov; en la ficha y en el inicio); el dato sigue en el metaobjeto y «Compra
   verificada» sí sale cuando la haya.

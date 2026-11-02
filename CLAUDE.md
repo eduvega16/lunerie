@@ -555,9 +555,18 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
   del proveedor al mensaje en inglés (pedidos sueltos a España con nombre, coste y plazo DDP, sin tarjeta «THANK YOU»,
   lista diaria + seguimiento en 48 h, foto antes de enviar). Ficha: campo «Nombre» (máx. 10 letras) + mes/piedra +
   metal + casilla obligatoria, hecho en el tema sin app. Último pedido para Navidad ~1-dic.
-- **Propuesto, sin respuesta de Edu:** en el hueco del inicio, **«Packs para regalar»** (3 combinaciones con el precio
-  ya rebajado y un botón que mete todo en la cesta: Lune + collar Lune 74,90 → 57,43 € · Sépia + Boucle 54,90 → 44,93 € ·
-  Nuit + Larme + Boucle 74,85 → 54,90 €). Alternativa: «Regalos por precio».
+- **«Packs para regalar» EN PRODUCCIÓN (OK de Edu, 2-nov)** en el hueco tras las opiniones (`parte('packs')`): A juego
+  (Lune + collar Lune, 57,43 €) · Para cada día (Sépia + Boucle, 44,93 €) · El regalo completo (Galet + Duo + Boucle,
+  54,90 €). Solo piezas sin talla; el color se elige en la tarjeta y «Añadir el pack» mete todo con `/cart/add.js`.
+  **Probado en lunerie.es:** el precio de cada tarjeta = el total que cobra Shopify en la cesta. El precio se calcula en
+  Liquid (céntimos, la más barata al 50 % redondeando hacia abajo, o gratis con 3); si cambia la promo, cambiarlo ahí.
+- **Anuncios de la campaña HECHOS (2-nov), sin gastar créditos:** `python marca/campana_bf.py` → `marca/fotos-ia/campana-bf/`
+  (4:5 y 9:16, precios leídos de la tienda; en 9:16 el texto entre el 14 % de arriba y el 35 % de abajo): oferta con la
+  foto del teléfono · pack a juego · carrusel de Navidad (3 fotos con piezas y precios + tarjeta) · «Un reloj que solo
+  da la hora» (vídeo 10 s + foto) · «Para ti» · «Regalos de menos de 40 €» · «Para tu madre / hermana / pareja» ·
+  vídeo de la oferta (9 s). Sin música (la pone Meta). **Textos, destinos con UTM y configuración en
+  `anuncios/campana-black-friday.md`.** **El conector de Meta («Meta ads Koco») no estaba cargado en la sesión del 2-nov:**
+  para que Claude cree la campaña hay que tenerlo conectado en claude.ai; si no, la monta Edu en el Administrador.
 - **Tema de prueba** «Prueba home 29-oct» (210513527123) tiene lo mismo que el publicado en inicio, barra y fichas.
 
 **DÓNDE NOS QUEDAMOS (1-nov, tarde).**

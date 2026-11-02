@@ -16,3 +16,9 @@ tema/fotos_prueba/
 marca/fotos-ia/fichas/*.png
 marca/fotos-ia/campana-hora/*.png
 marca/fotos-ia/portada-navidad/*.png
+marca/fotos-ia/combinados/*.png
+# versión descartada del collar (colgaba las piedras como dijes)
+marca/fotos-ia/joyas/collar-lune-cuello-v1.png
+
+# Vídeos de otras marcas bajados de TikTok (solo referencia, no son nuestros)
+ssstik.io_*

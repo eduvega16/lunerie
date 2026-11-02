@@ -51,6 +51,16 @@
         "padding-block-end": 24
       }
     },
+    "packs": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{% render 'lunerie-inicio', parte: 'packs' %}",
+        "background_color": "",
+        "section_width": "page-width",
+        "padding-block-start": 64,
+        "padding-block-end": 24
+      }
+    },
     "como_es": {
       "type": "custom-liquid",
       "settings": {
@@ -456,6 +466,7 @@
     "relojes",
     "joyas",
     "opiniones",
+    "packs",
     "como_es",
     "dudas",
     "promesas"

@@ -358,7 +358,9 @@ index = {
         "relojes": parte("escaparate", arriba=64, abajo=24, ancho="full-width", extra=", coleccion: 'relojes'"),
         "joyas": parte("escaparate", arriba=56, abajo=24, ancho="full-width", extra=", coleccion: 'joyas'"),
         "opiniones": parte("opiniones", arriba=56, abajo=24, ancho="full-width"),
-        # 1-nov: oculta (a Edu no le gusta cómo queda); el hueco tras las opiniones es para otra cosa, por decidir
+        # 2-nov: en el hueco tras las opiniones, «Packs para regalar» (idea aprobada por Edu)
+        "packs": parte("packs", arriba=64, abajo=24),
+        # 1-nov: oculta (a Edu no le gusta cómo queda)
         "como_es": {**parte("como-es", arriba=48, abajo=56), "disabled": True},
         "oferta": parte("oferta", arriba=0, abajo=0, ancho="full-width"),
         "dudas": parte("dudas", arriba=64, abajo=56),
@@ -435,7 +437,7 @@ index = {
                 "padding-block-start": 48, "padding-block-end": 48},
         },
     },
-    "order": ["portada", "destacado", "piezas", "relojes", "joyas", "opiniones", "como_es", "oferta", "dudas",
+    "order": ["portada", "destacado", "piezas", "relojes", "joyas", "opiniones", "packs", "como_es", "oferta", "dudas",
               "promesas"],
 }
 if not SEGUNDO_RELOJ:

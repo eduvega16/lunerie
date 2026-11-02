@@ -325,7 +325,7 @@
                 "t": {
                   "type": "text",
                   "settings": {
-                    "text": "<p><strong>3x2 EN TODA LA TIENDA</strong></p>",
+                    "text": "<p><strong>BLACK FRIDAY<br>2.ª AL 50 % · 3.ª GRATIS</strong></p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -350,7 +350,7 @@
                 "p": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>Con 2 piezas, la más barata al 50 %. Con 3, la más barata gratis. Mezcla relojes y joyas como quieras: se descuenta solo en la cesta.</p>",
+                    "text": "<p>Con 2 piezas, la más barata al 50 %. Con 3, la más barata gratis. Mezcla relojes y joyas como quieras: se descuenta solo en la cesta. Hasta el 5 de diciembre.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",

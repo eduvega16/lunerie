@@ -323,12 +323,17 @@ aros con perla y collar de perlas «plata 925»). Plantilla `joya`, vendor Luner
   publicar como copia de seguridad.
 - **Cómo se cambia el tema publicado: con Shopify CLI** (v4.9; tienda `qjxvnn-xq.myshopify.com`). El conector de
   Shopify de claude.ai **no** puede escribir en el tema publicado ni publicar (solo en temas sin publicar); la CLI sí.
-  - **Login hecho en los dos PCs** (`C:\Users\edu\lunerie` el 8-oct, `D:\LUNERIE` el 9-oct, CLI 4.8.4; allí tenía
-    sesión de otra cuenta → `shopify auth logout` antes). La CLI no hace login sin terminal interactiva, así que Claude abre una
-    ventana: `Start-Process powershell -ArgumentList '-NoExit','-Command','shopify theme list --store qjxvnn-xq.myshopify.com'`
-    y Edu entra en el navegador con la cuenta de Lunerie (si pregunta cuenta: «Log in with a different account»; las
-    otras guardadas son Koco Essence y Star Brick). Lo mismo con `git push` si GitHub pide login: lanzarlo con
-    `GIT_TERMINAL_PROMPT=1` y `GCM_INTERACTIVE=always` y se abre la ventana de GitHub.
+  - **Login hecho en los dos PCs** (`C:\Users\edu\lunerie` el 8-oct, `D:\LUNERIE` el 9-oct y otra vez el **2-nov**: la
+    CLI se había quedado solo con la sesión de Star Brick y daba «you don't have access to this dev store»). **Login sin
+    ventana (2-nov):** `python -u tema/login_cli.py 2>&1 | tee .claude/shopify-login.log` en segundo plano (consola
+    invisible con `pywinpty`, ya instalado en `D:\LUNERIE`): elige «Log in with a different account», el navegador se
+    abre solo con el código y Edu entra con **luneriecompany@gmail.com**. La sesión de Star Brick sigue guardada
+    (`shopify auth login --alias starbrickstore@gmail.com` para volver). Lo mismo con `git push` si GitHub pide login:
+    lanzarlo con `GIT_TERMINAL_PROMPT=1` y `GCM_INTERACTIVE=always` y se abre la ventana de GitHub.
+  - **Sin la CLI de temas (2-nov):** `python tema/subir_api.py <id del tema> <ficheros…>` sube ficheros de `tema/tienda/`
+    por la Admin API (`themeFilesUpsert`, va con `shopify store execute`); funcionó también en el tema publicado.
+    Antes de subir al publicado, comparar sus ficheros con la versión de git (se leen con `theme(id){files(filenames:…)}`)
+    para no pisar cambios hechos en el editor.
   - `tema/tienda/` = copia completa del tema publicado (fuera de git). Si no existe o Edu ha tocado el editor (fotos,
     favicon): `shopify theme pull --store qjxvnn-xq.myshopify.com --theme 209073799507 --path tema/tienda` (la
     carpeta tiene que existir) y pasar sus cambios de `config/settings_data.json` a `build.py`, que si no los pisa.
@@ -521,10 +526,41 @@ KILL (se mira en la campaña) si gastas 1× CPA BE sin carritos o 2× sin ventas
 del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alertas si CTR < 1 % o CPC > 0,90 €.
 «Aprendizaje limitado» es normal con este presupuesto (Meta pide ~50 compras/semana). Máximo 2 productos en test.
 
-## 8. Calendario y pendientes (a 1-nov-2026)
+## 8. Calendario y pendientes (a 2-nov-2026)
 
-### Para empezar la próxima sesión (después del 1-nov) — abrir conversación nueva por sesión.
-**DÓNDE NOS QUEDAMOS (1-nov, tarde) — leer esto primero; manda sobre el bloque del 30-oct de abajo.**
+### Para empezar la próxima sesión (después del 2-nov) — abrir conversación nueva por sesión.
+**DÓNDE NOS QUEDAMOS (2-nov, noche) — leer esto primero; manda sobre los bloques de abajo.**
+- **EN PRODUCCIÓN (OK de Edu, 2-nov): portada en collage + BLACK FRIDAY.** `parte('hero-navidad')` en
+  `lunerie-inicio.liquid`: las 3 fotos de Navidad montadas como **copias de papel** (borde irregular con `clip-path`
+  —dos polígonos, `--lu-papel-a/b`—, sombra suave, giradas 1-3°) sobre niebla. Móvil: la del teléfono grande y la del
+  sofá y la de la copa encima, a la izquierda (como el móvil de Caducci); PC: la del sofá en el centro. Debajo, franja
+  en tinta: «Relojes y joyas para regalar · BLACK FRIDAY · La 2.ª pieza al 50 % y la 3.ª, gratis · Mezcla relojes y
+  joyas · Envío gratis a península» + botones + «Hasta el 5 de diciembre: el último día para que llegue en Navidad».
+  Barra: «Black Friday · 2.ª pieza al 50 % · 3.ª gratis» (`PROMO_BARRA`); caja verde de las fichas: «BLACK FRIDAY /
+  2.ª AL 50 % · 3.ª GRATIS … Hasta el 5 de diciembre»; Preguntas frecuentes: «¿Cómo funciona la oferta de Black
+  Friday?». **Decisión de Edu: Black Friday desde ya** (se vende aunque no sea el 27-nov), **una sola frase** para
+  los dos descuentos, y **fin real el 5-dic**: los dos descuentos automáticos tienen `endsAt` 5-dic 23:59 (hora de
+  España). **El 27-nov, si va bien, código del 10 %** (ojo: no se suma a la escalera; solo le sirve a quien compra 1).
+  En anuncios el gancho corto puede ser «3x2 en relojes y joyas».
+- **Campaña nueva de Meta (plan aprobado por Edu, 2-nov): 35 €/día × 4 días (~140 €)**, lanzar ~5-nov, sin tocar hasta
+  el 9-nov; 1 campaña Advantage+ ventas, 1 conjunto (península + Baleares, solo FB+IG), **8 anuncios** con ángulos
+  distintos: oferta «3x2 en relojes y joyas» · collar «Su nombre, su piedra» · «Un reloj que solo da la hora» ·
+  «¿No sabes qué regalarle?» (vídeo real) · por destinataria (madre/hermana/pareja) · «¿Te quedará grande?» (eslabón) ·
+  «Para ti · foto» rehecho · carrusel «Regalos de menos de 40 €». Cuentas: a 0,79 €/clic y ~15-20 € de margen por pedido
+  haría falta un 4-5 % de conversión → objetivo CPC ≤ 0,40 € y 2 piezas por pedido. **Edu graba** con el móvil (muñeca
+  con el Lune, ponérselo a alguien, quitar un eslabón, collar de cerca y puesto, relojes en fila); las amigas, si se
+  prestan. Antes de gastar: clic real desde el móvil (anuncio → tienda) y ver por qué solo 11 de 82 clics llegaban.
+- **Collar con nombre (5.2): Edu quiere meterlo ya.** Muestra de **Yiwu Shangjie** (Alibaba): pedida el 9-oct, llegó el
+  23-oct con caja de terciopelo verde. **Falta de Edu:** enlace de Alibaba, fotos/vídeo de la muestra y la respuesta
+  del proveedor al mensaje en inglés (pedidos sueltos a España con nombre, coste y plazo DDP, sin tarjeta «THANK YOU»,
+  lista diaria + seguimiento en 48 h, foto antes de enviar). Ficha: campo «Nombre» (máx. 10 letras) + mes/piedra +
+  metal + casilla obligatoria, hecho en el tema sin app. Último pedido para Navidad ~1-dic.
+- **Propuesto, sin respuesta de Edu:** en el hueco del inicio, **«Packs para regalar»** (3 combinaciones con el precio
+  ya rebajado y un botón que mete todo en la cesta: Lune + collar Lune 74,90 → 57,43 € · Sépia + Boucle 54,90 → 44,93 € ·
+  Nuit + Larme + Boucle 74,85 → 54,90 €). Alternativa: «Regalos por precio».
+- **Tema de prueba** «Prueba home 29-oct» (210513527123) tiene lo mismo que el publicado en inicio, barra y fichas.
+
+**DÓNDE NOS QUEDAMOS (1-nov, tarde).**
 - **En producción (lunerie.es):** 11 productos activos (5 relojes: Lune, Sépia, Maille, Galet, Perle · 6 joyas: Larme,
   Nuit, Collar Lune, Étoile, Boucle, Duo), colecciones **Relojes** y **Joyas** (esta, solo joyas) en el menú, inicio
   con escaparates partidos + reseñas, **promo «3x2 en toda la tienda · 2.ª pieza al 50 %»** (descuentos automáticos,

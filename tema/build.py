@@ -84,8 +84,10 @@ LOGO_CSS = (".header-logo { font-family: var(--font-heading--family); font-weigh
 # («2.ª pieza al 50 %» y «3x2: la 3.ª pieza, gratis», colecciones Relojes + Joyas; Shopify aplica el que más ahorra
 # y siempre descuenta la pieza más barata). Con True: frase en la barra de arriba, caja verde en todas las fichas y
 # aviso en la cesta. Para quitarla: False aquí y desactivar los dos descuentos en Shopify.
+# 2-nov (Edu): se anuncia como Black Friday desde ya y acaba de verdad el 5-dic (último día para Navidad; los dos
+# descuentos tienen esa fecha de fin en Shopify). Una sola frase en todas partes: «2.ª pieza al 50 % y 3.ª gratis».
 PROMO = True
-PROMO_BARRA = "3x2 en toda la tienda · 2.ª pieza al 50 %"
+PROMO_BARRA = "Black Friday · 2.ª pieza al 50 % · 3.ª gratis"
 
 header = {
     "type": "header", "name": "t:names.header",
@@ -599,12 +601,12 @@ ficha = {
                     "padding-inline-start": 20, "padding-inline-end": 20},
                     "blocks": {
                         "t": color(small(text_block(
-                            "<p><strong>3x2 EN TODA LA TIENDA</strong></p>" if PROMO else
+                            "<p><strong>BLACK FRIDAY<br>2.ª AL 50 % · 3.ª GRATIS</strong></p>" if PROMO else
                             "<p><strong>SEGUNDO RELOJ POR 19,95 €</strong></p>",
                             "paragraph"), "1.125rem"), "#FFFFFF", "100%"),
                         "p": color(text_block(
                             "<p>Con 2 piezas, la más barata al 50 %. Con 3, la más barata gratis. Mezcla relojes "
-                            "y joyas como quieras: se descuenta solo en la cesta.</p>" if PROMO else
+                            "y joyas como quieras: se descuenta solo en la cesta. Hasta el 5 de diciembre.</p>" if PROMO else
                             "<p>Añade dos a la cesta: el descuento se aplica solo al pagar. "
                             "Uno para ti y otro para regalar.</p>", "paragraph"), "#FFFFFF", "100%"),
                     }, "block_order": ["t", "p"]},

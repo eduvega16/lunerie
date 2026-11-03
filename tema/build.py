@@ -469,14 +469,16 @@ def liquid(codigo):
 CAJA_REGALO = False
 # Ventajas bajo el botón. 3-nov (Edu, «lujo como PDPaola»): en texto pequeño gris, sin iconos ni la bolita roja que
 # latía. Plazo real (22-oct): AliExpress tardó 6-7 días laborables → se promete 7-12; para Navidad, antes del 5-dic.
-VENTAJAS = liquid(
-    '<ul class="lu-ventajas">'
-    + ("<li>Llega en su caja de regalo</li>" if CAJA_REGALO else "")
-    + "<li>Envío gratis a península, con seguimiento · 7-12 días laborables</li>"
-    "<li>Para Navidad, pídelo antes del 5 de diciembre</li>"
-    "<li>Garantía de 3 años · 14 días para devolverlo</li></ul>"
-    "<style>.lu-ventajas{display:grid;gap:6px;margin:0;padding:0!important;list-style:none;"
-    "font-family:var(--font-body--family);font-size:.8125rem;line-height:1.5;color:" + SOFT + "}</style>")
+def ventajas(lineas):
+    return liquid('<ul class="lu-ventajas">' + "".join(f"<li>{l}</li>" for l in lineas) + "</ul>"
+                  "<style>.lu-ventajas{display:grid;gap:6px;margin:0;padding:0!important;list-style:none;"
+                  "font-family:var(--font-body--family);font-size:.8125rem;line-height:1.5;color:" + SOFT + "}</style>")
+
+
+VENTAJAS = ventajas((["Llega en su caja de regalo"] if CAJA_REGALO else []) + [
+    "Envío gratis a península, con seguimiento · 7-12 días laborables",
+    "Para Navidad, pídelo antes del 5 de diciembre",
+    "Garantía de 3 años · 14 días para devolverlo"])
 # La promo junto al precio, en una línea y sin caja de color (3-nov; antes, caja verde bajo el botón): la palabra
 # «Black Friday» en el rojo de la barra de arriba y el resto en tinta.
 OFERTA_FICHA = liquid(
@@ -740,6 +742,26 @@ _det["blocks"]["agua"] = row("¿Se puede mojar?",
 _det["block_order"].insert(_det["block_order"].index("descripcion") + 1, "agua")
 (OUT / "product.reloj.json").write_text(json.dumps(reloj, ensure_ascii=False, indent=2), encoding="utf8")
 
+# Plantilla «collar» (3-nov): el collar con nombre (Collar Signé, productos/collar_signe.py). La de las joyas + panel de
+# piedras, nombre y casilla (lunerie-collar.liquid) entre el color y el botón, con su propio plazo (se hace para cada
+# clienta) y sin la barra fija de compra (su botón se saltaría la comprobación de la piedra).
+# PLAZO: ventana de entrega que garantiza Alibaba con el envío estándar (12-38 días desde el pedido, visto el 3-nov);
+# para Navidad (24-dic), 38 días antes. Cambiarlos cuando QIUHAN diga los días reales de fabricación y envío.
+PLAZO_COLLAR, NAVIDAD_COLLAR = "2-5 semanas", "15 de noviembre"
+collar = copy.deepcopy(joya)
+_d = collar["sections"]["main"]["blocks"]["product-details"]
+_d["blocks"]["personalizar"] = liquid("{% render 'lunerie-collar', product: product, section_id: section.id %}")
+_d["block_order"].insert(_d["block_order"].index("comprar"), "personalizar")
+_d["blocks"]["ventajas"] = ventajas([
+    f"Se hace para ti con su nombre · llega en {PLAZO_COLLAR}, envío gratis a península",
+    f"Para Navidad, pídelo antes del {NAVIDAD_COLLAR}",
+    "Garantía de 3 años"])
+_d["blocks"]["detalles"]["blocks"]["envio"] = row(
+    "Envío", f"<p>Lo hacemos para ti con el nombre que escribas y llega en {PLAZO_COLLAR}, con número de seguimiento "
+             "por email. Gratis a península.</p><p>Por ahora no enviamos a Canarias, Ceuta ni Melilla.</p>")
+collar["sections"]["main"]["settings"]["enable_sticky_add_to_cart"] = False
+(OUT / "product.collar.json").write_text(json.dumps(collar, ensure_ascii=False, indent=2), encoding="utf8")
+
 (OUT / "codigo" / "snippets").mkdir(parents=True, exist_ok=True)
 (OUT / "codigo" / "snippets" / "lunerie-bolitas.liquid").write_text(
     "{%- comment -%} Generado por tema/build.py (BOLITAS): bolitas de color en el selector de variantes {%- endcomment -%}\n"
@@ -832,7 +854,7 @@ TIENDA = OUT / "tienda"
 # password.json y cart.json no los genera build.py: son plantillas del tema con los textos en español
 DESTINO = {"password.json": "templates", "cart.json": "templates", "settings_data.json": "config", "header-group.json": "sections", "footer-group.json": "sections",
            "index.json": "templates", "product.json": "templates", "product.joya.json": "templates",
-           "product.anillo.json": "templates", "product.reloj.json": "templates"}
+           "product.anillo.json": "templates", "product.reloj.json": "templates", "product.collar.json": "templates"}
 if TIENDA.exists():
     # código del tema modificado (tema/codigo/<carpeta>/<fichero>), p. ej. snippets/variant-main-picker.liquid
     for f in [*(OUT / "codigo").rglob("*.liquid"), *(OUT / "codigo" / "assets").glob("*.js")]:   # también assets/*.js (zoom del móvil)

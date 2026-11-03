@@ -600,7 +600,18 @@ A mano (Edu): stories con pegatinas, reels con música, Facebook (Business Suite
   rosa, no por ahora); **la letra, la misma de la muestra de Yiwu Shangjie que ya tiene** (mandarle foto); **exprés: 24 €
   y llega a principios de diciembre** → por pieza suelta se come el margen (coste ~28,6 €; CPA breakeven ~19 € a
   59,95 €), así que exprés solo para un envío conjunto a España. Falta: plazo real de fabricación + envío estándar,
-  precio del exprés para 5-10 piezas juntas, largo de cadena y material (mensaje en inglés del 3-nov en la sesión). **Falta de Edu:** enlace de Alibaba, fotos/vídeo de la muestra y la respuesta
+  precio del exprés para 5-10 piezas juntas, largo de cadena y material (mensaje en inglés del 3-nov en la sesión).
+  **FICHA HECHA (3-nov), producto «Collar Signé» `collar-signe` (11059049267539) en estado OCULTO (UNLISTED: solo con el
+  enlace https://lunerie.es/products/collar-signe, fuera de colecciones y buscador), 49,95 € (propuesta; Olivia 48,95 €),
+  Color Dorado/Plateado × Mes (24 variantes, SKU SIGNE-DOR-01…), sin control de stock. `productos/collar_signe.py`.
+  Plantilla `product.collar.json` + `tema/codigo/snippets/lunerie-collar.liquid` (como Olivia): panel lateral con las 12
+  lágrimas (colores sin nombres de gemas), campo «Nombre» (máx. 10 letras, propiedad del pedido: sale en la cesta y en
+  el pedido) y casilla obligatoria «He revisado el nombre»; sin piedra elegida no deja añadir; sin barra fija de compra.
+  Probado en la tienda real (cesta: «Dorado / Mayo · Nombre: Lucía»; el Black Friday se le aplica). Fotos: las de
+  Olivia que bajó Edu (cambiarlas por fotos del primer pedido real). Plazo provisional «2-5 semanas» y Navidad «antes
+  del 15 de noviembre» (`PLAZO_COLLAR`, `NAVIDAD_COLLAR` en build.py) hasta que QIUHAN diga los días reales. Para
+  lanzarlo: OK de Edu (nombre, precio, plazo) → status ACTIVE (entra solo en «Joyas» por tipo Collares).
+  Cada pedido: copiar el nombre, el color y el mes del pedido de Shopify al proveedor. **Falta de Edu:** enlace de Alibaba, fotos/vídeo de la muestra y la respuesta
   del proveedor al mensaje en inglés (pedidos sueltos a España con nombre, coste y plazo DDP, sin tarjeta «THANK YOU»,
   lista diaria + seguimiento en 48 h, foto antes de enviar). Ficha: campo «Nombre» (máx. 10 letras) + mes/piedra +
   metal + casilla obligatoria, hecho en el tema sin app. Último pedido para Navidad ~1-dic.

@@ -1,0 +1,185 @@
+{%- comment -%}
+  Collar con nombre (3-nov, como Olivia Jewelry): se pinta en la plantilla «collar» (product.collar.json, build.py),
+  entre el color y el botón.
+  - Piedra: botón que abre un panel con los 12 meses; al elegir uno se marca la opción «Mes» del selector del tema (que
+    va oculto), así cambian el precio, la foto y la variante. Hasta que no se elige, no deja añadir a la cesta (si no,
+    se colaría «Enero» sin querer).
+  - Nombre: propiedad del pedido «Nombre» (sale en la cesta y en el pedido de Shopify: es lo que se pasa al proveedor).
+  - Casilla obligatoria «He revisado el nombre» (CLAUDE.md, apartado 4: los personalizados no admiten desistimiento).
+  Los campos van fuera del <form> del tema y se le unen con el atributo `form` (id «BuyButtons-ProductForm-<sección>»).
+  Uso: {% render 'lunerie-collar', product: product, section_id: section.id %}
+  Colores de cada mes: los mismos nombres que en la descripción del producto (productos/collar_signe.py).
+{%- endcomment -%}
+{%- liquid
+  assign form_id = 'BuyButtons-ProductForm-' | append: section_id
+  assign meses = 'Enero,Febrero,Marzo,Abril,Mayo,Junio,Julio,Agosto,Septiembre,Octubre,Noviembre,Diciembre' | split: ','
+  assign colores = 'rojo oscuro,morado,azul agua,blanco,verde,violeta,rojo,verde oliva,azul oscuro,rosa,amarillo,azul' | split: ','
+  assign tonos = '#7A1420,#8E6CB8,#7CC6E6,#E4E8EF,#1E7A3C,#5B3E99,#C2183B,#6B6A1E,#1F3A8A,#E7A3C6,#E8B21C,#2F86D8' | split: ','
+  assign max_letras = 10
+  assign elegido = ''
+  if product.selected_variant
+    for o in product.selected_variant.options
+      if product.options[forloop.index0] == 'Mes'
+        assign elegido = o
+      endif
+    endfor
+  endif
+-%}
+<div class="lu-collar" data-lu-collar data-form="{{ form_id }}" data-elegido="{{ elegido }}">
+  <div class="lu-collar__campo">
+    <p class="lu-collar__etiqueta" id="lu-piedra-{{ section_id }}">Piedra del mes <span aria-hidden="true">*</span></p>
+    <button type="button" class="lu-collar__elegir" data-lu-abrir aria-haspopup="dialog" aria-describedby="lu-piedra-{{ section_id }}">
+      <svg class="lu-gota" data-lu-gota viewBox="0 0 24 32" width="18" height="24" aria-hidden="true" hidden><path d="M12 1.5C9 7 3.5 13.2 3.5 20.2a8.5 8.5 0 0 0 17 0C20.5 13.2 15 7 12 1.5Z"/></svg>
+      <span data-lu-texto>Elige el mes de la piedra</span>
+    </button>
+    <p class="lu-collar__error" data-lu-error role="alert" hidden>Elige el mes de la piedra para añadirlo a la cesta.</p>
+  </div>
+
+  <div class="lu-collar__campo">
+    <label class="lu-collar__etiqueta" for="lu-nombre-{{ section_id }}">Nombre <span aria-hidden="true">*</span></label>
+    <div class="lu-collar__nombre">
+      <input id="lu-nombre-{{ section_id }}" type="text" name="properties[Nombre]" form="{{ form_id }}" required
+        maxlength="{{ max_letras }}" autocomplete="off" spellcheck="false" placeholder="El nombre que quieres"
+        pattern="[A-Za-zÁÉÍÓÚÜÑáéíóúüñ ]+" title="Solo letras, hasta {{ max_letras }}" data-lu-nombre>
+      <span class="lu-collar__cuenta" data-lu-cuenta aria-hidden="true">0/{{ max_letras }}</span>
+    </div>
+  </div>
+
+  <label class="lu-collar__revisado">
+    <input type="checkbox" name="properties[_Nombre revisado]" value="Sí" form="{{ form_id }}" required>
+    <span>He revisado el nombre: se graba tal cual lo escribo, con mayúsculas y tildes.</span>
+  </label>
+  <p class="lu-collar__aviso">Al ser personalizado no admite devolución, salvo que llegue con un defecto o un error nuestro: en ese caso lo rehacemos.</p>
+
+  <dialog class="lu-piedras" data-lu-panel aria-labelledby="lu-piedras-t-{{ section_id }}">
+    <div class="lu-piedras__cab">
+      <h2 class="lu-piedras__titulo" id="lu-piedras-t-{{ section_id }}">Elige la piedra</h2>
+      <button type="button" class="lu-piedras__cerrar" data-lu-cerrar aria-label="Cerrar">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+    </div>
+    <p class="lu-piedras__texto">Una lágrima del color de su mes.</p>
+    <ul class="lu-piedras__lista" role="list">
+      {%- for m in meses -%}
+        <li>
+          <button type="button" class="lu-piedras__mes" data-lu-mes="{{ m }}" data-lu-color="{{ colores[forloop.index0] }}" data-lu-tono="{{ tonos[forloop.index0] }}" aria-pressed="{% if m == elegido %}true{% else %}false{% endif %}">
+            <span class="lu-piedras__piedra">
+              <svg viewBox="0 0 24 32" width="30" height="40" aria-hidden="true">
+                <path d="M12 1.5C9 7 3.5 13.2 3.5 20.2a8.5 8.5 0 0 0 17 0C20.5 13.2 15 7 12 1.5Z" fill="{{ tonos[forloop.index0] }}"/>
+                <path d="M12 1.5C9 7 3.5 13.2 3.5 20.2c0 1.4.3 2.7.9 3.9L12 12Z" fill="#fff" opacity=".22"/>
+                <path d="M12 12l7.6 12.1c.6-1.2.9-2.5.9-3.9C20.5 13.2 15 7 12 1.5Z" fill="#000" opacity=".12"/>
+                <ellipse cx="9" cy="19" rx="1.6" ry="3" fill="#fff" opacity=".45"/>
+              </svg>
+            </span>
+            <span class="lu-piedras__nombre">{{ m }}</span>
+            <span class="lu-piedras__color">{{ colores[forloop.index0] }}</span>
+          </button>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </dialog>
+</div>
+
+<style>
+  /* La opción «Mes» del tema se elige desde el panel */
+  .variant-option:has(input[data-option-name="Mes"]), .variant-option:has(option[data-option-name="Mes"]) { display: none !important; }
+  .lu-collar { display: grid; gap: 20px; font-family: var(--font-body--family); color: #16201B; }
+  .lu-collar__campo { display: grid; gap: 10px; }
+  .lu-collar__etiqueta { margin: 0; font-size: .875rem; }
+  .lu-collar__etiqueta span { color: #6B746F; }
+  .lu-collar__elegir { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; min-height: 48px;
+    padding: 12px 16px; border: 1px dashed #9AA39E; background: #fff; color: #16201B; font: inherit; font-size: .875rem;
+    letter-spacing: .04em; cursor: pointer; }
+  .lu-collar__elegir:hover { border-color: #16201B; }
+  .lu-collar__elegir[data-elegido] { border-style: solid; border-color: #C9CFCB; justify-content: flex-start; }
+  .lu-collar__elegir:focus-visible, .lu-piedras__mes:focus-visible, .lu-piedras__cerrar:focus-visible { outline: 2px solid #006039; outline-offset: 2px; }
+  .lu-gota { flex: 0 0 auto; }
+  .lu-collar__error { margin: 0; font-size: .8125rem; color: #B3261E; }
+  .lu-collar__nombre { position: relative; }
+  .lu-collar__nombre input { width: 100%; padding: 10px 52px 10px 0; border: 0; border-bottom: 1px solid #C9CFCB; border-radius: 0;
+    background: transparent; font: inherit; font-size: 1rem; color: #16201B; }
+  .lu-collar__nombre input:focus { outline: none; border-bottom-color: #16201B; }
+  .lu-collar__nombre input::placeholder { color: #9AA39E; }
+  .lu-collar__cuenta { position: absolute; right: 0; bottom: 12px; font-size: .75rem; color: #6B746F; }
+  .lu-collar__revisado { display: flex; align-items: flex-start; gap: 10px; font-size: .8125rem; line-height: 1.5; color: #3D4842; cursor: pointer; }
+  .lu-collar__revisado input { flex: 0 0 auto; width: 16px; height: 16px; margin: 2px 0 0; accent-color: #006039; }
+  .lu-collar__aviso { margin: -8px 0 0; font-size: .75rem; line-height: 1.5; color: #6B746F; }
+
+  /* Panel de las piedras: entra por la derecha, como en Olivia */
+  .lu-piedras { position: fixed; inset: 0 0 0 auto; width: min(460px, 92vw); max-width: none; height: 100dvh; max-height: none;
+    margin: 0; padding: 0 0 24px; border: 0; background: #fff; color: #16201B; overflow-y: auto; }
+  .lu-piedras[open] { animation: lu-entra .28s cubic-bezier(.2,.7,.2,1); }
+  .lu-piedras::backdrop { background: rgba(22,32,27,.45); }
+  @keyframes lu-entra { from { transform: translateX(100%); } to { transform: none; } }
+  .lu-piedras__cab { position: sticky; top: 0; z-index: 1; display: flex; align-items: center; justify-content: center;
+    padding: 22px 56px; background: #fff; border-bottom: 1px solid #E2E6E3; }
+  .lu-piedras__titulo { margin: 0; font-family: var(--font-heading--family); font-weight: 400; font-size: 1.5rem;
+    letter-spacing: .12em; text-transform: uppercase; }
+  .lu-piedras__cerrar { position: absolute; left: 18px; display: grid; place-items: center; width: 34px; height: 34px;
+    border: 0; border-radius: 50%; background: #F2F4F2; color: #16201B; cursor: pointer; }
+  .lu-piedras__texto { margin: 18px 20px 4px; font-size: .875rem; color: #6B746F; text-align: center; }
+  .lu-piedras__lista { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 0; padding: 14px 20px 0 !important; list-style: none; }
+  .lu-piedras__mes { display: grid; justify-items: center; gap: 4px; width: 100%; padding: 18px 8px 16px; border: 1px solid transparent;
+    background: #F7F8F7; font: inherit; color: #16201B; cursor: pointer; }
+  .lu-piedras__mes:hover, .lu-piedras__mes[aria-pressed="true"] { border-color: #16201B; background: #fff; }
+  .lu-piedras__piedra { display: grid; place-items: center; width: 60px; height: 60px; margin-bottom: 6px; border-radius: 50%; background: #fff; }
+  .lu-piedras__nombre { font-size: .875rem; }
+  .lu-piedras__color { font-size: .75rem; color: #6B746F; }
+  @media (prefers-reduced-motion: reduce) { .lu-piedras[open] { animation: none; } }
+</style>
+
+<script>
+  (() => {
+    document.querySelectorAll('[data-lu-collar]:not([data-lu-ok])').forEach((raiz) => {
+      raiz.setAttribute('data-lu-ok', '');
+      const panel = raiz.querySelector('[data-lu-panel]');
+      const abrir = raiz.querySelector('[data-lu-abrir]');
+      const texto = raiz.querySelector('[data-lu-texto]');
+      const gota = raiz.querySelector('[data-lu-gota]');
+      const error = raiz.querySelector('[data-lu-error]');
+      const nombre = raiz.querySelector('[data-lu-nombre]');
+      const cuenta = raiz.querySelector('[data-lu-cuenta]');
+      let elegido = raiz.dataset.elegido || '';
+
+      const pintar = () => {
+        const b = elegido && raiz.querySelector(`[data-lu-mes="${elegido}"]`);
+        if (!b) return;
+        texto.textContent = `${elegido} · ${b.dataset.luColor}`;
+        gota.style.fill = b.dataset.luTono;
+        gota.hidden = false;
+        abrir.setAttribute('data-elegido', '');
+        raiz.querySelectorAll('[data-lu-mes]').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+      };
+
+      abrir.addEventListener('click', () => panel.showModal());
+      raiz.querySelector('[data-lu-cerrar]').addEventListener('click', () => panel.close());
+      panel.addEventListener('click', (e) => { if (e.target === panel) panel.close(); });   // clic fuera del panel
+      raiz.querySelectorAll('[data-lu-mes]').forEach((b) => b.addEventListener('click', () => {
+        const radio = document.querySelector(`input[type="radio"][data-option-name="Mes"][value="${b.dataset.luMes}"]`);
+        if (radio && !radio.checked) radio.click();   // el tema cambia la variante, el precio y la foto
+        elegido = b.dataset.luMes;
+        error.hidden = true;
+        pintar();
+        panel.close();
+        abrir.focus();
+      }));
+
+      const contar = () => { cuenta.textContent = `${nombre.value.length}/${nombre.maxLength}`; };
+      nombre.addEventListener('input', contar);
+      contar();
+      pintar();
+
+      // Sin piedra elegida no se añade a la cesta (se cuela antes que el botón del tema)
+      window.addEventListener('click', (e) => {
+        const boton = e.target.closest('button[name="add"]');
+        // getAttribute: el form tiene un campo name="id" (la variante) que tapa form.id; y el form va después en la página
+        if (!boton || boton.form?.getAttribute('id') !== raiz.dataset.form || elegido) return;
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        error.hidden = false;
+        abrir.scrollIntoView({ block: 'center', behavior: 'smooth' });
+        abrir.focus({ preventScroll: true });
+      }, true);
+    });
+  })();
+</script>

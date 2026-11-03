@@ -16,6 +16,7 @@ tema/fotos_prueba/
 marca/fotos-ia/fichas/*.png
 marca/fotos-ia/campana-hora/*.png
 marca/fotos-ia/portada-navidad/*.png
+marca/fotos-ia/portada-dia/*.png
 marca/fotos-ia/combinados/*.png
 # planos intermedios de los vídeos de la campaña (los vuelve a sacar marca/campana_bf.py)
 marca/fotos-ia/campana-bf/*-plano-*.jpg

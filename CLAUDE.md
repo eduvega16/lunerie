@@ -543,8 +543,16 @@ precio, el **botón amarillo de PayPal** (`.accelerated-checkout-block` oculto p
 icono del carrito · «Te puede interesar» se queda. Inicio: bajo el collage, sin la franja en tinta ni «BLACK FRIDAY»
 gigante (ceja roja pequeña + «Relojes y joyas *para regalar.*» + promo en una línea), y sin las etiquetas oscuras
 («LUNE»…) sobre las fotos de los escaparates. Ojo: el CSS personalizado de una sección solo lleva el prefijo de la
-sección en la primera regla: si el tema gana, `!important`. Ideas que quedan: botón «Añadir a la cesta» (ahora dice
-«Agregar al carrito», texto de `locales/es.json`).
+sección en la primera regla: si el tema gana, `!important`. El botón se queda en «Agregar al carrito» (Edu, 3-nov).
+**Portada «para cada día» (3-nov, en producción, pedida por Edu):** las fotos de Navidad no le convencían (en el
+móvil no se veían las joyas). Ahora, de día y **sin caras** (corte bajo la nariz), en el mismo collage: taza de café
+con Lune + Nuit + collar Lune (grande en el móvil) · mano en el pelo con Boucle + Maille + Duo (centro en PC) · copa
+en una terraza con Sépia + Étoile + Larme. `marca/portada_dia.py` (6 fotos, ~0,80 $; elegidas izquierda-1, centro-2 —en
+la 1 el Maille salía redondo— y derecha-2), archivos de Shopify `portada-dia-*.jpg`; en el móvil el collage va al
+revés (la grande a la izquierda). Volver a las de Navidad: `foto = 'portada-navidad-'` en `hero-navidad`.
+**Enfoque «para llevar cada día»** (Edu: en Instagram y en una campaña futura): ideas del estratega en
+`oficina/ideas/2026-11-03-cada-dia.md` (primero «Un martes cualquiera», carrusel de escenas con la hora; propone
+3 fotos sobrias más, ~0,4 $, pendiente del OK de Edu).
 **DÓNDE NOS QUEDAMOS (2-nov, noche) — leer esto primero; manda sobre los bloques de abajo.**
 - **EN PRODUCCIÓN (OK de Edu, 2-nov): portada en collage + BLACK FRIDAY.** `parte('hero-navidad')` en
   `lunerie-inicio.liquid`: las 3 fotos de Navidad montadas como **copias de papel** (borde irregular con `clip-path`
@@ -567,7 +575,9 @@ sección en la primera regla: si el tema gana, `!important`. Ideas que quedan: b
   con el Lune, ponérselo a alguien, quitar un eslabón, collar de cerca y puesto, relojes en fila); las amigas, si se
   prestan. Antes de gastar: clic real desde el móvil (anuncio → tienda) y ver por qué solo 11 de 82 clics llegaban.
 - **Collar con nombre (5.2): Edu quiere meterlo ya.** Muestra de **Yiwu Shangjie** (Alibaba): pedida el 9-oct, llegó el
-  23-oct con caja de terciopelo verde. **Falta de Edu:** enlace de Alibaba, fotos/vídeo de la muestra y la respuesta
+  23-oct con caja de terciopelo verde. **3-nov:** Yiwu Shangjie ya no tiene el anuncio publicado (le dice a Edu que lo
+  sigue fabricando); Edu pasa otro proveedor, **QIUHAN** (Alibaba, producto 1601817911870). Alibaba pide captcha a Claude:
+  hacen falta capturas de Edu (precio por cantidad, muestra, envío a España, material, tipos de letra, valoraciones). **Falta de Edu:** enlace de Alibaba, fotos/vídeo de la muestra y la respuesta
   del proveedor al mensaje en inglés (pedidos sueltos a España con nombre, coste y plazo DDP, sin tarjeta «THANK YOU»,
   lista diaria + seguimiento en 48 h, foto antes de enviar). Ficha: campo «Nombre» (máx. 10 letras) + mes/piedra +
   metal + casilla obligatoria, hecho en el tema sin app. Último pedido para Navidad ~1-dic.

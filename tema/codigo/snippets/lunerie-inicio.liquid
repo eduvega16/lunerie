@@ -65,19 +65,23 @@
       Portada de Black Friday y Navidad (1-nov; collage el 2-nov, como el de Caducci en móvil): tres fotos de noche con
       flash (marca/portada_navidad.py; archivos de Shopify portada-navidad-izquierda/centro/derecha.jpg: para cambiar una,
       subir otra con el mismo nombre) montadas como copias de papel con el borde irregular, sobre niebla, y debajo el
-      titular con la promo en pequeño (en tinta hasta el 3-nov). Móvil: la del teléfono grande y las otras dos encima, a la izquierda. PC: la del sofá
-      en el centro. La promo acaba de verdad el 5-dic (fecha de fin puesta en los dos descuentos de Shopify).
-      Nada de «solo 50 piezas», «135.000 clientas» ni estrellas: solo lo que es verdad.
+      titular con la promo en pequeño (en tinta hasta el 3-nov). Móvil: la de la izquierda grande y las otras dos encima,
+      a la izquierda. PC: la del centro en el centro. La promo acaba de verdad el 5-dic (fecha de fin puesta en los dos
+      descuentos de Shopify). Nada de «solo 50 piezas», «135.000 clientas» ni estrellas: solo lo que es verdad.
+      3-nov (Edu): fotos «para cada día» (marca/portada_dia.py; archivos portada-dia-*.jpg): de día y sin caras, manos con
+      una taza, en el pelo o con una copa, para que en el móvil se vean el reloj y las joyas juntos. Volver a las de
+      Navidad: `foto` = 'portada-navidad-' (y sus `alt` en git).
     {%- endcomment -%}
+    {%- assign foto = 'portada-dia-' -%}
     <div class="lu-hn">
       <div class="lu-hn__fotos">
         {%- for n in (1..3) -%}
           {%- case n -%}
-            {%- when 1 -%}{%- assign lado = 'izquierda' -%}{%- assign tam = '(min-width: 750px) 400px, 62vw' -%}{%- assign alt = 'Chica hablando por un teléfono antiguo con un reloj dorado y un anillo con piedra verde' -%}
-            {%- when 2 -%}{%- assign lado = 'centro' -%}{%- assign tam = '(min-width: 750px) 780px, 48vw' -%}{%- assign alt = 'Dos amigas en un sofá de terciopelo verde con relojes y un collar de Lunerie' -%}
-            {%- when 3 -%}{%- assign lado = 'derecha' -%}{%- assign tam = '(min-width: 750px) 400px, 38vw' -%}{%- assign alt = 'Chica con una copa, reloj de correa marrón y pendientes con piedra verde' -%}
+            {%- when 1 -%}{%- assign lado = 'izquierda' -%}{%- assign tam = '(min-width: 750px) 400px, 62vw' -%}{%- assign alt = 'Manos con una taza de café, el reloj Lune con piedras verdes, el anillo Nuit y el collar Lune' -%}
+            {%- when 2 -%}{%- assign lado = 'centro' -%}{%- assign tam = '(min-width: 750px) 780px, 48vw' -%}{%- assign alt = 'Mano en el pelo con los aros Boucle, el reloj Maille de malla dorada y el anillo Duo' -%}
+            {%- when 3 -%}{%- assign lado = 'derecha' -%}{%- assign tam = '(min-width: 750px) 400px, 38vw' -%}{%- assign alt = 'Copa de vino blanco en una terraza, el reloj Sépia de correa marrón, el anillo Étoile y los pendientes Larme' -%}
           {%- endcase -%}
-          {%- assign archivo = 'portada-navidad-' | append: lado | append: '.jpg' -%}
+          {%- assign archivo = foto | append: lado | append: '.jpg' -%}
           <figure class="lu-hn__foto lu-hn__foto--{{ lado }}">
             <div class="lu-hn__papel">
               {%- if n == 1 -%}
@@ -567,9 +571,10 @@
     .lu-hn__papel{height:100%;padding:clamp(5px,1.5vw,11px);background:#FDFCF9;clip-path:var(--lu-papel-a)}
     .lu-hn__foto--centro .lu-hn__papel{clip-path:var(--lu-papel-b)}
     .lu-hn__papel img{display:block;width:100%;height:100%;object-fit:cover}
-    .lu-hn__foto--izquierda{z-index:1;top:4%;right:3%;width:64%;aspect-ratio:3/4;transform:rotate(1.5deg)}
-    .lu-hn__foto--centro{z-index:2;top:3%;left:3%;width:48%;aspect-ratio:4/3;transform:rotate(-3deg)}
-    .lu-hn__foto--derecha{z-index:3;bottom:3%;left:6%;width:40%;aspect-ratio:3/4;transform:rotate(2.5deg)}
+    /* Móvil (3-nov, fotos «para cada día»): la grande a la izquierda, porque la taza y el anillo están en su lado izquierdo */
+    .lu-hn__foto--izquierda{z-index:1;top:4%;left:3%;width:64%;aspect-ratio:3/4;transform:rotate(-1.5deg)}
+    .lu-hn__foto--centro{z-index:2;top:3%;right:3%;width:48%;aspect-ratio:4/3;transform:rotate(3deg)}
+    .lu-hn__foto--derecha{z-index:3;bottom:3%;right:6%;width:40%;aspect-ratio:3/4;transform:rotate(-2.5deg)}
     .lu-hn__promo{display:grid;justify-items:center;gap:12px;padding:8px 20px 44px;text-align:center}
     .lu-hn__oferta{margin:0;font-family:var(--font-body--family);font-size:.75rem;font-weight:500;letter-spacing:.22em;
       text-transform:uppercase;color:#CA3801}
@@ -583,9 +588,9 @@
     @media (min-width:750px){
       /* PC: la del sofá en el centro y las otras dos a los lados, medio escondidas (izquierda) o encima (derecha) */
       .lu-hn__fotos{--h:clamp(360px,34vw,680px);aspect-ratio:auto;height:var(--h)}
-      .lu-hn__foto--centro{top:7%;left:50%;width:calc(var(--h) * 1.13);transform:translateX(-50%) rotate(-1deg)}
+      .lu-hn__foto--centro{top:7%;right:auto;left:50%;width:calc(var(--h) * 1.13);transform:translateX(-50%) rotate(-1deg)}
       .lu-hn__foto--izquierda{top:13%;right:auto;left:calc(50% - var(--h) * 1.03);width:calc(var(--h) * .55);transform:rotate(-3.5deg)}
-      .lu-hn__foto--derecha{top:10%;bottom:auto;left:calc(50% + var(--h) * .48);width:calc(var(--h) * .55);transform:rotate(3deg)}
+      .lu-hn__foto--derecha{top:10%;bottom:auto;right:auto;left:calc(50% + var(--h) * .48);width:calc(var(--h) * .55);transform:rotate(3deg)}
       .lu-hn__promo{padding:40px 24px 48px}
     }
 

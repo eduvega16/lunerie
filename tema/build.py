@@ -175,9 +175,10 @@ def group(blocks, align="center", gap=8):
 BOLITAS = {"Dorado": "#D4AF5F", "Plateado": "#C9CDD0", "Oro rosa": "#D8A48F"}
 # 22-oct: el Lune es siempre dorado y la opción Color es la piedra (valor exacto): bolita con la piedra en el
 # centro y el dorado alrededor. Si se añade un color de piedra, añadirlo aquí.
-# «Plateado» (23-oct): el BS en plata con piedra verde clara → aro plateado (valor: color o (color, aro)).
+# Valor: color o (color, aro). 4-nov: fuera «Plateado» (era el Lune plateado con piedra verde clara, quitado el 23-oct):
+# pintaba verdosa la bolita del plateado del Maille, el Galet y el collar Signé, que ahora es la plateada lisa de BOLITAS.
 PIEDRAS = {"Verde": "#3F7A55", "Azul": "#2D3F8F", "Rosa": "#E0A3AC", "Verde claro": "#A8CC8C",
-           "Crema": "#EDE3CF", "Rojo": "#A52A24", "Plateado": ("#9FB5A4", BOLITAS["Plateado"]),
+           "Crema": "#EDE3CF", "Rojo": "#A52A24",
            # Joyas (28-oct): anillo Nuit, pendientes Larme y collar Lune (el anillo Étoile va por meses, sin bolitas)
            "Verde oliva": "#6B6A2C", "Champán": "#E6C7A1", "Blanco": "#EEF1F4", "Morado": "#5E3F8C",
            "Fucsia": "#D12F7F", "Turquesa": "#36A9C9", "Negro": "#1E1F1E",

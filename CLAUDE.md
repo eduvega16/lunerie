@@ -611,7 +611,11 @@ A mano (Edu): stories con pegatinas, reels con música, Facebook (Business Suite
   fuera la casilla obligatoria (queda el aviso «se graba tal cual lo escribes») y la línea «Se hace para ti… llega en…»;
   fotos de Olivia sustituidas por 4 de IA con nombres españoles (`marca/collar_ia.py`, ~1 $): Marta (azul, producto
   dorado) · Carmen (verde, con el Lune y el Nuit) · Elena (amarilla, con los aros Boucle) · Paula (rosa, plateado).
-  **Nunca «Lucía»** en ejemplos (Edu). Nombres revisados a tamaño real. Cambiarlas por fotos reales con el primer pedido. Plazo provisional «2-5 semanas» y Navidad «antes
+  **Nunca «Lucía»** en ejemplos (Edu). Nombres revisados a tamaño real. Cambiarlas por fotos reales con el primer pedido.
+  **4-nov: A LA VENTA** (OK de Edu al nombre «Collar Signé» y a 49,95 €): ACTIVE, solo Tienda online, entra solo en
+  «Joyas» (último del escaparate del inicio). Galería: las 4 de IA y detrás otra vez las 4 de Olivia (Edu: «no restan»).
+  Bolita del plateado arreglada en toda la tienda (fuera «Plateado» de `PIEDRAS`: salía verdosa en Maille, Galet y collar).
+  **Pendiente:** fecha de Navidad y plazo reales cuando conteste QIUHAN (ahora «antes del 15 de noviembre»). Plazo provisional «2-5 semanas» y Navidad «antes
   del 15 de noviembre» (`PLAZO_COLLAR`, `NAVIDAD_COLLAR` en build.py) hasta que QIUHAN diga los días reales. Para
   lanzarlo: OK de Edu (nombre, precio, plazo) → status ACTIVE (entra solo en «Joyas» por tipo Collares).
   Cada pedido: copiar el nombre, el color y el mes del pedido de Shopify al proveedor. **Falta de Edu:** enlace de Alibaba, fotos/vídeo de la muestra y la respuesta

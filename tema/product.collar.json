@@ -132,7 +132,7 @@
             "ventajas": {
               "type": "custom-liquid",
               "settings": {
-                "custom_liquid": "<ul class=\"lu-ventajas\"><li>Se hace para ti con su nombre · llega en 2-5 semanas, envío gratis a península</li><li>Para Navidad, pídelo antes del 15 de noviembre</li><li>Garantía de 3 años</li></ul><style>.lu-ventajas{display:grid;gap:6px;margin:0;padding:0!important;list-style:none;font-family:var(--font-body--family);font-size:.8125rem;line-height:1.5;color:#3D4842}</style>"
+                "custom_liquid": "<ul class=\"lu-ventajas\"><li>Para Navidad, pídelo antes del 15 de noviembre</li><li>Garantía de 3 años</li></ul><style>.lu-ventajas{display:grid;gap:6px;margin:0;padding:0!important;list-style:none;font-family:var(--font-body--family);font-size:.8125rem;line-height:1.5;color:#3D4842}</style>"
               },
               "blocks": {}
             },

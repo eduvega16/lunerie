@@ -47,6 +47,36 @@ def subir(rutas):
     return [t["resourceUrl"] for t in T]
 
 
+# 3-nov (Edu): fuera las fotos de Olivia; van las de IA con nombres españoles (marca/collar_ia.py). Se cambian en su
+# sitio (fileUpdate: conservan el enlace con la variante Dorado / Plateado) y se ordenan: producto, puesto, puesto, plateado.
+FOTOS_IA = [("producto-dorado-2", "prod", "Collar Signé dorado con el nombre Marta y lágrima azul"),
+            ("modelo-hombro-2", "vida", "Collar Signé dorado con el nombre Carmen y lágrima verde, con el reloj Lune y el anillo Nuit"),
+            ("producto-plateado-2", "prod", "Collar Signé plateado con el nombre Paula y lágrima rosa"),
+            ("modelo-tirantes-2", "vida", "Collar Signé dorado con el nombre Elena y lágrima amarilla, con los aros Boucle")]
+
+
+def fotos_ia():
+    ia = pathlib.Path(__file__).resolve().parent.parent / "marca" / "fotos-ia" / "collar"
+    salida = pathlib.Path(__file__).resolve().parent / "collar-signe"
+    p = gql('query($h: String!){ productByHandle(handle: $h){ id media(first: 10){ nodes{ id } } } }', {"h": HANDLE})["productByHandle"]
+    M = [m["id"] for m in p["media"]["nodes"]]   # [dorado, modelo, plateado, de cerca] (las de Olivia)
+    rutas = []
+    for nombre, tipo, _ in FOTOS_IA:
+        im = crop45(Image.open(ia / f"{nombre}.png").convert("RGB"))
+        im = niebla(im) if tipo == "prod" else im
+        r = salida / f"{HANDLE}-{nombre}.jpg"; im.save(r, quality=92); rutas.append(r)
+    fuentes = subir(rutas)
+    destino = [M[0], M[1], M[2], M[3]]           # dorado→dorado, modelo→modelo, plateado→plateado, de cerca→Elena
+    gql("""mutation($f:[FileUpdateInput!]!){ fileUpdate(files:$f){ userErrors{ field message } } }""",
+        {"f": [{"id": m, "originalSource": s, "alt": alt} for m, s, (_, _, alt) in zip(destino, fuentes, FOTOS_IA)]}, True)
+    gql("""mutation($p:ID!,$m:[MoveInput!]!){ productReorderMedia(id:$p, moves:$m){ mediaUserErrors{ field message } } }""",
+        {"p": p["id"], "m": [{"id": M[3], "newPosition": "2"}, {"id": M[2], "newPosition": "3"}]}, True)
+    print("fotos cambiadas")
+
+
+if __name__ == "__main__" and sys.argv[1:] == ["--fotos-ia"]:
+    fotos_ia(); sys.exit()
+
 if __name__ == "__main__":
     origen = pathlib.Path(sys.argv[1]); salida = pathlib.Path(__file__).resolve().parent / "collar-signe"
     salida.mkdir(exist_ok=True)

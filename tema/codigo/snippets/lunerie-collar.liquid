@@ -5,7 +5,8 @@
     va oculto), así cambian el precio, la foto y la variante. Hasta que no se elige, no deja añadir a la cesta (si no,
     se colaría «Enero» sin querer).
   - Nombre: propiedad del pedido «Nombre» (sale en la cesta y en el pedido de Shopify: es lo que se pasa al proveedor).
-  - Casilla obligatoria «He revisado el nombre» (CLAUDE.md, apartado 4: los personalizados no admiten desistimiento).
+  - Aviso «se graba tal cual lo escribes» y sin devolución salvo defecto (CLAUDE.md, apartado 4). La casilla obligatoria
+    «He revisado el nombre» se quitó el 3-nov (Edu).
   Los campos van fuera del <form> del tema y se le unen con el atributo `form` (id «BuyButtons-ProductForm-<sección>»).
   Uso: {% render 'lunerie-collar', product: product, section_id: section.id %}
   Colores de cada mes: los mismos nombres que en la descripción del producto (productos/collar_signe.py).
@@ -45,11 +46,7 @@
     </div>
   </div>
 
-  <label class="lu-collar__revisado">
-    <input type="checkbox" name="properties[_Nombre revisado]" value="Sí" form="{{ form_id }}" required>
-    <span>He revisado el nombre: se graba tal cual lo escribo, con mayúsculas y tildes.</span>
-  </label>
-  <p class="lu-collar__aviso">Al ser personalizado no admite devolución, salvo que llegue con un defecto o un error nuestro: en ese caso lo rehacemos.</p>
+  <p class="lu-collar__aviso">Se graba tal cual lo escribes, con mayúsculas y tildes. Al ser personalizado no admite devolución, salvo que llegue con un defecto o un error nuestro: en ese caso lo rehacemos.</p>
 
   <dialog class="lu-piedras" data-lu-panel aria-labelledby="lu-piedras-t-{{ section_id }}">
     <div class="lu-piedras__cab">
@@ -101,9 +98,7 @@
   .lu-collar__nombre input:focus { outline: none; border-bottom-color: #16201B; }
   .lu-collar__nombre input::placeholder { color: #9AA39E; }
   .lu-collar__cuenta { position: absolute; right: 0; bottom: 12px; font-size: .75rem; color: #6B746F; }
-  .lu-collar__revisado { display: flex; align-items: flex-start; gap: 10px; font-size: .8125rem; line-height: 1.5; color: #3D4842; cursor: pointer; }
-  .lu-collar__revisado input { flex: 0 0 auto; width: 16px; height: 16px; margin: 2px 0 0; accent-color: #006039; }
-  .lu-collar__aviso { margin: -8px 0 0; font-size: .75rem; line-height: 1.5; color: #6B746F; }
+  .lu-collar__aviso { margin: -10px 0 0; font-size: .75rem; line-height: 1.5; color: #6B746F; }
 
   /* Panel de las piedras: entra por la derecha, como en Olivia */
   .lu-piedras { position: fixed; inset: 0 0 0 auto; width: min(460px, 92vw); max-width: none; height: 100dvh; max-height: none;

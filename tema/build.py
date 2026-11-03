@@ -743,7 +743,7 @@ _det["block_order"].insert(_det["block_order"].index("descripcion") + 1, "agua")
 (OUT / "product.reloj.json").write_text(json.dumps(reloj, ensure_ascii=False, indent=2), encoding="utf8")
 
 # Plantilla «collar» (3-nov): el collar con nombre (Collar Signé, productos/collar_signe.py). La de las joyas + panel de
-# piedras, nombre y casilla (lunerie-collar.liquid) entre el color y el botón, con su propio plazo (se hace para cada
+# piedras y nombre (lunerie-collar.liquid) entre el color y el botón, con su propio plazo (se hace para cada
 # clienta) y sin la barra fija de compra (su botón se saltaría la comprobación de la piedra).
 # PLAZO: ventana de entrega que garantiza Alibaba con el envío estándar (12-38 días desde el pedido, visto el 3-nov);
 # para Navidad (24-dic), 38 días antes. Cambiarlos cuando QIUHAN diga los días reales de fabricación y envío.
@@ -752,8 +752,7 @@ collar = copy.deepcopy(joya)
 _d = collar["sections"]["main"]["blocks"]["product-details"]
 _d["blocks"]["personalizar"] = liquid("{% render 'lunerie-collar', product: product, section_id: section.id %}")
 _d["block_order"].insert(_d["block_order"].index("comprar"), "personalizar")
-_d["blocks"]["ventajas"] = ventajas([
-    f"Se hace para ti con su nombre · llega en {PLAZO_COLLAR}, envío gratis a península",
+_d["blocks"]["ventajas"] = ventajas([   # (3-nov, Edu: fuera «Se hace para ti con su nombre · llega en…»)
     f"Para Navidad, pídelo antes del {NAVIDAD_COLLAR}",
     "Garantía de 3 años"])
 _d["blocks"]["detalles"]["blocks"]["envio"] = row(

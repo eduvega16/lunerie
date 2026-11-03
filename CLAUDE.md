@@ -607,8 +607,11 @@ A mano (Edu): stories con pegatinas, reels con música, Facebook (Business Suite
   Plantilla `product.collar.json` + `tema/codigo/snippets/lunerie-collar.liquid` (como Olivia): panel lateral con las 12
   lágrimas (colores sin nombres de gemas), campo «Nombre» (máx. 10 letras, propiedad del pedido: sale en la cesta y en
   el pedido) y casilla obligatoria «He revisado el nombre»; sin piedra elegida no deja añadir; sin barra fija de compra.
-  Probado en la tienda real (cesta: «Dorado / Mayo · Nombre: Lucía»; el Black Friday se le aplica). Fotos: las de
-  Olivia que bajó Edu (cambiarlas por fotos del primer pedido real). Plazo provisional «2-5 semanas» y Navidad «antes
+  Probado en la tienda real (cesta: «Dorado / Mayo · Nombre: …»; el Black Friday se le aplica). **Más tarde (Edu):**
+  fuera la casilla obligatoria (queda el aviso «se graba tal cual lo escribes») y la línea «Se hace para ti… llega en…»;
+  fotos de Olivia sustituidas por 4 de IA con nombres españoles (`marca/collar_ia.py`, ~1 $): Marta (azul, producto
+  dorado) · Carmen (verde, con el Lune y el Nuit) · Elena (amarilla, con los aros Boucle) · Paula (rosa, plateado).
+  **Nunca «Lucía»** en ejemplos (Edu). Nombres revisados a tamaño real. Cambiarlas por fotos reales con el primer pedido. Plazo provisional «2-5 semanas» y Navidad «antes
   del 15 de noviembre» (`PLAZO_COLLAR`, `NAVIDAD_COLLAR` en build.py) hasta que QIUHAN diga los días reales. Para
   lanzarlo: OK de Edu (nombre, precio, plazo) → status ACTIVE (entra solo en «Joyas» por tipo Collares).
   Cada pedido: copiar el nombre, el color y el mes del pedido de Shopify al proveedor. **Falta de Edu:** enlace de Alibaba, fotos/vídeo de la muestra y la respuesta

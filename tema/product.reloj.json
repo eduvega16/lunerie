@@ -2,6 +2,7 @@
   "sections": {
     "migas": {
       "type": "section",
+      "disabled": true,
       "blocks": {
         "migas": {
           "type": "text",
@@ -51,13 +52,13 @@
           "settings": {
             "media_presentation": "grid",
             "media_columns": "two",
-            "image_gap": 0,
-            "large_first_image": true,
+            "image_gap": 4,
+            "large_first_image": false,
             "media_fit": "cover",
             "constrain_to_viewport": false,
             "icons_style": "arrow",
             "slideshow_controls_style": "thumbnails",
-            "slideshow_mobile_controls_style": "thumbnails",
+            "slideshow_mobile_controls_style": "counter",
             "thumbnail_position": "bottom",
             "thumbnail_width": 60,
             "thumbnail_radius": 0,
@@ -100,40 +101,23 @@
               "blocks": {}
             },
             "precio": {
-              "type": "group",
+              "type": "price",
               "settings": {
-                "content_direction": "row",
-                "vertical_on_mobile": false,
-                "horizontal_alignment": "flex-start",
-                "vertical_alignment": "center",
-                "gap": 14,
-                "width": "fill"
+                "show_sale_price_first": true,
+                "show_installments": false,
+                "show_tax_info": false,
+                "type_preset": "custom",
+                "font_size": "1.125rem",
+                "width": "fit-content"
               },
-              "blocks": {
-                "importe": {
-                  "type": "price",
-                  "settings": {
-                    "show_sale_price_first": true,
-                    "show_installments": false,
-                    "show_tax_info": false,
-                    "type_preset": "custom",
-                    "font_size": "1.125rem",
-                    "width": "fit-content"
-                  },
-                  "blocks": {}
-                },
-                "envio": {
-                  "type": "custom-liquid",
-                  "settings": {
-                    "custom_liquid": "<span class=\"lu-envio\">Envío gratis a península</span><style>.lu-envio{display:inline-block;padding:5px 10px;background:#F2F4F2;font-family:var(--font-body--family);font-size:.75rem;letter-spacing:.04em;color:#3D4842;white-space:nowrap}</style>"
-                  },
-                  "blocks": {}
-                }
+              "blocks": {}
+            },
+            "oferta": {
+              "type": "custom-liquid",
+              "settings": {
+                "custom_liquid": "<div class=\"lu-oferta-ficha\"><p class=\"lu-oferta-ficha__t\"><span>Black Friday</span>2.ª pieza al 50 % · 3.ª gratis</p><p class=\"lu-oferta-ficha__p\">Mezcla relojes y joyas: se descuenta solo en la cesta. Hasta el 5 de diciembre.</p></div><style>.lu-oferta-ficha{font-family:var(--font-body--family)}.lu-oferta-ficha p{margin:0}.lu-oferta-ficha__t{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 12px;font-size:.9375rem;color:#16201B}.lu-oferta-ficha__t span{font-size:.75rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#CA3801}.lu-oferta-ficha__p{margin-top:4px!important;font-size:.8125rem;line-height:1.5;color:#3D4842}</style>"
               },
-              "block_order": [
-                "importe",
-                "envio"
-              ]
+              "blocks": {}
             },
             "linea": {
               "type": "_divider",
@@ -146,126 +130,11 @@
               "blocks": {}
             },
             "ventajas": {
-              "type": "group",
+              "type": "custom-liquid",
               "settings": {
-                "content_direction": "column",
-                "gap": 12,
-                "width": "fill"
+                "custom_liquid": "<ul class=\"lu-ventajas\"><li>Envío gratis a península, con seguimiento · 7-12 días laborables</li><li>Para Navidad, pídelo antes del 5 de diciembre</li><li>Garantía de 3 años · 14 días para devolverlo</li></ul><style>.lu-ventajas{display:grid;gap:6px;margin:0;padding:0!important;list-style:none;font-family:var(--font-body--family);font-size:.8125rem;line-height:1.5;color:#3D4842}</style>"
               },
-              "blocks": {
-                "navidad": {
-                  "type": "custom-liquid",
-                  "settings": {
-                    "custom_liquid": "<p class=\"lu-urgencia\"><span class=\"lu-punto\" aria-hidden=\"true\"></span>Para Navidad, pídelo antes del 5 de diciembre</p><style>.lu-urgencia,.lu-regalo{font-family:var(--font-body--family);font-weight:var(--font-body--weight)}.lu-urgencia{display:flex;align-items:center;gap:12px;margin:0;font-size:1rem;color:#B3261E}.lu-punto{position:relative;flex:0 0 9px;width:9px;height:9px;margin-inline:4px 5px;border-radius:50%;background:#B3261E}.lu-punto::after{content:'';position:absolute;inset:0;border-radius:50%;background:#B3261E;animation:lu-latido 1.6s ease-out infinite}@keyframes lu-latido{0%{transform:scale(1);opacity:.7}100%{transform:scale(2.6);opacity:0}}@media (prefers-reduced-motion:reduce){.lu-punto::after{animation:none;opacity:0}}</style>"
-                  },
-                  "blocks": {}
-                },
-                "envio": {
-                  "type": "group",
-                  "settings": {
-                    "content_direction": "row",
-                    "vertical_on_mobile": false,
-                    "horizontal_alignment": "flex-start",
-                    "vertical_alignment": "center",
-                    "gap": 12,
-                    "width": "fill"
-                  },
-                  "blocks": {
-                    "icono": {
-                      "type": "icon",
-                      "settings": {
-                        "icon": "truck",
-                        "width": 18,
-                        "icon_color": "#16201B"
-                      },
-                      "blocks": {}
-                    },
-                    "texto": {
-                      "type": "text",
-                      "settings": {
-                        "text": "<p>Envío gratis a península, con seguimiento · llega en 7-12 días laborables</p>",
-                        "width": "100%",
-                        "max_width": "normal",
-                        "alignment": "left",
-                        "type_preset": "custom",
-                        "font": "var(--font-body--family)",
-                        "font_size": "1rem",
-                        "line_height": "normal",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "background": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "padding-block-start": 0,
-                        "padding-block-end": 0,
-                        "padding-inline-start": 0,
-                        "padding-inline-end": 0
-                      },
-                      "blocks": {}
-                    }
-                  },
-                  "block_order": [
-                    "icono",
-                    "texto"
-                  ]
-                },
-                "garantia": {
-                  "type": "group",
-                  "settings": {
-                    "content_direction": "row",
-                    "vertical_on_mobile": false,
-                    "horizontal_alignment": "flex-start",
-                    "vertical_alignment": "center",
-                    "gap": 12,
-                    "width": "fill"
-                  },
-                  "blocks": {
-                    "icono": {
-                      "type": "icon",
-                      "settings": {
-                        "icon": "star",
-                        "width": 18,
-                        "icon_color": "#16201B"
-                      },
-                      "blocks": {}
-                    },
-                    "texto": {
-                      "type": "text",
-                      "settings": {
-                        "text": "<p>Garantía de 3 años + 14 días para devolverlo</p>",
-                        "width": "100%",
-                        "max_width": "normal",
-                        "alignment": "left",
-                        "type_preset": "custom",
-                        "font": "var(--font-body--family)",
-                        "font_size": "1rem",
-                        "line_height": "normal",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "background": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "padding-block-start": 0,
-                        "padding-block-end": 0,
-                        "padding-inline-start": 0,
-                        "padding-inline-end": 0
-                      },
-                      "blocks": {}
-                    }
-                  },
-                  "block_order": [
-                    "icono",
-                    "texto"
-                  ]
-                }
-              },
-              "block_order": [
-                "navidad",
-                "envio",
-                "garantia"
-              ]
+              "blocks": {}
             },
             "variantes": {
               "type": "variant-picker",
@@ -308,75 +177,6 @@
                 }
               },
               "block_order": []
-            },
-            "oferta": {
-              "type": "group",
-              "settings": {
-                "content_direction": "column",
-                "gap": 6,
-                "width": "fill",
-                "background_color": "#006039",
-                "padding-block-start": 18,
-                "padding-block-end": 18,
-                "padding-inline-start": 20,
-                "padding-inline-end": 20
-              },
-              "blocks": {
-                "t": {
-                  "type": "text",
-                  "settings": {
-                    "text": "<p><strong>BLACK FRIDAY<br>2.ª AL 50 % · 3.ª GRATIS</strong></p>",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "custom",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1.125rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0,
-                    "text_color": "#FFFFFF"
-                  },
-                  "blocks": {}
-                },
-                "p": {
-                  "type": "text",
-                  "settings": {
-                    "text": "<p>Con 2 piezas, la más barata al 50 %. Con 3, la más barata gratis. Mezcla relojes y joyas como quieras: se descuenta solo en la cesta. Hasta el 5 de diciembre.</p>",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "paragraph",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0,
-                    "text_color": "#FFFFFF"
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "t",
-                "p"
-              ]
             },
             "detalles": {
               "type": "accordion",
@@ -584,11 +384,11 @@
             "titulo",
             "estrellas",
             "precio",
+            "oferta",
             "linea",
-            "ventajas",
             "variantes",
             "comprar",
-            "oferta",
+            "ventajas",
             "leyenda",
             "detalles",
             "combina"
@@ -597,17 +397,17 @@
       },
       "block_order": [],
       "custom_css": [
-        "ul { padding-inline-start: 1.1em; } ul li::marker { color: #A6834A; } .quantity-selector-wrapper { display: none; } @media (min-width: 750px) { .product-information__grid--half .product-information__media { box-sizing: border-box; padding-inline-start: 30px; } .product-information__grid--half.product-information__grid--limit-details .product-details > .group-block { --details-max-width: 34rem; } }"
+        "ul { padding-inline-start: 1.1em; } ul li::marker { color: #A6834A; } .quantity-selector-wrapper { display: none; } .accelerated-checkout-block, .add-to-cart-icon { display: none; } @media (min-width: 750px) { .product-details { padding-inline: 56px 48px !important; } }"
       ],
       "settings": {
         "content_width": "content-full-width",
         "desktop_media_position": "left",
-        "equal_columns": true,
+        "equal_columns": false,
         "limit_details_width": true,
         "gap": 0,
         "enable_sticky_add_to_cart": true,
         "background_color": "{{ settings.color_palette.background }}",
-        "padding-block-start": 16,
+        "padding-block-start": 0,
         "padding-block-end": 48
       }
     },

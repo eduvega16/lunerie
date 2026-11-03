@@ -64,8 +64,8 @@
     {%- comment -%}
       Portada de Black Friday y Navidad (1-nov; collage el 2-nov, como el de Caducci en móvil): tres fotos de noche con
       flash (marca/portada_navidad.py; archivos de Shopify portada-navidad-izquierda/centro/derecha.jpg: para cambiar una,
-      subir otra con el mismo nombre) montadas como copias de papel con el borde irregular, sobre niebla, y debajo la
-      franja de la promo en tinta. Móvil: la del teléfono grande y las otras dos encima, a la izquierda. PC: la del sofá
+      subir otra con el mismo nombre) montadas como copias de papel con el borde irregular, sobre niebla, y debajo el
+      titular con la promo en pequeño (en tinta hasta el 3-nov). Móvil: la del teléfono grande y las otras dos encima, a la izquierda. PC: la del sofá
       en el centro. La promo acaba de verdad el 5-dic (fecha de fin puesta en los dos descuentos de Shopify).
       Nada de «solo 50 piezas», «135.000 clientas» ni estrellas: solo lo que es verdad.
     {%- endcomment -%}
@@ -89,16 +89,17 @@
           </figure>
         {%- endfor -%}
       </div>
+      {%- comment -%} 3-nov (Edu, «lujo como PDPaola»): sin «BLACK FRIDAY» gigante ni la franja en tinta; la promo,
+        en una línea pequeña (el rojo de la barra de arriba solo en la palabra «Black Friday»). {%- endcomment -%}
       <div class="lu-hn__promo">
-        <h1 class="lu-hn__marca">Relojes y joyas <em>para regalar</em></h1>
         <p class="lu-hn__oferta">Black Friday</p>
-        <p class="lu-hn__sub"><em>La 2.ª pieza al 50 % y la 3.ª, gratis</em></p>
-        <p class="lu-hn__fin">Mezcla relojes y joyas · Envío gratis a península</p>
+        <h1 class="lu-hn__marca">Relojes y joyas <em>para regalar.</em></h1>
+        <p class="lu-hn__sub">La 2.ª pieza al 50&nbsp;% y la 3.ª, gratis.<br>Mezcla relojes y joyas.</p>
         <div class="lu-hn__acciones">
           <a class="lu-boton" href="{{ collections.relojes.url }}">Ver los relojes</a>
           <a class="lu-hn__enlace" href="{{ collections.joyas.url }}">Ver las joyas</a>
         </div>
-        <p class="lu-hn__nota">Hasta el 5 de diciembre: el último día para que llegue en Navidad</p>
+        <p class="lu-hn__nota">Envío gratis a península · Hasta el 5 de diciembre, el último día para que llegue en Navidad</p>
       </div>
     </div>
 
@@ -177,11 +178,10 @@
               <a class="lu-esc__tarjeta" href="{{ p.url }}">
                 <span class="lu-esc__fotos">
                   <span class="lu-esc__escena">
-                    {{- escena | image_url: width: 900 | image_tag: loading: 'lazy', alt: '', sizes: '(min-width: 750px) 240px, 45vw', widths: '400, 600, 900' -}}
-                    <span class="lu-esc__etiqueta">{{ p.title | split: ' ' | last | upcase }}</span>
+                    {{- escena | image_url: width: 900 | image_tag: loading: 'lazy', alt: '', sizes: '(min-width: 1500px) 20vw, (min-width: 750px) 25vw, 45vw', widths: '400, 600, 900' -}}
                   </span>
                   <span class="lu-esc__producto">
-                    {{- p.featured_image | image_url: width: 900 | image_tag: loading: 'lazy', alt: p.title, sizes: '(min-width: 750px) 240px, 45vw', widths: '400, 600, 900' -}}
+                    {{- p.featured_image | image_url: width: 900 | image_tag: loading: 'lazy', alt: p.title, sizes: '(min-width: 1500px) 20vw, (min-width: 750px) 25vw, 45vw', widths: '400, 600, 900' -}}
                   </span>
                 </span>
                 <span class="lu-esc__nombre">{{ p.title }}</span>
@@ -559,7 +559,7 @@
 
     /* Portada de Black Friday y Navidad: collage de copias de papel sobre niebla (2-nov) y franja de la promo en tinta.
        Borde de papel: dos polígonos con picos de 0-2,5 px (generados con Python, semillas 7 y 23). */
-    .lu-hn{background:#16201B;color:#fff;
+    .lu-hn{background:#F2F4F2;color:#16201B;
       --lu-papel-a:polygon(0% 1px,2.78% 0.5px,5.56% 1.5px,8.33% 0px,11.11% 1.5px,13.89% 1px,16.67% 0px,19.44% 1.5px,22.22% 0px,25% 1px,27.78% 0px,30.56% 0px,33.33% 1px,36.11% 2px,38.89% 0.5px,41.67% 0.5px,44.44% 1.5px,47.22% 2.5px,50% 1.5px,52.78% 1px,55.56% 2.5px,58.33% 0px,61.11% 2px,63.89% 0.5px,66.67% 0.5px,69.44% 0.5px,72.22% 1px,75% 2px,77.78% 0.5px,80.56% 1.5px,83.33% 1.5px,86.11% 1px,88.89% 1.5px,91.67% 0px,94.44% 0px,97.22% 0.5px,calc(100% - 1.5px) 0%,calc(100% - 1px) 2.78%,calc(100% - 1px) 5.56%,calc(100% - 1.5px) 8.33%,calc(100% - 1px) 11.11%,calc(100% - 0.5px) 13.89%,calc(100% - 2px) 16.67%,calc(100% - 1.5px) 19.44%,calc(100% - 0.5px) 22.22%,calc(100% - 1.5px) 25%,calc(100% - 1.5px) 27.78%,calc(100% - 2px) 30.56%,calc(100% - 2px) 33.33%,calc(100% - 0.5px) 36.11%,calc(100% - 2.5px) 38.89%,calc(100% - 0.5px) 41.67%,calc(100% - 1px) 44.44%,calc(100% - 2px) 47.22%,calc(100% - 0.5px) 50%,calc(100% - 1px) 52.78%,calc(100% - 0px) 55.56%,calc(100% - 1.5px) 58.33%,calc(100% - 2px) 61.11%,calc(100% - 1.5px) 63.89%,calc(100% - 2px) 66.67%,calc(100% - 1px) 69.44%,calc(100% - 1.5px) 72.22%,calc(100% - 1.5px) 75%,calc(100% - 1.5px) 77.78%,calc(100% - 1px) 80.56%,calc(100% - 2px) 83.33%,calc(100% - 2.5px) 86.11%,calc(100% - 1px) 88.89%,calc(100% - 1.5px) 91.67%,calc(100% - 0px) 94.44%,calc(100% - 2px) 97.22%,100% calc(100% - 1.5px),97.22% calc(100% - 2.5px),94.44% calc(100% - 2px),91.67% calc(100% - 0.5px),88.89% calc(100% - 1px),86.11% calc(100% - 1.5px),83.33% calc(100% - 0px),80.56% calc(100% - 1px),77.78% calc(100% - 0.5px),75% calc(100% - 0.5px),72.22% calc(100% - 0px),69.44% calc(100% - 2px),66.67% calc(100% - 0.5px),63.89% calc(100% - 0.5px),61.11% calc(100% - 1px),58.33% calc(100% - 2px),55.56% calc(100% - 0px),52.78% calc(100% - 1px),50% calc(100% - 1.5px),47.22% calc(100% - 2px),44.44% calc(100% - 2px),41.67% calc(100% - 2px),38.89% calc(100% - 0.5px),36.11% calc(100% - 1px),33.33% calc(100% - 1px),30.56% calc(100% - 2px),27.78% calc(100% - 2.5px),25% calc(100% - 0.5px),22.22% calc(100% - 0.5px),19.44% calc(100% - 0.5px),16.67% calc(100% - 0.5px),13.89% calc(100% - 1px),11.11% calc(100% - 1.5px),8.33% calc(100% - 0.5px),5.56% calc(100% - 0px),2.78% calc(100% - 1px),1px 100%,1.5px 97.22%,2.5px 94.44%,1.5px 91.67%,1.5px 88.89%,1.5px 86.11%,1.5px 83.33%,0px 80.56%,2px 77.78%,2px 75%,2px 72.22%,2px 69.44%,1px 66.67%,1px 63.89%,0.5px 61.11%,1.5px 58.33%,0px 55.56%,0px 52.78%,0.5px 50%,0.5px 47.22%,1px 44.44%,0px 41.67%,0px 38.89%,0.5px 36.11%,0.5px 33.33%,1px 30.56%,0px 27.78%,2px 25%,1.5px 22.22%,0.5px 19.44%,0.5px 16.67%,1px 13.89%,1px 11.11%,0.5px 8.33%,2px 5.56%,2.5px 2.78%);
       --lu-papel-b:polygon(0% 2.5px,2.78% 2.5px,5.56% 2px,8.33% 0px,11.11% 1.5px,13.89% 1px,16.67% 1.5px,19.44% 0.5px,22.22% 0.5px,25% 1px,27.78% 0.5px,30.56% 1px,33.33% 0px,36.11% 0px,38.89% 2px,41.67% 1px,44.44% 1.5px,47.22% 2px,50% 1px,52.78% 0px,55.56% 2px,58.33% 1.5px,61.11% 1.5px,63.89% 1.5px,66.67% 2.5px,69.44% 1px,72.22% 2px,75% 1px,77.78% 1.5px,80.56% 1.5px,83.33% 1px,86.11% 0px,88.89% 1px,91.67% 2px,94.44% 1.5px,97.22% 1px,calc(100% - 1.5px) 0%,calc(100% - 0.5px) 2.78%,calc(100% - 0.5px) 5.56%,calc(100% - 1px) 8.33%,calc(100% - 2px) 11.11%,calc(100% - 0.5px) 13.89%,calc(100% - 0.5px) 16.67%,calc(100% - 0px) 19.44%,calc(100% - 0px) 22.22%,calc(100% - 0.5px) 25%,calc(100% - 1.5px) 27.78%,calc(100% - 2px) 30.56%,calc(100% - 1px) 33.33%,calc(100% - 1px) 36.11%,calc(100% - 0.5px) 38.89%,calc(100% - 1px) 41.67%,calc(100% - 2px) 44.44%,calc(100% - 1.5px) 47.22%,calc(100% - 0.5px) 50%,calc(100% - 0.5px) 52.78%,calc(100% - 2px) 55.56%,calc(100% - 2px) 58.33%,calc(100% - 2px) 61.11%,calc(100% - 0.5px) 63.89%,calc(100% - 1.5px) 66.67%,calc(100% - 2.5px) 69.44%,calc(100% - 1.5px) 72.22%,calc(100% - 2.5px) 75%,calc(100% - 0.5px) 77.78%,calc(100% - 2.5px) 80.56%,calc(100% - 0px) 83.33%,calc(100% - 1px) 86.11%,calc(100% - 0px) 88.89%,calc(100% - 2px) 91.67%,calc(100% - 1.5px) 94.44%,calc(100% - 2.5px) 97.22%,100% calc(100% - 2px),97.22% calc(100% - 2.5px),94.44% calc(100% - 1.5px),91.67% calc(100% - 2.5px),88.89% calc(100% - 2px),86.11% calc(100% - 1px),83.33% calc(100% - 2.5px),80.56% calc(100% - 1px),77.78% calc(100% - 0.5px),75% calc(100% - 0px),72.22% calc(100% - 1px),69.44% calc(100% - 0.5px),66.67% calc(100% - 2.5px),63.89% calc(100% - 2.5px),61.11% calc(100% - 0.5px),58.33% calc(100% - 0.5px),55.56% calc(100% - 1.5px),52.78% calc(100% - 0.5px),50% calc(100% - 1.5px),47.22% calc(100% - 2px),44.44% calc(100% - 0.5px),41.67% calc(100% - 1px),38.89% calc(100% - 2.5px),36.11% calc(100% - 1px),33.33% calc(100% - 1px),30.56% calc(100% - 2px),27.78% calc(100% - 2px),25% calc(100% - 2px),22.22% calc(100% - 1.5px),19.44% calc(100% - 1px),16.67% calc(100% - 1.5px),13.89% calc(100% - 2px),11.11% calc(100% - 1.5px),8.33% calc(100% - 0.5px),5.56% calc(100% - 0.5px),2.78% calc(100% - 1px),2px 100%,1.5px 97.22%,1.5px 94.44%,2px 91.67%,0.5px 88.89%,1.5px 86.11%,1px 83.33%,1.5px 80.56%,2px 77.78%,0.5px 75%,2.5px 72.22%,0px 69.44%,1.5px 66.67%,1.5px 63.89%,0.5px 61.11%,1.5px 58.33%,1px 55.56%,1px 52.78%,2px 50%,0px 47.22%,1px 44.44%,2px 41.67%,0.5px 38.89%,2px 36.11%,0.5px 33.33%,1.5px 30.56%,0.5px 27.78%,1px 25%,1px 22.22%,0px 19.44%,1.5px 16.67%,1px 13.89%,1.5px 11.11%,1.5px 8.33%,1.5px 5.56%,1.5px 2.78%)}
     .lu-hn__fotos{position:relative;aspect-ratio:1/1;overflow:hidden;background:#F2F4F2}
@@ -570,17 +570,16 @@
     .lu-hn__foto--izquierda{z-index:1;top:4%;right:3%;width:64%;aspect-ratio:3/4;transform:rotate(1.5deg)}
     .lu-hn__foto--centro{z-index:2;top:3%;left:3%;width:48%;aspect-ratio:4/3;transform:rotate(-3deg)}
     .lu-hn__foto--derecha{z-index:3;bottom:3%;left:6%;width:40%;aspect-ratio:3/4;transform:rotate(2.5deg)}
-    .lu-hn__promo{display:grid;justify-items:center;gap:10px;padding:34px 20px 40px;text-align:center}
-    .lu-hn__marca{margin:0;font-family:var(--font-heading--family);font-weight:400;font-size:clamp(1.3rem,2.4vw,1.75rem);
-      line-height:1.1;color:#C9A66B}
+    .lu-hn__promo{display:grid;justify-items:center;gap:12px;padding:8px 20px 44px;text-align:center}
+    .lu-hn__oferta{margin:0;font-family:var(--font-body--family);font-size:.75rem;font-weight:500;letter-spacing:.22em;
+      text-transform:uppercase;color:#CA3801}
+    .lu-hn__marca{margin:0;font-family:var(--font-heading--family);font-weight:400;font-size:clamp(2rem,3.2vw,2.9rem);
+      line-height:1.05;color:#16201B}
     .lu-hn__marca em{font-style:italic}
-    .lu-hn__oferta{margin:4px 0 0;font-family:var(--font-heading--family);font-weight:500;
-      font-size:clamp(2.4rem,6vw,4.2rem);line-height:1;letter-spacing:.08em;text-transform:uppercase}
-    .lu-hn__sub{margin:0;font-family:var(--font-heading--family);font-size:clamp(1.25rem,2.2vw,1.6rem);color:#E7E1D6}
-    .lu-hn__fin{margin:0;font-size:.8125rem;letter-spacing:.06em;color:#E7E1D6}
-    .lu-hn__acciones{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px 24px;margin-top:14px}
-    .lu-hn__enlace{color:#fff;text-underline-offset:4px;font-size:.875rem;letter-spacing:.08em}
-    .lu-hn__nota{margin:8px 0 0;font-size:.75rem;letter-spacing:.06em;color:#B9C0BC;text-wrap:balance}
+    .lu-hn__sub{margin:0;font-size:.9375rem;line-height:1.6;color:#3D4842}
+    .lu-hn__acciones{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px 24px;margin-top:10px}
+    .lu-hn__enlace{color:#16201B;text-underline-offset:4px;font-size:.875rem;letter-spacing:.08em}
+    .lu-hn__nota{margin:6px 0 0;font-size:.75rem;letter-spacing:.04em;color:#6B746F;text-wrap:balance}
     @media (min-width:750px){
       /* PC: la del sofá en el centro y las otras dos a los lados, medio escondidas (izquierda) o encima (derecha) */
       .lu-hn__fotos{--h:clamp(360px,34vw,680px);aspect-ratio:auto;height:var(--h)}
@@ -641,8 +640,6 @@
     .lu-esc__escena,.lu-esc__producto{position:relative;display:block;min-width:0;overflow:hidden}
     .lu-esc__fotos img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
       transition:transform .9s cubic-bezier(.2,.7,.2,1)}
-    .lu-esc__etiqueta{position:absolute;top:10px;left:10px;padding:5px 8px;background:rgba(22,32,27,.62);color:#fff;
-      font-size:.625rem;letter-spacing:.18em;line-height:1}
     .lu-esc__nombre{font-family:var(--font-heading--family);font-size:1.2rem;line-height:1.2}
     .lu-esc__frase{font-family:var(--font-heading--family);font-style:italic;font-size:.95rem;line-height:1.3;color:#6B746F}
     .lu-esc__precio{display:flex;gap:8px;align-items:baseline;margin-top:2px;font-size:.9375rem}
@@ -668,12 +665,18 @@
     .lu-esc__op-quien small{flex-basis:100%;padding-left:34px;font-size:.6875rem;color:#6B746F}
     .lu-esc__op-raya{width:24px;height:1px;background:#16201B}
     .lu-esc__op-pieza{font-size:.75rem;color:#16201B;text-underline-offset:3px}
+    /* PC (3-nov): las tarjetas llenan el ancho (con un ancho fijo, en la pantalla grande de Edu quedaba un hueco a la
+       derecha). --n = tarjetas que se ven a la vez; si hay más, se deslizan; si hay menos, la fila se centra. */
     @media (min-width:750px){
-      .lu-esc__item{flex-basis:clamp(220px,19vw,290px)}
-      .lu-esc--joyas .lu-esc__item{flex-basis:clamp(340px,30vw,460px)}
-      .lu-esc--opiniones .lu-esc__item{flex-basis:clamp(380px,32vw,480px)}
+      .lu-esc{--n:3}
+      .lu-esc--joyas,.lu-esc--opiniones{--n:2}
+      .lu-esc__lista{justify-content:flex-start;justify-content:safe center}
+      .lu-esc__item,.lu-esc--joyas .lu-esc__item,.lu-esc--opiniones .lu-esc__item{flex-basis:calc((100% - (var(--n) - 1) * 14px) / var(--n))}
       .lu-esc__op-foto{min-height:260px}
     }
+    @media (min-width:1100px){.lu-esc--relojes{--n:4}.lu-esc--joyas,.lu-esc--opiniones{--n:3}}
+    @media (min-width:1500px){.lu-esc--relojes{--n:5}}
+    @media (min-width:1700px){.lu-esc--joyas,.lu-esc--opiniones{--n:4}}
     @media (max-width:749px){.lu-esc__flecha{display:none}}
     @media (hover:hover){.lu-esc__tarjeta:hover .lu-esc__fotos img{transform:scale(1.04)}}
     @media (prefers-reduced-motion:no-preference){.lu-esc__lista{scroll-behavior:smooth}}

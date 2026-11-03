@@ -529,6 +529,22 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
 ## 8. Calendario y pendientes (a 2-nov-2026)
 
 ### Para empezar la próxima sesión (después del 2-nov) — abrir conversación nueva por sesión.
+**3-nov (en producción, pedido por Edu):** barra de arriba en **rojo #CA3801** (el de Olivia en su Black Friday;
+`PROMO_ROJO` en `build.py`, solo con `PROMO`) · **«Packs para regalar» justo después de la portada** · escaparates y
+reseñas del inicio **llenan el ancho en PC** (antes, en la pantalla de Edu quedaba un hueco a la derecha): `--n` =
+tarjetas a la vez (relojes 3/4/5 a 750/1100/1500 px; joyas y reseñas 2/3/4 a 750/1100/1700) y, si hay menos, se
+centran. **«Lujo como PDPaola» (3-nov, en producción, OK de Edu a todo; regla: solo grita la barra roja, la promo
+se mantiene pero en pequeño):** fichas (las 4 plantillas) con columnas desiguales → **fotos de dos en dos en 2/3 y
+texto en 1/3** (desde 1200 px; `equal_columns: False`, 4 px entre fotos, sin la primera grande), sin migas, la foto
+justo bajo la cabecera; en el móvil, contador «1/7» en vez de miniaturas · promo en **una línea bajo el precio**
+(`OFERTA_FICHA`: «BLACK FRIDAY» en el rojo de la barra + texto; fuera la caja verde) · ventajas en **texto pequeño
+gris bajo el botón** (`VENTAJAS`; fuera la bolita roja que latía y los iconos) · fuera la etiqueta «Envío gratis» del
+precio, el **botón amarillo de PayPal** (`.accelerated-checkout-block` oculto por CSS; PayPal sigue en el pago) y el
+icono del carrito · «Te puede interesar» se queda. Inicio: bajo el collage, sin la franja en tinta ni «BLACK FRIDAY»
+gigante (ceja roja pequeña + «Relojes y joyas *para regalar.*» + promo en una línea), y sin las etiquetas oscuras
+(«LUNE»…) sobre las fotos de los escaparates. Ojo: el CSS personalizado de una sección solo lleva el prefijo de la
+sección en la primera regla: si el tema gana, `!important`. Ideas que quedan: botón «Añadir a la cesta» (ahora dice
+«Agregar al carrito», texto de `locales/es.json`).
 **DÓNDE NOS QUEDAMOS (2-nov, noche) — leer esto primero; manda sobre los bloques de abajo.**
 - **EN PRODUCCIÓN (OK de Edu, 2-nov): portada en collage + BLACK FRIDAY.** `parte('hero-navidad')` en
   `lunerie-inicio.liquid`: las 3 fotos de Navidad montadas como **copias de papel** (borde irregular con `clip-path`

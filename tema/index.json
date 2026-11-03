@@ -21,6 +21,16 @@
       },
       "disabled": true
     },
+    "packs": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{% render 'lunerie-inicio', parte: 'packs' %}",
+        "background_color": "",
+        "section_width": "page-width",
+        "padding-block-start": 64,
+        "padding-block-end": 24
+      }
+    },
     "relojes": {
       "type": "custom-liquid",
       "settings": {
@@ -48,16 +58,6 @@
         "background_color": "",
         "section_width": "full-width",
         "padding-block-start": 56,
-        "padding-block-end": 24
-      }
-    },
-    "packs": {
-      "type": "custom-liquid",
-      "settings": {
-        "custom_liquid": "{% render 'lunerie-inicio', parte: 'packs' %}",
-        "background_color": "",
-        "section_width": "page-width",
-        "padding-block-start": 64,
         "padding-block-end": 24
       }
     },
@@ -462,11 +462,11 @@
   "order": [
     "portada",
     "destacado",
+    "packs",
     "piezas",
     "relojes",
     "joyas",
     "opiniones",
-    "packs",
     "como_es",
     "dudas",
     "promesas"

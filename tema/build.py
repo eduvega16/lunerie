@@ -88,6 +88,8 @@ LOGO_CSS = (".header-logo { font-family: var(--font-heading--family); font-weigh
 # descuentos tienen esa fecha de fin en Shopify). Una sola frase en todas partes: «2.ª pieza al 50 % y 3.ª gratis».
 PROMO = True
 PROMO_BARRA = "Black Friday · 2.ª pieza al 50 % · 3.ª gratis"
+# 3-nov (Edu): con la promo, la barra en rojo, como la de Black Friday de Olivia Jewelry (su mismo tono, medido en su web)
+PROMO_ROJO = "#CA3801"
 
 header = {
     "type": "header", "name": "t:names.header",
@@ -140,7 +142,9 @@ header = {
     "order": ["header_announcements_9jGBFp", "header_section"],
 }
 if PROMO:   # 1-nov (Edu): en la barra solo la promo, fija (sin el envío gratis ni las devoluciones)
-    header["sections"]["header_announcements_9jGBFp"]["blocks"]["announcement_BxgCk9"]["settings"]["text"] = PROMO_BARRA
+    _barra = header["sections"]["header_announcements_9jGBFp"]
+    _barra["blocks"]["announcement_BxgCk9"]["settings"]["text"] = PROMO_BARRA
+    _barra["settings"]["background_color"] = PROMO_ROJO
 (OUT / "header-group.json").write_text(json.dumps(header, ensure_ascii=False, indent=2), encoding="utf8")
 
 
@@ -355,11 +359,11 @@ index = {
         # va debajo con rasgos que valen para todo.
         # 1-nov: «Las piezas» se sustituye por dos escaparates partidos (como Caducci) y la fila de reseñas.
         "piezas": {**parte("piezas", fondo=BG, arriba=56, abajo=24), "disabled": True},
+        # 2-nov: «Packs para regalar» (idea aprobada por Edu). 3-nov (Edu): justo después de la portada.
+        "packs": parte("packs", arriba=64, abajo=24),
         "relojes": parte("escaparate", arriba=64, abajo=24, ancho="full-width", extra=", coleccion: 'relojes'"),
         "joyas": parte("escaparate", arriba=56, abajo=24, ancho="full-width", extra=", coleccion: 'joyas'"),
         "opiniones": parte("opiniones", arriba=56, abajo=24, ancho="full-width"),
-        # 2-nov: en el hueco tras las opiniones, «Packs para regalar» (idea aprobada por Edu)
-        "packs": parte("packs", arriba=64, abajo=24),
         # 1-nov: oculta (a Edu no le gusta cómo queda)
         "como_es": {**parte("como-es", arriba=48, abajo=56), "disabled": True},
         "oferta": parte("oferta", arriba=0, abajo=0, ancho="full-width"),
@@ -437,7 +441,7 @@ index = {
                 "padding-block-start": 48, "padding-block-end": 48},
         },
     },
-    "order": ["portada", "destacado", "piezas", "relojes", "joyas", "opiniones", "packs", "como_es", "oferta", "dudas",
+    "order": ["portada", "destacado", "packs", "piezas", "relojes", "joyas", "opiniones", "como_es", "oferta", "dudas",
               "promesas"],
 }
 if not SEGUNDO_RELOJ:
@@ -460,36 +464,34 @@ def liquid(codigo):
     return {"type": "custom-liquid", "settings": {"custom_liquid": codigo}, "blocks": {}}
 
 
-ROJO = "#B3261E"
-# Urgencia de Navidad: bolita roja que late (sin animación si el móvil pide «reducir movimiento»).
-# Plazo real (22-oct): AliExpress tardó 6-7 días laborables → se promete 7-12; para Navidad, antes del 5-dic.
-NAVIDAD = liquid(
-    '<p class="lu-urgencia"><span class="lu-punto" aria-hidden="true"></span>'
-    'Para Navidad, pídelo antes del 5 de diciembre</p>'
-    "<style>.lu-urgencia,.lu-regalo{font-family:var(--font-body--family);font-weight:var(--font-body--weight)}"
-    ".lu-urgencia{display:flex;align-items:center;gap:12px;margin:0;font-size:1rem;color:" + ROJO + "}"
-    ".lu-punto{position:relative;flex:0 0 9px;width:9px;height:9px;margin-inline:4px 5px;border-radius:50%;"
-    "background:" + ROJO + "}"
-    ".lu-punto::after{content:'';position:absolute;inset:0;border-radius:50%;background:" + ROJO + ";"
-    "animation:lu-latido 1.6s ease-out infinite}"
-    "@keyframes lu-latido{0%{transform:scale(1);opacity:.7}100%{transform:scale(2.6);opacity:0}}"
-    "@media (prefers-reduced-motion:reduce){.lu-punto::after{animation:none;opacity:0}}</style>")
-
 # Fase de test en drop (22-oct): AliExpress lo manda en bolsita, sin caja ni extractor → no se promete la caja.
 # Con stock propio y caja Lunerie: CAJA_REGALO = True (vuelve la línea «Llega en su caja de regalo»).
 CAJA_REGALO = False
-# Caja de regalo con icono de regalo (Horizon no trae ese icono: SVG propio, trazo fino como los demás)
-REGALO = liquid(
-    '<p class="lu-regalo"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" '
-    'stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">'
-    '<rect x="3.5" y="8.5" width="17" height="4" rx=".6"/><path d="M5 12.5v8h14v-8M12 8.5v12"/>'
-    '<path d="M12 8.5C10.2 4.6 6.6 4.7 6.9 7c.2 1.4 2.8 1.5 5.1 1.5M12 8.5c1.8-3.9 5.4-3.8 5.1-1.5-.2 1.4-2.8 1.5-5.1 1.5"/>'
-    '</svg>Llega en su caja de regalo</p>'
-    "<style>.lu-regalo{display:flex;align-items:center;gap:12px;margin:0;font-size:1rem}"
-    ".lu-regalo svg{flex:0 0 18px}</style>")
+# Ventajas bajo el botón. 3-nov (Edu, «lujo como PDPaola»): en texto pequeño gris, sin iconos ni la bolita roja que
+# latía. Plazo real (22-oct): AliExpress tardó 6-7 días laborables → se promete 7-12; para Navidad, antes del 5-dic.
+VENTAJAS = liquid(
+    '<ul class="lu-ventajas">'
+    + ("<li>Llega en su caja de regalo</li>" if CAJA_REGALO else "")
+    + "<li>Envío gratis a península, con seguimiento · 7-12 días laborables</li>"
+    "<li>Para Navidad, pídelo antes del 5 de diciembre</li>"
+    "<li>Garantía de 3 años · 14 días para devolverlo</li></ul>"
+    "<style>.lu-ventajas{display:grid;gap:6px;margin:0;padding:0!important;list-style:none;"
+    "font-family:var(--font-body--family);font-size:.8125rem;line-height:1.5;color:" + SOFT + "}</style>")
+# La promo junto al precio, en una línea y sin caja de color (3-nov; antes, caja verde bajo el botón): la palabra
+# «Black Friday» en el rojo de la barra de arriba y el resto en tinta.
+OFERTA_FICHA = liquid(
+    ('<div class="lu-oferta-ficha"><p class="lu-oferta-ficha__t"><span>Black Friday</span>2.ª pieza al 50 % · 3.ª gratis</p>'
+     '<p class="lu-oferta-ficha__p">Mezcla relojes y joyas: se descuenta solo en la cesta. Hasta el 5 de diciembre.</p></div>'
+     if PROMO else
+     '<div class="lu-oferta-ficha"><p class="lu-oferta-ficha__t"><span>Oferta</span>Segundo reloj por 19,95 €</p>'
+     '<p class="lu-oferta-ficha__p">Añade dos a la cesta: el descuento se aplica solo al pagar.</p></div>')
+    + "<style>.lu-oferta-ficha{font-family:var(--font-body--family)}.lu-oferta-ficha p{margin:0}"
+    ".lu-oferta-ficha__t{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 12px;font-size:.9375rem;color:" + INK + "}"
+    ".lu-oferta-ficha__t span{font-size:.75rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:" + PROMO_ROJO + "}"
+    ".lu-oferta-ficha__p{margin-top:4px!important;font-size:.8125rem;line-height:1.5;color:" + SOFT + "}</style>")
 
 
-def icon_text(icono, html, ancho=18):
+def icon_text(icono, html, ancho=18):  # (sin uso desde el 3-nov: las ventajas van sin iconos)
     """Fila icono + texto (las ventajas debajo del precio)."""
     return {"type": "group", "settings": {
         "content_direction": "row", "vertical_on_mobile": False, "horizontal_alignment": "flex-start",
@@ -515,14 +517,17 @@ def icon_col(icono, html):  # (sin uso ahora; para una fila de iconos en columna
 # (Shopify no deja usar `content` en el CSS personalizado: por eso ::marker y no ::before)
 PRODUCT_CSS = (f"ul {{ padding-inline-start: 1.1em; }} ul li::marker {{ color: {GOLD}; }} "
                ".quantity-selector-wrapper { display: none; } "
-               # Proporciones de Olivia en PC (28-oct): foto con 48 px de margen y detalles centrados en su mitad, algo más anchos
-               "@media (min-width: 750px) { .product-information__grid--half .product-information__media "
-               "{ box-sizing: border-box; padding-inline-start: 30px; } "
-               ".product-information__grid--half.product-information__grid--limit-details .product-details > .group-block "
-               "{ --details-max-width: 34rem; } }")
+               # 3-nov (Edu, «lujo como PDPaola»): sin el botón amarillo de pago rápido (PayPal sigue en el pago) ni el
+               # icono del carrito en el botón
+               ".accelerated-checkout-block, .add-to-cart-icon { display: none; } "
+               # Proporciones de PDPaola en PC: fotos de dos en dos en 2/3 de la pantalla, pegadas al borde, y el texto en
+               # el tercio de la derecha (antes, el 28-oct, mitad y mitad como Olivia)
+               # (!important: Shopify solo pone el prefijo de la sección a la primera regla y el tema gana a las demás)
+               "@media (min-width: 750px) { .product-details { padding-inline: 56px 48px !important; } }")
 
+# 3-nov: oculta (Edu, «lujo como PDPaola»: la foto empieza justo bajo la cabecera). Volver: quitar "disabled".
 migas = {
-    "type": "section",
+    "type": "section", "disabled": True,
     "blocks": {"migas": text_block(
         '<p><a href="/">Inicio</a> › {{ closest.product.title }}</p>', "paragraph")},
     "block_order": ["migas"],
@@ -536,10 +541,11 @@ ficha = {
     "type": "product-information",
     "blocks": {
         "media-gallery": {"type": "_product-media-gallery", "static": True, "settings": {
-            # Cuadrícula (Edu, 27-oct): fotos una debajo de otra al bajar, la primera grande, como Olivia
-            "media_presentation": "grid", "media_columns": "two", "image_gap": 0, "large_first_image": True,
+            # Cuadrícula (Edu, 27-oct): fotos una debajo de otra al bajar. 3-nov (como PDPaola): de dos en dos desde la
+            # primera, con 4 px entre ellas; en el móvil, la foto a todo el ancho con un contador «1/8» (sin miniaturas)
+            "media_presentation": "grid", "media_columns": "two", "image_gap": 4, "large_first_image": False,
             "media_fit": "cover", "constrain_to_viewport": False, "icons_style": "arrow",
-            "slideshow_controls_style": "thumbnails", "slideshow_mobile_controls_style": "thumbnails",
+            "slideshow_controls_style": "thumbnails", "slideshow_mobile_controls_style": "counter",
             "thumbnail_position": "bottom", "thumbnail_width": 60, "thumbnail_radius": 0,
             "aspect_ratio": "1/1.25", "media_radius": 0, "extend_media": False,
             "zoom": True, "hide_variants": False}, "blocks": {}},
@@ -553,35 +559,20 @@ ficha = {
                     "width": "100%"}, "blocks": {}},
                 # Estrellas y número de opiniones bajo el título (no sale nada mientras no haya opiniones)
                 "estrellas": liquid("{% render 'lunerie-opiniones', parte: 'mini', product: product" + EJEMPLOS + " %}"),
-                # Precio con la etiqueta «Envío gratis a península» al lado (27-oct; sin precio tachado)
-                "precio": {"type": "group", "settings": {
-                    "content_direction": "row", "vertical_on_mobile": False, "horizontal_alignment": "flex-start",
-                    "vertical_alignment": "center", "gap": 14, "width": "fill"},
-                    "blocks": {
-                        "importe": {"type": "price", "settings": {
-                            "show_sale_price_first": True, "show_installments": False, "show_tax_info": False,
-                            "type_preset": "custom", "font_size": "1.125rem", "width": "fit-content"}, "blocks": {}},
-                        "envio": liquid(
-                            '<span class="lu-envio">Envío gratis a península</span>'
-                            "<style>.lu-envio{display:inline-block;padding:5px 10px;background:" + MIST + ";"
-                            "font-family:var(--font-body--family);font-size:.75rem;letter-spacing:.04em;"
-                            "color:" + SOFT + ";white-space:nowrap}</style>"),
-                    }, "block_order": ["importe", "envio"]},
+                # Precio solo (3-nov: fuera la etiqueta «Envío gratis a península» de al lado, que va en las ventajas)
+                "precio": {"type": "price", "settings": {
+                    "show_sale_price_first": True, "show_installments": False, "show_tax_info": False,
+                    "type_preset": "custom", "font_size": "1.125rem", "width": "fit-content"}, "blocks": {}},
+                # Promo en una línea bajo el precio (3-nov; antes, caja verde bajo el botón)
+                "oferta": OFERTA_FICHA,
                 "linea": {"type": "_divider", "settings": {"thickness": 1, "divider_color": C2,
                     "padding-block-start": 4, "padding-block-end": 4}, "blocks": {}},
-                # Las líneas de Calné, en versión verdadera:
-                #   «Limited stock» (escasez inventada)  → fecha límite real para Navidad (punto dorado)
-                #   «100 % Waterproof & Everlasting»     → pila puesta + caja de regalo (no es sumergible)
+                # Las líneas de Calné, en versión verdadera (3-nov: bajo el botón, en pequeño):
+                #   «Limited stock» (escasez inventada)  → fecha límite real para Navidad
+                #   «100 % Waterproof & Everlasting»     → caja de regalo cuando la haya (no es sumergible)
                 #   «Order before 23:59…»                → envío gratis con seguimiento
                 #   «2-Year Warranty + 100-Days»         → 3 años (ley española) + 14 días
-                "ventajas": {"type": "group", "settings": {
-                    "content_direction": "column", "gap": 12, "width": "fill"},
-                    "blocks": {
-                        "navidad": NAVIDAD,
-                        **({"regalo": REGALO} if CAJA_REGALO else {}),
-                        "envio": icon_text("truck", "<p>Envío gratis a península, con seguimiento · llega en 7-12 días laborables</p>"),
-                        "garantia": icon_text("star", "<p>Garantía de 3 años + 14 días para devolverlo</p>"),
-                    }, "block_order": ["navidad"] + (["regalo"] if CAJA_REGALO else []) + ["envio", "garantia"]},
+                "ventajas": VENTAJAS,
                 "variantes": {"type": "variant-picker", "settings": {
                     "variant_style": "buttons", "show_swatches": True}, "blocks": {}},
                 "comprar": {"type": "buy-buttons", "settings": {"stacking": True,
@@ -594,24 +585,6 @@ ficha = {
                         "accelerated-checkout": {"type": "accelerated-checkout", "static": True,
                             "settings": {}, "blocks": {}},
                     }, "block_order": []},
-                # Caja de oferta en verde con texto blanco, como Calné (Edu lo prefirió el 10-oct aunque la regla
-                # de marca era «verde solo en lo que se pulsa»). Sin «solo hoy».
-                # OJO: el descuento «2.º por 19,95 €» hay que crearlo en Descuentos antes de abrir la tienda.
-                "oferta": {"type": "group", "settings": {
-                    "content_direction": "column", "gap": 6, "width": "fill", "background_color": GREEN,
-                    "padding-block-start": 18, "padding-block-end": 18,
-                    "padding-inline-start": 20, "padding-inline-end": 20},
-                    "blocks": {
-                        "t": color(small(text_block(
-                            "<p><strong>BLACK FRIDAY<br>2.ª AL 50 % · 3.ª GRATIS</strong></p>" if PROMO else
-                            "<p><strong>SEGUNDO RELOJ POR 19,95 €</strong></p>",
-                            "paragraph"), "1.125rem"), "#FFFFFF", "100%"),
-                        "p": color(text_block(
-                            "<p>Con 2 piezas, la más barata al 50 %. Con 3, la más barata gratis. Mezcla relojes "
-                            "y joyas como quieras: se descuenta solo en la cesta. Hasta el 5 de diciembre.</p>" if PROMO else
-                            "<p>Añade dos a la cesta: el descuento se aplica solo al pagar. "
-                            "Uno para ti y otro para regalar.</p>", "paragraph"), "#FFFFFF", "100%"),
-                    }, "block_order": ["t", "p"]},
                 "detalles": {"type": "accordion", "settings": {
                     "icon": "plus", "dividers": True, "divider_color": C2, "type_preset": "h6"},
                     "blocks": {
@@ -641,18 +614,18 @@ ficha = {
                     },
                     "block_order": ["descripcion", "medida", "agua", "envio", "devoluciones", "cuidados"]},
             },
-            "block_order": ["titulo", "estrellas", "precio", "linea", "ventajas", "variantes", "comprar", "oferta",
+            "block_order": ["titulo", "estrellas", "precio", "oferta", "linea", "variantes", "comprar", "ventajas",
                             "detalles"]},
     },
     "block_order": [],
     "custom_css": [PRODUCT_CSS],
     "settings": {
-        # Foto a pantalla completa en PC (Edu, 28-oct, como Olivia): sección a todo el ancho, foto en la mitad
-        # izquierda pegada al borde y detalles en la derecha. En móvil no cambia nada.
+        # Foto a pantalla completa en PC (Edu, 28-oct, como Olivia): sección a todo el ancho y foto pegada al borde.
+        # 3-nov (como PDPaola): columnas desiguales → desde 1200 px el tema pone las fotos en 2/3 y el texto en 1/3.
         "content_width": "content-full-width", "desktop_media_position": "left",
-        "equal_columns": True, "limit_details_width": True, "gap": 0,
+        "equal_columns": False, "limit_details_width": True, "gap": 0,
         "enable_sticky_add_to_cart": True, "background_color": BG,
-        "padding-block-start": 16, "padding-block-end": 48},
+        "padding-block-start": 0, "padding-block-end": 48},   # 3-nov: la foto, justo bajo la cabecera
 }
 
 product = {
@@ -729,10 +702,9 @@ for _k in ("videos", "historia"):
 _dj = joya["sections"]["main"]["blocks"]["product-details"]
 _dj["blocks"]["leyenda"] = liquid("{% render 'lunerie-leyenda', product: product %}")
 _dj["block_order"].insert(_dj["block_order"].index("detalles"), "leyenda")
-# Foto a pantalla completa en PC (Edu, 28-oct, como Olivia): sección a todo el ancho, foto en la mitad izquierda
-# pegada al borde y detalles en la derecha. En móvil no cambia nada.
+# Foto a pantalla completa en PC (Edu, 28-oct, como Olivia; 3-nov, 2/3 y 1/3 como PDPaola): igual que la del reloj.
 _ficha = joya["sections"]["main"]["settings"]
-_ficha.update({"content_width": "content-full-width", "equal_columns": True, "limit_details_width": True, "gap": 0})
+_ficha.update({"content_width": "content-full-width", "equal_columns": False, "limit_details_width": True, "gap": 0})
 (OUT / "product.joya.json").write_text(json.dumps(joya, ensure_ascii=False, indent=2), encoding="utf8")
 
 # Plantilla «anillo» (28-oct): la de las joyas + guía de tallas desplegable justo bajo el selector de talla (en la

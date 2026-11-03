@@ -1,86 +1,103 @@
 {
- "id": "2026-W45-01-cinco-cosas-reloj",
- "plataforma": "instagram",
- "formato": "carrusel",
- "pieza": "reloj-lune",
- "fecha_sugerida": "2026-11-02T19:00:00+01:00",
- "gancho": "Cinco cosas que conviene saber antes de regalar un reloj pequeño.",
- "copy": "Cinco cosas que conviene saber antes de regalar un reloj pequeño. Guárdalo para cuando lo necesites.",
- "hashtags": [
-  "#relojdemujer",
-  "#regaloparaella",
-  "#lunerie"
- ],
- "guion": [
-  {
-   "segundos": "1",
-   "imagen": "Portada: foto del reloj en niebla (marca/fotos-ia/lune-verde-producto.jpg)",
-   "texto_en_pantalla": "5 cosas antes de regalar un reloj pequeño",
-   "voz": ""
-  },
-  {
-   "segundos": "2",
-   "imagen": "Detalle de la esfera",
-   "texto_en_pantalla": "1. La esfera mide 12 mm. Es pequeña a propósito.",
-   "voz": ""
-  },
-  {
-   "segundos": "3",
-   "imagen": "Correa de eslabones",
-   "texto_en_pantalla": "2. La correa mide 18 cm. Si su muñeca mide menos de 16 cm, se quitan uno o dos eslabones en cualquier relojería.",
-   "voz": ""
-  },
-  {
-   "segundos": "4",
-   "imagen": "Reloj en la muñeca",
-   "texto_en_pantalla": "3. No es sumergible. Fuera para ducharse, nadar o fregar.",
-   "voz": ""
-  },
-  {
-   "segundos": "5",
-   "imagen": "Mecanismo / esfera",
-   "texto_en_pantalla": "4. Es de cuarzo y llega con la pila puesta.",
-   "voz": ""
-  },
-  {
-   "segundos": "6",
-   "imagen": "Reloj en la muñeca, foto final",
-   "texto_en_pantalla": "5. Llega en 7-12 días laborables. Para Navidad, pídelo antes del 5 de diciembre.",
-   "voz": ""
-  }
- ],
- "assets": {
-  "existentes": [
-   "marca/fotos-ia/lune-verde-producto.jpg",
-   "marca/fotos-ia/lune-verde-detalle.jpg",
-   "marca/fotos-ia/lune-verde-curva.jpg",
-   "marca/fotos-ia/lune-verde-muneca.jpg"
+  "id": "2026-W45-01-cinco-cosas-reloj",
+  "plataforma": "instagram",
+  "formato": "carrusel",
+  "pieza": "reloj-lune",
+  "fecha_sugerida": "2026-11-17T19:30:00+01:00",
+  "gancho": "Cinco cosas que conviene saber antes de regalar un reloj de mujer pequeño.",
+  "copy": "Cinco cosas que conviene saber antes de regalar un reloj de mujer pequeño.\n\nLa esfera mide 12 mm, la correa 18 cm, no es sumergible, es de cuarzo con la pila puesta y llega en 7-12 días laborables.\n\nReloj Lune, 39,95 €. Envío gratis a península. Guárdalo para cuando lo necesites.\n\nImágenes creadas con IA.",
+  "hashtags": [
+    "#relojdemujer",
+    "#regaloparaella",
+    "#lunerie"
   ],
-  "generar": [
-   {
-    "que": "6 diapositivas de texto sobre las fotos (diseño con script, fuentes de la marca)",
-    "herramienta": "script local (Pillow)",
-    "coste_estimado_usd": 0
-   }
-  ]
- },
- "musica": {
-  "origen": "ninguna",
-  "pista": "",
-  "licencia": ""
- },
- "montaje": [],
- "origen": {
-  "biblioteca": "principiantes-9",
-  "referencia": "Forma: «las 5 cosas que me habría gustado saber antes de empezar», adaptada a regalo. Sin primera persona."
- },
- "riesgos": [
-  "Todos los datos salen de la ficha y de CLAUDE.md (apartado 5.1): comprobar plazo y fecha de Navidad antes de publicar."
- ],
- "estado": "borrador",
- "revision": {
-  "notas": "",
-  "aprobado_por": null,
-  "fecha": null
- }
+  "guion": [
+    {
+      "segundos": "1",
+      "imagen": "Portada: lune-verde-producto.jpg",
+      "texto_en_pantalla": "5 cosas antes de regalar un reloj pequeño",
+      "voz": ""
+    },
+    {
+      "segundos": "2",
+      "imagen": "lune-verde-detalle.jpg (esfera)",
+      "texto_en_pantalla": "1. La esfera mide 12 mm. Es pequeña a propósito.",
+      "voz": ""
+    },
+    {
+      "segundos": "3",
+      "imagen": "recorte de la correa de lune-verde-producto.jpg",
+      "texto_en_pantalla": "2. La correa mide 18 cm. Si su muñeca mide menos de 16 cm, se quitan uno o dos eslabones.",
+      "voz": ""
+    },
+    {
+      "segundos": "4",
+      "imagen": "smartwatch-despues.jpg (muñeca)",
+      "texto_en_pantalla": "3. No es sumergible. Fuera para ducharse, nadar o fregar.",
+      "voz": ""
+    },
+    {
+      "segundos": "5",
+      "imagen": "recorte de la esfera de lune-verde-detalle.jpg",
+      "texto_en_pantalla": "4. Es de cuarzo y llega con la pila puesta.",
+      "voz": ""
+    },
+    {
+      "segundos": "6",
+      "imagen": "smartwatch-calma.jpg",
+      "texto_en_pantalla": "5. Llega en 7-12 días laborables. Para Navidad, pídelo antes del 5 de diciembre.",
+      "voz": ""
+    }
+  ],
+  "assets": {
+    "existentes": [
+      "marca/fotos-ia/lune-verde-producto.jpg",
+      "marca/fotos-ia/lune-verde-detalle.jpg",
+      "marca/fotos-ia/campana-hora/smartwatch-despues.jpg",
+      "marca/fotos-ia/campana-hora/smartwatch-calma.jpg"
+    ],
+    "generar": [
+      {
+        "que": "6 diapositivas 1080x1350 con el texto sobre las fotos (Cormorant + Jost, logo pequeño), sustituyendo las rutas de publicacion.archivos",
+        "herramienta": "script local (Pillow; marca/campana_bf.py ya tiene las funciones de texto)",
+        "coste_estimado_usd": 0
+      }
+    ]
+  },
+  "musica": {
+    "origen": "ninguna",
+    "pista": "",
+    "licencia": ""
+  },
+  "montaje": [],
+  "origen": {
+    "biblioteca": "principiantes-9",
+    "referencia": "Forma: «las 5 cosas que me habría gustado saber antes de empezar», adaptada a regalo. Sin primera persona."
+  },
+  "riesgos": [
+    "Todos los datos salen de la ficha y de CLAUDE.md (apartado 5.1). Plazo y fecha de Navidad: 7-12 días laborables y pedir antes del 5-dic (vigente el 3-nov).",
+    "«En cualquier relojería» (diapositiva 3) debe coincidir con el vídeo real de ajustar la correa (2026-W46-03): Edu confirma con qué herramienta se quitan los eslabones. En fase drop no va extractor.",
+    "Diapositiva 3 (correa de 18 cm): usar la foto del producto en niebla, con sus 3+3 piedras; no usar lune-verde-curva.jpg, que pinta la caja casi redonda.",
+    "Imágenes hechas con IA: publicar.py las marca como «hecho con IA» y el pie lo dice. Las piezas tienen que parecerse a las reales.",
+    "Antes: la pieza usaba lune-verde-muneca.jpg, que lleva una palabra pequeña inventada en la esfera; se cambió por las fotos de la campaña."
+  ],
+  "estado": "borrador",
+  "revision": {
+    "notas": "Corregida el 3-nov: fecha nueva, precio 39,95 €, fotos sin marca inventada. Faltan las 6 diapositivas con texto (script, 0 €). Quitar la fecha 2-nov que ya pasó.",
+    "aprobado_por": null,
+    "fecha": null
+  },
+  "publicacion": {
+    "archivos": [
+      "oficina/salida/W45-01-1.jpg",
+      "oficina/salida/W45-01-2.jpg",
+      "oficina/salida/W45-01-3.jpg",
+      "oficina/salida/W45-01-4.jpg",
+      "oficina/salida/W45-01-5.jpg",
+      "oficina/salida/W45-01-6.jpg"
+    ],
+    "alt_text": "Seis diapositivas con cinco cosas que conviene saber antes de regalar el reloj Lune: la esfera mide 12 mm, la correa 18 cm, no es sumergible, es de cuarzo y llega en 7-12 días laborables.",
+    "urls": [],
+    "ia": true
+  }
 }

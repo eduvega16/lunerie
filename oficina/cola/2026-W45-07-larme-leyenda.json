@@ -1,0 +1,58 @@
+{
+  "id": "2026-W45-07-larme-leyenda",
+  "plataforma": "instagram",
+  "formato": "foto",
+  "pieza": "pendientes-larme",
+  "fecha_sugerida": "2026-11-15T19:00:00+01:00",
+  "gancho": "Dicen que en el castillo de Lunerie las lágrimas de alegría se volvían piedra de color.",
+  "copy": "Dicen que en el castillo de Lunerie las lágrimas de alegría se volvían piedra de color antes de llegar al suelo.\n\nCada aro guarda una. Pendientes Larme, 24,95 €: un aro con una lágrima, en siete colores.\n\nLo tienes en el enlace del perfil.\n\nImagen creada con IA.",
+  "hashtags": [
+    "#pendientes",
+    "#regaloparaella",
+    "#lunerie"
+  ],
+  "guion": [
+    {
+      "segundos": "-",
+      "imagen": "Plano cercano de la oreja con el pendiente Larme: aro dorado con lágrima verde",
+      "texto_en_pantalla": "",
+      "voz": ""
+    }
+  ],
+  "assets": {
+    "existentes": [
+      "marca/fotos-ia/joyas/larme-verde-oreja-v1.png"
+    ],
+    "generar": []
+  },
+  "musica": {
+    "origen": "ninguna",
+    "pista": "",
+    "licencia": ""
+  },
+  "montaje": [],
+  "origen": {
+    "biblioteca": "",
+    "referencia": "Leyenda del castillo de Lunerie."
+  },
+  "riesgos": [
+    "Leyenda de Lunerie: es un cuento («dicen que»), nunca un dato.",
+    "La lágrima de la foto es verde y puede parecer una esmeralda: no escribir «esmeralda» ni «piedra preciosa»; decir «piedra de color».",
+    "Medidas y plazo de Larme sin confirmar (CLAUDE.md, 5.4): el pie no da plazo ni tamaño.",
+    "Convertida de reel a foto el 3-nov: la versión reel (Kling, ~0,39 $) queda como opción si Edu aprueba el coste."
+  ],
+  "estado": "borrador",
+  "revision": {
+    "notas": "Corregida el 3-nov: de reel a foto (sin gasto), precio actual y fecha 15-nov. Listo para publicar con publicar.py.",
+    "aprobado_por": null,
+    "fecha": null
+  },
+  "publicacion": {
+    "archivos": [
+      "marca/fotos-ia/joyas/larme-verde-oreja-v1.png"
+    ],
+    "alt_text": "Oreja de una mujer con un pendiente de aro dorado y una lágrima verde colgando, con el pelo recogido.",
+    "urls": [],
+    "ia": true
+  }
+}

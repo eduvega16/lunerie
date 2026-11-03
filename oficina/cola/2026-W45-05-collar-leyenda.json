@@ -1,0 +1,58 @@
+{
+  "id": "2026-W45-05-collar-leyenda",
+  "plataforma": "instagram",
+  "formato": "foto",
+  "pieza": "collar-lune",
+  "fecha_sugerida": "2026-11-12T19:30:00+01:00",
+  "gancho": "Cuentan que una noche la luna dejó caer su luz sobre una cadena fina.",
+  "copy": "Cuentan que una noche la luna dejó caer su luz sobre una cadena fina y se quedó prendida en piedras de colores.\n\nAsí nació el collar del castillo. Collar Lune, 34,95 €: las piedras van engastadas en la cadena, en línea, a juego con el reloj del mismo nombre.\n\nLo tienes en el enlace del perfil.\n\nImagen creada con IA.",
+  "hashtags": [
+    "#collar",
+    "#regaloparaella",
+    "#lunerie"
+  ],
+  "guion": [
+    {
+      "segundos": "-",
+      "imagen": "Cuello y escote con el collar Lune: cadena fina con piedras de colores en línea",
+      "texto_en_pantalla": "",
+      "voz": ""
+    }
+  ],
+  "assets": {
+    "existentes": [
+      "marca/fotos-ia/joyas/collar-lune-cuello-v2-api.png"
+    ],
+    "generar": []
+  },
+  "musica": {
+    "origen": "ninguna",
+    "pista": "",
+    "licencia": ""
+  },
+  "montaje": [],
+  "origen": {
+    "biblioteca": "",
+    "referencia": "Leyenda del castillo de Lunerie."
+  },
+  "riesgos": [
+    "Leyenda de Lunerie: es un cuento («cuentan que»), nunca un dato.",
+    "Foto de IA con etiqueta: usar la v2 (piedras engastadas en la cadena); la v1 las colgaba como dijes y está descartada.",
+    "Ficha del collar: «piedras de colores», nunca «preciosas», «naturales» ni nombres de gemas.",
+    "Convertida de reel a foto el 3-nov: la versión reel (Kling, 4 s, ~0,39 $) queda como opción si Edu aprueba el coste y hay saldo en el conector (0,55 créditos)."
+  ],
+  "estado": "borrador",
+  "revision": {
+    "notas": "Corregida el 3-nov: de reel a foto (sin gasto), «cuentan que» al principio y precio actual. Listo para publicar con publicar.py.",
+    "aprobado_por": null,
+    "fecha": null
+  },
+  "publicacion": {
+    "archivos": [
+      "marca/fotos-ia/joyas/collar-lune-cuello-v2-api.png"
+    ],
+    "alt_text": "Cuello de mujer con un collar de cadena dorada fina y pequeñas piedras de colores engastadas en línea, sobre un top blanco.",
+    "urls": [],
+    "ia": true
+  }
+}

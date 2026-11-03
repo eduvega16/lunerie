@@ -1,0 +1,55 @@
+{
+  "id": "2026-W45-11-fb-black-friday",
+  "estado": "borrador",
+  "plataforma": "facebook",
+  "formato": "foto",
+  "pieza": "catalogo",
+  "fecha_sugerida": "2026-11-05T12:30:00+01:00",
+  "gancho": "La 2.ª pieza al 50 % y la 3.ª, gratis.",
+  "copy": "Black Friday en Lunerie: la 2.ª pieza al 50 % y la 3.ª, gratis.\n\nRelojes pequeños y joyas con piedras de color, para regalar o para ti. Mezcla lo que quieras: el descuento se aplica solo en la cesta, sobre la pieza más barata. Hasta el 5 de diciembre, el último día para que llegue en Navidad. Envío gratis a península.\n\nhttps://lunerie.es/?utm_source=facebook&utm_medium=organic&utm_campaign=organico-nov&utm_content=fb-black-friday\n\nImagen creada con IA.",
+  "hashtags": [],
+  "guion": [
+    {
+      "segundos": "-",
+      "imagen": "Mujer al teléfono con reloj y anillo; texto «Black Friday · La 2.ª pieza al 50 % y la 3.ª, gratis»",
+      "texto_en_pantalla": "",
+      "voz": ""
+    }
+  ],
+  "assets": {
+    "existentes": [
+      "marca/fotos-ia/campana-bf/1-oferta-telefono-4x5.jpg"
+    ],
+    "generar": []
+  },
+  "musica": {
+    "origen": "ninguna",
+    "pista": "",
+    "licencia": ""
+  },
+  "montaje": [],
+  "publicacion": {
+    "archivos": [
+      "marca/fotos-ia/campana-bf/1-oferta-telefono-4x5.jpg"
+    ],
+    "urls": [],
+    "alt_text": "Mujer rubia hablando por un teléfono antiguo en un salón con terciopelo verde y velas, con un reloj dorado y un anillo; texto: Black Friday, la 2.ª pieza al 50 % y la 3.ª, gratis.",
+    "ia": true
+  },
+  "origen": {
+    "biblioteca": "",
+    "referencia": "Texto del anuncio 1 de la campaña de Black Friday (anuncios/campana-black-friday.md, aprobado el 2-nov)."
+  },
+  "riesgos": [
+    "Imágenes hechas con IA: publicar.py las marca como «hecho con IA» y el pie lo dice. Las piezas tienen que parecerse a las reales.",
+    "La promo termina de verdad el 5-dic (los descuentos automáticos tienen fecha de fin): si se alarga, dejar de llamarla límite.",
+    "En Facebook no hay un indicador de IA que pongamos nosotros (la API de Instagram sí lo tiene): por eso el pie dice «Imagen creada con IA».",
+    "Enlace con UTM de orgánico para separarlo de la campaña de pago (utm_medium=organic).",
+    "Facebook: publicar a mano (Meta Business Suite, planificador) o ampliar oficina/publicar.py; hoy el script solo publica en Instagram."
+  ],
+  "revision": {
+    "notas": "Mismo día que el carrusel de Instagram (2026-W45-09).",
+    "aprobado_por": null,
+    "fecha": null
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "id": "2026-W45-08-lune-cafe-hora",
+  "estado": "borrador",
+  "plataforma": "instagram",
+  "formato": "foto",
+  "pieza": "reloj-lune",
+  "fecha_sugerida": "2026-11-04T19:30:00+01:00",
+  "gancho": "Café, un libro y la hora. Nada más.",
+  "copy": "Café, un libro y la hora. Nada más.\n\nEl Lune es un reloj de mujer pequeño: esfera ovalada de 12 mm, eslabones finos y seis piedras verdes. Para llevarlo todos los días.\n\n39,95 €. Envío gratis a península. Lo tienes en el enlace del perfil.\n\nImagen creada con IA.",
+  "hashtags": [
+    "#relojdemujer",
+    "#relojvintage",
+    "#lunerie"
+  ],
+  "guion": [
+    {
+      "segundos": "-",
+      "imagen": "Muñeca sobre una mesa de madera con un libro abierto y una taza de café; reloj Lune, jersey de punto crema",
+      "texto_en_pantalla": "",
+      "voz": ""
+    }
+  ],
+  "assets": {
+    "existentes": [
+      "marca/fotos-ia/campana-hora/smartwatch-calma.jpg"
+    ],
+    "generar": []
+  },
+  "musica": {
+    "origen": "ninguna",
+    "pista": "",
+    "licencia": ""
+  },
+  "montaje": [],
+  "publicacion": {
+    "archivos": [
+      "marca/fotos-ia/campana-hora/smartwatch-calma.jpg"
+    ],
+    "urls": [],
+    "alt_text": "Muñeca de mujer sobre una mesa de madera, junto a un libro abierto y una taza de café, con el reloj Lune dorado de piedras verdes y un jersey de punto crema.",
+    "ia": true
+  },
+  "origen": {
+    "biblioteca": "",
+    "referencia": "Ángulo «para llevar cada día» pedido por Edu (3-nov) y campaña «Un reloj que solo da la hora» (CLAUDE.md, 30-oct). Foto limpia de la campaña: sin texto encima."
+  },
+  "riesgos": [
+    "Imágenes hechas con IA: publicar.py las marca como «hecho con IA» y el pie lo dice. Las piezas tienen que parecerse a las reales.",
+    "En esta foto la esfera sale limpia (sin marca inventada), con caja ovalada y borde trenzado como la real; piedras verde oscuro.",
+    "Es 9:16 y publicar.py la recorta a 4:5 centrado: se pierde parte de la taza y del libro; la muñeca queda dentro.",
+    "La misma foto, con texto encima, es la del anuncio «Para tu madre / hermana / pareja» de la campaña de pago: no publicar además el 4:5 con texto.",
+    "No decir sumergible. Sin plazo de Navidad ni oferta en este post (la oferta va en el del jueves)."
+  ],
+  "revision": {
+    "notas": "Listo para publicar con publicar.py cuando Edu lo apruebe. Primer post propuesto.",
+    "aprobado_por": null,
+    "fecha": null
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "id": "2026-W45-09-black-friday-carrusel",
+  "estado": "borrador",
+  "plataforma": "instagram",
+  "formato": "carrusel",
+  "pieza": "catalogo",
+  "fecha_sugerida": "2026-11-05T12:30:00+01:00",
+  "gancho": "La 2.ª pieza al 50 % y la 3.ª, gratis.",
+  "copy": "La 2.ª pieza al 50 % y la 3.ª, gratis.\n\nBlack Friday en Lunerie: un reloj de mujer pequeño o una joya con piedras de color, un regalo para ella o para ti. Mezcla lo que quieras: el descuento se aplica solo en la cesta, sobre la pieza más barata.\n\nHasta el 5 de diciembre, el último día para que llegue en Navidad. Envío gratis a península.\n\nLo tienes en el enlace del perfil.\n\nImágenes creadas con IA.",
+  "hashtags": [
+    "#blackfriday",
+    "#regalosdenavidad",
+    "#lunerie"
+  ],
+  "guion": [
+    {
+      "segundos": "1",
+      "imagen": "Mujer al teléfono con reloj y anillo; texto «Black Friday · La 2.ª pieza al 50 % y la 3.ª, gratis»",
+      "texto_en_pantalla": "",
+      "voz": ""
+    },
+    {
+      "segundos": "2",
+      "imagen": "Pack a juego: Reloj Lune y collar Lune, 57,43 € los dos (74,90 € por separado)",
+      "texto_en_pantalla": "",
+      "voz": ""
+    },
+    {
+      "segundos": "3",
+      "imagen": "Cuadrícula «Regalos de menos de 40 €» con 6 piezas y su precio",
+      "texto_en_pantalla": "",
+      "voz": ""
+    },
+    {
+      "segundos": "4",
+      "imagen": "Tarjeta oscura: 2.ª pieza al 50 % y la 3.ª, gratis · hasta el 5 de diciembre",
+      "texto_en_pantalla": "",
+      "voz": ""
+    }
+  ],
+  "assets": {
+    "existentes": [
+      "marca/fotos-ia/campana-bf/1-oferta-telefono-4x5.jpg",
+      "marca/fotos-ia/campana-bf/2-pack-a-juego-4x5.jpg",
+      "marca/fotos-ia/campana-bf/6-menos-de-40-4x5.jpg",
+      "marca/fotos-ia/campana-bf/0-tarjeta-oferta-4x5.jpg"
+    ],
+    "generar": []
+  },
+  "musica": {
+    "origen": "ninguna",
+    "pista": "",
+    "licencia": ""
+  },
+  "montaje": [],
+  "publicacion": {
+    "archivos": [
+      "marca/fotos-ia/campana-bf/1-oferta-telefono-4x5.jpg",
+      "marca/fotos-ia/campana-bf/2-pack-a-juego-4x5.jpg",
+      "marca/fotos-ia/campana-bf/6-menos-de-40-4x5.jpg",
+      "marca/fotos-ia/campana-bf/0-tarjeta-oferta-4x5.jpg"
+    ],
+    "urls": [],
+    "alt_text": "Cuatro imágenes de la oferta de Black Friday de Lunerie: dos mujeres con relojes y joyas doradas, una cuadrícula de regalos de menos de 40 euros y una tarjeta con la oferta hasta el 5 de diciembre.",
+    "ia": true
+  },
+  "origen": {
+    "biblioteca": "",
+    "referencia": "Creatividades de la campaña de Black Friday aprobadas el 2-nov (marca/campana_bf.py; textos en anuncios/campana-black-friday.md). Precios leídos de la tienda."
+  },
+  "riesgos": [
+    "Imágenes hechas con IA: publicar.py las marca como «hecho con IA» y el pie lo dice. Las piezas tienen que parecerse a las reales.",
+    "La promo termina de verdad el 5-dic (los descuentos automáticos tienen fecha de fin): si se alarga, dejar de llamarla límite.",
+    "Son fotos de noche de Navidad (terciopelo y velas), no «para cada día»: se usan porque son la imagen de la oferta y coinciden con el anuncio. Si Edu prefiere no repetir imágenes entre orgánico y anuncios, quitar las diapositivas 1-2 y dejar 3-4.",
+    "El texto «lunerie.es» dentro de la imagen no es pulsable; el pie manda al enlace del perfil.",
+    "Las 3 primeras llevan precios: comprobar en la tienda antes de publicar (hoy Lune 39,95 / Sépia 34,95 / Galet 34,95 / Collar 34,95 / Larme 24,95 / Boucle 19,95; pack 57,43).",
+    "El descuento cae sobre la pieza más barata: el pie lo dice para que nadie espere otra cosa."
+  ],
+  "revision": {
+    "notas": "Sale el mismo día que arranca la campaña de Meta (5-nov). Se puede publicar con publicar.py (4 JPG 4:5).",
+    "aprobado_por": null,
+    "fecha": null
+  }
+}

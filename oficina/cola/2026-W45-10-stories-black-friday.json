@@ -1,0 +1,87 @@
+{
+  "id": "2026-W45-10-stories-black-friday",
+  "estado": "borrador",
+  "plataforma": "instagram",
+  "formato": "story",
+  "pieza": "catalogo",
+  "fecha_sugerida": "2026-11-05T12:30:00+01:00",
+  "gancho": "La 2.ª pieza al 50 % y la 3.ª, gratis.",
+  "copy": "Black Friday en Lunerie: la 2.ª pieza al 50 % y la 3.ª, gratis, hasta el 5 de diciembre. Pack a juego, regalos de menos de 40 € y pregunta para ayudar a elegir.",
+  "hashtags": [],
+  "guion": [
+    {
+      "segundos": "1",
+      "imagen": "1-oferta-telefono-9x16.jpg (mano con anillo y teléfono, primer plano)",
+      "texto_en_pantalla": "Black Friday · La 2.ª pieza al 50 % y la 3.ª, gratis",
+      "voz": ""
+    },
+    {
+      "segundos": "2",
+      "imagen": "2-pack-a-juego-9x16.jpg",
+      "texto_en_pantalla": "Reloj Lune y collar Lune · 57,43 € los dos",
+      "voz": ""
+    },
+    {
+      "segundos": "3",
+      "imagen": "6-menos-de-40-9x16.jpg",
+      "texto_en_pantalla": "Regalos de menos de 40 €",
+      "voz": ""
+    },
+    {
+      "segundos": "4",
+      "imagen": "0-tarjeta-oferta-9x16.jpg con el sticker de caja de preguntas",
+      "texto_en_pantalla": "¿Para quién es tu regalo?",
+      "voz": ""
+    },
+    {
+      "segundos": "5",
+      "imagen": "5-para-ti-9x16.jpg con el sticker de enlace al reloj Lune",
+      "texto_en_pantalla": "No hace falta esperar a que te lo regalen · Reloj Lune, 39,95 €",
+      "voz": ""
+    }
+  ],
+  "assets": {
+    "existentes": [
+      "marca/fotos-ia/campana-bf/1-oferta-telefono-9x16.jpg",
+      "marca/fotos-ia/campana-bf/2-pack-a-juego-9x16.jpg",
+      "marca/fotos-ia/campana-bf/6-menos-de-40-9x16.jpg",
+      "marca/fotos-ia/campana-bf/0-tarjeta-oferta-9x16.jpg",
+      "marca/fotos-ia/campana-bf/5-para-ti-9x16.jpg"
+    ],
+    "generar": []
+  },
+  "musica": {
+    "origen": "ninguna",
+    "pista": "",
+    "licencia": ""
+  },
+  "montaje": [],
+  "publicacion": {
+    "archivos": [
+      "marca/fotos-ia/campana-bf/1-oferta-telefono-9x16.jpg",
+      "marca/fotos-ia/campana-bf/2-pack-a-juego-9x16.jpg",
+      "marca/fotos-ia/campana-bf/6-menos-de-40-9x16.jpg",
+      "marca/fotos-ia/campana-bf/0-tarjeta-oferta-9x16.jpg",
+      "marca/fotos-ia/campana-bf/5-para-ti-9x16.jpg"
+    ],
+    "urls": [],
+    "alt_text": "",
+    "ia": true
+  },
+  "origen": {
+    "biblioteca": "",
+    "referencia": "Skill ig-story: mano en el primer plano, la petición en el 4.º plano y una sola pegatina por plano. Creatividades 9:16 de la campaña de Black Friday."
+  },
+  "riesgos": [
+    "Imágenes hechas con IA: publicar.py las marca como «hecho con IA» y el pie lo dice. Las piezas tienen que parecerse a las reales.",
+    "La promo termina de verdad el 5-dic (los descuentos automáticos tienen fecha de fin): si se alarga, dejar de llamarla límite.",
+    "Las pegatinas (caja de preguntas y enlace) no se pueden poner por API: se publica a mano en la app. publicar.py además recorta a 4:5 y estas son 9:16, así que no sirve para stories.",
+    "Enlace de la pegatina: https://lunerie.es/products/reloj-lune (sin datos personales). Quien conteste la caja de preguntas, que reciba respuesta de Edu: primero ellas, después Lunerie.",
+    "Texto dentro de la zona segura (el de las imágenes ya cae entre el 14 % de arriba y el 35 % de abajo)."
+  ],
+  "revision": {
+    "notas": "Publicar a mano en la app el jueves 5-nov a mediodía. Las respuestas a la caja de preguntas valen como ideas para anuncios.",
+    "aprobado_por": null,
+    "fecha": null
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "id": "2026-W45-13-cuidados-cada-dia",
+  "estado": "borrador",
+  "plataforma": "instagram",
+  "formato": "carrusel",
+  "pieza": "reloj-lune",
+  "fecha_sugerida": "2026-11-08T19:00:00+01:00",
+  "gancho": "Para llevarlo cada día, esto.",
+  "copy": "Para llevarlo cada día, esto.\n\nLo que conviene saber antes de ponerse un reloj de mujer o una joya de Lunerie: el reloj no es sumergible, el perfume y la crema van antes que la pieza, el deporte se hace sin ella y la correa del Lune se ajusta quitando eslabones.\n\nGuárdalo para cuando lo necesites.\n\nImágenes creadas con IA.",
+  "hashtags": [
+    "#relojdemujer",
+    "#joyasdemujer",
+    "#lunerie"
+  ],
+  "guion": [
+    {
+      "segundos": "1",
+      "imagen": "Portada: lune-verde-toalla-b.jpg (puño con toalla y cielo)",
+      "texto_en_pantalla": "Para llevarlo cada día, esto.",
+      "voz": ""
+    },
+    {
+      "segundos": "2",
+      "imagen": "Tarjeta niebla con el texto",
+      "texto_en_pantalla": "1. No es sumergible. Quítatelo para lavarte las manos, ducharte o nadar.",
+      "voz": ""
+    },
+    {
+      "segundos": "3",
+      "imagen": "Tarjeta niebla con el texto",
+      "texto_en_pantalla": "2. Perfume y crema, antes que la pieza.",
+      "voz": ""
+    },
+    {
+      "segundos": "4",
+      "imagen": "Tarjeta niebla con el texto",
+      "texto_en_pantalla": "3. Quítatela para hacer deporte.",
+      "voz": ""
+    },
+    {
+      "segundos": "5",
+      "imagen": "Tarjeta niebla con el texto",
+      "texto_en_pantalla": "4. Guárdala aparte cuando no la lleves, para que no se raye.",
+      "voz": ""
+    },
+    {
+      "segundos": "6",
+      "imagen": "Tarjeta niebla con el texto",
+      "texto_en_pantalla": "La correa del Lune mide 18 cm. Si tu muñeca mide menos de 16 cm, se quitan uno o dos eslabones.",
+      "voz": ""
+    }
+  ],
+  "assets": {
+    "existentes": [
+      "marca/fotos-ia/anuncios/lune-verde-toalla-b.jpg"
+    ],
+    "generar": [
+      {
+        "que": "6 diapositivas 1080x1350: portada con foto y 5 tarjetas niebla con Cormorant + Jost, logo pequeño",
+        "herramienta": "script local (Pillow; marca/campana_bf.py tiene las funciones de texto)",
+        "coste_estimado_usd": 0
+      }
+    ]
+  },
+  "musica": {
+    "origen": "ninguna",
+    "pista": "",
+    "licencia": ""
+  },
+  "montaje": [],
+  "publicacion": {
+    "archivos": [
+      "oficina/salida/W45-13-1.jpg",
+      "oficina/salida/W45-13-2.jpg",
+      "oficina/salida/W45-13-3.jpg",
+      "oficina/salida/W45-13-4.jpg",
+      "oficina/salida/W45-13-5.jpg",
+      "oficina/salida/W45-13-6.jpg"
+    ],
+    "urls": [],
+    "alt_text": "Seis diapositivas con los cuidados para llevar cada día un reloj o una joya de Lunerie: no es sumergible, perfume y crema antes que la pieza, sin deporte y guardada aparte.",
+    "ia": true
+  },
+  "origen": {
+    "biblioteca": "principiantes-14",
+    "referencia": "«Apoyo obligatorio» de oficina/ideas/2026-11-03-cada-dia.md: sin él, decir «cada día» promete demasiado. Los textos son los de los desplegables de la ficha (tema/build.py), sin ampliarlos."
+  },
+  "riesgos": [
+    "No ampliar la frase de «una gota de lluvia no le pasa nada» ni prometer resistencia: nada de «waterproof», «no se oscurece» ni «duradero».",
+    "La ficha del reloj dice «guárdala en su caja», pero en fase drop no llega caja (CAJA_REGALO = False): por eso la diapositiva 5 dice «guárdala aparte». Revisar la ficha.",
+    "Solo la portada es foto (IA, 9:16 recortada a 4:5); el resto son tarjetas de texto por montar con Pillow (0 €). Si no están listas el 8-nov, publicar antes la de Nuit (2026-W45-03).",
+    "Imágenes hechas con IA: publicar.py las marca como «hecho con IA» y el pie lo dice. Las piezas tienen que parecerse a las reales."
+  ],
+  "revision": {
+    "notas": "Pieza nueva del 3-nov. Faltan las 6 diapositivas con texto (script, 0 €).",
+    "aprobado_por": null,
+    "fecha": null
+  }
+}

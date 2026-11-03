@@ -1,90 +1,101 @@
 {
- "id": "2026-W45-04-guia-tallas",
- "plataforma": "instagram",
- "formato": "carrusel",
- "pieza": "anillo-nuit",
- "fecha_sugerida": "2026-11-05T19:00:00+01:00",
- "gancho": "Cómo saber tu talla de anillo con un hilo.",
- "copy": "Cómo saber tu talla de anillo con un hilo. Sin joyero y sin sorpresas. Guárdalo.",
- "hashtags": [
-  "#anillos",
-  "#regaloparaella",
-  "#lunerie"
- ],
- "guion": [
-  {
-   "segundos": "1",
-   "imagen": "Portada: mano con un hilo alrededor del dedo",
-   "texto_en_pantalla": "Tu talla de anillo, con un hilo",
-   "voz": ""
-  },
-  {
-   "segundos": "2",
-   "imagen": "Hilo rodeando la base del dedo",
-   "texto_en_pantalla": "1. Rodea la base del dedo con un hilo o una tira de papel.",
-   "voz": ""
-  },
-  {
-   "segundos": "3",
-   "imagen": "Marca donde se junta",
-   "texto_en_pantalla": "2. Marca donde se junta y mídelo en milímetros.",
-   "voz": ""
-  },
-  {
-   "segundos": "4",
-   "imagen": "Cuadro de equivalencias",
-   "texto_en_pantalla": "52 mm: talla 12 · 54,5 mm: talla 14-15 · 57 mm: talla 17",
-   "voz": ""
-  },
-  {
-   "segundos": "5",
-   "imagen": "Mano con anillo",
-   "texto_en_pantalla": "Si dudas entre dos, elige la mayor. Mejor al final del día.",
-   "voz": ""
-  },
-  {
-   "segundos": "6",
-   "imagen": "Anillo Étoile o Nuit",
-   "texto_en_pantalla": "Tienes 14 días para devolverlo si no te queda bien.",
-   "voz": ""
-  }
- ],
- "assets": {
-  "existentes": [
-   "marca/fotos-ia/joyas/nuit-verde-mano-v1.png",
-   "marca/fotos-ia/joyas/etoile-mayo-mano-v1-api.png"
+  "id": "2026-W45-04-guia-tallas",
+  "plataforma": "instagram",
+  "formato": "carrusel",
+  "pieza": "anillo-nuit",
+  "fecha_sugerida": "2026-11-19T19:30:00+01:00",
+  "gancho": "Cómo saber tu talla de anillo con un hilo.",
+  "copy": "Cómo saber tu talla de anillo con un hilo.\n\nSin joyero y sin sorpresas: rodea la base del dedo, marca donde se junta y mídelo en milímetros. 52 mm es la talla 12, 54,5 mm la 14-15 y 57 mm la 17.\n\nGuárdalo para cuando lo necesites.\n\nImágenes creadas con IA.",
+  "hashtags": [
+    "#anillos",
+    "#regaloparaella",
+    "#lunerie"
   ],
-  "generar": [
-   {
-    "que": "foto de una mano con un hilo (la IA es fiable con manos si se pide simple) o fotografía real de Edu",
-    "herramienta": "foto propia (preferible) o API Higgsfield flare",
-    "coste_estimado_usd": 0.13
-   },
-   {
-    "que": "diapositivas de texto (diseño con script)",
-    "herramienta": "script local (Pillow)",
-    "coste_estimado_usd": 0
-   }
-  ]
- },
- "musica": {
-  "origen": "ninguna",
-  "pista": "",
-  "licencia": ""
- },
- "montaje": [],
- "origen": {
-  "biblioteca": "principiantes-7",
-  "referencia": "Forma: «el error que todo principiante comete», pasada a utilidad. Resuelve la duda de talla (ficha de anillos)."
- },
- "riesgos": [
-  "Solo hay 3 tallas (12, 14-15, 17): decirlo si preguntan por otras.",
-  "Las equivalencias son las de la guía de la ficha (CLAUDE.md, apartado 8)."
- ],
- "estado": "borrador",
- "revision": {
-  "notas": "",
-  "aprobado_por": null,
-  "fecha": null
- }
+  "guion": [
+    {
+      "segundos": "1",
+      "imagen": "Portada: nuit-verde-mano-v1.png",
+      "texto_en_pantalla": "Tu talla de anillo, con un hilo",
+      "voz": ""
+    },
+    {
+      "segundos": "2",
+      "imagen": "Tarjeta niebla lisa con el texto",
+      "texto_en_pantalla": "1. Rodea la base del dedo con un hilo o una tira de papel.",
+      "voz": ""
+    },
+    {
+      "segundos": "3",
+      "imagen": "Tarjeta niebla lisa con el texto",
+      "texto_en_pantalla": "2. Marca donde se junta y mídelo en milímetros.",
+      "voz": ""
+    },
+    {
+      "segundos": "4",
+      "imagen": "Tarjeta niebla lisa con la tabla",
+      "texto_en_pantalla": "52 mm: talla 12 · 54,5 mm: talla 14-15 · 57 mm: talla 17",
+      "voz": ""
+    },
+    {
+      "segundos": "5",
+      "imagen": "Tarjeta niebla lisa con el texto",
+      "texto_en_pantalla": "Si dudas entre dos, elige la mayor. Mejor al final del día.",
+      "voz": ""
+    },
+    {
+      "segundos": "6",
+      "imagen": "Cierre: etoile-mayo-mano-v1-api.png",
+      "texto_en_pantalla": "Tienes 14 días para devolverlo si no te queda bien.",
+      "voz": ""
+    }
+  ],
+  "assets": {
+    "existentes": [
+      "marca/fotos-ia/joyas/nuit-verde-mano-v1.png",
+      "marca/fotos-ia/joyas/etoile-mayo-mano-v1-api.png"
+    ],
+    "generar": [
+      {
+        "que": "6 diapositivas con el texto: portada y cierre con las fotos de joyas, el resto tarjetas niebla con Cormorant + Jost (sin foto del hilo)",
+        "herramienta": "script local (Pillow)",
+        "coste_estimado_usd": 0
+      }
+    ]
+  },
+  "musica": {
+    "origen": "ninguna",
+    "pista": "",
+    "licencia": ""
+  },
+  "montaje": [],
+  "origen": {
+    "biblioteca": "principiantes-7",
+    "referencia": "Forma: «el error que todo principiante comete», pasada a utilidad. Resuelve la duda de talla (ficha de anillos)."
+  },
+  "riesgos": [
+    "Solo hay 3 tallas (12, 14-15 y 17), en Nuit y Étoile: decirlo si preguntan por otras.",
+    "Las equivalencias son las de la ficha (CLAUDE.md, 5.4).",
+    "«14 días para devolverlo» es el desistimiento: el envío de vuelta lo paga la clienta; si se quiere dar el detalle, ponerlo en el pie.",
+    "Se quitó la foto de la mano con el hilo (iba a costar ~0,13 $ de IA): se puede grabar una real con el móvil y ponerla en la diapositiva 2.",
+    "Imágenes hechas con IA: publicar.py las marca como «hecho con IA» y el pie lo dice. Las piezas tienen que parecerse a las reales."
+  ],
+  "estado": "borrador",
+  "revision": {
+    "notas": "Corregida el 3-nov: ya no necesita ninguna imagen nueva de IA. Pieza de reserva (19-nov). Faltan las diapositivas con texto (script, 0 €).",
+    "aprobado_por": null,
+    "fecha": null
+  },
+  "publicacion": {
+    "archivos": [
+      "oficina/salida/W45-04-1.jpg",
+      "oficina/salida/W45-04-2.jpg",
+      "oficina/salida/W45-04-3.jpg",
+      "oficina/salida/W45-04-4.jpg",
+      "oficina/salida/W45-04-5.jpg",
+      "oficina/salida/W45-04-6.jpg"
+    ],
+    "alt_text": "Seis diapositivas que explican cómo medir la talla de un anillo con un hilo: 52 mm es la talla 12, 54,5 mm la 14-15 y 57 mm la 17.",
+    "urls": [],
+    "ia": true
+  }
 }

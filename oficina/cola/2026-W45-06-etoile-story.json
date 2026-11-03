@@ -1,55 +1,73 @@
 {
- "id": "2026-W45-06-etoile-story",
- "plataforma": "instagram",
- "formato": "story",
- "pieza": "anillo-etoile",
- "fecha_sugerida": "2026-11-07T12:00:00+01:00",
- "gancho": "¿De qué mes eres?",
- "copy": "¿De qué mes eres? Cada anillo Étoile guarda la piedra de un mes.",
- "hashtags": [],
- "guion": [
-  {
-   "segundos": "1",
-   "imagen": "Foto del anillo Étoile en la mano",
-   "texto_en_pantalla": "¿De qué mes eres?",
-   "voz": ""
-  },
-  {
-   "segundos": "2",
-   "imagen": "Encuesta: enero a junio / julio a diciembre",
-   "texto_en_pantalla": "",
-   "voz": ""
-  },
-  {
-   "segundos": "3",
-   "imagen": "El anillo del mes más votado (por ejemplo, mayo, verde)",
-   "texto_en_pantalla": "Cada mes, su piedra.",
-   "voz": ""
-  }
- ],
- "assets": {
-  "existentes": [
-   "marca/fotos-ia/joyas/etoile-mayo-mano-v1-api.png"
+  "id": "2026-W45-06-etoile-story",
+  "plataforma": "instagram",
+  "formato": "story",
+  "pieza": "anillo-etoile",
+  "fecha_sugerida": "2026-11-07T12:00:00+01:00",
+  "gancho": "¿De qué mes eres?",
+  "copy": "Secuencia de 4 stories: ¿De qué mes eres? Cada anillo Étoile lleva la piedra de un mes. Encuesta y cierre con el precio y el enlace.",
+  "hashtags": [],
+  "guion": [
+    {
+      "segundos": "1",
+      "imagen": "Mano con el anillo Étoile (etoile-mayo-mano-v1-api.png) ajustada a 9:16",
+      "texto_en_pantalla": "¿De qué mes eres?",
+      "voz": ""
+    },
+    {
+      "segundos": "2",
+      "imagen": "Misma foto con zoom al anillo",
+      "texto_en_pantalla": "Cada anillo Étoile lleva la piedra de un mes.",
+      "voz": ""
+    },
+    {
+      "segundos": "3",
+      "imagen": "Fondo de la foto desenfocado con el sticker de encuesta",
+      "texto_en_pantalla": "Enero a junio  /  Julio a diciembre",
+      "voz": ""
+    },
+    {
+      "segundos": "4",
+      "imagen": "Foto del anillo con el sticker de enlace a /products/anillo-etoile",
+      "texto_en_pantalla": "Esta es la de mayo, en verde. Cada mes, su piedra. Anillo Étoile, 29,95 €.",
+      "voz": ""
+    }
   ],
-  "generar": []
- },
- "musica": {
-  "origen": "ninguna",
-  "pista": "",
-  "licencia": ""
- },
- "montaje": [],
- "origen": {
-  "biblioteca": "",
-  "referencia": "Interacción: pregunta y encuesta."
- },
- "riesgos": [
-  "Las pegatinas interactivas (encuesta) no se pueden poner por API: publicar a mano en la app."
- ],
- "estado": "borrador",
- "revision": {
-  "notas": "",
-  "aprobado_por": null,
-  "fecha": null
- }
+  "assets": {
+    "existentes": [
+      "marca/fotos-ia/joyas/etoile-mayo-mano-v1-api.png"
+    ],
+    "generar": []
+  },
+  "musica": {
+    "origen": "ninguna",
+    "pista": "",
+    "licencia": ""
+  },
+  "montaje": [],
+  "origen": {
+    "biblioteca": "",
+    "referencia": "Interacción: pregunta y encuesta."
+  },
+  "riesgos": [
+    "Las pegatinas (encuesta y enlace) no se pueden poner por API: publicar a mano en la app.",
+    "La foto es 3:4 (1744x2336): hay que ajustarla a 9:16 en la app.",
+    "Colores del mes: «verde», «rojo oscuro», «azul agua»…; nunca nombres de gemas. Solo hay una foto de Étoile (mayo): no prometer que se enseñan los 12 colores.",
+    "Hay 3 tallas (12, 14-15 y 17): si preguntan por otra, decirlo.",
+    "Imágenes hechas con IA: publicar.py las marca como «hecho con IA» y el pie lo dice. Las piezas tienen que parecerse a las reales."
+  ],
+  "estado": "borrador",
+  "revision": {
+    "notas": "Corregida el 3-nov: 4 planos con la petición en el 3.º y el cierre con precio y enlace; fecha 7-nov. Publicar a mano.",
+    "aprobado_por": null,
+    "fecha": null
+  },
+  "publicacion": {
+    "archivos": [
+      "marca/fotos-ia/joyas/etoile-mayo-mano-v1-api.png"
+    ],
+    "alt_text": "",
+    "urls": [],
+    "ia": true
+  }
 }

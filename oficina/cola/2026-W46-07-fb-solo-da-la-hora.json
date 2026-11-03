@@ -1,0 +1,54 @@
+{
+  "id": "2026-W46-07-fb-solo-da-la-hora",
+  "estado": "borrador",
+  "plataforma": "facebook",
+  "formato": "foto",
+  "pieza": "reloj-lune",
+  "fecha_sugerida": "2026-11-11T12:30:00+01:00",
+  "gancho": "Un reloj que solo da la hora.",
+  "copy": "Un reloj de mujer que solo da la hora, sin pantalla, sin avisos y sin tener que cargarlo.\n\nEl Lune tiene la esfera ovalada de 12 mm y piedras verdes: 39,95 €. Por Black Friday, la 2.ª pieza al 50 % y la 3.ª, gratis, hasta el 5 de diciembre. Envío gratis a península.\n\nhttps://lunerie.es/products/reloj-lune?utm_source=facebook&utm_medium=organic&utm_campaign=organico-nov&utm_content=fb-solo-da-la-hora\n\nImagen creada con IA.",
+  "hashtags": [],
+  "guion": [
+    {
+      "segundos": "-",
+      "imagen": "Muñeca con el reloj Lune junto a un smartwatch apagado; texto «Un reloj que solo da la hora»",
+      "texto_en_pantalla": "",
+      "voz": ""
+    }
+  ],
+  "assets": {
+    "existentes": [
+      "marca/fotos-ia/campana-bf/4-solo-da-la-hora-4x5.jpg"
+    ],
+    "generar": []
+  },
+  "musica": {
+    "origen": "ninguna",
+    "pista": "",
+    "licencia": ""
+  },
+  "montaje": [],
+  "publicacion": {
+    "archivos": [
+      "marca/fotos-ia/campana-bf/4-solo-da-la-hora-4x5.jpg"
+    ],
+    "urls": [],
+    "alt_text": "Muñeca con el reloj Lune dorado y piedras verdes junto a un smartwatch negro apagado, con el texto «Un reloj que solo da la hora».",
+    "ia": true
+  },
+  "origen": {
+    "biblioteca": "instantaneos-18",
+    "referencia": "Anuncio 4 de la campaña de Black Friday (foto 4:5 con texto y precio)."
+  },
+  "riesgos": [
+    "Imágenes hechas con IA: publicar.py las marca como «hecho con IA» y el pie lo dice. Las piezas tienen que parecerse a las reales.",
+    "La promo termina de verdad el 5-dic (los descuentos automáticos tienen fecha de fin): si se alarga, dejar de llamarla límite.",
+    "Alternativa: subir el mismo vídeo del reel (marca/fotos-ia/campana-bf/4-solo-da-la-hora-9x16.mp4) como vídeo de Facebook.",
+    "Facebook: publicar a mano (Meta Business Suite, planificador) o ampliar oficina/publicar.py; hoy el script solo publica en Instagram."
+  ],
+  "revision": {
+    "notas": "Mismo día que el reel de Instagram (2026-W46-06).",
+    "aprobado_por": null,
+    "fecha": null
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "id": "2026-W47-01-sepia-clasico",
+  "estado": "borrador",
+  "plataforma": "instagram",
+  "formato": "foto",
+  "pieza": "reloj-sepia",
+  "fecha_sugerida": "2026-11-18T19:30:00+01:00",
+  "gancho": "Un clásico pequeño para los días de trabajo.",
+  "copy": "Un clásico pequeño para los días de trabajo.\n\nSépia es un reloj de mujer rectangular, de aire clásico, con la correa marrón o negra. Discreto, de los que se llevan con camisa.\n\nReloj Sépia, 34,95 €. Envío gratis a península. Lo tienes en el enlace del perfil.\n\nImagen creada con IA.",
+  "hashtags": [
+    "#relojdemujer",
+    "#relojclasico",
+    "#lunerie"
+  ],
+  "guion": [
+    {
+      "segundos": "-",
+      "imagen": "Mujer con camisa blanca y reloj Sépia de correa marrón, mano en el hombro",
+      "texto_en_pantalla": "",
+      "voz": ""
+    }
+  ],
+  "assets": {
+    "existentes": [
+      "marca/fotos-ia/fichas/sepia-persona.jpg"
+    ],
+    "generar": []
+  },
+  "musica": {
+    "origen": "ninguna",
+    "pista": "",
+    "licencia": ""
+  },
+  "montaje": [],
+  "publicacion": {
+    "archivos": [
+      "marca/fotos-ia/fichas/sepia-persona.jpg"
+    ],
+    "urls": [],
+    "alt_text": "Mujer con una camisa blanca y un reloj rectangular dorado de correa marrón sobre la muñeca.",
+    "ia": true
+  },
+  "origen": {
+    "biblioteca": "",
+    "referencia": "Ángulo «para llevar cada día» (Edu, 3-nov). Reserva para cuando falte una pieza en la semana del 16-nov."
+  },
+  "riesgos": [
+    "Imágenes hechas con IA: publicar.py las marca como «hecho con IA» y el pie lo dice. Las piezas tienen que parecerse a las reales.",
+    "Sépia aún sin muestra: confirmar si la correa es de piel (no decirlo) y que la IA no cambia la esfera.",
+    "«Con camisa» es una sugerencia de uso, no una promesa de ajuste."
+  ],
+  "revision": {
+    "notas": "Pieza de reserva (no está en el calendario de dos semanas): entra si Edu quiere un post más de producto.",
+    "aprobado_por": null,
+    "fecha": null
+  }
+}

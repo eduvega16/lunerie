@@ -1,0 +1,54 @@
+{
+  "id": "2026-W46-08-fb-menos-de-40",
+  "estado": "borrador",
+  "plataforma": "facebook",
+  "formato": "foto",
+  "pieza": "catalogo",
+  "fecha_sugerida": "2026-11-13T12:30:00+01:00",
+  "gancho": "Regalos de menos de 40 €.",
+  "copy": "Regalos de menos de 40 € para esta Navidad: relojes pequeños, aros, pendientes y un collar con piedras de color.\n\nBlack Friday: la 2.ª pieza al 50 % y la 3.ª, gratis, hasta el 5 de diciembre. Envío gratis a península.\n\nhttps://lunerie.es/?utm_source=facebook&utm_medium=organic&utm_campaign=organico-nov&utm_content=fb-menos-de-40\n\nImagen creada con IA.",
+  "hashtags": [],
+  "guion": [
+    {
+      "segundos": "-",
+      "imagen": "Cuadrícula con 6 piezas: Lune, Sépia, Galet, Collar Lune, Larme, Boucle, cada una con su precio",
+      "texto_en_pantalla": "",
+      "voz": ""
+    }
+  ],
+  "assets": {
+    "existentes": [
+      "marca/fotos-ia/campana-bf/6-menos-de-40-4x5.jpg"
+    ],
+    "generar": []
+  },
+  "musica": {
+    "origen": "ninguna",
+    "pista": "",
+    "licencia": ""
+  },
+  "montaje": [],
+  "publicacion": {
+    "archivos": [
+      "marca/fotos-ia/campana-bf/6-menos-de-40-4x5.jpg"
+    ],
+    "urls": [],
+    "alt_text": "Seis piezas de Lunerie con su precio: reloj Lune 39,95 €, Sépia 34,95 €, Galet 34,95 €, collar Lune 34,95 €, pendientes Larme 24,95 € y aros Boucle 19,95 €.",
+    "ia": true
+  },
+  "origen": {
+    "biblioteca": "consejos-7",
+    "referencia": "Anuncio 6 de la campaña de Black Friday (anuncios/campana-black-friday.md)."
+  },
+  "riesgos": [
+    "La promo termina de verdad el 5-dic (los descuentos automáticos tienen fecha de fin): si se alarga, dejar de llamarla límite.",
+    "Los precios van dentro de la imagen: si cambian, rehacer con python marca/campana_bf.py (los lee de la tienda).",
+    "Las fotos de producto de la cuadrícula son las de la tienda (algunas del proveedor), no IA: aquí el pie de IA se podría quitar. Se deja por prudencia, decide Edu.",
+    "Facebook: publicar a mano (Meta Business Suite, planificador) o ampliar oficina/publicar.py; hoy el script solo publica en Instagram."
+  ],
+  "revision": {
+    "notas": "Mismo día que el carrusel de regalos de Instagram (2026-W46-01).",
+    "aprobado_por": null,
+    "fecha": null
+  }
+}

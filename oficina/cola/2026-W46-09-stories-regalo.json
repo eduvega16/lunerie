@@ -1,0 +1,87 @@
+{
+  "id": "2026-W46-09-stories-regalo",
+  "estado": "borrador",
+  "plataforma": "instagram",
+  "formato": "story",
+  "pieza": "catalogo",
+  "fecha_sugerida": "2026-11-14T12:00:00+01:00",
+  "gancho": "Tres preguntas para acertar con el regalo.",
+  "copy": "Dos encuestas y una caja de preguntas para ayudar a elegir el regalo: reloj o joya, cuánto gastar y cómo es ella.",
+  "hashtags": [],
+  "guion": [
+    {
+      "segundos": "1",
+      "imagen": "smartwatch-despues.jpg (mano que toca el reloj Lune)",
+      "texto_en_pantalla": "Tres preguntas para acertar con el regalo.",
+      "voz": ""
+    },
+    {
+      "segundos": "2",
+      "imagen": "boucle-persona.jpg ajustada a 9:16 con el sticker de encuesta",
+      "texto_en_pantalla": "¿Reloj o joya?  ·  Reloj / Joya",
+      "voz": ""
+    },
+    {
+      "segundos": "3",
+      "imagen": "duo-persona.jpg ajustada a 9:16 con el sticker de encuesta",
+      "texto_en_pantalla": "¿Cuánto quieres gastar?  ·  Menos de 25 € / Hasta 40 €",
+      "voz": ""
+    },
+    {
+      "segundos": "4",
+      "imagen": "campana-bf/0-tarjeta-oferta-9x16.jpg o niebla lisa con la caja de preguntas",
+      "texto_en_pantalla": "¿Cómo es ella? Cuéntanoslo y te sugerimos una pieza.",
+      "voz": ""
+    },
+    {
+      "segundos": "5",
+      "imagen": "6-menos-de-40-9x16.jpg con el sticker de enlace",
+      "texto_en_pantalla": "Mientras tanto, regalos de menos de 40 €",
+      "voz": ""
+    }
+  ],
+  "assets": {
+    "existentes": [
+      "marca/fotos-ia/campana-hora/smartwatch-despues.jpg",
+      "marca/fotos-ia/fichas/boucle-persona.jpg",
+      "marca/fotos-ia/fichas/duo-persona.jpg",
+      "marca/fotos-ia/campana-bf/0-tarjeta-oferta-9x16.jpg",
+      "marca/fotos-ia/campana-bf/6-menos-de-40-9x16.jpg"
+    ],
+    "generar": []
+  },
+  "musica": {
+    "origen": "ninguna",
+    "pista": "",
+    "licencia": ""
+  },
+  "montaje": [],
+  "publicacion": {
+    "archivos": [
+      "marca/fotos-ia/campana-hora/smartwatch-despues.jpg",
+      "marca/fotos-ia/fichas/boucle-persona.jpg",
+      "marca/fotos-ia/fichas/duo-persona.jpg",
+      "marca/fotos-ia/campana-bf/0-tarjeta-oferta-9x16.jpg",
+      "marca/fotos-ia/campana-bf/6-menos-de-40-9x16.jpg"
+    ],
+    "urls": [],
+    "alt_text": "",
+    "ia": true
+  },
+  "origen": {
+    "biblioteca": "instantaneos-8",
+    "referencia": "Skill ig-story: encuesta barata primero, caja de preguntas después, enlace al final. Forma «cómo elegir el regalo sin dudar» (instantaneos-8 / consejos-7)."
+  },
+  "riesgos": [
+    "Imágenes hechas con IA: publicar.py las marca como «hecho con IA» y el pie lo dice. Las piezas tienen que parecerse a las reales.",
+    "Pegatinas de encuesta, caja de preguntas y enlace: solo se ponen a mano en la app.",
+    "Las fotos de Boucle y Duo son 3:4: hay que ajustarlas a 9:16 con zoom o fondo niebla; revisar que no se corte la pieza.",
+    "Las respuestas son de personas reales: contestar desde la cuenta, sin pedir datos personales por mensaje y sin guardar nada fuera de Instagram.",
+    "Precios de la última imagen: los de la tienda del 3-nov. Revisar si cambian."
+  ],
+  "revision": {
+    "notas": "Publicar a mano en la app el sábado 14-nov. Las respuestas dicen qué piezas anunciar la segunda quincena.",
+    "aprobado_por": null,
+    "fecha": null
+  }
+}

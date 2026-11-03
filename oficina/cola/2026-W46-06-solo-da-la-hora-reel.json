@@ -1,0 +1,78 @@
+{
+  "id": "2026-W46-06-solo-da-la-hora-reel",
+  "estado": "borrador",
+  "plataforma": "instagram",
+  "formato": "reel",
+  "pieza": "reloj-lune",
+  "fecha_sugerida": "2026-11-11T19:30:00+01:00",
+  "gancho": "Mensajes. Avisos. Pasos. Un reloj que solo da la hora.",
+  "copy": "Un reloj de mujer que solo da la hora. Sin pantalla, sin avisos y sin tener que cargarlo.\n\nEl Lune es pequeño: esfera ovalada de 12 mm, eslabones finos y seis piedras verdes. 39,95 €, envío gratis a península.\n\nGuárdalo para cuando quieras desconectar un rato.\n\nVídeo creado con IA.",
+  "hashtags": [
+    "#relojdemujer",
+    "#relojvintage",
+    "#lunerie"
+  ],
+  "guion": [
+    {
+      "segundos": "0-2,6",
+      "imagen": "Muñeca con un smartwatch que se ilumina con notificaciones",
+      "texto_en_pantalla": "Mensajes. Avisos. Pasos.",
+      "voz": ""
+    },
+    {
+      "segundos": "2,6-5,2",
+      "imagen": "Misma muñeca con el reloj Lune; una mano toca el brazalete",
+      "texto_en_pantalla": "Un reloj que solo da la hora.",
+      "voz": ""
+    },
+    {
+      "segundos": "5,2-7,8",
+      "imagen": "Muñeca sobre la mesa con libro y café",
+      "texto_en_pantalla": "Reloj Lune · 39,95 € · Esfera de 12 mm · piedras verdes · eslabones finos",
+      "voz": ""
+    },
+    {
+      "segundos": "7,8-10,4",
+      "imagen": "Tarjeta oscura",
+      "texto_en_pantalla": "Black Friday · 2.ª pieza al 50 % y la 3.ª, gratis · hasta el 5 de diciembre · LUNERIE",
+      "voz": ""
+    }
+  ],
+  "assets": {
+    "existentes": [
+      "marca/fotos-ia/campana-bf/4-solo-da-la-hora-9x16.mp4"
+    ],
+    "generar": []
+  },
+  "musica": {
+    "origen": "biblioteca de Meta (la añade Edu dentro de la app al publicar)",
+    "pista": "",
+    "licencia": "de Meta, solo dentro de sus apps"
+  },
+  "montaje": [],
+  "publicacion": {
+    "archivos": [
+      "marca/fotos-ia/campana-bf/4-solo-da-la-hora-9x16.mp4"
+    ],
+    "urls": [],
+    "alt_text": "Una mujer con un smartwatch que se ilumina y después con el reloj Lune, dorado y con piedras verdes, sobre una mesa con un libro y un café.",
+    "ia": true
+  },
+  "origen": {
+    "biblioteca": "instantaneos-18",
+    "referencia": "Campaña «Un reloj que solo da la hora» (CLAUDE.md, 30-oct: moda del reloj de la abuela y desconectar del smartwatch). Vídeo hecho el 2-nov con marca/campana_bf.py (10,4 s, sin audio)."
+  },
+  "riesgos": [
+    "Imágenes hechas con IA: publicar.py las marca como «hecho con IA» y el pie lo dice. Las piezas tienen que parecerse a las reales.",
+    "Es el vídeo del anuncio 4 de la campaña: orgánico y de pago llevarían el mismo vídeo. Si Edu no quiere repetirlo, hacer otro montaje con marca/montaje.py a partir de los mismos planos.",
+    "El smartwatch del primer plano es negro y cuadrado, sin logo, pero se parece a uno conocido: no nombrar marcas ni compararlas.",
+    "El texto del 3.er plano (precio y rasgos) tiene poco contraste sobre el libro: verlo en el móvil antes de publicar.",
+    "Reel: publicar.py exige una URL pública del MP4 (no hecha). Lo más sencillo es que Edu lo suba desde la app y añada música de la biblioteca de Meta.",
+    "La promo termina de verdad el 5-dic (los descuentos automáticos tienen fecha de fin): si se alarga, dejar de llamarla límite."
+  ],
+  "revision": {
+    "notas": "Se sube a mano desde la app con música de Meta (los reels no llevan música por API). Réplica en Facebook: 2026-W46-07.",
+    "aprobado_por": null,
+    "fecha": null
+  }
+}

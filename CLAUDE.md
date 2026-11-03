@@ -567,6 +567,14 @@ Solo salen si el PC está encendido con la sesión abierta; si no, la pieza sigu
 `… quitar [id]`. **Al abrir sesión: mirar el log y que las publicadas pasen a «publicado»** (y hacer commit de la cola).
 A mano (Edu): stories con pegatinas, reels con música, Facebook (Business Suite) y editar el texto de los 3 posts del
 29-oct que dicen «Lune 49,95 €».
+**LO PRIMERO EL 4-NOV (Edu, al irse a dormir):** rehacer las fotos del Collar Signé de **Carmen** y **Elena**
+(`marca/collar_ia.py modelo-hombro modelo-tirantes --n 2`, luego `python productos/collar_signe.py --fotos-ia` adaptado):
+(1) la lágrima parece pegada al nombre y en el real cuelga suelta de la cadena, después del nombre (prompt `DISENO` ya
+corregido); (2) el reloj Lune se ve muy pequeño (muñeca más cerca de la cámara, sin agrandarlo respecto a ella);
+(3) el anillo Nuit no es del todo así (mirar `anillo-nuit.jpg` a tamaño real y describirlo mejor en `PIEZA`).
+Revisar también la de Marta (producto) por lo mismo de la lágrima. Y mirar `oficina/publicaciones.log`: el 4-nov a las
+19:30 sale el primer post programado (Lune con café).
+
 **DÓNDE NOS QUEDAMOS (2-nov, noche) — leer esto primero; manda sobre los bloques de abajo.**
 - **EN PRODUCCIÓN (OK de Edu, 2-nov): portada en collage + BLACK FRIDAY.** `parte('hero-navidad')` en
   `lunerie-inicio.liquid`: las 3 fotos de Navidad montadas como **copias de papel** (borde irregular con `clip-path`

@@ -13,9 +13,11 @@ from portada_navidad import MODELO, PIEZA
 RAIZ = pathlib.Path(__file__).resolve().parent.parent
 SALIDA = RAIZ / "marca" / "fotos-ia" / "collar"
 COLLAR = RAIZ / "productos" / "collar-signe"
+# 4-nov (Edu): la lágrima NO va pegada al nombre: cuelga suelta de la cadena, un poco después del final del nombre.
 DISENO = ("a fine {metal} cable-chain necklace with a first name written in a thin, flowing handwritten signature-style "
-          "script made of polished {metal} wire, set horizontally into the chain, and a single faceted teardrop crystal "
-          "in a small {metal} prong setting hanging right at the end of the name, exactly like the reference necklace")
+          "script made of polished {metal} wire, set horizontally into the chain; a short length of plain chain after "
+          "the end of the name, a single faceted teardrop crystal in a small {metal} prong setting hangs on its own "
+          "tiny jump ring from the chain - the crystal is separate from the letters and never touches or attaches to them")
 NO = ("Every piece must be EXACTLY like the reference images - same shape, size and details; do not redesign them. "
       "The name on the necklace must be spelled exactly as given, letter by letter, and must be the only text in the "
       "image: no other text, no logos, nothing written on the watch dial. ")

@@ -552,7 +552,7 @@ la 1 el Maille salía redondo— y derecha-2), archivos de Shopify `portada-dia-
 revés (la grande a la izquierda). Volver a las de Navidad: `foto = 'portada-navidad-'` en `hero-navidad`.
 Más tarde (Edu: «más grandes y a todo el ancho»): en PC las tres a todo el ancho (`aspect-ratio: 2.35/1`, 27,5 % +
 46 % + 27,5 %) y en el móvil más grandes y con zoom hacia las joyas (`transform: scale` por foto, dentro de
-`.lu-hn__recorte` para no tapar el borde de papel).
+`.lu-hn__recorte` para no tapar el borde de papel). **Revelado** (Edu: «se ven muy IA», «los relojes algo pequeños»): `marca/revelar.py` → `portada-dia/revelado/` (encuadre más cerca de las joyas, sin agrandar el reloj respecto a la muñeca: la esfera mide 12 mm, y acabado de película: más cálido, menos saturado, negros levantados, viñeta y grano). Las 3 de la portada se cambiaron en Shopify con `fileUpdate` (mismo nombre) y el carrusel del martes las usa.
 **Enfoque «para llevar cada día»** (Edu: en Instagram y en una campaña futura): ideas del estratega en
 `oficina/ideas/2026-11-03-cada-dia.md`. Hecho el carrusel **«Un martes cualquiera»** (`marca/martes.py` →
 `marca/fotos-ia/martes/1-7.jpg`): 6 horas del día (café, metro, trabajo, mercado, pausa, copa) con las 11 piezas y la

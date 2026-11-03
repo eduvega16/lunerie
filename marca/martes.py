@@ -9,7 +9,7 @@ from PIL import Image, ImageDraw
 from campana_bf import ESTILOS, FOTOS, NIEBLA, TINTA, ORO, degradado, linea, recorte
 
 SALIDA = FOTOS / "martes"
-DIA = FOTOS / "portada-dia"
+DIA = FOTOS / "portada-dia" / "revelado"   # 3-nov: con el revelado de marca/revelar.py
 W, H, M = 1080, 1350, 72
 ESTILOS.update({
     "hora": ("Jost.ttf", 30, 500, (255, 255, 255), 6, True),
@@ -21,12 +21,12 @@ ESTILOS.update({
 })
 # foto, punto del recorte (x, y), hora, piezas que se ven; la primera lleva además el gancho
 DIAPOSITIVAS = [
-    ("izquierda-1.png", (0.45, 0.5), "8:00 · café", "Reloj Lune · Anillo Nuit · Collar Lune"),
-    ("metro-1.png", (0.5, 0.5), "8:40 · metro", "Reloj Galet · Anillo Nuit"),
-    ("trabajo-1.png", (0.5, 0.5), "11:00 · trabajo", "Reloj Perle · Anillo Duo"),
-    ("mercado-1.png", (0.5, 0.5), "13:30 · mercado", "Reloj Lune · Anillo Étoile"),
-    ("centro-2.png", (0.53, 0.5), "17:00 · una pausa", "Reloj Maille · Aros Boucle · Anillo Duo"),
-    ("derecha-2.png", (0.5, 0.5), "20:30 · una copa", "Reloj Sépia · Anillo Étoile · Pendientes Larme"),
+    ("izquierda-1.jpg", (0.5, 0.5), "8:00 · café", "Reloj Lune · Anillo Nuit · Collar Lune"),
+    ("metro-1.jpg", (0.5, 0.5), "8:40 · metro", "Reloj Galet · Anillo Nuit"),
+    ("trabajo-1.jpg", (0.5, 0.5), "11:00 · trabajo", "Reloj Perle · Anillo Duo"),
+    ("mercado-1.jpg", (0.5, 0.5), "13:30 · mercado", "Reloj Lune · Anillo Étoile"),
+    ("centro-2-entera.jpg", (0.53, 0.5), "17:00 · una pausa", "Reloj Maille · Aros Boucle · Anillo Duo"),
+    ("derecha-2.jpg", (0.5, 0.5), "20:30 · una copa", "Reloj Sépia · Anillo Étoile · Pendientes Larme"),
 ]
 
 

@@ -1,0 +1,111 @@
+{
+  "id": "2026-W46-10-un-martes-cualquiera",
+  "estado": "aprobado",
+  "plataforma": "instagram",
+  "formato": "carrusel",
+  "pieza": "catalogo",
+  "fecha_sugerida": "2026-11-10T19:30:00+01:00",
+  "gancho": "Un martes cualquiera.",
+  "copy": "Un martes cualquiera.\n\nEl café, el metro, el trabajo, el mercado, una pausa y una copa. Relojes pequeños y joyas con piedras de color para llevar cada día, no solo en una ocasión especial.\n\nRelojes desde 34,95 €, joyas desde 19,95 €. Envío gratis a península y 14 días para devolverlo. Lo tienes en el enlace del perfil.\n\nImágenes creadas con IA.",
+  "hashtags": [
+    "#relojdemujer",
+    "#joyasdemujer",
+    "#lunerie"
+  ],
+  "guion": [
+    {
+      "segundos": "1",
+      "imagen": "Manos con una taza: Reloj Lune, Anillo Nuit y Collar Lune",
+      "texto_en_pantalla": "Un martes cualquiera. · 8:00 · café",
+      "voz": ""
+    },
+    {
+      "segundos": "2",
+      "imagen": "Mano en la barra del metro: Reloj Galet y Anillo Nuit",
+      "texto_en_pantalla": "8:40 · metro",
+      "voz": ""
+    },
+    {
+      "segundos": "3",
+      "imagen": "Escribiendo en una libreta: Reloj Perle y Anillo Duo",
+      "texto_en_pantalla": "11:00 · trabajo",
+      "voz": ""
+    },
+    {
+      "segundos": "4",
+      "imagen": "Bolsa de mandarinas en el mercado: Reloj Lune y Anillo Étoile",
+      "texto_en_pantalla": "13:30 · mercado",
+      "voz": ""
+    },
+    {
+      "segundos": "5",
+      "imagen": "Mano en el pelo: Reloj Maille, Aros Boucle y Anillo Duo",
+      "texto_en_pantalla": "17:00 · una pausa",
+      "voz": ""
+    },
+    {
+      "segundos": "6",
+      "imagen": "Copa en una terraza: Reloj Sépia, Anillo Étoile y Pendientes Larme",
+      "texto_en_pantalla": "20:30 · una copa",
+      "voz": ""
+    },
+    {
+      "segundos": "7",
+      "imagen": "Tarjeta niebla",
+      "texto_en_pantalla": "Un reloj que solo da la hora. Relojes desde 34,95 € · joyas desde 19,95 €",
+      "voz": ""
+    }
+  ],
+  "assets": {
+    "existentes": [
+      "marca/fotos-ia/martes/1.jpg",
+      "marca/fotos-ia/martes/2.jpg",
+      "marca/fotos-ia/martes/3.jpg",
+      "marca/fotos-ia/martes/4.jpg",
+      "marca/fotos-ia/martes/5.jpg",
+      "marca/fotos-ia/martes/6.jpg",
+      "marca/fotos-ia/martes/7.jpg"
+    ],
+    "generar": [
+      {
+        "que": "3 fotos sobrias: metro, trabajo, mercado (hechas el 3-nov)",
+        "herramienta": "API Higgsfield (flare)",
+        "coste_estimado_usd": 0.39
+      }
+    ]
+  },
+  "musica": {
+    "origen": "ninguna",
+    "pista": "",
+    "licencia": ""
+  },
+  "montaje": [
+    "python marca/martes.py (fotos de marca/fotos-ia/portada-dia)"
+  ],
+  "publicacion": {
+    "archivos": [
+      "marca/fotos-ia/martes/1.jpg",
+      "marca/fotos-ia/martes/2.jpg",
+      "marca/fotos-ia/martes/3.jpg",
+      "marca/fotos-ia/martes/4.jpg",
+      "marca/fotos-ia/martes/5.jpg",
+      "marca/fotos-ia/martes/6.jpg",
+      "marca/fotos-ia/martes/7.jpg"
+    ],
+    "urls": [],
+    "alt_text": "Seis momentos de un día con relojes y joyas Lunerie: café, metro, trabajo, mercado, una pausa y una copa.",
+    "ia": true
+  },
+  "origen": {
+    "biblioteca": "narrativa-14",
+    "referencia": "oficina/ideas/2026-11-03-cada-dia.md, ángulo 1"
+  },
+  "riesgos": [
+    "Las horas son un rótulo: las agujas de las fotos no marcan esa hora (no hay ninguna esfera en primer plano)."
+  ],
+  "revision": {
+    "notas": "Revisado por Claude a tamaño real (relojes fieles).",
+    "aprobado_por": "Edu",
+    "fecha": "2026-11-03"
+  }
+}

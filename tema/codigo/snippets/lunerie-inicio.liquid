@@ -77,19 +77,19 @@
       <div class="lu-hn__fotos">
         {%- for n in (1..3) -%}
           {%- case n -%}
-            {%- when 1 -%}{%- assign lado = 'izquierda' -%}{%- assign tam = '(min-width: 750px) 400px, 62vw' -%}{%- assign alt = 'Manos con una taza de café, el reloj Lune con piedras verdes, el anillo Nuit y el collar Lune' -%}
-            {%- when 2 -%}{%- assign lado = 'centro' -%}{%- assign tam = '(min-width: 750px) 780px, 48vw' -%}{%- assign alt = 'Mano en el pelo con los aros Boucle, el reloj Maille de malla dorada y el anillo Duo' -%}
-            {%- when 3 -%}{%- assign lado = 'derecha' -%}{%- assign tam = '(min-width: 750px) 400px, 38vw' -%}{%- assign alt = 'Copa de vino blanco en una terraza, el reloj Sépia de correa marrón, el anillo Étoile y los pendientes Larme' -%}
+            {%- when 1 -%}{%- assign lado = 'izquierda' -%}{%- assign tam = '(min-width: 750px) 28vw, 70vw' -%}{%- assign alt = 'Manos con una taza de café, el reloj Lune con piedras verdes, el anillo Nuit y el collar Lune' -%}
+            {%- when 2 -%}{%- assign lado = 'centro' -%}{%- assign tam = '(min-width: 750px) 46vw, 48vw' -%}{%- assign alt = 'Mano en el pelo con los aros Boucle, el reloj Maille de malla dorada y el anillo Duo' -%}
+            {%- when 3 -%}{%- assign lado = 'derecha' -%}{%- assign tam = '(min-width: 750px) 28vw, 48vw' -%}{%- assign alt = 'Copa de vino blanco en una terraza, el reloj Sépia de correa marrón, el anillo Étoile y los pendientes Larme' -%}
           {%- endcase -%}
           {%- assign archivo = foto | append: lado | append: '.jpg' -%}
           <figure class="lu-hn__foto lu-hn__foto--{{ lado }}">
-            <div class="lu-hn__papel">
+            <div class="lu-hn__papel"><div class="lu-hn__recorte">
               {%- if n == 1 -%}
-                {{ images[archivo] | image_url: width: 1600 | image_tag: loading: 'eager', fetchpriority: 'high', alt: alt, sizes: tam, widths: '400, 600, 900, 1200, 1600' }}
+                {{ images[archivo] | image_url: width: 2048 | image_tag: loading: 'eager', fetchpriority: 'high', alt: alt, sizes: tam, widths: '400, 600, 900, 1200, 1600, 2048' }}
               {%- else -%}
-                {{ images[archivo] | image_url: width: 1600 | image_tag: loading: 'eager', alt: alt, sizes: tam, widths: '400, 600, 900, 1200, 1600' }}
+                {{ images[archivo] | image_url: width: 2048 | image_tag: loading: 'eager', alt: alt, sizes: tam, widths: '400, 600, 900, 1200, 1600, 2048' }}
               {%- endif -%}
-            </div>
+            </div></div>
           </figure>
         {%- endfor -%}
       </div>
@@ -566,15 +566,20 @@
     .lu-hn{background:#F2F4F2;color:#16201B;
       --lu-papel-a:polygon(0% 1px,2.78% 0.5px,5.56% 1.5px,8.33% 0px,11.11% 1.5px,13.89% 1px,16.67% 0px,19.44% 1.5px,22.22% 0px,25% 1px,27.78% 0px,30.56% 0px,33.33% 1px,36.11% 2px,38.89% 0.5px,41.67% 0.5px,44.44% 1.5px,47.22% 2.5px,50% 1.5px,52.78% 1px,55.56% 2.5px,58.33% 0px,61.11% 2px,63.89% 0.5px,66.67% 0.5px,69.44% 0.5px,72.22% 1px,75% 2px,77.78% 0.5px,80.56% 1.5px,83.33% 1.5px,86.11% 1px,88.89% 1.5px,91.67% 0px,94.44% 0px,97.22% 0.5px,calc(100% - 1.5px) 0%,calc(100% - 1px) 2.78%,calc(100% - 1px) 5.56%,calc(100% - 1.5px) 8.33%,calc(100% - 1px) 11.11%,calc(100% - 0.5px) 13.89%,calc(100% - 2px) 16.67%,calc(100% - 1.5px) 19.44%,calc(100% - 0.5px) 22.22%,calc(100% - 1.5px) 25%,calc(100% - 1.5px) 27.78%,calc(100% - 2px) 30.56%,calc(100% - 2px) 33.33%,calc(100% - 0.5px) 36.11%,calc(100% - 2.5px) 38.89%,calc(100% - 0.5px) 41.67%,calc(100% - 1px) 44.44%,calc(100% - 2px) 47.22%,calc(100% - 0.5px) 50%,calc(100% - 1px) 52.78%,calc(100% - 0px) 55.56%,calc(100% - 1.5px) 58.33%,calc(100% - 2px) 61.11%,calc(100% - 1.5px) 63.89%,calc(100% - 2px) 66.67%,calc(100% - 1px) 69.44%,calc(100% - 1.5px) 72.22%,calc(100% - 1.5px) 75%,calc(100% - 1.5px) 77.78%,calc(100% - 1px) 80.56%,calc(100% - 2px) 83.33%,calc(100% - 2.5px) 86.11%,calc(100% - 1px) 88.89%,calc(100% - 1.5px) 91.67%,calc(100% - 0px) 94.44%,calc(100% - 2px) 97.22%,100% calc(100% - 1.5px),97.22% calc(100% - 2.5px),94.44% calc(100% - 2px),91.67% calc(100% - 0.5px),88.89% calc(100% - 1px),86.11% calc(100% - 1.5px),83.33% calc(100% - 0px),80.56% calc(100% - 1px),77.78% calc(100% - 0.5px),75% calc(100% - 0.5px),72.22% calc(100% - 0px),69.44% calc(100% - 2px),66.67% calc(100% - 0.5px),63.89% calc(100% - 0.5px),61.11% calc(100% - 1px),58.33% calc(100% - 2px),55.56% calc(100% - 0px),52.78% calc(100% - 1px),50% calc(100% - 1.5px),47.22% calc(100% - 2px),44.44% calc(100% - 2px),41.67% calc(100% - 2px),38.89% calc(100% - 0.5px),36.11% calc(100% - 1px),33.33% calc(100% - 1px),30.56% calc(100% - 2px),27.78% calc(100% - 2.5px),25% calc(100% - 0.5px),22.22% calc(100% - 0.5px),19.44% calc(100% - 0.5px),16.67% calc(100% - 0.5px),13.89% calc(100% - 1px),11.11% calc(100% - 1.5px),8.33% calc(100% - 0.5px),5.56% calc(100% - 0px),2.78% calc(100% - 1px),1px 100%,1.5px 97.22%,2.5px 94.44%,1.5px 91.67%,1.5px 88.89%,1.5px 86.11%,1.5px 83.33%,0px 80.56%,2px 77.78%,2px 75%,2px 72.22%,2px 69.44%,1px 66.67%,1px 63.89%,0.5px 61.11%,1.5px 58.33%,0px 55.56%,0px 52.78%,0.5px 50%,0.5px 47.22%,1px 44.44%,0px 41.67%,0px 38.89%,0.5px 36.11%,0.5px 33.33%,1px 30.56%,0px 27.78%,2px 25%,1.5px 22.22%,0.5px 19.44%,0.5px 16.67%,1px 13.89%,1px 11.11%,0.5px 8.33%,2px 5.56%,2.5px 2.78%);
       --lu-papel-b:polygon(0% 2.5px,2.78% 2.5px,5.56% 2px,8.33% 0px,11.11% 1.5px,13.89% 1px,16.67% 1.5px,19.44% 0.5px,22.22% 0.5px,25% 1px,27.78% 0.5px,30.56% 1px,33.33% 0px,36.11% 0px,38.89% 2px,41.67% 1px,44.44% 1.5px,47.22% 2px,50% 1px,52.78% 0px,55.56% 2px,58.33% 1.5px,61.11% 1.5px,63.89% 1.5px,66.67% 2.5px,69.44% 1px,72.22% 2px,75% 1px,77.78% 1.5px,80.56% 1.5px,83.33% 1px,86.11% 0px,88.89% 1px,91.67% 2px,94.44% 1.5px,97.22% 1px,calc(100% - 1.5px) 0%,calc(100% - 0.5px) 2.78%,calc(100% - 0.5px) 5.56%,calc(100% - 1px) 8.33%,calc(100% - 2px) 11.11%,calc(100% - 0.5px) 13.89%,calc(100% - 0.5px) 16.67%,calc(100% - 0px) 19.44%,calc(100% - 0px) 22.22%,calc(100% - 0.5px) 25%,calc(100% - 1.5px) 27.78%,calc(100% - 2px) 30.56%,calc(100% - 1px) 33.33%,calc(100% - 1px) 36.11%,calc(100% - 0.5px) 38.89%,calc(100% - 1px) 41.67%,calc(100% - 2px) 44.44%,calc(100% - 1.5px) 47.22%,calc(100% - 0.5px) 50%,calc(100% - 0.5px) 52.78%,calc(100% - 2px) 55.56%,calc(100% - 2px) 58.33%,calc(100% - 2px) 61.11%,calc(100% - 0.5px) 63.89%,calc(100% - 1.5px) 66.67%,calc(100% - 2.5px) 69.44%,calc(100% - 1.5px) 72.22%,calc(100% - 2.5px) 75%,calc(100% - 0.5px) 77.78%,calc(100% - 2.5px) 80.56%,calc(100% - 0px) 83.33%,calc(100% - 1px) 86.11%,calc(100% - 0px) 88.89%,calc(100% - 2px) 91.67%,calc(100% - 1.5px) 94.44%,calc(100% - 2.5px) 97.22%,100% calc(100% - 2px),97.22% calc(100% - 2.5px),94.44% calc(100% - 1.5px),91.67% calc(100% - 2.5px),88.89% calc(100% - 2px),86.11% calc(100% - 1px),83.33% calc(100% - 2.5px),80.56% calc(100% - 1px),77.78% calc(100% - 0.5px),75% calc(100% - 0px),72.22% calc(100% - 1px),69.44% calc(100% - 0.5px),66.67% calc(100% - 2.5px),63.89% calc(100% - 2.5px),61.11% calc(100% - 0.5px),58.33% calc(100% - 0.5px),55.56% calc(100% - 1.5px),52.78% calc(100% - 0.5px),50% calc(100% - 1.5px),47.22% calc(100% - 2px),44.44% calc(100% - 0.5px),41.67% calc(100% - 1px),38.89% calc(100% - 2.5px),36.11% calc(100% - 1px),33.33% calc(100% - 1px),30.56% calc(100% - 2px),27.78% calc(100% - 2px),25% calc(100% - 2px),22.22% calc(100% - 1.5px),19.44% calc(100% - 1px),16.67% calc(100% - 1.5px),13.89% calc(100% - 2px),11.11% calc(100% - 1.5px),8.33% calc(100% - 0.5px),5.56% calc(100% - 0.5px),2.78% calc(100% - 1px),2px 100%,1.5px 97.22%,1.5px 94.44%,2px 91.67%,0.5px 88.89%,1.5px 86.11%,1px 83.33%,1.5px 80.56%,2px 77.78%,0.5px 75%,2.5px 72.22%,0px 69.44%,1.5px 66.67%,1.5px 63.89%,0.5px 61.11%,1.5px 58.33%,1px 55.56%,1px 52.78%,2px 50%,0px 47.22%,1px 44.44%,2px 41.67%,0.5px 38.89%,2px 36.11%,0.5px 33.33%,1.5px 30.56%,0.5px 27.78%,1px 25%,1px 22.22%,0px 19.44%,1.5px 16.67%,1px 13.89%,1.5px 11.11%,1.5px 8.33%,1.5px 5.56%,1.5px 2.78%)}
-    .lu-hn__fotos{position:relative;aspect-ratio:1/1;overflow:hidden;background:#F2F4F2}
+    .lu-hn__fotos{position:relative;aspect-ratio:1/1.12;overflow:hidden;background:#F2F4F2}
     .lu-hn__foto{position:absolute;margin:0;filter:drop-shadow(0 1px 1px rgba(22,32,27,.16)) drop-shadow(0 8px 18px rgba(22,32,27,.22))}
     .lu-hn__papel{height:100%;padding:clamp(5px,1.5vw,11px);background:#FDFCF9;clip-path:var(--lu-papel-a)}
     .lu-hn__foto--centro .lu-hn__papel{clip-path:var(--lu-papel-b)}
+    .lu-hn__recorte{height:100%;overflow:hidden}
     .lu-hn__papel img{display:block;width:100%;height:100%;object-fit:cover}
     /* Móvil (3-nov, fotos «para cada día»): la grande a la izquierda, porque la taza y el anillo están en su lado izquierdo */
-    .lu-hn__foto--izquierda{z-index:1;top:4%;left:3%;width:64%;aspect-ratio:3/4;transform:rotate(-1.5deg)}
-    .lu-hn__foto--centro{z-index:2;top:3%;right:3%;width:48%;aspect-ratio:4/3;transform:rotate(3deg)}
-    .lu-hn__foto--derecha{z-index:3;bottom:3%;right:6%;width:40%;aspect-ratio:3/4;transform:rotate(-2.5deg)}
+    .lu-hn__foto--izquierda{z-index:1;top:4%;left:3%;width:66%;aspect-ratio:3/4;transform:rotate(-1.5deg)}
+    .lu-hn__foto--centro{z-index:2;top:2%;right:2.5%;width:46%;aspect-ratio:4/3;transform:rotate(3deg)}
+    .lu-hn__foto--derecha{z-index:3;bottom:2.5%;right:4%;width:44%;aspect-ratio:3/4;transform:rotate(-2.5deg)}
+    /* 3-nov (Edu): en el móvil, las fotos más cerca de las joyas (zoom hacia donde están el reloj, el anillo y el collar) */
+    .lu-hn__foto--izquierda img{transform:scale(1.2);transform-origin:36% 46%}
+    .lu-hn__foto--centro img{transform:scale(1.15);transform-origin:52% 32%}
+    .lu-hn__foto--derecha img{transform:scale(1.15);transform-origin:45% 42%}
     .lu-hn__promo{display:grid;justify-items:center;gap:12px;padding:8px 20px 44px;text-align:center}
     .lu-hn__oferta{margin:0;font-family:var(--font-body--family);font-size:.75rem;font-weight:500;letter-spacing:.22em;
       text-transform:uppercase;color:#CA3801}
@@ -587,10 +592,12 @@
     .lu-hn__nota{margin:6px 0 0;font-size:.75rem;letter-spacing:.04em;color:#6B746F;text-wrap:balance}
     @media (min-width:750px){
       /* PC: la del sofá en el centro y las otras dos a los lados, medio escondidas (izquierda) o encima (derecha) */
-      .lu-hn__fotos{--h:clamp(360px,34vw,680px);aspect-ratio:auto;height:var(--h)}
-      .lu-hn__foto--centro{top:7%;right:auto;left:50%;width:calc(var(--h) * 1.13);transform:translateX(-50%) rotate(-1deg)}
-      .lu-hn__foto--izquierda{top:13%;right:auto;left:calc(50% - var(--h) * 1.03);width:calc(var(--h) * .55);transform:rotate(-3.5deg)}
-      .lu-hn__foto--derecha{top:10%;bottom:auto;right:auto;left:calc(50% + var(--h) * .48);width:calc(var(--h) * .55);transform:rotate(3deg)}
+      /* 3-nov (Edu): a todo el ancho y más grandes (antes medían como mucho 680 px de alto en el centro de la pantalla) */
+      .lu-hn__fotos{aspect-ratio:2.35/1}
+      .lu-hn__foto--izquierda{top:6%;left:2.5%;width:27.5%;transform:rotate(-2deg)}
+      .lu-hn__foto--centro{top:7%;right:auto;left:50%;width:46%;transform:translateX(-50%) rotate(-.8deg)}
+      .lu-hn__foto--derecha{top:4%;bottom:auto;right:2.5%;width:27.5%;transform:rotate(2deg)}
+      .lu-hn__foto img{transform:none}
       .lu-hn__promo{padding:40px 24px 48px}
     }
 

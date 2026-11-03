@@ -1,6 +1,6 @@
 {
   "id": "2026-W46-01-regalo-por-precio",
-  "estado": "borrador",
+  "estado": "aprobado",
   "plataforma": "instagram",
   "formato": "carrusel",
   "pieza": "catalogo",
@@ -101,9 +101,9 @@
     "Imágenes hechas con IA: publicar.py las marca como «hecho con IA» y el pie lo dice. Las piezas tienen que parecerse a las reales."
   ],
   "revision": {
-    "notas": "Reescrita el 3-nov: antes decía Lune 49,95 € y tramos «hasta 50 euros»; ahora precios de hoy, tramos de 20 a 40 € y la promo de Black Friday. Réplica en Facebook: 2026-W46-08.",
-    "aprobado_por": null,
-    "fecha": null
+    "notas": "Reescrita el 3-nov: antes decía Lune 49,95 € y tramos «hasta 50 euros»; ahora precios de hoy, tramos de 20 a 40 € y la promo de Black Friday. Réplica en Facebook: 2026-W46-08. 3-nov: Edu «dale con las publicaciones»; texto y fotos revisados por Claude.",
+    "aprobado_por": "Edu",
+    "fecha": "2026-11-03"
   },
   "publicacion": {
     "archivos": [
@@ -115,7 +115,7 @@
       "marca/fotos-ia/joyas/etoile-mayo-mano-v1-api.png",
       "marca/fotos-ia/joyas/collar-lune-cuello-v2-api.png",
       "marca/fotos-ia/campana-hora/smartwatch-despues.jpg",
-      "marca/fotos-ia/campana-bf/3-carrusel-4-oferta.jpg"
+      "marca/fotos-ia/campana-bf/0-tarjeta-oferta-4x5.jpg"
     ],
     "alt_text": "Nueve diapositivas con regalos para ella entre 20 y 40 euros: aros Boucle, anillo Duo, pendientes Larme, anillos Nuit y Étoile, collar Lune y reloj Lune.",
     "urls": [],

@@ -1,6 +1,6 @@
 {
   "id": "2026-W45-09-black-friday-carrusel",
-  "estado": "borrador",
+  "estado": "aprobado",
   "plataforma": "instagram",
   "formato": "carrusel",
   "pieza": "catalogo",
@@ -77,8 +77,8 @@
     "El descuento cae sobre la pieza más barata: el pie lo dice para que nadie espere otra cosa."
   ],
   "revision": {
-    "notas": "Sale el mismo día que arranca la campaña de Meta (5-nov). Se puede publicar con publicar.py (4 JPG 4:5).",
-    "aprobado_por": null,
-    "fecha": null
+    "notas": "Sale el mismo día que arranca la campaña de Meta (5-nov). Se puede publicar con publicar.py (4 JPG 4:5). 3-nov: Edu «dale con las publicaciones»; texto y fotos revisados por Claude.",
+    "aprobado_por": "Edu",
+    "fecha": "2026-11-03"
   }
 }

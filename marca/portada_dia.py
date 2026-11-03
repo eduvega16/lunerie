@@ -49,6 +49,22 @@ TOMAS = {
                 "frame cuts off just below her nose, her ear and jaw visible. On the wrist of the hand holding the "
                 "glass she wears {reloj-sepia}, clearly visible; on that hand {anillo-etoile}; in her ear "
                 "{pendientes-larme}. Oatmeal fine-knit top, blurred white tablecloth and greenery behind."),
+    # Carrusel «Un martes cualquiera» (3-nov, oficina/ideas/2026-11-03-cada-dia.md): las horas que faltan, con el Galet y
+    # el Perle, que no salen en las tres de la portada
+    "metro": ("3:4", ["reloj-galet", "anillo-nuit"],
+              "Morning commute in a bright, clean metro carriage: close-up of a woman's hand holding the vertical "
+              "stainless-steel pole, the sleeve of a camel wool coat pushed back. She wears {reloj-galet} on that wrist "
+              "and {anillo-nuit} on one finger. Her face is not in the frame. Soft blurred carriage interior behind, no "
+              "signs, no text, no logos."),
+    "trabajo": ("3:4", ["reloj-perle", "anillo-duo"],
+                "Late morning at a light wooden desk by a window: close-up of a woman's hands writing in an open linen "
+                "notebook with a pen, a laptop and a small glass of water blurred at the side. She wears {reloj-perle} "
+                "on her wrist and {anillo-duo} on one finger. Cream fine-knit sleeve. Her face is not in the frame."),
+    "mercado": ("3:4", ["reloj-lune", "anillo-etoile"],
+                "Midday at a neighbourhood food market: close-up of a woman's hand holding a brown paper bag full of "
+                "mandarins with green leaves, the other hand picking one up. She wears {reloj-lune} on her wrist, the "
+                "dial towards the camera, and {anillo-etoile} on one finger. White linen shirt sleeve, blurred fruit "
+                "stall behind, no signs, no text. Her face is not in the frame."),
 }
 
 

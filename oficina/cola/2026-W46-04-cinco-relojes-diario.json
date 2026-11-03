@@ -1,10 +1,10 @@
 {
   "id": "2026-W46-04-cinco-relojes-diario",
-  "estado": "borrador",
+  "estado": "aprobado",
   "plataforma": "instagram",
   "formato": "carrusel",
   "pieza": "catalogo",
-  "fecha_sugerida": "2026-11-10T19:30:00+01:00",
+  "fecha_sugerida": "2026-11-20T19:30:00+01:00",
   "gancho": "Cinco relojes pequeños, uno para cada día.",
   "copy": "Cinco relojes pequeños, uno para cada día.\n\nLune, 39,95 €. Piedras verdes y eslabones finos.\nSépia, 34,95 €. Esfera rectangular y correa marrón o negra.\nMaille, 39,95 €. Brazalete de malla fina.\nGalet, 34,95 €. Caja ovalada y brazalete de eslabones.\nPerle, 34,95 €. Esfera ovalada con perlas de imitación.\n\nCinco ideas de reloj de mujer, pequeñas, para ti o como regalo para ella. Envío gratis a península. Guárdalo para elegir con calma.\n\nImágenes creadas con IA.",
   "hashtags": [
@@ -84,8 +84,8 @@
     "Las fotos son 3:4 (salvo la del Lune, 4:5) y publicar.py las recorta todas a 4:5. Precios de la tienda de hoy: revisar antes de publicar."
   ],
   "revision": {
-    "notas": "Listo para publicar con publicar.py. Presenta la colección sin hablar de la oferta. Réplica en Facebook: 2026-W46-05.",
-    "aprobado_por": null,
-    "fecha": null
+    "notas": "Listo para publicar con publicar.py. Presenta la colección sin hablar de la oferta. Réplica en Facebook: 2026-W46-05. 3-nov: Edu «dale con las publicaciones»; texto y fotos revisados por Claude.",
+    "aprobado_por": "Edu",
+    "fecha": "2026-11-03"
   }
 }

@@ -40,11 +40,11 @@
     "Foto de IA con etiqueta; el anillo coincide con el real (verde oliva). Nuit lleva circonita: no decir piedra preciosa ni nombres de gemas.",
     "El PNG original no va a git (solo existe en este PC); publicar.py lo convierte a JPEG al publicar."
   ],
-  "estado": "borrador",
+  "estado": "aprobado",
   "revision": {
-    "notas": "Corregida el 3-nov: fecha 9-nov (también vale como relevo el domingo 8-nov si no están listas las diapositivas de cuidados), tallas y colores en el pie, línea de IA, enlace del perfil.",
-    "aprobado_por": null,
-    "fecha": null
+    "notas": "Corregida el 3-nov: fecha 9-nov (también vale como relevo el domingo 8-nov si no están listas las diapositivas de cuidados), tallas y colores en el pie, línea de IA, enlace del perfil. 3-nov: Edu «dale con las publicaciones»; texto y fotos revisados por Claude.",
+    "aprobado_por": "Edu",
+    "fecha": "2026-11-03"
   },
   "publicacion": {
     "archivos": [

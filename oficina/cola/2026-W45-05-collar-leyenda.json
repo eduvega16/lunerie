@@ -41,11 +41,11 @@
     "Ficha del collar: «piedras de colores», nunca «preciosas», «naturales» ni nombres de gemas.",
     "Convertida de reel a foto el 3-nov: la versión reel (Kling, 4 s, ~0,39 $) queda como opción si Edu aprueba el coste y hay saldo en el conector (0,55 créditos)."
   ],
-  "estado": "borrador",
+  "estado": "aprobado",
   "revision": {
-    "notas": "Corregida el 3-nov: de reel a foto (sin gasto), «cuentan que» al principio y precio actual. Listo para publicar con publicar.py.",
-    "aprobado_por": null,
-    "fecha": null
+    "notas": "Corregida el 3-nov: de reel a foto (sin gasto), «cuentan que» al principio y precio actual. Listo para publicar con publicar.py. 3-nov: Edu «dale con las publicaciones»; texto y fotos revisados por Claude.",
+    "aprobado_por": "Edu",
+    "fecha": "2026-11-03"
   },
   "publicacion": {
     "archivos": [

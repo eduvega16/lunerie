@@ -550,9 +550,23 @@ con Lune + Nuit + collar Lune (grande en el móvil) · mano en el pelo con Boucl
 en una terraza con Sépia + Étoile + Larme. `marca/portada_dia.py` (6 fotos, ~0,80 $; elegidas izquierda-1, centro-2 —en
 la 1 el Maille salía redondo— y derecha-2), archivos de Shopify `portada-dia-*.jpg`; en el móvil el collage va al
 revés (la grande a la izquierda). Volver a las de Navidad: `foto = 'portada-navidad-'` en `hero-navidad`.
+Más tarde (Edu: «más grandes y a todo el ancho»): en PC las tres a todo el ancho (`aspect-ratio: 2.35/1`, 27,5 % +
+46 % + 27,5 %) y en el móvil más grandes y con zoom hacia las joyas (`transform: scale` por foto, dentro de
+`.lu-hn__recorte` para no tapar el borde de papel).
 **Enfoque «para llevar cada día»** (Edu: en Instagram y en una campaña futura): ideas del estratega en
-`oficina/ideas/2026-11-03-cada-dia.md` (primero «Un martes cualquiera», carrusel de escenas con la hora; propone
-3 fotos sobrias más, ~0,4 $, pendiente del OK de Edu).
+`oficina/ideas/2026-11-03-cada-dia.md`. Hecho el carrusel **«Un martes cualquiera»** (`marca/martes.py` →
+`marca/fotos-ia/martes/1-7.jpg`): 6 horas del día (café, metro, trabajo, mercado, pausa, copa) con las 11 piezas y la
+tarjeta final «Un reloj que solo da la hora» (3 fotos nuevas con `portada_dia.py metro trabajo mercado`, ~0,40 $).
+**Redes (3-nov, OK de Edu «dale con las publicaciones»):** plan del community manager hasta el 20-nov en
+`oficina/cola` (26 piezas). **10 publicaciones de Instagram aprobadas y PROGRAMADAS** en el Programador de tareas de
+Windows de ESTE PC (`D:\LUNERIE`, carpeta «\Lunerie\»), con `oficina/publicar_programado.py` (pythonw, sin ventanas;
+registro en `oficina/publicaciones.log`, fuera de git): 4-nov Lune café · 5-nov carrusel Black Friday · 6-nov Galet ·
+9 Nuit · **10 «Un martes cualquiera»** · 12 collar · 13 regalos por precio · 15 Larme · 18 Sépia · 20 cinco relojes.
+Solo salen si el PC está encendido con la sesión abierta; si no, la pieza sigue «aprobado» y se publica a mano
+(`python oficina/publicar.py <id> --confirmar`). Ver: `python oficina/publicar_programado.py tareas`; quitar:
+`… quitar [id]`. **Al abrir sesión: mirar el log y que las publicadas pasen a «publicado»** (y hacer commit de la cola).
+A mano (Edu): stories con pegatinas, reels con música, Facebook (Business Suite) y editar el texto de los 3 posts del
+29-oct que dicen «Lune 49,95 €».
 **DÓNDE NOS QUEDAMOS (2-nov, noche) — leer esto primero; manda sobre los bloques de abajo.**
 - **EN PRODUCCIÓN (OK de Edu, 2-nov): portada en collage + BLACK FRIDAY.** `parte('hero-navidad')` en
   `lunerie-inicio.liquid`: las 3 fotos de Navidad montadas como **copias de papel** (borde irregular con `clip-path`
@@ -576,8 +590,17 @@ revés (la grande a la izquierda). Volver a las de Navidad: `foto = 'portada-nav
   prestan. Antes de gastar: clic real desde el móvil (anuncio → tienda) y ver por qué solo 11 de 82 clics llegaban.
 - **Collar con nombre (5.2): Edu quiere meterlo ya.** Muestra de **Yiwu Shangjie** (Alibaba): pedida el 9-oct, llegó el
   23-oct con caja de terciopelo verde. **3-nov:** Yiwu Shangjie ya no tiene el anuncio publicado (le dice a Edu que lo
-  sigue fabricando); Edu pasa otro proveedor, **QIUHAN** (Alibaba, producto 1601817911870). Alibaba pide captcha a Claude:
-  hacen falta capturas de Edu (precio por cantidad, muestra, envío a España, material, tipos de letra, valoraciones). **Falta de Edu:** enlace de Alibaba, fotos/vídeo de la muestra y la respuesta
+  sigue fabricando); Edu pasa otro proveedor, **QIUHAN** (Alibaba, producto 1601817911870; Alibaba pide captcha a
+  Claude, datos de la captura de Edu): **Yiwu Qiuhan Jewelry Company Ltd.**, 7 años, top vendedor UE, 4,6/5 (604
+  valoraciones de la tienda; este collar, sin reseñas), ≥97 % a tiempo, 36 % de recompra, España entre sus mercados ·
+  acero inoxidable con baño de oro 18K (así lo anuncian), nombre en letra de firma + lágrima de piedra del mes a un
+  lado, 3 colores · **4,56 €** (1-49 uds, con un 10 % hasta el 31-dic; 5,06 € sin él) · envío estándar **4,33 €**,
+  entrega garantizada **15 nov-11 dic** (lenta para Navidad: pedir precio del exprés) · ofrece dropshipping. Puesto en
+  España ~9 € + posible cargo de aduana. **Edu (3-nov):** personalización = letra + piedra; solo **oro y plata** (el oro
+  rosa, no por ahora); **la letra, la misma de la muestra de Yiwu Shangjie que ya tiene** (mandarle foto); **exprés: 24 €
+  y llega a principios de diciembre** → por pieza suelta se come el margen (coste ~28,6 €; CPA breakeven ~19 € a
+  59,95 €), así que exprés solo para un envío conjunto a España. Falta: plazo real de fabricación + envío estándar,
+  precio del exprés para 5-10 piezas juntas, largo de cadena y material (mensaje en inglés del 3-nov en la sesión). **Falta de Edu:** enlace de Alibaba, fotos/vídeo de la muestra y la respuesta
   del proveedor al mensaje en inglés (pedidos sueltos a España con nombre, coste y plazo DDP, sin tarjeta «THANK YOU»,
   lista diaria + seguimiento en 48 h, foto antes de enviar). Ficha: campo «Nombre» (máx. 10 letras) + mes/piedra +
   metal + casilla obligatoria, hecho en el tema sin app. Último pedido para Navidad ~1-dic.

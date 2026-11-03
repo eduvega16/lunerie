@@ -1,6 +1,6 @@
 {
   "id": "2026-W45-12-galet-diario",
-  "estado": "borrador",
+  "estado": "aprobado",
   "plataforma": "instagram",
   "formato": "foto",
   "pieza": "reloj-galet",
@@ -51,8 +51,8 @@
     "Es 3:4 y publicar.py la recorta a 4:5 (se pierde algo arriba y abajo)."
   ],
   "revision": {
-    "notas": "Listo para publicar con publicar.py. Tercer post propuesto. Las variantes dorado y plateado son las de la ficha.",
-    "aprobado_por": null,
-    "fecha": null
+    "notas": "Listo para publicar con publicar.py. Tercer post propuesto. Las variantes dorado y plateado son las de la ficha. 3-nov: Edu «dale con las publicaciones»; texto y fotos revisados por Claude.",
+    "aprobado_por": "Edu",
+    "fecha": "2026-11-03"
   }
 }

@@ -1,6 +1,6 @@
 {
   "id": "2026-W45-08-lune-cafe-hora",
-  "estado": "borrador",
+  "estado": "aprobado",
   "plataforma": "instagram",
   "formato": "foto",
   "pieza": "reloj-lune",
@@ -52,8 +52,8 @@
     "No decir sumergible. Sin plazo de Navidad ni oferta en este post (la oferta va en el del jueves)."
   ],
   "revision": {
-    "notas": "Listo para publicar con publicar.py cuando Edu lo apruebe. Primer post propuesto.",
-    "aprobado_por": null,
-    "fecha": null
+    "notas": "Listo para publicar con publicar.py cuando Edu lo apruebe. Primer post propuesto. 3-nov: Edu «dale con las publicaciones»; texto y fotos revisados por Claude.",
+    "aprobado_por": "Edu",
+    "fecha": "2026-11-03"
   }
 }

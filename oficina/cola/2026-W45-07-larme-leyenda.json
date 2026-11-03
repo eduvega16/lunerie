@@ -41,11 +41,11 @@
     "Medidas y plazo de Larme sin confirmar (CLAUDE.md, 5.4): el pie no da plazo ni tamaño.",
     "Convertida de reel a foto el 3-nov: la versión reel (Kling, ~0,39 $) queda como opción si Edu aprueba el coste."
   ],
-  "estado": "borrador",
+  "estado": "aprobado",
   "revision": {
-    "notas": "Corregida el 3-nov: de reel a foto (sin gasto), precio actual y fecha 15-nov. Listo para publicar con publicar.py.",
-    "aprobado_por": null,
-    "fecha": null
+    "notas": "Corregida el 3-nov: de reel a foto (sin gasto), precio actual y fecha 15-nov. Listo para publicar con publicar.py. 3-nov: Edu «dale con las publicaciones»; texto y fotos revisados por Claude.",
+    "aprobado_por": "Edu",
+    "fecha": "2026-11-03"
   },
   "publicacion": {
     "archivos": [

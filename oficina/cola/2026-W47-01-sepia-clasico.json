@@ -1,6 +1,6 @@
 {
   "id": "2026-W47-01-sepia-clasico",
-  "estado": "borrador",
+  "estado": "aprobado",
   "plataforma": "instagram",
   "formato": "foto",
   "pieza": "reloj-sepia",
@@ -50,8 +50,8 @@
     "«Con camisa» es una sugerencia de uso, no una promesa de ajuste."
   ],
   "revision": {
-    "notas": "Pieza de reserva (no está en el calendario de dos semanas): entra si Edu quiere un post más de producto.",
-    "aprobado_por": null,
-    "fecha": null
+    "notas": "Pieza de reserva (no está en el calendario de dos semanas): entra si Edu quiere un post más de producto. 3-nov: Edu «dale con las publicaciones»; texto y fotos revisados por Claude.",
+    "aprobado_por": "Edu",
+    "fecha": "2026-11-03"
   }
 }

@@ -570,7 +570,10 @@ A mano (Edu): stories con pegatinas, reels con música, Facebook (Business Suite
 **LO PRIMERO EL 4-NOV (Edu, al irse a dormir):** rehacer las fotos del Collar Signé de **Carmen** y **Elena**
 (`marca/collar_ia.py modelo-hombro modelo-tirantes --n 2`, luego `python productos/collar_signe.py --fotos-ia` adaptado):
 (1) la lágrima parece pegada al nombre y en el real cuelga suelta de la cadena, después del nombre (prompt `DISENO` ya
-corregido); (2) el reloj Lune se ve muy pequeño (muñeca más cerca de la cámara, sin agrandarlo respecto a ella);
+corregido); (2) el reloj Lune se ve muy pequeño: **es algo más grande** y yo usaba de referencia una foto hecha con IA
+(`lune-verde-producto.jpg`) y pedía «small, do not make bigger» → usar las **fotos reales** (las 2 del proveedor de la
+ficha, `S6514a93…` y `S0196b43…`, y las de las amigas `lune-opinion-1/2/3/5.jpg`) y quitar esa frase de los prompts
+(`portada_navidad.py` `PIEZA`, `portada_dia.py` `ESTILO`, `collar_ia.py`); lo mismo con Maille, Galet, Perle y Duo;
 (3) el anillo Nuit no es del todo así (mirar `anillo-nuit.jpg` a tamaño real y describirlo mejor en `PIEZA`).
 Revisar también la de Marta (producto) por lo mismo de la lágrima. Y mirar `oficina/publicaciones.log`: el 4-nov a las
 19:30 sale el primer post programado (Lune con café).

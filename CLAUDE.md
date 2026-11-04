@@ -600,8 +600,11 @@ y otra que ponía «Zlema». Higgsfield bloqueó una por filtro (top palabra de 
 se controla; ~39,7 dB a 1600 px). Lo que sí ayuda: generar en 4K y subir JPEG calidad 97 **sin submuestreo de color**
 (`subsampling=0`; ya en `collar_signe.py`). Faltan por pasar a esa calidad: `normalizar_dsers.py`, `campana_bf.py`,
 `martes.py`, `revelar.py`, `oficina/publicar.py`, `tema/fotos_prueba.py` (guardan a 90-92).
-**Falta:** fotos reales de Maille, Galet, Perle y Duo en `marca/referencias-reales/` (su 1.ª foto de ficha es de IA)
-antes de volver a usarlas en `portada_dia.py` / `portada_navidad.py`.
+**Referencias reales de Maille, Galet, Perle y Duo (4-nov, noche):** sacadas de las fotos del proveedor de cada ficha
+(las de después de las 2 de IA), solo en dorado: `reloj-maille-1..3`, `reloj-galet-1..2` (sin foto en la muñeca),
+`reloj-perle-1..3`, `anillo-duo-1..3` en `marca/referencias-reales/`. Las fotos reales de la muestra del collar **no van
+a la ficha** (Edu, 4-nov). `portada_dia.py` / `portada_navidad.py` aún leen la 1.ª foto de una carpeta: para usarlas,
+pasarles estas (o hacer que manden todas, como `collar_ia.py`).
 
 **DÓNDE NOS QUEDAMOS (2-nov, noche) — leer esto primero; manda sobre los bloques de abajo.**
 - **EN PRODUCCIÓN (OK de Edu, 2-nov): portada en collage + BLACK FRIDAY.** `parte('hero-navidad')` en

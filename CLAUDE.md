@@ -576,7 +576,12 @@ se estrecha, piedra a lo largo del dedo. `PIEZA` de Lune y Nuit reescritas (en `
 piedras del Lune **verde oscuro con vetas negras**: se arreglan en local con **`marca/piedras_lune.py`** (OpenCV, gratis;
 verde medio con vetas claras, comparar con `reloj-lune-2.jpg`). Elegidas `modelo-hombro-1-piedras` (Carmen) y
 `modelo-tirantes-2` (Elena), cambiadas en su sitio con `python productos/collar_signe.py --cambiar <toma> <posición> …`.
-Las anteriores quedan como `*-v1.png`. La de Marta estaba bien (no se tocó). Coste: 4 fotos, ~0,52 $.
+Las anteriores quedan como `*-v1.png`. La de Marta estaba bien (no se tocó).
+**Corrección de Edu (4-nov): el collar es ASIMÉTRICO** — el nombre va en diagonal en un lado de la cadena (a la izquierda
+de la foto) y la lágrima cuelga recta en el centro, en el punto más bajo (como `collar-signe-1.jpg` y la de Marta); nada de
+nombre horizontal en el centro con la lágrima a un lado. `DISENO` en `collar_ia.py` ya lo dice. Arreglado **editando**
+las dos fotos elegidas (tomas `editar-hombro` / `editar-tirantes`: cambia solo el collar y conserva reloj, anillo y aros)
+→ en la ficha `editar-hombro-1` (Carmen) y `editar-tirantes-2` (Elena). Coste total del día: 8 fotos, ~1,05 $.
 **Falta:** fotos reales de Maille, Galet, Perle y Duo en `marca/referencias-reales/` (su 1.ª foto de ficha es de IA)
 antes de volver a usarlas en `portada_dia.py` / `portada_navidad.py`.
 

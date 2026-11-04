@@ -1,6 +1,6 @@
 {
   "id": "2026-W45-08-lune-cafe-hora",
-  "estado": "aprobado",
+  "estado": "publicado",
   "plataforma": "instagram",
   "formato": "foto",
   "pieza": "reloj-lune",
@@ -38,7 +38,11 @@
     ],
     "urls": [],
     "alt_text": "Muñeca de mujer sobre una mesa de madera, junto a un libro abierto y una taza de café, con el reloj Lune dorado de piedras verdes y un jersey de punto crema.",
-    "ia": true
+    "ia": true,
+    "resultado": {
+      "media_id": "17910744177581879",
+      "fecha": "2026-11-04T17:30:25+0100"
+    }
   },
   "origen": {
     "biblioteca": "",

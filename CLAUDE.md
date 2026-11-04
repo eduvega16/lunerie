@@ -612,7 +612,11 @@ JPEG 97 sin submuestreo, `fileUpdate` en su sitio; la variante «Dorado» de Mai
 pasarles estas (o hacer que manden todas, como `collar_ia.py`).
 
 **4-nov (tarde): biblioteca ampliada, anuncios animados y Instagram roto.**
-- **INSTAGRAM NO PUBLICA:** al ir a publicar el post del café (Edu: «no esperamos a las 7»), Meta respondió error 190 y,
+- **ARREGLADO (4-nov, ~17:30): la clave de Instagram volvió a funcionar sola** (Edu pidió probar de nuevo; la app se llama
+  «Lunerie Claude Publisher»). Post del café publicado: https://www.instagram.com/p/DfU48aClgsA/. Las tareas
+  programadas siguen en pie (la siguiente, el carrusel del 5-nov a las 12:30). `renovar_token.py` queda por si vuelve a
+  fallar. Lo que pasó antes:
+- **(histórico) INSTAGRAM NO PUBLICABA:** al ir a publicar el post del café (Edu: «no esperamos a las 7»), Meta respondió error 190 y,
   con el token de la app, «API access blocked». **Las tareas programadas van a fallar hasta arreglarlo** (no publican
   nada; la pieza sigue «aprobado»). La del 4-nov a las 19:30 se quitó; foto y texto para subirla a mano en
   `oficina/salida/2026-W45-08-lune-cafe-hora/`. Arreglo (lo hace Edu, en su cuenta): mirar avisos de la app «Lunerie

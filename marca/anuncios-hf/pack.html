@@ -1,0 +1,83 @@
+<!doctype html>
+<!-- Anuncio «Venta cruzada» (formato 25 de biblioteca/formatos-anuncio.json): el pack «A juego» del inicio.
+     «Por separado» es la suma real de los dos precios (sin tachar: no es un precio anterior). Precios y pack desde
+     assets/datos.js (preparar.py los calcula como Shopify). 9:16, 8 s, sin música. -->
+<html lang="es" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/gsap.min.js"></script>
+    <script src="assets/datos.js"></script>
+    <link rel="stylesheet" href="assets/comun.css" />
+    <style>
+      #pregunta { position: absolute; top: 300px; left: 0; right: 0; text-align: center; font: 400 92px/1 var(--serif); }
+      #pregunta em { font-style: italic; }
+      #tarjeta { position: absolute; left: 80px; right: 80px; top: 450px; height: 770px; border-radius: 40px; background: #fff;
+                 box-shadow: 0 24px 70px rgba(22,32,27,.10); padding: 48px 48px 0; }
+      #tarjeta .ceja { color: var(--oro); text-align: center; font-size: 26px; }
+      #tarjeta .sub { text-align: center; font: 400 30px/1 var(--sans); color: #5b6560; margin-top: 16px; }
+      .piezas { display: flex; align-items: center; justify-content: center; gap: 22px; margin-top: 34px; }
+      .tile { width: 330px; text-align: center; }
+      .tile .foto { height: 260px; border-radius: 22px; background: var(--niebla); overflow: hidden; }
+      .tile .foto img { width: 100%; height: 100%; object-fit: cover; mix-blend-mode: multiply; border-radius: 22px; }
+      .tile .nombre { font: 500 34px/1 var(--serif); margin-top: 16px; }
+      .tile .precio { font: 400 28px/1 var(--sans); color: #5b6560; margin-top: 8px; }
+      #mas { width: 64px; height: 64px; border-radius: 50%; background: var(--tinta); color: #fff; font: 300 46px/60px var(--sans); text-align: center; flex: none; margin-top: -70px; }
+      #precios { display: flex; align-items: baseline; justify-content: center; gap: 30px; margin-top: 30px; }
+      #separado { font: 400 30px/1 var(--sans); color: #7b847f; }
+      #juntos { font: 500 66px/1 var(--serif); }
+      #boton { position: absolute; left: 48px; right: 48px; bottom: 44px; height: 96px; background: var(--verde); color: #fff;
+               font: 500 30px/96px var(--sans); letter-spacing: .16em; text-align: center; text-transform: uppercase; }
+      #toque { position: absolute; left: 600px; top: 1124px; width: 110px; height: 110px; margin: -55px 0 0 -55px; border-radius: 50%;
+               background: rgba(22,32,27,.22); opacity: 0; }
+      #aviso { position: absolute; left: 150px; right: 150px; top: 990px; height: 80px; border-radius: 40px; background: var(--tinta); color: #fff;
+               font: 400 30px/80px var(--sans); text-align: center; opacity: 0; }
+      #promo { position: absolute; top: 300px; left: 0; right: 0; text-align: center; opacity: 0; background: var(--niebla); padding-bottom: 20px; }
+      #promo .ceja { font-size: 26px; }
+      #promo p { font: 400 32px/1.3 var(--sans); margin-top: 12px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="8" data-width="1080" data-height="1920">
+      <div class="capa clip" data-start="0" data-duration="8">
+        <div id="pregunta">¿Y si van <em>a juego?</em></div>
+        <div id="tarjeta">
+          <div class="ceja">Pack A juego</div>
+          <div class="sub">Las mismas piedras ovaladas</div>
+          <div class="piezas">
+            <div class="tile" id="t1"><div class="foto"><img src="assets/img/reloj-lune-blanco.jpg" style="object-position: 50% 50%; transform: scale(2.4)" alt="" /></div><div class="nombre">Reloj Lune</div><div class="precio" data-precio="reloj-lune"></div></div>
+            <div id="mas">+</div>
+            <div class="tile" id="t2"><div class="foto"><img src="assets/img/collar-lune-blanco.jpg" style="transform: scale(1.15)" alt="" /></div><div class="nombre">Collar Lune</div><div class="precio" data-precio="collar-lune"></div></div>
+          </div>
+          <div id="precios"><span id="separado"></span><span id="juntos"></span></div>
+          <div id="boton">Añadir el pack</div>
+        </div>
+        <div id="toque"></div>
+        <div id="aviso">Añadido a la cesta · 2 piezas</div>
+        <div id="promo"><div class="ceja roja">Black Friday</div><p>La 2.ª pieza al 50 % y la 3.ª, gratis.</p></div>
+      </div>
+    </div>
+    <script>
+      document.querySelectorAll("[data-precio]").forEach((e) => (e.textContent = window.LU.precios[e.dataset.precio]));
+      document.getElementById("separado").textContent = "Por separado " + window.LU.pack_a_juego.separado;
+      document.getElementById("juntos").textContent = "Juntos " + window.LU.pack_a_juego.juntos;
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#tarjeta", { y: 120, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 0.3);
+      tl.fromTo("#t1", { scale: 0.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(2)" }, 0.8);
+      tl.fromTo("#mas", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(3)" }, 1.15);
+      tl.fromTo("#t2", { scale: 0.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(2)" }, 1.4);
+      tl.fromTo("#separado", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 2.0);
+      tl.fromTo("#juntos", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 2.5);
+      // el dedo pulsa el botón
+      tl.fromTo("#toque", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.25, ease: "power2.out" }, 3.6);
+      tl.to("#boton", { backgroundColor: "#004a2c", duration: 0.12 }, 3.65);
+      tl.to("#toque", { opacity: 0, scale: 1.4, duration: 0.35 }, 3.9);
+      tl.to("#boton", { backgroundColor: "#006039", duration: 0.2 }, 3.9);
+      tl.fromTo("#aviso", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, 4.1);
+      tl.to("#aviso", { opacity: 0, duration: 0.3 }, 5.4);
+      tl.to("#pregunta", { opacity: 0, duration: 0.3 }, 5.5);
+      tl.fromTo("#promo", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 5.7);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

@@ -27,3 +27,12 @@ marca/fotos-ia/joyas/collar-lune-cuello-v1.png
 ssstik.io_*
 oficina/publicaciones.log
 marca/fotos-ia/collar/*.png
+
+# anuncios animados (HyperFrames, 4-nov): sin node_modules ni vídeos de prueba
+marca/anuncios-hf/node_modules/
+marca/anuncios-hf/renders/
+marca/anuncios-hf/.hyperframes/
+marca/anuncios-hf/assets/img/
+marca/anuncios-hf/assets/fonts/
+marca/anuncios-hf/assets/gsap.min.js
+marca/anuncios-hf/index.html

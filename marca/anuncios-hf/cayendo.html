@@ -1,0 +1,56 @@
+<!doctype html>
+<!-- Anuncio «Piezas cayendo» (como el de SAVA Amsterdam en TikTok; biblioteca/formatos-anuncio.json, ejemplos_vistos).
+     Collar Lune, reloj Lune y anillo Nuit caen uno a uno. Sin bolsa con logo: en drop no hay packaging Lunerie.
+     Las fotos son las de la tienda con el fondo pasado a blanco (multiply sobre niebla). 9:16, 8 s, sin música. -->
+<html lang="es" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/gsap.min.js"></script>
+    <script src="assets/datos.js"></script>
+    <link rel="stylesheet" href="assets/comun.css" />
+    <style>
+      #cabeza { position: absolute; top: 290px; left: 0; right: 0; text-align: center; }
+      #cabeza h1 { font: 400 100px/1 var(--serif); margin-top: 26px; }
+      #cabeza h1 em { font-style: italic; }
+      #cabeza p { font: 400 34px/1.35 var(--sans); margin-top: 22px; color: #2c3530; }
+      .suelta { position: absolute; filter: drop-shadow(0 16px 18px rgba(22,32,27,.16)); }
+      #collar { left: 280px; top: 585px; width: 520px; }
+      #reloj  { left: 470px; top: 600px; height: 600px; }
+      #anillo { left: 600px; top: 900px; width: 250px; }
+      #pie { display: none; position: absolute; top: 1190px; left: 0; right: 0; text-align: center; font: 500 30px/1 var(--sans); letter-spacing: .14em; color: var(--verde); text-transform: uppercase; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="8" data-width="1080" data-height="1920">
+      <div class="capa clip" data-start="0" data-duration="8">
+        <div id="cabeza">
+          <div class="ceja roja">Black Friday</div>
+          <h1>3x2 en relojes <em>y joyas</em></h1>
+          <p>La 2.ª pieza al 50 % y la 3.ª, gratis.<br />Hasta el 5 de diciembre.</p>
+        </div>
+      </div>
+      <div class="capa clip" data-start="0" data-duration="8">
+        <img id="collar" class="suelta" src="assets/img/collar-lune-recorte.png" alt="" />
+        <img id="reloj" class="suelta" src="assets/img/reloj-lune-recorte.png" alt="" />
+        <img id="anillo" class="suelta" src="assets/img/anillo-nuit-recorte.png" alt="" />
+        <div id="pie">Hasta el 5 de diciembre · lunerie.es</div>
+      </div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      // cada pieza cae desde arriba, rota un poco y se asienta con un rebote corto
+      const caer = (sel, t, giro0, giro1) => {
+        tl.fromTo(sel, { y: -1500, rotation: giro0, opacity: 1 }, { y: 0, rotation: giro1, duration: 0.62, ease: "power2.in" }, t);
+        tl.to(sel, { y: -18, duration: 0.12, ease: "power1.out" }, t + 0.62);
+        tl.to(sel, { y: 0, duration: 0.16, ease: "power1.in" }, t + 0.74);
+      };
+      caer("#collar", 0.35, -14, 0);
+      caer("#reloj", 1.35, 34, 16);
+      caer("#anillo", 2.25, -30, -6);
+            // al final, un acercamiento lento a las tres piezas
+      tl.fromTo(["#collar", "#reloj", "#anillo"], { scale: 1 }, { scale: 1.05, duration: 4.2, ease: "none", transformOrigin: "50% 40%" }, 3.6);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

@@ -611,6 +611,26 @@ nuevo **`python productos/cambiar_fotos.py <handle> <imagen> <posición> …`** 
 JPEG 97 sin submuestreo, `fileUpdate` en su sitio; la variante «Dorado» de Maille y Galet sigue con su foto). `portada_dia.py` / `portada_navidad.py` aún leen la 1.ª foto de una carpeta: para usarlas,
 pasarles estas (o hacer que manden todas, como `collar_ia.py`).
 
+**4-nov (tarde): biblioteca ampliada, anuncios animados y Instagram roto.**
+- **INSTAGRAM NO PUBLICA:** al ir a publicar el post del café (Edu: «no esperamos a las 7»), Meta respondió error 190 y,
+  con el token de la app, «API access blocked». **Las tareas programadas van a fallar hasta arreglarlo** (no publican
+  nada; la pieza sigue «aprobado»). La del 4-nov a las 19:30 se quitó; foto y texto para subirla a mano en
+  `oficina/salida/2026-W45-08-lune-cafe-hora/`. Arreglo (lo hace Edu, en su cuenta): mirar avisos de la app «Lunerie
+  Vega» en developers.facebook.com → generar token de usuario en el Explorador de la API Graph → pegarlo en
+  `.env.local` como `IG_TOKEN_USUARIO=` → `python oficina/renovar_token.py` (nuevo: lo cambia por el de página).
+  Después, volver a programar la del café (`publicar_programado.py`).
+- **Biblioteca (capturas de Edu):** `biblioteca/formatos-anuncio.json` (25 formatos de anuncio de Black Friday con su
+  adaptación y si encajan), `ideas-reels.json` («Déjame limpiar mi cámara», storyboard UGC, «solo el 1 % lo pausa»,
+  «comenta X») y `herramientas.json` (HyperFrames, Open Higgsfield, VoiceStudio…; ninguno instalado salvo HyperFrames).
+- **HyperFrames instalado** (HeyGen, Apache 2.0, v0.9.12, telemetría desactivada) en `marca/anuncios-hf/` (node_modules
+  fuera de git): anuncios animados hechos con HTML + GSAP, **sin créditos de IA**. `preparar.py` baja fotos y precios
+  reales de la tienda (`assets/datos.js`); cada anuncio es un `.html`; para mirar fotogramas, copiarlo a `index.html` y
+  `npx hyperframes snapshot --at …`; para grabar, `npx hyperframes render -c <anuncio>.html -q delivery -o …`. Hechos 5
+  (9:16 + recorte 4:5, en `marca/fotos-ia/campana-bf/` 9-13): pantalla de bloqueo, notas del móvil, «Lo sentimos, mamá»,
+  piezas cayendo (recortes PNG con fondo transparente) y pack a juego. Textos y destinos en
+  `anuncios/campana-black-friday.md`. Zona segura en 9:16: texto entre y=270 y y=1248 (abajo tapan los botones de Meta).
+  Ojo: `mix-blend-mode` dentro de algo que GSAP mueve no funciona (se aísla): usar recortes PNG.
+
 **DÓNDE NOS QUEDAMOS (2-nov, noche) — leer esto primero; manda sobre los bloques de abajo.**
 - **EN PRODUCCIÓN (OK de Edu, 2-nov): portada en collage + BLACK FRIDAY.** `parte('hero-navidad')` en
   `lunerie-inicio.liquid`: las 3 fotos de Navidad montadas como **copias de papel** (borde irregular con `clip-path`

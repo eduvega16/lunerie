@@ -1,0 +1,124 @@
+<!doctype html>
+<!-- Anuncio «Notas del móvil» (formato 16 de biblioteca/formatos-anuncio.json): la lista de regalos se escribe sola y
+     cada línea se tacha con su pieza. 9:16, 10 s, sin música. Precios desde assets/datos.js (los de la tienda). -->
+<html lang="es" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/gsap.min.js"></script>
+    <script src="assets/datos.js"></script>
+    <link rel="stylesheet" href="assets/comun.css" />
+    <style>
+      #papel { background: #fbfaf7; }
+      #barra { position: absolute; top: 190px; left: 64px; right: 64px; display: flex; justify-content: space-between;
+               font: 500 42px/1 var(--sans); color: var(--oro); }
+      #nota { position: absolute; top: 300px; left: 80px; right: 64px; }
+      #nota h1 { font: 700 84px/1.05 var(--sans); letter-spacing: -.01em; }
+      #nota .fecha { font: 400 30px/1 var(--sans); color: #9a9a96; margin-top: 18px; }
+      .fila { position: absolute; left: 80px; right: 64px; height: 150px; display: flex; align-items: center; gap: 30px; }
+      .caja { width: 64px; height: 64px; border-radius: 50%; border: 3px solid #c9c9c4; flex: none; position: relative; }
+      .caja .lleno { position: absolute; inset: -3px; border-radius: 50%; background: var(--oro); opacity: 0; }
+      .caja .lleno::after { content: ""; position: absolute; left: 22px; top: 12px; width: 15px; height: 28px;
+                            border: solid #fff; border-width: 0 5px 5px 0; transform: rotate(45deg); }
+      .frase { font: 400 50px/1.2 var(--sans); flex: 1; white-space: nowrap; }
+      .frase b { font-weight: 600; }
+      .mini { width: 140px; height: 140px; border-radius: 50%; flex: none; background: #fff center / cover; opacity: 0;
+              box-shadow: 0 6px 18px rgba(0,0,0,.08); }
+      #cierre-nota { position: absolute; left: 80px; right: 64px; top: 1170px; font: italic 500 66px/1.15 var(--serif); color: var(--verde); }
+      /* tarjeta final */
+      #final { background: var(--niebla); opacity: 0; }
+      #final .ceja { position: absolute; top: 290px; left: 0; right: 0; text-align: center; }
+      #final h2 { position: absolute; top: 345px; left: 0; right: 0; text-align: center; font: 400 80px/1.05 var(--serif); }
+      #final h2 em { font-style: italic; }
+      .rejilla { position: absolute; top: 560px; left: 70px; right: 70px; display: grid; grid-template-columns: 1fr 1fr; gap: 26px 30px; }
+      .celda { text-align: center; }
+      .celda .foto { height: 250px; border-radius: 6px; background: #fff center / cover; }
+      .celda .nombre { font: 500 34px/1 var(--serif); letter-spacing: .02em; margin-top: 18px; }
+      .celda .precio { font: 400 30px/1 var(--sans); margin-top: 10px; color: #3a4440; }
+      #final .pie { position: absolute; top: 460px; left: 0; right: 0; text-align: center; font: 400 32px/1.4 var(--sans); }
+      #final .web { position: absolute; top: 1530px; left: 0; right: 0; text-align: center; font: 500 30px/1 var(--sans); letter-spacing: .2em; color: var(--verde); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="10" data-width="1080" data-height="1920">
+      <div id="papel" class="capa clip" data-start="0" data-duration="10"></div>
+      <div class="clip capa" data-start="0" data-duration="10">
+        <div id="barra"><span>‹ Notas</span><span>Listo</span></div>
+        <div id="nota">
+          <h1>Regalos de Navidad</h1>
+          <div class="fecha">noviembre de 2026</div>
+        </div>
+        <div id="fila-1" class="fila" style="top: 490px">
+          <div class="caja"><div class="lleno"></div></div>
+          <div class="frase" data-escribe><b>Mamá</b> — el reloj Lune</div>
+          <div class="mini" style="background-image: url('assets/img/reloj-lune-blanco.jpg'); background-size: 560%"></div>
+        </div>
+        <div id="fila-2" class="fila" style="top: 655px">
+          <div class="caja"><div class="lleno"></div></div>
+          <div class="frase" data-escribe><b>Mi hermana</b> — aros Boucle</div>
+          <div class="mini" style="background-image: url('assets/img/aros-boucle-blanco.jpg'); background-size: 140%"></div>
+        </div>
+        <div id="fila-3" class="fila" style="top: 820px">
+          <div class="caja"><div class="lleno"></div></div>
+          <div class="frase" data-escribe><b>Clara</b> (amiga invisible) — Nuit</div>
+          <div class="mini" style="background-image: url('assets/img/anillo-nuit-blanco.jpg'); background-size: 150%; background-position: 55% 50%"></div>
+        </div>
+        <div id="fila-4" class="fila" style="top: 985px">
+          <div class="caja"><div class="lleno"></div></div>
+          <div class="frase" data-escribe><b>Yo</b> — el Perle (shhh)</div>
+          <div class="mini" style="background-image: url('assets/img/reloj-perle-blanco.jpg'); background-size: 320%"></div>
+        </div>
+        <div id="cierre-nota" data-escribe>3x2 en Lunerie: la 3.ª, gratis.</div>
+      </div>
+
+      <div id="final" class="capa clip" data-start="7.4" data-duration="2.6">
+        <div class="ceja roja">Black Friday</div>
+        <h2>La 2.ª al 50 % <em>y la 3.ª, gratis.</em></h2>
+        <div class="rejilla">
+          <div class="celda"><div class="foto" style="background-image: url('assets/img/reloj-lune-blanco.jpg'); background-size: 230%"></div><div class="nombre">Reloj Lune</div><div class="precio" data-precio="reloj-lune"></div></div>
+          <div class="celda"><div class="foto" style="background-image: url('assets/img/aros-boucle-blanco.jpg'); background-size: 120%"></div><div class="nombre">Aros Boucle</div><div class="precio" data-precio="aros-boucle"></div></div>
+          <div class="celda"><div class="foto" style="background-image: url('assets/img/anillo-nuit-blanco.jpg'); background-size: 120%"></div><div class="nombre">Anillo Nuit</div><div class="precio" data-precio="anillo-nuit"></div></div>
+          <div class="celda"><div class="foto" style="background-image: url('assets/img/reloj-perle-blanco.jpg'); background-size: 170%"></div><div class="nombre">Reloj Perle</div><div class="precio" data-precio="reloj-perle"></div></div>
+        </div>
+        <div class="pie">Hasta el 5 de diciembre · Envío gratis a península</div>
+        </div>
+    </div>
+    <script>
+      // precios reales (assets/datos.js, lo escribe preparar.py)
+      document.querySelectorAll("[data-precio]").forEach((e) => (e.textContent = window.LU.precios[e.dataset.precio]));
+      // cada letra en su <span> para «escribirla» (determinista: solo depende del tiempo de la línea)
+      function letras(el) {
+        const out = [];
+        const recorrer = (n) => {
+          [...n.childNodes].forEach((c) => {
+            if (c.nodeType === 3) {
+              const frag = document.createDocumentFragment();
+              [...c.textContent].forEach((ch) => { const s = document.createElement("span"); s.textContent = ch; s.style.opacity = 0; frag.appendChild(s); out.push(s); });
+              n.replaceChild(frag, c);
+            } else recorrer(c);
+          });
+        };
+        recorrer(el);
+        return out;
+      }
+      const tl = gsap.timeline({ paused: true });
+      const vel = 0.034; // segundos por letra
+      let t = 0.35;
+      [1, 2, 3, 4].forEach((i) => {
+        const fila = document.getElementById(`fila-${i}`);
+        const ls = letras(fila.querySelector("[data-escribe]"));
+        tl.to(ls, { opacity: 1, duration: 0.01, stagger: vel }, t);
+        t += ls.length * vel + 0.12;
+        tl.to(fila.querySelector(".lleno"), { opacity: 1, duration: 0.18 }, t);
+        tl.fromTo(fila.querySelector(".lleno"), { scale: 0.4 }, { scale: 1, duration: 0.3, ease: "back.out(3)" }, t);
+        tl.fromTo(fila.querySelector(".mini"), { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2)" }, t + 0.05);
+        t += 0.35;
+      });
+      const cierre = letras(document.getElementById("cierre-nota"));
+      tl.to(cierre, { opacity: 1, duration: 0.01, stagger: vel }, t + 0.1);
+      tl.fromTo("#final", { opacity: 0 }, { opacity: 1, duration: 0.45, ease: "power2.out" }, 7.4);
+      tl.fromTo(".celda", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, stagger: 0.08, ease: "power3.out" }, 7.55);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

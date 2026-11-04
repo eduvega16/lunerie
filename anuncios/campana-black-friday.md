@@ -71,6 +71,44 @@ Pendientes de los vídeos reales de Edu (se añaden en el mismo conjunto cuando 
 
 **8 · Vídeo de la oferta** · mismo texto y título que el 1.
 
+### Anuncios animados nuevos (4-nov, HyperFrames, sin créditos de IA)
+
+Formatos de `biblioteca/formatos-anuncio.json`, hechos con código en `marca/anuncios-hf/` (un `.html` por anuncio;
+`python marca/anuncios-hf/preparar.py` vuelve a leer fotos y precios de la tienda y luego
+`npx hyperframes render -c <anuncio>.html`). Salen en `marca/fotos-ia/campana-bf/` en **9:16** (Reels/Stories) y
+**4:5** (feed, recorte del mismo vídeo). Sin música (la pone Meta). Las fotos de fondo de 9 y 11 son de IA.
+
+| # | id (`utm_content`) | Creatividad | Destino |
+|---|---|---|---|
+| 9 | `bloqueo` | `9-bloqueo-9x16/4x5.mp4` (pantalla de bloqueo con avisos) | inicio |
+| 10 | `notas` | `10-notas-9x16/4x5.mp4` (lista de regalos en las notas del móvil) | inicio |
+| 11 | `lo-sentimos` | `11-lo-sentimos-9x16/4x5.mp4` («Lo sentimos, mamá. Este año no es colonia.») | `/products/reloj-lune` |
+| 12 | `piezas-cayendo` | `12-piezas-cayendo-9x16/4x5.mp4` (collar, reloj y anillo caen, como el de SAVA) | inicio |
+| 13 | `pack-video` | `13-pack-a-juego-9x16/4x5.mp4` (tarjeta del pack y botón) | inicio, en los packs (`/#lu-packs-t`) |
+
+**9 · Pantalla de bloqueo** · título: *La 3.ª pieza, gratis*
+> «Este año no me regales nada.» Ya. Black Friday en Lunerie: la 2.ª pieza al 50 % y la 3.ª, gratis, mezclando relojes
+> y joyas. Hasta el 5 de diciembre, el último día para que llegue en Navidad. Envío gratis a península.
+
+**10 · Notas del móvil** · título: *Tu lista de regalos, resuelta*
+> Mamá, tu hermana, la amiga invisible… y algo para ti. Relojes pequeños y joyas con piedras de color desde 19,95 €. Por
+> Black Friday, la 2.ª pieza al 50 % y la 3.ª, gratis. Hasta el 5 de diciembre.
+
+**11 · Lo sentimos, mamá** · título: *Reloj Lune · 39,95 €*
+> Este año, ni colonia ni pijama: el reloj Lune. Pequeño, ovalado y con seis piedras verdes; se lleva como una joya.
+> 39,95 € y, por Black Friday, la 2.ª pieza al 50 %. Envío gratis a península.
+
+**12 · Piezas cayendo** · título: *3x2 en relojes y joyas*
+> El collar Lune, el reloj Lune y el anillo Nuit. Black Friday: la 2.ª pieza al 50 % y la 3.ª, gratis. Mezcla lo que
+> quieras: el descuento se aplica solo en la cesta. Hasta el 5 de diciembre.
+
+**13 · Pack a juego (vídeo)** · título: *Reloj y collar Lune · 57,43 €*
+> Las mismas piedras ovaladas en el reloj y en el collar. Juntos, 57,43 € (74,90 € por separado), porque por Black
+> Friday la 2.ª pieza va al 50 %. Envío gratis a península.
+
+Si cambia un precio: `preparar.py` + volver a grabar los vídeos, y cambiar el precio en estos textos («desde 19,95 €»
+del 10 es el más barato de la tienda hoy: aros Boucle y anillo Duo).
+
 ## Reglas (no cambian)
 - KILL / ESCALAR como en CLAUDE.md, apartado 7, pero con el margen por pedido de la promo (~15-20 €): si a los 4 días
   no hay carritos, el problema no es el presupuesto.

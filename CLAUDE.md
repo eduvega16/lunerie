@@ -582,6 +582,11 @@ de la foto) y la lágrima cuelga recta en el centro, en el punto más bajo (como
 nombre horizontal en el centro con la lágrima a un lado. `DISENO` en `collar_ia.py` ya lo dice. Arreglado **editando**
 las dos fotos elegidas (tomas `editar-hombro` / `editar-tirantes`: cambia solo el collar y conserva reloj, anillo y aros)
 → en la ficha `editar-hombro-2` (Carmen, elegida por Edu) y `editar-tirantes-2` (Elena). Coste total del día: 8 fotos, ~1,05 $.
+**Fotos reales de la muestra del collar (Edu, 4-nov)** en `marca/referencias-reales/collar-signe-1..5.jpg` («Marta», lágrima
+azul, de Yiwu Shangjie) + `caja-collar-1.jpg` (caja de terciopelo verde, por dentro negra); sin EXIF. `collar_ia.py` usa ya la
+1 y la 5 (`COLLAR_REAL`) en vez de la foto de Olivia. Cómo es de verdad: el nombre va **recortado de chapa plana pulida**
+(no hilo redondo), firma rápida con la mayúscula alta y un trazo largo de entrada; unido a la cadena por arriba y por el final;
+lágrima grande de 4 garras colgando de su asa en el punto más bajo. Son también las que hay que mandar a QIUHAN para la letra.
 **Falta:** fotos reales de Maille, Galet, Perle y Duo en `marca/referencias-reales/` (su 1.ª foto de ficha es de IA)
 antes de volver a usarlas en `portada_dia.py` / `portada_navidad.py`.
 

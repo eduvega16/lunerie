@@ -15,11 +15,14 @@ RAIZ = pathlib.Path(__file__).resolve().parent.parent
 SALIDA = RAIZ / "marca" / "fotos-ia" / "collar"
 COLLAR = RAIZ / "productos" / "collar-signe"
 REFS = RAIZ / "marca" / "referencias-reales"
+# fotos REALES de la muestra (Yiwu Shangjie, «Marta», 4-nov): referencia del collar para las tomas puestas
+COLLAR_REAL = [REFS / "collar-signe-1.jpg", REFS / "collar-signe-5.jpg"]
 # 4-nov (Edu): el collar es ASIMÉTRICO: el nombre va en un lado de la cadena, en diagonal, y la lágrima cuelga recta en
 # el centro, en el punto más bajo (como collar-signe-1.jpg y la foto de Marta). Ni nombre horizontal en el centro ni
 # lágrima pegada al nombre.
 DISENO = ("a fine {metal} cable-chain necklace built asymmetrically, exactly like the real product photo of the necklace: "
-          "a first name in a thin, flowing handwritten signature-style script made of polished {metal} wire is set into "
+          "a first name cut from a flat polished {metal} sheet (not round wire) as a quick, bold handwritten signature - "
+          "a tall pointed capital with a long lead-in stroke and connected letters - is set into "
           "ONE SIDE of the chain (on the left of the picture), running diagonally down along the chain from the "
           "collarbone towards the centre - not horizontal and not centred; the last letter ends in a small loop that "
           "joins the chain, the chain continues two or three links down to the lowest point at the centre of the chest, "
@@ -46,14 +49,14 @@ TOMAS = {
         "lighting, but the name now reads exactly \"Paula\" (capital P, then a-u-l-a) in the same silver signature "
         "script, and the teardrop crystal is soft pink. "),
     # puesto, sin cara
-    "modelo-tirantes": ("3:4", [COLLAR / "collar-signe-1.jpg", "aros-boucle"],
+    "modelo-tirantes": ("3:4", [*COLLAR_REAL, "aros-boucle"],
         "Quiet-luxury editorial jewelry photo in soft natural daylight against a pale grey wall. A young woman with "
         "light brown hair pulled back, wearing a white ribbed cotton tank top; the frame cuts off just below her nose, "
         "from her lips down to her chest. Around her neck she wears " + DISENO.format(metal="gold") + ", the name "
         "reading exactly \"Elena\" and the teardrop crystal soft yellow; in her ear she wears {aros-boucle}, one per ear, "
         "at the same size relative to the earlobe as in the reference photo of the hoops on an ear. Natural skin "
         "texture, fine film grain. "),
-    "modelo-hombro": ("3:4", [COLLAR / "collar-signe-1.jpg", "reloj-lune", "anillo-nuit"],
+    "modelo-hombro": ("3:4", [*COLLAR_REAL, "reloj-lune", "anillo-nuit"],
         "Quiet-luxury editorial jewelry photo in soft natural daylight against a warm off-white wall. A young woman in "
         "a white strapless top rests one hand on her opposite shoulder; the frame cuts off just below her nose, from "
         "her lips down to her chest. Around her neck she wears " + DISENO.format(metal="gold") + ", the name reading "
@@ -62,18 +65,18 @@ TOMAS = {
         "photo of the watch on a wrist. On her ring finger she wears {anillo-nuit}, at the same size relative to the "
         "finger as in the reference photo of the rings on a hand. Natural skin texture, fine film grain. "),
     # 4-nov: editar las fotos ya elegidas (reloj, anillo y aros buenos) cambiando solo el collar
-    "editar-hombro": ("3:4", [SALIDA / "modelo-hombro-1-piedras.png", COLLAR / "collar-signe-1.jpg"],
+    "editar-hombro": ("3:4", [SALIDA / "modelo-hombro-1-piedras.png", *COLLAR_REAL],
         "Edit the first image. Keep EVERYTHING exactly the same - the woman, her pose, skin, hair, strapless top, wall, "
         "light, framing, the watch on her wrist and the ring on her finger, pixel for pixel - and change only the "
         "necklace: it becomes " + DISENO.format(metal="gold") + ", the name reading exactly \"Carmen\" (capital C, "
-        "then a-r-m-e-n) and the teardrop crystal green. The second image is the real product photo: use it only for "
+        "then a-r-m-e-n) and the teardrop crystal green. The other images are real photos of the necklace: use them only for "
         "how the necklace is built. "),
-    "editar-tirantes": ("3:4", [SALIDA / "modelo-tirantes-2.png", COLLAR / "collar-signe-1.jpg"],
+    "editar-tirantes": ("3:4", [SALIDA / "modelo-tirantes-2.png", *COLLAR_REAL],
         "Edit the first image. Keep EVERYTHING exactly the same - the woman, her pose, skin, hair, ribbed tank top, "
         "wall, light, framing and the hoop earrings, pixel for pixel - and change only the necklace: it becomes "
         + DISENO.format(metal="gold") + ", the name reading exactly \"Elena\" (capital E, then l-e-n-a) and the "
-        "teardrop crystal soft yellow. The second image is the real product photo: use it only for how the necklace "
-        "is built. "),
+        "teardrop crystal soft yellow. The other images are real photos of the necklace: use them only for how the "
+        "necklace is built. "),
 }
 
 

@@ -611,6 +611,19 @@ nuevo **`python productos/cambiar_fotos.py <handle> <imagen> <posición> …`** 
 JPEG 97 sin submuestreo, `fileUpdate` en su sitio; la variante «Dorado» de Maille y Galet sigue con su foto). `portada_dia.py` / `portada_navidad.py` aún leen la 1.ª foto de una carpeta: para usarlas,
 pasarles estas (o hacer que manden todas, como `collar_ia.py`).
 
+**CAMPAÑA DE BLACK FRIDAY PUBLICADA (4-nov, ~18:40, OK de Edu: «lanzamos ahora», «lo testeamos»).**
+«Lunerie · Black Friday · Ventas (Advantage+)» `52566458999794` · conjunto `52566459008194` (península + Baleares,
+solo FB+IG, Advantage+ audiencia, compra con el píxel) · **35 €/día con tope de gasto de 140 €** (se para sola) ·
+**16 anuncios** (los 8 del plan del 2-nov, con «para tu madre/hermana/pareja» como 3, + los 5 animados + el carrusel del
+collar Signé). Ids en `anuncios/campana-bf-meta.json`; textos en `anuncios/campana-black-friday.md`. Sin declarar IA (Edu).
+Cómo se montó: archivos subidos a Archivos de Shopify con `python anuncios/subir_creatividades.py` (URLs en
+`anuncios/creatividades-urls.json`) → Meta los baja por URL. **Trampas:** en los carruseles, `image_url` deja «picture» y
+«image_hash» a la vez y Meta lo rechaza → subir antes la foto (`ads_creative_upload_media`) y usar `image_hash`; Shopify
+tarda unos segundos en servir una foto recién subida («Image Wasn't Downloaded» → reintentar). Cada anuncio: 4:5 en el
+feed + 9:16 en Stories/Reels (`placement_customizations`). **No tocar hasta el 9-nov**; **el 14 (collar) hay que pausarlo
+el 15-nov** si sigue activo (promete Navidad pidiendo antes del 15). Pendiente: clic real desde el móvil (anuncio →
+tienda) y mirar que la visita sale en Shopify.
+
 **4-nov (tarde): biblioteca ampliada, anuncios animados y Instagram roto.**
 - **ARREGLADO (4-nov, ~17:30): la clave de Instagram volvió a funcionar sola** (Edu pidió probar de nuevo; la app se llama
   «Lunerie Claude Publisher»). Post del café publicado: https://www.instagram.com/p/DfU48aClgsA/. Las tareas

@@ -106,6 +106,14 @@ Formatos de `biblioteca/formatos-anuncio.json`, hechos con código en `marca/anu
 > Las mismas piedras ovaladas en el reloj y en el collar. Juntos, 57,43 € (74,90 € por separado), porque por Black
 > Friday la 2.ª pieza va al 50 %. Envío gratis a península.
 
+**14 · Collar Signé · «Su nombre, su piedra»** (carrusel de las 4 fotos IA de la ficha: Marta, Carmen, Elena,
+Paula; **nunca las de Olivia**, son de otra marca) · destino `/products/collar-signe` · `utm_content=collar-signe`
+> Su nombre en letra de firma y una lágrima del color de su mes. El Collar Signé, en dorado o plateado, 49,95 €. Se
+> hace para ella: llega en 2-5 semanas, así que para Navidad pídelo antes del 15 de noviembre. Y por Black Friday, la
+> 2.ª pieza al 50 %.
+Tarjetas: «Su nombre, en letra de firma» · «Y la piedra de su mes» · «En dorado o plateado» · «Collar Signé · 49,95 €».
+**Pausarlo el 15-nov** (o cambiar plazo y fecha cuando QIUHAN confirme los suyos).
+
 Si cambia un precio: `preparar.py` + volver a grabar los vídeos, y cambiar el precio en estos textos («desde 19,95 €»
 del 10 es el más barato de la tienda hoy: aros Boucle y anillo Duo).
 

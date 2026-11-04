@@ -590,7 +590,9 @@ lágrima grande de 4 garras colgando de su asa en el punto más bajo. Son tambi�
 **Carmen y Elena rehechas con la muestra real (4-nov, tarde, en producción):** nombre de chapa plana pulida, unido a la
 cadena con una anilla **en la punta de arriba de la mayúscula** y, al final, **un trazo largo y recto que acaba en otra
 anilla** (como la barra de la «t» de Marta); de ahí, 2-3 eslabones hasta la lágrima en el centro. Hechas en **4K**
-(`collar_ia.py … --4k`, 2480×3312) editando las anteriores. En Carmen el reloj se volvió a pegar desde la versión
+(`collar_ia.py … --4k`, 2480×3312) editando las anteriores. **Coste del 4K (transacciones de Higgsfield, 4-nov):
+cobra 0,19 $ y devuelve 0,02 $ → 0,17 $ por foto** (frente a ~0,13 $ en 2K); la que bloquea el filtro se devuelve
+entera. La tanda de 5 costó 0,68 $. En Carmen el reloj se volvió a pegar desde la versión
 aprobada (la IA lo cambió: bisel de bolitas en vez de trenzado); queda `editar-hombro-2-reloj.png`. Elena:
 `editar-tirantes-1.png`. Descartadas: una que ponía «Varmen» (pedir mayúscula «pointed» convierte la C en V: no usarlo)
 y otra que ponía «Zlema». Higgsfield bloqueó una por filtro (top palabra de honor; pasa a veces, repetir).
@@ -914,7 +916,7 @@ antes de volver a usarlas en `portada_dia.py` / `portada_navidad.py`.
   con Playwright: `.claude/meta-perfil` (fuera de git; el inicio de sesión lo hace Edu, no Claude).
 - **29-oct: contenido «reloj + joya en el día a día» (estilo juvenil con ojo de pez).** Referencia de Edu: vídeo «ideas de contenido, edición joyería» (la vida cotidiana, detrás de
   escena, comunidad, romper el patrón; se usan 1 y 4, y el 2 y 3 solo con cosas verdaderas). **Estilo y cómo se genera en `marca/estilo-contenido.md`**; script `marca/combinados.py`
-  (escenas `metro-ojo`, `mercado`, `terraza`, `cafe`, `metro`, `pelo`; API de Higgsfield, ~0,13 $ por foto). **Saldo de la API: 18,31 $ (4-nov, por la noche**: quedaban 3,31 $ y Higgsfield regaló 15 $ por verificar el email; el 29-oct eran 8,73 $; para saber el coste real del 4K, apuntar el saldo antes y después de una tanda); el conector de Higgsfield (Nano Banana) tiene
+  (escenas `metro-ojo`, `mercado`, `terraza`, `cafe`, `metro`, `pelo`; API de Higgsfield, ~0,13 $ por foto). **Saldo de la API: 18,31 $ (4-nov, por la noche**: quedaban 3,31 $ y Higgsfield regaló 15 $ por verificar el email; el 29-oct eran 8,73 $; 4K = 0,17 $ por foto; el detalle de cada cobro se ve en Higgsfield → transacciones); el conector de Higgsfield (Nano Banana) tiene
   **0,55 créditos** (2 por imagen): no se usa. **Lección: juzgar el color de las piedras del reloj en un recorte a tamaño real**, no en la vista reducida (parecían grises y son verde oscuro con vetas);
   el oro del reloj real es algo más pálido y rosado que el amarillo vivo que pinta la IA. Fotos en `marca/fotos-ia/combinados/` (los `.png` no van a git, los `.jpg` sí).
   Idea nueva de Edu (captura de @star.rreyai): **storyboard de 6 escenas UGC en una imagen 9:16 y luego vídeo siguiendo la secuencia, sin voz en off** (pendiente de probar; hay que ver el coste de animar por la API).

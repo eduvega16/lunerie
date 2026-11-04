@@ -1,0 +1,51 @@
+{
+  "para_que_sirve": "Reels y vídeos vistos por Edu que se pueden adaptar a Lunerie (orgánico y anuncios). Cada idea, con lo que hace falta para hacerla y su coste.",
+  "reglas_lunerie": [
+    "Lo que se hace pasar por real (manos de clienta, «lo-fi», UGC) tiene que ser real: grabado por Edu o por las amigas con las muestras.",
+    "Las fotos y vídeos de IA, siempre a partir de fotos REALES de la pieza (marca/referencias-reales/) y marcados como hechos con IA al publicar.",
+    "Nada de sorteos ni premios sin bases legales."
+  ],
+  "ideas": [
+    {
+      "id": "limpiar-camara",
+      "fuente": "@mobellajoyeria (Instagram, reel), captura 4 nov 2026",
+      "numeros": "2.264 me gusta, 11 comentarios, 3.604 envíos",
+      "como_es": "Primer plano borroso de un dedo tapando la cámara con el texto «Déjame limpiar mi cámara…» → se aparta y aparece la muñeca con 4 pulseras, texto «Mucho mejor…». Audio: «Ring My Bell» (Anita Ward). Instagram ofrece «Usar plantilla» (mismo audio y cortes).",
+      "lunerie": "Edu o una amiga: dedo limpiando la cámara → muñeca con el Lune (y el anillo Nuit si hay muestra). Con la plantilla de Instagram desde el móvil: la música va con licencia de Instagram.",
+      "hace_falta": "Grabación real con la muestra del Lune (Edu la tiene). 10 segundos.",
+      "coste": "0 €",
+      "prioridad": "alta"
+    },
+    {
+      "id": "storyboard-ugc",
+      "fuente": "@star.rreyai (Instagram, reel «Hecho con Edits», contenido generado con IA), capturas 26 oct y 4 nov 2026",
+      "numeros": "1.003 me gusta, 344 comentarios, 2.121 envíos (pide comentar «AI» para la guía)",
+      "como_es": "Dos pasos con IA. 1) Imagen 9:16 con 6 escenas tipo storyboard del producto (un collar de un solo brillante sobre tela de satén, en la palma de la mano: «Scene 3 – On hand», un primer plano…). Prompt: «Create a UGC style storyboard of the product on the material, handheld, create in six scenes and use a 9:16 frame». 2) Vídeo a partir del storyboard. Prompt: «Create a high end UGC style video of the uploaded product, using the exact storyboard sequence, no voiceover».",
+      "lunerie": "Collar Signé o Collar Lune sobre satén crema, en la mano, de cerca y puesto; o el Lune. Siempre con las fotos reales como referencia.",
+      "hace_falta": "1 imagen (storyboard) + 1 vídeo. La herramienta del reel no se ve en la captura; con la API de Higgsfield: flare para la imagen y Kling para el vídeo.",
+      "coste": "~0,17 $ la imagen en 4K; el vídeo, por confirmar (Kling 3.0 pro en la web: 7 créditos por 4 s)",
+      "prioridad": "media (ya apuntada el 29-oct en CLAUDE.md, sin probar)"
+    },
+    {
+      "id": "pausa-justo",
+      "fuente": "@robertmckeaveney (Instagram, reel), captura 4 nov 2026",
+      "numeros": "151 mil me gusta, 973 comentarios, 62,2 mil envíos",
+      "como_es": "Reto «Only 1% can pause at the right time!»: un vídeo rápido con una silueta roja; hay que parar el vídeo en el fotograma exacto en que la persona encaja («SOOOO CLOSE, 1 frame off»). Engancha porque obliga a volver a verlo y a mandarlo.",
+      "lunerie": "«Solo el 1 % consigue parar el vídeo cuando las agujas marcan las 10:10», con las agujas del Lune girando rápido; o «para el vídeo cuando el reloj encaje en la silueta».",
+      "hace_falta": "Montaje con ffmpeg (marca/montaje.py) o animación por código a partir de las fotos de producto.",
+      "coste": "0 €",
+      "prioridad": "media (orgánico, para alcance; no para vender)",
+      "nota": "Sin premio: si se promete algo a quien lo consiga, es un sorteo y necesita bases legales."
+    },
+    {
+      "id": "comenta-palabra",
+      "fuente": "@noisy.ia («Comenta “Repo”»), @lucasacosta.ia («Comentá SKILLS»), @star.rreyai («Comment “AI”»), capturas 29 oct y 4 nov 2026",
+      "numeros": "@lucasacosta.ia: 3.826 me gusta y 2.820 comentarios",
+      "como_es": "El pie del post pide comentar una palabra y la cuenta responde por mensaje directo con una guía o lista. Dispara los comentarios (y el alcance).",
+      "lunerie": "«Comenta REGALO y te mando la guía de regalos de menos de 40 €» (la cuadrícula de campana_bf.py como PDF o carrusel).",
+      "hace_falta": "Contestar los mensajes: a mano (skill ig-dm) o con una app de respuestas automáticas (ManyChat o similar, sin instalar).",
+      "coste": "0 € a mano",
+      "prioridad": "media"
+    }
+  ]
+}

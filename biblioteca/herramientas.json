@@ -1,0 +1,57 @@
+{
+  "aviso": "Repositorios y programas vistos en reels. NINGUNO está instalado ni revisado. Antes de instalar, leer su código y su licencia (como se hizo con las skills ig-*). Datos comprobados con una búsqueda web el 4-nov-2026; las estrellas de GitHub son las de las capturas.",
+  "herramientas": [
+    {
+      "nombre": "Open Higgsfield AI",
+      "fuente": "@noisy.ia (Instagram, carrusel «#1 OpenHiggsfield», «una alternativa»), captura 4 nov 2026; en la captura, 5,3k estrellas",
+      "que_es": "Estudio de imagen y vídeo con IA de código abierto que se instala en el PC y da acceso a más de 200 modelos. Repositorio principal: Anil-matcha/Open-Higgsfield-AI (licencia MIT según una reseña). Hay otro con el mismo nombre (wide-trace/open-higgsfield) sin licencia declarada.",
+      "para_lunerie": "Poco: ya tenemos la API de Higgsfield funcionando. Solo interesa si da Nano Banana o Kling más baratos. Los modelos siguen costando dinero aunque el programa sea gratis.",
+      "prioridad": "baja",
+      "enlace": "https://github.com/Anil-matcha/Open-Higgsfield-AI"
+    },
+    {
+      "nombre": "VoiceStudio",
+      "fuente": "@noisy.ia (Instagram, carrusel «#2 VoiceStudio», «Gratis», frente a ElevenLabs de pago), captura 4 nov 2026; el carrusel tiene 9 repositorios y solo se vieron 2",
+      "que_es": "Alternativa local a ElevenLabs: voces, clonación de voz, doblaje, dictado y transcripción en el PC. Repositorio: debpalash/VoiceStudio, licencia AGPL-3.0. Una prueba independiente dice que la calidad por defecto está claramente por debajo de ElevenLabs.",
+      "para_lunerie": "Poco por ahora: los anuncios van sin voz. Serviría para un reel con voz en off en español. Nunca clonar la voz de nadie sin su permiso.",
+      "prioridad": "baja",
+      "enlace": "https://github.com/debpalash/VoiceStudio"
+    },
+    {
+      "nombre": "HyperFrames",
+      "fuente": "@mrcreates.ai (Instagram, reel «Five tools», «Stop paying for AI editing tutorials»), captura 4 nov 2026",
+      "que_es": "De HeyGen, licencia Apache 2.0: convierte una página HTML con animaciones (CSS, GSAP, Lottie…) en un vídeo MP4. Necesita Node.js 22 y FFmpeg. Trae skills para Claude Code.",
+      "para_lunerie": "Alta: permite que Claude haga anuncios animados sin gastar créditos de IA, con nuestras fotos y precios reales: pantalla de bloqueo con notificaciones, notas del iPhone, cuadrícula de precios, piezas cayendo (formatos de formatos-anuncio.json).",
+      "prioridad": "alta",
+      "enlace": "https://github.com/heygen-com/hyperframes"
+    },
+    {
+      "nombre": "Remotion",
+      "fuente": "@mrcreates.ai, mismo reel («Builds the video»)",
+      "que_es": "Vídeos hechos con código (React). Licencia propia: no es libre para todas las empresas; hay que leerla antes de usarlo en la tienda.",
+      "para_lunerie": "Lo mismo que HyperFrames; elegir solo uno. HyperFrames es más simple (HTML, sin compilar) y de licencia más clara.",
+      "prioridad": "baja (alternativa a HyperFrames)"
+    },
+    {
+      "nombre": "FFmpeg",
+      "fuente": "@mrcreates.ai, mismo reel («Cuts + exports»)",
+      "que_es": "Cortar, unir y exportar vídeo.",
+      "para_lunerie": "Ya lo usamos (marca/montaje.py, marca/portada.py).",
+      "prioridad": "hecho"
+    },
+    {
+      "nombre": "Whisper",
+      "fuente": "@mrcreates.ai, mismo reel («Captions»)",
+      "que_es": "Transcribe voz a texto (subtítulos), de OpenAI, gratis en local.",
+      "para_lunerie": "Para subtitular los vídeos que Edu grabe hablando, si los hay. Los de ahora no tienen voz.",
+      "prioridad": "baja"
+    },
+    {
+      "nombre": "yt-dlp",
+      "fuente": "@mrcreates.ai, mismo reel («Downloads»)",
+      "que_es": "Descarga vídeos de YouTube, TikTok, Instagram…",
+      "para_lunerie": "Solo para guardar referencias (como los de ssstik, que no van a git). Nunca reutilizar vídeos de otros en anuncios ni publicaciones.",
+      "prioridad": "baja"
+    }
+  ]
+}

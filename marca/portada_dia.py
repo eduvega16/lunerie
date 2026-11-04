@@ -27,8 +27,7 @@ ESTILO = ("Quiet-luxury editorial photo for a jewelry and watch brand, about wea
           "polish, minimal makeup. Shot on a full-frame camera with a 50mm lens, shallow depth of field, fine film "
           "grain, clean composition with breathing room. The jewelry and the watch are the clear focus, sharp and "
           "well lit. Every piece of jewelry and every watch must be EXACTLY like the reference images - same shape, "
-          "size, colours and details; the watches are small and delicate, do not make them bigger and do not "
-          "redesign them. No text, no logos and no brand names anywhere in the image, nothing written on the watch "
+          "size relative to the wrist, colours and details; do not redesign them. No text, no logos and no brand names anywhere in the image, nothing written on the watch "
           "dials. ")
 TOMAS = {
     # En el móvil es la grande: el reloj Lune, el anillo Nuit y el collar Lune juntos

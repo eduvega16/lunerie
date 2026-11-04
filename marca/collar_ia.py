@@ -2,9 +2,10 @@
 de la tienda», nada de Lucía). Producto: la foto del collar de productos/collar-signe/ cambiando el nombre y el color de
 la piedra; puesto: con otras piezas de Lunerie (aros Boucle, reloj Lune, anillo Nuit) y sin cara (corte bajo la nariz).
 API de Higgsfield (flare = GPT Image 2.5, ~0,13 $ por foto).
-    python marca/collar_ia.py <carpeta_refs> [toma ...] [--n 2]   →   marca/fotos-ia/collar/<toma>-<n>.png
-<carpeta_refs>: la primera foto de cada producto con su handle de nombre (aros-boucle.jpg, reloj-lune.jpg…).
-REVISAR SIEMPRE a tamaño real que el nombre esté bien escrito.
+    python marca/collar_ia.py [<carpeta_refs>] [toma ...] [--n 2]   →   marca/fotos-ia/collar/<toma>-<n>.png
+<carpeta_refs>: por defecto marca/referencias-reales/, con las fotos REALES de cada pieza (proveedor, amigas) con su
+handle de nombre (reloj-lune-1.jpg, reloj-lune-2.jpg…): se mandan todas las de cada pieza. Nunca fotos hechas con IA.
+REVISAR SIEMPRE a tamaño real que el nombre esté bien escrito y comparar cada pieza con su foto real.
 """
 import concurrent.futures, pathlib, sys, urllib.request
 import higgsfield_client
@@ -13,12 +14,16 @@ from portada_navidad import MODELO, PIEZA
 RAIZ = pathlib.Path(__file__).resolve().parent.parent
 SALIDA = RAIZ / "marca" / "fotos-ia" / "collar"
 COLLAR = RAIZ / "productos" / "collar-signe"
+REFS = RAIZ / "marca" / "referencias-reales"
 # 4-nov (Edu): la lágrima NO va pegada al nombre: cuelga suelta de la cadena, un poco después del final del nombre.
 DISENO = ("a fine {metal} cable-chain necklace with a first name written in a thin, flowing handwritten signature-style "
-          "script made of polished {metal} wire, set horizontally into the chain; a short length of plain chain after "
-          "the end of the name, a single faceted teardrop crystal in a small {metal} prong setting hangs on its own "
-          "tiny jump ring from the chain - the crystal is separate from the letters and never touches or attaches to them")
-NO = ("Every piece must be EXACTLY like the reference images - same shape, size and details; do not redesign them. "
+          "script made of polished {metal} wire, set horizontally into the chain like in the first reference photo: the "
+          "last letter ends in a small loop that joins the chain, and two or three links further along the chain a "
+          "single faceted teardrop crystal in a small {metal} prong setting hangs on its own bail - the crystal hangs "
+          "from the chain, separate from the letters, never touching or attached to them")
+NO = ("Every piece must be EXACTLY like the reference images - same shape, size relative to the body and details; do "
+      "not redesign them. The reference photos are real product photos: copy only the pieces named here and ignore any "
+      "other jewelry, rings or backgrounds that appear in them. "
       "The name on the necklace must be spelled exactly as given, letter by letter, and must be the only text in the "
       "image: no other text, no logos, nothing written on the watch dial. ")
 TOMAS = {
@@ -36,14 +41,17 @@ TOMAS = {
         "Quiet-luxury editorial jewelry photo in soft natural daylight against a pale grey wall. A young woman with "
         "light brown hair pulled back, wearing a white ribbed cotton tank top; the frame cuts off just below her nose, "
         "from her lips down to her chest. Around her neck she wears " + DISENO.format(metal="gold") + ", the name "
-        "reading exactly \"Elena\" and the teardrop crystal soft yellow; in her ear she wears {aros-boucle}. Natural skin "
+        "reading exactly \"Elena\" and the teardrop crystal soft yellow; in her ear she wears {aros-boucle}, one per ear, "
+        "at the same size relative to the earlobe as in the reference photo of the hoops on an ear. Natural skin "
         "texture, fine film grain. "),
     "modelo-hombro": ("3:4", [COLLAR / "collar-signe-1.jpg", "reloj-lune", "anillo-nuit"],
         "Quiet-luxury editorial jewelry photo in soft natural daylight against a warm off-white wall. A young woman in "
         "a white strapless top rests one hand on her opposite shoulder; the frame cuts off just below her nose, from "
         "her lips down to her chest. Around her neck she wears " + DISENO.format(metal="gold") + ", the name reading "
         "exactly \"Carmen\" and the teardrop crystal green. On the wrist of the hand on her shoulder she wears "
-        "{reloj-lune}, and on one finger {anillo-nuit}. Natural skin texture, fine film grain. "),
+        "{reloj-lune}; the watch faces the camera and keeps the same size relative to the wrist as in the reference "
+        "photo of the watch on a wrist. On her ring finger she wears {anillo-nuit}, at the same size relative to the "
+        "finger as in the reference photo of the rings on a hand. Natural skin texture, fine film grain. "),
 }
 
 
@@ -52,7 +60,8 @@ def generar(toma, n, refs_dir):
     rutas = []
     for r in refs:
         if isinstance(r, str):
-            escena = escena.replace("{" + r + "}", PIEZA[r]); rutas.append(refs_dir / f"{r}.jpg")
+            fotos = sorted(refs_dir.glob(f"{r}-*.jpg")) or [refs_dir / f"{r}.jpg"]
+            escena = escena.replace("{" + r + "}", PIEZA[r]); rutas += fotos
         else:
             rutas.append(r)
     try:
@@ -75,8 +84,11 @@ if __name__ == "__main__":
     veces = 1
     if "--n" in args:
         i = args.index("--n"); veces = int(args[i + 1]); del args[i:i + 2]
-    refs_dir = pathlib.Path(args[0]); SALIDA.mkdir(parents=True, exist_ok=True)
-    trabajos = [(t, n) for t in (args[1:] or list(TOMAS)) for n in range(1, veces + 1)]
+    refs_dir = REFS
+    if args and pathlib.Path(args[0]).is_dir():
+        refs_dir = pathlib.Path(args.pop(0))
+    SALIDA.mkdir(parents=True, exist_ok=True)
+    trabajos = [(t, n) for t in (args or list(TOMAS)) for n in range(1, veces + 1)]
     with concurrent.futures.ThreadPoolExecutor(max_workers=8) as ex:
         for toma, r in ex.map(lambda tn: generar(tn[0], tn[1], refs_dir), trabajos):
             print(toma, "->", r)

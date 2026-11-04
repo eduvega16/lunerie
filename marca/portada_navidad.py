@@ -16,14 +16,22 @@ SALIDA = RAIZ / "marca" / "fotos-ia" / "portada-navidad"
 
 # Cómo es cada pieza de verdad (para que la IA no la rediseñe)
 PIEZA = {
-    "reloj-lune": "a small gold watch with a tiny oval white dial on a thin gold bracelet that holds exactly six oval "
-                  "dark-green stones with light veins, three on each side of the dial, each in a gold bezel",
+    # 4-nov (Edu): sacado de las fotos reales (marca/referencias-reales/), no de las de IA; en la muñeca es más grande
+    # de lo que lo pintaba («small/tiny» fuera)
+    "reloj-lune": "a vintage gold watch with an oval case framed by a twisted rope-pattern gold bezel, a small crown on "
+                  "the side and a white oval dial with thin gold baton markers and gold hands; the bracelet is made of "
+                  "oval gold links, each holding one oval dark-green stone with light veins in a rope-textured gold "
+                  "frame - exactly three on each side of the case, all six the same green - joined by short hinged gold "
+                  "links. On the wrist the oval case covers about half the width of the top of the wrist",
     "reloj-galet": "an oval watch with a thick, rounded, highly polished gold case like a smooth pebble, a white dial "
                    "with gold Roman numerals, on a bracelet of polished three-row gold links",
     "reloj-maille": "a small oval gold watch with a white dial on a narrow bracelet of fine gold woven mesh",
     "reloj-sepia": "a small rectangular gold watch with a cream dial and black Roman numerals on a plain brown "
                    "leather strap",
-    "anillo-nuit": "a chunky gold signet ring set with one large marquise-shaped olive-green stone",
+    "anillo-nuit": "a slim polished gold signet ring whose smooth rounded top tapers into a thin band, set with one "
+                   "marquise-cut faceted olive-green crystal held flush in a thin smooth gold bezel, its two points "
+                   "aligned with the finger (one towards the fingertip); the stone is a little shorter than the finger "
+                   "is wide - elegant and delicate, not chunky or oversized",
     "collar-lune": "a very fine gold chain necklace with small round coloured stones (red, blue, green, pink) set "
                    "directly in line into the chain at intervals - the stones are part of the chain, never hanging",
     "pendientes-larme": "small gold huggie hoop earrings, each with one dangling emerald-green teardrop crystal",

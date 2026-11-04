@@ -74,8 +74,27 @@ def fotos_ia():
     print("fotos cambiadas")
 
 
+def cambiar(pares):
+    """Cambia fotos sueltas en su sitio: [(toma de marca/fotos-ia/collar, posición en la galería 1..n)].
+    Conserva posición, texto alternativo y variante (fileUpdate + originalSource)."""
+    ia = pathlib.Path(__file__).resolve().parent.parent / "marca" / "fotos-ia" / "collar"
+    salida = pathlib.Path(__file__).resolve().parent / "collar-signe"
+    M = gql('query($h: String!){ productByHandle(handle: $h){ media(first: 20){ nodes{ id alt } } } }', {"h": HANDLE})["productByHandle"]["media"]["nodes"]
+    rutas = []
+    for toma, _ in pares:
+        r = salida / f"{HANDLE}-{toma}.jpg"; crop45(Image.open(ia / f"{toma}.png").convert("RGB")).save(r, quality=92); rutas.append(r)
+    fuentes = subir(rutas)
+    gql("""mutation($f:[FileUpdateInput!]!){ fileUpdate(files:$f){ userErrors{ field message } } }""",
+        {"f": [{"id": M[pos - 1]["id"], "originalSource": s} for s, (_, pos) in zip(fuentes, pares)]}, True)
+    for (toma, pos) in pares:
+        print(f"{pos}: {M[pos - 1]['alt']}  <-  {toma}")
+
+
 if __name__ == "__main__" and sys.argv[1:] == ["--fotos-ia"]:
     fotos_ia(); sys.exit()
+
+if __name__ == "__main__" and sys.argv[1:2] == ["--cambiar"]:   # --cambiar <toma> <posición> [<toma> <posición> …]
+    a = sys.argv[2:]; cambiar([(a[i], int(a[i + 1])) for i in range(0, len(a), 2)]); sys.exit()
 
 if __name__ == "__main__":
     origen = pathlib.Path(sys.argv[1]); salida = pathlib.Path(__file__).resolve().parent / "collar-signe"

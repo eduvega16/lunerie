@@ -567,16 +567,18 @@ Solo salen si el PC está encendido con la sesión abierta; si no, la pieza sigu
 `… quitar [id]`. **Al abrir sesión: mirar el log y que las publicadas pasen a «publicado»** (y hacer commit de la cola).
 A mano (Edu): stories con pegatinas, reels con música, Facebook (Business Suite) y editar el texto de los 3 posts del
 29-oct que dicen «Lune 49,95 €».
-**LO PRIMERO EL 4-NOV (Edu, al irse a dormir):** rehacer las fotos del Collar Signé de **Carmen** y **Elena**
-(`marca/collar_ia.py modelo-hombro modelo-tirantes --n 2`, luego `python productos/collar_signe.py --fotos-ia` adaptado):
-(1) la lágrima parece pegada al nombre y en el real cuelga suelta de la cadena, después del nombre (prompt `DISENO` ya
-corregido); (2) el reloj Lune se ve muy pequeño: **es algo más grande** y yo usaba de referencia una foto hecha con IA
-(`lune-verde-producto.jpg`) y pedía «small, do not make bigger» → usar las **fotos reales** (las 2 del proveedor de la
-ficha, `S6514a93…` y `S0196b43…`, y las de las amigas `lune-opinion-1/2/3/5.jpg`) y quitar esa frase de los prompts
-(`portada_navidad.py` `PIEZA`, `portada_dia.py` `ESTILO`, `collar_ia.py`); lo mismo con Maille, Galet, Perle y Duo;
-(3) el anillo Nuit no es del todo así (mirar `anillo-nuit.jpg` a tamaño real y describirlo mejor en `PIEZA`).
-Revisar también la de Marta (producto) por lo mismo de la lágrima. Y mirar `oficina/publicaciones.log`: el 4-nov a las
-19:30 sale el primer post programado (Lune con café).
+**4-nov (hecho, en producción): fotos de Carmen y Elena del Collar Signé rehechas** con fotos REALES de referencia
+(carpeta nueva **`marca/referencias-reales/`**: `reloj-lune-1/2` del proveedor, `anillo-nuit-1/2`, `aros-boucle-1/2` y las
+de las amigas; `collar_ia.py` las usa por defecto y manda todas las de cada pieza). Lágrima colgando de la cadena 2-3
+eslabones después del nombre (como el real) · Lune con bisel trenzado y la caja ocupando ~media muñeca · Nuit fino, que
+se estrecha, piedra a lo largo del dedo. `PIEZA` de Lune y Nuit reescritas (en `portada_navidad.py`, la usan también
+`portada_dia.py` y `collar_ia.py`) y fuera el «small, do not make bigger» de `portada_dia.py`. La IA sigue pintando las
+piedras del Lune **verde oscuro con vetas negras**: se arreglan en local con **`marca/piedras_lune.py`** (OpenCV, gratis;
+verde medio con vetas claras, comparar con `reloj-lune-2.jpg`). Elegidas `modelo-hombro-1-piedras` (Carmen) y
+`modelo-tirantes-2` (Elena), cambiadas en su sitio con `python productos/collar_signe.py --cambiar <toma> <posición> …`.
+Las anteriores quedan como `*-v1.png`. La de Marta estaba bien (no se tocó). Coste: 4 fotos, ~0,52 $.
+**Falta:** fotos reales de Maille, Galet, Perle y Duo en `marca/referencias-reales/` (su 1.ª foto de ficha es de IA)
+antes de volver a usarlas en `portada_dia.py` / `portada_navidad.py`.
 
 **DÓNDE NOS QUEDAMOS (2-nov, noche) — leer esto primero; manda sobre los bloques de abajo.**
 - **EN PRODUCCIÓN (OK de Edu, 2-nov): portada en collage + BLACK FRIDAY.** `parte('hero-navidad')` en

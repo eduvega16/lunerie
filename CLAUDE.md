@@ -624,6 +624,12 @@ feed + 9:16 en Stories/Reels (`placement_customizations`). **No tocar hasta el 9
 el 15-nov** si sigue activo (promete Navidad pidiendo antes del 15). Pendiente: clic real desde el móvil (anuncio →
 tienda) y mirar que la visita sale en Shopify.
 
+**Instagram (4-nov, noche; Edu: «lo que tú consideres», solo Instagram, Facebook no):** 5 stories de Black Friday
+publicadas · reels de los anuncios animados programados: «Notas del móvil» 5-nov 19:30 y «Lo sentimos, mamá» 7-nov 19:30
+(`2026-W45-14/15`, vídeo desde la URL de Shopify de `anuncios/creatividades-urls.json`). `publicar.py` ahora sube **todas**
+las stories de una pieza (antes solo la primera), las deja en 9:16 (antes las recortaba a 4:5) y guarda a calidad 97.
+Fuera de todos los pies la frase «Imagen creada con IA» (Edu); la marca «hecho con IA» de la API sigue puesta.
+
 **4-nov (tarde): biblioteca ampliada, anuncios animados y Instagram roto.**
 - **ARREGLADO (4-nov, ~17:30): la clave de Instagram volvió a funcionar sola** (Edu pidió probar de nuevo; la app se llama
   «Lunerie Claude Publisher»). Post del café publicado: https://www.instagram.com/p/DfU48aClgsA/. Las tareas

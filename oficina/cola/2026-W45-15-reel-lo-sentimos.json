@@ -1,0 +1,46 @@
+{
+  "id": "2026-W45-15-reel-lo-sentimos",
+  "estado": "aprobado",
+  "plataforma": "instagram",
+  "formato": "reel",
+  "pieza": "reloj-lune",
+  "fecha_sugerida": "2026-11-07T19:30:00+01:00",
+  "gancho": "Lo sentimos, mamá. Este año no es colonia.",
+  "copy": "Lo sentimos, mamá. Este año no es colonia.\n\nEl Lune: un reloj de mujer pequeño, con esfera ovalada y seis piedras verdes. Se lleva como una joya. 39,95 € y, por Black Friday, la 2.ª pieza al 50 %.\n\nLo tienes en el enlace del perfil.",
+  "hashtags": [
+    "#relojdemujer",
+    "#regalosdenavidad",
+    "#lunerie"
+  ],
+  "assets": {
+    "existentes": [
+      "marca/fotos-ia/campana-bf/11-lo-sentimos-9x16.mp4"
+    ],
+    "generar": []
+  },
+  "musica": {
+    "origen": "biblioteca de Meta (la añade Edu dentro de la app al publicar)",
+    "pista": "",
+    "licencia": "de Meta, solo dentro de sus apps"
+  },
+  "publicacion": {
+    "archivos": [
+      "marca/fotos-ia/campana-bf/11-lo-sentimos-9x16.mp4"
+    ],
+    "urls": [
+      "https://cdn.shopify.com/videos/c/vp/969e086e955a44c58fba8f6219874d84/969e086e955a44c58fba8f6219874d84.HD-1080p-4.8Mbps-100057225.mp4"
+    ],
+    "alt_text": "Texto «Lo sentimos, mamá. Este año no es colonia.» y después una mano con el reloj Lune dorado de piedras verdes, con su precio.",
+    "ia": true
+  },
+  "origen": "4-nov: anuncio animado de HyperFrames (marca/anuncios-hf) usado como reel orgánico; Edu: «lo que tú consideres» (solo Instagram).",
+  "riesgos": [
+    "Imágenes hechas con IA: publicar.py las marca como «hecho con IA» y el pie lo dice. Las piezas tienen que parecerse a las reales.",
+    "Es el vídeo del anuncio 4 de la campaña: orgánico y de pago llevarían el mismo vídeo. Si Edu no quiere repetirlo, hacer otro montaje con marca/montaje.py a partir de los mismos planos.",
+    "El smartwatch del primer plano es negro y cuadrado, sin logo, pero se parece a uno conocido: no nombrar marcas ni compararlas.",
+    "El texto del 3.er plano (precio y rasgos) tiene poco contraste sobre el libro: verlo en el móvil antes de publicar.",
+    "Reel: publicar.py exige una URL pública del MP4 (no hecha). Lo más sencillo es que Edu lo suba desde la app y añada música de la biblioteca de Meta.",
+    "La promo termina de verdad el 5-dic (los descuentos automáticos tienen fecha de fin): si se alarga, dejar de llamarla límite."
+  ],
+  "revision": "Elegido y aprobado por Claude con permiso de Edu (4-nov). Sin música: la API no la añade."
+}

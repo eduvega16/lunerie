@@ -50,16 +50,17 @@ def revisar(p):
     return fallos
 
 
-def a_jpeg(ruta):
-    """Instagram solo acepta JPEG para imágenes: convierte a oficina/salida/ (carpeta que no va a git)."""
+def a_jpeg(ruta, vertical=False):
+    """Instagram solo acepta JPEG para imágenes: convierte a oficina/salida/ (carpeta que no va a git).
+    vertical=True (stories): se deja en 9:16, sin el recorte a 4:5 del feed."""
     SALIDA.mkdir(exist_ok=True)
     destino = SALIDA / (pathlib.Path(ruta).stem + ".jpg")
     im = Image.open(RAIZ / ruta).convert("RGB")
     ancho, alto = im.size
-    if ancho / alto < 0.8:                                  # Instagram no admite fotos más estrechas que 4:5: recorte centrado
+    if ancho / alto < 0.8 and not vertical:                 # el feed no admite fotos más estrechas que 4:5: recorte centrado
         nuevo = round(ancho / 0.8); arriba = (alto - nuevo) // 2
         im = im.crop((0, arriba, ancho, arriba + nuevo))
-    im.save(destino, quality=92)
+    im.save(destino, quality=97, subsampling=0)
     return destino
 
 
@@ -153,7 +154,7 @@ def publicar(fichero, p, confirmar):
     if pub.get("urls"):
         urls = list(pub["urls"])
     elif confirmar:
-        urls = [subir_publico(a_jpeg(a))[0] for a in pub["archivos"]]
+        urls = [subir_publico(a_jpeg(a, vertical=tipo == "STORIES"))[0] for a in pub["archivos"]]
         for u in urls:
             url_lista(u)
     else:
@@ -169,7 +170,10 @@ def publicar(fichero, p, confirmar):
         raiz = dict(image_url=urls[0], caption=pie(p), **({"alt_text": alt} if alt else {}))
     elif tipo == "REELS":
         raiz = dict(media_type=tipo, video_url=urls[0], caption=pie(p))
-    else:                                                   # STORIES: foto o vídeo, sin pie
+    else:                                                   # STORIES: foto o vídeo, sin pie; una story por archivo
+        es_video = lambda u: u.lower().split("?")[0].endswith((".mp4", ".mov"))
+        pasos = [("story", dict(media_type=tipo, video_url=u) if es_video(u) else dict(media_type=tipo, image_url=u))
+                 for u in urls[1:]]
         raiz = dict(media_type=tipo, video_url=urls[0]) if video else dict(media_type=tipo, image_url=urls[0])
     if ia:
         raiz["is_ai_generated"] = "true"                    # autoetiqueta de IA (solo en el contenedor raíz del carrusel)
@@ -188,6 +192,15 @@ def publicar(fichero, p, confirmar):
     cont = crear(f"{ig}/media", **raiz)
     esperar(cont, video)
     media = api("POST", f"{ig}/media_publish", creation_id=cont)["id"]
+    if tipo == "STORIES":                                   # el resto de stories, en orden, después de la primera
+        otras = []
+        for _, par in pasos:
+            if p["publicacion"].get("ia", True):
+                par["is_ai_generated"] = "true"
+            c = crear(f"{ig}/media", **par)
+            esperar(c, "video_url" in par)
+            otras.append(api("POST", f"{ig}/media_publish", creation_id=c)["id"])
+        media = ",".join([media] + otras)
     p["estado"] = "publicado"
     p["publicacion"]["resultado"] = {"media_id": media, "fecha": time.strftime("%Y-%m-%dT%H:%M:%S%z")}
     fichero.write_text(json.dumps(p, ensure_ascii=False, indent=2), encoding="utf-8")

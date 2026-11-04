@@ -1,0 +1,46 @@
+{
+  "id": "2026-W45-14-reel-notas",
+  "estado": "aprobado",
+  "plataforma": "instagram",
+  "formato": "reel",
+  "pieza": "reloj-lune",
+  "fecha_sugerida": "2026-11-05T19:30:00+01:00",
+  "gancho": "Regalos de Navidad: mamá, tu hermana, la amiga invisible… y algo para ti.",
+  "copy": "Regalos de Navidad: mamá, tu hermana, la amiga invisible… y algo para ti.\n\nRelojes pequeños y joyas con piedras de color, desde 19,95 €. Por Black Friday, la 2.ª pieza al 50 % y la 3.ª, gratis, hasta el 5 de diciembre.\n\nLo tienes en el enlace del perfil.",
+  "hashtags": [
+    "#regalosdenavidad",
+    "#blackfriday",
+    "#lunerie"
+  ],
+  "assets": {
+    "existentes": [
+      "marca/fotos-ia/campana-bf/10-notas-9x16.mp4"
+    ],
+    "generar": []
+  },
+  "musica": {
+    "origen": "biblioteca de Meta (la añade Edu dentro de la app al publicar)",
+    "pista": "",
+    "licencia": "de Meta, solo dentro de sus apps"
+  },
+  "publicacion": {
+    "archivos": [
+      "marca/fotos-ia/campana-bf/10-notas-9x16.mp4"
+    ],
+    "urls": [
+      "https://cdn.shopify.com/videos/c/vp/d89465893ae84df588e30fffbbfea1ae/d89465893ae84df588e30fffbbfea1ae.HD-1080p-2.5Mbps-100057119.mp4"
+    ],
+    "alt_text": "Una lista de regalos en las notas del móvil que se va tachando, con un reloj, unos aros, un anillo y otro reloj; al final, las cuatro piezas con su precio.",
+    "ia": true
+  },
+  "origen": "4-nov: anuncio animado de HyperFrames (marca/anuncios-hf) usado como reel orgánico; Edu: «lo que tú consideres» (solo Instagram).",
+  "riesgos": [
+    "Imágenes hechas con IA: publicar.py las marca como «hecho con IA» y el pie lo dice. Las piezas tienen que parecerse a las reales.",
+    "Es el vídeo del anuncio 4 de la campaña: orgánico y de pago llevarían el mismo vídeo. Si Edu no quiere repetirlo, hacer otro montaje con marca/montaje.py a partir de los mismos planos.",
+    "El smartwatch del primer plano es negro y cuadrado, sin logo, pero se parece a uno conocido: no nombrar marcas ni compararlas.",
+    "El texto del 3.er plano (precio y rasgos) tiene poco contraste sobre el libro: verlo en el móvil antes de publicar.",
+    "Reel: publicar.py exige una URL pública del MP4 (no hecha). Lo más sencillo es que Edu lo suba desde la app y añada música de la biblioteca de Meta.",
+    "La promo termina de verdad el 5-dic (los descuentos automáticos tienen fecha de fin): si se alarga, dejar de llamarla límite."
+  ],
+  "revision": "Elegido y aprobado por Claude con permiso de Edu (4-nov). Sin música: la API no la añade."
+}

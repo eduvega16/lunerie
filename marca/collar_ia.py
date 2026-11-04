@@ -15,12 +15,24 @@ RAIZ = pathlib.Path(__file__).resolve().parent.parent
 SALIDA = RAIZ / "marca" / "fotos-ia" / "collar"
 COLLAR = RAIZ / "productos" / "collar-signe"
 REFS = RAIZ / "marca" / "referencias-reales"
+RESOLUCION = "2k"   # --4k para la máxima calidad (Edu, 4-nov: en Shopify se ven peor que en el PC)
 # fotos REALES de la muestra (Yiwu Shangjie, «Marta», 4-nov): referencia del collar para las tomas puestas
 COLLAR_REAL = [REFS / "collar-signe-1.jpg", REFS / "collar-signe-5.jpg"]
 # 4-nov (Edu): el collar es ASIMÉTRICO: el nombre va en un lado de la cadena, en diagonal, y la lágrima cuelga recta en
 # el centro, en el punto más bajo (como collar-signe-1.jpg y la foto de Marta). Ni nombre horizontal en el centro ni
 # lágrima pegada al nombre.
-DISENO = ("a fine {metal} cable-chain necklace built asymmetrically, exactly like the real product photo of the necklace: "
+DISENO = ("a fine {metal} cable-chain necklace built asymmetrically, exactly like the real photos of the necklace: "
+          "a first name cut from a flat, mirror-polished {metal} sheet (not round wire) as a quick, bold handwritten "
+          "signature - a tall, clearly legible capital letter with a long lead-in stroke and connected letters, every "
+          "letter easy to read; the bright polished metal "
+          "catches the light with crisp highlights, so the name shines clearly against the skin. The name hangs "
+          "diagonally on one side of the chain (on the left of the picture) and is joined to the chain at exactly two "
+          "points: the upper chain is fixed with a tiny jump ring to the top tip of the capital letter, and at the other "
+          "end the last letter finishes in a long straight tail stroke that ends in a tiny ring where the lower chain is "
+          "fixed. From there the chain continues two or three links down to the lowest point at the centre of the chest, "
+          "where a single faceted teardrop crystal in a small {metal} four-prong setting hangs straight down on its own "
+          "bail, point down - the crystal hangs from the chain, separate from the letters")
+NO = ("a fine {metal} cable-chain necklace built asymmetrically, exactly like the real product photo of the necklace: "
           "a first name cut from a flat polished {metal} sheet (not round wire) as a quick, bold handwritten signature - "
           "a tall pointed capital with a long lead-in stroke and connected letters - is set into "
           "ONE SIDE of the chain (on the left of the picture), running diagonally down along the chain from the "
@@ -65,17 +77,19 @@ TOMAS = {
         "photo of the watch on a wrist. On her ring finger she wears {anillo-nuit}, at the same size relative to the "
         "finger as in the reference photo of the rings on a hand. Natural skin texture, fine film grain. "),
     # 4-nov: editar las fotos ya elegidas (reloj, anillo y aros buenos) cambiando solo el collar
-    "editar-hombro": ("3:4", [SALIDA / "modelo-hombro-1-piedras.png", *COLLAR_REAL],
+    "editar-hombro": ("3:4", [SALIDA / "editar-hombro-2-v2.png", *COLLAR_REAL],
         "Edit the first image. Keep EVERYTHING exactly the same - the woman, her pose, skin, hair, strapless top, wall, "
         "light, framing, the watch on her wrist and the ring on her finger, pixel for pixel - and change only the "
-        "necklace: it becomes " + DISENO.format(metal="gold") + ", the name reading exactly \"Carmen\" (capital C, "
-        "then a-r-m-e-n) and the teardrop crystal green. The other images are real photos of the necklace: use them only for "
-        "how the necklace is built. "),
-    "editar-tirantes": ("3:4", [SALIDA / "modelo-tirantes-2.png", *COLLAR_REAL],
+        "necklace: it becomes " + DISENO.format(metal="gold") + ", the name reading exactly \"Carmen\" (a clearly "
+        "readable capital C - an open round curve, never a V - then a-r-m-e-n) and the teardrop crystal green. The "
+        "watch stays exactly as it is in the first image, including its six opaque, polished green cabochon stones "
+        "with light veins (not faceted, not transparent). The other images are real photos of the necklace: use them "
+        "only for how the necklace is built. "),
+    "editar-tirantes": ("3:4", [SALIDA / "editar-tirantes-2-v2.png", *COLLAR_REAL],
         "Edit the first image. Keep EVERYTHING exactly the same - the woman, her pose, skin, hair, ribbed tank top, "
         "wall, light, framing and the hoop earrings, pixel for pixel - and change only the necklace: it becomes "
-        + DISENO.format(metal="gold") + ", the name reading exactly \"Elena\" (capital E, then l-e-n-a) and the "
-        "teardrop crystal soft yellow. The other images are real photos of the necklace: use them only for how the "
+        + DISENO.format(metal="gold") + ", the name reading exactly \"Elena\" (a clearly readable capital E, then "
+        "l-e-n-a) and the teardrop crystal soft yellow. The other images are real photos of the necklace: use them only for how the "
         "necklace is built. "),
 }
 
@@ -93,7 +107,7 @@ def generar(toma, n, refs_dir):
         urls = [higgsfield_client.upload_file(r) for r in rutas]
         res = higgsfield_client.subscribe(MODELO, arguments={
             "prompt": escena + NO, "image_urls": urls, "aspect_ratio": formato,
-            "resolution": "2k", "quality": "high", "enhance_prompt": False})
+            "resolution": RESOLUCION, "quality": "high", "enhance_prompt": False})
     except Exception as e:
         return f"{toma}-{n}", f"ERROR {type(e).__name__}: {e}"
     imgs = (res or {}).get("images") or []
@@ -107,6 +121,8 @@ def generar(toma, n, refs_dir):
 if __name__ == "__main__":
     args = sys.argv[1:]
     veces = 1
+    if "--4k" in args:
+        args.remove("--4k"); RESOLUCION = "4k"
     if "--n" in args:
         i = args.index("--n"); veces = int(args[i + 1]); del args[i:i + 2]
     refs_dir = REFS

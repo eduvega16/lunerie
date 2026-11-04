@@ -587,6 +587,17 @@ azul, de Yiwu Shangjie) + `caja-collar-1.jpg` (caja de terciopelo verde, por den
 1 y la 5 (`COLLAR_REAL`) en vez de la foto de Olivia. Cómo es de verdad: el nombre va **recortado de chapa plana pulida**
 (no hilo redondo), firma rápida con la mayúscula alta y un trazo largo de entrada; unido a la cadena por arriba y por el final;
 lágrima grande de 4 garras colgando de su asa en el punto más bajo. Son también las que hay que mandar a QIUHAN para la letra.
+**Carmen y Elena rehechas con la muestra real (4-nov, tarde, en producción):** nombre de chapa plana pulida, unido a la
+cadena con una anilla **en la punta de arriba de la mayúscula** y, al final, **un trazo largo y recto que acaba en otra
+anilla** (como la barra de la «t» de Marta); de ahí, 2-3 eslabones hasta la lágrima en el centro. Hechas en **4K**
+(`collar_ia.py … --4k`, 2480×3312) editando las anteriores. En Carmen el reloj se volvió a pegar desde la versión
+aprobada (la IA lo cambió: bisel de bolitas en vez de trenzado); queda `editar-hombro-2-reloj.png`. Elena:
+`editar-tirantes-1.png`. Descartadas: una que ponía «Varmen» (pedir mayúscula «pointed» convierte la C en V: no usarlo)
+y otra que ponía «Zlema». Higgsfield bloqueó una por filtro (top palabra de honor; pasa a veces, repetir).
+**Calidad en Shopify (Edu: «en mi PC se ven mejor»):** la pérdida es sobre todo la compresión WebP del CDN de Shopify (no
+se controla; ~39,7 dB a 1600 px). Lo que sí ayuda: generar en 4K y subir JPEG calidad 97 **sin submuestreo de color**
+(`subsampling=0`; ya en `collar_signe.py`). Faltan por pasar a esa calidad: `normalizar_dsers.py`, `campana_bf.py`,
+`martes.py`, `revelar.py`, `oficina/publicar.py`, `tema/fotos_prueba.py` (guardan a 90-92).
 **Falta:** fotos reales de Maille, Galet, Perle y Duo en `marca/referencias-reales/` (su 1.ª foto de ficha es de IA)
 antes de volver a usarlas en `portada_dia.py` / `portada_navidad.py`.
 

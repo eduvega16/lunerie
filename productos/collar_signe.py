@@ -64,7 +64,7 @@ def fotos_ia():
     for nombre, tipo, _ in FOTOS_IA:
         im = crop45(Image.open(ia / f"{nombre}.png").convert("RGB"))
         im = niebla(im) if tipo == "prod" else im
-        r = salida / f"{HANDLE}-{nombre}.jpg"; im.save(r, quality=92); rutas.append(r)
+        r = salida / f"{HANDLE}-{nombre}.jpg"; im.save(r, quality=97, subsampling=0); rutas.append(r)
     fuentes = subir(rutas)
     destino = [M[0], M[1], M[2], M[3]]           # dorado→dorado, modelo→modelo, plateado→plateado, de cerca→Elena
     gql("""mutation($f:[FileUpdateInput!]!){ fileUpdate(files:$f){ userErrors{ field message } } }""",
@@ -82,7 +82,7 @@ def cambiar(pares):
     M = gql('query($h: String!){ productByHandle(handle: $h){ media(first: 20){ nodes{ id alt } } } }', {"h": HANDLE})["productByHandle"]["media"]["nodes"]
     rutas = []
     for toma, _ in pares:
-        r = salida / f"{HANDLE}-{toma}.jpg"; crop45(Image.open(ia / f"{toma}.png").convert("RGB")).save(r, quality=92); rutas.append(r)
+        r = salida / f"{HANDLE}-{toma}.jpg"; crop45(Image.open(ia / f"{toma}.png").convert("RGB")).save(r, quality=97, subsampling=0); rutas.append(r)
     fuentes = subir(rutas)
     gql("""mutation($f:[FileUpdateInput!]!){ fileUpdate(files:$f){ userErrors{ field message } } }""",
         {"f": [{"id": M[pos - 1]["id"], "originalSource": s} for s, (_, pos) in zip(fuentes, pares)]}, True)
@@ -103,7 +103,7 @@ if __name__ == "__main__":
     for n, (f, tipo, cx, _) in enumerate(FOTOS):
         im = crop45(Image.open(origen / f).convert("RGB"), cx, .5)
         im = niebla(im) if tipo == "prod" else im
-        r = salida / f"{HANDLE}-{n + 1}.jpg"; im.save(r, quality=92); rutas.append(r)
+        r = salida / f"{HANDLE}-{n + 1}.jpg"; im.save(r, quality=97, subsampling=0); rutas.append(r)
     fuentes = subir(rutas)
     files = [{"originalSource": s, "alt": alt, "contentType": "IMAGE"} for s, (_, _, _, alt) in zip(fuentes, FOTOS)]
     variantes = []

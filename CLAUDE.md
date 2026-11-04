@@ -604,7 +604,7 @@ se controla; ~39,7 dB a 1600 px). Lo que sí ayuda: generar en 4K y subir JPEG c
 (las de después de las 2 de IA), solo en dorado: `reloj-maille-1..3`, `reloj-galet-1..2` (sin foto en la muñeca),
 `reloj-perle-1..3`, `anillo-duo-1..3` en `marca/referencias-reales/`. Las fotos reales de la muestra del collar **no van
 a la ficha** (Edu, 4-nov). **Con ellas se rehicieron en 4K (Edu: «hazlas con IA») las 2 fotos de IA de cada ficha**
-(1.ª en niebla, 2.ª puesta), en producción: `python marca/fichas_ia.py <tomas> --n 2 --4k` (16 fotos, ~2,70 $; descripción
+(1.ª en niebla, 2.ª puesta), en producción con el OK de Edu: `python marca/fichas_ia.py <tomas> --n 2 --4k` (16 fotos, ~2,70 $; descripción
 de cada pieza sacada de las reales + medidas de la ficha + «tamaño real en la muñeca»). Elegidas: Maille niebla-2 y
 persona-1 · Galet niebla-2 y persona-1 · Perle niebla-1 y persona-2 · Duo niebla-1 y persona-1. Subidas con el script
 nuevo **`python productos/cambiar_fotos.py <handle> <imagen> <posición> …`** (para cualquier producto: recorta a 4:5,

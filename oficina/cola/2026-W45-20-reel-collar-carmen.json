@@ -37,7 +37,7 @@
   "publicacion": {
     "archivos": [],
     "urls": [
-      "https://cdn.shopify.com/videos/c/vp/ff0b6c3a892241fb818f8e34099b7be7/ff0b6c3a892241fb818f8e34099b7be7.HD-1080p-4.8Mbps-100179269.mp4"
+      "https://cdn.shopify.com/videos/c/vp/96d08ea877be4defaefcc319976094d4/96d08ea877be4defaefcc319976094d4.HD-1080p-4.8Mbps-100180175.mp4"
     ],
     "alt_text": "Una chica enseña su collar dorado con el nombre Carmen en letra de firma y una lágrima verde pequeña: lo sostiene colgando de los dedos, en la palma, se lo abrocha y se hace una foto en el espejo; al final, el Collar Signé a 49,95 euros.",
     "ia": true
@@ -51,7 +51,7 @@
     "Personas hechas con IA: la API marca la publicación como IA (is_ai_generated)."
   ],
   "revision": {
-    "notas": "5-nov: Edu «ese es el audio, móntalo todo».",
+    "notas": "5-nov: Edu «ese es el audio, móntalo todo». 5-nov ~20:30: música bajada (Edu: «va súper fuerte»), ahora 14 dB por debajo de la voz.",
     "aprobado_por": "Edu",
     "fecha": "2026-11-05"
   }

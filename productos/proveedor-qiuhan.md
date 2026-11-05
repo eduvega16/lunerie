@@ -23,11 +23,12 @@ Yiwu Qiuhan Jewelry Company Ltd. (Alibaba, producto 1601817911870). Datos de la 
 49,95 €): **CPA breakeven ≈ 20,6 €** (con la bolsita, ≈ 21 €). El radar suma aparte 4,20 € de aranceles: si los 7 $
 ya incluyen impuestos y aranceles, el breakeven sube a ~24 €.
 
-### Respuesta para mandar (en inglés)
+### Respuesta para mandar (en inglés) · sin pedido de prueba (Edu, 5-nov: no quiere pedir muestra)
+El primer pedido de una clienta hace de prueba: por eso la foto de cada collar antes de enviarlo es obligatoria.
+Adjuntar `marca/referencias-reales/collar-signe-1.jpg` y `collar-signe-5.jpg`.
 ```text
 Thank you, friend! Then:
-1. PACKAGE: we choose the velvet BOX ($1), no logo. Do you have it in dark green? If not, beige is OK.
-   Please send a real photo of the necklace inside the box.
+1. PACKAGE: velvet BOX ($1), no logo. Do you have it in dark green? If not, beige is OK.
 2. SHIPPING $7: is it TAX INCLUDED (DDP / IOSS)? My customer must pay nothing on delivery in Spain.
    Which company delivers in Spain (Correos, GLS...)?
 3. PRICE: one order = $5.22 (316L) + $1 box + $7 shipping = $13.22. Is this correct?
@@ -35,10 +36,30 @@ Thank you, friend! Then:
    long straight line at the end, teardrop in the center)? Can you make accents (á é í ó ú ñ)?
 5. CHAIN: length and extender?
 6. Please send a real photo of your 12 birthstone colors.
-7. Photo of each necklace before shipping, tracking number in 48 hours, and free remake if the name
-   is wrong because of production. OK?
+7. Before shipping each order, send me a PHOTO of the necklace in the box. Tracking number in 48 hours.
+   If the name is wrong because of production, you remake it for free. OK?
 8. PAYMENT: one Alibaba order (Trade Assurance) for each list?
-Then I will place the test order: name "Inés", gold, May stone, in the box.
+When you confirm, I will send you the first order.
+```
+
+## Yiwu Shangjie (la de la muestra que ya tiene Edu) · a la vez que QIUHAN
+Su calidad ya se conoce (muestra «Marta», lágrima azul, caja de terciopelo verde por dentro negra; pedida el 9-oct,
+llegó el 23-oct). Ya no tiene el anuncio publicado, pero dice que lo sigue haciendo: el pedido tendría que ser un
+pedido a medida que él manda por el chat de Alibaba. Si envía con impuestos incluidos y el coste se parece al de
+QIUHAN, mejor él (calidad probada y caja verde, el color de la marca). Si se elige él, cambiar `HECHO_COLLAR` en
+`tema/build.py`, Envíos y Preguntas frecuentes a sus días.
+```text
+Hi friend! Your sample arrived (name "Marta", blue stone, green velvet box). Very good quality, thank you!
+I want to sell this necklace in my shop in Spain, with dropshipping:
+1. Can you send single orders to my customers in Spain? Price per necklace + shipping.
+   Shipping must be TAX INCLUDED (DDP / IOSS): my customer pays nothing on delivery.
+2. How many days to make it, and how many days for shipping to Spain?
+3. Same font, same teardrop and same green velvet box as my sample?
+   No "THANK YOU" card, no logo, no invoice, no price in the package.
+4. Gold and silver, with the 12 birthstone colors?
+5. Before shipping each order, send me a PHOTO of the necklace. Tracking number in 48 hours.
+   If the name is wrong because of production, you remake it for free. OK?
+6. I send you the orders every day by chat. Payment: one Alibaba order (Trade Assurance) for each list?
 ```
 
 ## Cuentas del primer mensaje (calculadora del radar, pago con tarjeta, a 49,95 €)

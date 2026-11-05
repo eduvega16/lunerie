@@ -646,7 +646,10 @@ enseña el pago (7-12 días laborables) no cuenta los días de hacerlo (el anunc
 terciopelo beige 1 $ → con la cajita, CPA breakeven ≈ 20,6 €. Detalle, preguntas pendientes y la siguiente respuesta en
 `productos/proveedor-qiuhan.md`.
 **Siguiente con el collar (5-nov, noche):** Edu manda a QIUHAN la 3.ª respuesta en inglés (está en
-`productos/proveedor-qiuhan.md`, con las fotos `collar-signe-1/5.jpg`). Claude recomienda la **cajita de 1 $** (solo
+`productos/proveedor-qiuhan.md`, con las fotos `collar-signe-1/5.jpg`), **sin pedido de prueba** (Edu no quiere pedir
+muestra: el primer pedido de una clienta hace de prueba, con foto obligatoria antes de enviarlo), y **a la vez pregunta
+lo mismo a Yiwu Shangjie** (la de la muestra que ya conoce; mensaje en el mismo fichero). Si los dos valen, mejor
+Shangjie (calidad probada, caja verde). Claude recomienda la **cajita de 1 $** (solo
 0,5 $ más que la bolsita; preguntar si la hay en verde oscuro, si no la beige; nada de bolsita turquesa, recuerda a
 Tiffany), pero Edu aún no lo ha decidido. No poner «llega en su cajita» en la ficha hasta ver una foto real. **Lo
 crítico sigue sin contestar: si el envío de 7 $ va con impuestos incluidos (IOSS/DDP).** Con su respuesta: plazos,

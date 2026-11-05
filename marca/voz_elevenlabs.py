@@ -77,7 +77,11 @@ def srt_desde(al, inicio=0.0):
             t0 = a
         actual += c
         if c in ".?!":
-            frases.append((t0, b, actual.strip())); actual, t0 = "", None
+            if re.search(r"\w", actual) or not frases:
+                frases.append((t0, b, actual.strip()))
+            else:   # «...» o «?!» sueltos: se pegan a la frase anterior
+                a0, _, t = frases[-1]; frases[-1] = (a0, b, t + actual.strip())
+            actual, t0 = "", None
     if actual.strip():
         frases.append((t0, fin[-1], actual.strip()))
     ts = lambda s: f"{int(s // 3600):02d}:{int(s % 3600 // 60):02d}:{int(s % 60):02d},{int(round(s % 1 * 1000)):03d}"
@@ -89,11 +93,27 @@ def generar(voice_id, nombre, texto=GUION):
     m = modelo()
     r = pedir(f"/v1/text-to-speech/{voice_id}/with-timestamps?output_format=mp3_44100_128",
               {"text": texto, "model_id": m, "language_code": "es",
-               "voice_settings": {"stability": 0.45, "similarity_boost": 0.8, "style": 0.3, "use_speaker_boost": True}})
+               "voice_settings": {"stability": 0.32, "similarity_boost": 0.75, "style": 0.0, "use_speaker_boost": False}})
+    # 5-nov (Edu: «que no sea tanto de estudio, parece una dobladora»): menos estabilidad y sin «style» = más natural
     VOZ.mkdir(parents=True, exist_ok=True)
     (VOZ / f"voz-{nombre}.mp3").write_bytes(base64.b64decode(r["audio_base64"]))
     (VOZ / f"voz-{nombre}.srt").write_text(srt_desde(r["alignment"]), encoding="utf8")
     print(f"voz-{nombre}.mp3 ({m}, {len(texto)} caracteres)")
+    movil(nombre)
+
+
+def movil(nombre):
+    """Versión «grabada con el móvil en una habitación»: sin graves ni brillo de estudio, un poco de eco de cuarto y
+    ruido de fondo muy bajo → voz/voz-<nombre>-movil.mp3 (+ el mismo .srt)."""
+    import shutil, subprocess
+    ent, sal = VOZ / f"voz-{nombre}.mp3", VOZ / f"voz-{nombre}-movil.mp3"
+    filtro = ("[0:a]highpass=f=160,lowpass=f=7200,equalizer=f=2800:t=q:w=1.2:g=2,"
+              "aecho=0.85:0.5:22|41:0.12|0.07,volume=1.1[v];"
+              "anoisesrc=color=brown:amplitude=0.006:sample_rate=44100[n];"
+              "[v][n]amix=inputs=2:duration=first:weights=1 1[a]")
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(ent), "-filter_complex", filtro, "-map", "[a]",
+                    "-b:a", "160k", str(sal)], check=True)
+    shutil.copy(VOZ / f"voz-{nombre}.srt", VOZ / f"voz-{nombre}-movil.srt")
 
 
 DESCRIPCION = ("Mujer joven de unos 27 años de Madrid, España, con acento castellano peninsular. Voz cálida, natural y "

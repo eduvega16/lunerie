@@ -1,6 +1,6 @@
 {
   "id": "2026-W45-16-reel-collar-nombre-piedra",
-  "estado": "revisado",
+  "estado": "borrador",
   "plataforma": "instagram",
   "formato": "reel",
   "pieza": "collar-signe",
@@ -81,7 +81,7 @@
     "Reel: publicar.py exige URL pública del MP4 (falta) y la API no añade música; lo más sencillo es que Edu lo suba desde la app."
   ],
   "revision": {
-    "notas": "5-nov: vídeo montado por Claude con HyperFrames y subido a Shopify (URL en publicacion.urls). Pendiente del OK de Edu para pasarlo a aprobado.",
+    "notas": "5-nov: Edu descartó el vídeo de HyperFrames («no me gusta», salto de imagen al final). Se rehace en UGC realista: marca/fotos-ia/ugc-collar/collar-ugc-*-9x16.mp4 (modelo IA + voz en off). Cambiar urls y guion cuando Edu elija versión.",
     "aprobado_por": null,
     "fecha": null
   }

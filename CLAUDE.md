@@ -683,6 +683,9 @@ Coste total ~2,5-3 $. Vídeo elegido: `marca/fotos-ia/ugc-collar/collar-ugc-sara
 - **Anuncio 16** `52566612235194` en el mismo conjunto: 4:5 en feed y 9:16 en Stories y Reels, sin plazo ni fecha de
   Navidad y sin declarar IA. Ya son 17 anuncios.
 - Las piezas 17-19 del collar (carrusel, stories, foto) siguen en borrador.
+- **PENDIENTE (recordárselo a Edu): ElevenLabs Starter**, contratado el 5-nov por 1 $ el primer mes para usar voces de la
+  biblioteca por la API (el plan Free no deja: error 402). **Se renueva solo hacia el 5-dic a 6 $/mes**: antes de esa
+  fecha, preguntar a Edu si lo cancela (Suscripción en elevenlabs.io) o lo mantiene. Plan Starter, no Creator.
 - **Anuncio 14 sin plazo** (Edu, 5-nov: «quita lo del plazo de entrega por ahora»): texto sin «2-5 semanas» ni «antes
   del 15 de noviembre» (creatividad 1843881623619209). **Ya no hay que pausarlo el 15-nov.** La ficha ya no daba plazo.
 - Ideas del estratega en `oficina/ideas/2026-11-05-collar.md`.

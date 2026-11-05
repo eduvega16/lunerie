@@ -690,6 +690,9 @@ Coste total ~2,5-3 $. Vídeo elegido: `marca/fotos-ia/ugc-collar/collar-ugc-sara
   «doblaje». Vídeo: `marca/fotos-ia/ugc-collar-carmen-2/collar-ugc-silvia-movil-9x16.mp4` (+ `-4x5`, recorte y=165).
   Edu le pone música y lo devuelve para la campaña y un reel. Limpieza del 5-nov: borradas las otras voces y vídeos de
   prueba, el primer vídeo de Carmen y el vídeo descartado de HyperFrames. Se conservan los clips de origen y las anclas.
+  **Con la música de Edu** («Holiday Bells», `marca/musica/holiday-bells.m4a`; el título del archivo es un id, parece de la
+  biblioteca de sonidos de Meta) mezclada con `python marca/con_musica.py <vídeo> <música>` (la música baja cuando habla,
+  -14 LUFS): **anuncio 18** `52566698768994` en la campaña y **reel programado el 6-nov 19:30** (`2026-W45-20`).
 - **PENDIENTE (recordárselo a Edu): ElevenLabs Starter**, contratado el 5-nov por 1 $ el primer mes para usar voces de la
   biblioteca por la API (el plan Free no deja: error 402). **Se renueva solo hacia el 5-dic a 6 $/mes**: antes de esa
   fecha, preguntar a Edu si lo cancela (Suscripción en elevenlabs.io) o lo mantiene. Plan Starter, no Creator.

@@ -122,6 +122,13 @@ chica de IA enseñando el collar «Marta» dorado con lágrima azul, voz en off 
 > hace para ella con el nombre que escribas. Y por Black Friday, la 2.ª pieza al 50 %.
 Sin plazo ni fecha de Navidad (no confirmados). Sin declarar IA (decisión de Edu para la campaña).
 
+**18 · Collar Signé · UGC Carmen luz dorada** (5-nov, Edu: «me flipa»; «ese es el audio, móntalo todo»). Vídeo de 15 s con
+ideas de Pinterest: el collar «Carmen» (dorado, lágrima verde pequeña) colgando de los dedos, en la palma, abrochándolo y
+selfie en el espejo; voz de Silvia (ElevenLabs) con filtro de móvil y música «Holiday Bells» (`marca/musica/`, de Edu)
+mezclada con `marca/con_musica.py` · destino `/products/collar-signe` · `utm_content=collar-carmen` · título *Collar Signé · 49,95 €*
+> Imagina su cara cuando vea su nombre. El Collar Signé lleva su nombre en letra de firma y una lágrima pequeña del color
+> de su mes. En dorado o plateado, 49,95 €. Y por Black Friday, la 2.ª pieza al 50 %.
+
 Si cambia un precio: `preparar.py` + volver a grabar los vídeos, y cambiar el precio en estos textos («desde 19,95 €»
 del 10 es el más barato de la tienda hoy: aros Boucle y anillo Duo).
 

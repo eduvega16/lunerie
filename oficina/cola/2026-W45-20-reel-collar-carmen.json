@@ -1,0 +1,58 @@
+{
+  "id": "2026-W45-20-reel-collar-carmen",
+  "estado": "aprobado",
+  "plataforma": "instagram",
+  "formato": "reel",
+  "pieza": "collar-signe",
+  "fecha_sugerida": "2026-11-06T19:30:00+01:00",
+  "gancho": "Imagina su cara cuando vea su nombre...",
+  "copy": "Imagina su cara cuando vea su nombre.\n\nCollar Signé: su nombre en letra de firma y una lágrima pequeña del color de su mes. En dorado o plateado, 49,95 €. Un collar con nombre para regalar, que se hace para ella con el nombre que elijas.\n\nPor Black Friday, la 2.ª pieza al 50 % y la 3.ª, gratis.\n\nLo tienes en el enlace del perfil.",
+  "hashtags": [
+    "#collarconnombre",
+    "#regaloparaella",
+    "#lunerie"
+  ],
+  "guion": [
+    {
+      "segundos": "0-15",
+      "imagen": "UGC en luz dorada: el collar «Carmen» (dorado, lágrima verde) colgando de los dedos → en la palma → abrochándolo → selfie en el espejo; tarjeta final con el precio.",
+      "texto_en_pantalla": "Subtítulos de la voz + «Collar Signé · 49,95 € · Dorado · Plateado · lunerie.es»",
+      "voz": "Imagina su cara cuando vea su nombre... Escrito como una firma, con una lágrima pequeñita del color de su mes. Para llevarlo cerca, todos los días. Es el Collar Signé, y lo tienes en lunerie.es. (ElevenLabs, Silvia, filtro de móvil)"
+    }
+  ],
+  "assets": {
+    "existentes": [
+      "marca/fotos-ia/ugc-collar-carmen-2/collar-ugc-silvia-movil-9x16-musica.mp4"
+    ],
+    "generar": []
+  },
+  "musica": {
+    "origen": "pista de Edu",
+    "pista": "Holiday Bells (marca/musica/holiday-bells.m4a; título del archivo 422875900349063, parece de la biblioteca de sonidos de Meta)",
+    "licencia": "biblioteca de sonidos de Meta (confirmar con Edu)"
+  },
+  "montaje": [
+    "ugc_collar.py --version carmen-dorada → ugc_animar.py → voz_elevenlabs.py (Silvia) → ugc_montaje.py silvia-movil --planos colgando-1:4,palma-1:2.4,cierre-1:2.6,espejo-1:4 → con_musica.py"
+  ],
+  "publicacion": {
+    "archivos": [],
+    "urls": [
+      "https://cdn.shopify.com/videos/c/vp/ff0b6c3a892241fb818f8e34099b7be7/ff0b6c3a892241fb818f8e34099b7be7.HD-1080p-4.8Mbps-100179269.mp4"
+    ],
+    "alt_text": "Una chica enseña su collar dorado con el nombre Carmen en letra de firma y una lágrima verde pequeña: lo sostiene colgando de los dedos, en la palma, se lo abrocha y se hace una foto en el espejo; al final, el Collar Signé a 49,95 euros.",
+    "ia": true
+  },
+  "origen": {
+    "biblioteca": "ideas de Pinterest «ugc content jewelry» (5-nov)",
+    "referencia": ""
+  },
+  "riesgos": [
+    "Sin plazo de entrega ni fecha de Navidad (Edu, 5-nov).",
+    "Personas hechas con IA: la API marca la publicación como IA (is_ai_generated)."
+  ],
+  "revision": {
+    "notas": "5-nov: Edu «ese es el audio, móntalo todo».",
+    "aprobado_por": "Edu",
+    "fecha": "2026-11-05"
+  }
+}

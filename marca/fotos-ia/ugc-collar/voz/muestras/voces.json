@@ -1,0 +1,2704 @@
+[
+ {
+  "public_owner_id": "b11ba57b5815bf861c2cb764605fd53a9544948008706505e87a2765ac4b5717",
+  "voice_id": "YDDaC9XKjODs7hY78qEW",
+  "date_unix": 1732279537,
+  "name": "MariCarmen - Hurried and Intimidating",
+  "accent": "peninsular",
+  "gender": "female",
+  "age": "middle_aged",
+  "descriptive": "anxious",
+  "use_case": "characters_animation",
+  "category": "high_quality",
+  "language": "es",
+  "locale": "es-ES",
+  "description": "Mari Carmen is a Spanish Middle Aged woman who is always complaining and grumpy. Works well for characters.",
+  "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/workspace/09e71d7d3a9b4b12a719c34169fcf3f1/voices/YDDaC9XKjODs7hY78qEW/H2M0utknIJMKtZNX1SL4.mp3",
+  "usage_character_count_1y": 2434349822,
+  "usage_character_count_7d": 353624,
+  "play_api_usage_character_count_1y": 0,
+  "cloned_by_count": 8572,
+  "rate": 1.0,
+  "fiat_rate": 0.25,
+  "free_users_allowed": false,
+  "live_moderation_enabled": false,
+  "featured": false,
+  "verified_languages": [
+   {
+    "language": "es",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/workspace/09e71d7d3a9b4b12a719c34169fcf3f1/voices/YDDaC9XKjODs7hY78qEW/H2M0utknIJMKtZNX1SL4.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_multilingual_sts_v2",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/workspace/09e71d7d3a9b4b12a719c34169fcf3f1/voices/YDDaC9XKjODs7hY78qEW/H2M0utknIJMKtZNX1SL4.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/workspace/09e71d7d3a9b4b12a719c34169fcf3f1/voices/YDDaC9XKjODs7hY78qEW/H2M0utknIJMKtZNX1SL4.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v2_5_flash",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/workspace/09e71d7d3a9b4b12a719c34169fcf3f1/voices/YDDaC9XKjODs7hY78qEW/H2M0utknIJMKtZNX1SL4.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/workspace/09e71d7d3a9b4b12a719c34169fcf3f1/voices/YDDaC9XKjODs7hY78qEW/H2M0utknIJMKtZNX1SL4.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/workspace/09e71d7d3a9b4b12a719c34169fcf3f1/voices/YDDaC9XKjODs7hY78qEW/H2M0utknIJMKtZNX1SL4.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4_exp",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/workspace/09e71d7d3a9b4b12a719c34169fcf3f1/voices/YDDaC9XKjODs7hY78qEW/H2M0utknIJMKtZNX1SL4.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4_hq",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/workspace/09e71d7d3a9b4b12a719c34169fcf3f1/voices/YDDaC9XKjODs7hY78qEW/H2M0utknIJMKtZNX1SL4.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4_post_trained",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/workspace/09e71d7d3a9b4b12a719c34169fcf3f1/voices/YDDaC9XKjODs7hY78qEW/H2M0utknIJMKtZNX1SL4.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4_turbo",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/workspace/09e71d7d3a9b4b12a719c34169fcf3f1/voices/YDDaC9XKjODs7hY78qEW/H2M0utknIJMKtZNX1SL4.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4_turbo_exp",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/workspace/09e71d7d3a9b4b12a719c34169fcf3f1/voices/YDDaC9XKjODs7hY78qEW/H2M0utknIJMKtZNX1SL4.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4_eval",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/workspace/09e71d7d3a9b4b12a719c34169fcf3f1/voices/YDDaC9XKjODs7hY78qEW/H2M0utknIJMKtZNX1SL4.mp3"
+   },
+   {
+    "language": "fr",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "standard",
+    "locale": "fr-FR",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/jtTYnERxVfShx33UbofXQyQtghT2/voices/YDDaC9XKjODs7hY78qEW/b00636c6-80a1-4e08-bde3-e201e0150358.mp3"
+   },
+   {
+    "language": "ro",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "standard",
+    "locale": "ro-RO",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/jtTYnERxVfShx33UbofXQyQtghT2/voices/YDDaC9XKjODs7hY78qEW/91632eab-1fb7-4a45-836d-736795a17722.mp3"
+   },
+   {
+    "language": "ko",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "standard",
+    "locale": "ko-KR",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/jtTYnERxVfShx33UbofXQyQtghT2/voices/YDDaC9XKjODs7hY78qEW/7dbcf40b-bf0f-4910-86fa-3197dc5ac1f2.mp3"
+   },
+   {
+    "language": "nl",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "central",
+    "locale": "nl-NL",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/jtTYnERxVfShx33UbofXQyQtghT2/voices/YDDaC9XKjODs7hY78qEW/327335eb-7a27-4afa-95d9-189b2c7cb67b.mp3"
+   },
+   {
+    "language": "id",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "standard",
+    "locale": "id-ID",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/jtTYnERxVfShx33UbofXQyQtghT2/voices/YDDaC9XKjODs7hY78qEW/aae72570-8a00-43d3-be9c-99ec72936383.mp3"
+   },
+   {
+    "language": "sk",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "standard",
+    "locale": "sk-SK",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/jtTYnERxVfShx33UbofXQyQtghT2/voices/YDDaC9XKjODs7hY78qEW/e5effa84-0187-48c2-a41a-343f6f8e2edd.mp3"
+   },
+   {
+    "language": "sv",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "standard",
+    "locale": "sv-SE",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/jtTYnERxVfShx33UbofXQyQtghT2/voices/YDDaC9XKjODs7hY78qEW/3e1a35cb-a268-482f-9b35-43ab8c430dd3.mp3"
+   },
+   {
+    "language": "ta",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "standard",
+    "locale": "ta-IN",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/jtTYnERxVfShx33UbofXQyQtghT2/voices/YDDaC9XKjODs7hY78qEW/530e8bf4-3936-45d4-b9b1-a7505b5c1ad6.mp3"
+   },
+   {
+    "language": "it",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "standard",
+    "locale": "it-IT",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/jtTYnERxVfShx33UbofXQyQtghT2/voices/YDDaC9XKjODs7hY78qEW/809bfd73-0bd9-424b-97f1-965507248e7d.mp3"
+   },
+   {
+    "language": "fr",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "fr-standard",
+    "locale": "fr-FR",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/YDDaC9XKjODs7hY78qEW/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImZyIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "fr",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "fr-standard",
+    "locale": "fr-FR",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/YDDaC9XKjODs7hY78qEW/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImZyIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "hu",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "hu-standard",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/YDDaC9XKjODs7hY78qEW/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6Imh1IiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "el",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "other",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/YDDaC9XKjODs7hY78qEW/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImVsIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "el",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "el-standard",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/YDDaC9XKjODs7hY78qEW/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImVsIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "el",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "el-standard",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/YDDaC9XKjODs7hY78qEW/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImVsIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "no",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "no-sørlandsk",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/YDDaC9XKjODs7hY78qEW/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6Im5vIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "no",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "no-oslo",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/YDDaC9XKjODs7hY78qEW/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6Im5vIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "no",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "no-oslo",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/YDDaC9XKjODs7hY78qEW/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6Im5vIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "hr",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "hr-standard",
+    "locale": "hr-HR",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/YDDaC9XKjODs7hY78qEW/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImhyIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "pl",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "pl-standard",
+    "locale": "pl-PL",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/YDDaC9XKjODs7hY78qEW/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InBsIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "vi",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "vi-southern",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/YDDaC9XKjODs7hY78qEW/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InZpIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "vi",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "vi-southern",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/YDDaC9XKjODs7hY78qEW/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InZpIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "da",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "da-jutlandic",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/YDDaC9XKjODs7hY78qEW/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImRhIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "ms",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "ms-standard",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/YDDaC9XKjODs7hY78qEW/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6Im1zIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "ro",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "ro-standard",
+    "locale": "ro-RO",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/YDDaC9XKjODs7hY78qEW/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InJvIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "ar",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "ar-modern-standard",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/YDDaC9XKjODs7hY78qEW/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImFyIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "tr",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "tr-standard",
+    "locale": "tr-TR",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/YDDaC9XKjODs7hY78qEW/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InRyIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "tr",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "tr-standard",
+    "locale": "tr-TR",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/YDDaC9XKjODs7hY78qEW/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InRyIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "tr",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "tr-standard",
+    "locale": "tr-TR",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/YDDaC9XKjODs7hY78qEW/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InRyIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "es-mexican",
+    "locale": "es-ES",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/YDDaC9XKjODs7hY78qEW/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImVzIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "es-galician",
+    "locale": "es-ES",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/YDDaC9XKjODs7hY78qEW/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImVzIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "es-galician",
+    "locale": "es-ES",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/YDDaC9XKjODs7hY78qEW/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImVzIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "en-british",
+    "locale": "en-US",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/YDDaC9XKjODs7hY78qEW/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImVuIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "de",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "de-standard",
+    "locale": "de-DE",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/YDDaC9XKjODs7hY78qEW/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImRlIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "de",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "de-standard",
+    "locale": "de-DE",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/YDDaC9XKjODs7hY78qEW/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImRlIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "de",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "de-standard",
+    "locale": "de-DE",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/YDDaC9XKjODs7hY78qEW/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImRlIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   }
+  ],
+  "notice_period": 730,
+  "instagram_username": null,
+  "twitter_username": null,
+  "youtube_username": null,
+  "tiktok_username": null,
+  "image_url": "",
+  "is_added_by_user": false,
+  "is_bookmarked": null
+ },
+ {
+  "public_owner_id": "836e36b4a946917f0368eef4eadefd17794aaf18c4bbe50650cd81e94008559a",
+  "voice_id": "UOIqAnmS11Reiei1Ytkc",
+  "date_unix": 1715785792,
+  "name": "Carolina - Natural, Neutral and Clear",
+  "accent": "peninsular",
+  "gender": "female",
+  "age": "middle_aged",
+  "descriptive": "confident",
+  "use_case": "conversational",
+  "category": "professional",
+  "language": "es",
+  "locale": "es-ES",
+  "description": "A Spanish (from Spain) woman with a sweet and natural voice. Perfect for narrations or conversational content. ",
+  "preview_url": "https://storage.googleapis.com/eleven-public-prod/custom/voices/UOIqAnmS11Reiei1Ytkc/iD8yOai01ygsrjOUknQ3.mp3",
+  "usage_character_count_1y": 2111442565,
+  "usage_character_count_7d": 49978950,
+  "play_api_usage_character_count_1y": 0,
+  "cloned_by_count": 46268,
+  "rate": 1.0,
+  "fiat_rate": null,
+  "free_users_allowed": true,
+  "live_moderation_enabled": false,
+  "featured": false,
+  "verified_languages": [
+   {
+    "language": "es",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/custom/voices/UOIqAnmS11Reiei1Ytkc/iD8yOai01ygsrjOUknQ3.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/custom/voices/UOIqAnmS11Reiei1Ytkc/iD8yOai01ygsrjOUknQ3.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/custom/voices/UOIqAnmS11Reiei1Ytkc/iD8yOai01ygsrjOUknQ3.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v2_5_flash",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/custom/voices/UOIqAnmS11Reiei1Ytkc/iD8yOai01ygsrjOUknQ3.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/custom/voices/UOIqAnmS11Reiei1Ytkc/iD8yOai01ygsrjOUknQ3.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4_exp",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/custom/voices/UOIqAnmS11Reiei1Ytkc/iD8yOai01ygsrjOUknQ3.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4_hq",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/custom/voices/UOIqAnmS11Reiei1Ytkc/iD8yOai01ygsrjOUknQ3.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4_post_trained",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/custom/voices/UOIqAnmS11Reiei1Ytkc/iD8yOai01ygsrjOUknQ3.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4_turbo",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/custom/voices/UOIqAnmS11Reiei1Ytkc/iD8yOai01ygsrjOUknQ3.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4_turbo_exp",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/custom/voices/UOIqAnmS11Reiei1Ytkc/iD8yOai01ygsrjOUknQ3.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4_eval",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/custom/voices/UOIqAnmS11Reiei1Ytkc/iD8yOai01ygsrjOUknQ3.mp3"
+   }
+  ],
+  "notice_period": null,
+  "instagram_username": null,
+  "twitter_username": null,
+  "youtube_username": null,
+  "tiktok_username": null,
+  "image_url": "",
+  "is_added_by_user": false,
+  "is_bookmarked": null
+ },
+ {
+  "public_owner_id": "8005ecb7e09304a696e5bd13cef3b170ee24f7988d7312352f842d7e07411e49",
+  "voice_id": "1eHrpOW5l98cxiSRjbzJ",
+  "date_unix": 1745406708,
+  "name": "Raquel - Young, Bright and Cheerful",
+  "accent": "peninsular",
+  "gender": "female",
+  "age": "young",
+  "descriptive": "casual",
+  "use_case": "conversational",
+  "category": "high_quality",
+  "language": "es",
+  "locale": "es-ES",
+  "description": "Young Spanish female voice. Good for conversation.",
+  "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/yrpXax6FKwZveVMFcgOsJ03gxlr1/voices/1eHrpOW5l98cxiSRjbzJ/gCIet3OxcKuJhQlwkECR.mp3",
+  "usage_character_count_1y": 1983765664,
+  "usage_character_count_7d": 32032425,
+  "play_api_usage_character_count_1y": 0,
+  "cloned_by_count": 30959,
+  "rate": 1.0,
+  "fiat_rate": null,
+  "free_users_allowed": true,
+  "live_moderation_enabled": false,
+  "featured": false,
+  "verified_languages": [
+   {
+    "language": "es",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/yrpXax6FKwZveVMFcgOsJ03gxlr1/voices/1eHrpOW5l98cxiSRjbzJ/gCIet3OxcKuJhQlwkECR.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_multilingual_sts_v2",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/yrpXax6FKwZveVMFcgOsJ03gxlr1/voices/1eHrpOW5l98cxiSRjbzJ/gCIet3OxcKuJhQlwkECR.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/yrpXax6FKwZveVMFcgOsJ03gxlr1/voices/1eHrpOW5l98cxiSRjbzJ/gCIet3OxcKuJhQlwkECR.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v2_5_flash",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/yrpXax6FKwZveVMFcgOsJ03gxlr1/voices/1eHrpOW5l98cxiSRjbzJ/gCIet3OxcKuJhQlwkECR.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/yrpXax6FKwZveVMFcgOsJ03gxlr1/voices/1eHrpOW5l98cxiSRjbzJ/gCIet3OxcKuJhQlwkECR.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/yrpXax6FKwZveVMFcgOsJ03gxlr1/voices/1eHrpOW5l98cxiSRjbzJ/gCIet3OxcKuJhQlwkECR.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4_exp",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/yrpXax6FKwZveVMFcgOsJ03gxlr1/voices/1eHrpOW5l98cxiSRjbzJ/gCIet3OxcKuJhQlwkECR.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4_hq",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/yrpXax6FKwZveVMFcgOsJ03gxlr1/voices/1eHrpOW5l98cxiSRjbzJ/gCIet3OxcKuJhQlwkECR.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4_post_trained",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/yrpXax6FKwZveVMFcgOsJ03gxlr1/voices/1eHrpOW5l98cxiSRjbzJ/gCIet3OxcKuJhQlwkECR.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4_turbo",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/yrpXax6FKwZveVMFcgOsJ03gxlr1/voices/1eHrpOW5l98cxiSRjbzJ/gCIet3OxcKuJhQlwkECR.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4_turbo_exp",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/yrpXax6FKwZveVMFcgOsJ03gxlr1/voices/1eHrpOW5l98cxiSRjbzJ/gCIet3OxcKuJhQlwkECR.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4_eval",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/yrpXax6FKwZveVMFcgOsJ03gxlr1/voices/1eHrpOW5l98cxiSRjbzJ/gCIet3OxcKuJhQlwkECR.mp3"
+   },
+   {
+    "language": "cs",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "cs-standard",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/1eHrpOW5l98cxiSRjbzJ/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImNzIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "cs",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "cs-standard",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/1eHrpOW5l98cxiSRjbzJ/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImNzIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "pl",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "pl-standard",
+    "locale": "pl-PL",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/1eHrpOW5l98cxiSRjbzJ/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InBsIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "pl",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "pl-standard",
+    "locale": "pl-PL",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/1eHrpOW5l98cxiSRjbzJ/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InBsIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "no",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "no-northern",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/1eHrpOW5l98cxiSRjbzJ/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6Im5vIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "no",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "no-standard",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/1eHrpOW5l98cxiSRjbzJ/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6Im5vIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "vi",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "vi-northern",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/1eHrpOW5l98cxiSRjbzJ/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InZpIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "ms",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "ms-standard",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/1eHrpOW5l98cxiSRjbzJ/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6Im1zIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "ms",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "ms-indonesian",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/1eHrpOW5l98cxiSRjbzJ/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6Im1zIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "ms",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "ms-standard",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/1eHrpOW5l98cxiSRjbzJ/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6Im1zIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "zh",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "zh-standard",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/1eHrpOW5l98cxiSRjbzJ/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InpoIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "fi",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "fi-standard",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/1eHrpOW5l98cxiSRjbzJ/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImZpIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "fi",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "fi-standard",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/1eHrpOW5l98cxiSRjbzJ/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImZpIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "nl",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "nl-standard",
+    "locale": "nl-NL",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/1eHrpOW5l98cxiSRjbzJ/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6Im5sIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "ar",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "ar-modern-standard",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/1eHrpOW5l98cxiSRjbzJ/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImFyIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "ar",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "ar-modern-standard",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/1eHrpOW5l98cxiSRjbzJ/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImFyIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "tr",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "tr-standard",
+    "locale": "tr-TR",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/1eHrpOW5l98cxiSRjbzJ/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InRyIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "tr",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "tr-standard",
+    "locale": "tr-TR",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/1eHrpOW5l98cxiSRjbzJ/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InRyIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "tr",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "tr-standard",
+    "locale": "tr-TR",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/1eHrpOW5l98cxiSRjbzJ/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InRyIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "ro",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "ro-standard",
+    "locale": "ro-RO",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/1eHrpOW5l98cxiSRjbzJ/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InJvIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "ro",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "ro-standard",
+    "locale": "ro-RO",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/1eHrpOW5l98cxiSRjbzJ/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InJvIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "ro",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "ro-standard",
+    "locale": "ro-RO",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/1eHrpOW5l98cxiSRjbzJ/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InJvIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "es-peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/1eHrpOW5l98cxiSRjbzJ/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImVzIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "da",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "da-zealandic",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/1eHrpOW5l98cxiSRjbzJ/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImRhIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "hr",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "hr-dubrovnik",
+    "locale": "hr-HR",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/1eHrpOW5l98cxiSRjbzJ/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImhyIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "hu",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "hu-standard",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/1eHrpOW5l98cxiSRjbzJ/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6Imh1IiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   }
+  ],
+  "notice_period": 730,
+  "instagram_username": null,
+  "twitter_username": null,
+  "youtube_username": null,
+  "tiktok_username": null,
+  "image_url": "",
+  "is_added_by_user": false,
+  "is_bookmarked": null
+ },
+ {
+  "public_owner_id": "0143e87b9296bfde21c85a4325e2ce1994afe9d02eca671c3bb0d85f4ed1db10",
+  "voice_id": "h2cd3gvcqTp3m65Dysk7",
+  "date_unix": 1736714296,
+  "name": "Carolina Ruiz - Nasal, Natural and Clear",
+  "accent": "peninsular",
+  "gender": "female",
+  "age": "middle_aged",
+  "descriptive": "casual",
+  "use_case": "conversational",
+  "category": "professional",
+  "language": "es",
+  "locale": "es-ES",
+  "description": "Female voice in Spanish language and conversational style.\n",
+  "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/workspace/0a827733c0974887817bc85481951f95/voices/h2cd3gvcqTp3m65Dysk7/DvNPwmY8u2WKmyXeN8yh.mp3",
+  "usage_character_count_1y": 1833149687,
+  "usage_character_count_7d": 25585248,
+  "play_api_usage_character_count_1y": 0,
+  "cloned_by_count": 31020,
+  "rate": 1.0,
+  "fiat_rate": null,
+  "free_users_allowed": true,
+  "live_moderation_enabled": false,
+  "featured": false,
+  "verified_languages": [
+   {
+    "language": "es",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/workspace/0a827733c0974887817bc85481951f95/voices/h2cd3gvcqTp3m65Dysk7/DvNPwmY8u2WKmyXeN8yh.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/workspace/0a827733c0974887817bc85481951f95/voices/h2cd3gvcqTp3m65Dysk7/DvNPwmY8u2WKmyXeN8yh.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_multilingual_sts_v2",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/workspace/0a827733c0974887817bc85481951f95/voices/h2cd3gvcqTp3m65Dysk7/DvNPwmY8u2WKmyXeN8yh.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/workspace/0a827733c0974887817bc85481951f95/voices/h2cd3gvcqTp3m65Dysk7/DvNPwmY8u2WKmyXeN8yh.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v2_5_flash",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/workspace/0a827733c0974887817bc85481951f95/voices/h2cd3gvcqTp3m65Dysk7/DvNPwmY8u2WKmyXeN8yh.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/workspace/0a827733c0974887817bc85481951f95/voices/h2cd3gvcqTp3m65Dysk7/DvNPwmY8u2WKmyXeN8yh.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4_exp",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/workspace/0a827733c0974887817bc85481951f95/voices/h2cd3gvcqTp3m65Dysk7/DvNPwmY8u2WKmyXeN8yh.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4_hq",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/workspace/0a827733c0974887817bc85481951f95/voices/h2cd3gvcqTp3m65Dysk7/DvNPwmY8u2WKmyXeN8yh.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4_post_trained",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/workspace/0a827733c0974887817bc85481951f95/voices/h2cd3gvcqTp3m65Dysk7/DvNPwmY8u2WKmyXeN8yh.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4_turbo",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/workspace/0a827733c0974887817bc85481951f95/voices/h2cd3gvcqTp3m65Dysk7/DvNPwmY8u2WKmyXeN8yh.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4_turbo_exp",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/workspace/0a827733c0974887817bc85481951f95/voices/h2cd3gvcqTp3m65Dysk7/DvNPwmY8u2WKmyXeN8yh.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4_eval",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/workspace/0a827733c0974887817bc85481951f95/voices/h2cd3gvcqTp3m65Dysk7/DvNPwmY8u2WKmyXeN8yh.mp3"
+   },
+   {
+    "language": "ar",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "ar-modern-standard",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/h2cd3gvcqTp3m65Dysk7/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImFyIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "tr",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "tr-standard",
+    "locale": "tr-TR",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/h2cd3gvcqTp3m65Dysk7/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InRyIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "tr",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "tr-standard",
+    "locale": "tr-TR",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/h2cd3gvcqTp3m65Dysk7/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InRyIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "es-peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/h2cd3gvcqTp3m65Dysk7/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImVzIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "it",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "it-standard",
+    "locale": "it-IT",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/h2cd3gvcqTp3m65Dysk7/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6Iml0IiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "it",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "it-standard",
+    "locale": "it-IT",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/h2cd3gvcqTp3m65Dysk7/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6Iml0IiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "it",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "it-standard",
+    "locale": "it-IT",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/h2cd3gvcqTp3m65Dysk7/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6Iml0IiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "id",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "id-standard",
+    "locale": "id-ID",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/h2cd3gvcqTp3m65Dysk7/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImlkIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "ko",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "ko-standard",
+    "locale": "ko-KR",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/h2cd3gvcqTp3m65Dysk7/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImtvIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "no",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "no-sørlandsk",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/h2cd3gvcqTp3m65Dysk7/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6Im5vIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "de",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "de-standard",
+    "locale": "de-DE",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/h2cd3gvcqTp3m65Dysk7/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImRlIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "de",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "de-standard",
+    "locale": "de-DE",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/h2cd3gvcqTp3m65Dysk7/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImRlIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "pt",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "pt-european",
+    "locale": "pt-BR",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/h2cd3gvcqTp3m65Dysk7/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InB0IiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "pt",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "pt-european",
+    "locale": "pt-BR",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/h2cd3gvcqTp3m65Dysk7/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InB0IiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   }
+  ],
+  "notice_period": 730,
+  "instagram_username": null,
+  "twitter_username": null,
+  "youtube_username": null,
+  "tiktok_username": null,
+  "image_url": "",
+  "is_added_by_user": false,
+  "is_bookmarked": null
+ },
+ {
+  "public_owner_id": "e9a6840c69b79812b77ea81fa11d55aaf80dcf1938fa0137bf7f514f67f75c99",
+  "voice_id": "gD1IexrzCvsXPHUuT0s3",
+  "date_unix": 1711451420,
+  "name": "Sara Martin  - Young and Reflective",
+  "accent": "peninsular",
+  "gender": "female",
+  "age": "young",
+  "descriptive": "upbeat",
+  "use_case": "conversational",
+  "category": "high_quality",
+  "language": "es",
+  "locale": "es-ES",
+  "description": "Young female Spanish-Castillian accent. Suitable for Dialogue and Characters.",
+  "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/8RYUsFHsalUXjwVG0LjhNwH1j022/voices/gD1IexrzCvsXPHUuT0s3/WY67NpfVmhHjAnNNZpY9.mp3",
+  "usage_character_count_1y": 1688601624,
+  "usage_character_count_7d": 2126795,
+  "play_api_usage_character_count_1y": 429286753,
+  "cloned_by_count": 109507,
+  "rate": 1.0,
+  "fiat_rate": null,
+  "free_users_allowed": true,
+  "live_moderation_enabled": false,
+  "featured": false,
+  "verified_languages": [
+   {
+    "language": "es",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/8RYUsFHsalUXjwVG0LjhNwH1j022/voices/gD1IexrzCvsXPHUuT0s3/WY67NpfVmhHjAnNNZpY9.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/8RYUsFHsalUXjwVG0LjhNwH1j022/voices/gD1IexrzCvsXPHUuT0s3/WY67NpfVmhHjAnNNZpY9.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/8RYUsFHsalUXjwVG0LjhNwH1j022/voices/gD1IexrzCvsXPHUuT0s3/WY67NpfVmhHjAnNNZpY9.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/8RYUsFHsalUXjwVG0LjhNwH1j022/voices/gD1IexrzCvsXPHUuT0s3/WY67NpfVmhHjAnNNZpY9.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4_exp",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/8RYUsFHsalUXjwVG0LjhNwH1j022/voices/gD1IexrzCvsXPHUuT0s3/WY67NpfVmhHjAnNNZpY9.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4_hq",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/8RYUsFHsalUXjwVG0LjhNwH1j022/voices/gD1IexrzCvsXPHUuT0s3/WY67NpfVmhHjAnNNZpY9.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4_post_trained",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/8RYUsFHsalUXjwVG0LjhNwH1j022/voices/gD1IexrzCvsXPHUuT0s3/WY67NpfVmhHjAnNNZpY9.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4_turbo",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/8RYUsFHsalUXjwVG0LjhNwH1j022/voices/gD1IexrzCvsXPHUuT0s3/WY67NpfVmhHjAnNNZpY9.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4_turbo_exp",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/8RYUsFHsalUXjwVG0LjhNwH1j022/voices/gD1IexrzCvsXPHUuT0s3/WY67NpfVmhHjAnNNZpY9.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4_eval",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/8RYUsFHsalUXjwVG0LjhNwH1j022/voices/gD1IexrzCvsXPHUuT0s3/WY67NpfVmhHjAnNNZpY9.mp3"
+   },
+   {
+    "language": "hi",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "standard",
+    "locale": "hi-IN",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/8RYUsFHsalUXjwVG0LjhNwH1j022/voices/gD1IexrzCvsXPHUuT0s3/15b8ab5b-758c-4455-b856-80d44217f136.mp3"
+   },
+   {
+    "language": "hr",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "standard",
+    "locale": "hr-HR",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/8RYUsFHsalUXjwVG0LjhNwH1j022/voices/gD1IexrzCvsXPHUuT0s3/e0976f8e-eb88-4bc2-87e9-14465aa9575c.mp3"
+   },
+   {
+    "language": "fr",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "standard",
+    "locale": "fr-FR",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/8RYUsFHsalUXjwVG0LjhNwH1j022/voices/gD1IexrzCvsXPHUuT0s3/c73d8b79-2937-43d6-a7bf-de66ab956df1.mp3"
+   },
+   {
+    "language": "da",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "standard",
+    "locale": "da-DK",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/8RYUsFHsalUXjwVG0LjhNwH1j022/voices/gD1IexrzCvsXPHUuT0s3/cce02b17-c0f8-478f-a64e-925cebfe1462.mp3"
+   },
+   {
+    "language": "ar",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "modern standard",
+    "locale": "ar-SA",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/8RYUsFHsalUXjwVG0LjhNwH1j022/voices/gD1IexrzCvsXPHUuT0s3/bd56e587-65e5-4621-8e96-8d727739d722.mp3"
+   },
+   {
+    "language": "hu",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "standard",
+    "locale": "hu-HU",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/8RYUsFHsalUXjwVG0LjhNwH1j022/voices/gD1IexrzCvsXPHUuT0s3/eee503f8-419e-4c0b-8239-fff6710f0051.mp3"
+   },
+   {
+    "language": "ro",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "standard",
+    "locale": "ro-RO",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/8RYUsFHsalUXjwVG0LjhNwH1j022/voices/gD1IexrzCvsXPHUuT0s3/5b276bcc-cf40-457b-afef-169f09e3c595.mp3"
+   },
+   {
+    "language": "ru",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "standard",
+    "locale": "ru-RU",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/8RYUsFHsalUXjwVG0LjhNwH1j022/voices/gD1IexrzCvsXPHUuT0s3/f2f7e8b8-27ec-41d6-8da2-14a45af3e19f.mp3"
+   },
+   {
+    "language": "nl",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "standard",
+    "locale": "nl-NL",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/8RYUsFHsalUXjwVG0LjhNwH1j022/voices/gD1IexrzCvsXPHUuT0s3/a8af343d-6326-4089-a791-d0135e322ec4.mp3"
+   },
+   {
+    "language": "cs",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "standard",
+    "locale": "cs-CZ",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/8RYUsFHsalUXjwVG0LjhNwH1j022/voices/gD1IexrzCvsXPHUuT0s3/3af7c8f3-8210-4594-9f78-efff179270c9.mp3"
+   },
+   {
+    "language": "uk",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "standard",
+    "locale": "uk-UA",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/8RYUsFHsalUXjwVG0LjhNwH1j022/voices/gD1IexrzCvsXPHUuT0s3/27d839a0-e09e-42cd-bb06-5d40075ccff8.mp3"
+   },
+   {
+    "language": "el",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "standard",
+    "locale": "el-GR",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/8RYUsFHsalUXjwVG0LjhNwH1j022/voices/gD1IexrzCvsXPHUuT0s3/52e01ac3-d38c-4f14-826c-c7fc29c63bb0.mp3"
+   },
+   {
+    "language": "hr",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "standard",
+    "locale": "hr-HR",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/8RYUsFHsalUXjwVG0LjhNwH1j022/voices/gD1IexrzCvsXPHUuT0s3/999b7f91-393e-4cbb-a6ff-9308df41a0a8.mp3"
+   },
+   {
+    "language": "id",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "id-standard",
+    "locale": "id-ID",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/gD1IexrzCvsXPHUuT0s3/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImlkIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "id",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "id-standard",
+    "locale": "id-ID",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/gD1IexrzCvsXPHUuT0s3/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImlkIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "id",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "id-standard",
+    "locale": "id-ID",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/gD1IexrzCvsXPHUuT0s3/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImlkIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "ms",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "ms-standard",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/gD1IexrzCvsXPHUuT0s3/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6Im1zIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "ms",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "ms-brunei",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/gD1IexrzCvsXPHUuT0s3/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6Im1zIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "no",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "no-standard",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/gD1IexrzCvsXPHUuT0s3/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6Im5vIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "sv",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "sv-stockholm",
+    "locale": "sv-SE",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/gD1IexrzCvsXPHUuT0s3/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InN2IiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "sv",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "sv-stockholm",
+    "locale": "sv-SE",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/gD1IexrzCvsXPHUuT0s3/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InN2IiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "sv",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "sv-stockholm",
+    "locale": "sv-SE",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/gD1IexrzCvsXPHUuT0s3/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InN2IiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "ro",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "ro-standard",
+    "locale": "ro-RO",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/gD1IexrzCvsXPHUuT0s3/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InJvIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "vi",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "vi-northern",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/gD1IexrzCvsXPHUuT0s3/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InZpIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "pl",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "pl-standard",
+    "locale": "pl-PL",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/gD1IexrzCvsXPHUuT0s3/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InBsIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "it",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "it-standard",
+    "locale": "it-IT",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/gD1IexrzCvsXPHUuT0s3/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6Iml0IiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "it",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "it-standard",
+    "locale": "it-IT",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/gD1IexrzCvsXPHUuT0s3/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6Iml0IiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "it",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "it-standard",
+    "locale": "it-IT",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/gD1IexrzCvsXPHUuT0s3/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6Iml0IiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "ko",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "ko-seoul",
+    "locale": "ko-KR",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/gD1IexrzCvsXPHUuT0s3/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImtvIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "ko",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "ko-seoul",
+    "locale": "ko-KR",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/gD1IexrzCvsXPHUuT0s3/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImtvIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "ko",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "ko-seoul",
+    "locale": "ko-KR",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/gD1IexrzCvsXPHUuT0s3/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImtvIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "tr",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "other",
+    "locale": "tr-TR",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/gD1IexrzCvsXPHUuT0s3/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InRyIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "tr",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "tr-istanbul",
+    "locale": "tr-TR",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/gD1IexrzCvsXPHUuT0s3/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InRyIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "tr",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "tr-istanbul",
+    "locale": "tr-TR",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/gD1IexrzCvsXPHUuT0s3/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InRyIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "es-galician",
+    "locale": "es-ES",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/gD1IexrzCvsXPHUuT0s3/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImVzIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "es-galician",
+    "locale": "es-ES",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/gD1IexrzCvsXPHUuT0s3/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImVzIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "es-galician",
+    "locale": "es-ES",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/gD1IexrzCvsXPHUuT0s3/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImVzIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "de",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "de-standard",
+    "locale": "de-DE",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/gD1IexrzCvsXPHUuT0s3/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImRlIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "de",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "de-standard",
+    "locale": "de-DE",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/gD1IexrzCvsXPHUuT0s3/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImRlIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "de",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "de-standard",
+    "locale": "de-DE",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/gD1IexrzCvsXPHUuT0s3/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImRlIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "pt",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "pt-brazilian",
+    "locale": "pt-BR",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/gD1IexrzCvsXPHUuT0s3/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InB0IiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   }
+  ],
+  "notice_period": 730,
+  "instagram_username": null,
+  "twitter_username": null,
+  "youtube_username": null,
+  "tiktok_username": null,
+  "image_url": "",
+  "is_added_by_user": false,
+  "is_bookmarked": null
+ },
+ {
+  "public_owner_id": "477f8ac3289fdaa65af0e9aa6152efbf39e41ccf807a9f903eb1b33d86eda18e",
+  "voice_id": "SDVJaMLoJa7wc3s2sn7d",
+  "date_unix": 1757335007,
+  "name": "Lydia - Warm, Energetic and Confident",
+  "accent": "peninsular",
+  "gender": "female",
+  "age": "middle_aged",
+  "descriptive": "gentle",
+  "use_case": "informative_educational",
+  "category": "high_quality",
+  "language": "es",
+  "locale": "es-ES",
+  "description": "Warm, dynamic, clear female voice.",
+  "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/xfUAh4PHDnPEpIVBn9V1eSD7mkG3/voices/SDVJaMLoJa7wc3s2sn7d/1atwAszwKf5JQPc4uggT.mp3",
+  "usage_character_count_1y": 994965212,
+  "usage_character_count_7d": 45586478,
+  "play_api_usage_character_count_1y": 103758564,
+  "cloned_by_count": 47068,
+  "rate": 1.0,
+  "fiat_rate": null,
+  "free_users_allowed": true,
+  "live_moderation_enabled": false,
+  "featured": false,
+  "verified_languages": [
+   {
+    "language": "es",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/xfUAh4PHDnPEpIVBn9V1eSD7mkG3/voices/SDVJaMLoJa7wc3s2sn7d/1atwAszwKf5JQPc4uggT.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v2_5_flash",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/xfUAh4PHDnPEpIVBn9V1eSD7mkG3/voices/SDVJaMLoJa7wc3s2sn7d/1atwAszwKf5JQPc4uggT.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/xfUAh4PHDnPEpIVBn9V1eSD7mkG3/voices/SDVJaMLoJa7wc3s2sn7d/1atwAszwKf5JQPc4uggT.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/xfUAh4PHDnPEpIVBn9V1eSD7mkG3/voices/SDVJaMLoJa7wc3s2sn7d/1atwAszwKf5JQPc4uggT.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_multilingual_sts_v2",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/xfUAh4PHDnPEpIVBn9V1eSD7mkG3/voices/SDVJaMLoJa7wc3s2sn7d/1atwAszwKf5JQPc4uggT.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/xfUAh4PHDnPEpIVBn9V1eSD7mkG3/voices/SDVJaMLoJa7wc3s2sn7d/1atwAszwKf5JQPc4uggT.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4_exp",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/xfUAh4PHDnPEpIVBn9V1eSD7mkG3/voices/SDVJaMLoJa7wc3s2sn7d/1atwAszwKf5JQPc4uggT.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4_hq",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/xfUAh4PHDnPEpIVBn9V1eSD7mkG3/voices/SDVJaMLoJa7wc3s2sn7d/1atwAszwKf5JQPc4uggT.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4_post_trained",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/xfUAh4PHDnPEpIVBn9V1eSD7mkG3/voices/SDVJaMLoJa7wc3s2sn7d/1atwAszwKf5JQPc4uggT.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4_turbo",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/xfUAh4PHDnPEpIVBn9V1eSD7mkG3/voices/SDVJaMLoJa7wc3s2sn7d/1atwAszwKf5JQPc4uggT.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4_turbo_exp",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/xfUAh4PHDnPEpIVBn9V1eSD7mkG3/voices/SDVJaMLoJa7wc3s2sn7d/1atwAszwKf5JQPc4uggT.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4_eval",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/xfUAh4PHDnPEpIVBn9V1eSD7mkG3/voices/SDVJaMLoJa7wc3s2sn7d/1atwAszwKf5JQPc4uggT.mp3"
+   },
+   {
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "accent": null,
+    "locale": "en-US",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/xfUAh4PHDnPEpIVBn9V1eSD7mkG3/voices/SDVJaMLoJa7wc3s2sn7d/3c4f766c-d92f-4095-ab08-809841150617.mp3"
+   },
+   {
+    "language": "it",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "standard",
+    "locale": "it-IT",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/xfUAh4PHDnPEpIVBn9V1eSD7mkG3/voices/SDVJaMLoJa7wc3s2sn7d/15e3b0fd-1d55-42a4-abf4-9f422ecf93d7.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "es-peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/SDVJaMLoJa7wc3s2sn7d/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImVzIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "es-peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/SDVJaMLoJa7wc3s2sn7d/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImVzIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "es-peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/SDVJaMLoJa7wc3s2sn7d/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImVzIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "ru",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "ru-standard",
+    "locale": "ru-RU",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/SDVJaMLoJa7wc3s2sn7d/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InJ1IiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "cs",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "cs-standard",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/SDVJaMLoJa7wc3s2sn7d/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImNzIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "cs",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "cs-standard",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/SDVJaMLoJa7wc3s2sn7d/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImNzIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "nl",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "nl-standard",
+    "locale": "nl-NL",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/SDVJaMLoJa7wc3s2sn7d/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6Im5sIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "nl",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "nl-standard",
+    "locale": "nl-NL",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/SDVJaMLoJa7wc3s2sn7d/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6Im5sIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "nl",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "nl-standard",
+    "locale": "nl-NL",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/SDVJaMLoJa7wc3s2sn7d/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6Im5sIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "hr",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "hr-dubrovnik",
+    "locale": "hr-HR",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/SDVJaMLoJa7wc3s2sn7d/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImhyIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "tr",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "tr-standard",
+    "locale": "tr-TR",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/SDVJaMLoJa7wc3s2sn7d/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InRyIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "tr",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "tr-standard",
+    "locale": "tr-TR",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/SDVJaMLoJa7wc3s2sn7d/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InRyIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "tr",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "tr-standard",
+    "locale": "tr-TR",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/SDVJaMLoJa7wc3s2sn7d/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InRyIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "ar",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "ar-modern-standard",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/SDVJaMLoJa7wc3s2sn7d/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImFyIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "ar",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "ar-modern-standard",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/SDVJaMLoJa7wc3s2sn7d/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImFyIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "ar",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "ar-modern-standard",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/SDVJaMLoJa7wc3s2sn7d/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImFyIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "zh",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "zh-standard",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/SDVJaMLoJa7wc3s2sn7d/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InpoIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "zh",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "zh-standard",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/SDVJaMLoJa7wc3s2sn7d/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InpoIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "uk",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "other",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/SDVJaMLoJa7wc3s2sn7d/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InVrIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "uk",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "other",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/SDVJaMLoJa7wc3s2sn7d/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InVrIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "pt",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "pt-brazilian",
+    "locale": "pt-BR",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/SDVJaMLoJa7wc3s2sn7d/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InB0IiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "pt",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "pt-european",
+    "locale": "pt-BR",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/SDVJaMLoJa7wc3s2sn7d/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InB0IiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "pt",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "pt-european",
+    "locale": "pt-BR",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/SDVJaMLoJa7wc3s2sn7d/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InB0IiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "no",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "no-northern",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/SDVJaMLoJa7wc3s2sn7d/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6Im5vIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "no",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "no-standard",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/SDVJaMLoJa7wc3s2sn7d/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6Im5vIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "no",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "no-standard",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/SDVJaMLoJa7wc3s2sn7d/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6Im5vIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "pl",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "pl-standard",
+    "locale": "pl-PL",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/SDVJaMLoJa7wc3s2sn7d/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InBsIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "pl",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "pl-standard",
+    "locale": "pl-PL",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/SDVJaMLoJa7wc3s2sn7d/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InBsIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "pl",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "pl-standard",
+    "locale": "pl-PL",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/SDVJaMLoJa7wc3s2sn7d/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InBsIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "ms",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "ms-standard",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/SDVJaMLoJa7wc3s2sn7d/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6Im1zIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "ms",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "ms-standard",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/SDVJaMLoJa7wc3s2sn7d/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6Im1zIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "ms",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "ms-standard",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/SDVJaMLoJa7wc3s2sn7d/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6Im1zIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "el",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "el-standard",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/SDVJaMLoJa7wc3s2sn7d/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImVsIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "ro",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "ro-standard",
+    "locale": "ro-RO",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/SDVJaMLoJa7wc3s2sn7d/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InJvIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "ro",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "ro-standard",
+    "locale": "ro-RO",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/SDVJaMLoJa7wc3s2sn7d/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InJvIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "ro",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "ro-standard",
+    "locale": "ro-RO",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/SDVJaMLoJa7wc3s2sn7d/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InJvIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "fil",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "fil-standard",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/SDVJaMLoJa7wc3s2sn7d/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImZpbCIsIm1vZGVsX2lkIjoiZWxldmVuX2ZsYXNoX3YyXzUifQ%3D%3D"
+   },
+   {
+    "language": "fil",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "fil-standard",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/SDVJaMLoJa7wc3s2sn7d/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImZpbCIsIm1vZGVsX2lkIjoiZWxldmVuX3R1cmJvX3YyXzUifQ%3D%3D"
+   },
+   {
+    "language": "fr",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "fr-quebec",
+    "locale": "fr-FR",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/SDVJaMLoJa7wc3s2sn7d/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImZyIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "fr",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "fr-quebec",
+    "locale": "fr-FR",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/SDVJaMLoJa7wc3s2sn7d/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImZyIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "de",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "de-standard",
+    "locale": "de-DE",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/SDVJaMLoJa7wc3s2sn7d/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImRlIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   }
+  ],
+  "notice_period": 730,
+  "instagram_username": null,
+  "twitter_username": null,
+  "youtube_username": null,
+  "tiktok_username": null,
+  "image_url": "",
+  "is_added_by_user": false,
+  "is_bookmarked": null
+ },
+ {
+  "public_owner_id": "e9a6840c69b79812b77ea81fa11d55aaf80dcf1938fa0137bf7f514f67f75c99",
+  "voice_id": "KHCvMklQZZo0O30ERnVn",
+  "date_unix": 1711449833,
+  "name": "Sara Martin - Gentle and Layered",
+  "accent": "peninsular",
+  "gender": "female",
+  "age": "middle_aged",
+  "descriptive": "wise",
+  "use_case": "informative_educational",
+  "category": "high_quality",
+  "language": "es",
+  "locale": "es-ES",
+  "description": "Middle aged Spanish-Castillian female with a gentle & friendly tone. Great for Educational content.",
+  "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/8RYUsFHsalUXjwVG0LjhNwH1j022/voices/KHCvMklQZZo0O30ERnVn/MdsY0B910z3we0udGv3w.mp3",
+  "usage_character_count_1y": 498388132,
+  "usage_character_count_7d": 7600975,
+  "play_api_usage_character_count_1y": 2695880452,
+  "cloned_by_count": 424084,
+  "rate": 1.0,
+  "fiat_rate": null,
+  "free_users_allowed": true,
+  "live_moderation_enabled": false,
+  "featured": false,
+  "verified_languages": [
+   {
+    "language": "es",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/8RYUsFHsalUXjwVG0LjhNwH1j022/voices/KHCvMklQZZo0O30ERnVn/MdsY0B910z3we0udGv3w.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/8RYUsFHsalUXjwVG0LjhNwH1j022/voices/KHCvMklQZZo0O30ERnVn/MdsY0B910z3we0udGv3w.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/8RYUsFHsalUXjwVG0LjhNwH1j022/voices/KHCvMklQZZo0O30ERnVn/MdsY0B910z3we0udGv3w.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4_exp",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/8RYUsFHsalUXjwVG0LjhNwH1j022/voices/KHCvMklQZZo0O30ERnVn/MdsY0B910z3we0udGv3w.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4_hq",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/8RYUsFHsalUXjwVG0LjhNwH1j022/voices/KHCvMklQZZo0O30ERnVn/MdsY0B910z3we0udGv3w.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4_post_trained",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/8RYUsFHsalUXjwVG0LjhNwH1j022/voices/KHCvMklQZZo0O30ERnVn/MdsY0B910z3we0udGv3w.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4_turbo",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/8RYUsFHsalUXjwVG0LjhNwH1j022/voices/KHCvMklQZZo0O30ERnVn/MdsY0B910z3we0udGv3w.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4_turbo_exp",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/8RYUsFHsalUXjwVG0LjhNwH1j022/voices/KHCvMklQZZo0O30ERnVn/MdsY0B910z3we0udGv3w.mp3"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4_eval",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/8RYUsFHsalUXjwVG0LjhNwH1j022/voices/KHCvMklQZZo0O30ERnVn/MdsY0B910z3we0udGv3w.mp3"
+   },
+   {
+    "language": "bg",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "standard",
+    "locale": "bg-BG",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/8RYUsFHsalUXjwVG0LjhNwH1j022/voices/KHCvMklQZZo0O30ERnVn/27d0ae09-5f3e-4508-96a7-b53239b18a66.mp3"
+   },
+   {
+    "language": "hi",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "standard",
+    "locale": "hi-IN",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/8RYUsFHsalUXjwVG0LjhNwH1j022/voices/KHCvMklQZZo0O30ERnVn/c677b517-04ae-4f79-8ac1-8b32a6c40ab6.mp3"
+   },
+   {
+    "language": "fr",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "standard",
+    "locale": "fr-FR",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/8RYUsFHsalUXjwVG0LjhNwH1j022/voices/KHCvMklQZZo0O30ERnVn/f7fb784c-b9e1-4d38-b830-2d275ecf0a0b.mp3"
+   },
+   {
+    "language": "id",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "standard",
+    "locale": "id-ID",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/8RYUsFHsalUXjwVG0LjhNwH1j022/voices/KHCvMklQZZo0O30ERnVn/c774b715-beb0-4e91-8c25-b9cdff416631.mp3"
+   },
+   {
+    "language": "hi",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "northern",
+    "locale": null,
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/8RYUsFHsalUXjwVG0LjhNwH1j022/voices/KHCvMklQZZo0O30ERnVn/61e655e4-20d9-47eb-afa0-b2accc0ccb4b.mp3"
+   },
+   {
+    "language": "ro",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "standard",
+    "locale": "ro-RO",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/8RYUsFHsalUXjwVG0LjhNwH1j022/voices/KHCvMklQZZo0O30ERnVn/12427489-5860-4c6c-a5a5-64b646440cef.mp3"
+   },
+   {
+    "language": "ko",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "standard",
+    "locale": "ko-KR",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/8RYUsFHsalUXjwVG0LjhNwH1j022/voices/KHCvMklQZZo0O30ERnVn/11ba66c9-c4cd-442a-8bbe-e4132ca19e43.mp3"
+   },
+   {
+    "language": "nl",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "standard",
+    "locale": "nl-NL",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/8RYUsFHsalUXjwVG0LjhNwH1j022/voices/KHCvMklQZZo0O30ERnVn/4bf2b877-5a82-4133-9738-654939bf346b.mp3"
+   },
+   {
+    "language": "cs",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "standard",
+    "locale": "cs-CZ",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/8RYUsFHsalUXjwVG0LjhNwH1j022/voices/KHCvMklQZZo0O30ERnVn/5a3846b4-f8c3-4a50-b515-e3733b45fa15.mp3"
+   },
+   {
+    "language": "pt",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "standard",
+    "locale": "pt-BR",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/8RYUsFHsalUXjwVG0LjhNwH1j022/voices/KHCvMklQZZo0O30ERnVn/21491527-4604-4bca-bf5d-fbe49e3451c9.mp3"
+   },
+   {
+    "language": "sk",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "standard",
+    "locale": "sk-SK",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/8RYUsFHsalUXjwVG0LjhNwH1j022/voices/KHCvMklQZZo0O30ERnVn/fec1128c-22b3-4627-a2dd-fad48d8902e0.mp3"
+   },
+   {
+    "language": "ta",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "chennai",
+    "locale": null,
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/8RYUsFHsalUXjwVG0LjhNwH1j022/voices/KHCvMklQZZo0O30ERnVn/64f3a28f-d4a6-4af6-bc97-9d6fee5e75b4.mp3"
+   },
+   {
+    "language": "sv",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "standard",
+    "locale": "sv-SE",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/8RYUsFHsalUXjwVG0LjhNwH1j022/voices/KHCvMklQZZo0O30ERnVn/1413c5a8-47f9-4e95-8800-f9db52c523aa.mp3"
+   },
+   {
+    "language": "hr",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "standard",
+    "locale": "hr-HR",
+    "preview_url": "https://storage.googleapis.com/eleven-public-prod/database/user/8RYUsFHsalUXjwVG0LjhNwH1j022/voices/KHCvMklQZZo0O30ERnVn/df309e1e-b799-49db-882e-e9910bd8bc72.mp3"
+   },
+   {
+    "language": "it",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "it-standard",
+    "locale": "it-IT",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/KHCvMklQZZo0O30ERnVn/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6Iml0IiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "it",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "it-standard",
+    "locale": "it-IT",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/KHCvMklQZZo0O30ERnVn/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6Iml0IiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "it",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "it-standard",
+    "locale": "it-IT",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/KHCvMklQZZo0O30ERnVn/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6Iml0IiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "ms",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "ms-standard",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/KHCvMklQZZo0O30ERnVn/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6Im1zIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "ms",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "ms-standard",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/KHCvMklQZZo0O30ERnVn/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6Im1zIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "el",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "other",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/KHCvMklQZZo0O30ERnVn/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImVsIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "el",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "other",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/KHCvMklQZZo0O30ERnVn/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImVsIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "el",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "other",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/KHCvMklQZZo0O30ERnVn/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImVsIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "uk",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "uk-standard",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/KHCvMklQZZo0O30ERnVn/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InVrIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "uk",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "uk-standard",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/KHCvMklQZZo0O30ERnVn/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InVrIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "uk",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "uk-standard",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/KHCvMklQZZo0O30ERnVn/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InVrIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "id",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "id-standard",
+    "locale": "id-ID",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/KHCvMklQZZo0O30ERnVn/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImlkIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "id",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "id-standard",
+    "locale": "id-ID",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/KHCvMklQZZo0O30ERnVn/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImlkIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "ko",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "ko-standard",
+    "locale": "ko-KR",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/KHCvMklQZZo0O30ERnVn/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImtvIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "no",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "no-sørlandsk",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/KHCvMklQZZo0O30ERnVn/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6Im5vIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "no",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "no-standard",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/KHCvMklQZZo0O30ERnVn/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6Im5vIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "no",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "no-standard",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/KHCvMklQZZo0O30ERnVn/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6Im5vIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "es-galician",
+    "locale": "es-ES",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/KHCvMklQZZo0O30ERnVn/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImVzIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "es-galician",
+    "locale": "es-ES",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/KHCvMklQZZo0O30ERnVn/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImVzIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "es-galician",
+    "locale": "es-ES",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/KHCvMklQZZo0O30ERnVn/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImVzIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "ar",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "ar-modern-standard",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/KHCvMklQZZo0O30ERnVn/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImFyIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "tr",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "tr-standard",
+    "locale": "tr-TR",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/KHCvMklQZZo0O30ERnVn/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InRyIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "tr",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "tr-standard",
+    "locale": "tr-TR",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/KHCvMklQZZo0O30ERnVn/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InRyIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "ro",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "ro-standard",
+    "locale": "ro-RO",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/KHCvMklQZZo0O30ERnVn/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InJvIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "ro",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "ro-standard",
+    "locale": "ro-RO",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/KHCvMklQZZo0O30ERnVn/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InJvIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "ru",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "ru-standard",
+    "locale": "ru-RU",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/KHCvMklQZZo0O30ERnVn/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InJ1IiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "ru",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "ru-standard",
+    "locale": "ru-RU",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/KHCvMklQZZo0O30ERnVn/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InJ1IiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "ru",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "ru-standard",
+    "locale": "ru-RU",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/KHCvMklQZZo0O30ERnVn/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InJ1IiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "en",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "en-spanish",
+    "locale": "en-US",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/KHCvMklQZZo0O30ERnVn/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImVuIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "en",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "en-spanish",
+    "locale": "en-US",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/KHCvMklQZZo0O30ERnVn/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImVuIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "en-spanish",
+    "locale": "en-US",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/KHCvMklQZZo0O30ERnVn/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImVuIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "de",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "other",
+    "locale": "de-DE",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/KHCvMklQZZo0O30ERnVn/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImRlIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "pl",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "pl-standard",
+    "locale": "pl-PL",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/KHCvMklQZZo0O30ERnVn/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InBsIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "pl",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "pl-standard",
+    "locale": "pl-PL",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/KHCvMklQZZo0O30ERnVn/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InBsIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   }
+  ],
+  "notice_period": 730,
+  "instagram_username": null,
+  "twitter_username": null,
+  "youtube_username": null,
+  "tiktok_username": null,
+  "image_url": "",
+  "is_added_by_user": false,
+  "is_bookmarked": null
+ },
+ {
+  "public_owner_id": "8be4c94ccd12f5d94d1e5ea17b85defec88a912da3b62c7c21d1688d924c5e2e",
+  "voice_id": "RgXx32WYOGrd7gFNifSf",
+  "date_unix": 1723563443,
+  "name": "Eva Dorado - Warm, Soft and Convincing",
+  "accent": "peninsular",
+  "gender": "female",
+  "age": "middle_aged",
+  "descriptive": "soft",
+  "use_case": "narrative_story",
+  "category": "high_quality",
+  "language": "es",
+  "locale": "es-ES",
+  "description": "Middle aged female with a Warm and soft tone. Peninsular Spanish. Great for narration, audiobooks, youth literature.",
+  "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiI1NWNjZmVlYTg5NDc0YmZiODgxNGNhYjM1NWEwYmRkMCIsImZpbGVuYW1lIjoiYU9zZFNYQ21pWHpVSFZNUmJPZ0gubXAzIiwidGltZXN0YW1wIjoxNzkzODgwMDAwMDAwMDAwfQ%3D%3D",
+  "usage_character_count_1y": 459982998,
+  "usage_character_count_7d": 7507536,
+  "play_api_usage_character_count_1y": 138882239,
+  "cloned_by_count": 86209,
+  "rate": 1.0,
+  "fiat_rate": null,
+  "free_users_allowed": true,
+  "live_moderation_enabled": false,
+  "featured": false,
+  "verified_languages": [
+   {
+    "language": "es",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiI1NWNjZmVlYTg5NDc0YmZiODgxNGNhYjM1NWEwYmRkMCIsImZpbGVuYW1lIjoiYU9zZFNYQ21pWHpVSFZNUmJPZ0gubXAzIiwidGltZXN0YW1wIjoxNzkzODgwMDAwMDAwMDAwfQ%3D%3D"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_multilingual_sts_v2",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiI1NWNjZmVlYTg5NDc0YmZiODgxNGNhYjM1NWEwYmRkMCIsImZpbGVuYW1lIjoiYU9zZFNYQ21pWHpVSFZNUmJPZ0gubXAzIiwidGltZXN0YW1wIjoxNzkzODgwMDAwMDAwMDAwfQ%3D%3D"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiI1NWNjZmVlYTg5NDc0YmZiODgxNGNhYjM1NWEwYmRkMCIsImZpbGVuYW1lIjoiYU9zZFNYQ21pWHpVSFZNUmJPZ0gubXAzIiwidGltZXN0YW1wIjoxNzkzODgwMDAwMDAwMDAwfQ%3D%3D"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v2_5_flash",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiI1NWNjZmVlYTg5NDc0YmZiODgxNGNhYjM1NWEwYmRkMCIsImZpbGVuYW1lIjoiYU9zZFNYQ21pWHpVSFZNUmJPZ0gubXAzIiwidGltZXN0YW1wIjoxNzkzODgwMDAwMDAwMDAwfQ%3D%3D"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiI1NWNjZmVlYTg5NDc0YmZiODgxNGNhYjM1NWEwYmRkMCIsImZpbGVuYW1lIjoiYU9zZFNYQ21pWHpVSFZNUmJPZ0gubXAzIiwidGltZXN0YW1wIjoxNzkzODgwMDAwMDAwMDAwfQ%3D%3D"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiI1NWNjZmVlYTg5NDc0YmZiODgxNGNhYjM1NWEwYmRkMCIsImZpbGVuYW1lIjoiYU9zZFNYQ21pWHpVSFZNUmJPZ0gubXAzIiwidGltZXN0YW1wIjoxNzkzODgwMDAwMDAwMDAwfQ%3D%3D"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4_exp",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiI1NWNjZmVlYTg5NDc0YmZiODgxNGNhYjM1NWEwYmRkMCIsImZpbGVuYW1lIjoiYU9zZFNYQ21pWHpVSFZNUmJPZ0gubXAzIiwidGltZXN0YW1wIjoxNzkzODgwMDAwMDAwMDAwfQ%3D%3D"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4_hq",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiI1NWNjZmVlYTg5NDc0YmZiODgxNGNhYjM1NWEwYmRkMCIsImZpbGVuYW1lIjoiYU9zZFNYQ21pWHpVSFZNUmJPZ0gubXAzIiwidGltZXN0YW1wIjoxNzkzODgwMDAwMDAwMDAwfQ%3D%3D"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4_post_trained",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiI1NWNjZmVlYTg5NDc0YmZiODgxNGNhYjM1NWEwYmRkMCIsImZpbGVuYW1lIjoiYU9zZFNYQ21pWHpVSFZNUmJPZ0gubXAzIiwidGltZXN0YW1wIjoxNzkzODgwMDAwMDAwMDAwfQ%3D%3D"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4_turbo",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiI1NWNjZmVlYTg5NDc0YmZiODgxNGNhYjM1NWEwYmRkMCIsImZpbGVuYW1lIjoiYU9zZFNYQ21pWHpVSFZNUmJPZ0gubXAzIiwidGltZXN0YW1wIjoxNzkzODgwMDAwMDAwMDAwfQ%3D%3D"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4_turbo_exp",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiI1NWNjZmVlYTg5NDc0YmZiODgxNGNhYjM1NWEwYmRkMCIsImZpbGVuYW1lIjoiYU9zZFNYQ21pWHpVSFZNUmJPZ0gubXAzIiwidGltZXN0YW1wIjoxNzkzODgwMDAwMDAwMDAwfQ%3D%3D"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_v4_eval",
+    "accent": "peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiI1NWNjZmVlYTg5NDc0YmZiODgxNGNhYjM1NWEwYmRkMCIsImZpbGVuYW1lIjoiYU9zZFNYQ21pWHpVSFZNUmJPZ0gubXAzIiwidGltZXN0YW1wIjoxNzkzODgwMDAwMDAwMDAwfQ%3D%3D"
+   },
+   {
+    "language": "hi",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "standard",
+    "locale": "hi-IN",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ1c2VyX2lkIjoiS3FNQlNlMENIM2F1RXFIZk1qRnpNTk00N0ZBMyIsImZpbGVuYW1lIjoiMGRlNjJjNzAtNTI4My00NGQ1LTg1MjAtNTNhYzdhZjdhYmMyLm1wMyIsInRpbWVzdGFtcCI6MTc5Mzg4MDAwMDAwMDAwMH0%3D"
+   },
+   {
+    "language": "el",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "standard",
+    "locale": "el-GR",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ1c2VyX2lkIjoiS3FNQlNlMENIM2F1RXFIZk1qRnpNTk00N0ZBMyIsImZpbGVuYW1lIjoiODMzNmFiNDktNzQ3MS00OTIyLTk4YTItZWZjMmE4OTEyODM2Lm1wMyIsInRpbWVzdGFtcCI6MTc5Mzg4MDAwMDAwMDAwMH0%3D"
+   },
+   {
+    "language": "cs",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "standard",
+    "locale": "cs-CZ",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ1c2VyX2lkIjoiS3FNQlNlMENIM2F1RXFIZk1qRnpNTk00N0ZBMyIsImZpbGVuYW1lIjoiNTRkOGE5ZjAtMzhkOC00YzVhLTgzM2UtZWEwNjRmMTJkZmFhLm1wMyIsInRpbWVzdGFtcCI6MTc5Mzg4MDAwMDAwMDAwMH0%3D"
+   },
+   {
+    "language": "fr",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "standard",
+    "locale": "fr-FR",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ1c2VyX2lkIjoiS3FNQlNlMENIM2F1RXFIZk1qRnpNTk00N0ZBMyIsImZpbGVuYW1lIjoiMzE5N2ZkNDEtZWIyNC00NjQxLThiYjktNGNjYzNiMzZhNDJiLm1wMyIsInRpbWVzdGFtcCI6MTc5Mzg4MDAwMDAwMDAwMH0%3D"
+   },
+   {
+    "language": "hr",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "standard",
+    "locale": "hr-HR",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ1c2VyX2lkIjoiS3FNQlNlMENIM2F1RXFIZk1qRnpNTk00N0ZBMyIsImZpbGVuYW1lIjoiOTczNmFmNDYtZGQ1Ni00NDNmLTkxMDItYTdhN2E3ODdhZTAzLm1wMyIsInRpbWVzdGFtcCI6MTc5Mzg4MDAwMDAwMDAwMH0%3D"
+   },
+   {
+    "language": "hi",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "central",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ1c2VyX2lkIjoiS3FNQlNlMENIM2F1RXFIZk1qRnpNTk00N0ZBMyIsImZpbGVuYW1lIjoiZjhlN2VmMDktMjI1Yi00MTY5LWJkMzMtNzU2ZDJmODRjMzQwLm1wMyIsInRpbWVzdGFtcCI6MTc5Mzg4MDAwMDAwMDAwMH0%3D"
+   },
+   {
+    "language": "ru",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "standard",
+    "locale": "ru-RU",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ1c2VyX2lkIjoiS3FNQlNlMENIM2F1RXFIZk1qRnpNTk00N0ZBMyIsImZpbGVuYW1lIjoiMjVhYzQ5OWMtMmIxMy00MmRhLTkxNDgtMDk2OTVmMjc0OWE4Lm1wMyIsInRpbWVzdGFtcCI6MTc5Mzg4MDAwMDAwMDAwMH0%3D"
+   },
+   {
+    "language": "ms",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "standard",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ1c2VyX2lkIjoiS3FNQlNlMENIM2F1RXFIZk1qRnpNTk00N0ZBMyIsImZpbGVuYW1lIjoiOTIxMWJmYWQtOTE4OC00MWM3LWI3YTctNmQzNjU5NDkwN2ZkLm1wMyIsInRpbWVzdGFtcCI6MTc5Mzg4MDAwMDAwMDAwMH0%3D"
+   },
+   {
+    "language": "sv",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "northern",
+    "locale": "sv-SE",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ1c2VyX2lkIjoiS3FNQlNlMENIM2F1RXFIZk1qRnpNTk00N0ZBMyIsImZpbGVuYW1lIjoiN2QxNWM1N2QtODJkZS00OGZjLTg2MTktZTQ3ZWU0YzZlNjY3Lm1wMyIsInRpbWVzdGFtcCI6MTc5Mzg4MDAwMDAwMDAwMH0%3D"
+   },
+   {
+    "language": "it",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "it-standard",
+    "locale": "it-IT",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6Iml0IiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "uk",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "other",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InVrIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "en-british",
+    "locale": "en-US",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImVuIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "tr",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "tr-standard",
+    "locale": "tr-TR",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InRyIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "tr",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "tr-standard",
+    "locale": "tr-TR",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InRyIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "tr",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "tr-standard",
+    "locale": "tr-TR",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InRyIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "hr",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "hr-standard",
+    "locale": "hr-HR",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImhyIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "no",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "no-sørlandsk",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6Im5vIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "no",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "no-standard",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6Im5vIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "no",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "no-oslo",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6Im5vIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "vi",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "vi-northern",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InZpIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "fr",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "fr-standard",
+    "locale": "fr-FR",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImZyIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "da",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "da-zealandic",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImRhIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "cs",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "cs-standard",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImNzIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "cs",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "cs-standard",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImNzIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "es-peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImVzIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "es-peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImVzIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "es",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "es-peninsular",
+    "locale": "es-ES",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImVzIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "hu",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "hu-standard",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6Imh1IiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "zh",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "zh-standard",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InpoIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "uk",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "other",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InVrIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "pt",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "pt-european",
+    "locale": "pt-BR",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InB0IiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "pt",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "pt-european",
+    "locale": "pt-BR",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InB0IiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "pt",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "pt-european",
+    "locale": "pt-BR",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InB0IiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "nl",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "nl-standard",
+    "locale": "nl-NL",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6Im5sIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "nl",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "nl-flemish",
+    "locale": "nl-NL",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6Im5sIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "nl",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "nl-flemish",
+    "locale": "nl-NL",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6Im5sIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "ar",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "ar-modern-standard",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImFyIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "ar",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "ar-modern-standard",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImFyIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "ms",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "ms-malaysian",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6Im1zIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "ms",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "ms-malaysian",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6Im1zIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "id",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "id-standard",
+    "locale": "id-ID",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImlkIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "pl",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "pl-standard",
+    "locale": "pl-PL",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InBsIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "pl",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "pl-standard",
+    "locale": "pl-PL",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InBsIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "ro",
+    "model_id": "eleven_multilingual_v2",
+    "accent": "ro-standard",
+    "locale": "ro-RO",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InJvIiwibW9kZWxfaWQiOiJlbGV2ZW5fbXVsdGlsaW5ndWFsX3YyIn0%3D"
+   },
+   {
+    "language": "ro",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "ro-standard",
+    "locale": "ro-RO",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InJvIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "ro",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "ro-standard",
+    "locale": "ro-RO",
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InJvIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   },
+   {
+    "language": "vi",
+    "model_id": "eleven_flash_v2_5",
+    "accent": "vi-northern",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6InZpIiwibW9kZWxfaWQiOiJlbGV2ZW5fZmxhc2hfdjJfNSJ9"
+   },
+   {
+    "language": "el",
+    "model_id": "eleven_turbo_v2_5",
+    "accent": "el-standard",
+    "locale": null,
+    "preview_url": "https://api.us.elevenlabs.io/v1/voices/RgXx32WYOGrd7gFNifSf/previews/audio?payload=eyJraW5kIjoidmVyaWZpZWRfbGFuZ3VhZ2UiLCJsYW5ndWFnZSI6ImVsIiwibW9kZWxfaWQiOiJlbGV2ZW5fdHVyYm9fdjJfNSJ9"
+   }
+  ],
+  "notice_period": 730,
+  "instagram_username": null,
+  "twitter_username": null,
+  "youtube_username": null,
+  "tiktok_username": null,
+  "image_url": "",
+  "is_added_by_user": false,
+  "is_bookmarked": null
+ }
+]

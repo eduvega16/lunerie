@@ -5,8 +5,8 @@
     va oculto), así cambian el precio, la foto y la variante. Hasta que no se elige, no deja añadir a la cesta (si no,
     se colaría «Enero» sin querer).
   - Nombre: propiedad del pedido «Nombre» (sale en la cesta y en el pedido de Shopify: es lo que se pasa al proveedor).
-  - Aviso «se graba tal cual lo escribes» y sin devolución salvo defecto (CLAUDE.md, apartado 4). La casilla obligatoria
-    «He revisado el nombre» se quitó el 3-nov (Edu).
+  - El aviso «se graba tal cual lo escribes» y lo de la devolución van en el desplegable «Envío y devoluciones»
+    (build.py, como Olivia; 5-nov, Edu: menos fricción). La casilla «He revisado el nombre» se quitó el 3-nov.
   Los campos van fuera del <form> del tema y se le unen con el atributo `form` (id «BuyButtons-ProductForm-<sección>»).
   Uso: {% render 'lunerie-collar', product: product, section_id: section.id %}
   Colores de cada mes: los mismos nombres que en la descripción del producto (productos/collar_signe.py).
@@ -45,8 +45,6 @@
       <span class="lu-collar__cuenta" data-lu-cuenta aria-hidden="true">0/{{ max_letras }}</span>
     </div>
   </div>
-
-  <p class="lu-collar__aviso">Se graba tal cual lo escribes, con mayúsculas y tildes. Al ser personalizado no admite devolución, salvo que llegue con un defecto o un error nuestro: en ese caso lo rehacemos.</p>
 
   <dialog class="lu-piedras" data-lu-panel aria-labelledby="lu-piedras-t-{{ section_id }}">
     <div class="lu-piedras__cab">
@@ -98,7 +96,6 @@
   .lu-collar__nombre input:focus { outline: none; border-bottom-color: #16201B; }
   .lu-collar__nombre input::placeholder { color: #9AA39E; }
   .lu-collar__cuenta { position: absolute; right: 0; bottom: 12px; font-size: .75rem; color: #6B746F; }
-  .lu-collar__aviso { margin: -10px 0 0; font-size: .75rem; line-height: 1.5; color: #6B746F; }
 
   /* Panel de las piedras: entra por la derecha, como en Olivia */
   .lu-piedras { position: fixed; inset: 0 0 0 auto; width: min(460px, 92vw); max-width: none; height: 100dvh; max-height: none;

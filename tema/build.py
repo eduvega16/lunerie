@@ -746,19 +746,29 @@ _det["block_order"].insert(_det["block_order"].index("descripcion") + 1, "agua")
 # Plantilla «collar» (3-nov): el collar con nombre (Collar Signé, productos/collar_signe.py). La de las joyas + panel de
 # piedras y nombre (lunerie-collar.liquid) entre el color y el botón, con su propio plazo (se hace para cada
 # clienta) y sin la barra fija de compra (su botón se saltaría la comprobación de la piedra).
-# PLAZO: ventana de entrega que garantiza Alibaba con el envío estándar (12-38 días desde el pedido, visto el 3-nov);
-# para Navidad (24-dic), 38 días antes. Cambiarlos cuando QIUHAN diga los días reales de fabricación y envío.
-PLAZO_COLLAR, NAVIDAD_COLLAR = "2-5 semanas", "15 de noviembre"
+# 5-nov (Edu: «como Olivia, que no se pilla los dedos; nosotros creamos demasiada fricción»): sin fecha de Navidad ni
+# plazo de entrega en la ficha y un solo desplegable «Envío y devoluciones» con la estructura del de Olivia: los días
+# en que se hace y sale, la devolución de las piezas sin nombre, que la personalizada no se devuelve pero «si algo no
+# está bien, lo arreglamos» y la nota del nombre tal cual. HECHO_COLLAR: los 4-8 días de Olivia, provisional hasta
+# que QIUHAN diga sus días de fabricación (productos/proveedor-qiuhan.md).
+HECHO_COLLAR = "4-8 días"
 collar = copy.deepcopy(joya)
 _d = collar["sections"]["main"]["blocks"]["product-details"]
 _d["blocks"]["personalizar"] = liquid("{% render 'lunerie-collar', product: product, section_id: section.id %}")
 _d["block_order"].insert(_d["block_order"].index("comprar"), "personalizar")
-_d["blocks"]["ventajas"] = ventajas([   # (3-nov, Edu: fuera «Se hace para ti con su nombre · llega en…»)
-    f"Para Navidad, pídelo antes del {NAVIDAD_COLLAR}",
-    "Garantía de 3 años"])
-_d["blocks"]["detalles"]["blocks"]["envio"] = row(
-    "Envío", f"<p>Lo hacemos para ti con el nombre que escribas y llega en {PLAZO_COLLAR}, con número de seguimiento "
-             "por email. Gratis a península.</p><p>Por ahora no enviamos a Canarias, Ceuta ni Melilla.</p>")
+_d["blocks"]["ventajas"] = ventajas(["Envío gratis a península", "Garantía de 3 años"])
+_dd = _d["blocks"]["detalles"]
+_dd["blocks"]["envio"] = row(
+    "Envío y devoluciones",
+    f"<p><strong>Envío</strong><br>Las piezas con nombre se hacen para ti y salen en {HECHO_COLLAR}. Envío gratis a "
+    "península, con número de seguimiento por email.</p>"
+    "<p><strong>Devoluciones</strong><br>Cada pieza se hace con cariño, y que te guste es lo que más nos importa. Las "
+    "piezas sin nombre se pueden devolver en 14 días. Como las personalizadas se hacen solo para ti, no admiten "
+    "devolución. Aun así, si algo no está bien, escríbenos y lo arreglamos.</p>"
+    "<p><em>El nombre se hace tal cual lo escribes, mayúsculas incluidas. Te recomendamos revisarlo antes de hacer "
+    "el pedido.</em></p>")
+del _dd["blocks"]["devoluciones"]
+_dd["block_order"].remove("devoluciones")
 collar["sections"]["main"]["settings"]["enable_sticky_add_to_cart"] = False
 (OUT / "product.collar.json").write_text(json.dumps(collar, ensure_ascii=False, indent=2), encoding="utf8")
 

@@ -132,7 +132,7 @@
             "ventajas": {
               "type": "custom-liquid",
               "settings": {
-                "custom_liquid": "<ul class=\"lu-ventajas\"><li>Para Navidad, pídelo antes del 15 de noviembre</li><li>Garantía de 3 años</li></ul><style>.lu-ventajas{display:grid;gap:6px;margin:0;padding:0!important;list-style:none;font-family:var(--font-body--family);font-size:.8125rem;line-height:1.5;color:#3D4842}</style>"
+                "custom_liquid": "<ul class=\"lu-ventajas\"><li>Envío gratis a península</li><li>Garantía de 3 años</li></ul><style>.lu-ventajas{display:grid;gap:6px;margin:0;padding:0!important;list-style:none;font-family:var(--font-body--family);font-size:.8125rem;line-height:1.5;color:#3D4842}</style>"
               },
               "blocks": {}
             },
@@ -211,7 +211,7 @@
                 "envio": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Envío",
+                    "heading": "Envío y devoluciones",
                     "icon": "none",
                     "open_by_default": false
                   },
@@ -219,44 +219,7 @@
                     "texto": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Lo hacemos para ti con el nombre que escribas y llega en 2-5 semanas, con número de seguimiento por email. Gratis a península.</p><p>Por ahora no enviamos a Canarias, Ceuta ni Melilla.</p>",
-                        "width": "100%",
-                        "max_width": "normal",
-                        "alignment": "left",
-                        "type_preset": "rte",
-                        "font": "var(--font-body--family)",
-                        "font_size": "1rem",
-                        "line_height": "normal",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "background": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "padding-block-start": 0,
-                        "padding-block-end": 0,
-                        "padding-inline-start": 0,
-                        "padding-inline-end": 0
-                      },
-                      "blocks": {}
-                    }
-                  },
-                  "block_order": [
-                    "texto"
-                  ]
-                },
-                "devoluciones": {
-                  "type": "_accordion-row",
-                  "settings": {
-                    "heading": "Devoluciones y garantía",
-                    "icon": "none",
-                    "open_by_default": false
-                  },
-                  "blocks": {
-                    "texto": {
-                      "type": "text",
-                      "settings": {
-                        "text": "<p>Tienes 14 días desde que lo recibes para devolverlo: escríbenos y te explicamos cómo.</p><p>Las piezas personalizadas (con nombre o grabado) no admiten devolución porque se hacen solo para ti. Si llegan con un defecto o un error nuestro, las rehacemos.</p><p>Todas tienen la garantía legal de 3 años.</p>",
+                        "text": "<p><strong>Envío</strong><br>Las piezas con nombre se hacen para ti y salen en 4-8 días. Envío gratis a península, con número de seguimiento por email.</p><p><strong>Devoluciones</strong><br>Cada pieza se hace con cariño, y que te guste es lo que más nos importa. Las piezas sin nombre se pueden devolver en 14 días. Como las personalizadas se hacen solo para ti, no admiten devolución. Aun así, si algo no está bien, escríbenos y lo arreglamos.</p><p><em>El nombre se hace tal cual lo escribes, mayúsculas incluidas. Te recomendamos revisarlo antes de hacer el pedido.</em></p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -323,7 +286,6 @@
               "block_order": [
                 "descripcion",
                 "envio",
-                "devoluciones",
                 "cuidados"
               ]
             },

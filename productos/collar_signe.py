@@ -25,11 +25,9 @@ DESC = ("<p>Su nombre en letra de firma y, a un lado, una lágrima del color de 
         "<li>Acero inoxidable con acabado dorado o plateado.</li>"
         "<li>El nombre que elijas, de hasta 10 letras, en letra de firma.</li>"
         "<li>Circonita en forma de lágrima, del color del mes.</li>"
-        "<li>Se hace para ti: el nombre se graba tal cual lo escribes, con mayúsculas y tildes.</li></ul>"
+        "<li>Se hace para ti, con el nombre tal cual lo escribes.</li></ul>"
         "<p><strong>Los colores:</strong> " + " · ".join(f"{m.lower()}, {c}" for m, c in zip(MESES, COLORES)) + ".</p>"
-        "<p>En las fotos, nombres de ejemplo.</p>"
-        "<p>Al ser una pieza personalizada no admite devolución, salvo que llegue con un defecto o un error nuestro: "
-        "en ese caso la rehacemos.</p>")
+        "<p>En las fotos, nombres de ejemplo.</p>")   # la devolución va en «Envío y devoluciones» (5-nov)
 SEO = "Collar con nombre en letra de firma y lágrima del color de su mes, dorado o plateado. Envío gratis a península."
 
 

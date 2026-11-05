@@ -623,6 +623,14 @@ ni factura en el paquete, pedidos **cada día por el chat** (ellos hacen la list
 (sin confirmar), **CPA breakeven ≈ 23 €** a 49,95 €. Respuesta en inglés (13 preguntas + pedido de prueba a casa de
 Edu) y qué cambiar con lo que conteste: **`productos/proveedor-qiuhan.md`**. Lo crítico: envío con impuestos
 incluidos (IOSS), días reales y la letra igual que la muestra.
+**5-nov: ficha del collar «como Olivia, sin pillarse los dedos» (Edu: «creamos demasiada fricción»), en producción:**
+fuera la línea «Para Navidad, pídelo antes del 15 de noviembre», el plazo «llega en 2-5 semanas» y el aviso de «no
+admite devolución» bajo el campo del nombre (y de la descripción). Ventajas: «Envío gratis a península · Garantía de
+3 años». Un solo desplegable **«Envío y devoluciones»** con la estructura del de Olivia: se hacen para ti y salen en
+**4-8 días** (`HECHO_COLLAR` en `build.py`, los de Olivia: **provisional hasta que QIUHAN diga sus días**) · las piezas
+sin nombre se devuelven en 14 días; las personalizadas no, «aun así, si algo no está bien, escríbenos y lo arreglamos» ·
+en cursiva, «el nombre se hace tal cual lo escribes, mayúsculas incluidas». Ojo: la fecha que enseña el pago (7-12
+días laborables) no cuenta los días de hacerlo; el anuncio 14 de la campaña sigue diciendo «antes del 15 de noviembre».
 
 **CAMPAÑA DE BLACK FRIDAY PUBLICADA (4-nov, ~18:40, OK de Edu: «lanzamos ahora», «lo testeamos»).**
 «Lunerie · Black Friday · Ventas (Advantage+)» `52566458999794` · conjunto `52566459008194` (península + Baleares,

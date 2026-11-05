@@ -8,7 +8,40 @@ Yiwu Qiuhan Jewelry Company Ltd. (Alibaba, producto 1601817911870). Datos de la 
 - Dropshipping: el paquete va **sin logos, sin factura y sin nada parecido** dentro.
 - Cómo se trabaja: Edu le manda los pedidos **cada día por el chat** → ellos preparan una lista → Edu la confirma → fabrican y envían.
 
-## Cuentas (calculadora del radar, pago con tarjeta, a 49,95 €)
+## Segunda respuesta (5-nov, a nuestras 13 preguntas)
+- **Letras: sin límite** (la ficha sigue con 10, por cómo queda).
+- 316L «algo más caro» (el primer mensaje decía 5,22 $ ya en 316L: confirmarlo).
+- **Fabricación: 5-7 días laborables** por pieza · **envío: 3-10 días laborables** · **envío: ~7 $ por pedido**.
+- Presentación sin logo: **bolsita de terciopelo con botón 0,5 $** (turquesa, granate, rosa, rojo, negro, crema, gris)
+  o **cajita de terciopelo beige 1 $** (fotos de catálogo que mandó Edu).
+- En la tienda (5-nov): ficha «salen en 5-7 días laborables»; Envíos y Preguntas frecuentes, los dos plazos por
+  separado. **Regla de Edu: nunca escribir la suma ni una fecha calculada; la suma la hace la clienta.**
+- Sin contestar todavía: si el envío va **con impuestos incluidos** (IOSS/DDP), la letra igual que la muestra, tildes,
+  largo de cadena, foto de sus 12 colores, foto antes de enviar, rehacer si se equivocan, cómo se paga y el pedido de prueba.
+
+**Cuentas con estos datos** (5,22 $ + 1 $ de cajita + 7 $ de envío = 13,22 $ ≈ 11,4 € puesto; radar, tarjeta,
+49,95 €): **CPA breakeven ≈ 20,6 €** (con la bolsita, ≈ 21 €). El radar suma aparte 4,20 € de aranceles: si los 7 $
+ya incluyen impuestos y aranceles, el breakeven sube a ~24 €.
+
+### Respuesta para mandar (en inglés)
+```text
+Thank you, friend! Then:
+1. PACKAGE: we choose the velvet BOX ($1), no logo. Do you have it in dark green? If not, beige is OK.
+   Please send a real photo of the necklace inside the box.
+2. SHIPPING $7: is it TAX INCLUDED (DDP / IOSS)? My customer must pay nothing on delivery in Spain.
+   Which company delivers in Spain (Correos, GLS...)?
+3. PRICE: one order = $5.22 (316L) + $1 box + $7 shipping = $13.22. Is this correct?
+4. LETTERS: exactly like my photos (flat polished nameplate, signature font, ring on top of the capital letter,
+   long straight line at the end, teardrop in the center)? Can you make accents (á é í ó ú ñ)?
+5. CHAIN: length and extender?
+6. Please send a real photo of your 12 birthstone colors.
+7. Photo of each necklace before shipping, tracking number in 48 hours, and free remake if the name
+   is wrong because of production. OK?
+8. PAYMENT: one Alibaba order (Trade Assurance) for each list?
+Then I will place the test order: name "Inés", gold, May stone, in the box.
+```
+
+## Cuentas del primer mensaje (calculadora del radar, pago con tarjeta, a 49,95 €)
 Coste puesto en España = collar + envío estándar (4,33 € en la ficha de Alibaba; **sin confirmar** para pedidos sueltos).
 El radar suma aparte 4,20 € de aranceles por paquete.
 

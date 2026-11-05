@@ -631,15 +631,17 @@ incluidos (IOSS), días reales y la letra igual que la muestra.
 fuera la línea «Para Navidad, pídelo antes del 15 de noviembre», el plazo «llega en 2-5 semanas» y el aviso de «no
 admite devolución» bajo el campo del nombre (y de la descripción). Ventajas: «Envío gratis a península · Garantía de
 3 años». Un solo desplegable **«Envío y devoluciones»** con la estructura del de Olivia: se hacen para ti y salen en
-**3-5 días laborables** (`HECHO_COLLAR` en `build.py`; Edu, 5-nov) · las piezas sin nombre se devuelven en 14 días;
-las personalizadas no, «aun así, si algo no está bien, escríbenos y lo arreglamos» · en cursiva, «el nombre se hace tal
-cual lo escribes, mayúsculas incluidas». **El equilibrio (Edu): la ficha, corta como Olivia; el plazo completo, en los
-textos legales.** Política y página de Envíos y Preguntas frecuentes (subidas el 5-nov): piezas con nombre = 3-5 días
-laborables de fabricación + envío = **10-16 días laborables** en total (3-4 más que el resto) y, para Navidad, **antes
-del 30 de noviembre** (el resto, antes del 5-dic; con 16 laborables y el 8-dic festivo, llega el 23-dic). En
-Devoluciones, «se hace tal cual lo escribes» (no «se graba»: QIUHAN lo hace en chapa). Ojo: la fecha que enseña el pago
-(7-12 días laborables) no cuenta los días de hacerlo; el anuncio 14 de la campaña sigue diciendo «antes del 15 de
-noviembre» y «llega en 2-5 semanas».
+**5-7 días laborables** (`HECHO_COLLAR` en `build.py`, los días de QIUHAN) · las piezas sin nombre se devuelven en 14
+días; las personalizadas no, «aun así, si algo no está bien, escríbenos y lo arreglamos» · en cursiva, «el nombre se hace
+tal cual lo escribes, mayúsculas incluidas». **El equilibrio (Edu): la ficha, corta como Olivia; los plazos, en los
+textos legales.** Envíos (política y página) y Preguntas frecuentes: piezas con nombre = **5-7 días laborables de
+fabricación y después 3-10 de envío, por separado**; para Navidad, «tardan más: pídelas con tiempo». **REGLA DE EDU:
+nunca escribir la suma de los plazos ni una fecha calculada (en la web, los textos legales ni nada): la suma la hace la
+clienta.** En Devoluciones, «se hace tal cual lo escribes» (no «se graba»: QIUHAN lo hace en chapa). Ojo: la fecha que
+enseña el pago (7-12 días laborables) no cuenta los días de hacerlo; el anuncio 14 de la campaña sigue diciendo «antes
+del 15 de noviembre» y «llega en 2-5 semanas». **QIUHAN, 2.ª respuesta (5-nov):** letras sin límite, envío ~7 $ por
+pedido, bolsita sin logo 0,5 $ o cajita de terciopelo beige 1 $ → con la cajita, CPA breakeven ≈ 20,6 €. Detalle,
+preguntas pendientes y la siguiente respuesta en `productos/proveedor-qiuhan.md`.
 
 **CAMPAÑA DE BLACK FRIDAY PUBLICADA (4-nov, ~18:40, OK de Edu: «lanzamos ahora», «lo testeamos»).**
 «Lunerie · Black Friday · Ventas (Advantage+)» `52566458999794` · conjunto `52566459008194` (península + Baleares,

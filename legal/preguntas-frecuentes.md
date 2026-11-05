@@ -4,11 +4,11 @@
 
 **¿Cuánto tarda en llegar?**
 7-12 días laborables a península, con número de seguimiento por email. Las piezas con nombre se hacen para ti en
-3-5 días laborables y llegan en 10-16 días laborables en total.
+5-7 días laborables y después el envío tarda 3-10 días laborables.
 
 **¿Llega a tiempo para Navidad?**
-Si lo pides antes del 5 de diciembre, sí. Las piezas con nombre, antes del 30 de noviembre. Si vas justa,
-escríbenos antes de comprar y te decimos si llega.
+Si lo pides antes del 5 de diciembre, sí. Las piezas con nombre tardan más, porque se hacen para ti: pídelas con
+tiempo. Si vas justa, escríbenos antes de comprar y te decimos si llega.
 
 **¿El envío es gratis?**
 Sí, a península. A Baleares también enviamos, con un pequeño coste que verás antes de pagar. Por ahora no enviamos

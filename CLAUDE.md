@@ -683,6 +683,13 @@ Coste total ~2,5-3 $. Vídeo elegido: `marca/fotos-ia/ugc-collar/collar-ugc-sara
 - **Anuncio 16** `52566612235194` en el mismo conjunto: 4:5 en feed y 9:16 en Stories y Reels, sin plazo ni fecha de
   Navidad y sin declarar IA. Ya son 17 anuncios.
 - Las piezas 17-19 del collar (carrusel, stories, foto) siguen en borrador.
+- **Segundo vídeo UGC, «Carmen» en luz dorada (Edu: «me flipa»)**, con ideas de Pinterest: colgando de los dedos → en
+  la palma → abrochándolo → selfie en el espejo (`python marca/ugc_collar.py … --version carmen-dorada`, lágrima
+  pequeña). Montaje con `--planos colgando-1:4,palma-1:2.4,cierre-1:2.6,espejo-1:4`: en el cierre, a partir del segundo
+  3, Kling cambia la cara. **Voz: Silvia** (ElevenLabs Starter, biblioteca) con filtro de móvil; Edu no quiere voces de
+  «doblaje». Vídeo: `marca/fotos-ia/ugc-collar-carmen-2/collar-ugc-silvia-movil-9x16.mp4` (+ `-4x5`, recorte y=165).
+  Edu le pone música y lo devuelve para la campaña y un reel. Limpieza del 5-nov: borradas las otras voces y vídeos de
+  prueba, el primer vídeo de Carmen y el vídeo descartado de HyperFrames. Se conservan los clips de origen y las anclas.
 - **PENDIENTE (recordárselo a Edu): ElevenLabs Starter**, contratado el 5-nov por 1 $ el primer mes para usar voces de la
   biblioteca por la API (el plan Free no deja: error 402). **Se renueva solo hacia el 5-dic a 6 $/mes**: antes de esa
   fecha, preguntar a Edu si lo cancela (Suscripción en elevenlabs.io) o lo mantiene. Plan Starter, no Creator.

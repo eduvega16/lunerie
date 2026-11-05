@@ -698,6 +698,15 @@ Coste total ~2,5-3 $. Vídeo elegido: `marca/fotos-ia/ugc-collar/collar-ugc-sara
   **Con la música de Edu** («Holiday Bells», `marca/musica/holiday-bells.m4a`; el título del archivo es un id, parece de la
   biblioteca de sonidos de Meta) mezclada con `python marca/con_musica.py <vídeo> <música>` (la música baja cuando habla,
   -14 LUFS): **anuncio 18** `52566698768994` en la campaña y **reel programado el 6-nov 19:30** (`2026-W45-20`).
+- **Cesta (5-nov, en producción, Edu: «pone total estimado, el envío es gratis no?»):** «Total» en vez de «Total estimado» y
+  «Impuestos incluidos. Envío gratis a península (Baleares, 3,95 €).» en vez de «Descuentos y envío calculados en la página
+  de pago» (`CAMBIOS_CESTA` en `build.py`, sobre `locales/es.json`). Motivo: del 4 al 5-nov, 7 sesiones con carrito (6 de
+  Meta, todas en la ficha del collar, casi todas en móvil) y **0 llegaron al pago**; Edu probó el pago y funciona.
+- **Nota del equipo** (formato 26 de la biblioteca, visto en Olivia): `python marca/nota_equipo.py` →
+  `marca/fotos-ia/campana-bf/17-nota-equipo-9x16.jpg` / `-4x5.jpg` (fondo tinta, la promo y el ejemplo Collar Signé +
+  Reloj Lune + aros Boucle = 109,85 € → 89,90 € con el 3x2, comprobado). **Sin publicar: falta el OK de Edu.**
+- **El asistente de Meta del Administrador** dijo el 5-nov que la campaña «no entregaba»: miraba hasta el día anterior
+  (0,08 € el 4-nov) y no el día en curso (35,87 € el 5-nov). Comprobar siempre con el conector antes de hacerle caso.
 - **PENDIENTE (recordárselo a Edu): ElevenLabs Starter**, contratado el 5-nov por 1 $ el primer mes para usar voces de la
   biblioteca por la API (el plan Free no deja: error 402). **Se renueva solo hacia el 5-dic a 6 $/mes**: antes de esa
   fecha, preguntar a Edu si lo cancela (Suscripción en elevenlabs.io) o lo mantiene. Plan Starter, no Creator.

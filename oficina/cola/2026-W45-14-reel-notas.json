@@ -1,6 +1,6 @@
 {
   "id": "2026-W45-14-reel-notas",
-  "estado": "aprobado",
+  "estado": "publicado",
   "plataforma": "instagram",
   "formato": "reel",
   "pieza": "reloj-lune",
@@ -31,7 +31,11 @@
       "https://cdn.shopify.com/videos/c/vp/bc2eb604f952419483cf07adfd207829/bc2eb604f952419483cf07adfd207829.HD-1080p-2.5Mbps-100165664.mp4"
     ],
     "alt_text": "Una lista de regalos en las notas del móvil que se va tachando, con un reloj, unos aros, un anillo y otro reloj; al final, las cuatro piezas con su precio.",
-    "ia": true
+    "ia": true,
+    "resultado": {
+      "media_id": "18063085982567874",
+      "fecha": "2026-11-05T19:31:17+0100"
+    }
   },
   "origen": "4-nov: anuncio animado de HyperFrames (marca/anuncios-hf) usado como reel orgánico; Edu: «lo que tú consideres» (solo Instagram). 5-nov: vuelto a grabar con el anillo Nuit a 19,95 € (Edu: «sí»); el anuncio 10 de la campaña sigue con el vídeo viejo (29,95 €).",
   "riesgos": [

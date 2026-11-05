@@ -660,9 +660,14 @@ salía vacío en todas las fichas desde el 10-oct, porque el bloque `product-des
 comprobadas las 12 fichas en Chrome). Revisadas las 12 descripciones: solo cambió la del Collar Signé («colgando en el
 centro, una lágrima», no «a un lado»; `DESC` en `productos/collar_signe.py`). Ojo: `curl` a lunerie.es puede devolver
 «Verifying your connection…» si se hacen muchas peticiones: comprobar con Playwright.
+**Collar en el inicio (5-nov, en producción, OK de Edu tras ver la vista previa en el tema de prueba):** sección
+`collar` justo debajo de la portada (`parte('collar')` en `lunerie-inicio.liquid`): en PC, Carmen puesta + Marta suelta
+(2.ª y 1.ª foto del producto) y el texto en el tercio derecho, más grande desde 1700 px; en el móvil, Carmen y el texto
+debajo. «Nuevo · Con su nombre» · «Su nombre, *su piedra.*» · las 12 lágrimas · precio · «Personalizar el collar».
+**Edu pide ver la vista previa aquí antes de subir cambios de diseño**: subir antes al tema de prueba 210513527123 y
+enseñar capturas (`.claude/preview/`, fuera de git) + el enlace `?preview_theme_id=`.
 **Instagram (5-nov):** carrusel de Black Friday (`W45-09`) publicado solo a las 12:31 (sin «creadas con IA» en el pie,
-comprobado). Reel «Notas del móvil» (`W45-14`) programado a las 19:30 con el vídeo nuevo: al abrir la próxima sesión,
-mirar `oficina/publicaciones.log` y pasarlo a «publicado».
+comprobado) y reel «Notas del móvil» (`W45-14`) a las 19:31, con el vídeo nuevo.
 
 **5-nov (tarde): vídeo UGC del Collar Signé, en Instagram y en la campaña (Edu: «la de Sarah me mola, súbela y ponla en
 anuncios»).** El vídeo de HyperFrames («Su nombre, su piedra») se descartó: a Edu no le gustó y tenía un salto al final

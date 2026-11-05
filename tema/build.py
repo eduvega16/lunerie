@@ -360,6 +360,8 @@ index = {
         # va debajo con rasgos que valen para todo.
         # 1-nov: «Las piezas» se sustituye por dos escaparates partidos (como Caducci) y la fila de reseñas.
         "piezas": {**parte("piezas", fondo=BG, arriba=56, abajo=24), "disabled": True},
+        # 5-nov (Edu: «modifica la home mostrando el collar»): el Collar Signé justo debajo de la portada.
+        "collar": parte("collar", arriba=64, abajo=24, ancho="full-width"),
         # 2-nov: «Packs para regalar» (idea aprobada por Edu). 3-nov (Edu): justo después de la portada.
         "packs": parte("packs", arriba=64, abajo=24),
         "relojes": parte("escaparate", arriba=64, abajo=24, ancho="full-width", extra=", coleccion: 'relojes'"),
@@ -442,7 +444,7 @@ index = {
                 "padding-block-start": 48, "padding-block-end": 48},
         },
     },
-    "order": ["portada", "destacado", "packs", "piezas", "relojes", "joyas", "opiniones", "como_es", "oferta", "dudas",
+    "order": ["portada", "collar", "destacado", "packs", "piezas", "relojes", "joyas", "opiniones", "como_es", "oferta", "dudas",
               "promesas"],
 }
 if not SEGUNDO_RELOJ:

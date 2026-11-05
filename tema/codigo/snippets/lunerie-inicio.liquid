@@ -392,6 +392,39 @@
       })();
     </script>
 
+  {%- when 'collar' -%}
+    {%- comment -%}
+      Collar Signé en el inicio (5-nov, Edu: «modifica la home mostrando el collar»), justo debajo de la portada. Como
+      las fichas («lujo como PDPaola»): en PC, dos fotos 4:5 (la 2.ª del producto, puesto, y la 1.ª, suelto) y el texto
+      en el tercio de la derecha; de 750 a 1099 px, la foto puesta y el texto; en el móvil, la foto puesta y el texto
+      debajo. Las 12 lágrimas con los mismos colores que el panel de la ficha (`tonos` en lunerie-collar.liquid).
+      Si cambia el orden de la galería del collar, revisar `c.media[1]` y `c.media[0]`.
+    {%- endcomment -%}
+    {%- liquid
+      assign c = all_products['collar-signe']
+      assign tonos = '#7A1420,#8E6CB8,#7CC6E6,#E4E8EF,#1E7A3C,#5B3E99,#C2183B,#6B6A1E,#1F3A8A,#E7A3C6,#E8B21C,#2F86D8' | split: ','
+    -%}
+    <section class="lu-col" aria-labelledby="lu-col-t">
+      <a class="lu-col__foto" href="{{ c.url }}" tabindex="-1" aria-hidden="true">
+        {{- c.media[1] | image_url: width: 1600 | image_tag: loading: 'lazy', alt: '', sizes: '(min-width: 1100px) 33vw, (min-width: 750px) 50vw, 100vw', widths: '400, 600, 900, 1200, 1600' -}}
+      </a>
+      <a class="lu-col__foto lu-col__foto--suelto" href="{{ c.url }}" tabindex="-1" aria-hidden="true">
+        {{- c.media[0] | image_url: width: 1600 | image_tag: loading: 'lazy', alt: '', sizes: '33vw', widths: '600, 900, 1200, 1600' -}}
+      </a>
+      <div class="lu-col__texto">
+        <p class="lu-ceja">Nuevo · Con su nombre</p>
+        <h2 class="lu-titulo" id="lu-col-t">Su nombre, <em>su piedra.</em></h2>
+        <p class="lu-col__sub">El collar Signé lleva su nombre en letra de firma y una lágrima del color del mes en que nació.</p>
+        <ul class="lu-col__lagrimas" role="list" aria-hidden="true">
+          {%- for t in tonos -%}<li style="--t: {{ t }}"></li>{%- endfor -%}
+        </ul>
+        <p class="lu-col__leyenda">Una lágrima para cada mes</p>
+        <p class="lu-col__precio">{{ c.price | money }}</p>
+        <a class="lu-boton" href="{{ c.url }}">Personalizar el collar</a>
+        <p class="lu-col__nota">Dorado o plateado · Envío gratis a península</p>
+      </div>
+    </section>
+
   {%- when 'como-es' -%}
     <div class="lu-como">
       <h2 class="lu-titulo">Así son las piezas</h2>
@@ -694,4 +727,29 @@
     @media (hover:hover){.lu-esc__tarjeta:hover .lu-esc__fotos img{transform:scale(1.04)}}
     @media (prefers-reduced-motion:no-preference){.lu-esc__lista{scroll-behavior:smooth}}
     @media (prefers-reduced-motion:reduce){.lu-esc__fotos img{transition:none}}
+
+    /* Collar Signé (5-nov): fotos grandes y texto a un lado, sin cajas de color */
+    .lu-col{display:grid;grid-template-columns:1fr;padding-inline:clamp(16px,4vw,48px);color:#16201B}
+    .lu-col__foto{position:relative;display:block;aspect-ratio:4/5;overflow:hidden;background:#F2F4F2}
+    .lu-col__foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+    .lu-col__foto--suelto{display:none}
+    .lu-col__texto{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:36px 8px 8px;
+      text-align:center}
+    .lu-col__texto .lu-titulo{margin:0 0 16px}
+    .lu-col .lu-ceja{order:0;margin:0 0 14px}
+    .lu-col__sub{max-width:30ch;margin:0;line-height:1.6;color:#3D4842}
+    .lu-col__lagrimas{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:26px 0 0;padding:0!important;
+      list-style:none}
+    .lu-col__lagrimas li{width:11px;height:11px;border-radius:0 50% 50% 50%;transform:rotate(45deg);background:var(--t);
+      box-shadow:inset 0 0 0 1px rgba(22,32,27,.14)}
+    .lu-col__leyenda{margin:12px 0 0;font-size:.75rem;letter-spacing:.06em;color:#6B746F}
+    .lu-col__precio{margin:24px 0 18px;font-size:1.0625rem}
+    .lu-col__nota{margin:14px 0 0;font-size:.8125rem;color:#6B746F}
+    @media (min-width:750px){.lu-col{grid-template-columns:1fr 1fr;gap:4px}.lu-col__texto{padding:48px}}
+    @media (min-width:1100px){.lu-col{grid-template-columns:1fr 1fr 1fr}.lu-col__foto--suelto{display:block}}
+    @media (min-width:1700px){.lu-col .lu-titulo{font-size:3.4rem}.lu-col__sub{max-width:32ch;font-size:1.125rem}
+      .lu-col__lagrimas{gap:13px}.lu-col__lagrimas li{width:14px;height:14px}.lu-col__leyenda,.lu-col__nota{font-size:.875rem}
+      .lu-col__precio{font-size:1.25rem}.lu-col .lu-boton{padding:20px 40px;font-size:.875rem}}
+    @media (hover:hover){.lu-col__foto:hover img{transform:scale(1.03)}}
+    @media (prefers-reduced-motion:reduce){.lu-col__foto img{transition:none}}
 {% endstylesheet %}

@@ -21,6 +21,16 @@
       },
       "disabled": true
     },
+    "collar": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{% render 'lunerie-inicio', parte: 'collar' %}",
+        "background_color": "",
+        "section_width": "full-width",
+        "padding-block-start": 64,
+        "padding-block-end": 24
+      }
+    },
     "packs": {
       "type": "custom-liquid",
       "settings": {
@@ -461,6 +471,7 @@
   },
   "order": [
     "portada",
+    "collar",
     "destacado",
     "packs",
     "piezas",

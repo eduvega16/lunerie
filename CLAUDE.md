@@ -248,12 +248,16 @@ Elegidas 4 (Edu, precios medios); las otras 8 se quedan en borrador sin tocar (a
 pendientes «para una oreja», collar de piedras «naturales», collar/pulsera de estrellas, el 2.º anillo del mes,
 aros con perla y collar de perlas «plata 925»). Plantilla `joya`, vendor Lunerie, sin tachado, SKU sin tocar.
 - **Anillo Nuit** `anillo-nuit` (11036461891923) · sello con circonita marquesa · Color: Verde oliva / Champán /
-  Blanco / Morado × Talla 12 / 14-15 / 17 · coste 3,34-4,71 € · **29,95 €**.
+  Blanco / Morado × Talla 12 / 14-15 / 17 · coste 3,34-4,71 € · **19,95 € desde el 5-nov** (antes 29,95 €; Edu: «demasiado
+  caro»; pidió ~12 €, pero con envío y ~4 € de aranceles por paquete pierde 3-5 € por anillo, y eligió 19,95 €, como
+  el Duo; sin tachado). Solo, deja ~1-4 €: no anunciarlo suelto, sirve para sumar al pedido.
 - **Pendientes Larme** `pendientes-larme` (11036461629779) · aro con lágrima · 7 colores · coste 1,88 € · **24,95 €**.
   La ficha de AliExpress no dice «Choice»: mirar el plazo a España.
 - **Collar Lune** `collar-lune` (11036462121299) · cadena con piedras ovaladas, «a juego con el reloj» · De colores /
   Blanco · 45 + 6 cm · coste 4,93 € · **34,95 €**.
-- **Anillo Étoile** `anillo-etoile` (11036462154067) · piedra del mes · Mes (12) × Talla · coste 3,82-4,36 € · **29,95 €**.
+- **Anillo Étoile** `anillo-etoile` (11036462154067) · piedra del mes · Mes (12) × Talla · coste 3,82-4,36 € · **19,95 €
+  desde el 5-nov** (antes 29,95 €, igual que el Nuit). Siguen diciendo 29,95 € el carrusel de Navidad de la campaña
+  (foto 1, Nuit) y el vídeo «Notas del móvil» (tarjeta final, Nuit), anuncio y reel; textos de Instagram ya cambiados.
 - Tallas US 6/7/8 = contorno 52 / 54,5 / 57 mm → «12», «14-15», «17» (explicado en la descripción).
 - Textos: «acero inoxidable con acabado dorado», «circonita»; **nada** de «oro 18K», hipoalergénico, waterproof,
   «no se oscurece» ni nombres de gemas (los colores del mes van como «rojo oscuro», «azul agua»…).

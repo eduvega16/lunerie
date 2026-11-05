@@ -877,6 +877,27 @@ if TIENDA.exists():
     if es.exists():
         t = es.read_text(encoding="utf8")
         t2 = t.replace('"placeholder": "Dirección de correo electrónico"', '"placeholder": "Tu email"', 1)
+        # 5-nov (Edu: «pone total estimado, el envío es gratis no?»): la cesta decía «Total estimado» y «Descuentos y envío
+        # calculados en la página de pago», que hace pensar que luego se cobra más. Los descuentos de la promo ya salen en
+        # la cesta y el envío a península es gratis (Baleares 3,95 €; Canarias, Ceuta y Melilla no se envían).
+        ENVIO_CESTA = "Impuestos incluidos. Envío gratis a península (Baleares, 3,95 €)."
+        ENVIO_CESTA_LINK = 'Impuestos incluidos. <a href=\\"{{ link }}\\">Envío gratis</a> a península (Baleares, 3,95 €).'
+        CAMBIOS_CESTA = {
+            '"cart_estimated_total": "Total estimado"': '"cart_estimated_total": "Total"',
+            '"taxes_included_shipping_at_checkout_without_policy": "Impuestos incluidos. Descuentos y envío calculados en '
+            'la pantalla de pago."': f'"taxes_included_shipping_at_checkout_without_policy": "{ENVIO_CESTA}"',
+            '"taxes_included_shipping_at_checkout_with_policy_html": "Impuestos incluidos. Descuentos y <a href=\\"{{ link '
+            '}}\\">envío</a> calculados en la página de pago."':
+                f'"taxes_included_shipping_at_checkout_with_policy_html": "{ENVIO_CESTA_LINK}"',
+            '"taxes_included_shipping_at_checkout_with_policy_without_discounts_html": "Impuestos incluidos. Los gastos de '
+            'envío se calculan en la página de pago."':
+                f'"taxes_included_shipping_at_checkout_with_policy_without_discounts_html": "{ENVIO_CESTA_LINK}"',
+            '"taxes_included_shipping_at_checkout_without_policy_without_discounts": "Impuestos incluidos. Los gastos de '
+            'envío se calculan en la página de pago."':
+                f'"taxes_included_shipping_at_checkout_without_policy_without_discounts": "{ENVIO_CESTA}"',
+        }
+        for viejo, nuevo in CAMBIOS_CESTA.items():
+            t2 = t2.replace(viejo, nuevo)
         if t2 != t:
             es.write_text(t2, encoding="utf8")
 print("ok")

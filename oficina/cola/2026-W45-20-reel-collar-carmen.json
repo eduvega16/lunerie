@@ -1,6 +1,6 @@
 {
   "id": "2026-W45-20-reel-collar-carmen",
-  "estado": "aprobado",
+  "estado": "revisado",
   "plataforma": "instagram",
   "formato": "reel",
   "pieza": "collar-signe",
@@ -51,7 +51,7 @@
     "Personas hechas con IA: la API marca la publicación como IA (is_ai_generated)."
   ],
   "revision": {
-    "notas": "5-nov: Edu «ese es el audio, móntalo todo». 5-nov ~20:30: música bajada (Edu: «va súper fuerte»), ahora 14 dB por debajo de la voz.",
+    "notas": "5-nov: Edu «ese es el audio, móntalo todo». 5-nov ~20:30: música bajada (Edu: «va súper fuerte»), ahora 14 dB por debajo de la voz. Edu: «antes de subirlo enséñamelo» → vuelve a «revisado» y sin tarea programada hasta su OK.",
     "aprobado_por": "Edu",
     "fecha": "2026-11-05"
   }

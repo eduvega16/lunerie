@@ -219,7 +219,7 @@
                     "texto": {
                       "type": "text",
                       "settings": {
-                        "text": "<p><strong>Envío</strong><br>Las piezas con nombre se hacen para ti y salen en 4-8 días. Envío gratis a península, con número de seguimiento por email.</p><p><strong>Devoluciones</strong><br>Cada pieza se hace con cariño, y que te guste es lo que más nos importa. Las piezas sin nombre se pueden devolver en 14 días. Como las personalizadas se hacen solo para ti, no admiten devolución. Aun así, si algo no está bien, escríbenos y lo arreglamos.</p><p><em>El nombre se hace tal cual lo escribes, mayúsculas incluidas. Te recomendamos revisarlo antes de hacer el pedido.</em></p>",
+                        "text": "<p><strong>Envío</strong><br>Las piezas con nombre se hacen para ti y salen en 3-5 días laborables. Envío gratis a península, con número de seguimiento por email.</p><p><strong>Devoluciones</strong><br>Cada pieza se hace con cariño, y que te guste es lo que más nos importa. Las piezas sin nombre se pueden devolver en 14 días. Como las personalizadas se hacen solo para ti, no admiten devolución. Aun así, si algo no está bien, escríbenos y lo arreglamos.</p><p><em>El nombre se hace tal cual lo escribes, mayúsculas incluidas. Te recomendamos revisarlo antes de hacer el pedido.</em></p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",

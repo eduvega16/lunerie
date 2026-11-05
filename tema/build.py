@@ -749,9 +749,10 @@ _det["block_order"].insert(_det["block_order"].index("descripcion") + 1, "agua")
 # 5-nov (Edu: «como Olivia, que no se pilla los dedos; nosotros creamos demasiada fricción»): sin fecha de Navidad ni
 # plazo de entrega en la ficha y un solo desplegable «Envío y devoluciones» con la estructura del de Olivia: los días
 # en que se hace y sale, la devolución de las piezas sin nombre, que la personalizada no se devuelve pero «si algo no
-# está bien, lo arreglamos» y la nota del nombre tal cual. HECHO_COLLAR: los 4-8 días de Olivia, provisional hasta
-# que QIUHAN diga sus días de fabricación (productos/proveedor-qiuhan.md).
-HECHO_COLLAR = "4-8 días"
+# está bien, lo arreglamos» y la nota del nombre tal cual. HECHO_COLLAR: 3-5 días laborables (Edu, 5-nov); el plazo
+# total (10-16 días laborables) y la Navidad de las piezas con nombre (antes del 30-nov) van en legal/envios.md y en
+# Preguntas frecuentes, no en la ficha. Cambiarlo si QIUHAN dice otros días (productos/proveedor-qiuhan.md).
+HECHO_COLLAR = "3-5 días laborables"
 collar = copy.deepcopy(joya)
 _d = collar["sections"]["main"]["blocks"]["product-details"]
 _d["blocks"]["personalizar"] = liquid("{% render 'lunerie-collar', product: product, section_id: section.id %}")

@@ -25,10 +25,10 @@ señales de uso, podemos descontar esa pérdida de valor.
 ## Piezas personalizadas
 
 Las piezas hechas a tu medida o con un nombre o grabado **no tienen derecho de desistimiento** (art. 103 c de la
-LGDCU), porque se fabrican solo para ti. Revisa bien el texto antes de pagar: se graba tal cual lo escribes,
+LGDCU), porque se fabrican solo para ti. Revisa bien el texto antes de pagar: se hace tal cual lo escribes,
 mayúsculas incluidas.
 
-Si llegan con un defecto o con un error nuestro (por ejemplo, un nombre mal grabado respecto a lo que escribiste),
+Si llegan con un defecto o con un error nuestro (por ejemplo, un nombre distinto de lo que escribiste),
 **las rehacemos sin coste**.
 
 ## Garantía de 3 años

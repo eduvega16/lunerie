@@ -2,7 +2,7 @@ window.LU = {
  "precios": {
   "reloj-lune": "39,95 €",
   "collar-lune": "34,95 €",
-  "anillo-nuit": "29,95 €",
+  "anillo-nuit": "19,95 €",
   "aros-boucle": "19,95 €",
   "reloj-perle": "34,95 €",
   "reloj-galet": "34,95 €",

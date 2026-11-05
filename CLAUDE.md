@@ -641,10 +641,19 @@ textos legales.** Envíos (política y página) y Preguntas frecuentes: piezas c
 fabricación y después 3-10 de envío, por separado**; para Navidad, «tardan más: pídelas con tiempo». **REGLA DE EDU:
 nunca escribir la suma de los plazos ni una fecha calculada (en la web, los textos legales ni nada): la suma la hace la
 clienta.** En Devoluciones, «se hace tal cual lo escribes» (no «se graba»: QIUHAN lo hace en chapa). Ojo: la fecha que
-enseña el pago (7-12 días laborables) no cuenta los días de hacerlo; el anuncio 14 de la campaña sigue diciendo «antes
-del 15 de noviembre» y «llega en 2-5 semanas». **QIUHAN, 2.ª respuesta (5-nov):** letras sin límite, envío ~7 $ por
-pedido, bolsita sin logo 0,5 $ o cajita de terciopelo beige 1 $ → con la cajita, CPA breakeven ≈ 20,6 €. Detalle,
-preguntas pendientes y la siguiente respuesta en `productos/proveedor-qiuhan.md`.
+enseña el pago (7-12 días laborables) no cuenta los días de hacerlo (el anuncio 14 ya va sin plazo, ver abajo).
+**QIUHAN, 2.ª respuesta (5-nov):** letras sin límite, envío ~7 $ por pedido, bolsita sin logo 0,5 $ o cajita de
+terciopelo beige 1 $ → con la cajita, CPA breakeven ≈ 20,6 €. Detalle, preguntas pendientes y la siguiente respuesta en
+`productos/proveedor-qiuhan.md`.
+**Siguiente con el collar (5-nov, noche):** Edu manda a QIUHAN la 3.ª respuesta en inglés (está en
+`productos/proveedor-qiuhan.md`, con las fotos `collar-signe-1/5.jpg`). Claude recomienda la **cajita de 1 $** (solo
+0,5 $ más que la bolsita; preguntar si la hay en verde oscuro, si no la beige; nada de bolsita turquesa, recuerda a
+Tiffany), pero Edu aún no lo ha decidido. No poner «llega en su cajita» en la ficha hasta ver una foto real. **Lo
+crítico sigue sin contestar: si el envío de 7 $ va con impuestos incluidos (IOSS/DDP).** Con su respuesta: plazos,
+lámina de colores y cuentas (lista en el mismo fichero).
+**Instagram (5-nov):** carrusel de Black Friday (`W45-09`) publicado solo a las 12:31 (sin «creadas con IA» en el pie,
+comprobado). Reel «Notas del móvil» (`W45-14`) programado a las 19:30 con el vídeo nuevo: al abrir la próxima sesión,
+mirar `oficina/publicaciones.log` y pasarlo a «publicado».
 
 **5-nov (tarde): vídeo UGC del Collar Signé, en Instagram y en la campaña (Edu: «la de Sarah me mola, súbela y ponla en
 anuncios»).** El vídeo de HyperFrames («Su nombre, su piedra») se descartó: a Edu no le gustó y tenía un salto al final

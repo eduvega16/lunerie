@@ -1,6 +1,6 @@
 {
   "id": "2026-W45-09-black-friday-carrusel",
-  "estado": "aprobado",
+  "estado": "publicado",
   "plataforma": "instagram",
   "formato": "carrusel",
   "pieza": "catalogo",
@@ -62,7 +62,11 @@
     ],
     "urls": [],
     "alt_text": "Cuatro imágenes de la oferta de Black Friday de Lunerie: dos mujeres con relojes y joyas doradas, una cuadrícula de regalos de menos de 40 euros y una tarjeta con la oferta hasta el 5 de diciembre.",
-    "ia": true
+    "ia": true,
+    "resultado": {
+      "media_id": "17918946225262803",
+      "fecha": "2026-11-05T12:31:45+0100"
+    }
   },
   "origen": {
     "biblioteca": "",

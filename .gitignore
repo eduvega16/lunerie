@@ -36,3 +36,6 @@ marca/anuncios-hf/assets/img/
 marca/anuncios-hf/assets/fonts/
 marca/anuncios-hf/assets/gsap.min.js
 marca/anuncios-hf/index.html
+# originales PNG de los vídeos UGC del collar (5-nov): en git van los recortes JPG de clips/
+marca/fotos-ia/ugc-collar/*.png
+marca/fotos-ia/ugc-collar-carmen/*.png

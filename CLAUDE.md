@@ -611,6 +611,14 @@ nuevo **`python productos/cambiar_fotos.py <handle> <imagen> <posición> …`** 
 JPEG 97 sin submuestreo, `fileUpdate` en su sitio; la variante «Dorado» de Maille y Galet sigue con su foto). `portada_dia.py` / `portada_navidad.py` aún leen la 1.ª foto de una carpeta: para usarlas,
 pasarles estas (o hacer que manden todas, como `collar_ia.py`).
 
+**5-nov: lámina de las 12 lágrimas en la ficha del Collar Signé (Edu), 5.ª foto de la galería.** Sale de la tabla en
+inglés «BIRTHSTONE CHART» que bajó Edu (Downloads/LUNERIE/collar personalizable/7.webp, de Olivia, como las otras fotos
+del collar): `python marca/lagrimas.py` recorta las 12 gotas y monta una 4:5 en español con la letra de Lunerie
+(«Una lágrima para cada mes», mes + nombre del color, **sin nombres de gemas**, nota «Circonita… colores orientativos»)
+→ `marca/fotos-ia/lagrimas/lagrimas-12.jpg`. Cambiarla por una propia cuando QIUHAN mande la tabla real de sus colores.
+**5-nov, mañana: la campaña ya gastaba** (13,47 €, 17 clics a 0,79 €, 1 carrito); Meta mete casi todo en el carrusel del
+**Collar Signé** (11,66 €, 13 clics) → el plazo del collar importa más: pedir a QIUHAN los días reales.
+
 **CAMPAÑA DE BLACK FRIDAY PUBLICADA (4-nov, ~18:40, OK de Edu: «lanzamos ahora», «lo testeamos»).**
 «Lunerie · Black Friday · Ventas (Advantage+)» `52566458999794` · conjunto `52566459008194` (península + Baleares,
 solo FB+IG, Advantage+ audiencia, compra con el píxel) · **35 €/día con tope de gasto de 140 €** (se para sola) ·

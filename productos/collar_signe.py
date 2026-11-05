@@ -20,7 +20,7 @@ FOTOS = [("Signature_Name_and_Birthstone_Necklace.webp", "prod", .5, "Collar Sig
          ("Mask_group-26_ff4d6846-2898-459b-9369-eb9240a0ee8b.webp", "prod", .5, "Collar Signé plateado con lágrima verde"),
          ("script-initial-birthstone-necklace.webp", "vida", .5, "Collar Signé dorado de cerca, con lágrima roja")]
 FOTO_COLOR = {"Dorado": 0, "Plateado": 2}
-DESC = ("<p>Su nombre en letra de firma y, a un lado, una lágrima del color de su mes. Un collar fino para llevar cada "
+DESC = ("<p>Su nombre en letra de firma y, colgando en el centro, una lágrima del color de su mes. Un collar fino para llevar cada "
         "día, sin quitárselo.</p><ul>"
         "<li>Acero inoxidable con acabado dorado o plateado.</li>"
         "<li>El nombre que elijas, de hasta 10 letras, en letra de firma.</li>"

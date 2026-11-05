@@ -654,6 +654,12 @@ Shangjie (calidad probada, caja verde). Claude recomienda la **cajita de 1 $** (
 Tiffany), pero Edu aún no lo ha decidido. No poner «llega en su cajita» en la ficha hasta ver una foto real. **Lo
 crítico sigue sin contestar: si el envío de 7 $ va con impuestos incluidos (IOSS/DDP).** Con su respuesta: plazos,
 lámina de colores y cuentas (lista en el mismo fichero).
+**Desplegable «Descripción» arreglado (5-nov, en producción, Edu: «la descripción no está puesta en ningún producto»):**
+salía vacío en todas las fichas desde el 10-oct, porque el bloque `product-description` de Horizon necesita
+`"text": "{{ closest.product.description }}"` en sus ajustes (está en `build.py`; subidas las 5 plantillas de producto y
+comprobadas las 12 fichas en Chrome). Revisadas las 12 descripciones: solo cambió la del Collar Signé («colgando en el
+centro, una lágrima», no «a un lado»; `DESC` en `productos/collar_signe.py`). Ojo: `curl` a lunerie.es puede devolver
+«Verifying your connection…» si se hacen muchas peticiones: comprobar con Playwright.
 **Instagram (5-nov):** carrusel de Black Friday (`W45-09`) publicado solo a las 12:31 (sin «creadas con IA» en el pie,
 comprobado). Reel «Notas del móvil» (`W45-14`) programado a las 19:30 con el vídeo nuevo: al abrir la próxima sesión,
 mirar `oficina/publicaciones.log` y pasarlo a «publicado».

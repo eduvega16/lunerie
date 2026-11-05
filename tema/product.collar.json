@@ -198,6 +198,7 @@
                     "texto": {
                       "type": "product-description",
                       "settings": {
+                        "text": "{{ closest.product.description }}",
                         "width": "100%",
                         "type_preset": "rte"
                       },

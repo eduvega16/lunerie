@@ -593,7 +593,10 @@ ficha = {
                     "blocks": {
                         "descripcion": {"type": "_accordion-row", "settings": {
                             "heading": "Descripción", "icon": "none", "open_by_default": False},
+                            # «text» es obligatorio: el bloque de Horizon no lee la descripción solo (sin él, el
+                            # desplegable salió vacío del 10-oct al 5-nov)
                             "blocks": {"texto": {"type": "product-description", "settings": {
+                                "text": "{{ closest.product.description }}",
                                 "width": "100%", "type_preset": "rte"}, "blocks": {}}},
                             "block_order": ["texto"]},
                         "medida": row("Ajustar la correa",

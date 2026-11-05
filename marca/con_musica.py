@@ -1,7 +1,7 @@
 """Pone música por debajo de la voz de un vídeo (5-nov, Edu: «Holiday Bells» para el vídeo UGC del collar).
 La música baja sola cuando habla la voz (sidechain), entra con fundido y sale con fundido al final; el total se
 normaliza a -14 LUFS (lo que usa Instagram). Sin créditos.
-    python marca/con_musica.py <video.mp4> <musica> [--inicio 0.5] [--bajo 14]   → <video>-musica.mp4
+    python marca/con_musica.py <video.mp4> <musica> [--inicio 0.5] [--bajo 18]   → <video>-musica.mp4
 --bajo: cuántos dB queda la música por debajo de la voz (media medida con volumedetect). 5-nov: con un volumen fijo
 (0,30) la música quedó POR ENCIMA de la voz de Silvia (Edu: «va súper fuerte la música»); por eso ahora se mide.
 La música tiene que tener licencia para anuncios (la de la biblioteca de sonidos de Meta vale en Facebook e Instagram).
@@ -20,7 +20,7 @@ def media_db(f, filtro="anull"):
     return float(re.search(r"mean_volume: (-?[\d.]+) dB", r).group(1))
 
 
-def mezclar(video, musica, inicio=0.5, bajo=14):
+def mezclar(video, musica, inicio=0.5, bajo=18):
     video, musica = pathlib.Path(video), pathlib.Path(musica)
     salida = video.with_name(video.stem + "-musica.mp4")
     d = duracion(video)
@@ -43,5 +43,5 @@ def mezclar(video, musica, inicio=0.5, bajo=14):
 if __name__ == "__main__":
     a = sys.argv[1:]
     ini = float(a[a.index("--inicio") + 1]) if "--inicio" in a else 0.5
-    bajo = float(a[a.index("--bajo") + 1]) if "--bajo" in a else 14
+    bajo = float(a[a.index("--bajo") + 1]) if "--bajo" in a else 18
     mezclar(a[0], a[1], ini, bajo)

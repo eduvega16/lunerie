@@ -12,7 +12,8 @@ FUENTES = RAIZ / "marca" / "fuentes"
 PLANOS = ["ancla-1", "nombre-1", "cuello-1", "mirada-1"]   # 4 s cada uno
 SEG = 4.0
 # altura del subtítulo según el plano que se ve (entre la barbilla y el nombre, sin tapar el collar; zona libre hasta 1248)
-Y_PLANO = {"ancla-1": 960, "nombre-1": 860, "cuello-1": 760, "mirada-1": 860}
+Y_PLANO = {"ancla": 960, "nombre": 860, "cuello": 760, "mirada": 860}
+VOZ = RAIZ / "marca" / "fotos-ia" / "ugc-collar" / "voz"
 INICIO_VOZ = 0.2
 W, H = 1080, 1920
 
@@ -95,7 +96,7 @@ def srt(ruta):
 
 
 def montar(voz):
-    mp3, subs = CARPETA / "voz" / f"voz-{voz}.mp3", trozos(srt(CARPETA / "voz" / f"voz-{voz}.srt"))
+    mp3, subs = VOZ / f"voz-{voz}.mp3", trozos(srt(VOZ / f"voz-{voz}.srt"))
     dur_voz = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0",
                                     str(mp3)], capture_output=True, text=True).stdout)
     total = max(SEG * len(PLANOS), INICIO_VOZ + dur_voz + 0.8)
@@ -115,7 +116,7 @@ def montar(voz):
     for j, (a, b, txt) in enumerate(subs):
         png = tmp / f"s{j}.png"; subtitulo(txt, png)
         entradas += ["-i", str(png)]
-        y = Y_PLANO[PLANOS[min(int((a + INICIO_VOZ) // SEG), len(PLANOS) - 1)]]
+        y = Y_PLANO[PLANOS[min(int((a + INICIO_VOZ) // SEG), len(PLANOS) - 1)].rsplit("-", 1)[0]]
         filtros.append(f"[{ultimo}][{k}:v]overlay=0:{y}:enable='between(t,{a + INICIO_VOZ:.2f},{b + INICIO_VOZ:.2f})'[o{j}]")
         ultimo, k = f"o{j}", k + 1
     card = tmp / "tarjeta.png"; tarjeta(card)
@@ -132,4 +133,9 @@ def montar(voz):
 
 
 if __name__ == "__main__":
-    montar(sys.argv[1] if len(sys.argv) > 1 else "Elvira")
+    a = sys.argv[1:]
+    if "--carpeta" in a:
+        CARPETA = RAIZ / "marca" / "fotos-ia" / a[a.index("--carpeta") + 1]
+    if "--planos" in a:
+        PLANOS = a[a.index("--planos") + 1].split(",")
+    montar(a[0] if a and not a[0].startswith("--") else "sarah")

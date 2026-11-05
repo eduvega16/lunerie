@@ -13,8 +13,9 @@ load_dotenv(RAIZ / ".env.local")
 CARPETA = RAIZ / "marca" / "fotos-ia" / "ugc-collar"
 CLIPS = CARPETA / "clips"
 
-FIJO = (" Keep the necklace exactly as in the image: the same gold cursive name and the same single blue teardrop "
-        "crystal, no extra jewelry, letters do not change or melt. Same face, natural skin. Realistic handheld "
+FIJO = (" Keep the necklace exactly as in the image: the same gold cursive name and the same single teardrop "
+        "crystal, which keeps EXACTLY its colour from the image the whole time (it never changes colour), no extra "
+        "jewelry, letters do not change or melt. Same face, natural skin. Realistic handheld "
         "smartphone footage, subtle natural camera shake, soft daylight.")
 MOVIMIENTO = {
     "ancla": "She smiles warmly at the camera, tilts her head slightly and touches the necklace near her collarbone "
@@ -58,6 +59,9 @@ if __name__ == "__main__":
     a = sys.argv[1:]
     modo = a[a.index("--modo") + 1] if "--modo" in a else "pro"
     seg = int(a[a.index("--seg") + 1]) if "--seg" in a else 4
+    if "--carpeta" in a:
+        CARPETA = RAIZ / "marca" / "fotos-ia" / a[a.index("--carpeta") + 1]
+        CLIPS = CARPETA / "clips"
     planos = [p for p in a if (CARPETA / f"{p}.png").exists()]
     CLIPS.mkdir(parents=True, exist_ok=True)
     with concurrent.futures.ThreadPoolExecutor(4) as ex:

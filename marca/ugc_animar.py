@@ -26,8 +26,17 @@ MOVIMIENTO = {
               "window light, looking down at it with a soft smile.",
     "mirada": "She looks down at the necklace touching it with her fingers, then lifts her eyes to the camera with a "
               "genuine happy smile.",
+    # tomas «dorada» (5-nov, ideas de Pinterest)
+    "colgando": "The necklace hanging from her fingers sways gently and turns a little so the gold name catches the "
+                "warm light; she smiles at the camera.",
+    "palma": "Her open palm moves very slightly towards the camera and the warm light glints on the gold letters; the "
+             "necklace stays resting in her palm.",
+    "cierre": "She finishes fastening the clasp behind her neck, lets her hair fall and turns her head slightly towards "
+              "the camera with a soft smile.",
+    "espejo": "Mirror selfie: she gently adjusts the necklace at her collarbone with her fingertips while holding the "
+              "phone still, small natural movement.",
 }
-DESPLAZAMIENTO = {"nombre": 0.10}   # dónde empieza el recorte 9:16 (0 = izquierda, 0.5 = centro)
+DESPLAZAMIENTO = {"nombre": 0.10, "colgando": 0.0, "espejo": 0.75}   # dónde empieza el recorte 9:16 (0 = izquierda, 0.5 = centro)
 
 
 def recorte_916(png):

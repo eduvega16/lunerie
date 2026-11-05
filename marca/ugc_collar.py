@@ -24,6 +24,7 @@ CHICAS = {
 VERSIONES = {   # nombre, color de la lágrima (en inglés para el prompt), chica, carpeta
     "marta": ("Marta", "a clear sapphire blue", "morena", "ugc-collar"),
     "carmen": ("Carmen", "a clear emerald green", "castana-clara", "ugc-collar-carmen"),
+    "carmen-dorada": ("Carmen", "a clear emerald green", "castana-clara", "ugc-collar-carmen-2"),   # tomas_dorada
 }
 LOOK = ("Shot like an authentic vertical smartphone video frame filmed at home: bright bedroom with a window and linen "
         "curtains out of focus behind her, soft natural daylight, slight phone-camera grain, natural imperfect skin, "
@@ -52,6 +53,42 @@ def tomas(nombre, color, chica):
     }
 
 
+LOOK_DORADA = ("Shot like an authentic vertical smartphone video frame: warm golden-hour sunlight from a window low on one "
+               "side, soft warm shadows, beige and sand tones, linen curtain glow, slight phone-camera grain, natural "
+               "imperfect skin, candid UGC look, not a studio photo. No text, no logo, no watermark.")
+
+
+def tomas_dorada(nombre, color, chica):
+    """5-nov (Edu: «algo diferente», «la piedra es demasiado grande, el collar es más sutil», «un plano con el collar en
+    las manos, quitado del cuello»): ideas de Pinterest (búsqueda «ugc content jewelry»): collar colgando de los dedos,
+    en la palma, abrochándolo, selfie en el espejo con la cara tapada por el móvil, luz cálida de atardecer."""
+    pieza = (DISENO.format(metal="gold") + f", the name reading exactly \"{nombre}\" and the teardrop crystal {color}. "
+             "The necklace is SUBTLE and delicate: a very fine chain, and the teardrop crystal is SMALL (about 7 mm "
+             "long, no bigger than the capital letter of the name). Exactly like the real photos of the necklace "
+             "provided (same shape and setting; only the name and the crystal colour change). Only ONE teardrop. ")
+    c = CHICAS[chica].replace("wearing a soft cream knit top with a wide scoop neckline",
+                              "wearing an oversized beige linen shirt, open at the collar")
+    sin_collar = "Her neck is bare: she is NOT wearing any necklace, the only necklace is the one in her hand. "
+    return {
+        "colgando": "Vertical phone video frame: in the foreground, sharp, her hand holds the necklace up by the chain "
+                    "between thumb and index finger so it hangs straight down and sways, the name and the small teardrop "
+                    "clearly visible, as if she just took it off to show it to the camera; behind it, out of focus, " + c
+                    + ", smiling at the camera. " + sin_collar + "The necklace is " + pieza + LOOK_DORADA,
+        "palma": "Close-up from above of her open palm held towards the camera, with the necklace resting loosely "
+                 "coiled in it, the cursive name lying flat and fully readable and the small teardrop next to it; her "
+                 "beige linen sleeve at the edge of the frame. The necklace is " + pieza + LOOK_DORADA,
+        "cierre": c + ", seen from behind and slightly to the side at shoulder height, lifting her hair with one hand "
+                  "while fastening the necklace clasp at the back of her neck with the other; the name rests on the "
+                  "side of her collarbone, visible over her shoulder. The necklace is " + pieza + LOOK_DORADA,
+        "espejo": c + ", taking a mirror selfie in a warm sunlit bedroom: the phone covers most of her face, one hand "
+                  "lightly touching the necklace at her collarbone; the necklace is clearly visible in the reflection. "
+                  "The necklace is " + pieza + LOOK_DORADA,
+        "clavicula": "Close-up of her collarbone and neck in warm golden light, her lips and chin at the top of the "
+                     "frame; one fingertip slowly tracing the gold name on her skin. Same woman as the reference. "
+                     "The necklace is " + pieza + LOOK_DORADA,
+    }
+
+
 def subir(r):
     return higgsfield_client.upload_file(pathlib.Path(r))
 
@@ -75,10 +112,11 @@ if __name__ == "__main__":
     res = "4k" if "--4k" in a else "2k"
     n = int(a[a.index("--n") + 1]) if "--n" in a else 1
     ancla = a[a.index("--ancla") + 1] if "--ancla" in a else None
-    nombre, color, chica, carpeta = VERSIONES[a[a.index("--version") + 1] if "--version" in a else "marta"]
+    version = a[a.index("--version") + 1] if "--version" in a else "marta"
+    nombre, color, chica, carpeta = VERSIONES[version]
     salida = RAIZ / "marca" / "fotos-ia" / carpeta
     salida.mkdir(parents=True, exist_ok=True)
-    T = tomas(nombre, color, chica)
+    T = (tomas_dorada if version.endswith("-dorada") else tomas)(nombre, color, chica)
     pedidas = [t for t in a if t in T]
     refs = ([subir(ancla)] if ancla else []) + [subir(c) for c in COLLAR_REAL]
     trabajos = [(T[t], salida / f"{t}-{k + 1}.png") for t in pedidas for k in range(n)]

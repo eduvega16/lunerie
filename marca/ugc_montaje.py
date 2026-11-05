@@ -12,7 +12,8 @@ FUENTES = RAIZ / "marca" / "fuentes"
 PLANOS = ["ancla-1", "nombre-1", "cuello-1", "mirada-1"]   # 4 s cada uno
 SEG = 4.0
 # altura del subtítulo según el plano que se ve (entre la barbilla y el nombre, sin tapar el collar; zona libre hasta 1248)
-Y_PLANO = {"ancla": 960, "nombre": 860, "cuello": 760, "mirada": 860}
+Y_PLANO = {"ancla": 960, "nombre": 860, "cuello": 760, "mirada": 860,
+           "colgando": 1130, "palma": 330, "cierre": 960, "espejo": 1000}
 VOZ = RAIZ / "marca" / "fotos-ia" / "ugc-collar" / "voz"
 INICIO_VOZ = 0.2
 W, H = 1080, 1920
@@ -99,14 +100,16 @@ def montar(voz):
     mp3, subs = VOZ / f"voz-{voz}.mp3", trozos(srt(VOZ / f"voz-{voz}.srt"))
     dur_voz = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0",
                                     str(mp3)], capture_output=True, text=True).stdout)
-    total = max(SEG * len(PLANOS), INICIO_VOZ + dur_voz + 0.8)
-    extra = total - SEG * len(PLANOS)
+    planos = [(x.split(":")[0], float(x.split(":")[1]) if ":" in x else SEG) for x in PLANOS]   # «plano:segundos»
+    inicios = [sum(d for _, d in planos[:i]) for i in range(len(planos))]
+    total = max(sum(d for _, d in planos), INICIO_VOZ + dur_voz + 0.8)
+    extra = total - sum(d for _, d in planos)
     tmp = pathlib.Path(tempfile.mkdtemp())
     entradas, filtros = [], []
-    for i, p in enumerate(PLANOS):
+    for i, (p, dur) in enumerate(planos):
         entradas += ["-i", str(CARPETA / "clips" / f"{p}.mp4")]
-        pad = f",tpad=stop_mode=clone:stop_duration={extra:.2f}" if i == len(PLANOS) - 1 else ""
-        filtros.append(f"[{i}:v]trim=0:{SEG},setpts=PTS-STARTPTS,scale={W}:{H},fps=30,setsar=1{pad}[v{i}]")
+        pad = f",tpad=stop_mode=clone:stop_duration={extra:.2f}" if i == len(planos) - 1 else ""
+        filtros.append(f"[{i}:v]trim=0:{dur},setpts=PTS-STARTPTS,scale={W}:{H},fps=30,setsar=1{pad}[v{i}]")
     filtros.append("".join(f"[v{i}]" for i in range(len(PLANOS))) + f"concat=n={len(PLANOS)}:v=1:a=0[base]")
     n = len(PLANOS)
     entradas += ["-i", str(mp3)]
@@ -116,7 +119,8 @@ def montar(voz):
     for j, (a, b, txt) in enumerate(subs):
         png = tmp / f"s{j}.png"; subtitulo(txt, png)
         entradas += ["-i", str(png)]
-        y = Y_PLANO[PLANOS[min(int((a + INICIO_VOZ) // SEG), len(PLANOS) - 1)].rsplit("-", 1)[0]]
+        visible = max(i for i, t0 in enumerate(inicios) if t0 <= a + INICIO_VOZ)
+        y = Y_PLANO[planos[visible][0].rsplit("-", 1)[0]]
         filtros.append(f"[{ultimo}][{k}:v]overlay=0:{y}:enable='between(t,{a + INICIO_VOZ:.2f},{b + INICIO_VOZ:.2f})'[o{j}]")
         ultimo, k = f"o{j}", k + 1
     card = tmp / "tarjeta.png"; tarjeta(card)

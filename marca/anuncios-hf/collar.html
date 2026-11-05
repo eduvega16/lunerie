@@ -1,0 +1,140 @@
+<!doctype html>
+<!-- Reel «Su nombre, su piedra» (5-nov): el Collar Signé. Se escribe el nombre → las 12 lágrimas → se enciende la del mes →
+     dorado, plateado y puesto → tarjeta final. Sin IA nueva (fotos de la ficha), sin música, 9:16, 14 s.
+     Prepara los materiales con preparar_collar.py. Texto entre y=270 y y=1248 (zona libre de los botones de Instagram). -->
+<html lang="es" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/gsap.min.js"></script>
+    <link rel="stylesheet" href="assets/comun.css" />
+    <style>
+      html, body, #root { background: #f9f9f9; }          /* el mismo gris de la tabla de lágrimas: sus gotas se funden */
+      .centro { position: absolute; left: 0; right: 0; text-align: center; }
+
+      /* 1 · el nombre */
+      #ceja1 { top: 330px; color: var(--oro); }
+      #nombre { top: 640px; font: italic 400 300px/1 var(--serif); letter-spacing: -.01em; white-space: nowrap; }
+      #nombre span { display: inline-block; opacity: 0; }
+      #trazo { position: absolute; left: 250px; width: 580px; top: 960px; height: 3px; background: var(--oro); transform-origin: left; transform: scaleX(0); }
+      #sub1 { top: 1040px; font: 400 52px/1.2 var(--serif); }
+      #sub1 em { font-style: italic; }
+
+      /* 2 · las 12 lágrimas */
+      #titulo2 { top: 285px; font: 400 80px/1 var(--serif); }
+      #titulo2 em { font-style: italic; }
+      #rejilla { position: absolute; inset: 0; }
+      .gota { position: absolute; width: 188px; height: 260px; margin: -130px 0 0 -94px; background-size: contain; background-repeat: no-repeat; }
+      #mes { top: 1050px; font: 400 96px/1 var(--serif); opacity: 0; }
+      #color { top: 1170px; font: 400 40px/1 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: #5b6560; opacity: 0; }
+
+      /* 3 · las fotos */
+      .foto { position: absolute; inset: 0; opacity: 0; overflow: hidden; }
+      .foto img { position: absolute; left: 50%; top: 50%; height: 1920px; transform: translate(-50%, -50%); }
+      .pie { position: absolute; left: 50%; top: 1112px; transform: translateX(-50%); padding: 18px 44px; border-radius: 60px;
+             background: rgba(249,249,249,.92); font: 400 52px/1 var(--serif); white-space: nowrap; opacity: 0; }
+      .pie em { font-style: italic; }
+
+      /* 4 · tarjeta final */
+      #final { opacity: 0; }
+      #final .logo { position: absolute; left: 360px; top: 330px; width: 360px; }
+      #f-nombre { top: 470px; font: 400 150px/1 var(--serif); }
+      #f-nombre em { font-style: italic; }
+      #f-sub { top: 680px; font: 400 44px/1.3 var(--sans); color: #3b4540; }
+      #f-precio { top: 800px; font: 500 120px/1 var(--serif); }
+      #f-metal { top: 960px; font: 400 36px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--oro); }
+      #f-boton { position: absolute; left: 190px; right: 190px; top: 1050px; height: 100px; background: var(--verde); color: #fff;
+                 font: 500 30px/100px var(--sans); letter-spacing: .18em; text-align: center; text-transform: uppercase; }
+      #f-promo { top: 1190px; font-size: 24px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="14" data-width="1080" data-height="1920">
+      <div class="capa clip" data-start="0" data-duration="14">
+
+        <div class="capa" id="e1">
+          <div class="centro ceja" id="ceja1">Collar Signé</div>
+          <div class="centro" id="nombre"></div>
+          <div id="trazo"></div>
+          <div class="centro" id="sub1">Su nombre, en <em>letra de firma.</em></div>
+        </div>
+
+        <div class="capa" id="e2">
+          <div class="centro" id="titulo2">Y la piedra <em>de su mes.</em></div>
+          <div id="rejilla"></div>
+          <div class="centro" id="mes">Diciembre</div>
+          <div class="centro" id="color">azul</div>
+        </div>
+
+        <div class="foto" id="f1"><img src="assets/img/collar-marta.jpg" alt="" /></div>
+        <div class="foto" id="f2"><img style="left: calc(50% + 170px)" src="assets/img/collar-paula.jpg" alt="" /></div>
+        <div class="foto" id="f3"><img src="assets/img/collar-carmen.jpg" alt="" /></div>
+        <div class="pie" id="p1" style="top: 1165px">En <em>dorado</em></div>
+        <div class="pie" id="p2" style="top: 310px">o en <em>plateado</em></div>
+        <div class="pie" id="p3">Para <em>llevar cerca</em></div>
+
+        <div class="capa" id="final">
+          <img class="logo" src="assets/img/logo-tinta.svg" alt="" />
+          <div class="centro" id="f-nombre">Collar <em>Signé</em></div>
+          <div class="centro" id="f-sub">Su nombre y la piedra de su mes.<br />Se hace para ella.</div>
+          <div class="centro" id="f-precio">49,95 €</div>
+          <div class="centro" id="f-metal">Dorado · Plateado</div>
+          <div id="f-boton">lunerie.es</div>
+          <div class="centro ceja roja" id="f-promo">Black Friday · 2.ª pieza al 50 %</div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const NOMBRE = "Marta";
+      const nombre = document.getElementById("nombre");
+      NOMBRE.split("").forEach((c) => { const s = document.createElement("span"); s.textContent = c; nombre.appendChild(s); });
+
+      // rejilla de 4 × 3 con las lágrimas de enero a diciembre
+      const rej = document.getElementById("rejilla");
+      const XS = [195, 425, 655, 885], YS = [530, 820, 1110];
+      for (let k = 0; k < 12; k++) {
+        const g = document.createElement("div");
+        g.className = "gota"; g.id = "g" + (k + 1);
+        g.style.left = XS[k % 4] + "px"; g.style.top = YS[Math.floor(k / 4)] + "px";
+        g.style.backgroundImage = "url(assets/img/lagrima-" + String(k + 1).padStart(2, "0") + ".png)";
+        rej.appendChild(g);
+      }
+
+      const tl = gsap.timeline({ paused: true });
+      // 1 · el nombre se escribe letra a letra
+      tl.fromTo("#ceja1", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 0.2);
+      tl.fromTo("#nombre span", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.35, ease: "power2.out", stagger: 0.26 }, 0.6);
+      tl.to("#trazo", { scaleX: 1, duration: 0.9, ease: "power2.inOut" }, 1.9);
+      tl.fromTo("#sub1", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 2.1);
+      tl.to("#e1", { opacity: 0, duration: 0.4 }, 3.5);
+
+      // 2 · las 12 lágrimas y la del mes
+      tl.fromTo("#titulo2", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 3.7);
+      tl.fromTo(".gota", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)", stagger: 0.07 }, 3.9);
+      tl.to(".gota:not(#g12)", { opacity: 0.07, duration: 0.5 }, 5.5);
+      tl.to("#g12", { x: 540 - 885, y: 790 - 1110, scale: 1.5, duration: 0.8, ease: "power3.inOut" }, 5.5);
+      tl.to("#titulo2", { opacity: 0, duration: 0.3 }, 5.5);
+      tl.fromTo("#mes", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 6.3);
+      tl.fromTo("#color", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 6.6);
+      tl.to("#e2", { opacity: 0, duration: 0.35 }, 7.4);
+
+      // 3 · el collar, en dorado, en plateado y puesto
+      const foto = (f, p, t0, t1) => {
+        tl.fromTo(f, { opacity: 0 }, { opacity: 1, duration: 0.4 }, t0);
+        tl.fromTo(f + " img", { scale: 1.0 }, { scale: 1.07, duration: t1 - t0 + 0.4, ease: "none" }, t0);
+        tl.fromTo(p, { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, t0 + 0.4);
+        tl.to(p, { opacity: 0, duration: 0.25 }, t1 - 0.15);
+        tl.to(f, { opacity: 0, duration: 0.4 }, t1);
+      };
+      foto("#f1", "#p1", 7.3, 9.1);
+      foto("#f2", "#p2", 9.0, 10.8);
+      foto("#f3", "#p3", 10.7, 12.4);
+
+      // 4 · tarjeta final
+      tl.fromTo("#final", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 12.2);
+      tl.fromTo("#final .centro", { y: 16 }, { y: 0, duration: 0.6, ease: "power3.out", stagger: 0.1 }, 12.2);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

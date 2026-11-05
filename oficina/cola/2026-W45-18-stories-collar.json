@@ -1,0 +1,85 @@
+{
+  "id": "2026-W45-18-stories-collar",
+  "estado": "borrador",
+  "plataforma": "instagram",
+  "formato": "story",
+  "pieza": "collar-signe",
+  "fecha_sugerida": "2026-11-07T10:00:00+01:00",
+  "gancho": "Su nombre. Su piedra.",
+  "copy": "Collar Signé en stories: su nombre, su piedra, doce meses. Encuesta del mes, encuesta de dorado o plateado y enlace al collar.",
+  "hashtags": [],
+  "guion": [
+    {
+      "segundos": "1",
+      "imagen": "Foto de Elena (collar puesto, lágrima amarilla) a 9:16 sobre niebla, con el collar en el tercio central. Sin pegatina: el primer plano se entiende solo.",
+      "texto_en_pantalla": "Su nombre.\nSu piedra.",
+      "voz": ""
+    },
+    {
+      "segundos": "2",
+      "imagen": "Lámina de las 12 lágrimas (lagrimas-12.jpg) rehecha a 9:16 con aire arriba y abajo. PEGATINA (la pone Edu): ENCUESTA «¿Qué mes naciste?» con dos opciones, «Enero a junio» y «Julio a diciembre» (Instagram solo deja 2 opciones en la encuesta; no caben los 12 meses).",
+      "texto_en_pantalla": "Una lágrima para cada mes.",
+      "voz": ""
+    },
+    {
+      "segundos": "3",
+      "imagen": "Dos fotos de producto, Marta (dorado) y Paula (plateado), una sobre otra o lado a lado sobre niebla a 9:16. PEGATINA (la pone Edu): ENCUESTA «¿Cuál le gusta a ella?» con «Dorado» y «Plateado».",
+      "texto_en_pantalla": "Dorado o plateado.",
+      "voz": ""
+    },
+    {
+      "segundos": "4",
+      "imagen": "Foto de Carmen (collar puesto, lágrima verde) a 9:16. PEGATINA (la pone Edu): ENLACE a https://lunerie.es/products/collar-signe con el texto «Ver el collar». Debajo del texto, en pequeño y gris, la promo.",
+      "texto_en_pantalla": "Se hace para ella con el nombre que elijas.\nCollar Signé · 49,95 €\nPor Black Friday, la 2.ª pieza al 50 % y la 3.ª, gratis.",
+      "voz": ""
+    }
+  ],
+  "assets": {
+    "existentes": [
+      "marca/fotos-ia/collar/editar-tirantes-1.png",
+      "marca/fotos-ia/lagrimas/lagrimas-12.jpg",
+      "marca/fotos-ia/collar/producto-dorado-1.png",
+      "marca/fotos-ia/collar/producto-plateado-1.png",
+      "marca/fotos-ia/collar/editar-hombro-2-reloj.png"
+    ],
+    "generar": []
+  },
+  "musica": {
+    "origen": "ninguna",
+    "pista": "",
+    "licencia": ""
+  },
+  "montaje": [
+    "El editor prepara 4 fotogramas 9:16 (1080x1920, JPEG 97 sin submuestreo) en oficina/salida/2026-W45-18-stories-collar/1.jpg a 4.jpg, sin coste: foto sobre niebla (#F2F4F2), texto en Cormorant tinta (#16201B) con Jost para lo pequeño.",
+    "Zonas libres para las pegatinas: dejar vacío el tercio inferior en los fotogramas 2, 3 y 4 (ahí pone Edu la encuesta o el enlace) y no pasar texto por debajo de y=1450 ni por encima de y=270.",
+    "Las fotos son 3:4; para llenar 9:16 usar fondo niebla arriba y abajo, no estirar ni recortar el collar."
+  ],
+  "publicacion": {
+    "archivos": [
+      "oficina/salida/2026-W45-18-stories-collar/1.jpg",
+      "oficina/salida/2026-W45-18-stories-collar/2.jpg",
+      "oficina/salida/2026-W45-18-stories-collar/3.jpg",
+      "oficina/salida/2026-W45-18-stories-collar/4.jpg"
+    ],
+    "urls": [],
+    "alt_text": "Cuatro stories del Collar Signé: una mujer con el collar y la lágrima amarilla, las doce lágrimas de colores con la encuesta del mes, el collar dorado y el plateado con la encuesta de cuál prefiere, y la foto final con el enlace al collar.",
+    "ia": true
+  },
+  "origen": {
+    "biblioteca": "",
+    "referencia": "Skill ig-story: gancho en el primer plano, una sola pegatina por plano y la petición en el último. Mismo esquema que 2026-W45-10-stories-black-friday."
+  },
+  "riesgos": [
+    "Las pegatinas (encuestas y enlace) no se pueden añadir por API: Edu las pone en la app. publicar.py subiría solo las imágenes, sin pegatinas; conviene publicar estas stories a mano o poner las pegatinas justo después.",
+    "La encuesta de Instagram solo admite 2 opciones, por eso el mes va por semestres. Alternativa si Edu prefiere recoger el mes exacto: pegatina «Caja de preguntas» («Tu mes»), pero entonces hay que contestar una por una y no prometer nada a cambio.",
+    "PLAZO NO CONFIRMADO: ningún fotograma dice días, semanas ni fecha de Navidad. Si alguien contesta preguntando cuándo llega, no dar plazo hasta que Edu decida el texto con la respuesta de QIUHAN.",
+    "Producto personalizado: sin desistimiento salvo defecto; el aviso está en la ficha. No decir «hecho a mano» ni «grabado».",
+    "Colores de las lágrimas orientativos; sin nombres de gemas, solo «circonita» y colores por su nombre.",
+    "Fotos de IA: marcar como hecho con IA y comprobar que el collar se parece al real. Black Friday termina el 5-dic; el fotograma 4 no pone la fecha para que no se lea como fecha de entrega."
+  ],
+  "revision": {
+    "notas": "Borrador del community manager (5-nov). Pendiente: los 4 fotogramas 9:16 del editor, las pegatinas de Edu y su OK.",
+    "aprobado_por": null,
+    "fecha": null
+  }
+}

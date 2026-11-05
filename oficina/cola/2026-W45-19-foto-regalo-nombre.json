@@ -1,0 +1,62 @@
+{
+  "id": "2026-W45-19-foto-regalo-nombre",
+  "estado": "borrador",
+  "plataforma": "instagram",
+  "formato": "foto",
+  "pieza": "collar-signe",
+  "fecha_sugerida": "2026-11-11T19:30:00+01:00",
+  "gancho": "Para quien quieres: su nombre, en un collar.",
+  "copy": "Para quien quieres: su nombre, en un collar.\n\nTu madre, tu hermana, tu pareja, tu amiga. Un regalo para ella con su nombre en letra de firma y una lágrima de circonita del color del mes en que nació.\n\nCollar Signé, 49,95 €. Dorado o plateado. Se hace para ella con el nombre que elijas, tal cual lo escribes. Los colores son orientativos.\n\nPor Black Friday, la 2.ª pieza al 50 % y la 3.ª, gratis: un collar con nombre para cada una.\n\nLo tienes en el enlace del perfil.",
+  "hashtags": [
+    "#collarconnombre",
+    "#regaloparaella",
+    "#lunerie"
+  ],
+  "guion": [
+    {
+      "segundos": "-",
+      "imagen": "Marta: el Collar Signé dorado solo, sobre niebla, con el nombre en letra de firma a un lado de la cadena y la lágrima azul colgando en el centro. Foto limpia, sin texto encima (la pieza manda).",
+      "texto_en_pantalla": "",
+      "voz": ""
+    }
+  ],
+  "assets": {
+    "existentes": [
+      "marca/fotos-ia/collar/producto-dorado-1.png"
+    ],
+    "generar": []
+  },
+  "musica": {
+    "origen": "ninguna",
+    "pista": "",
+    "licencia": ""
+  },
+  "montaje": [
+    "Recortar a 4:5 (1744x2336 pasa a 1744x2180) y guardar como JPEG 97 sin submuestreo en oficina/salida/2026-W45-19-foto-regalo-nombre/1.jpg. Comprobar que el recorte no corta la lágrima.",
+    "Si se ve blanda frente a las de 4K, sustituir por Carmen (editar-hombro-2-reloj.png), que ya está en 4K y no se ha usado en esta pieza."
+  ],
+  "publicacion": {
+    "archivos": [
+      "oficina/salida/2026-W45-19-foto-regalo-nombre/1.jpg"
+    ],
+    "urls": [],
+    "alt_text": "Collar dorado con el nombre en letra de firma a un lado de la cadena y una lágrima azul colgando en el centro, sobre un fondo claro.",
+    "ia": true
+  },
+  "origen": {
+    "biblioteca": "",
+    "referencia": "Idea de regalo por destinataria del plan del 2-nov (madre, hermana, pareja) aplicada al Collar Signé; ficha del collar (CLAUDE.md 5.2)."
+  },
+  "riesgos": [
+    "PLAZO NO CONFIRMADO: el copy no dice días, semanas ni fecha de Navidad. Si preguntan en comentarios, no contestar con un plazo hasta que Edu decida el texto con la respuesta de QIUHAN.",
+    "Producto personalizado: sin desistimiento (art. 103 c LGDCU) salvo defecto; por eso el copy dice «tal cual lo escribes». No decir «hecho a mano» ni «grabado».",
+    "Foto de IA con la etiqueta de Instagram; producto-dorado-1 es de 2K y anterior a la muestra real. Comparar con marca/referencias-reales/collar-signe-1..5.jpg (nombre de chapa plana, lágrima de 4 garras) antes de aprobar.",
+    "Colores orientativos; sin nombres de gemas, solo «circonita» y colores por su nombre. No usar «Lucía» como ejemplo.",
+    "La frase «un collar con nombre para cada una» empuja a comprar varios con la promo: la promo es real hasta el 5-dic (no se pone la fecha para que no parezca fecha de entrega); si se alarga o se quita, revisar el texto."
+  ],
+  "revision": {
+    "notas": "Borrador del community manager (5-nov). Pendiente: recorte 4:5 del editor y OK de Edu.",
+    "aprobado_por": null,
+    "fecha": null
+  }
+}

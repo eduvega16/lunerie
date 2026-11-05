@@ -1,0 +1,88 @@
+{
+  "id": "2026-W45-16-reel-collar-nombre-piedra",
+  "estado": "revisado",
+  "plataforma": "instagram",
+  "formato": "reel",
+  "pieza": "collar-signe",
+  "fecha_sugerida": "2026-11-06T19:30:00+01:00",
+  "gancho": "Su nombre. Su piedra.",
+  "copy": "Su nombre, su piedra.\n\nCollar Signé: el nombre que elijas, en letra de firma, y una lágrima de circonita del color de su mes. Dorado o plateado, 49,95 €.\n\nUn collar con nombre pensado para regalar: se hace para ella con lo que escribas. Los colores son orientativos.\n\nPor Black Friday entra en la promo: la 2.ª pieza al 50 % y la 3.ª, gratis.\n\nLo tienes en el enlace del perfil.",
+  "hashtags": [
+    "#collarconnombre",
+    "#regaloparaella",
+    "#lunerie"
+  ],
+  "guion": [
+    {
+      "segundos": "0-3.5",
+      "imagen": "Fondo claro. El nombre «Marta» se escribe letra a letra en Cormorant cursiva, con un trazo dorado debajo.",
+      "texto_en_pantalla": "Collar Signé · Su nombre, en letra de firma.",
+      "voz": ""
+    },
+    {
+      "segundos": "3.7-7.4",
+      "imagen": "Las 12 lágrimas entran de una en una (enero a diciembre); la de diciembre (azul) sube al centro y las demás se apagan.",
+      "texto_en_pantalla": "Y la piedra de su mes. · Diciembre · azul",
+      "voz": ""
+    },
+    {
+      "segundos": "7.3-10.8",
+      "imagen": "Foto del collar dorado (Marta) y del plateado (Paula), con zoom suave.",
+      "texto_en_pantalla": "En dorado · o en plateado",
+      "voz": ""
+    },
+    {
+      "segundos": "10.7-12.4",
+      "imagen": "Foto del collar puesto (Carmen, cara cortada por la nariz).",
+      "texto_en_pantalla": "Para llevar cerca",
+      "voz": ""
+    },
+    {
+      "segundos": "12.2-14",
+      "imagen": "Tarjeta final: logo, nombre de la pieza, precio, dorado · plateado, lunerie.es y la promo de Black Friday en pequeño.",
+      "texto_en_pantalla": "Collar Signé · 49,95 € · Se hace para ella.",
+      "voz": ""
+    }
+  ],
+  "assets": {
+    "existentes": [
+      "marca/fotos-ia/collar-contenido/collar-nombre-piedra-9x16.mp4",
+      "marca/anuncios-hf/collar.html"
+    ],
+    "generar": []
+  },
+  "musica": {
+    "origen": "ninguna",
+    "pista": "",
+    "licencia": "Sin música en el archivo. Si Edu quiere, puede añadir una pista de la biblioteca de Meta dentro de la app al publicar (solo dentro de sus apps)."
+  },
+  "montaje": [
+    "HyperFrames (marca/anuncios-hf/collar.html), 14 s, 9:16, sin música, sin créditos de IA"
+  ],
+  "publicacion": {
+    "archivos": [],
+    "urls": [
+      "https://cdn.shopify.com/videos/c/vp/4fa7fde3f51e4353a6361a528348f9af/4fa7fde3f51e4353a6361a528348f9af.HD-1080p-7.2Mbps-100126738.mp4"
+    ],
+    "alt_text": "Un nombre, Marta, que se escribe en letra de firma; las doce lágrimas de colores de los meses, de la que se ilumina la azul de diciembre; y el collar Signé en dorado, en plateado y puesto.",
+    "ia": true
+  },
+  "origen": {
+    "biblioteca": "",
+    "referencia": "Ficha del Collar Signé (CLAUDE.md 5.2 y notas del 4 y 5-nov) y lámina lagrimas-12.jpg. Forma: nombre que se escribe + selector de mes que se ilumina; sin texto ni promesas de ninguna tienda externa."
+  },
+  "riesgos": [
+    "PLAZO NO CONFIRMADO: el copy y el vídeo no dicen días, semanas ni fecha de Navidad. Si alguien pregunta en comentarios, no contestar con un plazo hasta que Edu decida el texto con la respuesta de QIUHAN.",
+    "Producto personalizado: sin derecho de desistimiento (art. 103 c LGDCU) salvo defecto; el aviso «se hace tal cual lo escribes» está en la ficha. No decir «hecho a mano» ni «grabado» (el nombre va recortado de chapa plana).",
+    "Fotos de IA: publicar.py marca el reel como hecho con IA. La foto final (Carmen) tiene que parecerse al collar real: nombre en chapa plana unido a la cadena y lágrima de 4 garras colgando en el punto más bajo. Compararla con marca/referencias-reales/collar-signe-1..5.jpg.",
+    "Los colores de las 12 lágrimas son orientativos y la lámina es nuestra, no de QIUHAN: cambiarla por su tabla real cuando la mande. Por eso el copy lo dice.",
+    "Nada de nombres de gemas: solo «circonita» y colores por su nombre. No usar «Lucía» como nombre de ejemplo.",
+    "La promo de Black Friday termina el 5-dic (descuentos automáticos con fecha de fin). El copy no pone la fecha para que no parezca fecha de entrega; si se alarga la promo, revisarlo.",
+    "Reel: publicar.py exige URL pública del MP4 (falta) y la API no añade música; lo más sencillo es que Edu lo suba desde la app."
+  ],
+  "revision": {
+    "notas": "5-nov: vídeo montado por Claude con HyperFrames y subido a Shopify (URL en publicacion.urls). Pendiente del OK de Edu para pasarlo a aprobado.",
+    "aprobado_por": null,
+    "fecha": null
+  }
+}

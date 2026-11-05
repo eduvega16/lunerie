@@ -1,0 +1,104 @@
+{
+  "id": "2026-W45-17-carrusel-12-lagrimas",
+  "estado": "borrador",
+  "plataforma": "instagram",
+  "formato": "carrusel",
+  "pieza": "collar-signe",
+  "fecha_sugerida": "2026-11-08T12:30:00+01:00",
+  "gancho": "Una lágrima para cada mes.",
+  "copy": "Una lágrima para cada mes.\n\nCollar Signé: tu nombre en letra de firma y una lágrima de circonita del color del mes en que naciste. Doce colores, en dorado o plateado, 49,95 €.\n\nUn collar con nombre, un regalo para ella que lleva lo suyo: se hace con el nombre que escribas, tal cual lo escribes, mayúsculas incluidas. Los colores son orientativos.\n\nPor Black Friday entra en la promo: la 2.ª pieza al 50 % y la 3.ª, gratis.\n\n¿Qué mes naciste? Cuéntanoslo en los comentarios. El collar está en el enlace del perfil.",
+  "hashtags": [
+    "#collarconnombre",
+    "#regaloparaella",
+    "#lunerie"
+  ],
+  "guion": [
+    {
+      "segundos": "1",
+      "imagen": "Portada: lámina de las 12 lágrimas (lagrimas-12.jpg, 4:5, ya lleva el título «Una lágrima para cada mes» en la letra de Lunerie).",
+      "texto_en_pantalla": "Una lágrima para cada mes.",
+      "voz": ""
+    },
+    {
+      "segundos": "2",
+      "imagen": "Carmen: collar puesto con la lágrima verde (mayo). Foto limpia, sin texto encima.",
+      "texto_en_pantalla": "",
+      "voz": ""
+    },
+    {
+      "segundos": "3",
+      "imagen": "Marta: el collar dorado solo, sobre niebla, con la lágrima azul. Foto limpia.",
+      "texto_en_pantalla": "",
+      "voz": ""
+    },
+    {
+      "segundos": "4",
+      "imagen": "Elena: collar puesto con la lágrima amarilla (noviembre). Foto limpia.",
+      "texto_en_pantalla": "",
+      "voz": ""
+    },
+    {
+      "segundos": "5",
+      "imagen": "Paula: el collar plateado con la lágrima rosa (octubre). Foto limpia.",
+      "texto_en_pantalla": "",
+      "voz": ""
+    },
+    {
+      "segundos": "6",
+      "imagen": "LÁMINA DE TEXTO NUEVA (4:5, 1400x1750): fondo niebla, texto centrado en Cormorant, destello dorado pequeño y logo LUNERIE pequeño abajo. Sin foto.",
+      "texto_en_pantalla": "Su nombre. Su mes.\nCollar Signé · 49,95 €\nDorado o plateado. Se hace para ella con el nombre que elijas.\nEnlace en el perfil.",
+      "voz": ""
+    }
+  ],
+  "assets": {
+    "existentes": [
+      "marca/fotos-ia/lagrimas/lagrimas-12.jpg",
+      "marca/fotos-ia/collar/editar-hombro-2-reloj.png",
+      "marca/fotos-ia/collar/producto-dorado-1.png",
+      "marca/fotos-ia/collar/editar-tirantes-1.png",
+      "marca/fotos-ia/collar/producto-plateado-1.png"
+    ],
+    "generar": []
+  },
+  "musica": {
+    "origen": "ninguna",
+    "pista": "",
+    "licencia": ""
+  },
+  "montaje": [
+    "Hace falta UNA lámina de texto nueva (la 6.ª), la hace el editor sin coste (PIL u HTML a imagen) en oficina/salida/2026-W45-17-carrusel-12-lagrimas/6-su-nombre-su-mes.jpg, 1400x1750, JPEG 97 sin submuestreo.",
+    "Las láminas 2-5 son PNG 3:4 (2480x3312 las de Carmen y Elena; 1744x2336 las de producto). El carrusel tiene que ser todo 4:5 como la portada: recortar arriba/abajo (~6 %) y comprobar a tamaño real que no se corta ni la lágrima ni el nombre. Guardar como JPEG 97 sin submuestreo en la misma carpeta de salida (2-carmen.jpg, 3-marta.jpg, 4-elena.jpg, 5-paula.jpg).",
+    "Orden: lagrimas-12, Carmen, Marta, Elena, Paula, lámina de texto. Marta y Paula (producto) alternan con las dos fotos de persona."
+  ],
+  "publicacion": {
+    "archivos": [
+      "marca/fotos-ia/lagrimas/lagrimas-12.jpg",
+      "oficina/salida/2026-W45-17-carrusel-12-lagrimas/2-carmen.jpg",
+      "oficina/salida/2026-W45-17-carrusel-12-lagrimas/3-marta.jpg",
+      "oficina/salida/2026-W45-17-carrusel-12-lagrimas/4-elena.jpg",
+      "oficina/salida/2026-W45-17-carrusel-12-lagrimas/5-paula.jpg",
+      "oficina/salida/2026-W45-17-carrusel-12-lagrimas/6-su-nombre-su-mes.jpg"
+    ],
+    "urls": [],
+    "alt_text": "Carrusel del Collar Signé: la lámina con las doce lágrimas de colores, una por mes; cuatro fotos del collar con el nombre en letra de firma a un lado y una lágrima de color colgando (verde, azul, amarilla y rosa; dorado y plateado); y una lámina final con el nombre del collar y su precio.",
+    "ia": true
+  },
+  "origen": {
+    "biblioteca": "",
+    "referencia": "Lámina propia lagrimas-12.jpg (marca/lagrimas.py, 5-nov) y fotos de marca/fotos-ia/collar/. Forma de carrusel «guárdalo / dime tu mes»; cada lámina con una sola idea."
+  },
+  "riesgos": [
+    "PLAZO NO CONFIRMADO: ninguna lámina ni el copy dicen días, semanas o fecha de Navidad. No responder con plazos en comentarios ni en mensajes hasta que Edu decida el texto con la respuesta de QIUHAN.",
+    "Producto personalizado: sin desistimiento (art. 103 c LGDCU) salvo defecto; por eso el copy dice «tal cual lo escribes, mayúsculas incluidas». No decir «hecho a mano» ni «grabado».",
+    "Las láminas de la lágrima por mes son orientativas (la tabla es nuestra, no de QIUHAN): cambiar por la suya cuando la mande. Sin nombres de gemas; solo «circonita» y colores por su nombre.",
+    "Marta es azul: no se le pone mes en el copy porque hay tres azules (marzo azul agua, septiembre azul oscuro, diciembre azul). No decir el mes de Marta sin comprobarlo en la tabla.",
+    "Fotos de IA con la etiqueta de Instagram. Deben parecerse al collar real (nombre en chapa plana, lágrima de 4 garras). Las de producto (producto-dorado-1 y producto-plateado-1) son de 2K y antiguas; si se ven blandas junto a las de 4K, buscar otra de 4K.",
+    "Recorte de 3:4 a 4:5 con cuidado de que no corte la lágrima, que cuelga en el punto más bajo.",
+    "Black Friday termina el 5-dic: el copy no pone la fecha para que no se lea como fecha de entrega."
+  ],
+  "revision": {
+    "notas": "Borrador del community manager (5-nov). Pendiente: la lámina 6 (texto nuevo, sin coste) y los recortes a 4:5 del editor; OK de Edu.",
+    "aprobado_por": null,
+    "fecha": null
+  }
+}

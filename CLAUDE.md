@@ -618,6 +618,11 @@ del collar): `python marca/lagrimas.py` recorta las 12 gotas y monta una 4:5 en 
 → `marca/fotos-ia/lagrimas/lagrimas-12.jpg`. Cambiarla por una propia cuando QIUHAN mande la tabla real de sus colores.
 **5-nov, mañana: la campaña ya gastaba** (13,47 €, 17 clics a 0,79 €, 1 carrito); Meta mete casi todo en el carrusel del
 **Collar Signé** (11,66 €, 13 clics) → el plazo del collar importa más: pedir a QIUHAN los días reales.
+**5-nov: QIUHAN contestó** — acero **316L a 5,22 $** (descuento; luego 5,80 $), seguimiento, dropshipping sin logos
+ni factura en el paquete, pedidos **cada día por el chat** (ellos hacen la lista y Edu la confirma). Con envío a 4,33 €
+(sin confirmar), **CPA breakeven ≈ 23 €** a 49,95 €. Respuesta en inglés (13 preguntas + pedido de prueba a casa de
+Edu) y qué cambiar con lo que conteste: **`productos/proveedor-qiuhan.md`**. Lo crítico: envío con impuestos
+incluidos (IOSS), días reales y la letra igual que la muestra.
 
 **CAMPAÑA DE BLACK FRIDAY PUBLICADA (4-nov, ~18:40, OK de Edu: «lanzamos ahora», «lo testeamos»).**
 «Lunerie · Black Friday · Ventas (Advantage+)» `52566458999794` · conjunto `52566459008194` (península + Baleares,

@@ -110,6 +110,8 @@ def montar(voz):
     n = len(PLANOS)
     entradas += ["-i", str(mp3)]
     ultimo, k = "base", n + 1
+    t_card = total - 2.2
+    subs = [(a, min(b, t_card - INICIO_VOZ), t) for a, b, t in subs if a + INICIO_VOZ < t_card]   # no asomar tras la tarjeta
     for j, (a, b, txt) in enumerate(subs):
         png = tmp / f"s{j}.png"; subtitulo(txt, png)
         entradas += ["-i", str(png)]
@@ -117,7 +119,6 @@ def montar(voz):
         filtros.append(f"[{ultimo}][{k}:v]overlay=0:{y}:enable='between(t,{a + INICIO_VOZ:.2f},{b + INICIO_VOZ:.2f})'[o{j}]")
         ultimo, k = f"o{j}", k + 1
     card = tmp / "tarjeta.png"; tarjeta(card)
-    t_card = total - 2.2
     entradas += ["-loop", "1", "-t", f"{total:.2f}", "-i", str(card)]
     filtros.append(f"[{k}:v]format=rgba,fade=in:st={t_card:.2f}:d=0.4:alpha=1[card]")
     filtros.append(f"[{ultimo}][card]overlay=0:0[final]")

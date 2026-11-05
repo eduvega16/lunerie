@@ -643,6 +643,27 @@ del 15 de noviembre» y «llega en 2-5 semanas». **QIUHAN, 2.ª respuesta (5-no
 pedido, bolsita sin logo 0,5 $ o cajita de terciopelo beige 1 $ → con la cajita, CPA breakeven ≈ 20,6 €. Detalle,
 preguntas pendientes y la siguiente respuesta en `productos/proveedor-qiuhan.md`.
 
+**5-nov (tarde): vídeo UGC del Collar Signé, en Instagram y en la campaña (Edu: «la de Sarah me mola, súbela y ponla en
+anuncios»).** El vídeo de HyperFrames («Su nombre, su piedra») se descartó: a Edu no le gustó y tenía un salto al final
+(GSAP `scale` sobre una imagen centrada con `transform: translate` en CSS: no volver a hacerlo). Nuevo flujo **UGC realista**,
+reutilizable para otras piezas:
+1. `python marca/ugc_collar.py ancla --n 2`: la cara de la chica, con las fotos reales del collar como referencia.
+2. Se elige el ancla y se generan los planos con ella: `… cuello nombre mirada --ancla <png>` (flare 2K, ~0,13 $ cada uno).
+   Hay que revisar que no salgan dos lágrimas: pasó en «mano» y se descartó.
+3. `python marca/ugc_animar.py <planos>` con **Kling 3.0 pro por la API** (`kling-video/v3.0/pro/image-to-video`,
+   `image_url`, `duration` 4, `sound` off, 9:16; el recorte 9:16 se hace antes). La API lista 95 modelos en
+   `GET https://api.higgsfield.ai/models` (Kling, Seedance, Wan…), **sin voz**.
+4. Voz: `python marca/voz_elevenlabs.py generar <voice_id> <nombre>` (ElevenLabs, plan Free; ver memoria) o edge-tts gratis.
+5. `python marca/ugc_montaje.py <nombre>`: clips de 4 s, voz, subtítulos cortos entre la barbilla y el collar y tarjeta
+   final con el precio; los subtítulos se cortan al salir la tarjeta.
+
+Coste total ~2,5-3 $. Vídeo elegido: `marca/fotos-ia/ugc-collar/collar-ugc-sarah-9x16.mp4` (+ `-4x5`).
+- **Reel publicado** el 5-nov a las 13:51 (`2026-W45-16`).
+- **Anuncio 16** `52566612235194` en el mismo conjunto: 4:5 en feed y 9:16 en Stories y Reels, sin plazo ni fecha de
+  Navidad y sin declarar IA. Ya son 17 anuncios.
+- Las piezas 17-19 del collar (carrusel, stories, foto) siguen en borrador.
+- Ideas del estratega en `oficina/ideas/2026-11-05-collar.md`.
+
 **CAMPAÑA DE BLACK FRIDAY PUBLICADA (4-nov, ~18:40, OK de Edu: «lanzamos ahora», «lo testeamos»).**
 «Lunerie · Black Friday · Ventas (Advantage+)» `52566458999794` · conjunto `52566459008194` (península + Baleares,
 solo FB+IG, Advantage+ audiencia, compra con el píxel) · **35 €/día con tope de gasto de 140 €** (se para sola) ·

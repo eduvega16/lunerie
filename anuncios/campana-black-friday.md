@@ -114,6 +114,14 @@ Paula; **nunca las de Olivia**, son de otra marca) · destino `/products/collar-
 Tarjetas: «Su nombre, en letra de firma» · «Y la piedra de su mes» · «En dorado o plateado» · «Collar Signé · 49,95 €».
 **Pausarlo el 15-nov** (o cambiar plazo y fecha cuando QIUHAN confirme los suyos).
 
+**16 · Collar Signé · UGC con voz** (5-nov, Edu: «la de Sarah me mola, súbela y ponla en anuncios»). Vídeo 16 s de una
+chica de IA enseñando el collar «Marta» dorado con lágrima azul, voz en off de ElevenLabs (Sarah) y subtítulos
+(`marca/fotos-ia/ugc-collar/collar-ugc-sarah-9x16.mp4` y `-4x5.mp4`) · destino `/products/collar-signe` ·
+`utm_content=collar-ugc` · título: *Collar Signé · 49,95 €*
+> Su nombre en letra de firma y una lágrima del color de su mes. El Collar Signé, en dorado o plateado, 49,95 €. Se
+> hace para ella con el nombre que escribas. Y por Black Friday, la 2.ª pieza al 50 %.
+Sin plazo ni fecha de Navidad (no confirmados). Sin declarar IA (decisión de Edu para la campaña).
+
 Si cambia un precio: `preparar.py` + volver a grabar los vídeos, y cambiar el precio en estos textos («desde 19,95 €»
 del 10 es el más barato de la tienda hoy: aros Boucle y anillo Duo).
 

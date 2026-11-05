@@ -1,11 +1,11 @@
 {
   "id": "2026-W45-16-reel-collar-nombre-piedra",
-  "estado": "borrador",
+  "estado": "publicado",
   "plataforma": "instagram",
   "formato": "reel",
   "pieza": "collar-signe",
   "fecha_sugerida": "2026-11-06T19:30:00+01:00",
-  "gancho": "Su nombre. Su piedra.",
+  "gancho": "¿No sabes qué regalarle? Mira esto.",
   "copy": "Su nombre, su piedra.\n\nCollar Signé: el nombre que elijas, en letra de firma, y una lágrima de circonita del color de su mes. Dorado o plateado, 49,95 €.\n\nUn collar con nombre pensado para regalar: se hace para ella con lo que escribas. Los colores son orientativos.\n\nPor Black Friday entra en la promo: la 2.ª pieza al 50 % y la 3.ª, gratis.\n\nLo tienes en el enlace del perfil.",
   "hashtags": [
     "#collarconnombre",
@@ -14,58 +14,37 @@
   ],
   "guion": [
     {
-      "segundos": "0-3.5",
-      "imagen": "Fondo claro. El nombre «Marta» se escribe letra a letra en Cormorant cursiva, con un trazo dorado debajo.",
-      "texto_en_pantalla": "Collar Signé · Su nombre, en letra de firma.",
-      "voz": ""
-    },
-    {
-      "segundos": "3.7-7.4",
-      "imagen": "Las 12 lágrimas entran de una en una (enero a diciembre); la de diciembre (azul) sube al centro y las demás se apagan.",
-      "texto_en_pantalla": "Y la piedra de su mes. · Diciembre · azul",
-      "voz": ""
-    },
-    {
-      "segundos": "7.3-10.8",
-      "imagen": "Foto del collar dorado (Marta) y del plateado (Paula), con zoom suave.",
-      "texto_en_pantalla": "En dorado · o en plateado",
-      "voz": ""
-    },
-    {
-      "segundos": "10.7-12.4",
-      "imagen": "Foto del collar puesto (Carmen, cara cortada por la nariz).",
-      "texto_en_pantalla": "Para llevar cerca",
-      "voz": ""
-    },
-    {
-      "segundos": "12.2-14",
-      "imagen": "Tarjeta final: logo, nombre de la pieza, precio, dorado · plateado, lunerie.es y la promo de Black Friday en pequeño.",
-      "texto_en_pantalla": "Collar Signé · 49,95 € · Se hace para ella.",
-      "voz": ""
+      "segundos": "0-16",
+      "imagen": "Vídeo UGC: chica (IA) con el Collar Signé «Marta» dorado y lágrima azul; cara, nombre entre los dedos, lágrima, mirada a cámara; tarjeta final con precio.",
+      "texto_en_pantalla": "Subtítulos de la voz + «Collar Signé · 49,95 € · Dorado · Plateado · lunerie.es»",
+      "voz": "¿No sabes qué regalarle? Mira esto. Lleva su nombre, escrito como una firma. Y una lágrima del color de su mes: esta azul es diciembre. En dorado o en plateado. Es el Collar Signé, y lo tienes en lunerie.es. (ElevenLabs, voz Sarah)"
     }
   ],
   "assets": {
     "existentes": [
-      "marca/fotos-ia/collar-contenido/collar-nombre-piedra-9x16.mp4",
-      "marca/anuncios-hf/collar.html"
+      "marca/fotos-ia/ugc-collar/collar-ugc-sarah-9x16.mp4"
     ],
     "generar": []
   },
   "musica": {
-    "origen": "ninguna",
+    "origen": "ninguna (voz en off)",
     "pista": "",
-    "licencia": "Sin música en el archivo. Si Edu quiere, puede añadir una pista de la biblioteca de Meta dentro de la app al publicar (solo dentro de sus apps)."
+    "licencia": ""
   },
   "montaje": [
-    "HyperFrames (marca/anuncios-hf/collar.html), 14 s, 9:16, sin música, sin créditos de IA"
+    "marca/ugc_collar.py (fotos) → marca/ugc_animar.py (Kling 3.0 pro, 4 × 4 s) → marca/voz_elevenlabs.py (Sarah) → marca/ugc_montaje.py sarah"
   ],
   "publicacion": {
     "archivos": [],
     "urls": [
-      "https://cdn.shopify.com/videos/c/vp/4fa7fde3f51e4353a6361a528348f9af/4fa7fde3f51e4353a6361a528348f9af.HD-1080p-7.2Mbps-100126738.mp4"
+      "https://cdn.shopify.com/videos/c/vp/eab2b1a414434ca085e9a9cbe3abfd52/eab2b1a414434ca085e9a9cbe3abfd52.HD-1080p-7.2Mbps-100137536.mp4"
     ],
-    "alt_text": "Un nombre, Marta, que se escribe en letra de firma; las doce lágrimas de colores de los meses, de la que se ilumina la azul de diciembre; y el collar Signé en dorado, en plateado y puesto.",
-    "ia": true
+    "alt_text": "Una chica enseña su collar dorado con el nombre Marta en letra de firma y una lágrima azul; al final, el Collar Signé a 49,95 euros en dorado o plateado.",
+    "ia": true,
+    "resultado": {
+      "media_id": "18351473890269409",
+      "fecha": "2026-11-05T13:51:29+0100"
+    }
   },
   "origen": {
     "biblioteca": "",
@@ -81,8 +60,8 @@
     "Reel: publicar.py exige URL pública del MP4 (falta) y la API no añade música; lo más sencillo es que Edu lo suba desde la app."
   ],
   "revision": {
-    "notas": "5-nov: Edu descartó el vídeo de HyperFrames («no me gusta», salto de imagen al final). Se rehace en UGC realista: marca/fotos-ia/ugc-collar/collar-ugc-*-9x16.mp4 (modelo IA + voz en off). Cambiar urls y guion cuando Edu elija versión.",
-    "aprobado_por": null,
-    "fecha": null
+    "notas": "5-nov: Edu eligió la versión con la voz de Sarah («me mola, súbela»).",
+    "aprobado_por": "Edu",
+    "fecha": "2026-11-05"
   }
 }

@@ -257,7 +257,10 @@ aros con perla y collar de perlas «plata 925»). Plantilla `joya`, vendor Luner
   Blanco · 45 + 6 cm · coste 4,93 € · **34,95 €**.
 - **Anillo Étoile** `anillo-etoile` (11036462154067) · piedra del mes · Mes (12) × Talla · coste 3,82-4,36 € · **19,95 €
   desde el 5-nov** (antes 29,95 €, igual que el Nuit). Siguen diciendo 29,95 € el carrusel de Navidad de la campaña
-  (foto 1, Nuit) y el vídeo «Notas del móvil» (tarjeta final, Nuit), anuncio y reel; textos de Instagram ya cambiados.
+  (foto 1, Nuit) y el **anuncio 10** «Notas del móvil» (tarjeta final, Nuit): cambiarlos cuando se toque la campaña
+  (después del 9-nov). El vídeo ya está rehecho a 19,95 € (5-nov: solo se refrescaron los precios de
+  `marca/anuncios-hf/assets/datos.js` y se volvió a grabar `notas.html`) y es el que lleva el reel del 5-nov; la URL
+  nueva está en `anuncios/creatividades-urls.json`. Textos de Instagram ya cambiados.
 - Tallas US 6/7/8 = contorno 52 / 54,5 / 57 mm → «12», «14-15», «17» (explicado en la descripción).
 - Textos: «acero inoxidable con acabado dorado», «circonita»; **nada** de «oro 18K», hipoalergénico, waterproof,
   «no se oscurece» ni nombres de gemas (los colores del mes van como «rojo oscuro», «azul agua»…).

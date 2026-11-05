@@ -28,12 +28,12 @@
       "marca/fotos-ia/campana-bf/10-notas-9x16.mp4"
     ],
     "urls": [
-      "https://cdn.shopify.com/videos/c/vp/d89465893ae84df588e30fffbbfea1ae/d89465893ae84df588e30fffbbfea1ae.HD-1080p-2.5Mbps-100057119.mp4"
+      "https://cdn.shopify.com/videos/c/vp/bc2eb604f952419483cf07adfd207829/bc2eb604f952419483cf07adfd207829.HD-1080p-2.5Mbps-100165664.mp4"
     ],
     "alt_text": "Una lista de regalos en las notas del móvil que se va tachando, con un reloj, unos aros, un anillo y otro reloj; al final, las cuatro piezas con su precio.",
     "ia": true
   },
-  "origen": "4-nov: anuncio animado de HyperFrames (marca/anuncios-hf) usado como reel orgánico; Edu: «lo que tú consideres» (solo Instagram).",
+  "origen": "4-nov: anuncio animado de HyperFrames (marca/anuncios-hf) usado como reel orgánico; Edu: «lo que tú consideres» (solo Instagram). 5-nov: vuelto a grabar con el anillo Nuit a 19,95 € (Edu: «sí»); el anuncio 10 de la campaña sigue con el vídeo viejo (29,95 €).",
   "riesgos": [
     "Imágenes hechas con IA: publicar.py las marca como «hecho con IA» y el pie lo dice. Las piezas tienen que parecerse a las reales.",
     "Es el vídeo del anuncio 4 de la campaña: orgánico y de pago llevarían el mismo vídeo. Si Edu no quiere repetirlo, hacer otro montaje con marca/montaje.py a partir de los mismos planos.",

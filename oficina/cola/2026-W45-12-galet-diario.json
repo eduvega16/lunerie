@@ -1,6 +1,6 @@
 {
   "id": "2026-W45-12-galet-diario",
-  "estado": "aprobado",
+  "estado": "publicado",
   "plataforma": "instagram",
   "formato": "foto",
   "pieza": "reloj-galet",
@@ -38,7 +38,11 @@
     ],
     "urls": [],
     "alt_text": "Mujer con el pelo suelto y la mano en el cuello, con un reloj dorado de caja ovalada y brazalete de eslabones, y un jersey de punto marrón.",
-    "ia": true
+    "ia": true,
+    "resultado": {
+      "media_id": "18130603999863265",
+      "fecha": "2026-11-06T19:30:30+0100"
+    }
   },
   "origen": {
     "biblioteca": "",

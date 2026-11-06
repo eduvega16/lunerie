@@ -18,6 +18,48 @@ REFS = RAIZ / "marca" / "referencias-reales"
 RESOLUCION = "2k"   # --4k para la máxima calidad (Edu, 4-nov: en Shopify se ven peor que en el PC)
 # fotos REALES de la muestra (Yiwu Shangjie, «Marta», 4-nov): referencia del collar para las tomas puestas
 COLLAR_REAL = [REFS / "collar-signe-1.jpg", REFS / "collar-signe-5.jpg"]
+# 6-nov: fotos de Edu de la misma muestra, al sol (nombre bien legible y la lágrima colgando de cerca)
+MUESTRA = [REFS / "muestra-marta" / "foto-10.jpg", REFS / "muestra-marta" / "foto-06.jpg"]
+# 6-nov (Edu, con una foto de Olivia de referencia): foto de estudio, fondo blanco, nombre arriba y lágrima grande
+ESTUDIO = ("Luxury jewelry advertising photograph, studio macro close-up on a seamless pure white background with soft, "
+           "even studio light and a delicate soft shadow. A gold necklace hangs as ONE continuous fine gold cable chain "
+           "shaped like a loose U, both ends going up out of the top edge of the frame. The name \"Marta\" (a tall "
+           "pointed capital M with a long lead-in stroke, then a-r-t-a), cut from a flat mirror-polished gold sheet in "
+           "exactly the quick handwritten signature lettering of the reference photos, sits diagonally on the left arm "
+           "of the U, joined to the chain by a tiny jump ring at the top tip of the capital and, at the other end, by "
+           "its long straight tail stroke ending in a small ring. From that ring the SAME chain continues two or three "
+           "links to the lowest point of the U, where the bail of a single faceted pear-shaped crystal in {piedra}, in "
+           "a polished four-prong gold setting, is threaded directly onto the chain, so the crystal hangs right there, "
+           "straight down, point down, with crisp sparkle and deep colour inside the stone; from that same point the "
+           "chain rises up the right arm of the U. No extra chain hanging below the name and no Y shape (6-nov, Edu: in "
+           "the real necklace the crystal sits on the main chain). Keep "
+           "the size of the crystal relative to the letters exactly as in the reference photos. Ultra sharp polished "
+           "metal edges, shallow depth of field. Leave the bottom fifth of the frame as empty white background. The "
+           "reference photos are real photos of this exact necklace on a hand and on a black stand: copy only the "
+           "necklace, never the hand, the stand or the background. ")
+CAMBIO_NOMBRE = (
+    "Edit the first image. Keep EVERYTHING exactly the same - the gold chain shaped like a loose U, the pure white "
+    "background, the light, the soft shadow, the framing, and the crystal's size, four-prong setting and position, "
+    "threaded directly on the chain at the lowest point of the U - and change only two things. First, the name now "
+    "reads exactly \"{nombre}\" ({letras}) in the same flat mirror-polished gold quick signature lettering as \"Marta\" "
+    "in the other images, with the same tiny jump ring at the top tip of the capital joining the upper chain. The name "
+    "ends in ONE long straight stroke that continues its last letter and finishes in the small ring where the chain "
+    "continues two or three links to the crystal - nothing else: no extra loops, no second tail, no stray strokes. "
+    "Second, the crystal is {color}. The other images are real photos of the necklace \"Marta\" on a hand and on a "
+    "black stand: use them only for the lettering style. ")
+ARREGLO_CADENA_REFS = [REFS / "muestra-marta" / "foto-08.jpg", REFS / "muestra-marta" / "foto-10.jpg"]
+ARREGLO_CADENA = (
+    "Edit the first image. Keep the lettering of the name \"Marta\", the pure white background, the soft shadow, the "
+    "light, the gold colour, the size and the {color} colour of the crystal exactly as they are. Fix only how the "
+    "necklace is built, copying the real necklace in the second and third images (real photos on a black stand): it "
+    "is ONE continuous chain shaped like a loose U hanging from the top edge of the frame. The left side of the chain "
+    "comes down from the top left to the tiny jump ring at the top of the capital M; the name runs diagonally down to "
+    "the right; its long straight tail stroke ends in a small ring, and from that ring the SAME chain continues two or "
+    "three links to the right to the lowest point of the U, where the bail of the crystal is threaded directly onto "
+    "the chain, so the crystal hangs right there, straight down, point down; from that same point the chain rises up "
+    "to the top right edge of the frame. There is no extra chain hanging below the name and no Y shape: the crystal "
+    "sits on the main chain at the bottom of the U, just after the end of the name. Leave the bottom fifth of the "
+    "frame as empty white background. Ignore the black stand, the table and the keyboard of the real photos. ")
 # 4-nov (Edu): el collar es ASIMÉTRICO: el nombre va en un lado de la cadena, en diagonal, y la lágrima cuelga recta en
 # el centro, en el punto más bajo (como collar-signe-1.jpg y la foto de Marta). Ni nombre horizontal en el centro ni
 # lágrima pegada al nombre.
@@ -71,6 +113,30 @@ TOMAS = {
         "Edit the reference product photo: keep exactly the same silver necklace, angle, white background and "
         "lighting, but the name now reads exactly \"Paula\" (capital P, then a-u-l-a) in the same silver signature "
         "script, and the teardrop crystal is soft pink. "),
+    # 6-nov: estudio como Olivia (rojo para Navidad, azul como la muestra) y colgando de los dedos (formato de Pinterest)
+    "estudio-rojo": ("3:4", [*MUESTRA, *COLLAR_REAL], ESTUDIO.format(piedra="a deep ruby red")),
+    "estudio-azul": ("3:4", [*MUESTRA, *COLLAR_REAL], ESTUDIO.format(piedra="a vivid deep sapphire blue, exactly the "
+                                                                     "blue of the real crystal in the reference photos")),
+    # 6-nov (Edu): en las de estudio la lágrima colgaba de una cadenita bajo el nombre (forma de Y): se editan
+    "estudio-rojo-v2": ("3:4", [SALIDA / "estudio-rojo-1.png", *ARREGLO_CADENA_REFS], ARREGLO_CADENA.format(color="red")),
+    "estudio-azul-v2": ("3:4", [SALIDA / "estudio-azul-1.png", *ARREGLO_CADENA_REFS], ARREGLO_CADENA.format(color="blue")),
+    # 6-nov (Edu): tres nombres y tres colores sobre la roja corregida (la azul-v2 tenía una raya de más tras la «a»)
+    "nombre-laura-azul": ("3:4", [SALIDA / "estudio-rojo-v2-1.png", *MUESTRA], CAMBIO_NOMBRE.format(
+        nombre="Laura", letras="a clearly readable capital L, then a-u-r-a",
+        color="a vivid deep sapphire blue, exactly the blue of the real crystal in the last image")),
+    "nombre-alba-rojo": ("3:4", [SALIDA / "estudio-rojo-v2-1.png", *MUESTRA], CAMBIO_NOMBRE.format(
+        nombre="Alba", letras="a tall, clearly readable capital A, then l-b-a", color="the same deep ruby red")),
+    # «Irene» no vale: la I mayúscula de firma sale como una V («Vrene»), igual que la C de «Varmen»
+    "nombre-sara-verde": ("3:4", [SALIDA / "estudio-rojo-v2-1.png", *MUESTRA], CAMBIO_NOMBRE.format(
+        nombre="Sara", letras="a tall, clearly readable capital S, then a-r-a", color="a vivid deep emerald green")),
+    "dedos": ("9:16", [*MUESTRA, *COLLAR_REAL],
+        "Close-up lifestyle jewelry photo in warm late-afternoon sunlight. A young woman's slim hand with a natural "
+        "nude manicure holds the necklace up between her fingers against a soft-focus background of a warm off-white "
+        "wall with dappled leaf shadows; the chain is draped over her fingers so the name and the crystal dangle freely "
+        "below the hand, in the centre of the frame, catching the sun. The necklace is exactly the one in the reference "
+        "photos: " + DISENO.format(metal="gold") + ", the name reading exactly \"Marta\" (a tall pointed capital M, "
+        "then a-r-t-a) and the teardrop crystal a vivid deep sapphire blue. The reference photos show a man's hand: "
+        "the hand in this photo is a woman's. Natural skin texture, fine film grain. "),
     # puesto, sin cara
     "modelo-tirantes": ("3:4", [*COLLAR_REAL, "aros-boucle"],
         "Quiet-luxury editorial jewelry photo in soft natural daylight against a pale grey wall. A young woman with "

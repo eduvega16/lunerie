@@ -4,7 +4,7 @@
   "plataforma": "instagram",
   "formato": "reel",
   "pieza": "reloj-lune",
-  "fecha_sugerida": "2026-11-07T19:30:00+01:00",
+  "fecha_sugerida": null,
   "gancho": "Lo sentimos, mamá. Este año no es colonia.",
   "copy": "Lo sentimos, mamá. Este año no es colonia.\n\nEl Lune: un reloj de mujer pequeño, con esfera ovalada y seis piedras verdes. Se lleva como una joya. 39,95 € y, por Black Friday, la 2.ª pieza al 50 %.\n\nLo tienes en el enlace del perfil.",
   "hashtags": [
@@ -42,5 +42,7 @@
     "Reel: publicar.py exige una URL pública del MP4 (no hecha). Lo más sencillo es que Edu lo suba desde la app y añada música de la biblioteca de Meta.",
     "La promo termina de verdad el 5-dic (los descuentos automáticos tienen fecha de fin): si se alarga, dejar de llamarla límite."
   ],
-  "revision": "Elegido y aprobado por Claude con permiso de Edu (4-nov). Sin música: la API no la añade."
+  "revision": {
+    "notas": "Elegido y aprobado por Claude con permiso de Edu (4-nov). Sin música: la API no la añade. 6-nov: EN RESERVA, sin fecha (iba el 2026-11-07T19:30:00+01:00): el 80 % de lo que se sube es el Collar Signé; vuelve en uno de cada cinco huecos."
+  }
 }

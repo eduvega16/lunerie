@@ -1,0 +1,47 @@
+{
+  "id": "2026-W47-02-signe-marta-rojo",
+  "estado": "aprobado",
+  "plataforma": "instagram",
+  "formato": "foto",
+  "pieza": "collar-signe",
+  "fecha_sugerida": "2026-11-18T19:30:00+01:00",
+  "gancho": "Un regalo (o un capricho).",
+  "copy": "Un collar con nombre para llevar cada día.\n\nMarta, en letra de firma a un lado, y la lágrima roja colgando en el centro, en el punto más bajo de la cadena. Collar Signé, dorado o plateado, 49,95 €.\n\nPor Black Friday, la 2.ª pieza al 50 % y la 3.ª, gratis. Lo tienes en el enlace del perfil.",
+  "hashtags": [
+    "#collarconnombre",
+    "#regaloparaella",
+    "#lunerie"
+  ],
+  "assets": {
+    "existentes": [
+      "marca/fotos-ia/collar/post-estudio-rojo-v2-1.jpg"
+    ],
+    "generar": []
+  },
+  "musica": {
+    "origen": "ninguna",
+    "pista": "",
+    "licencia": ""
+  },
+  "montaje": [],
+  "publicacion": {
+    "archivos": [
+      "marca/fotos-ia/collar/post-estudio-rojo-v2-1.jpg"
+    ],
+    "urls": [],
+    "alt_text": "Collar dorado con el nombre Marta en letra de firma en un lado de la cadena y una lágrima roja colgando en el centro, sobre fondo blanco. Texto: Un regalo (o un capricho). Collar con su nombre y su piedra.",
+    "ia": true
+  },
+  "origen": {
+    "biblioteca": "",
+    "referencia": "Fotos de estudio estilo Olivia (6-nov), marca/collar_ia.py"
+  },
+  "riesgos": [
+    "Foto de IA: el collar real se hace en chapa; construcción revisada a tamaño real (lágrima en el punto más bajo de la cadena)."
+  ],
+  "revision": {
+    "notas": "6-nov: Edu «centra el 80 % de lo que subamos en el Collar Signé». Elegida y programada por Claude (contenido orgánico).",
+    "aprobado_por": "Claude",
+    "fecha": "2026-11-06"
+  }
+}

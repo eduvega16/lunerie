@@ -3,7 +3,7 @@
   "plataforma": "instagram",
   "formato": "foto",
   "pieza": "anillo-nuit",
-  "fecha_sugerida": "2026-11-09T19:30:00+01:00",
+  "fecha_sugerida": null,
   "gancho": "Cuentan que la reina de Lunerie lo llevaba las noches sin luna.",
   "copy": "Cuentan que la reina de Lunerie lo llevaba las noches sin luna.\n\nUn sello pequeño con una piedra en forma de ojo, que lo mira todo con calma.\n\nAnillo Nuit, 19,95 €. En cuatro colores y tres tallas (12, 14-15 y 17). Lo tienes en el enlace del perfil.",
   "hashtags": [
@@ -42,7 +42,7 @@
   ],
   "estado": "aprobado",
   "revision": {
-    "notas": "Corregida el 3-nov: fecha 9-nov (también vale como relevo el domingo 8-nov si no están listas las diapositivas de cuidados), tallas y colores en el pie, línea de IA, enlace del perfil. 3-nov: Edu «dale con las publicaciones»; texto y fotos revisados por Claude.",
+    "notas": "Corregida el 3-nov: fecha 9-nov (también vale como relevo el domingo 8-nov si no están listas las diapositivas de cuidados), tallas y colores en el pie, línea de IA, enlace del perfil. 3-nov: Edu «dale con las publicaciones»; texto y fotos revisados por Claude. 6-nov: EN RESERVA, sin fecha (iba el 2026-11-09T19:30:00+01:00): el 80 % de lo que se sube es el Collar Signé; vuelve en uno de cada cinco huecos.",
     "aprobado_por": "Edu",
     "fecha": "2026-11-03"
   },

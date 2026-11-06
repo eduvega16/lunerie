@@ -1,6 +1,6 @@
 {
   "id": "2026-W45-20-reel-collar-carmen",
-  "estado": "aprobado",
+  "estado": "publicado",
   "plataforma": "instagram",
   "formato": "reel",
   "pieza": "collar-signe",
@@ -40,7 +40,13 @@
       "https://cdn.shopify.com/videos/c/vp/169db66069fb46c0b80aa7523f3d6648/169db66069fb46c0b80aa7523f3d6648.HD-1080p-4.8Mbps-100181391.mp4"
     ],
     "alt_text": "Una chica enseña su collar dorado con el nombre Carmen en letra de firma y una lágrima verde pequeña: lo sostiene colgando de los dedos, en la palma, se lo abrocha y se hace una foto en el espejo; al final, el Collar Signé a 49,95 euros.",
-    "ia": true
+    "ia": true,
+    "resultado": {
+      "media_id": "17913438231552579",
+      "fecha": "2026-11-06T19:23:47+0000",
+      "permalink": "https://www.instagram.com/reel/DfaQYrFtDXN/",
+      "nota": "19:30 el contenedor salió en ERROR un momento y luego quedó FINISHED: publicado a mano a las ~20:30 con el mismo contenedor."
+    }
   },
   "origen": {
     "biblioteca": "ideas de Pinterest «ugc content jewelry» (5-nov)",

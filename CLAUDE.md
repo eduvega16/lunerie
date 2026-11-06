@@ -533,7 +533,7 @@ KILL (se mira en la campaña) si gastas 1× CPA BE sin carritos o 2× sin ventas
 del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alertas si CTR < 1 % o CPC > 0,90 €.
 «Aprendizaje limitado» es normal con este presupuesto (Meta pide ~50 compras/semana). Máximo 2 productos en test.
 
-## 8. Calendario y pendientes (a 2-nov-2026)
+## 8. Calendario y pendientes (a 6-nov-2026)
 
 ### Para empezar la próxima sesión (después del 2-nov) — abrir conversación nueva por sesión.
 **6-nov: PRIMERA VENTA REAL**, pedido **#LUN1004**: Collar Signé dorado, mes de diciembre (lágrima azul), 49,95 €, pagado
@@ -545,10 +545,55 @@ Alibaba cobra además el IVA en el pago: **#LUN1004 costó 14,85 € pagado con 
 ≈ 20,8 €**. Detalle y tabla de colores en `productos/proveedor-qiuhan.md`.
 En su tabla, nuestro «Diciembre · azul» es **«December · Zircon»** (el azul claro). Campaña a las ~10:45: 67,88 € de los 140 € del tope, y sale a ~68 € por venta (breakeven ~20-23 €). **No tocar
 hasta el 9-nov**; entonces, consejo: pausar el 16 y dejar que el 18 se lleve el gasto.
-**Pendiente (6-nov, tarde):** (1) QIUHAN prepara la lista de #LUN1004; cuando mande la **foto del collar antes de
-enviarlo**, revisar la «I», la lágrima azul claro y las anillas a los lados antes de que Edu dé el OK. (2) A las 19:30
-del 6-nov salen a la vez el post de Galet (`2026-W45-12`) y el reel de Carmen (`2026-W45-20`): Edu no ha dicho si
-mover el de Galet. (3) Edu quiere tratar Meta en una conversación nueva.
+**Pendiente (6-nov, noche):** (1) QIUHAN prepara la lista de #LUN1004; cuando mande la **foto del collar antes de
+enviarlo**, revisar la «I», la lágrima azul claro y las anillas a los lados antes de que Edu dé el OK. (2) **Meta:
+hablado el 6-nov, no se toca nada hasta el 9-nov** (el diagnóstico del asistente de Meta no cambia el plan). (3) Ficha
+del Collar Signé: la foto de **Marta azul (posición 4) y la de Paula (plateado)** cuelgan la lágrima del nombre, que no es
+así (ver abajo); **Edu no ha dicho si se cambian** por Laura/Alba/Sara → no tocarla sin su OK. (4) QIUHAN tiene que
+contestar al mensaje «NEW QUESTION … about new products» (6-nov, solo en el chat): catálogo de personalizados para
+dropshipping —pulsera con nombre (misma letra), inicial, pulsera de piedra del mes, anillo con nombre, collar de familia
+con 2-4 nombres— con precio en 316L, días de fabricación y de envío a España con impuestos incluidos (DDP/IOSS), fotos
+reales, qué se personaliza, cajita y descuento por volumen. (5) Sin respuesta de Edu: si las anillas del nombre van a
+media altura a los lados (lo que dijo QIUHAN) o arriba de la mayúscula (como las fotos de IA).
+**6-nov (noche): ENFOQUE EN PERSONALIZABLES y REDES AL 80 % COLLAR SIGNÉ (Edu).**
+- **Decisión de Edu:** Lunerie se centra en **productos personalizables como Olivia** (collar con nombre, piedra del mes…);
+  relojes y demás joyas pasan a **complementos**. Motivo: la primera venta fue el Signé (anuncio 18) y los relojes llevan
+  semanas sin vender. Antes de ampliar el catálogo, ver la foto y la calidad del primer pedido de QIUHAN.
+- **Regla de redes (Edu): el 80 % de lo que se sube a Instagram es el Collar Signé**; el otro 20 % (uno de cada cinco),
+  relojes y demás joyas. Las piezas que no son del Signé se quedan **«aprobado» sin `fecha_sugerida`** (así
+  `publicar_programado.py programar` no las coge): «Lo sentimos, mamá» (W45-15), Nuit (W45-03), Collar Lune (W45-05),
+  Larme (W45-07), Sépia (W47-01) y «Cinco relojes» (W46-04). **Este calendario manda sobre la lista del 3-nov.**
+  Programadas en este PC (todas a las 19:30 salvo el carrusel): 7-nov **Laura azul** (W45-21) · 8-nov 12:30 **carrusel
+  «Una lágrima para cada mes»** (W45-17: lámina + Carmen + mano al sol, «¿En qué mes naciste?») · 9-nov **reel de la
+  cámara** (W46-13, OK de Edu) · 10-nov «Un martes cualquiera» (W46-10) · 11-nov **foto regalo «dedos-1»** (W45-19) ·
+  12-nov **Alba rojo** (W46-11) · 13-nov «Regalos por precio» (W46-01) · 15-nov **Sara verde** (W46-12) · 18-nov **Marta
+  rojo** (W47-02). Huecos para el Signé: 17-nov («Comenta tu mes», reel con HyperFrames, gratis) y 20-nov (el **primer
+  pedido real** con la foto de QIUHAN, sin el nombre de la clienta o con su permiso).
+- **Cómo es el collar de verdad (Edu, 6-nov, con fotos):** la lágrima va **ensartada en la cadena principal, en el punto
+  más bajo (forma de U)**, 2-3 eslabones después del final del nombre; **nunca colgando de la anilla del nombre ni de una
+  cadenita debajo (forma de Y)**, y **sin cola de más** después de la última letra (un solo trazo recto que acaba en la
+  anilla). Revisar cada foto del collar a tamaño real antes de programarla. Las de la ficha Marta azul y Paula lo tienen mal.
+- **Fotos nuevas del Signé, estilo estudio de Olivia** (`marca/collar_ia.py`, ~0,13 $ cada una; fondo blanco, nombre en
+  diagonal, lágrima grande): tomas `estudio-rojo/azul` → `estudio-rojo/azul-v2` (arreglan la forma de Y con
+  `ARREGLO_CADENA`) → `nombre-laura-azul`, `nombre-alba-rojo`, `nombre-sara-verde` (`CAMBIO_NOMBRE` sobre la roja
+  corregida) y `dedos` (colgando de los dedos al sol, formato de Pinterest). Los posts llevan su versión con texto:
+  `marca/fotos-ia/collar/post-*.jpg`. Descartadas: `estudio-azul-v2` (la «t» tenía una raya de más) e **«Irene»** (la I
+  de firma sale como una V, «Vrene», igual que la C de «Varmen»).
+- **Fotos y vídeos reales de la muestra «Marta»** (Edu, 6-nov): `marca/referencias-reales/muestra-marta/` (fotos 1-12;
+  los `.mov` del iPhone, 44 MB, solo en este PC, fuera de git). `collar_ia.py` usa `foto-10` y `foto-06` (`MUESTRA`) y
+  `foto-08` para la cadena.
+- **Reel con la muestra real descartado** (`marca/reel_muestra.py`, Edu: «demasiado casero», pelusas sobre fondo negro y
+  no le gustó «Antes de venderlo, pedimos uno»). Prefiere IA con estética de estudio.
+- **Reel de la cámara digital** (idea de Edu, reel de @mybirdyboutique): `python marca/reel_camara.py camara --n 2`
+  (cámara compacta plateada por detrás, IA) → `… montar <camara.png>`: en la pantalla pasan Laura, Alba, Sara, dedos,
+  Marta rojo y dedos-2 con un destello y acaba en la tarjeta «Collar Signé con su nombre y su piedra». 7,6 s, sin sonido
+  (la API no pone música). `marca/fotos-ia/reel-camara/reel-camara-9x16.mp4`, subido a Archivos de Shopify (URL en W46-13).
+- **Pinterest (6-nov, sin iniciar sesión):** ideas en `oficina/ideas/2026-11-06-pinterest.md` y capturas en
+  `oficina/referencias/pinterest-2026-11-06/`.
+- **Reel de Carmen (W45-20) recuperado:** a las 19:30 Instagram dio ERROR un momento y el script se rindió; minutos
+  después el contenedor estaba FINISHED y se publicó a mano (https://www.instagram.com/reel/DfaQYrFtDXN/). Arreglado
+  `esperar()` en `oficina/publicar.py`: un ERROR ya no corta, sigue mirando hasta agotar los intentos. Si vuelve a
+  pasar: `media_publish creation_id=<contenedor>` (vale 24 h). El post de Galet (W45-12) salió solo a las 19:30.
 **6-nov (en producción, OK de Edu):**
 - **Plazos del collar (Edu): 3-5 días laborables de fabricación y 3-5 de envío** («5-7 y 3-10 es demasiado tiempo»;
   QIUHAN dijo 5-7 y 3-10: si se retrasan, ojo). En la ficha, como Olivia, **solo lo que tarda en salir**: bajo el botón

@@ -1,12 +1,12 @@
 {
   "id": "2026-W45-17-carrusel-12-lagrimas",
-  "estado": "borrador",
+  "estado": "aprobado",
   "plataforma": "instagram",
   "formato": "carrusel",
   "pieza": "collar-signe",
   "fecha_sugerida": "2026-11-08T12:30:00+01:00",
   "gancho": "Una lágrima para cada mes.",
-  "copy": "Una lágrima para cada mes.\n\nCollar Signé: tu nombre en letra de firma y una lágrima de circonita del color del mes en que naciste. Doce colores, en dorado o plateado, 49,95 €.\n\nUn collar con nombre, un regalo para ella que lleva lo suyo: se hace con el nombre que escribas, tal cual lo escribes, mayúsculas incluidas. Los colores son orientativos.\n\nPor Black Friday entra en la promo: la 2.ª pieza al 50 % y la 3.ª, gratis.\n\n¿Qué mes naciste? Cuéntanoslo en los comentarios. El collar está en el enlace del perfil.",
+  "copy": "Una lágrima para cada mes.\n\nCollar Signé: tu nombre en letra de firma y una lágrima de circonita del color del mes en que naciste. Doce colores, en dorado o plateado, 49,95 €.\n\nUn collar con nombre, un regalo para ella que lleva lo suyo: se hace con el nombre que escribas, tal cual lo escribes, mayúsculas incluidas. Los colores son orientativos.\n\nPor Black Friday entra en la promo: la 2.ª pieza al 50 % y la 3.ª, gratis.\n\n¿En qué mes naciste? Cuéntanoslo en los comentarios. El collar está en el enlace del perfil.",
   "hashtags": [
     "#collarconnombre",
     "#regaloparaella",
@@ -54,9 +54,7 @@
     "existentes": [
       "marca/fotos-ia/lagrimas/lagrimas-12.jpg",
       "marca/fotos-ia/collar/editar-hombro-2-reloj.png",
-      "marca/fotos-ia/collar/producto-dorado-1.png",
-      "marca/fotos-ia/collar/editar-tirantes-1.png",
-      "marca/fotos-ia/collar/producto-plateado-1.png"
+      "marca/fotos-ia/collar/dedos-2.png"
     ],
     "generar": []
   },
@@ -73,14 +71,11 @@
   "publicacion": {
     "archivos": [
       "marca/fotos-ia/lagrimas/lagrimas-12.jpg",
-      "oficina/salida/2026-W45-17-carrusel-12-lagrimas/2-carmen.jpg",
-      "oficina/salida/2026-W45-17-carrusel-12-lagrimas/3-marta.jpg",
-      "oficina/salida/2026-W45-17-carrusel-12-lagrimas/4-elena.jpg",
-      "oficina/salida/2026-W45-17-carrusel-12-lagrimas/5-paula.jpg",
-      "oficina/salida/2026-W45-17-carrusel-12-lagrimas/6-su-nombre-su-mes.jpg"
+      "marca/fotos-ia/collar/editar-hombro-2-reloj.png",
+      "marca/fotos-ia/collar/dedos-2.png"
     ],
     "urls": [],
-    "alt_text": "Carrusel del Collar Signé: la lámina con las doce lágrimas de colores, una por mes; cuatro fotos del collar con el nombre en letra de firma a un lado y una lágrima de color colgando (verde, azul, amarilla y rosa; dorado y plateado); y una lámina final con el nombre del collar y su precio.",
+    "alt_text": "Carrusel del Collar Signé: la lámina con las doce lágrimas de colores, una por mes; una chica con el collar Carmen y la lágrima verde; una mano que sostiene el collar Marta con la lágrima azul al sol.",
     "ia": true
   },
   "origen": {
@@ -97,8 +92,8 @@
     "Black Friday termina el 5-dic: el copy no pone la fecha para que no se lea como fecha de entrega."
   ],
   "revision": {
-    "notas": "Borrador del community manager (5-nov). Pendiente: la lámina 6 (texto nuevo, sin coste) y los recortes a 4:5 del editor; OK de Edu.",
-    "aprobado_por": null,
-    "fecha": null
+    "notas": "6-nov: Edu «centra el 80 % de lo que subamos en el Collar Signé». Elegida y programada por Claude (contenido orgánico). Rehecho: fuera las fotos de Marta azul, Elena y Paula de la ficha (la lágrima cuelga del nombre, Edu: «no es así») y la lámina 6 sin hacer.",
+    "aprobado_por": "Claude",
+    "fecha": "2026-11-06"
   }
 }

@@ -134,14 +134,19 @@ def api(metodo, ruta, **params):
 
 
 def esperar(contenedor, video):
-    for _ in range(5 if video else 2):
-        estado = api("GET", contenedor, fields="status_code").get("status_code")
+    # 6-nov: el reel de Carmen dio ERROR en la primera consulta y minutos después estaba FINISHED (el contenedor
+    # sirvió para publicar). Por eso un ERROR no corta: se sigue mirando hasta agotar los intentos.
+    estado = info = None
+    for _ in range(8 if video else 3):
+        r = api("GET", contenedor, fields="status_code,status")
+        estado, info = r.get("status_code"), r.get("status")
         if estado == "FINISHED":
             return
-        if estado in ("ERROR", "EXPIRED"):
-            raise RuntimeError(f"El contenedor {contenedor} quedó en {estado}")
+        if estado == "EXPIRED":
+            break
         time.sleep(60 if video else 5)
-    raise RuntimeError(f"El contenedor {contenedor} no terminó a tiempo")
+    raise RuntimeError(f"El contenedor {contenedor} quedó en {estado} ({info}); si luego sale FINISHED, publicarlo con "
+                       f"media_publish creation_id={contenedor}")
 
 
 def pie(p):

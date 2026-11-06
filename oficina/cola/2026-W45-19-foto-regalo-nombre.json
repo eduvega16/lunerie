@@ -1,6 +1,6 @@
 {
   "id": "2026-W45-19-foto-regalo-nombre",
-  "estado": "borrador",
+  "estado": "aprobado",
   "plataforma": "instagram",
   "formato": "foto",
   "pieza": "collar-signe",
@@ -22,7 +22,7 @@
   ],
   "assets": {
     "existentes": [
-      "marca/fotos-ia/collar/producto-dorado-1.png"
+      "marca/fotos-ia/collar/dedos-1.png"
     ],
     "generar": []
   },
@@ -37,10 +37,10 @@
   ],
   "publicacion": {
     "archivos": [
-      "oficina/salida/2026-W45-19-foto-regalo-nombre/1.jpg"
+      "marca/fotos-ia/collar/dedos-1.png"
     ],
     "urls": [],
-    "alt_text": "Collar dorado con el nombre en letra de firma a un lado de la cadena y una lágrima azul colgando en el centro, sobre un fondo claro.",
+    "alt_text": "Una mano sostiene al sol un collar dorado con el nombre Marta en letra de firma y una lágrima azul colgando en el punto más bajo de la cadena, con sombras de hojas en la pared.",
     "ia": true
   },
   "origen": {
@@ -55,8 +55,8 @@
     "La frase «un collar con nombre para cada una» empuja a comprar varios con la promo: la promo es real hasta el 5-dic (no se pone la fecha para que no parezca fecha de entrega); si se alarga o se quita, revisar el texto."
   ],
   "revision": {
-    "notas": "Borrador del community manager (5-nov). Pendiente: recorte 4:5 del editor y OK de Edu.",
-    "aprobado_por": null,
-    "fecha": null
+    "notas": "6-nov: Edu «centra el 80 % de lo que subamos en el Collar Signé». Elegida y programada por Claude (contenido orgánico). Foto cambiada: la de la ficha (Marta azul) tenía la lágrima colgando del nombre.",
+    "aprobado_por": "Claude",
+    "fecha": "2026-11-06"
   }
 }

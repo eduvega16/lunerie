@@ -601,6 +601,14 @@ le regalas su nombre?») espera la respuesta de QIUHAN sobre la calidad (mensaje
 baño normal y micras, si se oscurece, agua/sudor/perfume, sin níquel, control de cada collar). **Solo si lo confirman por
 escrito** se puede poner «no se oscurece» o «puedes ducharte con él» en ficha y anuncios. Retargeting aparte: aparcado
 (poca gente; Advantage+ ya lo hace); el 9-nov, crear los públicos y mirar su tamaño.
+**Botones (7-nov, Edu):** el 19 y el 20 llevan **«Más información»**; el 18, el 14 y el 16 siguen con «Comprar» y no se tocan
+hasta el 9-nov (cambiar el botón = creatividad nueva: vuelve a revisión, pierde lo aprendido y los me gusta). Mismo vídeo
+en el 18 y el 19/20 → **el 9-nov, comparar carritos y compras por botón** y, si gana «Más información», ponérselo a los que
+sigan. **Para el 9-nov:** (1) leer la campaña con el conector (el asistente del Administrador no cuenta el día en curso);
+(2) 14 y 16 con nuestra regla (CPA BE ~21 €: 16 fuera si pasa de ~21 € sin carritos; 14 fuera si pasa de ~42 € sin
+ventas), no con la de Meta (50 compras / 70 €); (3) botones; (4) públicos de retargeting (gratis) y su tamaño; (5) decidir
+presupuesto a partir del tope de 200 €. Pendiente de QIUHAN: la letra de «Isa» (Susan buscaba la de la muestra «Marta»),
+la foto del collar antes de enviarlo y la respuesta de calidad.
 **6-nov (en producción, OK de Edu):**
 - **Plazos del collar (Edu): 3-5 días laborables de fabricación y 3-5 de envío** («5-7 y 3-10 es demasiado tiempo»;
   QIUHAN dijo 5-7 y 3-10: si se retrasan, ojo). En la ficha, como Olivia, **solo lo que tarda en salir**: bajo el botón

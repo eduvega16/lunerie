@@ -32,8 +32,8 @@ Yiwu Qiuhan Jewelry Company Ltd. (Alibaba, producto 1601817911870). Datos de la 
   usan: Jan Garnet · Feb Amethyst · Mar Aquamarine · Apr Diamond · May Emerald · Jun Alexandrite · Jul Ruby · Aug Peridot ·
   Sep Sapphire · Oct Pink Tourmaline · Nov Topaz · **Dec Zircon (azul claro)**. Al pedir, decir el mes y su nombre. Su tabla
   pone **Lab Corundum** en enero, junio y julio, **Lab Spinel** en marzo, septiembre y diciembre, y **Cubic Zirconia** en el
-  resto. La ficha dice «Circonita» para todas, así que con el primer pedido se le pregunta qué lleva la lágrima. Su
-  noviembre es más champán que amarillo.
+  resto. La ficha dice «Circonita» para todas y **Edu decidió el 6-nov que da igual**: se queda así y no se vuelve a
+  plantear. Su noviembre es más champán que amarillo.
 - **Con los impuestos dentro, CPA breakeven ≈ 24,8 €** (radar: `cli.py calc 49.95 11.4 --modo tarjeta` da 20,57 € con
   4,20 € de aranceles que ya no se pagan aparte). Si un día cobraran aranceles aparte, vuelve a ~20,6 €.
 

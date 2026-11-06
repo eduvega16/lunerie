@@ -22,7 +22,7 @@ FICHEROS = (["1-oferta-telefono-4x5.jpg", "1-oferta-telefono-9x16.jpg", "2-pack-
 
 def subir(ruta):
     video = ruta.suffix == ".mp4"
-    mime = "video/mp4" if video else "image/jpeg"
+    mime = "video/mp4" if video else ("image/png" if ruta.suffix == ".png" else "image/jpeg")
     t = gql("""mutation($i:[StagedUploadInput!]!){stagedUploadsCreate(input:$i){stagedTargets{url resourceUrl parameters{name value}}
                userErrors{message}}}""",
             {"i": [{"filename": ruta.name, "mimeType": mime, "resource": "VIDEO" if video else "FILE",

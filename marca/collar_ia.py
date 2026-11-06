@@ -56,6 +56,17 @@ TOMAS = {
         "Edit the reference product photo: keep exactly the same gold necklace, angle, light grey background, reflection "
         "and lighting, but the name now reads exactly \"Marta\" (capital M, then a-r-t-a) in the same gold signature "
         "script, and the teardrop crystal is a bright medium blue. "),
+    # 6-nov (Edu): la de Marta con la piedra verde y «Carmen» (el verde es el color que más se ve en las fotos de
+    # producto); se edita la de Marta ya aprobada y la original verde (Olivia) sirve solo de referencia del color
+    "producto-verde": ("3:4", [SALIDA / "producto-dorado-2.png", COLLAR / "collar-signe-1.jpg"],
+        "Edit the first image. Keep EVERYTHING exactly the same - the gold chain, the angle, the light background, the "
+        "reflection, the lighting and the framing - and change only two things. First, the name now reads exactly "
+        "\"Carmen\" (a clearly readable capital C - an open round curve, never a V - then a-r-m-e-n) in the same thin "
+        "gold signature script as \"Marta\", with the same long lead-in stroke, the same tiny jump ring at the top of the "
+        "capital and the same straight tail ending in a small ring; the name keeps the same diagonal position on the "
+        "left side of the chain. Second, the teardrop crystal is a vivid deep emerald green, exactly the green of the "
+        "crystal in the second image, and its reflection below is green too. The second image is only a colour "
+        "reference: ignore its name. "),
     "producto-plateado": ("3:4", [COLLAR / "collar-signe-3.jpg"],
         "Edit the reference product photo: keep exactly the same silver necklace, angle, white background and "
         "lighting, but the name now reads exactly \"Paula\" (capital P, then a-u-l-a) in the same silver signature "

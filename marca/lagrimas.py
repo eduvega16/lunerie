@@ -5,6 +5,10 @@ de Olivia Jewelry, como las otras fotos del collar; Edu asume el riesgo): recort
 4:5 con la letra de Lunerie, el mes y el NOMBRE DEL COLOR (sin nombres de gemas: son circonitas, CLAUDE.md 5.4), los
 mismos colores que el selector de la ficha (tema/codigo/snippets/lunerie-collar.liquid).
     python marca/lagrimas.py <tabla.webp>      → marca/fotos-ia/lagrimas/lagrimas-12.jpg
+    python marca/lagrimas.py --recortes [<tabla.webp>] [--subir]
+        → marca/fotos-ia/lagrimas/lagrima-01..12.png (cada gota sola, con fondo transparente) para el panel «Elige la
+          piedra» de la ficha (6-nov, Edu: en Olivia las piedras se ven reales). Con --subir, a Archivos de Shopify con
+          ese mismo nombre (el snippet lunerie-collar.liquid las lee con images['lagrima-01.png']).
 """
 import pathlib, sys
 import numpy as np, cv2
@@ -65,5 +69,51 @@ def montar(ruta):
     print(destino, lam.size)
 
 
+def recortes(ruta, alto=150):
+    """Cada gota sola en PNG con transparencia: máscara de la silueta (rellena por dentro, para que el blanco del mes de
+    abril no se vuelva transparente) con el borde suavizado."""
+    im, fondo, cajas = gotas(ruta)
+    a = np.asarray(im).astype(np.int16)
+    rutas = []
+    for k, (x, y, w, h) in enumerate(cajas):
+        p = 10
+        x0, y0, x1, y1 = max(x - p, 0), max(y - p, 0), x + w + p, y + h + p
+        trozo = a[y0:y1, x0:x1]
+        m = (np.abs(trozo - np.array(fondo)).sum(2) > 10).astype(np.uint8) * 255
+        m = cv2.morphologyEx(m, cv2.MORPH_CLOSE, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (9, 9)))
+        n, et, st, _ = cv2.connectedComponentsWithStats(m, 8)
+        m = np.where(et == 1 + int(np.argmax(st[1:, cv2.CC_STAT_AREA])), 255, 0).astype(np.uint8)
+        relleno = m.copy()                                   # rellenar huecos: todo lo que no se alcanza desde fuera
+        cv2.floodFill(relleno, np.zeros((m.shape[0] + 2, m.shape[1] + 2), np.uint8), (0, 0), 255)
+        m = m | cv2.bitwise_not(relleno)
+        m = cv2.erode(m, np.ones((2, 2), np.uint8))
+        alfa = cv2.GaussianBlur(m, (0, 0), 1.2)
+        rgba = np.dstack([trozo.astype(np.uint8), alfa])
+        ys, xs = np.nonzero(alfa > 8)
+        rgba = rgba[ys.min():ys.max() + 1, xs.min():xs.max() + 1]
+        gota = Image.fromarray(rgba, "RGBA")
+        gota = gota.resize((round(gota.width * alto / gota.height), alto), Image.LANCZOS)
+        SALIDA.mkdir(parents=True, exist_ok=True)
+        destino = SALIDA / f"lagrima-{k + 1:02d}.png"
+        gota.save(destino, optimize=True)
+        rutas.append(destino)
+        print(destino.name, gota.size, MESES[k][0])
+    return rutas
+
+
 if __name__ == "__main__":
-    montar(sys.argv[1] if len(sys.argv) > 1 else str(pathlib.Path.home() / "Downloads" / "LUNERIE" / "collar personalizable" / "7.webp"))
+    args = sys.argv[1:]
+    tabla = str(pathlib.Path.home() / "Downloads" / "LUNERIE" / "collar personalizable" / "7.webp")
+    if "--recortes" in args:
+        args.remove("--recortes")
+        subir = "--subir" in args
+        if subir:
+            args.remove("--subir")
+        rutas = recortes(args[0] if args else tabla)
+        if subir:
+            sys.path.insert(0, str(RAIZ / "anuncios"))
+            from subir_creatividades import subir as subir_archivo
+            for r in rutas:
+                print(r.name, "->", subir_archivo(r)[:90], flush=True)
+    else:
+        montar(args[0] if args else tabla)

@@ -536,6 +536,22 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
 ## 8. Calendario y pendientes (a 2-nov-2026)
 
 ### Para empezar la próxima sesión (después del 2-nov) — abrir conversación nueva por sesión.
+**6-nov: PRIMERA VENTA REAL**, pedido **#LUN1004**: Collar Signé dorado, mes de diciembre (lágrima azul), 49,95 €, pagado
+con Shopify Payments. Viene de Meta, **anuncio 18** (`utm_content` collar-carmen, el vídeo de Carmen con música). Edu hace
+él mismo el pedido al proveedor. En las tablas de los proveedores, nuestro «Diciembre · azul» es **«December / Blue
+Topaz»**. Campaña a las ~10:45: 67,88 € de los 140 € del tope, y sale a ~68 € por venta (breakeven ~20-23 €). **No tocar
+hasta el 9-nov**; entonces, consejo: pausar el 16 y dejar que el 18 se lleve el gasto.
+**6-nov (en producción, OK de Edu):**
+- **Foto 1 del Collar Signé = «Carmen» con lágrima verde** (Edu: «el verde es el color que más se ve en las fotos de
+  producto»). Es la de Marta editada (`python marca/collar_ia.py producto-verde --n 3 --4k`; elegida por Edu la
+  `producto-verde-3`) y cambiada en su sitio con `cambiar_fotos.py`, así que sigue siendo la foto de las 12 variantes
+  doradas y la que sale en la sección del collar del inicio. **Marta (azul) sigue en la galería, en la posición 4**.
+- **Panel «Elige la piedra» con fotos reales de las gotas, como Olivia:** `python marca/lagrimas.py --recortes --subir`
+  recorta las 12 gotas de la tabla de Olivia (la misma de la lámina; Edu asume el riesgo) con fondo transparente y las sube
+  como `lagrima-01.png` … `lagrima-12.png` a Archivos de Shopify. `lunerie-collar.liquid` las lee con
+  `images['lagrima-NN.png']` (en el panel y en el botón con la piedra elegida) y, si falta una, pinta la gota dibujada.
+  Ojo: en un `<svg>`, `.hidden` no existe: se oculta con `toggleAttribute('hidden')`. Cambiarlas cuando el proveedor
+  mande su tabla.
 **3-nov (en producción, pedido por Edu):** barra de arriba en **rojo #CA3801** (el de Olivia en su Black Friday;
 `PROMO_ROJO` en `build.py`, solo con `PROMO`) · **«Packs para regalar» justo después de la portada** · escaparates y
 reseñas del inicio **llenan el ancho en PC** (antes, en la pantalla de Edu quedaba un hueco a la derecha): `--n` =

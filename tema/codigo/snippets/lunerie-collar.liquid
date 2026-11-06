@@ -31,6 +31,7 @@
     <p class="lu-collar__etiqueta" id="lu-piedra-{{ section_id }}">Piedra del mes <span aria-hidden="true">*</span></p>
     <button type="button" class="lu-collar__elegir" data-lu-abrir aria-haspopup="dialog" aria-describedby="lu-piedra-{{ section_id }}">
       <svg class="lu-gota" data-lu-gota viewBox="0 0 24 32" width="18" height="24" aria-hidden="true" hidden><path d="M12 1.5C9 7 3.5 13.2 3.5 20.2a8.5 8.5 0 0 0 17 0C20.5 13.2 15 7 12 1.5Z"/></svg>
+      <img class="lu-gota-foto" data-lu-gota-foto alt="" width="20" height="28" hidden>
       <span data-lu-texto>Elige el mes de la piedra</span>
     </button>
     <p class="lu-collar__error" data-lu-error role="alert" hidden>Elige el mes de la piedra para añadirlo a la cesta.</p>
@@ -56,15 +57,25 @@
     <p class="lu-piedras__texto">Una lágrima del color de su mes.</p>
     <ul class="lu-piedras__lista" role="list">
       {%- for m in meses -%}
+        {%- liquid
+          # foto real de la gota (6-nov, como Olivia): archivo de Shopify lagrima-01.png … lagrima-12.png (marca/lagrimas.py)
+          assign num = forloop.index | prepend: '0' | slice: -2, 2
+          assign archivo = 'lagrima-' | append: num | append: '.png'
+          assign foto = images[archivo]
+        -%}
         <li>
-          <button type="button" class="lu-piedras__mes" data-lu-mes="{{ m }}" data-lu-color="{{ colores[forloop.index0] }}" data-lu-tono="{{ tonos[forloop.index0] }}" aria-pressed="{% if m == elegido %}true{% else %}false{% endif %}">
+          <button type="button" class="lu-piedras__mes" data-lu-mes="{{ m }}" data-lu-color="{{ colores[forloop.index0] }}" data-lu-tono="{{ tonos[forloop.index0] }}"{% if foto %} data-lu-img="{{ foto | image_url: height: 80 }}"{% endif %} aria-pressed="{% if m == elegido %}true{% else %}false{% endif %}">
             <span class="lu-piedras__piedra">
+              {%- if foto -%}
+                {{ foto | image_url: height: 150 | image_tag: alt: '', loading: 'lazy', class: 'lu-piedras__foto' }}
+              {%- else -%}
               <svg viewBox="0 0 24 32" width="30" height="40" aria-hidden="true">
                 <path d="M12 1.5C9 7 3.5 13.2 3.5 20.2a8.5 8.5 0 0 0 17 0C20.5 13.2 15 7 12 1.5Z" fill="{{ tonos[forloop.index0] }}"/>
                 <path d="M12 1.5C9 7 3.5 13.2 3.5 20.2c0 1.4.3 2.7.9 3.9L12 12Z" fill="#fff" opacity=".22"/>
                 <path d="M12 12l7.6 12.1c.6-1.2.9-2.5.9-3.9C20.5 13.2 15 7 12 1.5Z" fill="#000" opacity=".12"/>
                 <ellipse cx="9" cy="19" rx="1.6" ry="3" fill="#fff" opacity=".45"/>
               </svg>
+              {%- endif -%}
             </span>
             <span class="lu-piedras__nombre">{{ m }}</span>
             <span class="lu-piedras__color">{{ colores[forloop.index0] }}</span>
@@ -89,6 +100,7 @@
   .lu-collar__elegir[data-elegido] { border-style: solid; border-color: #C9CFCB; justify-content: flex-start; }
   .lu-collar__elegir:focus-visible, .lu-piedras__mes:focus-visible, .lu-piedras__cerrar:focus-visible { outline: 2px solid #006039; outline-offset: 2px; }
   .lu-gota { flex: 0 0 auto; }
+  .lu-collar [hidden] { display: none !important; }
   .lu-collar__error { margin: 0; font-size: .8125rem; color: #B3261E; }
   .lu-collar__nombre { position: relative; }
   .lu-collar__nombre input { width: 100%; padding: 10px 52px 10px 0; border: 0; border-bottom: 1px solid #C9CFCB; border-radius: 0;
@@ -114,7 +126,9 @@
   .lu-piedras__mes { display: grid; justify-items: center; gap: 4px; width: 100%; padding: 18px 8px 16px; border: 1px solid transparent;
     background: #F7F8F7; font: inherit; color: #16201B; cursor: pointer; }
   .lu-piedras__mes:hover, .lu-piedras__mes[aria-pressed="true"] { border-color: #16201B; background: #fff; }
-  .lu-piedras__piedra { display: grid; place-items: center; width: 60px; height: 60px; margin-bottom: 6px; border-radius: 50%; background: #fff; }
+  .lu-piedras__piedra { display: grid; place-items: center; width: 64px; height: 64px; margin-bottom: 6px; border-radius: 50%; background: #fff; }
+  .lu-piedras__foto { width: auto; height: 44px; }
+  .lu-gota-foto { flex: 0 0 auto; width: auto; height: 28px; }
   .lu-piedras__nombre { font-size: .875rem; }
   .lu-piedras__color { font-size: .75rem; color: #6B746F; }
   @media (prefers-reduced-motion: reduce) { .lu-piedras[open] { animation: none; } }
@@ -128,6 +142,7 @@
       const abrir = raiz.querySelector('[data-lu-abrir]');
       const texto = raiz.querySelector('[data-lu-texto]');
       const gota = raiz.querySelector('[data-lu-gota]');
+      const gotaFoto = raiz.querySelector('[data-lu-gota-foto]');
       const error = raiz.querySelector('[data-lu-error]');
       const nombre = raiz.querySelector('[data-lu-nombre]');
       const cuenta = raiz.querySelector('[data-lu-cuenta]');
@@ -137,8 +152,11 @@
         const b = elegido && raiz.querySelector(`[data-lu-mes="${elegido}"]`);
         if (!b) return;
         texto.textContent = `${elegido} · ${b.dataset.luColor}`;
-        gota.style.fill = b.dataset.luTono;
-        gota.hidden = false;
+        // la foto de la piedra; si no hay, la gota dibujada (en un <svg>, .hidden no existe: va con el atributo)
+        if (b.dataset.luImg) gotaFoto.src = b.dataset.luImg;
+        else gota.style.fill = b.dataset.luTono;
+        gotaFoto.toggleAttribute('hidden', !b.dataset.luImg);
+        gota.toggleAttribute('hidden', !!b.dataset.luImg);
         abrir.setAttribute('data-elegido', '');
         raiz.querySelectorAll('[data-lu-mes]').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
       };

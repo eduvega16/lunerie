@@ -541,7 +541,7 @@ con Shopify Payments. Viene de Meta, **anuncio 18** (`utm_content` collar-carmen
 él mismo el pedido al proveedor, **QIUHAN**, que el 6-nov lo confirmó todo: 13,22 $ por pedido con envío **con impuestos
 incluidos (DDP/IOSS)**, cajita beige de 1 $, tildes, cadena de 40 + 5 cm, foto antes de enviar y lo rehacen si se
 equivocan. Diseño: **una anilla a cada lado del nombre, a media altura** (no arriba de la mayúscula como «Marta»).
-Con eso, **CPA breakeven del collar ≈ 24,8 €**. Detalle y tabla de colores en `productos/proveedor-qiuhan.md`.
+Alibaba cobra además el IVA en el pago (~16 $ por pedido en total): **CPA breakeven del collar ≈ 22 €**. Detalle y tabla de colores en `productos/proveedor-qiuhan.md`.
 En su tabla, nuestro «Diciembre · azul» es **«December · Zircon»** (el azul claro). Campaña a las ~10:45: 67,88 € de los 140 € del tope, y sale a ~68 € por venta (breakeven ~20-23 €). **No tocar
 hasta el 9-nov**; entonces, consejo: pausar el 16 y dejar que el 18 se lleve el gasto.
 **Pendiente (6-nov, tarde):** (1) QIUHAN prepara la lista de #LUN1004; cuando mande la **foto del collar antes de

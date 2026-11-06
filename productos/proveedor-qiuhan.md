@@ -38,7 +38,10 @@ Yiwu Qiuhan Jewelry Company Ltd. (Alibaba, producto 1601817911870). Datos de la 
   pone **Lab Corundum** en enero, junio y julio, **Lab Spinel** en marzo, septiembre y diciembre, y **Cubic Zirconia** en el
   resto. La ficha dice «Circonita» para todas y **Edu decidió el 6-nov que da igual**: se queda así y no se vuelve a
   plantear. Su noviembre es más champán que amarillo.
-- **Con los impuestos dentro, CPA breakeven ≈ 24,8 €** (radar: `cli.py calc 49.95 11.4 --modo tarjeta` da 20,57 € con
+- **IVA (6-nov, al pagar #LUN1004):** Susan preguntó por un número de IVA para no retener impuestos. Edu no tiene, así
+  que **Alibaba cobra el IVA en el pago: ~16 $ por pedido** (13,22 $ + 21 %) ≈ 13,8 € → **CPA breakeven ≈ 22 €** (radar,
+  sin aranceles aparte). Las cuentas de abajo, sin IVA, se quedan cortas.
+- Con los impuestos dentro y sin IVA aparte (lo que se creía antes de pagar), CPA breakeven ≈ 24,8 € (radar: `cli.py calc 49.95 11.4 --modo tarjeta` da 20,57 € con
   4,20 € de aranceles que ya no se pagan aparte). Si un día cobraran aranceles aparte, vuelve a ~20,6 €.
 
 **Cuentas con estos datos** (5,22 $ + 1 $ de cajita + 7 $ de envío = 13,22 $ ≈ 11,4 € puesto; radar, tarjeta,

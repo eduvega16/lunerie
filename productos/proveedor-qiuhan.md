@@ -80,6 +80,18 @@ I want to sell this necklace in my shop in Spain, with dropshipping:
 6. I send you the orders every day by chat. Payment: one Alibaba order (Trade Assurance) for each list?
 ```
 
+### Respuesta de Yiwu Shangjie (6-nov)
+- **Collar 8,5 $ + envío 13,5 $ con impuestos incluidos (DDP) = 22 $ por pedido** (≈ 18,9 €), pedidos sueltos.
+- Fabricación **5-8 días**, envío a España **5-8 días**.
+- **La misma letra, la misma lágrima y la misma caja de terciopelo verde que la muestra.** Paquete sin logo, sin tarjeta
+  y sin factura ni precios.
+- Dorado y plateado, con los 12 colores. Foto antes de enviar, seguimiento, y rehacen gratis si se equivocan con el nombre.
+- Pedidos en una **hoja de Google** que rellena Edu cada día; se paga por Trade Assurance.
+- **Cuentas (radar, tarjeta, 49,95 €, sin aranceles aparte): CPA breakeven ≈ 16,1 €**, frente a ≈ 24,8 € con QIUHAN.
+- **Recomendación de Claude (6-nov), pendiente de que decida Edu:** el primer pedido (#LUN1004) va con QIUHAN y Shangjie queda de reserva, por si el dibujo o la foto
+  de QIUHAN no se parecen a la muestra. Si se cambia a Shangjie, poner sus días en `HECHO_COLLAR` (`tema/build.py`),
+  Envíos y Preguntas frecuentes.
+
 ## Cuentas del primer mensaje (calculadora del radar, pago con tarjeta, a 49,95 €)
 Coste puesto en España = collar + envío estándar (4,33 € en la ficha de Alibaba; **sin confirmar** para pedidos sueltos).
 El radar suma aparte 4,20 € de aranceles por paquete.

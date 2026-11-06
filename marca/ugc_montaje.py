@@ -1,6 +1,8 @@
 """Monta el vídeo UGC del Collar Signé (5-nov): clips de Kling + voz en off (edge-tts, voz neuronal gratuita) + subtítulos
 de la voz y tarjeta final. ffmpeg, sin créditos.
     python marca/ugc_montaje.py [Elvira|Ximena]   → marca/fotos-ia/ugc-collar/collar-ugc-<voz>-9x16.mp4
+    opciones: --carpeta <dir de fotos-ia> · --planos plano:seg,… · --salida <sufijo> (collar-ugc-<voz>-<sufijo>-9x16.mp4)
+              --tarjeta bf (6-nov: tarjeta final con la promo real de Black Friday, hasta el 5 de diciembre)
 Orden de planos en PLANOS; subtítulos sacados del .srt de la voz (voz/voz-<voz>.srt).
 """
 import pathlib, re, subprocess, sys, tempfile
@@ -49,11 +51,12 @@ def subtitulo(texto, destino):
     Image.alpha_composite(sombra, im).save(destino)
 
 
-def tarjeta(destino):
-    """Tarjeta final: panel niebla con el nombre de la pieza, precio y web."""
+def tarjeta(destino, bf=False):
+    """Tarjeta final: panel niebla con el nombre de la pieza, precio y web. Con bf, además la promo de Black Friday
+    (la real: 2.ª pieza al 50 % y 3.ª gratis, hasta el 5 de diciembre)."""
     im = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
-    x0, y0, x1, y1 = 170, 880, 910, 1240
+    x0, y0, x1, y1 = (170, 800, 910, 1330) if bf else (170, 880, 910, 1240)
     d.rounded_rectangle((x0, y0, x1, y1), 36, fill=(249, 249, 249, 238))
     serif = ImageFont.truetype(str(FUENTES / "Cormorant.ttf"), 110)
     try:
@@ -65,8 +68,15 @@ def tarjeta(destino):
         d.text(((W - d.textlength(t, font=f)) / 2, y), t, font=f, fill=c)
     centro("Collar Signé", serif, y0 + 30, tinta)
     centro("49,95 €", jost(56, "Regular"), y0 + 170, tinta)
-    centro("DORADO · PLATEADO", jost(32, "Regular"), y0 + 250, oro)
-    centro("lunerie.es", jost(40, "Medium"), y0 + 300, tinta)
+    if bf:
+        rojo = (202, 56, 1, 255)   # el rojo de la barra de la tienda (PROMO_ROJO)
+        centro("BLACK FRIDAY", jost(36, "Medium"), y0 + 262, rojo)
+        centro("2.ª pieza al 50 % · 3.ª gratis", jost(42, "Regular"), y0 + 312, tinta)
+        centro("Hasta el 5 de diciembre", jost(32, "Regular"), y0 + 372, (61, 72, 66, 255))
+        centro("lunerie.es", jost(40, "Medium"), y0 + 450, tinta)
+    else:
+        centro("DORADO · PLATEADO", jost(32, "Regular"), y0 + 250, oro)
+        centro("lunerie.es", jost(40, "Medium"), y0 + 300, tinta)
     im.save(destino)
 
 
@@ -96,7 +106,7 @@ def srt(ruta):
             for a, b, txt in re.findall(r"(\S+) --> (\S+)\n(.+?)(?:\n\n|\Z)", t, re.S)]
 
 
-def montar(voz):
+def montar(voz, sufijo="", bf=False):
     mp3, subs = VOZ / f"voz-{voz}.mp3", trozos(srt(VOZ / f"voz-{voz}.srt"))
     dur_voz = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0",
                                     str(mp3)], capture_output=True, text=True).stdout)
@@ -118,17 +128,22 @@ def montar(voz):
     subs = [(a, min(b, t_card - INICIO_VOZ), t) for a, b, t in subs if a + INICIO_VOZ < t_card]   # no asomar tras la tarjeta
     for j, (a, b, txt) in enumerate(subs):
         png = tmp / f"s{j}.png"; subtitulo(txt, png)
-        entradas += ["-i", str(png)]
-        visible = max(i for i, t0 in enumerate(inicios) if t0 <= a + INICIO_VOZ)
-        y = Y_PLANO[planos[visible][0].rsplit("-", 1)[0]]
-        filtros.append(f"[{ultimo}][{k}:v]overlay=0:{y}:enable='between(t,{a + INICIO_VOZ:.2f},{b + INICIO_VOZ:.2f})'[o{j}]")
-        ultimo, k = f"o{j}", k + 1
-    card = tmp / "tarjeta.png"; tarjeta(card)
+        # 6-nov: si la frase pasa de un plano al siguiente, se parte en el corte y cada trozo va a la altura de su plano
+        # (antes se quedaba a la altura del primero y tapaba el nombre del collar en el plano nuevo)
+        t0, t1 = a + INICIO_VOZ, b + INICIO_VOZ
+        cortes = [t0] + [x for x in inicios if t0 < x < t1] + [t1]
+        for m, (u0, u1) in enumerate(zip(cortes, cortes[1:])):
+            entradas += ["-i", str(png)]
+            visible = max(i for i, x in enumerate(inicios) if x <= u0 + 0.001)
+            y = Y_PLANO[planos[visible][0].rsplit("-", 1)[0]]
+            filtros.append(f"[{ultimo}][{k}:v]overlay=0:{y}:enable='between(t,{u0:.2f},{u1:.2f})'[o{j}_{m}]")
+            ultimo, k = f"o{j}_{m}", k + 1
+    card = tmp / "tarjeta.png"; tarjeta(card, bf)
     entradas += ["-loop", "1", "-t", f"{total:.2f}", "-i", str(card)]
     filtros.append(f"[{k}:v]format=rgba,fade=in:st={t_card:.2f}:d=0.4:alpha=1[card]")
     filtros.append(f"[{ultimo}][card]overlay=0:0[final]")
     filtros.append(f"[{n}:a]adelay={int(INICIO_VOZ * 1000)}|{int(INICIO_VOZ * 1000)},apad[aud]")
-    salida = CARPETA / f"collar-ugc-{voz.lower()}-9x16.mp4"
+    salida = CARPETA / f"collar-ugc-{voz.lower()}{'-' + sufijo if sufijo else ''}-9x16.mp4"
     cmd = ["ffmpeg", "-v", "error", "-y", *entradas, "-filter_complex", ";".join(filtros), "-map", "[final]",
            "-map", "[aud]", "-t", f"{total:.2f}", "-c:v", "libx264", "-crf", "18", "-preset", "medium",
            "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", str(salida)]
@@ -142,4 +157,5 @@ if __name__ == "__main__":
         CARPETA = RAIZ / "marca" / "fotos-ia" / a[a.index("--carpeta") + 1]
     if "--planos" in a:
         PLANOS = a[a.index("--planos") + 1].split(",")
-    montar(a[0] if a and not a[0].startswith("--") else "sarah")
+    montar(a[0] if a and not a[0].startswith("--") else "sarah", a[a.index("--salida") + 1] if "--salida" in a else "",
+           "--tarjeta" in a and a[a.index("--tarjeta") + 1] == "bf")

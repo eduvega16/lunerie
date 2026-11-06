@@ -28,6 +28,9 @@ Yiwu Qiuhan Jewelry Company Ltd. (Alibaba, producto 1601817911870). Datos de la 
 - **Cadena: 40 cm + 5 cm de alargador** (la tienda aún no dice el largo).
 - **Foto de cada collar con su caja y de la etiqueta antes de enviar**; si el nombre sale mal por su culpa, lo rehacen gratis.
 - Pago: varias listas juntas o un pedido de Trade Assurance por cada uno.
+- **Diseño acordado (Edu, 6-nov):** el de QIUHAN, con **una anilla a cada lado del nombre, a media altura** (no arriba
+  de la mayúscula como en la muestra «Marta»: con nombres cortos como «Isa» queda mejor) y la lágrima colgando suelta
+  de la cadena, justo después del nombre. Antes de fabricar mandan el dibujo del nombre para aprobarlo.
 - **Su tabla de 12 colores:** `marca/referencias-reales/qiuhan-12-colores.png` (piedras redondas, 360 px). Los nombres que
   usan: Jan Garnet · Feb Amethyst · Mar Aquamarine · Apr Diamond · May Emerald · Jun Alexandrite · Jul Ruby · Aug Peridot ·
   Sep Sapphire · Oct Pink Tourmaline · Nov Topaz · **Dec Zircon (azul claro)**. Al pedir, decir el mes y su nombre. Su tabla

@@ -544,6 +544,10 @@ equivocan. Diseño: **una anilla a cada lado del nombre, a media altura** (no ar
 Con eso, **CPA breakeven del collar ≈ 24,8 €**. Detalle y tabla de colores en `productos/proveedor-qiuhan.md`.
 En su tabla, nuestro «Diciembre · azul» es **«December · Zircon»** (el azul claro). Campaña a las ~10:45: 67,88 € de los 140 € del tope, y sale a ~68 € por venta (breakeven ~20-23 €). **No tocar
 hasta el 9-nov**; entonces, consejo: pausar el 16 y dejar que el 18 se lleve el gasto.
+**Pendiente (6-nov, tarde):** (1) QIUHAN prepara la lista de #LUN1004; cuando mande la **foto del collar antes de
+enviarlo**, revisar la «I», la lágrima azul claro y las anillas a los lados antes de que Edu dé el OK. (2) A las 19:30
+del 6-nov salen a la vez el post de Galet (`2026-W45-12`) y el reel de Carmen (`2026-W45-20`): Edu no ha dicho si
+mover el de Galet. (3) Edu quiere tratar Meta en una conversación nueva.
 **6-nov (en producción, OK de Edu):**
 - **Foto 1 del Collar Signé = «Carmen» con lágrima verde** (Edu: «el verde es el color que más se ve en las fotos de
   producto»). Es la de Marta editada (`python marca/collar_ia.py producto-verde --n 3 --4k`; elegida por Edu la

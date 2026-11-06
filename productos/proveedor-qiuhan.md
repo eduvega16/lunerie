@@ -41,6 +41,8 @@ Yiwu Qiuhan Jewelry Company Ltd. (Alibaba, producto 1601817911870). Datos de la 
 - **IVA (6-nov, al pagar #LUN1004):** Susan preguntó por un número de IVA para no retener impuestos. Edu no tiene, así
   que **Alibaba cobra el IVA en el pago: ~16 $ por pedido** (13,22 $ + 21 %) ≈ 13,8 € → **CPA breakeven ≈ 22 €** (radar,
   sin aranceles aparte). Las cuentas de abajo, sin IVA, se quedan cortas.
+- **Pagado de verdad (#LUN1004, 6-nov): 14,85 € con PayPal** (IVA, comisión y cambio de PayPal incluidos) →
+  **CPA breakeven ≈ 20,8 €**. Con una tarjeta sin comisión de cambio quizá saldría ~1 € más barato.
 - Con los impuestos dentro y sin IVA aparte (lo que se creía antes de pagar), CPA breakeven ≈ 24,8 € (radar: `cli.py calc 49.95 11.4 --modo tarjeta` da 20,57 € con
   4,20 € de aranceles que ya no se pagan aparte). Si un día cobraran aranceles aparte, vuelve a ~20,6 €.
 

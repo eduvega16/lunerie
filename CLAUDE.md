@@ -550,6 +550,9 @@ enviarlo**, revisar la «I», la lágrima azul claro y las anillas a los lados a
 del 6-nov salen a la vez el post de Galet (`2026-W45-12`) y el reel de Carmen (`2026-W45-20`): Edu no ha dicho si
 mover el de Galet. (3) Edu quiere tratar Meta en una conversación nueva.
 **6-nov (en producción, OK de Edu):**
+- **Plazos en la ficha del collar** (Edu: «lo de los avisos legales»): bajo el botón, «Se hace para ti en 5-7 días
+  laborables · Envío gratis a península en 3-10 días laborables · Garantía de 3 años», y lo mismo en «Envío y
+  devoluciones» (`HECHO_COLLAR` / `ENVIO_COLLAR` en `build.py`). Los mismos números que Envíos y Preguntas frecuentes.
 - **Foto 1 del Collar Signé = «Carmen» con lágrima verde** (Edu: «el verde es el color que más se ve en las fotos de
   producto»). Es la de Marta editada (`python marca/collar_ia.py producto-verde --n 3 --4k`; elegida por Edu la
   `producto-verde-3`) y cambiada en su sitio con `cambiar_fotos.py`, así que sigue siendo la foto de las 12 variantes

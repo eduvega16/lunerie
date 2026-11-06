@@ -594,6 +594,13 @@ media altura a los lados (lo que dijo QIUHAN) o arriba de la mayúscula (como la
   después el contenedor estaba FINISHED y se publicó a mano (https://www.instagram.com/reel/DfaQYrFtDXN/). Arreglado
   `esperar()` en `oficina/publicar.py`: un ERROR ya no corta, sigue mirando hasta agotar los intentos. Si vuelve a
   pasar: `media_publish creation_id=<contenedor>` (vale 24 h). El post de Galet (W45-12) salió solo a las 19:30.
+**7-nov (Meta, OK de Edu):** tope de la campaña de Black Friday subido a **200 €** (llega al 9-nov; el 6-nov a la noche
+iban 91,75 €, 1 venta, 16 carritos). Anuncios nuevos **19 «Carmen palma»** y **20 «Carmen Black Friday»** (variantes del 18,
+detalle en `anuncios/campana-black-friday.md`); el 14 y el 16 siguen hasta el 9-nov. La variante A (gancho «¿Y si este año
+le regalas su nombre?») espera la respuesta de QIUHAN sobre la calidad (mensaje del 7-nov: 316L en todas las piezas, PVD o
+baño normal y micras, si se oscurece, agua/sudor/perfume, sin níquel, control de cada collar). **Solo si lo confirman por
+escrito** se puede poner «no se oscurece» o «puedes ducharte con él» en ficha y anuncios. Retargeting aparte: aparcado
+(poca gente; Advantage+ ya lo hace); el 9-nov, crear los públicos y mirar su tamaño.
 **6-nov (en producción, OK de Edu):**
 - **Plazos del collar (Edu): 3-5 días laborables de fabricación y 3-5 de envío** («5-7 y 3-10 es demasiado tiempo»;
   QIUHAN dijo 5-7 y 3-10: si se retrasan, ojo). En la ficha, como Olivia, **solo lo que tarda en salir**: bajo el botón

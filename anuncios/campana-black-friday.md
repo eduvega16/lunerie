@@ -129,6 +129,16 @@ mezclada con `marca/con_musica.py` · destino `/products/collar-signe` · `utm_c
 > Imagina su cara cuando vea su nombre. El Collar Signé lleva su nombre en letra de firma y una lágrima pequeña del color
 > de su mes. En dorado o plateado, 49,95 €. Y por Black Friday, la 2.ª pieza al 50 %.
 
+**19 · Collar Signé · Carmen palma** y **20 · Collar Signé · Carmen Black Friday** (7-nov, OK de Edu): variantes del 18
+con **un solo cambio** cada una (idea del asistente de Meta, corregida: nada de «no se oscurece» sin confirmar ni «−30 %»,
+que no existe). Mismos clips, voz, música, texto, título y botón que el 18. Montaje: `marca/ugc_montaje.py` con
+`--salida palma` (planos `palma-1:2.4,colgando-1:4,cierre-1:2.6,espejo-1:4`) y `--salida bf --tarjeta bf`; música con
+`con_musica.py`; 4:5 = recorte `crop=1080:1350:0:165`. Vídeos en `marca/fotos-ia/campana-bf/19-*` y `20-*`.
+- 19: empieza con el collar en la palma (en vez de colgando de los dedos) · `utm_content=collar-carmen-palma`
+- 20: tarjeta final con «BLACK FRIDAY · 2.ª pieza al 50 % · 3.ª gratis · Hasta el 5 de diciembre» · `utm_content=collar-carmen-bf`
+- **Variante A, guardada** (`collar-ugc-silvia-hook-movil-*`): empieza con «¿Y si este año le regalas su nombre?». Edu la deja
+  para cuando el proveedor confirme por escrito la calidad (material, baño, si se oscurece, agua): entonces se rehace con esos datos.
+
 Si cambia un precio: `preparar.py` + volver a grabar los vídeos, y cambiar el precio en estos textos («desde 19,95 €»
 del 10 es el más barato de la tienda hoy: aros Boucle y anillo Duo).
 

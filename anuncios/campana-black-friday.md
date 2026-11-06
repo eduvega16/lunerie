@@ -131,7 +131,7 @@ mezclada con `marca/con_musica.py` · destino `/products/collar-signe` · `utm_c
 
 **19 · Collar Signé · Carmen palma** y **20 · Collar Signé · Carmen Black Friday** (7-nov, OK de Edu): variantes del 18
 con **un solo cambio** cada una (idea del asistente de Meta, corregida: nada de «no se oscurece» sin confirmar ni «−30 %»,
-que no existe). Mismos clips, voz, música, texto, título y botón que el 18. Montaje: `marca/ugc_montaje.py` con
+que no existe). Mismos clips, voz, música, texto y título que el 18, pero con el botón **«Más información»** (Edu, 7-nov; el 18 sigue con «Comprar»). Montaje: `marca/ugc_montaje.py` con
 `--salida palma` (planos `palma-1:2.4,colgando-1:4,cierre-1:2.6,espejo-1:4`) y `--salida bf --tarjeta bf`; música con
 `con_musica.py`; 4:5 = recorte `crop=1080:1350:0:165`. Vídeos en `marca/fotos-ia/campana-bf/19-*` y `20-*`.
 - 19: empieza con el collar en la palma (en vez de colgando de los dedos) · `utm_content=collar-carmen-palma`

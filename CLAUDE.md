@@ -538,8 +538,10 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
 ### Para empezar la próxima sesión (después del 2-nov) — abrir conversación nueva por sesión.
 **6-nov: PRIMERA VENTA REAL**, pedido **#LUN1004**: Collar Signé dorado, mes de diciembre (lágrima azul), 49,95 €, pagado
 con Shopify Payments. Viene de Meta, **anuncio 18** (`utm_content` collar-carmen, el vídeo de Carmen con música). Edu hace
-él mismo el pedido al proveedor. En las tablas de los proveedores, nuestro «Diciembre · azul» es **«December / Blue
-Topaz»**. Campaña a las ~10:45: 67,88 € de los 140 € del tope, y sale a ~68 € por venta (breakeven ~20-23 €). **No tocar
+él mismo el pedido al proveedor, **QIUHAN**, que el 6-nov lo confirmó todo: 13,22 $ por pedido con envío **con impuestos
+incluidos (DDP/IOSS)**, cajita beige de 1 $, tildes, cadena de 40 + 5 cm, foto antes de enviar y lo rehacen si se
+equivocan. Con eso, **CPA breakeven del collar ≈ 24,8 €**. Detalle y tabla de colores en `productos/proveedor-qiuhan.md`.
+En su tabla, nuestro «Diciembre · azul» es **«December · Zircon»** (el azul claro). Campaña a las ~10:45: 67,88 € de los 140 € del tope, y sale a ~68 € por venta (breakeven ~20-23 €). **No tocar
 hasta el 9-nov**; entonces, consejo: pausar el 16 y dejar que el 18 se lleve el gasto.
 **6-nov (en producción, OK de Edu):**
 - **Foto 1 del Collar Signé = «Carmen» con lágrima verde** (Edu: «el verde es el color que más se ve en las fotos de

@@ -19,6 +19,24 @@ Yiwu Qiuhan Jewelry Company Ltd. (Alibaba, producto 1601817911870). Datos de la 
 - Sin contestar todavía: si el envío va **con impuestos incluidos** (IOSS/DDP), la letra igual que la muestra, tildes,
   largo de cadena, foto de sus 12 colores, foto antes de enviar, rehacer si se equivocan, cómo se paga y el pedido de prueba.
 
+## Tercera respuesta (6-nov): todo confirmado → primer pedido (#LUN1004)
+- **Cajita de terciopelo beige, 1 $, sin logo** (no tienen verde oscuro).
+- **Los 7 $ de envío INCLUYEN impuestos (DDP / IOSS)**: la clienta no paga nada al recibir. Van por Cainiao; en España
+  reparte quien diga el seguimiento (Correos, EcoScooting, CTT…).
+- **13,22 $ por pedido** = 5,22 $ collar + 1 $ cajita + 7 $ envío.
+- **Tildes y eñes, sí** (con un «dibujo de diseño» especial).
+- **Cadena: 40 cm + 5 cm de alargador** (la tienda aún no dice el largo).
+- **Foto de cada collar con su caja y de la etiqueta antes de enviar**; si el nombre sale mal por su culpa, lo rehacen gratis.
+- Pago: varias listas juntas o un pedido de Trade Assurance por cada uno.
+- **Su tabla de 12 colores:** `marca/referencias-reales/qiuhan-12-colores.png` (piedras redondas, 360 px). Los nombres que
+  usan: Jan Garnet · Feb Amethyst · Mar Aquamarine · Apr Diamond · May Emerald · Jun Alexandrite · Jul Ruby · Aug Peridot ·
+  Sep Sapphire · Oct Pink Tourmaline · Nov Topaz · **Dec Zircon (azul claro)**. Al pedir, decir el mes y su nombre. Su tabla
+  pone **Lab Corundum** en enero, junio y julio, **Lab Spinel** en marzo, septiembre y diciembre, y **Cubic Zirconia** en el
+  resto. La ficha dice «Circonita» para todas, así que con el primer pedido se le pregunta qué lleva la lágrima. Su
+  noviembre es más champán que amarillo.
+- **Con los impuestos dentro, CPA breakeven ≈ 24,8 €** (radar: `cli.py calc 49.95 11.4 --modo tarjeta` da 20,57 € con
+  4,20 € de aranceles que ya no se pagan aparte). Si un día cobraran aranceles aparte, vuelve a ~20,6 €.
+
 **Cuentas con estos datos** (5,22 $ + 1 $ de cajita + 7 $ de envío = 13,22 $ ≈ 11,4 € puesto; radar, tarjeta,
 49,95 €): **CPA breakeven ≈ 20,6 €** (con la bolsita, ≈ 21 €). El radar suma aparte 4,20 € de aranceles: si los 7 $
 ya incluyen impuestos y aranceles, el breakeven sube a ~24 €.

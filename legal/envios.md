@@ -12,8 +12,8 @@
 Preparamos tu pedido y te llega en **7-12 días laborables**. En cuanto sale, te mandamos por email el
 **número de seguimiento** para que sepas dónde está.
 
-**Piezas con nombre** (como el collar Signé): se hacen para ti en **5-7 días laborables** y después el envío tarda
-**3-10 días laborables**.
+**Piezas con nombre** (como el collar Signé): se hacen para ti en **3-5 días laborables** y después el envío tarda
+**3-5 días laborables**.
 
 **Para Navidad:** pídelo **antes del 5 de diciembre** para que llegue a tiempo. Las piezas con nombre tardan más,
 porque se hacen para ti: pídelas con tiempo. Si vas justa de fecha, escríbenos antes de comprar y te decimos si llega.

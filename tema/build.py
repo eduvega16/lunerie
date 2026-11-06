@@ -757,21 +757,21 @@ _det["block_order"].insert(_det["block_order"].index("descripcion") + 1, "agua")
 # está bien, lo arreglamos» y la nota del nombre tal cual. HECHO_COLLAR: los días de fabricación que dio QIUHAN
 # (5-nov). Los del envío (3-10 días laborables) van aparte en legal/envios.md y en Preguntas frecuentes. Regla de Edu:
 # nunca escribir la suma de los dos plazos (ni un total ni una fecha calculada); la suma la hace la clienta.
-# 6-nov (Edu: «pon en la ficha el tiempo de producción y el de envío, lo de los avisos legales»): los dos plazos, por
-# separado, también bajo el botón y en el desplegable (ENVIO_COLLAR = el envío de legal/envios.md).
-HECHO_COLLAR = "5-7 días laborables"
-ENVIO_COLLAR = "3-10 días laborables"
+# 6-nov (Edu): 3-5 días de fabricación y 3-5 de envío («5-7 y 3-10 es demasiado tiempo»; QIUHAN dijo 5-7 y 3-10). En
+# la ficha, como Olivia («crafted then shipped in 4-8 days»), solo lo que tarda en salir, bajo el botón y en el
+# desplegable; nada del tránsito. Los dos plazos, por separado, en legal/envios.md y Preguntas frecuentes.
+HECHO_COLLAR = "3-5 días laborables"
 collar = copy.deepcopy(joya)
 _d = collar["sections"]["main"]["blocks"]["product-details"]
 _d["blocks"]["personalizar"] = liquid("{% render 'lunerie-collar', product: product, section_id: section.id %}")
 _d["block_order"].insert(_d["block_order"].index("comprar"), "personalizar")
-_d["blocks"]["ventajas"] = ventajas([f"Se hace para ti en {HECHO_COLLAR}",
-                                     f"Envío gratis a península en {ENVIO_COLLAR}", "Garantía de 3 años"])
+_d["blocks"]["ventajas"] = ventajas([f"Se hace para ti y sale en {HECHO_COLLAR}", "Envío gratis a península",
+                                     "Garantía de 3 años"])
 _dd = _d["blocks"]["detalles"]
 _dd["blocks"]["envio"] = row(
     "Envío y devoluciones",
-    f"<p><strong>Envío</strong><br>Las piezas con nombre se hacen para ti en {HECHO_COLLAR} y después el envío tarda "
-    f"{ENVIO_COLLAR}. Envío gratis a península, con número de seguimiento por email.</p>"
+    f"<p><strong>Envío</strong><br>Las piezas con nombre se hacen para ti y salen en {HECHO_COLLAR}. Envío gratis a "
+    "península, con número de seguimiento por email.</p>"
     "<p><strong>Devoluciones</strong><br>Cada pieza se hace con cariño, y que te guste es lo que más nos importa. Las "
     "piezas sin nombre se pueden devolver en 14 días. Como las personalizadas se hacen solo para ti, no admiten "
     "devolución. Aun así, si algo no está bien, escríbenos y lo arreglamos.</p>"

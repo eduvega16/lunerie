@@ -12,6 +12,7 @@ Yiwu Qiuhan Jewelry Company Ltd. (Alibaba, producto 1601817911870). Datos de la 
 - **Letras: sin límite** (la ficha sigue con 10, por cómo queda).
 - 316L «algo más caro» (el primer mensaje decía 5,22 $ ya en 316L: confirmarlo).
 - **Fabricación: 5-7 días laborables** por pieza · **envío: 3-10 días laborables** · **envío: ~7 $ por pedido**.
+  **La tienda dice 3-5 + 3-5 desde el 6-nov (Edu)**: pedirles que salga en 3-5 días.
 - Presentación sin logo: **bolsita de terciopelo con botón 0,5 $** (turquesa, granate, rosa, rojo, negro, crema, gris)
   o **cajita de terciopelo beige 1 $** (fotos de catálogo que mandó Edu).
 - En la tienda (5-nov): ficha «salen en 5-7 días laborables»; Envíos y Preguntas frecuentes, los dos plazos por

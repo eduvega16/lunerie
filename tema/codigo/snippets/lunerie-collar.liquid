@@ -17,6 +17,18 @@
   assign colores = 'rojo oscuro,morado,azul agua,blanco,verde,violeta,rojo,verde oliva,azul oscuro,rosa,amarillo,azul' | split: ','
   assign tonos = '#7A1420,#8E6CB8,#7CC6E6,#E4E8EF,#1E7A3C,#5B3E99,#C2183B,#6B6A1E,#1F3A8A,#E7A3C6,#E8B21C,#2F86D8' | split: ','
   assign max_letras = 10
+  # letra de la vista previa del nombre (7-nov): 'hurricane' (assets/lunerie-firma.woff2) o 'herr' (Herr Von Muellerhoff,
+  # assets/lunerie-firma-herr.woff2, más fina y con las minúsculas pequeñas: va más grande)
+  assign firma = 'herr'
+  if firma == 'herr'
+    assign firma_archivo = 'lunerie-firma-herr.woff2'
+    assign firma_pc = 74
+    assign firma_movil = 64
+  else
+    assign firma_archivo = 'lunerie-firma.woff2'
+    assign firma_pc = 54
+    assign firma_movil = 48
+  endif
   assign elegido = ''
   if product.selected_variant
     for o in product.selected_variant.options
@@ -117,11 +129,11 @@
   .lu-collar__cuenta { position: absolute; right: 0; bottom: 12px; font-size: .75rem; color: #6B746F; }
 
   /* Vista previa del nombre (como Olivia: caja crema bajo el campo; en Lunerie, recta como los botones) */
-  @font-face { font-family: 'Lunerie Firma'; src: url('{{ 'lunerie-firma.woff2' | asset_url }}') format('woff2');
+  @font-face { font-family: 'Lunerie Firma'; src: url('{{ firma_archivo | asset_url }}') format('woff2');
     font-weight: 400; font-style: normal; font-display: swap; }
-  .lu-firma { display: grid; place-items: center; min-height: 84px; margin-top: 6px; padding: 0 12px 4px; overflow: hidden;
+  .lu-firma { display: grid; place-items: center; min-height: 92px; margin-top: 6px; padding: 0 12px 4px; overflow: hidden;
     background: #FAF7F1; border: 1px solid #E9E2D6; }
-  .lu-firma__texto { max-width: 100%; font-family: 'Lunerie Firma', cursive; font-size: 54px; line-height: 1.35;
+  .lu-firma__texto { max-width: 100%; font-family: 'Lunerie Firma', cursive; font-size: {{ firma_pc }}px; line-height: 1.35;
     white-space: nowrap; overflow: hidden; text-overflow: clip; padding: 0 .12em;
     background: linear-gradient(180deg, #D2B57A 0%, #A6834A 55%, #8A6A35 100%); -webkit-background-clip: text;
     background-clip: text; color: transparent; -webkit-text-stroke: .4px #A6834A; transition: opacity .2s; }
@@ -129,7 +141,7 @@
     -webkit-text-stroke-color: #9AA0A5; }
   .lu-firma__texto[data-vacio] { opacity: .35; }
   .lu-firma__nota { margin: 0; font-size: .75rem; color: #6B746F; }
-  @media (max-width: 749px) { .lu-firma { min-height: 76px; } .lu-firma__texto { font-size: 48px; } }
+  @media (max-width: 749px) { .lu-firma { min-height: 76px; } .lu-firma__texto { font-size: {{ firma_movil }}px; } }
 
   /* Panel de las piedras: entra por la derecha, como en Olivia */
   .lu-piedras { position: fixed; inset: 0 0 0 auto; width: min(460px, 92vw); max-width: none; height: 100dvh; max-height: none;

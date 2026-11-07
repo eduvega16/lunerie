@@ -36,6 +36,31 @@ MOVIMIENTO = {
     "espejo": "Mirror selfie: she gently adjusts the necklace at her collarbone with her fingertips while holding the "
               "phone still, small natural movement.",
 }
+# 7-nov: vídeos de familia (ugc_familia.py): varios collares en el plano y movimientos propios de cada carpeta
+FIJO_VARIOS = (" Keep every necklace exactly as in the image: the same gold cursive names letter by letter and, on each "
+               "necklace, its single small teardrop crystal, which keeps EXACTLY its colour from the image the whole "
+               "time (it never changes colour); letters do not change or melt; no extra jewelry. Same faces, natural "
+               "skin. Realistic handheld smartphone footage, subtle natural camera shake.")
+MOV_CARPETA = {
+    "ugc-madre-hija": {
+        "ancla": "Selfie: mother and daughter laugh softly and press their cheeks together; the selfie arm moves "
+                 "slightly.",
+        "palmas": "Both open palms move very slightly towards the camera and the warm lamp light glints on the gold "
+                  "letters; the two necklaces stay resting in the palms.",
+        "cierre": "The daughter finishes fastening the clasp behind her mother's neck and rests her hands on her "
+                  "mother's shoulders; the mother smiles at the camera and touches the pendant.",
+        "cuellos": "They lean their heads together and laugh softly; small natural movement, the necklaces sway "
+                   "slightly.",
+    },
+    "ugc-dos-hijas": {
+        "ancla": "Selfie: the three of them laugh and squeeze closer together; the selfie arm moves slightly.",
+        "mesa": "The hand finishes placing the third necklace on the linen napkin and pulls back slowly; the other two "
+                "necklaces stay completely still.",
+        "hermanas": "Selfie: the two sisters laugh and press their cheeks together; the selfie arm moves slightly.",
+        "cuello": "Her fingertip gently touches the gold name on her collarbone, then she smiles; the teardrop sways "
+                  "slightly.",
+    },
+}
 DESPLAZAMIENTO = {"nombre": 0.10, "colgando": 0.0, "espejo": 0.75}   # dónde empieza el recorte 9:16 (0 = izquierda, 0.5 = centro)
 
 
@@ -51,8 +76,10 @@ def recorte_916(png):
 def animar(plano, modo, seg):
     try:
         url = higgsfield_client.upload_file(recorte_916(CARPETA / f"{plano}.png"))
+        clave, propios = plano.rsplit("-", 1)[0], MOV_CARPETA.get(CARPETA.name)
+        prompt = propios[clave] + FIJO_VARIOS if propios else MOVIMIENTO[clave] + FIJO
         r = higgsfield_client.subscribe(f"kling-video/v3.0/{modo}/image-to-video", arguments={
-            "image_url": url, "prompt": MOVIMIENTO[plano.rsplit("-", 1)[0]] + FIJO, "duration": seg,
+            "image_url": url, "prompt": prompt, "duration": seg,
             "sound": "off", "aspect_ratio": "9:16"})
     except Exception as e:
         return f"{plano}: ERROR {type(e).__name__}: {e}"

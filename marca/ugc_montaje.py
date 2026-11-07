@@ -3,6 +3,7 @@ de la voz y tarjeta final. ffmpeg, sin créditos.
     python marca/ugc_montaje.py [Elvira|Ximena]   → marca/fotos-ia/ugc-collar/collar-ugc-<voz>-9x16.mp4
     opciones: --carpeta <dir de fotos-ia> · --planos plano:seg,… · --salida <sufijo> (collar-ugc-<voz>-<sufijo>-9x16.mp4)
               --tarjeta bf (6-nov: tarjeta final con la promo real de Black Friday, hasta el 5 de diciembre)
+              --tarjeta dos|tres (7-nov: precio de 2 o 3 collares con esa promo, para los vídeos de familia)
 Orden de planos en PLANOS; subtítulos sacados del .srt de la voz (voz/voz-<voz>.srt).
 """
 import pathlib, re, subprocess, sys, tempfile
@@ -16,6 +17,9 @@ SEG = 4.0
 # altura del subtítulo según el plano que se ve (entre la barbilla y el nombre, sin tapar el collar; zona libre hasta 1248)
 Y_PLANO = {"ancla": 960, "nombre": 860, "cuello": 760, "mirada": 860,
            "colgando": 1130, "palma": 330, "cierre": 960, "espejo": 1000}
+# 7-nov: vídeos de familia (ugc_familia.py), alturas propias de cada carpeta (manda sobre Y_PLANO)
+Y_CARPETA = {"ugc-madre-hija": {"palmas": 300, "cuellos": 1100, "cierre": 950, "ancla": 960},
+             "ugc-dos-hijas": {"hermanas": 980, "mesa": 330, "cuello": 620, "ancla": 300}}
 VOZ = RAIZ / "marca" / "fotos-ia" / "ugc-collar" / "voz"
 INICIO_VOZ = 0.2
 W, H = 1080, 1920
@@ -51,9 +55,11 @@ def subtitulo(texto, destino):
     Image.alpha_composite(sombra, im).save(destino)
 
 
-def tarjeta(destino, bf=False):
-    """Tarjeta final: panel niebla con el nombre de la pieza, precio y web. Con bf, además la promo de Black Friday
-    (la real: 2.ª pieza al 50 % y 3.ª gratis, hasta el 5 de diciembre)."""
+def tarjeta(destino, tipo=""):
+    """Tarjeta final: panel niebla con el nombre de la pieza, precio y web. Con «bf», además la promo de Black Friday
+    (la real: 2.ª pieza al 50 % y 3.ª gratis, hasta el 5 de diciembre). 7-nov: «dos» y «tres» = precio de 2 o 3
+    collares con esa promo (74,93 € y 99,90 €, lo que cobra Shopify: la más barata al 50 %, en céntimos hacia abajo)."""
+    bf = tipo in ("bf", "dos", "tres")
     im = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
     x0, y0, x1, y1 = (170, 800, 910, 1330) if bf else (170, 880, 910, 1240)
@@ -67,11 +73,13 @@ def tarjeta(destino, bf=False):
     def centro(t, f, y, c):
         d.text(((W - d.textlength(t, font=f)) / 2, y), t, font=f, fill=c)
     centro("Collar Signé", serif, y0 + 30, tinta)
-    centro("49,95 €", jost(56, "Regular"), y0 + 170, tinta)
+    precio = {"dos": "2 collares · 74,93 €", "tres": "3 collares · 99,90 €"}.get(tipo, "49,95 €")
+    centro(precio, jost(56 if tipo not in ("dos", "tres") else 50, "Regular"), y0 + 170, tinta)
     if bf:
         rojo = (202, 56, 1, 255)   # el rojo de la barra de la tienda (PROMO_ROJO)
         centro("BLACK FRIDAY", jost(36, "Medium"), y0 + 262, rojo)
-        centro("2.ª pieza al 50 % · 3.ª gratis", jost(42, "Regular"), y0 + 312, tinta)
+        promo = {"dos": "El 2.º, a mitad de precio", "tres": "El 3.º, gratis"}.get(tipo, "2.ª pieza al 50 % · 3.ª gratis")
+        centro(promo, jost(42, "Regular"), y0 + 312, tinta)
         centro("Hasta el 5 de diciembre", jost(32, "Regular"), y0 + 372, (61, 72, 66, 255))
         centro("lunerie.es", jost(40, "Medium"), y0 + 450, tinta)
     else:
@@ -106,7 +114,7 @@ def srt(ruta):
             for a, b, txt in re.findall(r"(\S+) --> (\S+)\n(.+?)(?:\n\n|\Z)", t, re.S)]
 
 
-def montar(voz, sufijo="", bf=False):
+def montar(voz, sufijo="", tipo=""):
     mp3, subs = VOZ / f"voz-{voz}.mp3", trozos(srt(VOZ / f"voz-{voz}.srt"))
     dur_voz = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0",
                                     str(mp3)], capture_output=True, text=True).stdout)
@@ -135,10 +143,11 @@ def montar(voz, sufijo="", bf=False):
         for m, (u0, u1) in enumerate(zip(cortes, cortes[1:])):
             entradas += ["-i", str(png)]
             visible = max(i for i, x in enumerate(inicios) if x <= u0 + 0.001)
-            y = Y_PLANO[planos[visible][0].rsplit("-", 1)[0]]
+            clave = planos[visible][0].rsplit("-", 1)[0]
+            y = Y_CARPETA.get(CARPETA.name, {}).get(clave, Y_PLANO.get(clave, 960))
             filtros.append(f"[{ultimo}][{k}:v]overlay=0:{y}:enable='between(t,{u0:.2f},{u1:.2f})'[o{j}_{m}]")
             ultimo, k = f"o{j}_{m}", k + 1
-    card = tmp / "tarjeta.png"; tarjeta(card, bf)
+    card = tmp / "tarjeta.png"; tarjeta(card, tipo)
     entradas += ["-loop", "1", "-t", f"{total:.2f}", "-i", str(card)]
     filtros.append(f"[{k}:v]format=rgba,fade=in:st={t_card:.2f}:d=0.4:alpha=1[card]")
     filtros.append(f"[{ultimo}][card]overlay=0:0[final]")
@@ -158,4 +167,4 @@ if __name__ == "__main__":
     if "--planos" in a:
         PLANOS = a[a.index("--planos") + 1].split(",")
     montar(a[0] if a and not a[0].startswith("--") else "sarah", a[a.index("--salida") + 1] if "--salida" in a else "",
-           "--tarjeta" in a and a[a.index("--tarjeta") + 1] == "bf")
+           a[a.index("--tarjeta") + 1] if "--tarjeta" in a else "")

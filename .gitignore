@@ -39,6 +39,8 @@ marca/anuncios-hf/index.html
 # originales PNG de los vídeos UGC del collar (5-nov): en git van los recortes JPG de clips/
 marca/fotos-ia/ugc-collar/*.png
 marca/fotos-ia/ugc-collar-*/*.png
+marca/fotos-ia/ugc-madre-hija/*.png
+marca/fotos-ia/ugc-dos-hijas/*.png
 
 # vídeos originales del iPhone (6-nov, 44 MB): solo en este PC; en git va el reel montado
 marca/referencias-reales/muestra-marta/*.mov

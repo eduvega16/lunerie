@@ -533,7 +533,7 @@ KILL (se mira en la campaña) si gastas 1× CPA BE sin carritos o 2× sin ventas
 del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alertas si CTR < 1 % o CPC > 0,90 €.
 «Aprendizaje limitado» es normal con este presupuesto (Meta pide ~50 compras/semana). Máximo 2 productos en test.
 
-## 8. Calendario y pendientes (a 6-nov-2026)
+## 8. Calendario y pendientes (a 7-nov-2026)
 
 ### Para empezar la próxima sesión (después del 2-nov) — abrir conversación nueva por sesión.
 **6-nov: PRIMERA VENTA REAL**, pedido **#LUN1004**: Collar Signé dorado, mes de diciembre (lágrima azul), 49,95 €, pagado
@@ -609,6 +609,32 @@ sigan. **Para el 9-nov:** (1) leer la campaña con el conector (el asistente del
 ventas), no con la de Meta (50 compras / 70 €); (3) botones; (4) públicos de retargeting (gratis) y su tamaño; (5) decidir
 presupuesto a partir del tope de 200 €. Pendiente de QIUHAN: la letra de «Isa» (Susan buscaba la de la muestra «Marta»),
 la foto del collar antes de enviarlo y la respuesta de calidad.
+**7-nov (tarde-noche):**
+- **Pedidos nuevos:** **#LUN1005** (Collar Signé dorado, junio, 49,95 €, PayPal) → a las 15:31 la clienta **pidió cancelarlo**
+  desde la tienda; Edu no lo había encargado a QIUHAN → aceptar y devolver entero (texto del email propuesto en la sesión:
+  ofrecer cambiar nombre/piedra antes de cancelar; si no contesta en 24 h, cancelar). **#LUN1006**: **3 Collares Signé**
+  (2 dorados de marzo + 1 plateado de junio) por 99,90 € con el 3x2 → pedírselos a QIUHAN. Meta solo cuenta 2 compras
+  (la 3.ª, seguramente sin cookies).
+- **Meta a las ~21 h:** 105,56 € de 200 €, 154 clics a 0,69 €, 21 carritos, 2 compras (Meta). **El 18 vende: 46,40 €, 2
+  compras (23,20 €/compra, casi el breakeven ~21 €)**; el 14 lleva 38,31 € sin ventas (límite ~42 €) y el 16, 16,86 € sin
+  carritos (límite ~21 €): el 9-nov, seguramente fuera los dos. El 20 aún sin gastar.
+- **Instagram:** la tarea de Laura azul (W45-21) de las 19:30 no corrió (PC apagado) → publicada a mano a las 20:28.
+- **Vídeos UGC de familia (Edu: «para ti y para tu hija», «para tus dos hijas», usar más las promos)**, sin subir a Meta:
+  `marca/ugc_familia.py` (fotos 9:16 con varias personas; las hijas, adultas) → `ugc_animar.py --carpeta ugc-<v>` →
+  `ugc_montaje.py --carpeta ugc-<v> --tarjeta dos|tres`. **«Uno para ti… y otro para tu hija»** (Elena + Sara, salón con
+  árbol, 16 s, tarjeta «2 collares · 74,93 € · El 2.º, a mitad de precio») y **«¿Tienes dos hijas?»** (Ana + Marta +
+  Laura, cocina, 14 s, «3 collares · 99,90 € · El 3.º, gratis»), voz de Silvia + Holiday Bells, 9:16 y 4:5 en
+  `marca/fotos-ia/ugc-madre-hija/` y `ugc-dos-hijas/`. Precio de 2 Signé = 74,93 € (Shopify: la más barata al 50 % en
+  céntimos hacia abajo). Coste ~5 $. **Propuesta: meterlos el 9-nov** con la revisión (Edu aún no los ha visto/aprobado).
+  Ideas siguientes: abuela-madre-hija, hermanas, mejor amiga, madre y suegra.
+- **Vista previa del nombre EN PRODUCCIÓN (Edu, visto en Olivia):** bajo el campo «Nombre» del Collar Signé, caja crema
+  (#FAF7F1, recta) con el nombre en letra de firma dorada mientras se escribe (plateada si eligen Plateado) y «Vista previa
+  orientativa de la letra». Letra **Hurricane** (OFL, `assets/lunerie-firma.woff2`, alojada en el tema; `build.py` ya copia
+  los .woff2). Olivia usa Sacramento (redonda, no se parece a la nuestra); Herr Von Muellerhoff se probó y Edu dijo «es
+  demasiado» (además su «I» parece un 9): queda en `assets/lunerie-firma-herr.woff2`, se cambia con `firma` en
+  `lunerie-collar.liquid`. **Ojo:** en un bloque `{% liquid %}` no valen comentarios al final de la línea. Cuando QIUHAN
+  mande su letra real, valorar si cambiarla.
+
 **6-nov (en producción, OK de Edu):**
 - **Plazos del collar (Edu): 3-5 días laborables de fabricación y 3-5 de envío** («5-7 y 3-10 es demasiado tiempo»;
   QIUHAN dijo 5-7 y 3-10: si se retrasan, ojo). En la ficha, como Olivia, **solo lo que tarda en salir**: bajo el botón

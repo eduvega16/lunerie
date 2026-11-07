@@ -607,7 +607,7 @@ en el 18 y el 19/20 → **el 9-nov, comparar carritos y compras por botón** y, 
 sigan. **Para el 9-nov:** (1) leer la campaña con el conector (el asistente del Administrador no cuenta el día en curso);
 (2) 14 y 16 con nuestra regla (CPA BE ~21 €: 16 fuera si pasa de ~21 € sin carritos; 14 fuera si pasa de ~42 € sin
 ventas), no con la de Meta (50 compras / 70 €); (3) botones; (4) públicos de retargeting (gratis) y su tamaño; (5) decidir
-presupuesto a partir del tope de 200 €. Pendiente de QIUHAN: la letra de «Isa» (Susan buscaba la de la muestra «Marta»),
+presupuesto a partir del tope de 200 €; (6) enseñar a Edu los 2 vídeos de familia (madre e hija, dos hijas) y, con su OK, meterlos en el conjunto. Pendiente de QIUHAN: la letra de «Isa» (Susan buscaba la de la muestra «Marta»),
 la foto del collar antes de enviarlo y la respuesta de calidad.
 **7-nov (tarde-noche):**
 - **Pedidos nuevos:** **#LUN1005** (Collar Signé dorado, junio, 49,95 €, PayPal) → a las 15:31 la clienta **pidió cancelarlo**

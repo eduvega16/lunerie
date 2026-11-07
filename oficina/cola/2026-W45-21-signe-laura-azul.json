@@ -1,6 +1,6 @@
 {
   "id": "2026-W45-21-signe-laura-azul",
-  "estado": "aprobado",
+  "estado": "publicado",
   "plataforma": "instagram",
   "formato": "foto",
   "pieza": "collar-signe",
@@ -30,7 +30,11 @@
     ],
     "urls": [],
     "alt_text": "Collar dorado con el nombre Laura en letra de firma en un lado de la cadena y una lágrima azul colgando en el centro, sobre fondo blanco. Texto: Un regalo (o un capricho). Collar con su nombre y su piedra.",
-    "ia": true
+    "ia": true,
+    "resultado": {
+      "media_id": "18146078215592556",
+      "fecha": "2026-11-07T20:28:59+0100"
+    }
   },
   "origen": {
     "biblioteca": "",

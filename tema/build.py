@@ -879,6 +879,9 @@ if TIENDA.exists():
     # código del tema modificado (tema/codigo/<carpeta>/<fichero>), p. ej. snippets/variant-main-picker.liquid
     for f in [*(OUT / "codigo").rglob("*.liquid"), *(OUT / "codigo" / "assets").glob("*.js")]:   # también assets/*.js (zoom del móvil)
         (TIENDA / f.relative_to(OUT / "codigo")).write_text(f.read_text(encoding="utf8"), encoding="utf8")
+    # 7-nov: letras alojadas en el tema (assets/*.woff2, binario), p. ej. la de la vista previa del nombre del collar
+    for f in (OUT / "codigo" / "assets").glob("*.woff2"):
+        (TIENDA / f.relative_to(OUT / "codigo")).write_bytes(f.read_bytes())
     for nombre, carpeta in DESTINO.items():
         (TIENDA / carpeta / nombre).write_text((OUT / nombre).read_text(encoding="utf8"), encoding="utf8")
     # Textos del tema que cambiamos (locales/es.json de Horizon). El del email del pie no cabía en la columna.

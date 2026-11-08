@@ -631,8 +631,8 @@ la foto del collar antes de enviarlo y la respuesta de calidad.
   `lunerie-segundo-reloj.liquid` (generado), `cart-drawer.liquid`, `sections/main-cart.liquid` y **`snippets/cart-summary.liquid`
   (nuevo modificado de Horizon, copia en `tema/codigo/`)**. Ojo: `tema/tienda/` de este PC estaba desfasado (el
   `es.json` del 5-nov se subió desde el otro PC): antes de subir, bajar el fichero en vivo y comparar.
-  Siguiente: ver en unos días si sube el paso carrito → pago (ShopifyQL `sessions_that_reached_checkout`). Pendiente:
-  email de carrito abandonado en Shopify (Marketing → Automatizaciones), sin comprobar si está activo.
+  Siguiente: ver en unos días si sube el paso carrito → pago (ShopifyQL `sessions_that_reached_checkout`). El email de
+  carrito abandonado de Shopify (Marketing → Automatizaciones) **está activo** (Edu, 8-nov).
 - **Instagram:** el carrusel «Una lágrima para cada mes» (W45-17) salió solo a las 12:31. Las tareas programadas ahora
   despiertan el PC de la suspensión (ver «Redes (3-nov)»): **dejar el PC suspendido, no apagado**. Siguiente: 9-nov 19:30,
   reel de la cámara (W46-13).

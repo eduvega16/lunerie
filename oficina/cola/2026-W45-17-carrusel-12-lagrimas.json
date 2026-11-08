@@ -1,6 +1,6 @@
 {
   "id": "2026-W45-17-carrusel-12-lagrimas",
-  "estado": "aprobado",
+  "estado": "publicado",
   "plataforma": "instagram",
   "formato": "carrusel",
   "pieza": "collar-signe",
@@ -76,7 +76,11 @@
     ],
     "urls": [],
     "alt_text": "Carrusel del Collar Signé: la lámina con las doce lágrimas de colores, una por mes; una chica con el collar Carmen y la lágrima verde; una mano que sostiene el collar Marta con la lágrima azul al sol.",
-    "ia": true
+    "ia": true,
+    "resultado": {
+      "media_id": "17901487776610288",
+      "fecha": "2026-11-08T12:31:24+0100"
+    }
   },
   "origen": {
     "biblioteca": "",

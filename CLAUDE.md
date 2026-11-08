@@ -609,6 +609,28 @@ sigan. **Para el 9-nov:** (1) leer la campaña con el conector (el asistente del
 ventas), no con la de Meta (50 compras / 70 €); (3) botones; (4) públicos de retargeting (gratis) y su tamaño; (5) decidir
 presupuesto a partir del tope de 200 €; (6) enseñar a Edu los 2 vídeos de familia (madre e hija, dos hijas) y, con su OK, meterlos en el conjunto. Pendiente de QIUHAN: la letra de «Isa» (Susan buscaba la de la muestra «Marta»),
 la foto del collar antes de enviarlo y la respuesta de calidad.
+**8-nov:**
+- **Instagram:** el carrusel «Una lágrima para cada mes» (W45-17) salió solo a las 12:31. Las tareas programadas ahora
+  despiertan el PC de la suspensión (ver «Redes (3-nov)»): **dejar el PC suspendido, no apagado**. Siguiente: 9-nov 19:30,
+  reel de la cámara (W46-13).
+- **Ocultar los Me gusta no se puede por API** (ni al publicar ni después; solo `comment_enabled`): lo hace Edu en la app,
+  publicación por publicación (··· → Ocultar recuento de Me gusta). Edu borró sin querer una publicación que había subido
+  él desde la app (todas las de la cola siguen): se restaura en Tu actividad → Eliminado recientemente (30 días).
+- **Bio propuesta con la promo** (144 caracteres): «Collares con nombre y relojes pequeños para regalar. / Black Friday:
+  2.ª pieza al 50 % y la 3.ª, gratis. Hasta el 5-dic. / Envío gratis a península.» (sin «Devolución en 14 días»: los
+  collares con nombre no se devuelven). Al acabar la promo (5-dic), quitar la línea de Black Friday.
+- **Facebook (Edu: «sube las publicaciones a Facebook también»), A MEDIAS:** el token de la página no tiene
+  `pages_manage_posts`. Edu lo activó en la app «Lunerie Claude Publisher» (caso de uso «Administra las páginas» →
+  `pages_manage_posts` «Listo para prueba»). **Falta:** generar en el Explorador un **token de usuario** con los 6 permisos
+  (los 5 de antes + `pages_manage_posts`), pegarlo en `.env.local` como `IG_TOKEN_USUARIO=` y ejecutar
+  `python oficina/renovar_token.py`; comprobar con `debug_token` que el token de página lleva `pages_manage_posts`.
+  Después: que `publicar.py` publique también en la página (`/{page-id}/photos`, carrusel como varias fotos,
+  reels con `/video_reels`), programando en el servidor de Facebook con `scheduled_publish_time` (no depende del PC), y
+  repartir en Facebook las del Collar Signé ya publicadas en Instagram (no todas el mismo día). Un token con permisos de
+  más (anuncios, WhatsApp…) que mandó Edu no se guardó. Edu pegó 2 tokens de usuario en el chat (caducan en 1-2 h).
+  Alternativa sin permisos: compartir automático en Instagram (Centro de cuentas → Compartir entre perfiles); sin
+  comprobar si copia lo publicado por API.
+
 **7-nov (tarde-noche):**
 - **Pedidos nuevos:** **#LUN1005** (Collar Signé dorado, junio, 49,95 €, PayPal) → a las 15:31 la clienta **pidió cancelarlo**
   desde la tienda; Edu no lo había encargado a QIUHAN → aceptar y devolver entero (texto del email propuesto en la sesión:

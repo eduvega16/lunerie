@@ -684,7 +684,7 @@ tarjeta final «Un reloj que solo da la hora» (3 fotos nuevas con `portada_dia.
 Windows de ESTE PC (`D:\LUNERIE`, carpeta «\Lunerie\»), con `oficina/publicar_programado.py` (pythonw, sin ventanas;
 registro en `oficina/publicaciones.log`, fuera de git): 4-nov Lune café · 5-nov carrusel Black Friday · 6-nov Galet ·
 9 Nuit · **10 «Un martes cualquiera»** · 12 collar · 13 regalos por precio · 15 Larme · 18 Sépia · 20 cinco relojes.
-Solo salen si el PC está encendido con la sesión abierta; si no, la pieza sigue «aprobado» y se publica a mano
+Solo salen si el PC está encendido **o en suspensión** (8-nov: la tarea lo despierta; los temporizadores de activación están habilitados y el PC no se suspende solo) con la sesión abierta; apagado no. Si se enciende después, publica solo si no han pasado más de 3 h (`RETRASO_MAX`); si no, la pieza sigue «aprobado» y se publica a mano
 (`python oficina/publicar.py <id> --confirmar`). Ver: `python oficina/publicar_programado.py tareas`; quitar:
 `… quitar [id]`. **Al abrir sesión: mirar el log y que las publicadas pasen a «publicado»** (y hacer commit de la cola).
 A mano (Edu): stories con pegatinas, reels con música, Facebook (Business Suite) y editar el texto de los 3 posts del

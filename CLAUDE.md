@@ -533,7 +533,7 @@ KILL (se mira en la campaña) si gastas 1× CPA BE sin carritos o 2× sin ventas
 del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alertas si CTR < 1 % o CPC > 0,90 €.
 «Aprendizaje limitado» es normal con este presupuesto (Meta pide ~50 compras/semana). Máximo 2 productos en test.
 
-## 8. Calendario y pendientes (a 7-nov-2026)
+## 8. Calendario y pendientes (a 8-nov-2026)
 
 ### Para empezar la próxima sesión (después del 2-nov) — abrir conversación nueva por sesión.
 **6-nov: PRIMERA VENTA REAL**, pedido **#LUN1004**: Collar Signé dorado, mes de diciembre (lágrima azul), 49,95 €, pagado
@@ -633,7 +633,7 @@ la foto del collar antes de enviarlo y la respuesta de calidad.
   los .woff2). Olivia usa Sacramento (redonda, no se parece a la nuestra); Herr Von Muellerhoff se probó y Edu dijo «es
   demasiado» (además su «I» parece un 9): queda en `assets/lunerie-firma-herr.woff2`, se cambia con `firma` en
   `lunerie-collar.liquid`. **Ojo:** en un bloque `{% liquid %}` no valen comentarios al final de la línea. Cuando QIUHAN
-  mande su letra real, valorar si cambiarla.
+  mande su letra real, valorar si cambiarla. **8-nov (Edu: «la gente hace clic en el visualizador en vez del input»), en producción:** la caja crema ES el campo `properties[Nombre]` (se escribe en ella en letra de firma, «Escribe su nombre» de marcador, clic en cualquier punto de la caja = escribir, mayúscula inicial en el móvil) y debajo, en letra normal, «Se hará así: **Carmen**» para revisar I/J y mayúsculas. Probado en lunerie.es: la cesta recibe «Nombre: Carmen».
 
 **6-nov (en producción, OK de Edu):**
 - **Plazos del collar (Edu): 3-5 días laborables de fabricación y 3-5 de envío** («5-7 y 3-10 es demasiado tiempo»;

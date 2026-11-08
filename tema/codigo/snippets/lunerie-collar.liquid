@@ -52,19 +52,19 @@
 
   <div class="lu-collar__campo">
     <label class="lu-collar__etiqueta" for="lu-nombre-{{ section_id }}">Nombre <span aria-hidden="true">*</span></label>
-    <div class="lu-collar__nombre">
-      <input id="lu-nombre-{{ section_id }}" type="text" name="properties[Nombre]" form="{{ form_id }}" required
-        maxlength="{{ max_letras }}" autocomplete="off" spellcheck="false" placeholder="El nombre que quieres"
-        pattern="[A-Za-zÁÉÍÓÚÜÑáéíóúüñ ]+" title="Solo letras, hasta {{ max_letras }}" data-lu-nombre>
-      <span class="lu-collar__cuenta" data-lu-cuenta aria-hidden="true">0/{{ max_letras }}</span>
-    </div>
     {%- comment -%} 7-nov (Edu, visto en Olivia): el nombre se ve en letra de firma mientras se escribe. Letra Hurricane
       (OFL, assets/lunerie-firma.woff2), la que más se parece a la firma real del collar (Olivia usa Sacramento,
-      demasiado redondeada para el nuestro). Dorada o plateada según el color elegido. Es orientativa: lo dice debajo. {%- endcomment -%}
-    <div class="lu-firma" data-lu-firma aria-hidden="true">
-      <span class="lu-firma__texto" data-lu-firma-texto data-vacio>Su nombre</span>
+      demasiado redondeada para el nuestro). Dorada o plateada según el color elegido. Es orientativa: lo dice debajo.
+      8-nov (Edu: «la gente hace clic en el visualizador en vez del input»): la caja crema ES el campo; se escribe
+      directamente en letra de firma. Debajo se repite en letra normal para revisar cómo se escribe (I/J, mayúsculas). {%- endcomment -%}
+    <div class="lu-firma" data-lu-firma>
+      <input id="lu-nombre-{{ section_id }}" class="lu-firma__campo" type="text" name="properties[Nombre]" form="{{ form_id }}"
+        required maxlength="{{ max_letras }}" autocomplete="off" autocapitalize="words" spellcheck="false"
+        placeholder="Escribe su nombre" pattern="[A-Za-zÁÉÍÓÚÜÑáéíóúüñ ]+" title="Solo letras, hasta {{ max_letras }}"
+        aria-describedby="lu-nota-{{ section_id }}" data-lu-nombre>
+      <span class="lu-collar__cuenta" data-lu-cuenta aria-hidden="true">0/{{ max_letras }}</span>
     </div>
-    <p class="lu-firma__nota">Vista previa orientativa de la letra.</p>
+    <p class="lu-firma__nota" id="lu-nota-{{ section_id }}" data-lu-nota>Toca el recuadro y escribe el nombre. Vista previa orientativa de la letra.</p>
   </div>
 
   <dialog class="lu-piedras" data-lu-panel aria-labelledby="lu-piedras-t-{{ section_id }}">
@@ -122,27 +122,25 @@
   .lu-gota { flex: 0 0 auto; }
   .lu-collar [hidden] { display: none !important; }
   .lu-collar__error { margin: 0; font-size: .8125rem; color: #B3261E; }
-  .lu-collar__nombre { position: relative; }
-  .lu-collar__nombre input { width: 100%; padding: 10px 52px 10px 0; border: 0; border-bottom: 1px solid #C9CFCB; border-radius: 0;
-    background: transparent; font: inherit; font-size: 1rem; color: #16201B; }
-  .lu-collar__nombre input:focus { outline: none; border-bottom-color: #16201B; }
-  .lu-collar__nombre input::placeholder { color: #9AA39E; }
-  .lu-collar__cuenta { position: absolute; right: 0; bottom: 12px; font-size: .75rem; color: #6B746F; }
-
-  /* Vista previa del nombre (como Olivia: caja crema bajo el campo; en Lunerie, recta como los botones) */
+  /* El campo del nombre ES la vista previa (8-nov): caja crema recta, como los botones, y se escribe en letra de firma.
+     Color liso (no degradado con background-clip: en un <input> no es fiable en el Safari del iPhone). */
   @font-face { font-family: 'Lunerie Firma'; src: url('{{ firma_archivo | asset_url }}') format('woff2');
     font-weight: 400; font-style: normal; font-display: swap; }
-  .lu-firma { display: grid; place-items: center; min-height: 92px; margin-top: 6px; padding: 0 12px 4px; overflow: hidden;
-    background: #FAF7F1; border: 1px solid #E9E2D6; }
-  .lu-firma__texto { max-width: 100%; font-family: 'Lunerie Firma', cursive; font-size: {{ firma_pc }}px; line-height: 1.35;
-    white-space: nowrap; overflow: hidden; text-overflow: clip; padding: 0 .12em;
-    background: linear-gradient(180deg, #D2B57A 0%, #A6834A 55%, #8A6A35 100%); -webkit-background-clip: text;
-    background-clip: text; color: transparent; -webkit-text-stroke: .4px #A6834A; transition: opacity .2s; }
-  .lu-firma[data-metal="plata"] .lu-firma__texto { background-image: linear-gradient(180deg, #EEF0F2 0%, #AEB4B9 55%, #82888D 100%);
-    -webkit-text-stroke-color: #9AA0A5; }
-  .lu-firma__texto[data-vacio] { opacity: .35; }
+  .lu-firma { position: relative; background: #FAF7F1; border: 1px solid #E9E2D6; cursor: text; transition: border-color .2s; }
+  .lu-firma:hover { border-color: #CDBF9F; }
+  .lu-firma:focus-within { border-color: #A6834A; }
+  /* Hurricane tiene la línea alta: sin el padding de abajo el nombre queda bajo y pisa el contador */
+  .lu-firma__campo { display: block; width: 100%; height: 96px; margin: 0; padding: 0 56px 16px; border: 0; border-radius: 0;
+    background: transparent; box-shadow: none; font-family: 'Lunerie Firma', cursive; font-size: {{ firma_pc }}px; line-height: 1.2;
+    text-align: center; color: #A6834A; caret-color: #16201B; text-shadow: 0 1px 0 rgba(255,255,255,.7); }
+  .lu-firma__campo:focus { outline: none; }
+  .lu-firma__campo::placeholder { color: #A6834A; opacity: .38; }
+  .lu-firma[data-metal="plata"] .lu-firma__campo, .lu-firma[data-metal="plata"] .lu-firma__campo::placeholder { color: #8E959A; }
+  .lu-collar__cuenta { position: absolute; right: 12px; bottom: 8px; font-size: .75rem; color: #6B746F; pointer-events: none; }
   .lu-firma__nota { margin: 0; font-size: .75rem; color: #6B746F; }
-  @media (max-width: 749px) { .lu-firma { min-height: 76px; } .lu-firma__texto { font-size: {{ firma_movil }}px; } }
+  .lu-firma__nota b { font-weight: 500; color: #16201B; }
+  @media (max-width: 749px) { .lu-firma__campo { height: 84px; padding: 0 40px 14px; font-size: {{ firma_movil }}px; }
+    .lu-firma__campo::placeholder { font-size: .8em; } }
 
   /* Panel de las piedras: entra por la derecha, como en Olivia */
   .lu-piedras { position: fixed; inset: 0 0 0 auto; width: min(460px, 92vw); max-width: none; height: 100dvh; max-height: none;
@@ -209,9 +207,11 @@
         abrir.focus();
       }));
 
-      // Vista previa del nombre en letra de firma (y en plata si el color elegido es «Plateado»)
+      // El campo del nombre en letra de firma (y en plata si el color elegido es «Plateado»); debajo, en letra normal
       const firma = raiz.querySelector('[data-lu-firma]');
-      const firmaTexto = raiz.querySelector('[data-lu-firma-texto]');
+      const nota = raiz.querySelector('[data-lu-nota]');
+      const notaVacia = nota.textContent;
+      firma.addEventListener('click', () => nombre.focus());   // también el hueco alrededor del texto
       const metal = () => {
         const c = document.querySelector('input[type="radio"][data-option-name="Color"]:checked')
           || document.querySelector('select option[data-option-name="Color"]:checked');
@@ -220,8 +220,11 @@
       const contar = () => {
         cuenta.textContent = `${nombre.value.length}/${nombre.maxLength}`;
         const v = nombre.value.trim();
-        firmaTexto.textContent = v || 'Su nombre';
-        firmaTexto.toggleAttribute('data-vacio', !v);
+        if (!v) { nota.textContent = notaVacia; return; }
+        nota.textContent = 'Se hará así: ';
+        const b = document.createElement('b');
+        b.textContent = v;   // textContent: lo que escriben nunca se interpreta como HTML
+        nota.append(b, ' · vista previa orientativa de la letra.');
       };
       nombre.addEventListener('input', contar);
       document.addEventListener('change', (e) => { if (e.target.closest?.('[data-option-name="Color"], .variant-option')) setTimeout(metal, 0); });

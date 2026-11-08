@@ -5,7 +5,8 @@ Pasos de Edu (el inicio de sesión en Meta lo hace él):
   1. developers.facebook.com → Mis apps → «Lunerie Vega» (2676185462837815): si hay un aviso (app restringida,
      comprobación del uso de datos, verificación), resolverlo primero.
   2. Herramientas → Explorador de la API Graph → app «Lunerie Vega» → «Generar token de acceso» con los permisos
-     instagram_basic, instagram_content_publish, pages_show_list, pages_read_engagement y business_management.
+     instagram_basic, instagram_content_publish, pages_show_list, pages_read_engagement, business_management
+     y pages_manage_posts (8-nov: para publicar también en la página de Facebook).
   3. Pegar ese token en D:\\LUNERIE\\.env.local en una línea  IG_TOKEN_USUARIO=...   (NO en el chat).
 Después:  python oficina/renovar_token.py
   → lo cambia por uno largo, saca el token de la página «L U N E R I E» (no caduca), lo guarda como IG_TOKEN,

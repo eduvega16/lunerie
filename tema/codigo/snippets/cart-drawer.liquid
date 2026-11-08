@@ -114,7 +114,10 @@
                   {% render 'cart-products', context: 'drawer' %}
                 </scroll-hint>
 
-                {%- comment -%} Lunerie: aviso del segundo reloj (snippet generado por tema/build.py) {%- endcomment -%}
+                {%- comment -%}
+                  Lunerie: aviso de la promo (snippet generado por tema/build.py). En el cajón, debajo de las piezas
+                  (8-nov, Edu: arriba solo en la página de la cesta).
+                {%- endcomment -%}
                 {% render 'lunerie-segundo-reloj' %}
                 <div class="cart-drawer__summary">
                   {% render 'cart-summary', section_id: 'cart-drawer-section' %}

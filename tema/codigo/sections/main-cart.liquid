@@ -47,14 +47,18 @@
         {%- content_for 'block', id: 'cart-page-title', type: '_cart-title' %}
       </div>
 
+      {%- comment -%}
+        Lunerie: aviso de la promo (snippet generado por tema/build.py). 8-nov (Edu): arriba de la cesta, en verde; fuera
+        de la columna del resumen, que en PC es una rejilla fija y lo tapaba (CSS de la colocación en el snippet).
+      {%- endcomment -%}
+      {% render 'lunerie-segundo-reloj' %}
+
       <div class="cart-page__items">
         {%- content_for 'block', id: 'cart-page-items', type: '_cart-products' %}
       </div>
 
       {%- unless cart.empty? -%}
         <div class="cart-page__summary">
-          {%- comment -%} Lunerie: aviso del segundo reloj (snippet generado por tema/build.py) {%- endcomment -%}
-          {% render 'lunerie-segundo-reloj' %}
           {%- content_for 'block', id: 'cart-page-summary', type: '_cart-summary' -%}
         </div>
       {%- endunless -%}

@@ -1,0 +1,9 @@
+{%- comment -%} Generado por tema/build.py: confianza bajo el botón «Pagar» {%- endcomment -%}
+{%- if cart.item_count > 0 -%}
+{%- assign lu_nombre = false -%}{%- for item in cart.items -%}{%- if item.product.handle == 'collar-signe' -%}{%- assign lu_nombre = true -%}{%- endif -%}{%- endfor -%}
+<div class="lu-confianza">
+  {%- if lu_nombre -%}<p>Se hace para ti y sale en 3-5 días laborables</p>{%- endif -%}
+  <p>Garantía de 3 años · Pago seguro</p>
+</div>
+<style>.lu-confianza{text-align:center;font-size:.75rem;line-height:1.5;color:#3D4842;margin-top:2px}.lu-confianza p{margin:0}</style>
+{%- endif -%}

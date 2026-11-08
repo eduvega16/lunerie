@@ -1,5 +1,5 @@
 """Genera los JSON del tema 'Lunerie · marca' (Horizon 4.2) a partir de la página de marca."""
-import copy, json, pathlib
+import copy, json, pathlib, re
 
 OUT = pathlib.Path(__file__).parent
 INK, GREEN, GOLD, MIST, LINE, SOFT = "#16201B", "#006039", "#A6834A", "#F2F4F2", "#E2E6E3", "#3D4842"
@@ -840,7 +840,12 @@ UPSELL = (
 if not SEGUNDO_RELOJ:
     UPSELL = "{%- comment -%} Generado por tema/build.py: aviso del segundo reloj, apagado (SEGUNDO_RELOJ = False) {%- endcomment -%}\n"
 # Promo (1-nov): con 1 pieza en la cesta invita a la 2.ª al 50 %; con 2, a la 3.ª gratis; con 3 o más, avisa de que
-# ya está aplicado. Enlaces a Relojes y Joyas para seguir comprando. (El snippet conserva su nombre antiguo.)
+# ya está aplicado. (El snippet conserva su nombre antiguo.)
+# 8-nov (5-8 nov: 29 sesiones con carrito y solo 6 llegaron al pago): fuera los enlaces «Ver relojes / Ver joyas», que
+# sacaban a la clienta de la cesta. Con 1 pieza, carrusel de piezas sin talla ni nombre (CESTA_EXTRA) con el precio que
+# le cuesta de verdad con la promo y botón «Añadir» que la mete sin salir de la cesta. El precio se calcula como Shopify:
+# se rebaja la mitad de la más barata, en céntimos y hacia abajo (19,95 → 9,98 €).
+CESTA_EXTRA = ["aros-boucle", "anillo-duo", "pendientes-larme", "collar-lune"]   # se enseñan las 3 primeras que no estén en la cesta
 if PROMO:
     UPSELL = (
         "{%- comment -%} Generado por tema/build.py (PROMO): aviso de la promo en la cesta {%- endcomment -%}\n"
@@ -849,25 +854,92 @@ if PROMO:
         '<div class="lu-promo">\n'
         "  {%- if lu_n == 1 -%}\n"
         '    <p class="lu-promo__t">Añade otra pieza y la más barata te sale al 50 %</p>\n'
+        "    {%- assign lu_item = cart.items.first -%}{%- assign lu_m = lu_item.original_price -%}{%- assign lu_vistas = 0 -%}\n"
+        '    <ul class="lu-extra" role="list">\n'
+        "    {%- assign lu_lista = '" + ",".join(CESTA_EXTRA) + "' | split: ',' -%}\n"
+        "    {%- for lu_h in lu_lista -%}\n"
+        "      {%- assign p = all_products[lu_h] -%}\n"
+        "      {%- if p.available and p.handle != lu_item.product.handle and lu_vistas < 3 -%}\n"
+        "        {%- assign lu_vistas = lu_vistas | plus: 1 -%}\n"
+        "        {%- assign lu_baja = p.price | at_most: lu_m | divided_by: 2 -%}{%- assign lu_paga = p.price | minus: lu_baja -%}\n"
+        '      <li class="lu-extra__i"><form class="lu-extra__f" action="{{ routes.cart_add_url }}" method="post">\n'
+        '        <a class="lu-extra__img" href="{{ p.url }}" tabindex="-1">{{ p.featured_image | image_url: width: 300 | '
+        "image_tag: loading: 'lazy', alt: p.title, sizes: '140px' }}</a>\n"
+        '        <span class="lu-extra__n">{{ p.title }}</span>\n'
+        '        <span class="lu-extra__p"><s>{{ p.price | money }}</s> {{ lu_paga | money }}</span>\n'
+        "        {%- if p.has_only_default_variant -%}\n"
+        '        <input type="hidden" name="id" value="{{ p.selected_or_first_available_variant.id }}">\n'
+        "        {%- else -%}\n"
+        '        <select class="lu-extra__s" name="id" aria-label="{{ p.title | escape }}: {{ p.options.first | escape }}">'
+        "{%- for v in p.variants -%}{%- if v.available -%}<option value=\"{{ v.id }}\">{{ v.title }}</option>"
+        "{%- endif -%}{%- endfor -%}</select>\n"
+        "        {%- endif -%}\n"
+        '        <input type="hidden" name="quantity" value="1"><input type="hidden" name="return_to" value="{{ routes.cart_url }}">\n'
+        '        <button type="submit" class="lu-extra__btn">Añadir</button>\n'
+        "      </form></li>\n"
+        "      {%- endif -%}\n"
+        "    {%- endfor -%}\n"
+        "    </ul>\n"
         "  {%- elsif lu_n == 2 -%}\n"
         '    <p class="lu-promo__t">Añade una tercera y la más barata te sale gratis</p>\n'
         "  {%- else -%}\n"
         '    <p class="lu-promo__t">Tu descuento ya está en la cesta</p>\n'
         "  {%- endif -%}\n"
-        "  {%- if lu_n < 3 -%}\n"
-        '    <p class="lu-promo__enlaces"><a href="{{ collections.relojes.url }}">Ver relojes</a>'
-        '<a href="{{ collections.joyas.url }}">Ver joyas</a></p>\n'
-        "  {%- endif -%}\n"
         "</div>\n"
         "<style>"
-        ".lu-promo{margin:12px 0;padding:14px 18px;background:" + GREEN + ";color:#fff;display:grid;gap:8px}"
-        ".lu-promo p{margin:0}"
-        ".lu-promo__t{font-size:.875rem;letter-spacing:.06em;text-transform:uppercase}"
-        ".lu-promo__enlaces{display:flex;gap:18px;font-size:.8125rem}"
-        ".lu-promo__enlaces a{color:#fff;text-underline-offset:3px}"
+        # 8-nov (Edu): en el verde de Lunerie y arriba de la cesta. Tarjetas en horizontal (foto pequeña a la izquierda)
+        # para que, arriba, no empuje demasiado la pieza de la cesta.
+        ".lu-promo{margin:0 0 16px;padding:14px 0 14px 16px;background:" + GREEN + ";color:#fff;display:grid;gap:12px}"
+        ".lu-promo p{margin:0;padding-right:16px}"
+        ".lu-promo__t{font-size:.8125rem;letter-spacing:.08em;text-transform:uppercase}"
+        ".lu-extra{list-style:none;margin:0;padding:0 16px 2px 0!important;display:flex;gap:12px;overflow-x:auto;"
+        "scroll-snap-type:x mandatory;scrollbar-width:none}"
+        ".lu-extra::-webkit-scrollbar{display:none}"
+        ".lu-extra__i{flex:0 0 216px;scroll-snap-align:start}"
+        ".lu-extra__f{margin:0;display:grid;grid-template-columns:64px 1fr;grid-template-rows:auto auto minmax(30px,auto) auto;column-gap:10px;row-gap:4px;align-content:start}"
+        ".lu-extra__img{grid-row:1/span 4;display:block;aspect-ratio:4/5;background:" + MIST + ";overflow:hidden}"
+        ".lu-extra__img img{width:100%;height:100%;object-fit:cover;display:block}"
+        ".lu-extra__n{font-size:.8125rem;line-height:1.25}"
+        ".lu-extra__p{font-size:.8125rem}.lu-extra__p s{opacity:.65;margin-right:4px}"
+        ".lu-extra__s{font:inherit;font-size:.75rem;color:" + INK + ";background:#fff;border:0;border-radius:0;"
+        "padding:4px 6px;width:100%;min-height:30px}"
+        ".lu-extra__btn{appearance:none;border:0;border-radius:0;background:#fff;color:" + GREEN + ";font:inherit;"
+        "font-size:.6875rem;letter-spacing:.14em;text-transform:uppercase;padding:8px 6px;cursor:pointer;min-height:32px;"
+        "grid-column:2;grid-row:4}"
+        ".lu-extra__btn:disabled{opacity:.6}"
+        ".lu-extra__btn:focus-visible,.lu-extra__s:focus-visible{outline:2px solid #fff;outline-offset:2px}"
+        # Cajón: debajo de las piezas, con el margen del cajón; la pieza de la cesta no se encoge (si no cabe todo, se baja con el dedo)
+        ".cart-drawer__content>.lu-promo{margin:16px var(--cart-drawer-padding,16px) 0}"
+        ".cart-drawer__items{flex-shrink:0}"
+        # Página de la cesta: entre el título y las piezas. En PC, columna izquierda (la derecha es el resumen fijo)
+        ".cart-page>.lu-promo{margin-top:16px}"
+        "@media screen and (min-width:750px){.cart-page>.lu-promo{grid-column:1;grid-row:2;align-self:start}"
+        ".cart-page:has(>.lu-promo)>.cart-page__items{grid-row:3}}"
         "</style>\n"
+        # Añadir con fetch y volver a la cesta (ya con el descuento); sin JS, el formulario normal hace lo mismo
+        "<script>if(!window.luExtra){window.luExtra=1;document.addEventListener('submit',function(e){"
+        "var f=e.target.closest&&e.target.closest('.lu-extra__f');if(!f)return;"
+        "e.preventDefault();var b=f.querySelector('button');b.disabled=true;b.textContent='Añadiendo…';"
+        "fetch('{{ routes.cart_add_url }}.js',{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}})"
+        ".then(function(r){if(!r.ok)throw 0;location.href='{{ routes.cart_url }}'}).catch(function(){f.submit()})})}</script>\n"
         "{%- endif -%}\n")
 (OUT / "codigo" / "snippets" / "lunerie-segundo-reloj.liquid").write_text(UPSELL, encoding="utf8")
+
+# 8-nov: confianza justo bajo «Pagar» (cesta y cajón). Se pinta desde snippets/cart-summary.liquid (Horizon, modificado:
+# copia en tema/codigo/snippets). Con un collar con nombre en la cesta, primero cuándo sale (sin sumar el envío).
+CONFIANZA = (
+    "{%- comment -%} Generado por tema/build.py: confianza bajo el botón «Pagar» {%- endcomment -%}\n"
+    "{%- if cart.item_count > 0 -%}\n"
+    "{%- assign lu_nombre = false -%}{%- for item in cart.items -%}{%- if item.product.handle == 'collar-signe' -%}"
+    "{%- assign lu_nombre = true -%}{%- endif -%}{%- endfor -%}\n"
+    '<div class="lu-confianza">\n'
+    "  {%- if lu_nombre -%}<p>Se hace para ti y sale en " + HECHO_COLLAR + "</p>{%- endif -%}\n"
+    "  <p>Garantía de 3 años · Pago seguro</p>\n"
+    "</div>\n"
+    "<style>.lu-confianza{text-align:center;font-size:.75rem;line-height:1.5;color:" + SOFT + ";margin-top:2px}"
+    ".lu-confianza p{margin:0}</style>\n"
+    "{%- endif -%}\n")
+(OUT / "codigo" / "snippets" / "lunerie-cesta-confianza.liquid").write_text(CONFIANZA, encoding="utf8")
 
 # Copia en tema/tienda/ (el tema publicado bajado con `shopify theme pull`, fuera de git) para subirlo con la CLI
 TIENDA = OUT / "tienda"
@@ -910,6 +982,15 @@ if TIENDA.exists():
         }
         for viejo, nuevo in CAMBIOS_CESTA.items():
             t2 = t2.replace(viejo, nuevo)
+        # 8-nov: la tienda usa la variante «Aranceles e impuestos incluidos…» (duties_and_taxes_included_*), que lo de
+        # arriba no tocaba, y la cesta seguía diciendo «Los gastos de envío se calculan en la página de pago». Ahora se
+        # ponen a mano las 8 claves (con y sin aranceles, con y sin política, con y sin descuentos), sea cual sea su texto.
+        for pre in ("taxes_included", "duties_and_taxes_included"):
+            for suf, html in (("with_policy_html", True), ("without_policy", False),
+                              ("with_policy_without_discounts_html", True), ("without_policy_without_discounts", False)):
+                clave = f"{pre}_shipping_at_checkout_{suf}"
+                t2 = re.sub(r'"' + clave + r'": "(?:[^"\\]|\\.)*"',
+                            lambda m, c=clave, h=html: f'"{c}": "{ENVIO_CESTA_LINK if h else ENVIO_CESTA}"', t2)
         if t2 != t:
             es.write_text(t2, encoding="utf8")
 print("ok")

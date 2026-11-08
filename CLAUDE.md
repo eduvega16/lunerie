@@ -610,6 +610,29 @@ ventas), no con la de Meta (50 compras / 70 €); (3) botones; (4) públicos de 
 presupuesto a partir del tope de 200 €; (6) enseñar a Edu los 2 vídeos de familia (madre e hija, dos hijas) y, con su OK, meterlos en el conjunto. Pendiente de QIUHAN: la letra de «Isa» (Susan buscaba la de la muestra «Marta»),
 la foto del collar antes de enviarlo y la respuesta de calidad.
 **8-nov:**
+- **Meta a las ~19:30:** 144,19 € de 200 €, ~218 clics a 0,66 €, 35 carritos, 6 pagos empezados. Shopify: 2 pedidos
+  válidos (#LUN1004 y #LUN1006, 149,85 €, 4 collares; #LUN1005 reembolsado) → **~72 € por pedido** (breakeven ~21 €),
+  ~-90 € en margen. El 18 lleva 84,32 € (30 carritos, 2 compras; hoy ~38 € sin vender), el 14 38,91 € sin ventas, el 16
+  16,91 € (1 carrito); el 19 y el 20 casi sin gastar (0,73 / 0,06 €) → **el 9-nov no habrá datos para comparar botones**.
+  El tope se acaba el 9-nov por la tarde. En el Administrador hay 2 recomendaciones de Meta a medias (no publicadas) en
+  los anuncios 14 y 3 (música aleatoria, carrusel a vídeo): consejo, no publicarlas; y el borrador viejo «NO PUBLICAR».
+- **EL ATASCO ES LA CESTA (ShopifyQL, 5-8 nov):** móvil 113 sesiones → 29 con carrito → **6 al pago** → 2 compras (PC: 29
+  sesiones, 0 carritos). **Cesta nueva EN PRODUCCIÓN (OK de Edu, probada en lunerie.es):** (1) el texto del envío salía
+  «Aranceles e impuestos incluidos. Los gastos de envío se calculan en la página de pago» porque la tienda usa las claves
+  `duties_and_taxes_included_*` y el arreglo del 5-nov solo cambiaba `taxes_included_*`; ahora `build.py` pone las 8
+  claves con regex → «Impuestos incluidos. Envío gratis a península (Baleares, 3,95 €).» (2) Bloque de la promo **en
+  verde**, sin «Ver relojes / Ver joyas» (sacaban de la cesta): con 1 pieza, carrusel de tarjetas en horizontal
+  (`CESTA_EXTRA`: aros Boucle, anillo Duo, pendientes Larme, y collar Lune si una ya está en la cesta) con el precio real
+  con la promo (19,95 → 9,98 €: la mitad de la más barata, en céntimos hacia abajo) y botón «Añadir» (fetch → /cart).
+  Probado: collar + aros = 59,93 €, igual que Shopify. **En la página de la cesta va arriba** (en PC, columna izquierda);
+  **en el cajón, debajo de las piezas** (Edu: arriba no le gustó). En el cajón, `.cart-drawer__items{flex-shrink:0}` para
+  que el carrusel no aplaste la pieza. (3) Bajo «Pagar»: «Se hace para ti y sale en 3-5 días laborables» (solo con el
+  collar) + «Garantía de 3 años · Pago seguro» (`lunerie-cesta-confianza.liquid`, generado por `build.py`). Ficheros:
+  `lunerie-segundo-reloj.liquid` (generado), `cart-drawer.liquid`, `sections/main-cart.liquid` y **`snippets/cart-summary.liquid`
+  (nuevo modificado de Horizon, copia en `tema/codigo/`)**. Ojo: `tema/tienda/` de este PC estaba desfasado (el
+  `es.json` del 5-nov se subió desde el otro PC): antes de subir, bajar el fichero en vivo y comparar.
+  Siguiente: ver en unos días si sube el paso carrito → pago (ShopifyQL `sessions_that_reached_checkout`). Pendiente:
+  email de carrito abandonado en Shopify (Marketing → Automatizaciones), sin comprobar si está activo.
 - **Instagram:** el carrusel «Una lágrima para cada mes» (W45-17) salió solo a las 12:31. Las tareas programadas ahora
   despiertan el PC de la suspensión (ver «Redes (3-nov)»): **dejar el PC suspendido, no apagado**. Siguiente: 9-nov 19:30,
   reel de la cámara (W46-13).

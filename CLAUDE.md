@@ -538,9 +538,35 @@ KILL (se mira en la campaña) si gastas 1× CPA BE sin carritos o 2× sin ventas
 del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alertas si CTR < 1 % o CPC > 0,90 €.
 «Aprendizaje limitado» es normal con este presupuesto (Meta pide ~50 compras/semana). Máximo 2 productos en test.
 
-## 8. Calendario y pendientes (a 8-nov-2026)
+## 8. Calendario y pendientes (a 9-nov-2026)
 
 ### Para empezar la próxima sesión (después del 2-nov) — abrir conversación nueva por sesión.
+**DÓNDE NOS QUEDAMOS (9-nov, noche, sesión en `C:\Users\edu\lunerie`):**
+- **Google Search Console verificado** (apartado 6). Falta: enviar `sitemap.xml` en Search Console (Sitemaps).
+- **#LUN1006 (3 Collares Signé, misma clienta):** mensaje para QIUHAN preparado con la dirección sacada de Shopify (la
+  dirección solo en Shopify y en el chat de Alibaba, nunca en git). Esperando que QIUHAN diga el **precio total en un solo
+  paquete**. Siguen pendientes de QIUHAN: foto de #LUN1004 antes de enviarlo, respuestas de calidad y la letra de «Isa».
+- **Reel de la cámara (W46-13)** sale a las 19:30 solo si `D:\LUNERIE` está suspendido o encendido (las tareas y las
+  claves de Instagram solo están allí; en este PC `publicar_programado.py tareas` = ninguna).
+- **Biblioteca:** formatos 27-29 añadidos a `biblioteca/formatos-anuncio.json` (de 8 capturas de Instagram de Edu, en
+  `oficina/referencias/instagram-2026-11-09/`): «Una joya para cada ocasión» (círculo + papelito), «Receta / prospecto»
+  (con cuidado: Meta mira lo que parece medicina) y «Decisiones más saludables» (dulce de Navidad con sus kcal reales vs
+  joya). Sirven para orgánico y para anuncios.
+- **Edu: «hay que duplicar la subida de contenido diaria» → 2 publicaciones al día (12:30 y 19:30) del 10 al 20-nov,
+  manteniendo el 80 % Collar Signé.** Plan propuesto, **falta el OK de Edu**. Primera pieza: reel gratis «Escribe su
+  nombre» (grabación de la vista previa) el 10-nov 12:30. Nuevas: carrusel «3 pasos» (13), kcal (14), meses de invierno
+  (15), «Un collar para cada una» + reel (16), Signé plateado (17), prospecto + reel kcal (19), meses de primavera (20).
+  Reutilizadas: reel madre e hija (11), «Lo sentimos, mamá» (12), reel dos hijas (14), «Cinco relojes» (18). Coste ~3-4 $.
+  **Programar desde `D:\LUNERIE`.**
+- **Historias con 8-10 visualizaciones (Edu):** normal, los ~700 seguidores son de la cuenta antigua y no buscan joyas;
+  las historias solo llegan a quien ya te sigue. Consejo dado: **campaña de tráfico NO** (clics baratos que no compran y
+  quita dinero a la de ventas). **Campaña de seguidores SÍ, pequeña y de prueba, DESPUÉS del 11-nov** (cuando se decida la
+  de ventas): objetivo Interacción → visitas al perfil de Instagram, **5 €/día × 5 días (25 €)**, con el **vídeo de Carmen
+  (anuncio 18)**, mujeres en España con interés en joyas/regalos; **parar si cada seguidor sale a más de ~0,30-0,40 €**.
+  Gratis: reels (lo único que llega a no seguidores), historias con pegatinas (encuesta «¿En qué mes naciste?», preguntas)
+  y contestar comentarios en la primera hora. Edu aún no ha dicho si la monta.
+- **11-nov:** parar a mano la campaña de Black Friday hacia ~220 € y decidir con la regla (CPA ≤ ~30 € seguir a 35 €/día;
+  ≥ ~50 € parar y revisar ficha y oferta); entran los anuncios 23-26 si sigue; y valorar la de seguidores.
 **6-nov: PRIMERA VENTA REAL**, pedido **#LUN1004**: Collar Signé dorado, mes de diciembre (lágrima azul), 49,95 €, pagado
 con Shopify Payments. Viene de Meta, **anuncio 18** (`utm_content` collar-carmen, el vídeo de Carmen con música). Edu hace
 él mismo el pedido al proveedor, **QIUHAN**, que el 6-nov lo confirmó todo: 13,22 $ por pedido con envío **con impuestos

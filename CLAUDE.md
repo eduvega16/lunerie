@@ -623,6 +623,7 @@ URL exacta de `creatividades-urls.json` (no inventarse el final: falla con «Una
 → `ads_create_creative` con `placement_customizations` (4:5 de reserva + 9:16 en story/reels) → `ads_create_ad` (queda en
 borrador) → `ads_activate_entity` con `object_ids` de los anuncios nuevos (no publica las recomendaciones a medias). Shopify 9-nov (hasta media mañana): 19 sesiones, 6 con carrito, 2 al
 pago (antes ~1 de cada 5), aún pocos datos. Las 2 recomendaciones de Meta a medias (anuncios 14 y 3) siguen sin publicar.
+**9-nov, anuncios MOFU/BOFU PREPARADOS (Edu: «dale caña»), SIN SUBIR:** 23 estático de cierre, 24 carrusel de dudas y 25 grabación de pantalla de la vista previa del nombre (`marca/grabar_vista_previa.py` → `marca/mofu_bofu.py`, sin IA; textos en `anuncios/campana-black-friday.md`). **Entran el 11-nov con la revisión, si Edu da el OK.** ffmpeg en este PC: `imageio_ffmpeg.get_ffmpeg_exe()` (pip `imageio-ffmpeg`; no está en el PATH).
 **9-nov, cesta (EN PRODUCCIÓN, OK de Edu, probado en lunerie.es), tras un análisis de otro Claude que trajo Edu:**
 (1) **Las 12 variantes doradas del Collar Signé comparten la foto de la lágrima verde** (y las plateadas otra), así que en la
 cesta un collar de diciembre salía con piedra verde → ahora la cesta y el cajón enseñan **la gota del mes elegido**

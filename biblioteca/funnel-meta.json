@@ -6,26 +6,67 @@
   {
    "fase": "TOFU · Descubrimiento",
    "objetivo": "Captar atención, generar awareness, atraer tráfico frío.",
-   "tipos_de_anuncio": ["Problema → solución", "3 errores comunes", "Gancho de dolor o deseo", "Contenido educativo", "Nosotros vs ellos (suave)", "Autoridad / insight"],
-   "formatos": ["UGC corto", "Reel nativo", "Founder speaking", "Carrusel", "Imagen + gancho"],
+   "tipos_de_anuncio": [
+    "Problema → solución",
+    "3 errores comunes",
+    "Gancho de dolor o deseo",
+    "Contenido educativo",
+    "Nosotros vs ellos (suave)",
+    "Autoridad / insight"
+   ],
+   "formatos": [
+    "UGC corto",
+    "Reel nativo",
+    "Founder speaking",
+    "Carrusel",
+    "Imagen + gancho"
+   ],
    "cta": "Suave: ver más, descubrir, ir a la web.",
    "en_lunerie": "Ya cubierto: 18 «Carmen luz dorada» (UGC corto, el que vende) y 21/22 vídeos de familia (UGC + gancho «para tu hija»)."
   },
   {
    "fase": "MOFU · Consideración",
    "objetivo": "Educar, dar confianza, mover a la consideración.",
-   "tipos_de_anuncio": ["3 razones para comprar", "Caso de éxito", "Testimonial", "Demostración", "Objeciones frecuentes", "Método paso a paso", "Comparativa / prueba"],
-   "formatos": ["UGC con storytelling", "VSL corta", "Grabación de pantalla", "Antes / después", "Carrusel con prueba social", "Review"],
+   "tipos_de_anuncio": [
+    "3 razones para comprar",
+    "Caso de éxito",
+    "Testimonial",
+    "Demostración",
+    "Objeciones frecuentes",
+    "Método paso a paso",
+    "Comparativa / prueba"
+   ],
+   "formatos": [
+    "UGC con storytelling",
+    "VSL corta",
+    "Grabación de pantalla",
+    "Antes / después",
+    "Carrusel con prueba social",
+    "Review"
+   ],
    "cta": "Media: ver más, saber cómo funciona.",
-   "en_lunerie": "NOS FALTA. Ideas verdaderas: carrusel «Así se hace tu collar» (escribes su nombre → eliges su lágrima → se hace en 3-5 días → foto real antes de enviarlo); carrusel de dudas (¿y si me equivoco con el nombre? lo revisas antes de pagar; ¿garantía? 3 años; ¿cómo es de cerca? foto real de #LUN1004); grabación de pantalla de la ficha escribiendo un nombre en la vista previa en letra de firma."
+   "en_lunerie": "NOS FALTA. Ideas verdaderas: carrusel «Así se hace tu collar» (escribes su nombre → eliges su lágrima → se hace en 3-5 días → foto real antes de enviarlo); carrusel de dudas (¿y si me equivoco con el nombre? lo revisas antes de pagar; ¿garantía? 3 años; ¿cómo es de cerca? foto real de #LUN1004); grabación de pantalla de la ficha escribiendo un nombre en la vista previa en letra de firma. HECHOS el 9-nov (sin subir, entran el 11-nov con el OK de Edu): 24 carrusel de dudas y 25 grabación de la vista previa (anuncios/campana-black-friday.md)."
   },
   {
    "fase": "BOFU · Conversión",
    "objetivo": "Cerrar la venta con quien ya ha mostrado interés.",
-   "tipos_de_anuncio": ["Oferta directa", "Prueba social fuerte", "Manejo de objeciones", "Garantía", "Escasez", "Retargeting"],
-   "formatos": ["Testimonial directo", "Founder close", "Oferta con bullets", "Anuncio estático con CTA", "Remarketing"],
+   "tipos_de_anuncio": [
+    "Oferta directa",
+    "Prueba social fuerte",
+    "Manejo de objeciones",
+    "Garantía",
+    "Escasez",
+    "Retargeting"
+   ],
+   "formatos": [
+    "Testimonial directo",
+    "Founder close",
+    "Oferta con bullets",
+    "Anuncio estático con CTA",
+    "Remarketing"
+   ],
    "cta": "Fuerte: comprar, empezar hoy.",
-   "en_lunerie": "Es NUESTRO ATASCO (muchos carritos, pocas compras). Advantage+ ya enseña anuncios a quien visitó la web, pero no con un mensaje de cierre. Idea: estático «Su nombre, su piedra · 2.º al 50 % · 3.º gratis · Garantía 3 años · Hasta el 5 de diciembre» (fecha real del Black Friday) y, cuando haya opiniones reales del collar, testimonial directo. Retargeting aparte solo si el público (visitas/carritos 14 días) es suficiente."
+   "en_lunerie": "Es NUESTRO ATASCO (muchos carritos, pocas compras). Advantage+ ya enseña anuncios a quien visitó la web, pero no con un mensaje de cierre. Idea: estático «Su nombre, su piedra · 2.º al 50 % · 3.º gratis · Garantía 3 años · Hasta el 5 de diciembre» (fecha real del Black Friday) y, cuando haya opiniones reales del collar, testimonial directo. Retargeting aparte solo si el público (visitas/carritos 14 días) es suficiente. HECHO el 9-nov (sin subir): 23 estático de cierre."
   }
  ]
 }

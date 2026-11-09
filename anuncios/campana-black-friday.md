@@ -150,6 +150,30 @@ que no existe). Mismos clips, voz, música, texto y título que el 18, pero con 
 > ¿Tienes dos hijas? Tres Collares Signé, cada uno con su nombre en letra de firma y la lágrima de su mes. Por Black Friday,
 > el tercero es gratis: los tres por 99,90 €.
 
+**23, 24 y 25 · MOFU y BOFU del Collar Signé (9-nov, PREPARADOS, SIN SUBIR).** Salen del embudo TOFU/MOFU/BOFU
+(`biblioteca/funnel-meta.json`): el 18, 21 y 22 atraen (TOFU) y faltaba quitar dudas (MOFU) y cerrar (BOFU), que es donde
+se atasca (muchos carritos, pocas compras). Sin créditos de IA: `python marca/grabar_vista_previa.py [Nombre] [Mes]`
+(capturas de la ficha real en el móvil) → `python marca/mofu_bofu.py`. **Entran con la revisión del 11-nov y el OK de Edu**,
+para no mezclarlos con la medición de la cesta nueva. Destino `/products/collar-signe`, sin declarar IA.
+- **23 · Cierre (BOFU)** · estático `23-cierre-4x5.jpg` + `-9x16.jpg` · botón «Comprar» · `utm_content=collar-cierre` ·
+  título *Collar Signé · 49,95 €*
+> Su nombre en letra de firma y la lágrima de su mes. Por Black Friday, la 2.ª pieza al 50 % y la 3.ª, gratis: dos collares
+> por 74,93 € o tres por 99,90 €. Hasta el 5 de diciembre. Garantía de 3 años y envío gratis a península.
+- **24 · Dudas (MOFU)** · carrusel de 6 tarjetas 4:5 `24-dudas-1..6.jpg` (portada · ¿y si me equivoco con el nombre? ·
+  ¿qué piedra? · ¿cuánto tarda? · ¿y si algo no está bien? · la oferta) · botón «Más información» · `utm_content=collar-dudas`
+  · título *Collar Signé · 49,95 €*. Subir antes cada foto con `ads_creative_upload_media` y usar `image_hash`.
+> Lo que más nos preguntáis antes de regalarlo: el nombre lo ves escrito antes de pagar, la lágrima es la de su mes, sale en
+> 3-5 días laborables y tiene 3 años de garantía.
+- **25 · Vista previa (MOFU)** · grabación de pantalla 11 s `25-vista-previa-9x16.mp4` + `-4x5.mp4` (elegir la piedra →
+  escribir «Carmen» → «Revísalo antes de pagar» → tarjeta de cierre), sin sonido (música de Meta) · botón «Comprar» ·
+  `utm_content=collar-vista-previa` · título *Escribe su nombre y míralo*
+> Escribe su nombre y míralo en letra de firma antes de pagar. Elige la lágrima de su mes y listo: se hace tal cual lo
+> escribes y sale en 3-5 días laborables. Por Black Friday, la 2.ª pieza al 50 %.
+- **No dicen:** la suma de plazos ni fechas, «se graba a mano», material o «no se oscurece» (sin confirmar por QIUHAN), ni
+  que la letra de la vista previa sea la exacta (es «orientativa», y sale escrito en la captura).
+- Pendiente con la foto real de QIUHAN (#LUN1004): el carrusel «Así se hace tu collar» (escribes → eliges → se hace → foto
+  antes de enviarlo), si Edu decide prometer esa foto a las clientas.
+
 Si cambia un precio: `preparar.py` + volver a grabar los vídeos, y cambiar el precio en estos textos («desde 19,95 €»
 del 10 es el más barato de la tienda hoy: aros Boucle y anillo Duo).
 

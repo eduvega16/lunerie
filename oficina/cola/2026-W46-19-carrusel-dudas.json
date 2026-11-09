@@ -1,0 +1,57 @@
+{
+  "id": "2026-W46-19-carrusel-dudas",
+  "estado": "revisado",
+  "plataforma": "instagram",
+  "formato": "carrusel",
+  "pieza": "collar-signe",
+  "fecha_sugerida": "2026-11-13T12:30:00+01:00",
+  "gancho": "Lo que más nos preguntáis antes de regalarlo (anuncio 24).",
+  "copy": "Lo que más nos preguntáis antes de regalar el Collar Signé.\n\nEl nombre lo ves escrito antes de pagar, la lágrima es la de su mes, sale en 3-5 días laborables y tiene 3 años de garantía.\n\nHasta el 5 de diciembre, la 2.ª pieza al 50 % y la 3.ª, gratis.\n\nLo tienes en el enlace del perfil.",
+  "hashtags": [
+    "#collarconnombre",
+    "#regaloparaella",
+    "#lunerie"
+  ],
+  "guion": [
+    {
+      "segundos": "todo",
+      "imagen": "Lo que más nos preguntáis antes de regalarlo (anuncio 24).",
+      "texto_en_pantalla": "",
+      "voz": ""
+    }
+  ],
+  "assets": {
+    "existentes": [
+      "marca/fotos-ia/campana-bf/24-dudas-1.jpg",
+      "marca/fotos-ia/campana-bf/24-dudas-2.jpg",
+      "marca/fotos-ia/campana-bf/24-dudas-3.jpg",
+      "marca/fotos-ia/campana-bf/24-dudas-4.jpg",
+      "marca/fotos-ia/campana-bf/24-dudas-5.jpg",
+      "marca/fotos-ia/campana-bf/24-dudas-6.jpg"
+    ],
+    "generar": []
+  },
+  "musica": {
+    "origen": "ninguna",
+    "pista": "",
+    "licencia": "Sale sin sonido: la API de Instagram no pone música."
+  },
+  "montaje": [
+    "python marca/mofu_bofu.py"
+  ],
+  "publicacion": {
+    "archivos": [
+      "marca/fotos-ia/campana-bf/24-dudas-1.jpg",
+      "marca/fotos-ia/campana-bf/24-dudas-2.jpg",
+      "marca/fotos-ia/campana-bf/24-dudas-3.jpg",
+      "marca/fotos-ia/campana-bf/24-dudas-4.jpg",
+      "marca/fotos-ia/campana-bf/24-dudas-5.jpg",
+      "marca/fotos-ia/campana-bf/24-dudas-6.jpg"
+    ],
+    "urls": [],
+    "alt_text": "Seis tarjetas con las dudas más frecuentes sobre el Collar Signé: el nombre, la piedra, el plazo, la garantía y la oferta.",
+    "ia": true
+  },
+  "origen": "Plan de 2 publicaciones al día del 10 al 20-nov (OK de Edu, 9-nov).",
+  "riesgos": "Nombres revisados a tamaño real; sin nombres de gemas ni material sin confirmar."
+}

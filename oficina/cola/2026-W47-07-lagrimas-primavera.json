@@ -1,0 +1,47 @@
+{
+  "id": "2026-W47-07-lagrimas-primavera",
+  "estado": "revisado",
+  "plataforma": "instagram",
+  "formato": "foto",
+  "pieza": "collar-signe",
+  "fecha_sugerida": "2026-11-20T12:30:00+01:00",
+  "gancho": "Las lágrimas de la primavera: marzo azul agua, abril blanco, mayo verde.",
+  "copy": "¿Naciste en primavera?\n\nMarzo, azul agua. Abril, blanco. Mayo, verde. Cuéntanos en comentarios de qué mes es ella.\n\nCollar Signé: su nombre en letra de firma y la lágrima de su mes, 49,95 €. Los colores en pantalla son orientativos.\n\nHasta el 5 de diciembre, la 2.ª pieza al 50 % y la 3.ª, gratis.\n\nLo tienes en el enlace del perfil.",
+  "hashtags": [
+    "#collarconnombre",
+    "#regaloparaella",
+    "#lunerie"
+  ],
+  "guion": [
+    {
+      "segundos": "todo",
+      "imagen": "Las lágrimas de la primavera: marzo azul agua, abril blanco, mayo verde.",
+      "texto_en_pantalla": "",
+      "voz": ""
+    }
+  ],
+  "assets": {
+    "existentes": [
+      "marca/fotos-ia/meses/primavera.jpg"
+    ],
+    "generar": []
+  },
+  "musica": {
+    "origen": "ninguna",
+    "pista": "",
+    "licencia": "Sale sin sonido: la API de Instagram no pone música."
+  },
+  "montaje": [
+    "python marca/meses.py"
+  ],
+  "publicacion": {
+    "archivos": [
+      "marca/fotos-ia/meses/primavera.jpg"
+    ],
+    "urls": [],
+    "alt_text": "Tres lágrimas de circonita sobre fondo claro: marzo azul agua, abril blanco y mayo verde. Texto: Las lágrimas de la primavera. ¿Cuál es la suya?",
+    "ia": false
+  },
+  "origen": "Plan de 2 publicaciones al día del 10 al 20-nov (OK de Edu, 9-nov).",
+  "riesgos": "Nombres revisados a tamaño real; sin nombres de gemas ni material sin confirmar."
+}

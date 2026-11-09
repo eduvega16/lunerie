@@ -1,0 +1,47 @@
+{
+  "id": "2026-W47-03-reel-cierre",
+  "estado": "revisado",
+  "plataforma": "instagram",
+  "formato": "reel",
+  "pieza": "collar-signe",
+  "fecha_sugerida": "2026-11-17T12:30:00+01:00",
+  "gancho": "El collar baja como si lo bajara una mano, rebota y entra el texto del cierre (anuncio 23 animado).",
+  "copy": "Su nombre, su piedra.\n\nCollar Signé en dorado o plateado, 49,95 €. Dos por 74,93 € o tres por 99,90 € hasta el 5 de diciembre. Garantía de 3 años y envío gratis a península.\n\nLo tienes en el enlace del perfil.",
+  "hashtags": [
+    "#collarconnombre",
+    "#regaloparaella",
+    "#lunerie"
+  ],
+  "guion": [
+    {
+      "segundos": "todo",
+      "imagen": "El collar baja como si lo bajara una mano, rebota y entra el texto del cierre (anuncio 23 animado).",
+      "texto_en_pantalla": "",
+      "voz": ""
+    }
+  ],
+  "assets": {
+    "existentes": [
+      "23-cierre-anim-9x16.mp4"
+    ],
+    "generar": []
+  },
+  "musica": {
+    "origen": "ninguna",
+    "pista": "",
+    "licencia": "Sale sin sonido: la API de Instagram no pone música."
+  },
+  "montaje": [
+    "python marca/cierre_animado.py"
+  ],
+  "publicacion": {
+    "archivos": [],
+    "urls": [
+      "https://cdn.shopify.com/videos/c/vp/1a8546931c4346e18397c63d939106e5/1a8546931c4346e18397c63d939106e5.HD-1080p-2.5Mbps-100607167.mp4"
+    ],
+    "alt_text": "",
+    "ia": true
+  },
+  "origen": "Plan de 2 publicaciones al día del 10 al 20-nov (OK de Edu, 9-nov).",
+  "riesgos": "Nombres revisados a tamaño real; sin nombres de gemas ni material sin confirmar."
+}

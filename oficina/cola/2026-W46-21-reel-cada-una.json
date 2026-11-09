@@ -1,0 +1,47 @@
+{
+  "id": "2026-W46-21-reel-cada-una",
+  "estado": "revisado",
+  "plataforma": "instagram",
+  "formato": "reel",
+  "pieza": "collar-signe",
+  "fecha_sugerida": "2026-11-16T12:30:00+01:00",
+  "gancho": "Un collar para cada una: Marta, Elena, Sara y Laura en círculo sobre terciopelo verde.",
+  "copy": "Uno para mamá, otro para tu hermana, otro para tu mejor amiga… y uno para ti.\n\nCollar Signé, cada uno con su nombre y la lágrima de su mes. Hasta el 5 de diciembre, la 2.ª pieza al 50 % y la 3.ª, gratis.\n\nLo tienes en el enlace del perfil.",
+  "hashtags": [
+    "#collarconnombre",
+    "#regaloparaella",
+    "#lunerie"
+  ],
+  "guion": [
+    {
+      "segundos": "todo",
+      "imagen": "Un collar para cada una: Marta, Elena, Sara y Laura en círculo sobre terciopelo verde.",
+      "texto_en_pantalla": "",
+      "voz": ""
+    }
+  ],
+  "assets": {
+    "existentes": [
+      "28-cada-una-9x16.mp4"
+    ],
+    "generar": []
+  },
+  "musica": {
+    "origen": "ninguna",
+    "pista": "",
+    "licencia": "Sale sin sonido: la API de Instagram no pone música."
+  },
+  "montaje": [
+    "python marca/reel_cada_una.py"
+  ],
+  "publicacion": {
+    "archivos": [],
+    "urls": [
+      "https://cdn.shopify.com/videos/c/vp/69f3252501534cf88937bb4273b02ca3/69f3252501534cf88937bb4273b02ca3.HD-1080p-7.2Mbps-100607056.mp4"
+    ],
+    "alt_text": "",
+    "ia": true
+  },
+  "origen": "Plan de 2 publicaciones al día del 10 al 20-nov (OK de Edu, 9-nov).",
+  "riesgos": "Nombres revisados a tamaño real; sin nombres de gemas ni material sin confirmar."
+}

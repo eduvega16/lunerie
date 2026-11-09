@@ -1,0 +1,47 @@
+{
+  "id": "2026-W46-20-lagrimas-invierno",
+  "estado": "revisado",
+  "plataforma": "instagram",
+  "formato": "foto",
+  "pieza": "collar-signe",
+  "fecha_sugerida": "2026-11-15T12:30:00+01:00",
+  "gancho": "Las lágrimas del invierno: diciembre azul, enero rojo oscuro, febrero morado.",
+  "copy": "¿Naciste en invierno?\n\nDiciembre, azul. Enero, rojo oscuro. Febrero, morado. Cuéntanos en comentarios de qué mes es ella.\n\nCollar Signé: su nombre en letra de firma y la lágrima de su mes, 49,95 €. Los colores en pantalla son orientativos.\n\nHasta el 5 de diciembre, la 2.ª pieza al 50 % y la 3.ª, gratis.\n\nLo tienes en el enlace del perfil.",
+  "hashtags": [
+    "#collarconnombre",
+    "#regaloparaella",
+    "#lunerie"
+  ],
+  "guion": [
+    {
+      "segundos": "todo",
+      "imagen": "Las lágrimas del invierno: diciembre azul, enero rojo oscuro, febrero morado.",
+      "texto_en_pantalla": "",
+      "voz": ""
+    }
+  ],
+  "assets": {
+    "existentes": [
+      "marca/fotos-ia/meses/invierno.jpg"
+    ],
+    "generar": []
+  },
+  "musica": {
+    "origen": "ninguna",
+    "pista": "",
+    "licencia": "Sale sin sonido: la API de Instagram no pone música."
+  },
+  "montaje": [
+    "python marca/meses.py"
+  ],
+  "publicacion": {
+    "archivos": [
+      "marca/fotos-ia/meses/invierno.jpg"
+    ],
+    "urls": [],
+    "alt_text": "Tres lágrimas de circonita sobre fondo claro: diciembre azul, enero rojo oscuro y febrero morado. Texto: Las lágrimas del invierno. ¿Cuál es la suya?",
+    "ia": false
+  },
+  "origen": "Plan de 2 publicaciones al día del 10 al 20-nov (OK de Edu, 9-nov).",
+  "riesgos": "Nombres revisados a tamaño real; sin nombres de gemas ni material sin confirmar."
+}

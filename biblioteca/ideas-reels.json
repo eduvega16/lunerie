@@ -1,62 +1,72 @@
 {
- "para_que_sirve": "Reels y vídeos vistos por Edu que se pueden adaptar a Lunerie (orgánico y anuncios). Cada idea, con lo que hace falta para hacerla y su coste.",
- "reglas_lunerie": [
-  "Lo que se hace pasar por real (manos de clienta, «lo-fi», UGC) tiene que ser real: grabado por Edu o por las amigas con las muestras.",
-  "Las fotos y vídeos de IA, siempre a partir de fotos REALES de la pieza (marca/referencias-reales/) y marcados como hechos con IA al publicar.",
-  "Nada de sorteos ni premios sin bases legales."
- ],
- "ideas": [
-  {
-   "id": "limpiar-camara",
-   "fuente": "@mobellajoyeria (Instagram, reel), captura 4 nov 2026",
-   "numeros": "2.264 me gusta, 11 comentarios, 3.604 envíos",
-   "como_es": "Primer plano borroso de un dedo tapando la cámara con el texto «Déjame limpiar mi cámara…» → se aparta y aparece la muñeca con 4 pulseras, texto «Mucho mejor…». Audio: «Ring My Bell» (Anita Ward). Instagram ofrece «Usar plantilla» (mismo audio y cortes).",
-   "lunerie": "Edu o una amiga: dedo limpiando la cámara → muñeca con el Lune (y el anillo Nuit si hay muestra). Con la plantilla de Instagram desde el móvil: la música va con licencia de Instagram.",
-   "hace_falta": "Grabación real con la muestra del Lune (Edu la tiene). 10 segundos.",
-   "coste": "0 €",
-   "prioridad": "alta"
-  },
-  {
-   "id": "storyboard-ugc",
-   "fuente": "@star.rreyai (Instagram, reel «Hecho con Edits», contenido generado con IA), capturas 26 oct y 4 nov 2026",
-   "numeros": "1.003 me gusta, 344 comentarios, 2.121 envíos (pide comentar «AI» para la guía)",
-   "como_es": "Dos pasos con IA. 1) Imagen 9:16 con 6 escenas tipo storyboard del producto (un collar de un solo brillante sobre tela de satén, en la palma de la mano: «Scene 3 – On hand», un primer plano…). Prompt: «Create a UGC style storyboard of the product on the material, handheld, create in six scenes and use a 9:16 frame». 2) Vídeo a partir del storyboard. Prompt: «Create a high end UGC style video of the uploaded product, using the exact storyboard sequence, no voiceover».",
-   "lunerie": "Collar Signé o Collar Lune sobre satén crema, en la mano, de cerca y puesto; o el Lune. Siempre con las fotos reales como referencia.",
-   "hace_falta": "1 imagen (storyboard) + 1 vídeo. La herramienta del reel no se ve en la captura; con la API de Higgsfield: flare para la imagen y Kling para el vídeo.",
-   "coste": "~0,17 $ la imagen en 4K; el vídeo, por confirmar (Kling 3.0 pro en la web: 7 créditos por 4 s)",
-   "prioridad": "media (ya apuntada el 29-oct en CLAUDE.md, sin probar)"
-  },
-  {
-   "id": "pausa-justo",
-   "fuente": "@robertmckeaveney (Instagram, reel), captura 4 nov 2026",
-   "numeros": "151 mil me gusta, 973 comentarios, 62,2 mil envíos",
-   "como_es": "Reto «Only 1% can pause at the right time!»: un vídeo rápido con una silueta roja; hay que parar el vídeo en el fotograma exacto en que la persona encaja («SOOOO CLOSE, 1 frame off»). Engancha porque obliga a volver a verlo y a mandarlo.",
-   "lunerie": "«Solo el 1 % consigue parar el vídeo cuando las agujas marcan las 10:10», con las agujas del Lune girando rápido; o «para el vídeo cuando el reloj encaje en la silueta».",
-   "hace_falta": "Montaje con ffmpeg (marca/montaje.py) o animación por código a partir de las fotos de producto.",
-   "coste": "0 €",
-   "prioridad": "media (orgánico, para alcance; no para vender)",
-   "nota": "Sin premio: si se promete algo a quien lo consiga, es un sorteo y necesita bases legales."
-  },
-  {
-   "id": "comenta-palabra",
-   "fuente": "@noisy.ia («Comenta “Repo”»), @lucasacosta.ia («Comentá SKILLS»), @star.rreyai («Comment “AI”»), capturas 29 oct y 4 nov 2026",
-   "numeros": "@lucasacosta.ia: 3.826 me gusta y 2.820 comentarios",
-   "como_es": "El pie del post pide comentar una palabra y la cuenta responde por mensaje directo con una guía o lista. Dispara los comentarios (y el alcance).",
-   "lunerie": "«Comenta REGALO y te mando la guía de regalos de menos de 40 €» (la cuadrícula de campana_bf.py como PDF o carrusel).",
-   "hace_falta": "Contestar los mensajes: a mano (skill ig-dm) o con una app de respuestas automáticas (ManyChat o similar, sin instalar).",
-   "coste": "0 € a mano",
-   "prioridad": "media"
-  },
-  {
-   "id": "mensaje-tapado",
-   "fuente": "Reel de @thebranding.ai «She hit 16 million views using these» (enlace de Edu, 9-nov-2026; visto con los subtítulos fotograma a fotograma, sin audio). Analiza un reel de @viki__muse con 16 millones de visitas.",
-   "numeros": "16 millones de visitas el reel analizado (dato de @thebranding.ai, sin comprobar)",
-   "como_es": "Dos disparadores: (1) HUECO DE CURIOSIDAD: el vídeo empieza con un mensaje en pantalla tapado o «roto» (ella pone la mano delante de la cámara y el texto «You're a queen» queda medio escondido) y el cerebro se queda para ver qué pone. (2) CONFUSIÓN COMPARTIDA: una escena rara (un grupo de gente mirando a cámara) que no se entiende; esperas a ver si lo revelan, y el mensaje final («See you Sunday!») es la recompensa. La fórmula: algo que dé la curiosidad justa para esperar hasta el final. Remata con «Comenta HOOKS» y les manda una lista por mensaje directo.",
-   "lunerie": "Encaja perfecto con el Collar Signé, porque lo que se esconde es EL NOMBRE: (a) una mano cerrada (o el collar desenfocado) tapa el nombre y se va abriendo hasta leer «Carmen» con su lágrima; texto arriba «¿Qué nombre llevará?»; (b) el collar baja como en el anuncio 23 (marca/cierre_animado.py) con el nombre borroso y se enfoca al pararse; (c) reel «Comenta tu mes» (17-nov): la lágrima tapada y se revela la de cada mes. Verdadero si el nombre y la pieza son los reales de la foto.",
-   "hace_falta": "Animación con la foto real (gratis, como cierre_animado.py) o una mano real de Edu/amiga con la muestra «Marta». Para «Comenta X», contestar a mano.",
-   "coste": "0 € con la foto real",
-   "prioridad": "alta",
-   "hecho": "9-nov: opción B hecha (OK de Edu) → marca/reel_nombre_tapado.py → campana-bf/26-nombre-tapado-9x16/4x5.mp4 (8,5 s, sin sonido)."
-  }
- ]
+  "para_que_sirve": "Reels y vídeos vistos por Edu que se pueden adaptar a Lunerie (orgánico y anuncios). Cada idea, con lo que hace falta para hacerla y su coste.",
+  "reglas_lunerie": [
+    "Lo que se hace pasar por real (manos de clienta, «lo-fi», UGC) tiene que ser real: grabado por Edu o por las amigas con las muestras.",
+    "Las fotos y vídeos de IA, siempre a partir de fotos REALES de la pieza (marca/referencias-reales/) y marcados como hechos con IA al publicar.",
+    "Nada de sorteos ni premios sin bases legales."
+  ],
+  "ideas": [
+    {
+      "id": "limpiar-camara",
+      "fuente": "@mobellajoyeria (Instagram, reel), captura 4 nov 2026",
+      "numeros": "2.264 me gusta, 11 comentarios, 3.604 envíos",
+      "como_es": "Primer plano borroso de un dedo tapando la cámara con el texto «Déjame limpiar mi cámara…» → se aparta y aparece la muñeca con 4 pulseras, texto «Mucho mejor…». Audio: «Ring My Bell» (Anita Ward). Instagram ofrece «Usar plantilla» (mismo audio y cortes).",
+      "lunerie": "Edu o una amiga: dedo limpiando la cámara → muñeca con el Lune (y el anillo Nuit si hay muestra). Con la plantilla de Instagram desde el móvil: la música va con licencia de Instagram.",
+      "hace_falta": "Grabación real con la muestra del Lune (Edu la tiene). 10 segundos.",
+      "coste": "0 €",
+      "prioridad": "alta"
+    },
+    {
+      "id": "storyboard-ugc",
+      "fuente": "@star.rreyai (Instagram, reel «Hecho con Edits», contenido generado con IA), capturas 26 oct y 4 nov 2026",
+      "numeros": "1.003 me gusta, 344 comentarios, 2.121 envíos (pide comentar «AI» para la guía)",
+      "como_es": "Dos pasos con IA. 1) Imagen 9:16 con 6 escenas tipo storyboard del producto (un collar de un solo brillante sobre tela de satén, en la palma de la mano: «Scene 3 – On hand», un primer plano…). Prompt: «Create a UGC style storyboard of the product on the material, handheld, create in six scenes and use a 9:16 frame». 2) Vídeo a partir del storyboard. Prompt: «Create a high end UGC style video of the uploaded product, using the exact storyboard sequence, no voiceover».",
+      "lunerie": "Collar Signé o Collar Lune sobre satén crema, en la mano, de cerca y puesto; o el Lune. Siempre con las fotos reales como referencia.",
+      "hace_falta": "1 imagen (storyboard) + 1 vídeo. La herramienta del reel no se ve en la captura; con la API de Higgsfield: flare para la imagen y Kling para el vídeo.",
+      "coste": "~0,17 $ la imagen en 4K; el vídeo, por confirmar (Kling 3.0 pro en la web: 7 créditos por 4 s)",
+      "prioridad": "media (ya apuntada el 29-oct en CLAUDE.md, sin probar)"
+    },
+    {
+      "id": "pausa-justo",
+      "fuente": "@robertmckeaveney (Instagram, reel), captura 4 nov 2026",
+      "numeros": "151 mil me gusta, 973 comentarios, 62,2 mil envíos",
+      "como_es": "Reto «Only 1% can pause at the right time!»: un vídeo rápido con una silueta roja; hay que parar el vídeo en el fotograma exacto en que la persona encaja («SOOOO CLOSE, 1 frame off»). Engancha porque obliga a volver a verlo y a mandarlo.",
+      "lunerie": "«Solo el 1 % consigue parar el vídeo cuando las agujas marcan las 10:10», con las agujas del Lune girando rápido; o «para el vídeo cuando el reloj encaje en la silueta».",
+      "hace_falta": "Montaje con ffmpeg (marca/montaje.py) o animación por código a partir de las fotos de producto.",
+      "coste": "0 €",
+      "prioridad": "media (orgánico, para alcance; no para vender)",
+      "nota": "Sin premio: si se promete algo a quien lo consiga, es un sorteo y necesita bases legales."
+    },
+    {
+      "id": "comenta-palabra",
+      "fuente": "@noisy.ia («Comenta “Repo”»), @lucasacosta.ia («Comentá SKILLS»), @star.rreyai («Comment “AI”»), capturas 29 oct y 4 nov 2026",
+      "numeros": "@lucasacosta.ia: 3.826 me gusta y 2.820 comentarios",
+      "como_es": "El pie del post pide comentar una palabra y la cuenta responde por mensaje directo con una guía o lista. Dispara los comentarios (y el alcance).",
+      "lunerie": "«Comenta REGALO y te mando la guía de regalos de menos de 40 €» (la cuadrícula de campana_bf.py como PDF o carrusel).",
+      "hace_falta": "Contestar los mensajes: a mano (skill ig-dm) o con una app de respuestas automáticas (ManyChat o similar, sin instalar).",
+      "coste": "0 € a mano",
+      "prioridad": "media"
+    },
+    {
+      "id": "mensaje-tapado",
+      "fuente": "Reel de @thebranding.ai «She hit 16 million views using these» (enlace de Edu, 9-nov-2026; visto con los subtítulos fotograma a fotograma, sin audio). Analiza un reel de @viki__muse con 16 millones de visitas.",
+      "numeros": "16 millones de visitas el reel analizado (dato de @thebranding.ai, sin comprobar)",
+      "como_es": "Dos disparadores: (1) HUECO DE CURIOSIDAD: el vídeo empieza con un mensaje en pantalla tapado o «roto» (ella pone la mano delante de la cámara y el texto «You're a queen» queda medio escondido) y el cerebro se queda para ver qué pone. (2) CONFUSIÓN COMPARTIDA: una escena rara (un grupo de gente mirando a cámara) que no se entiende; esperas a ver si lo revelan, y el mensaje final («See you Sunday!») es la recompensa. La fórmula: algo que dé la curiosidad justa para esperar hasta el final. Remata con «Comenta HOOKS» y les manda una lista por mensaje directo.",
+      "lunerie": "Encaja perfecto con el Collar Signé, porque lo que se esconde es EL NOMBRE: (a) una mano cerrada (o el collar desenfocado) tapa el nombre y se va abriendo hasta leer «Carmen» con su lágrima; texto arriba «¿Qué nombre llevará?»; (b) el collar baja como en el anuncio 23 (marca/cierre_animado.py) con el nombre borroso y se enfoca al pararse; (c) reel «Comenta tu mes» (17-nov): la lágrima tapada y se revela la de cada mes. Verdadero si el nombre y la pieza son los reales de la foto.",
+      "hace_falta": "Animación con la foto real (gratis, como cierre_animado.py) o una mano real de Edu/amiga con la muestra «Marta». Para «Comenta X», contestar a mano.",
+      "coste": "0 € con la foto real",
+      "prioridad": "alta",
+      "hecho": "9-nov: opción B hecha (OK de Edu) → marca/reel_nombre_tapado.py → campana-bf/26-nombre-tapado-9x16/4x5.mp4 (8,5 s, sin sonido)."
+    },
+    {
+      "id": "esperando-pedidos",
+      "fuente": "Reel de @eve_lives_here (plantilla de @avvnithestore), captura de Edu del 9-nov-2026: 20,9 mil me gusta, 638 comentarios, 1.964 republicaciones, 7.511 envíos.",
+      "numeros": "20,9 mil me gusta y 7.511 envíos (en la captura)",
+      "como_es": "Caja de cartón abierta con papel de seda; una mano mete una tarjeta amarilla escrita a mano «Waiting for orders! :)». Texto arriba en serif blanca: «POV: You need orders to make content but you need content to make orders». Audio de una chica llorando (de broma). Funciona por identificación: el pez que se muerde la cola de cualquier tienda pequeña; la gente lo envía y lo comenta para apoyar.",
+      "lunerie": "Verdadero: Lunerie es una tienda pequeña que empieza. Texto arriba: «POV: necesitas pedidos para hacer contenido, pero necesitas contenido para tener pedidos» (sin emoji: el audio pone el drama). Tarjeta a mano: «Esperando pedidos :)». Variante para el Collar Signé: la tarjeta pone «Esperando tu nombre :)». Pie: «La montaña rusa de una tienda pequeña. Si has llegado hasta aquí, ya nos estás ayudando.»",
+      "hace_falta": "Grabarlo de verdad con el móvil (gratis y más creíble que IA): caja de cartón, papel de seda blanco, tarjeta crema o amarilla escrita a mano con rotulador negro; plano fijo desde arriba un poco inclinado, luz de día, 6-8 s: la mano mete la tarjeta y la deja apoyada. El texto de arriba lo pone Claude con la letra de Lunerie dentro de la zona libre (y 270-1248); el audio, Edu en Instagram.",
+      "prioridad": "alta",
+      "estado": "propuesta (9-nov)"
+    }
+  ]
 }

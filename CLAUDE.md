@@ -614,8 +614,14 @@ la foto del collar antes de enviarlo y la respuesta de calidad.
 (1 carrito); el 19 y el 20 sin entrega (Meta no los enseña) → **no hay comparación de botones**. **Hecho:** anuncios **14 y
 16 en PAUSA** (comprobado) y **tope de la campaña a 270 €** (Edu pidió 250 €, pero Meta no deja bajar de 269,30 € mientras
 haya cargos pendientes; publicado solo el cambio de la campaña con `object_ids`, comprobado). **El 11-nov hay que PARARLA a
-mano al llegar a ~220 €** (lo pactado: +50 € para medir la cesta nueva con el 18) y decidir si sigue. Los 2 vídeos de familia
-siguen sin meter: Edu tiene que verlos y dar el OK. Shopify 9-nov (hasta media mañana): 19 sesiones, 6 con carrito, 2 al
+mano al llegar a ~220 €** (lo pactado: +50 € para medir la cesta nueva con el 18) y decidir si sigue. **Regla para el 11-nov:** CPA
+≤ ~30 € (con packs) → seguir a 35 €/día y escalar poco a poco; ≥ ~50 € → parar y revisar ficha y oferta antes de gastar más.
+**Vídeos de familia SUBIDOS (9-nov, OK de Edu):** anuncios **21 «UGC madre e hija»** (52567501902994) y **22 «UGC dos hijas»**
+(52567501912794) en el mismo conjunto, botón «Comprar», 4:5 + 9:16, textos con el precio del pack (74,93 € / 99,90 €);
+detalle en `anuncios/campana-black-friday.md`. Para subir vídeos a Meta: `anuncios/subir_creatividades.py <ficheros>` →
+URL exacta de `creatividades-urls.json` (no inventarse el final: falla con «Unable to fetch») → `ads_creative_upload_media`
+→ `ads_create_creative` con `placement_customizations` (4:5 de reserva + 9:16 en story/reels) → `ads_create_ad` (queda en
+borrador) → `ads_activate_entity` con `object_ids` de los anuncios nuevos (no publica las recomendaciones a medias). Shopify 9-nov (hasta media mañana): 19 sesiones, 6 con carrito, 2 al
 pago (antes ~1 de cada 5), aún pocos datos. Las 2 recomendaciones de Meta a medias (anuncios 14 y 3) siguen sin publicar.
 **9-nov, cesta (EN PRODUCCIÓN, OK de Edu, probado en lunerie.es), tras un análisis de otro Claude que trajo Edu:**
 (1) **Las 12 variantes doradas del Collar Signé comparten la foto de la lágrima verde** (y las plateadas otra), así que en la

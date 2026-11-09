@@ -139,6 +139,17 @@ que no existe). Mismos clips, voz, música, texto y título que el 18, pero con 
 - **Variante A, guardada** (`collar-ugc-silvia-hook-movil-*`): empieza con «¿Y si este año le regalas su nombre?». Edu la deja
   para cuando el proveedor confirme por escrito la calidad (material, baño, si se oscurece, agua): entonces se rehace con esos datos.
 
+**21 · Collar Signé · UGC madre e hija** y **22 · Collar Signé · UGC dos hijas** (9-nov, OK de Edu tras verlos). Vídeos de
+`marca/ugc_familia.py` con voz de Silvia y «Holiday Bells» (`marca/fotos-ia/ugc-madre-hija/` y `ugc-dos-hijas/`; copias en
+`campana-bf/21-*` y `22-*`). Objetivo: **subir el valor del pedido con la promo** (2 o 3 collares). Botón «Comprar», destino
+`/products/collar-signe`, 4:5 en el feed y 9:16 en Stories/Reels, sin declarar IA (como el resto de la campaña).
+- 21 · `utm_content=collar-madre-hija` · título *2 Collares Signé · 74,93 €*
+> Uno para ti y otro para tu hija. El Collar Signé lleva su nombre en letra de firma y una lágrima del color de su mes. Por
+> Black Friday, el segundo te sale a mitad de precio: los dos por 74,93 €.
+- 22 · `utm_content=collar-dos-hijas` · título *3 Collares Signé · 99,90 €*
+> ¿Tienes dos hijas? Tres Collares Signé, cada uno con su nombre en letra de firma y la lágrima de su mes. Por Black Friday,
+> el tercero es gratis: los tres por 99,90 €.
+
 Si cambia un precio: `preparar.py` + volver a grabar los vídeos, y cambiar el precio en estos textos («desde 19,95 €»
 del 10 es el más barato de la tienda hoy: aros Boucle y anillo Duo).
 

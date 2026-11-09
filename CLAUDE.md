@@ -510,6 +510,11 @@ aros con perla y collar de perlas «plata 925»). Plantilla `joya`, vendor Luner
       gratis a península») · descuento automático **desactivado** (no borrado) · quitado de Preguntas frecuentes y
       del ejemplo de los Términos. Volver: `True` + reactivarlo en Descuentos.
 - [x] Contraseña de la tienda **quitada** (visto el 27-oct por la noche).
+- [x] **Google Search Console verificado (9-nov)**: propiedad «Prefijo de la URL» `https://lunerie.es` con la etiqueta
+      `google-site-verification` en `snippets/meta-tags.liquid` (junto a la de Meta; no quitarla). El DNS de lunerie.es
+      está en **Piensa Solutions** (no en Shopify; solo entra Edu): si algún día se quiere la propiedad de dominio, TXT
+      nuevo sin tocar el SPF de buzondecorreo (correo de hola@). Shopify no sirve archivos HTML en la raíz. Sitemap:
+      `sitemap.xml`.
 
 > **OJO (22-oct): el conector de Shopify de claude.ai está conectado a STAR BRICK (otra tienda de Edu), no a Lunerie.**
 > Solo puede estar en una tienda a la vez. **Para Lunerie, usar SIEMPRE la CLI** (`shopify store execute -s

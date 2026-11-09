@@ -1,0 +1,31 @@
+{%- comment -%}
+  Lunerie (9-nov): foto de la cesta para el Collar Signé. Todas las variantes doradas comparten la foto de la lágrima
+  verde, así que quien elegía diciembre (azul) veía en la cesta un collar con piedra verde. Aquí se enseña la gota del
+  mes elegido (archivos de Shopify lagrima-01.png … lagrima-12.png, los mismos del panel «Elige la piedra» de la ficha).
+  Se pinta desde snippets/cart-products.liquid (Horizon, modificado). Si falta la gota, sale la foto normal.
+  Recibe: item, border_override.
+{%- endcomment -%}
+{%- liquid
+  assign meses = 'Enero,Febrero,Marzo,Abril,Mayo,Junio,Julio,Agosto,Septiembre,Octubre,Noviembre,Diciembre' | split: ','
+  assign gota = nil
+  for m in meses
+    if item.variant.title contains m
+      assign num = forloop.index | prepend: '0' | slice: -2, 2
+      assign archivo = 'lagrima-' | append: num | append: '.png'
+      assign gota = images[archivo]
+      assign mes = m
+    endif
+  endfor
+-%}
+{%- if gota -%}
+  {%- assign alt = 'Lágrima de ' | append: mes -%}
+  <span class="lu-gota-cesta border-style" style="{{ border_override }}">
+    {{- gota | image_url: height: 240 | image_tag: alt: alt, class: 'lu-gota-cesta__img', loading: 'lazy' -}}
+  </span>
+  <style>
+    .lu-gota-cesta{display:flex;align-items:center;justify-content:center;width:100%;height:100%;background:#F2F4F2}
+    .lu-gota-cesta__img{width:auto;height:62%;object-fit:contain;display:block}
+  </style>
+{%- else -%}
+  {{- item.image | image_url: width: 250 | image_tag: class: 'cart-items__media-image border-style', style: border_override -}}
+{%- endif -%}

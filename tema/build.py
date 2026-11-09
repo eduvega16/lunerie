@@ -853,7 +853,7 @@ if PROMO:
         "{%- if lu_n > 0 -%}\n"
         '<div class="lu-promo">\n'
         "  {%- if lu_n == 1 -%}\n"
-        '    <p class="lu-promo__t">Añade otra pieza y la más barata te sale al 50 %</p>\n'
+        '    <p class="lu-promo__t">Black Friday · Añade otra pieza y la más barata te sale al 50 %</p>\n'
         "    {%- assign lu_item = cart.items.first -%}{%- assign lu_m = lu_item.original_price -%}{%- assign lu_vistas = 0 -%}\n"
         '    <ul class="lu-extra" role="list">\n'
         "    {%- assign lu_lista = '" + ",".join(CESTA_EXTRA) + "' | split: ',' -%}\n"
@@ -881,9 +881,9 @@ if PROMO:
         "    {%- endfor -%}\n"
         "    </ul>\n"
         "  {%- elsif lu_n == 2 -%}\n"
-        '    <p class="lu-promo__t">Añade una tercera y la más barata te sale gratis</p>\n'
+        '    <p class="lu-promo__t">Black Friday · Añade una tercera y la más barata te sale gratis</p>\n'
         "  {%- else -%}\n"
-        '    <p class="lu-promo__t">Tu descuento ya está en la cesta</p>\n'
+        '    <p class="lu-promo__t">Black Friday · Tu descuento ya está en la cesta</p>\n'
         "  {%- endif -%}\n"
         "</div>\n"
         "<style>"
@@ -936,7 +936,10 @@ CONFIANZA = (
     "  {%- if lu_nombre -%}<p>Se hace para ti y sale en " + HECHO_COLLAR + "</p>{%- endif -%}\n"
     "  <p>Garantía de 3 años · Pago seguro</p>\n"
     "</div>\n"
-    "<style>.lu-confianza{text-align:center;font-size:.75rem;line-height:1.5;color:" + SOFT + ";margin-top:2px}"
+    # 9-nov: fuera el campo «Descuento» de la cesta (la promo se aplica sola y el campo invitaba a irse a buscar un
+    # cupón); quien tenga un código lo mete en la página de pago
+    "<style>.cart-discount{display:none!important}"
+    ".lu-confianza{text-align:center;font-size:.75rem;line-height:1.5;color:" + SOFT + ";margin-top:2px}"
     ".lu-confianza p{margin:0}</style>\n"
     "{%- endif -%}\n")
 (OUT / "codigo" / "snippets" / "lunerie-cesta-confianza.liquid").write_text(CONFIANZA, encoding="utf8")

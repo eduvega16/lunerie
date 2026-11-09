@@ -617,6 +617,16 @@ haya cargos pendientes; publicado solo el cambio de la campaña con `object_ids`
 mano al llegar a ~220 €** (lo pactado: +50 € para medir la cesta nueva con el 18) y decidir si sigue. Los 2 vídeos de familia
 siguen sin meter: Edu tiene que verlos y dar el OK. Shopify 9-nov (hasta media mañana): 19 sesiones, 6 con carrito, 2 al
 pago (antes ~1 de cada 5), aún pocos datos. Las 2 recomendaciones de Meta a medias (anuncios 14 y 3) siguen sin publicar.
+**9-nov, cesta (EN PRODUCCIÓN, OK de Edu, probado en lunerie.es), tras un análisis de otro Claude que trajo Edu:**
+(1) **Las 12 variantes doradas del Collar Signé comparten la foto de la lágrima verde** (y las plateadas otra), así que en la
+cesta un collar de diciembre salía con piedra verde → ahora la cesta y el cajón enseñan **la gota del mes elegido**
+(`snippets/lunerie-cesta-gota.liquid`, lee `lagrima-NN.png`; si falta, la foto normal), pintada desde
+**`snippets/cart-products.liquid` (otro fichero de Horizon modificado, copia en `tema/codigo/`)**. (2) Los avisos del bloque
+verde empiezan por «Black Friday · …». (3) **Fuera el campo «Descuento» de la cesta** (CSS `.cart-discount` en
+`lunerie-cesta-confianza.liquid`): la promo se aplica sola; los códigos se meten en el pago. **Descartado de ese análisis**
+(reglas de Edu): «Elaboración y envío: 7-12 días» (suma de plazos), «se graba a mano» (no es verdad: chapa de QIUHAN),
+«antes del 5-dic para Navidad» (quitado el 5-nov; si vuelve, fecha más temprana y confirmada con QIUHAN), cambiar la fecha
+del pago, Bizum (más adelante) y reenfocar el anuncio a Navidad.
 **8-nov:**
 - **Meta a las ~19:30:** 144,19 € de 200 €, ~218 clics a 0,66 €, 35 carritos, 6 pagos empezados. Shopify: 2 pedidos
   válidos (#LUN1004 y #LUN1006, 149,85 €, 4 collares; #LUN1005 reembolsado) → **~72 € por pedido** (breakeven ~21 €),

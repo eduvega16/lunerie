@@ -3,7 +3,7 @@
 {%- if lu_n > 0 -%}
 <div class="lu-promo">
   {%- if lu_n == 1 -%}
-    <p class="lu-promo__t">Añade otra pieza y la más barata te sale al 50 %</p>
+    <p class="lu-promo__t">Black Friday · Añade otra pieza y la más barata te sale al 50 %</p>
     {%- assign lu_item = cart.items.first -%}{%- assign lu_m = lu_item.original_price -%}{%- assign lu_vistas = 0 -%}
     <ul class="lu-extra" role="list">
     {%- assign lu_lista = 'aros-boucle,anillo-duo,pendientes-larme,collar-lune' | split: ',' -%}
@@ -28,9 +28,9 @@
     {%- endfor -%}
     </ul>
   {%- elsif lu_n == 2 -%}
-    <p class="lu-promo__t">Añade una tercera y la más barata te sale gratis</p>
+    <p class="lu-promo__t">Black Friday · Añade una tercera y la más barata te sale gratis</p>
   {%- else -%}
-    <p class="lu-promo__t">Tu descuento ya está en la cesta</p>
+    <p class="lu-promo__t">Black Friday · Tu descuento ya está en la cesta</p>
   {%- endif -%}
 </div>
 <style>.lu-promo{margin:0 0 16px;padding:14px 0 14px 16px;background:#006039;color:#fff;display:grid;gap:12px}.lu-promo p{margin:0;padding-right:16px}.lu-promo__t{font-size:.8125rem;letter-spacing:.08em;text-transform:uppercase}.lu-extra{list-style:none;margin:0;padding:0 16px 2px 0!important;display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}.lu-extra::-webkit-scrollbar{display:none}.lu-extra__i{flex:0 0 216px;scroll-snap-align:start}.lu-extra__f{margin:0;display:grid;grid-template-columns:64px 1fr;grid-template-rows:auto auto minmax(30px,auto) auto;column-gap:10px;row-gap:4px;align-content:start}.lu-extra__img{grid-row:1/span 4;display:block;aspect-ratio:4/5;background:#F2F4F2;overflow:hidden}.lu-extra__img img{width:100%;height:100%;object-fit:cover;display:block}.lu-extra__n{font-size:.8125rem;line-height:1.25}.lu-extra__p{font-size:.8125rem}.lu-extra__p s{opacity:.65;margin-right:4px}.lu-extra__s{font:inherit;font-size:.75rem;color:#16201B;background:#fff;border:0;border-radius:0;padding:4px 6px;width:100%;min-height:30px}.lu-extra__btn{appearance:none;border:0;border-radius:0;background:#fff;color:#006039;font:inherit;font-size:.6875rem;letter-spacing:.14em;text-transform:uppercase;padding:8px 6px;cursor:pointer;min-height:32px;grid-column:2;grid-row:4}.lu-extra__btn:disabled{opacity:.6}.lu-extra__btn:focus-visible,.lu-extra__s:focus-visible{outline:2px solid #fff;outline-offset:2px}.cart-drawer__content>.lu-promo{margin:16px var(--cart-drawer-padding,16px) 0}.cart-drawer__items{flex-shrink:0}.cart-page>.lu-promo{margin-top:16px}@media screen and (min-width:750px){.cart-page>.lu-promo{grid-column:1;grid-row:2;align-self:start}.cart-page:has(>.lu-promo)>.cart-page__items{grid-row:3}}</style>

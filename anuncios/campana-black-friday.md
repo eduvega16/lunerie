@@ -159,6 +159,7 @@ para no mezclarlos con la medición de la cesta nueva. Destino `/products/collar
   título *Collar Signé · 49,95 €*
 > Su nombre en letra de firma y la lágrima de su mes. Por Black Friday, la 2.ª pieza al 50 % y la 3.ª, gratis: dos collares
 > por 74,93 € o tres por 99,90 €. Hasta el 5 de diciembre. Garantía de 3 años y envío gratis a península.
+  **Versión animada (idea de Edu):** `23-cierre-anim-9x16.mp4` / `-4x5.mp4` (6,5 s, `python marca/cierre_animado.py`): el collar baja desde arriba como si lo bajara una mano, se para con un rebote, la lágrima se balancea y entra el texto. Es la foto real animada por partes (sin IA, el nombre no se deforma). Mismo texto y destino; si se sube, mejor como vídeo que el estático.
 - **24 · Dudas (MOFU)** · carrusel de 6 tarjetas 4:5 `24-dudas-1..6.jpg` (portada · ¿y si me equivoco con el nombre? ·
   ¿qué piedra? · ¿cuánto tarda? · ¿y si algo no está bien? · la oferta) · botón «Más información» · `utm_content=collar-dudas`
   · título *Collar Signé · 49,95 €*. Subir antes cada foto con `ads_creative_upload_media` y usar `image_hash`.

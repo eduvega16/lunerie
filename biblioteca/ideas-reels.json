@@ -55,7 +55,8 @@
    "lunerie": "Encaja perfecto con el Collar Signé, porque lo que se esconde es EL NOMBRE: (a) una mano cerrada (o el collar desenfocado) tapa el nombre y se va abriendo hasta leer «Carmen» con su lágrima; texto arriba «¿Qué nombre llevará?»; (b) el collar baja como en el anuncio 23 (marca/cierre_animado.py) con el nombre borroso y se enfoca al pararse; (c) reel «Comenta tu mes» (17-nov): la lágrima tapada y se revela la de cada mes. Verdadero si el nombre y la pieza son los reales de la foto.",
    "hace_falta": "Animación con la foto real (gratis, como cierre_animado.py) o una mano real de Edu/amiga con la muestra «Marta». Para «Comenta X», contestar a mano.",
    "coste": "0 € con la foto real",
-   "prioridad": "alta"
+   "prioridad": "alta",
+   "hecho": "9-nov: opción B hecha (OK de Edu) → marca/reel_nombre_tapado.py → campana-bf/26-nombre-tapado-9x16/4x5.mp4 (8,5 s, sin sonido)."
   }
  ]
 }

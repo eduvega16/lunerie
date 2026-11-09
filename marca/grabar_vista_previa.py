@@ -43,7 +43,7 @@ with sync_playwright() as p:
     foto(1.2, "piedra")
     pg.locator("[data-lu-abrir]").first.tap()
     pg.wait_for_timeout(700)
-    foto(1.4, "piedra")
+    foto(1.4, "panel")
     pg.locator(f'[data-lu-mes="{MES}"]').first.tap()
     pg.wait_for_timeout(900)
     foto(1.0, "piedra")

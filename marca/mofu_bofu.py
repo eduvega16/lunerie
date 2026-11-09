@@ -99,11 +99,11 @@ def guardar(im, nombre):
 def cierre(w, h):
     im = Image.new("RGB", (w, h), FONDO)
     d = ImageDraw.Draw(im)
-    if h > 1500:   # 9:16: texto entre y=270 y y=1248; la foto debajo
-        y = 300
-        foto = foto_collar((380, 640, 2100, 2438), ancho=960)
-        im.paste(foto, ((w - foto.width) // 2, 760))
-        tam_t = 118
+    if h > 1500:   # 9:16: zona libre de Meta = y 270-1248 y 6 % a cada lado; nombre y lágrima dentro
+        y = 285
+        foto = foto_collar((560, 900, 1960, 2438), alto=600)
+        im.paste(foto, ((w - foto.width) // 2, 1240 - foto.height))
+        tam_t = 100
     else:          # 4:5: foto arriba y texto abajo
         foto = foto_collar((330, 520, 2150, 2438), alto=880)
         im.paste(foto, ((w - foto.width) // 2, 20))
@@ -213,6 +213,7 @@ def dudas():
 
 # ---------- MOFU: grabación de pantalla ----------
 TEXTOS = {"piedra": ("Elige su piedra.", "Una lágrima para cada mes"),
+          "panel": ("Elige su piedra.", "Una lágrima para cada mes"),
           "nombre": ("Escribe su nombre.", "Lo ves en letra de firma"),
           "revisar": ("Revísalo antes de pagar.", "Se hace tal cual lo escribes")}
 
@@ -227,7 +228,11 @@ def fotograma(png, fase, w, h):
         yt, ys, ancho, yc = 40, 150, 820, 230
     centro(d, yt, titulo, cormi(96), TINTA, w)
     centro(d, ys, sub, jost(36, "Regular"), GRIS, w)
-    cap = Image.open(png).convert("RGB").crop((0, 420, 1170, 1920))   # css y 140-640: color, piedra, nombre y botón
+    if h > 1500:   # 9:16: css y 228-520 (piedra, nombre y «Se hará así»), para que acabe antes de y=1248
+        y0 = 960 if fase == "panel" else 684   # con el panel abierto, la fila de mayo entera
+        cap = Image.open(png).convert("RGB").crop((0, y0, 1170, y0 + 876))
+    else:          # 4:5 (feed, sin botones encima): css y 140-640, con el color y el botón
+        cap = Image.open(png).convert("RGB").crop((0, 420, 1170, 1920))
     cap = cap.resize((ancho, round(cap.height * ancho / 1170)), Image.Resampling.LANCZOS)
     if yc + cap.height > h - 20:
         cap = cap.crop((0, 0, cap.width, h - 20 - yc))

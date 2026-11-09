@@ -212,8 +212,21 @@ def publicar(fichero, p, confirmar):
     print(f"  Publicado. media_id={media}")
 
 
+def ya_publicada(p):
+    """9-nov: hay dos PCs que pueden publicar (C:\\Users\\edu\\lunerie y D:\\LUNERIE). Antes de publicar se mira si la
+    primera línea del texto ya está en las 12 últimas publicaciones, para no subir la misma pieza dos veces."""
+    primera = (p.get("copy") or "").strip().splitlines()[0].strip() if p.get("copy") else ""
+    if not primera:
+        return False
+    try:
+        hechas = api("GET", f"{os.environ['IG_USER_ID']}/media", fields="caption", limit=12).get("data", [])
+    except RuntimeError:
+        return False
+    return any((m.get("caption") or "").strip().startswith(primera) for m in hechas)
+
+
 if __name__ == "__main__":
-    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    args =[a for a in sys.argv[1:] if not a.startswith("--")]
     confirmar = "--confirmar" in sys.argv
     if not args:
         for f, p in piezas():
@@ -228,6 +241,9 @@ if __name__ == "__main__":
                 sys.exit(f"{p['id']} no se puede publicar: " + " · ".join(fallos))
             if confirmar and not all(os.environ.get(k) for k in ("IG_TOKEN", "IG_USER_ID")):
                 sys.exit("Faltan IG_TOKEN o IG_USER_ID en .env.local")
+            if confirmar and ya_publicada(p):
+                sys.exit(f"{p['id']}: ya está en Instagram (mismo texto en las últimas publicaciones, quizá desde el "
+                         f"otro PC); no se vuelve a publicar")
             publicar(f, p, confirmar)
             break
     else:

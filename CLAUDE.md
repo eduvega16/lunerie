@@ -542,6 +542,16 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
 
 ### Para empezar la próxima sesión (después del 2-nov) — abrir conversación nueva por sesión.
 **DÓNDE NOS QUEDAMOS (9-nov, noche, sesión en `C:\Users\edu\lunerie`):**
+- **Instagram se publica y se programa ahora desde ESTE PC (`C:\Users\edu\lunerie`, 9-nov, Edu: «programa y sube»).**
+  Claves en `.env.local` de aquí: token de la PÁGINA nuevo (app «Lunerie Claude Publisher» 2676185462837815, no caduca,
+  acceso a datos hasta ~feb-2027, **ya con `pages_manage_posts`** para Facebook) + `META_APP_ID/SECRET`, `IG_USER_ID`,
+  `IG_HOST=graph.facebook.com`. Edu pegó los tokens y la clave de la app en el chat (riesgo avisado). Reel de la cámara
+  (W46-13) publicado a mano a las 21:30 (la tarea de `D:\LUNERIE` no corrió). **Plan de 2 al día aprobado**: tareas en
+  este PC del 10 al 18-nov (12:30 y 19:30). `publicar.py` ya **no publica dos veces** la misma pieza (mira la 1.ª línea
+  del texto en las 12 últimas publicaciones). **En `D:\LUNERIE`, al encenderlo: `git pull` y `python
+  oficina/publicar_programado.py quitar`** (sus tareas son las mismas y su código viejo no tiene ese control).
+  Falta: la foto `dedos-1.png` de W45-19 (11-nov 19:30) solo está en D: → subirla; las piezas nuevas del plan (3 pasos,
+  kcal, meses, «un collar para cada una», Signé plateado, prospecto) y que `publicar.py` publique también en Facebook.
 - **Google Search Console verificado** (apartado 6). Falta: enviar `sitemap.xml` en Search Console (Sitemaps).
 - **#LUN1006 (3 Collares Signé, misma clienta):** mensaje para QIUHAN preparado con la dirección sacada de Shopify (la
   dirección solo en Shopify y en el chat de Alibaba, nunca en git). Esperando que QIUHAN diga el **precio total en un solo

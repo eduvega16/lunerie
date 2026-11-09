@@ -1,6 +1,6 @@
 {
   "id": "2026-W46-13-reel-camara-signe",
-  "estado": "aprobado",
+  "estado": "publicado",
   "plataforma": "instagram",
   "formato": "reel",
   "pieza": "collar-signe",
@@ -40,7 +40,11 @@
       "https://cdn.shopify.com/videos/c/vp/76e4b82ad29444648e226dc4ea02b556/76e4b82ad29444648e226dc4ea02b556.HD-1080p-4.8Mbps-100329336.mp4"
     ],
     "alt_text": "Una cámara digital antigua plateada vista por detrás; en su pantalla pasan fotos de collares dorados con nombres en letra de firma (Laura, Alba, Sara, Marta) y lágrimas azul, roja y verde; al final, el Collar Signé de Lunerie.",
-    "ia": true
+    "ia": true,
+    "resultado": {
+      "media_id": "18188492911411713",
+      "fecha": "2026-11-09T21:31:36+0100"
+    }
   },
   "origen": {
     "biblioteca": "",

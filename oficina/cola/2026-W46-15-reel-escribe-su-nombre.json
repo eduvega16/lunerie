@@ -1,0 +1,56 @@
+{
+  "id": "2026-W46-15-reel-escribe-su-nombre",
+  "estado": "aprobado",
+  "plataforma": "instagram",
+  "formato": "reel",
+  "pieza": "collar-signe",
+  "fecha_sugerida": "2026-11-10T12:30:00+01:00",
+  "gancho": "Grabación de la ficha real: eliges la lágrima, escribes «Carmen» y lo ves en letra de firma antes de pagar.",
+  "copy": "Escribe su nombre y míralo antes de pagar.\n\nEn la ficha del Collar Signé eliges la lágrima de su mes, escribes su nombre y lo ves en letra de firma. Se hace tal cual lo escribes y sale en 3-5 días laborables. La vista previa es orientativa.\n\n49,95 €. Hasta el 5 de diciembre, la 2.ª pieza al 50 % y la 3.ª, gratis.\n\nLo tienes en el enlace del perfil.",
+  "hashtags": [
+    "#collarconnombre",
+    "#regaloparaella",
+    "#lunerie"
+  ],
+  "guion": [
+    {
+      "segundos": "todo",
+      "imagen": "Grabación de la ficha real: eliges la lágrima, escribes «Carmen» y lo ves en letra de firma antes de pagar.",
+      "texto_en_pantalla": "",
+      "voz": ""
+    }
+  ],
+  "assets": {
+    "existentes": [
+      "marca/fotos-ia/campana-bf/25-vista-previa-9x16.mp4"
+    ],
+    "generar": []
+  },
+  "musica": {
+    "origen": "ninguna",
+    "pista": "",
+    "licencia": "Sale sin sonido."
+  },
+  "montaje": [
+    "python marca/grabar_vista_previa.py → python marca/mofu_bofu.py (anuncio 25)"
+  ],
+  "publicacion": {
+    "archivos": [],
+    "urls": [
+      "https://cdn.shopify.com/videos/c/vp/2aaa4a25b0674d8fb2b5d86faa2eff27/2aaa4a25b0674d8fb2b5d86faa2eff27.HD-1080p-2.5Mbps-100604679.mp4"
+    ]
+  },
+  "origen": {
+    "biblioteca": "ideas-reels.json · mensaje-tapado",
+    "referencia": "Reel de @thebranding.ai que mandó Edu (https://www.instagram.com/reel/DfZsazwMAWQ/), 9-nov"
+  },
+  "riesgos": [
+    "La foto del collar es de IA (la 1.ª de la ficha), revisada: lágrima en el punto más bajo de la cadena.",
+    "Sin plazo de entrega ni fecha de Navidad."
+  ],
+  "revision": {
+    "notas": "9-nov: Edu: «mola, lo podemos subir… probar y ver qué ocurre». Vídeo en Archivos de Shopify. Hay que programarlo desde el PC D:\\LUNERIE (las claves de Instagram solo están allí).",
+    "aprobado_por": "Edu",
+    "fecha": "2026-11-09"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "id": "2026-W46-16-reel-madre-hija",
+  "estado": "aprobado",
+  "plataforma": "instagram",
+  "formato": "reel",
+  "pieza": "collar-signe",
+  "fecha_sugerida": "2026-11-11T12:30:00+01:00",
+  "gancho": "Uno para ti… y otro para tu hija (UGC con voz de Silvia y Holiday Bells).",
+  "copy": "Uno para ti y otro para tu hija.\n\nEl Collar Signé lleva su nombre en letra de firma y una lágrima del color de su mes. Por Black Friday, el segundo te sale a mitad de precio: los dos por 74,93 €. Hasta el 5 de diciembre.\n\nLo tienes en el enlace del perfil.",
+  "hashtags": [
+    "#collarconnombre",
+    "#regaloparaella",
+    "#lunerie"
+  ],
+  "guion": [
+    {
+      "segundos": "todo",
+      "imagen": "Uno para ti… y otro para tu hija (UGC con voz de Silvia y Holiday Bells).",
+      "texto_en_pantalla": "",
+      "voz": ""
+    }
+  ],
+  "assets": {
+    "existentes": [
+      "marca/fotos-ia/campana-bf/21-collar-madre-hija-9x16.mp4"
+    ],
+    "generar": []
+  },
+  "musica": {
+    "origen": "la del vídeo",
+    "pista": "",
+    "licencia": "Holiday Bells (biblioteca de Meta) ya mezclada"
+  },
+  "montaje": [
+    "python marca/ugc_montaje.py --carpeta ugc-madre-hija --tarjeta dos (anuncio 21)"
+  ],
+  "publicacion": {
+    "archivos": [],
+    "urls": [
+      "https://cdn.shopify.com/videos/c/vp/dbc9db12148d49afb6f91ca27606e4f3/dbc9db12148d49afb6f91ca27606e4f3.HD-1080p-7.2Mbps-100555149.mp4"
+    ]
+  },
+  "origen": {
+    "biblioteca": "ideas-reels.json · mensaje-tapado",
+    "referencia": "Reel de @thebranding.ai que mandó Edu (https://www.instagram.com/reel/DfZsazwMAWQ/), 9-nov"
+  },
+  "riesgos": [
+    "La foto del collar es de IA (la 1.ª de la ficha), revisada: lágrima en el punto más bajo de la cadena.",
+    "Sin plazo de entrega ni fecha de Navidad."
+  ],
+  "revision": {
+    "notas": "9-nov: Edu: «mola, lo podemos subir… probar y ver qué ocurre». Vídeo en Archivos de Shopify. Hay que programarlo desde el PC D:\\LUNERIE (las claves de Instagram solo están allí).",
+    "aprobado_por": "Edu",
+    "fecha": "2026-11-09"
+  }
+}

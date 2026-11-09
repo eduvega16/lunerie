@@ -8,7 +8,7 @@ Creada el 29-oct-2026.
 |---|---|---|
 | `hooks.json` | 80 ganchos con huecos (`___`) en 4 categorías: hooks instantáneos, consejos y hacks, principiantes, narrativa | carrusel de @karoempowerment |
 | `skills-claude.json` | 13 skills de Claude en 5 grupos, con lo que dice el reel que hace cada una y para qué servirían en Lunerie | reel de @lucasacosta.ia |
-| `formatos-anuncio.json` | 25 formatos de anuncio (malas noticias, pantalla de bloqueo, notas del iPhone, venta cruzada…), cada uno con su adaptación a Lunerie y si encaja hoy (sí / con cuidado / no) + 2 anuncios vistos (Myprotein, SAVA) | reel de @marcllopissanchez (4-nov) |
+| `formatos-anuncio.json` | 25 formatos de anuncio (malas noticias, pantalla de bloqueo, notas del iPhone, venta cruzada…), cada uno con su adaptación a Lunerie y si encaja hoy (sí / con cuidado / no) + anuncios vistos (Myprotein, SAVA, Olivia). **27-29 (9-nov):** «una joya para cada ocasión», receta/prospecto y «decisiones más saludables» (kcal) | reel de @marcllopissanchez (4-nov); @stullerstyle, @foreverfinejewels, @laguacajoyeros (9-nov) |
 | `ideas-reels.json` | Reels para adaptar: «Déjame limpiar mi cámara», storyboard UGC de 6 escenas con IA, «Solo el 1 % consigue pararlo», «Comenta X y te lo mando» | @mobellajoyeria, @star.rreyai, @robertmckeaveney y otros (4-nov) |
 | `herramientas.json` | Repositorios y programas vistos en reels (HyperFrames, Open Higgsfield, VoiceStudio, Remotion, Whisper, yt-dlp), con qué son de verdad y su prioridad. **Ninguno instalado** | @noisy.ia, @mrcreates.ai (4-nov) |
 

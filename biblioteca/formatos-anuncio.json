@@ -211,6 +211,27 @@
    "que_es": "Story o anuncio solo de texto sobre fondo oscuro, como un aviso escrito por la marca («Hey everyone! Just a heads up…»), con la oferta explicada con números y firma «The … team». Parece un mensaje, no un anuncio.",
    "lunerie": "Fondo tinta, «Hola,» en Cormorant y el resto en Jost: la promo de Black Friday, «y sí, el collar con nombre también entra», un ejemplo con precios reales (suma por separado → lo que se paga) y «El equipo de Lunerie». Sin emojis; el ejemplo tiene que ser una cesta real con el descuento que aplica Shopify.",
    "encaja": "sí"
+  },
+  {
+   "n": 27,
+   "nombre": "Una joya para cada ocasión (círculo + papelito)",
+   "que_es": "Carrusel de 4: cada collar extendido en un círculo perfecto sobre piel granate, cenital, con un papel de bordes rotos en el centro y una ocasión en serif cursiva («for everyday», «for a wedding», «for layering», «for date night»). Sin precio ni texto encima: la foto manda.",
+   "lunerie": "«Un collar para cada una»: el Collar Signé en círculo, con un nombre y una lágrima distintos en cada foto, y en el papel «para mamá», «para tu hermana», «para tu mejor amiga», «para ti» (Cormorant cursiva). La última, con la promo («La 2.ª, a mitad de precio»). Fondo terciopelo verde botella o granate (Navidad). La IA hace el fondo, el collar y el papel EN BLANCO; el texto del papel se escribe en local con la letra de Lunerie (así no se equivoca). Revisar el nombre y la forma en U a tamaño real.",
+   "encaja": "sí"
+  },
+  {
+   "n": 28,
+   "nombre": "Receta / prospecto",
+   "que_es": "Bote de farmacia naranja con etiqueta de receta de la marca («Take 3 times a day for 7 days») tumbado sobre mármol verde y diamantes saliendo de él. Texto: «Side effects may include…». Humor.",
+   "lunerie": "Versión española: caja de medicamento blanca y verde «Signé · 1 collar · vía: cuello» con el prospecto desplegado: «Posología: llevar a diario. Efectos secundarios: que te pregunten dónde lo has comprado». Las lágrimas de colores saliendo de la caja. Ojo: Meta puede revisar con lupa lo que parece un medicamento (nada de cruz de farmacia ni de «medicamento» o «receta» escritos) y el tono es más gamberro que la voz de la marca.",
+   "encaja": "con cuidado"
+  },
+  {
+   "n": 29,
+   "nombre": "Decisiones más saludables (comida vs joya, kcal)",
+   "que_es": "Carrusel con el mismo fondo crema y una raya fina en el centro: a la izquierda un dulce con sus calorías («130 kcal», «272 kcal», «370 kcal») y a la derecha una joya con «0 kcal». Título fijo «TOMANDO DECISIONES MÁS SALUDABLES:». Texto: «Si vas a darte un gusto, que sea…».",
+   "lunerie": "Con dulces de Navidad españoles: turrón, polvorones, roscón de Reyes, churros con chocolate → Collar Signé, Reloj Lune, aros Boucle… a «0 kcal». Fondo niebla, título en Jost espaciado, «LUNERIE» pequeño en lugar del logo. Última foto: la promo («Y la 3.ª pieza, gratis»). Las joyas, con las fotos en niebla de las fichas (reales de forma); el dulce, con IA (~0,13 $). Las kcal tienen que ser las de verdad de una ración. Es humor, sin hablar de cuerpos ni de dietas.",
+   "encaja": "sí"
   }
  ],
  "ejemplos_vistos": [
@@ -236,6 +257,27 @@
    "formato": "nota del equipo (formato 26)",
    "como_es": "Fondo negro, «Hey everyone!» en serif y el texto en sans: «Our 4 pieces for $139 offer is live now. That's $280+ worth of jewelry for just $139. Yes, personalized pieces are included too. Some of your favorites are in this bundle. Tap through before it's gone & build the stack that's actually yours. The Olivia Jewelry team x», con emojis y botón «Comprar».",
    "lunerie": "Versión con la promo real (2.ª al 50 %, 3.ª gratis, hasta el 5-dic) y un ejemplo con el collar Signé: Collar Signé + Reloj Lune + aros Boucle, 109,85 € por separado → 89,90 €. Sin «before it's gone» (no hay escasez) ni emojis."
+  },
+  {
+   "marca": "Stuller Style (@stullerstyle)",
+   "donde": "carrusel de Instagram (30-oct-2026), 1.165 me gusta y 856 envíos",
+   "captura": "9 nov 2026",
+   "formato": 27,
+   "como_es": "4 collares (punto de luz, riviera de bezels dorada, cadena con piedras sueltas, riviera plateada) en círculo sobre piel granate con el papelito de la ocasión. Texto: «A necklace for every occasion». Capturas en oficina/referencias/instagram-2026-11-09/"
+  },
+  {
+   "marca": "For Ever Fine Jewelry (@foreverfinejewels)",
+   "donde": "post de Instagram (15-oct-2026), 27,8 mil me gusta y 11,6 mil envíos",
+   "captura": "9 nov 2026",
+   "formato": 28,
+   "como_es": "Bote de receta naranja «For Ever Fine Jewelry · Take 3 times a day for 7 days» sobre mármol verde con diamantes sueltos. Texto: «Side effects may include…». El que más envíos tiene de los tres: el humor se comparte. Captura en oficina/referencias/instagram-2026-11-09/"
+  },
+  {
+   "marca": "La Guaca Joyeros (@laguacajoyeros)",
+   "donde": "carrusel de Instagram (14-oct-2026), 810 me gusta y 665 envíos",
+   "captura": "9 nov 2026",
+   "formato": 29,
+   "como_es": "«TOMANDO DECISIONES MÁS SALUDABLES:» helado 130 kcal / aros 0 kcal · croissant 272 kcal / collar de esmeraldas 0 kcal · tarta de chocolate 370 kcal / solitario 0 kcal. Fondo crema. Texto: «Si vas a darte un gusto, que sea…». Capturas en oficina/referencias/instagram-2026-11-09/"
   }
  ]
 }

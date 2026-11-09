@@ -628,9 +628,13 @@ verde empiezan por «Black Friday · …». (3) **Fuera el campo «Descuento» d
 «antes del 5-dic para Navidad» (quitado el 5-nov; si vuelve, fecha más temprana y confirmada con QIUHAN), cambiar la fecha
 del pago, Bizum (más adelante) y reenfocar el anuncio a Navidad.
 **9-nov: Edu DESACTIVÓ las fechas de entrega estimadas del pago** (estaban en automático: en el método de envío salía
-«llega el día X», que no es verdad porque Shopify no cuenta los días de fabricación). **No volver a activarlas.** El
-`transitTime` 4-9 días de los mercados (apartado 6, Envíos) sigue puesto, pero ya no se enseña como fecha; los plazos
-quedan solo como texto («sale en 3-5 días laborables» en ficha y cesta; los dos plazos por separado en Envíos y FAQ).
+«llega el día X», que no es verdad porque Shopify no cuenta los días de fabricación). **No volver a activarlas.** Aun así
+el pago seguía poniendo «Envío gratis · 4 a 9 días hábiles» (el tiempo de transporte de las tarifas) → **quitado el mismo
+día** de las dos tarifas (España y Baleares) con `marketUpdate` (`--version unstable`): `rateGroupsToUpdate` con el mismo
+precio y `transitTimeMinSeconds`/`transitTimeMaxSeconds` a `null` (comprobado al leerlo de nuevo: precio, activas y
+Canarias/Ceuta/Melilla sin envío, igual que antes). Los plazos quedan solo como texto («sale en 3-5 días laborables» en
+ficha y cesta; los dos plazos por separado en Envíos y FAQ). Pendiente: en el resumen del pago el collar sigue saliendo
+con la foto de la variante (lágrima verde en todos los meses dorados); el pago no se puede cambiar desde el tema.
 **8-nov:**
 - **Meta a las ~19:30:** 144,19 € de 200 €, ~218 clics a 0,66 €, 35 carritos, 6 pagos empezados. Shopify: 2 pedidos
   válidos (#LUN1004 y #LUN1006, 149,85 €, 4 collares; #LUN1005 reembolsado) → **~72 € por pedido** (breakeven ~21 €),

@@ -627,6 +627,10 @@ verde empiezan por «Black Friday · …». (3) **Fuera el campo «Descuento» d
 (reglas de Edu): «Elaboración y envío: 7-12 días» (suma de plazos), «se graba a mano» (no es verdad: chapa de QIUHAN),
 «antes del 5-dic para Navidad» (quitado el 5-nov; si vuelve, fecha más temprana y confirmada con QIUHAN), cambiar la fecha
 del pago, Bizum (más adelante) y reenfocar el anuncio a Navidad.
+**9-nov: Edu DESACTIVÓ las fechas de entrega estimadas del pago** (estaban en automático: en el método de envío salía
+«llega el día X», que no es verdad porque Shopify no cuenta los días de fabricación). **No volver a activarlas.** El
+`transitTime` 4-9 días de los mercados (apartado 6, Envíos) sigue puesto, pero ya no se enseña como fecha; los plazos
+quedan solo como texto («sale en 3-5 días laborables» en ficha y cesta; los dos plazos por separado en Envíos y FAQ).
 **8-nov:**
 - **Meta a las ~19:30:** 144,19 € de 200 €, ~218 clics a 0,66 €, 35 carritos, 6 pagos empezados. Shopify: 2 pedidos
   válidos (#LUN1004 y #LUN1006, 149,85 €, 4 collares; #LUN1005 reembolsado) → **~72 € por pedido** (breakeven ~21 €),

@@ -18,7 +18,7 @@ SALIDA = RAIZ / "marca" / "fotos-ia" / "campana-bf"
 PANTALLA = SALIDA / "pantalla"
 FOTO = RAIZ / "marca" / "fotos-ia" / "collar" / "producto-verde-3.jpg"
 GOTAS = RAIZ / "marca" / "fotos-ia" / "lagrimas"
-FONDO, TINTA, GRIS, ORO, ROJO = (244, 246, 243), (22, 32, 27), (92, 100, 96), (166, 131, 74), (202, 56, 1)
+FONDO, TINTA, GRIS, ORO, ROJO = (244, 246, 243), (22, 32, 27), (52, 62, 57), (166, 131, 74), (202, 56, 1)
 MESES = "Enero Febrero Marzo Abril Mayo Junio Julio Agosto Septiembre Octubre Noviembre Diciembre".split()
 
 
@@ -116,9 +116,9 @@ def cierre(w, h):
     y += int(tam_t * 1.2)
     centro(d, y, "La 2.ª pieza al 50 % y la 3.ª, gratis.", jost(44, "Regular"), TINTA, w)
     y += 70
-    centro(d, y, "Collar Signé · 49,95 € · Hasta el 5 de diciembre", jost(34), GRIS, w)
+    centro(d, y, "Collar Signé · 49,95 € · Hasta el 5 de diciembre", jost(34, "Regular"), GRIS, w)
     y += 52
-    centro(d, y, "Garantía de 3 años · Envío gratis a península", jost(34), GRIS, w)
+    centro(d, y, "Garantía de 3 años · Envío gratis a península", jost(34, "Regular"), GRIS, w)
     return im
 
 
@@ -137,7 +137,7 @@ def base(pregunta):
 def respuesta(d, texto, nota=None, y=1045):
     y = parrafo(d, y, texto, jost(40), TINTA, W, 880)
     if nota:
-        centro(d, y + 14, nota, jost(28), GRIS, W)
+        centro(d, y + 14, nota, jost(28, "Regular"), GRIS, W)
 
 
 def dudas():
@@ -147,7 +147,7 @@ def dudas():
     im.paste(foto, ((W - foto.width) // 2, 30))
     d = ImageDraw.Draw(im)
     mixto(d, 1060, [("Antes de regalarlo, ", corm(84), TINTA), ("tus dudas.", cormi(84), TINTA)], W)
-    centro(d, 1185, "Lo que más nos preguntáis del collar con nombre  →", jost(34), GRIS, W)
+    centro(d, 1185, "Lo que más nos preguntáis del collar con nombre  →", jost(34, "Regular"), GRIS, W)
     guardar(im, "24-dudas-1.jpg")
 
     # 2 · el nombre (captura real de la ficha: piedra elegida + nombre escrito + «Se hará así»)
@@ -205,8 +205,8 @@ def dudas():
         fu = jost(46, "Regular")
         d.text((890 - d.textlength(der, font=fu), y), der, font=fu, fill=TINTA)
         y += 120
-    centro(d, 1010, "Mezcla relojes y joyas: se descuenta solo en la cesta.", jost(34), GRIS, W)
-    centro(d, 1062, "Hasta el 5 de diciembre.", jost(34), GRIS, W)
+    centro(d, 1010, "Mezcla relojes y joyas: se descuenta solo en la cesta.", jost(34, "Regular"), GRIS, W)
+    centro(d, 1062, "Hasta el 5 de diciembre.", jost(34, "Regular"), GRIS, W)
     centro(d, 1180, "Personaliza el tuyo en lunerie.es", jost(36, "Regular"), TINTA, W)
     guardar(im, "24-dudas-6.jpg")
 
@@ -226,7 +226,7 @@ def fotograma(png, fase, w, h):
     else:
         yt, ys, ancho, yc = 40, 150, 820, 230
     centro(d, yt, titulo, cormi(96), TINTA, w)
-    centro(d, ys, sub, jost(36), GRIS, w)
+    centro(d, ys, sub, jost(36, "Regular"), GRIS, w)
     cap = Image.open(png).convert("RGB").crop((0, 420, 1170, 1920))   # css y 140-640: color, piedra, nombre y botón
     cap = cap.resize((ancho, round(cap.height * ancho / 1170)), Image.Resampling.LANCZOS)
     if yc + cap.height > h - 20:

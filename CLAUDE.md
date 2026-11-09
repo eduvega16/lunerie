@@ -609,6 +609,14 @@ sigan. **Para el 9-nov:** (1) leer la campaña con el conector (el asistente del
 ventas), no con la de Meta (50 compras / 70 €); (3) botones; (4) públicos de retargeting (gratis) y su tamaño; (5) decidir
 presupuesto a partir del tope de 200 €; (6) enseñar a Edu los 2 vídeos de familia (madre e hija, dos hijas) y, con su OK, meterlos en el conjunto. Pendiente de QIUHAN: la letra de «Isa» (Susan buscaba la de la muestra «Marta»),
 la foto del collar antes de enviarlo y la respuesta de calidad.
+**9-nov (Meta, OK de Edu):** a media mañana, 169,29 € gastados, 54 carritos (Meta), 2 pedidos reales (Shopify) →
+~85 €/pedido; 0 ventas desde el 7-nov. El 18: 108,87 €, 43 carritos, 2 compras; el 14: 39,35 € sin ventas; el 16: 16,98 €
+(1 carrito); el 19 y el 20 sin entrega (Meta no los enseña) → **no hay comparación de botones**. **Hecho:** anuncios **14 y
+16 en PAUSA** (comprobado) y **tope de la campaña a 270 €** (Edu pidió 250 €, pero Meta no deja bajar de 269,30 € mientras
+haya cargos pendientes; publicado solo el cambio de la campaña con `object_ids`, comprobado). **El 11-nov hay que PARARLA a
+mano al llegar a ~220 €** (lo pactado: +50 € para medir la cesta nueva con el 18) y decidir si sigue. Los 2 vídeos de familia
+siguen sin meter: Edu tiene que verlos y dar el OK. Shopify 9-nov (hasta media mañana): 19 sesiones, 6 con carrito, 2 al
+pago (antes ~1 de cada 5), aún pocos datos. Las 2 recomendaciones de Meta a medias (anuncios 14 y 3) siguen sin publicar.
 **8-nov:**
 - **Meta a las ~19:30:** 144,19 € de 200 €, ~218 clics a 0,66 €, 35 carritos, 6 pagos empezados. Shopify: 2 pedidos
   válidos (#LUN1004 y #LUN1006, 149,85 €, 4 collares; #LUN1005 reembolsado) → **~72 € por pedido** (breakeven ~21 €),

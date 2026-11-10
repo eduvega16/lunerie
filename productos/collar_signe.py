@@ -21,11 +21,12 @@ FOTOS = [("Signature_Name_and_Birthstone_Necklace.webp", "prod", .5, "Collar Sig
          ("script-initial-birthstone-necklace.webp", "vida", .5, "Collar Signé dorado de cerca, con lágrima roja")]
 FOTO_COLOR = {"Dorado": 0, "Plateado": 2}
 DESC = ("<p>Su nombre en letra de firma y, colgando en el centro, una lágrima del color de su mes. Un collar fino para llevar cada "
-        "día, sin quitárselo.</p><ul>"
+        "día.</p><ul>"
         "<li>Acero inoxidable con acabado dorado o plateado.</li>"
         "<li>El nombre que elijas, de hasta 10 letras, en letra de firma.</li>"
         "<li>Circonita en forma de lágrima, del color del mes.</li>"
-        "<li>Se hace para ti, con el nombre tal cual lo escribes.</li></ul>"
+        "<li>Se hace para ti, con el nombre tal cual lo escribes.</li>"
+        "<li>Llega en una cajita de terciopelo beige, lista para regalar.</li></ul>"
         "<p><strong>Los colores:</strong> " + " · ".join(f"{m.lower()}, {c}" for m, c in zip(MESES, COLORES)) + ".</p>"
         "<p>En las fotos, nombres de ejemplo.</p>")   # la devolución va en «Envío y devoluciones» (5-nov)
 SEO = "Collar con nombre en letra de firma y lágrima del color de su mes, dorado o plateado. Envío gratis a península."

@@ -553,7 +553,10 @@ ficha = {
             "slideshow_controls_style": "thumbnails", "slideshow_mobile_controls_style": "counter",
             "thumbnail_position": "bottom", "thumbnail_width": 60, "thumbnail_radius": 0,
             "aspect_ratio": "1/1.25", "media_radius": 0, "extend_media": False,
-            "zoom": True, "hide_variants": False}, "blocks": {}},
+            "zoom": True, "hide_variants": False,
+            # 10-nov: vídeos de la galería (el collar en la mano) en bucle; el autoplay sin sonido va en
+            # tema/codigo/snippets/product-media.liquid (Horizon, modificado)
+            "video_loop": True}, "blocks": {}},
         "product-details": {"type": "_product-details", "static": True, "settings": {
             "gap": 20, "sticky_details_desktop": True,
             "padding-block-start": 8, "padding-block-end": 24},

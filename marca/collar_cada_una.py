@@ -102,6 +102,21 @@ ABRIR = (
     "capital letter of the name, still in its four-prong gold setting with its bail threaded directly on the chain at "
     "the bottom of the oval, right after the name. No text anywhere. ")
 
+# 10-nov (Edu): el collar colgando de los dedos, de cerca, para la ficha (foto + vídeo con un balanceo suave)
+MANO = (
+    "Close-up lifestyle jewelry photograph in warm late-afternoon sunlight. A young woman's slim hand with a natural "
+    "nude manicure, seen from the side, holds the necklace up between her thumb and index finger at the top of the "
+    "frame, against a softly blurred warm cream wall with gentle dappled light. The chain hangs down in a narrow V from "
+    "her fingers and the pendant part is in the centre of the frame, close to the camera and razor sharp: the name "
+    "reads exactly {nombre}, cut from a flat mirror-polished gold sheet "
+    "in the same quick signature lettering as the reference photos, joined to the chain by a tiny ring at the top of "
+    "the capital and ending in ONE long straight tail stroke with a small ring; two or three links later a SMALL "
+    "faceted pear-shaped crystal in a vivid emerald green, in a four-prong gold setting, is threaded directly onto the "
+    "chain, clearly smaller than the capital letter, catching the sun. The name and the crystal fill about a third of the "
+    "frame width. Shallow depth of field, natural skin texture, fine film grain. The reference images show this exact "
+    "necklace (\"Marta\") on a stand and on a man's hand: copy only the necklace build and lettering; the hand here is a "
+    "woman's. No text, no logo, no watermark. ")
+
 AZUL = "a vivid deep sapphire blue, exactly the blue of the real crystal in the reference photos"
 TOMAS = {
     "circulo-ana-azul": ("3:4", "base", CIRCULO.format(nombre="Ana", letras="a tall, clearly readable capital A, then "
@@ -129,6 +144,12 @@ TOMAS = {
         "zircon, bright and transparent. No text anywhere. "),
     "abrir-sara-verde": ("3:4", "circulo-sara-verde-1", ABRIR),
     "abrir-laura-rosa": ("3:4", "circulo-laura-rosa-1", ABRIR),
+    "mano-sara-verde": ("9:16", "base", MANO.replace("{nombre}", "\"Sara\" (a tall, clearly readable capital S, then a-r-a)")),
+    # 10-nov (Edu): mejor Carmen o Marta. Carmen: la C de firma a veces sale como V («Varmen»): revisar
+    "mano-carmen-verde": ("9:16", "base", MANO.replace("{nombre}", "\"Carmen\" (a clearly readable round capital C "
+                          "open on the right like a crescent - never a V, never pointed - then a-r-m-e-n)")),
+    "mano-marta-verde": ("9:16", "base", MANO.replace("{nombre}", "\"Marta\" (a tall pointed capital M with a long "
+                         "lead-in stroke, then a-r-t-a, exactly as in the reference photos)")),
     "plateado-elena": ("3:4", "base", PLATEADO),
     "prospecto": ("3:4", "base", PROSPECTO),
     "polvoron": ("3:4", None, POLVORON),

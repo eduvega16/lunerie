@@ -765,8 +765,11 @@ collar = copy.deepcopy(joya)
 _d = collar["sections"]["main"]["blocks"]["product-details"]
 _d["blocks"]["personalizar"] = liquid("{% render 'lunerie-collar', product: product, section_id: section.id %}")
 _d["block_order"].insert(_d["block_order"].index("comprar"), "personalizar")
-_d["blocks"]["ventajas"] = ventajas([f"Se hace para ti y sale en {HECHO_COLLAR}", "Envío gratis a península",
-                                     "Garantía de 3 años"])
+# 10-nov (Edu): cada collar va en una cajita de terciopelo beige de QIUHAN (confirmado y pagado en cada pedido) →
+# «Llega en su cajita de regalo», primero, bajo el botón y en la cesta. Solo el collar: lo demás llega en bolsita.
+CAJITA_COLLAR = "Llega en su cajita de regalo"
+_d["blocks"]["ventajas"] = ventajas([CAJITA_COLLAR, f"Se hace para ti y sale en {HECHO_COLLAR}",
+                                     "Envío gratis a península", "Garantía de 3 años"])
 _dd = _d["blocks"]["detalles"]
 _dd["blocks"]["envio"] = row(
     "Envío y devoluciones",
@@ -933,7 +936,8 @@ CONFIANZA = (
     "{%- assign lu_nombre = false -%}{%- for item in cart.items -%}{%- if item.product.handle == 'collar-signe' -%}"
     "{%- assign lu_nombre = true -%}{%- endif -%}{%- endfor -%}\n"
     '<div class="lu-confianza">\n'
-    "  {%- if lu_nombre -%}<p>Se hace para ti y sale en " + HECHO_COLLAR + "</p>{%- endif -%}\n"
+    "  {%- if lu_nombre -%}<p>" + CAJITA_COLLAR + "</p><p>Se hace para ti y sale en " + HECHO_COLLAR + "</p>"
+    "{%- endif -%}\n"
     "  <p>Garantía de 3 años · Pago seguro</p>\n"
     "</div>\n"
     # 9-nov: fuera el campo «Descuento» de la cesta (la promo se aplica sola y el campo invitaba a irse a buscar un

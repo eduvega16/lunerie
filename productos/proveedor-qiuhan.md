@@ -89,6 +89,12 @@ When you confirm, I will send you the first order.
 - Cuentas de #LUN1006 (3 collares): por separado 3 × 13,22 = 39,66 $; en un paquete 3 × 5,22 + 3 × 1 (cajitas) + 7
   (envío) + 2 (2 piezas extra) = **27,66 $** + el IVA que cobra Alibaba. **Siempre juntar los pedidos de la misma clienta.**
 - Edu lo acepta y pide el total final, la letra de «Isa», foto de cada collar antes de enviar y el precio con PVD.
+- **Lista de #LUN1006 (10-nov), comprobada contra Shopify:** 2 dorados de marzo (Aquamarine) + 1 plateado de junio
+  (Alexandrite), nombres iguales al pedido; 27,66 $ y **33,47 $ en el pago de Alibaba (= +21 % de IVA)** ≈ 28,80 €.
+- **Por escrito (10-nov):** la letra de «Isa» en todos los pedidos · **PVD en todos los pedidos, sin coste extra**
+  (0,03 micras; el primero, #LUN1004, ya fue en PVD) · el informe de laboratorio se paga aparte (**no poner
+  «hipoalergénico»**) · la piedra es **circonita** (cubic zirconia), como dice la ficha. Sigue sin poder decirse «no se
+  oscurece» ni «resistente al agua».
 
 ## Yiwu Shangjie (la de la muestra que ya tiene Edu) · a la vez que QIUHAN
 Su calidad ya se conoce (muestra «Marta», lágrima azul, caja de terciopelo verde por dentro negra; pedida el 9-oct,

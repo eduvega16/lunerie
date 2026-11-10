@@ -10,9 +10,10 @@ RAIZ = pathlib.Path(__file__).resolve().parent.parent
 D = RAIZ / "marca" / "fotos-ia" / "cada-una"
 F = RAIZ / "marca" / "fuentes"
 TINTA, GRIS, ORO, ROJO, BLANCO = (22, 32, 27), (52, 62, 57), (166, 131, 74), (202, 56, 1), (255, 255, 255)
-CARRUSEL = [("circulo-marta-azul-2", "para mamá", None), ("editar-elena-rojo-1", "para tu hermana", None),
-            ("circulo-sara-verde-1", "para tu mejor amiga", None),
-            ("circulo-laura-rosa-1", "para ti", "La 2.ª, a mitad de precio")]
+# 10-nov (Edu): en círculo cerrado parecía una pulsera y la lágrima era grande → versiones «abrir-*» (con cierre)
+CARRUSEL = [("abrir-marta-azul-1", "para mamá", None), ("abrir-elena-rojo-color-1", "para tu hermana", None),
+            ("abrir-sara-verde-1", "para tu mejor amiga", None),
+            ("abrir-laura-rosa-1", "para ti", "La 2.ª, a mitad de precio")]
 
 
 def fuente(nombre, tam, peso=None):

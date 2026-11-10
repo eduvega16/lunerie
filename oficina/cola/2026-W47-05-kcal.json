@@ -2,11 +2,11 @@
   "id": "2026-W47-05-kcal",
   "estado": "revisado",
   "plataforma": "instagram",
-  "formato": "foto",
+  "formato": "carrusel",
   "pieza": "collar-signe",
   "fecha_sugerida": "2026-11-19T12:30:00+01:00",
-  "gancho": "Decisiones más saludables: un polvorón (unas 130 kcal) frente al Collar Signé (0 kcal).",
-  "copy": "Decisiones más saludables para estas fiestas.\n\nUn polvorón: unas 130 kcal. Un Collar Signé: 0 kcal, y dura más que la Navidad.\n\nCollar con su nombre y la lágrima de su mes, 49,95 €. Hasta el 5 de diciembre, la 2.ª pieza al 50 % y la 3.ª, gratis.\n\nLo tienes en el enlace del perfil.",
+  "gancho": "Tomando decisiones más saludables (como el de @laguacajoyeros): croissant, chocolate, polvorón y donut con sus kcal frente al Collar Signé, 0 kcal.",
+  "copy": "Tomando decisiones más saludables.\n\nUn croissant, unas 240 kcal. Una tableta de chocolate, unas 530. Un polvorón, unas 130. Un donut, unas 250. Un Collar Signé: 0 kcal, y dura más que la Navidad.\n\nSi vas a darte un capricho, que dure. Collar con su nombre y la lágrima de su mes, 49,95 €. Hasta el 5 de diciembre, la 2.ª pieza al 50 % y la 3.ª, gratis.\n\nLo tienes en el enlace del perfil.",
   "hashtags": [
     "#collarconnombre",
     "#regaloparaella",
@@ -22,7 +22,11 @@
   ],
   "assets": {
     "existentes": [
-      "marca/fotos-ia/cada-una/post-kcal.jpg"
+      "marca/fotos-ia/kcal/kcal-1.jpg",
+      "marca/fotos-ia/kcal/kcal-2.jpg",
+      "marca/fotos-ia/kcal/kcal-3.jpg",
+      "marca/fotos-ia/kcal/kcal-4.jpg",
+      "marca/fotos-ia/kcal/kcal-5.jpg"
     ],
     "generar": []
   },
@@ -32,16 +36,20 @@
     "licencia": "Sale sin sonido: la API de Instagram no pone música."
   },
   "montaje": [
-    "python marca/textos_cada_una.py"
+    "python marca/kcal.py comida → python marca/kcal.py montar"
   ],
   "publicacion": {
     "archivos": [
-      "marca/fotos-ia/cada-una/post-kcal.jpg"
+      "marca/fotos-ia/kcal/kcal-1.jpg",
+      "marca/fotos-ia/kcal/kcal-2.jpg",
+      "marca/fotos-ia/kcal/kcal-3.jpg",
+      "marca/fotos-ia/kcal/kcal-4.jpg",
+      "marca/fotos-ia/kcal/kcal-5.jpg"
     ],
     "urls": [],
-    "alt_text": "Arriba, un polvorón medio desenvuelto: unas 130 kcal. Abajo, el Collar Signé con el nombre Carmen y una lágrima verde: 0 kcal, y dura más que la Navidad.",
+    "alt_text": "Cinco tarjetas sobre fondo beige: un croissant, una tableta de chocolate, un polvorón y un donut con sus kcal aproximadas, frente a Collares Signé con 0 kcal; la última dice: Si vas a darte un capricho, que dure.",
     "ia": true
   },
   "origen": "Plan de 2 publicaciones al día del 10 al 20-nov (OK de Edu, 9-nov).",
-  "riesgos": "Nombres revisados a tamaño real; sin nombres de gemas ni material sin confirmar."
+  "riesgos": "Kcal aproximadas por pieza según etiquetas habituales (con «unas» y nota en la última tarjeta). Las joyas son fotos ya revisadas."
 }

@@ -89,6 +89,19 @@ EDITAR_CIRCULO = (
     "the same flat mirror-polished gold quick signature lettering, ending in ONE long straight stroke - nothing else: no "
     "extra loops, no second tail. Second, the crystal is a deep ruby red. The paper stays completely blank. ")
 
+# 10-nov (Edu): en círculo cerrado parecía una PULSERA y la lágrima, demasiado grande → se editan las 4 buenas
+ABRIR = (
+    "Edit the first image. Keep EXACTLY the same: the green velvet, the light, the framing, the small scrap of torn paper "
+    "in the centre (it stays completely blank), the name exactly as it is written (same letters, same lettering, same "
+    "position and size), its long straight tail stroke ending in a small ring, and the colour of the crystal. Change "
+    "only two things. First, it must clearly read as a NECKLACE laid flat, not a bracelet: the chain is OPEN at the top "
+    "centre - its two ends lie a few centimetres apart, one ending in a small polished gold lobster-claw clasp and the "
+    "other in a short extender chain of about 5 cm finished with a tiny plain gold tag - and the chain is laid as a "
+    "relaxed, slightly taller oval, like a fine necklace dropped on the velvet, not a perfect closed ring. Second, the "
+    "pear-shaped crystal is MUCH smaller and more delicate: about half its current size, clearly smaller than the "
+    "capital letter of the name, still in its four-prong gold setting with its bail threaded directly on the chain at "
+    "the bottom of the oval, right after the name. No text anywhere. ")
+
 AZUL = "a vivid deep sapphire blue, exactly the blue of the real crystal in the reference photos"
 TOMAS = {
     "circulo-ana-azul": ("3:4", "base", CIRCULO.format(nombre="Ana", letras="a tall, clearly readable capital A, then "
@@ -107,6 +120,15 @@ TOMAS = {
     "editar-elena-rojo": ("3:4", "marta", EDITAR_CIRCULO),
     "circulo-elena-rojo": ("3:4", "base", CIRCULO.format(nombre="Elena", letras="a tall, clearly readable capital E, "
                                                          "then l-e-n-a", color="a deep ruby red")),
+    "abrir-marta-azul": ("3:4", "circulo-marta-azul-2", ABRIR),
+    "abrir-elena-rojo": ("3:4", "editar-elena-rojo-1", ABRIR),
+    # la edición volvió azul la lágrima de Elena: solo el color
+    "abrir-elena-rojo-color": ("3:4", "abrir-elena-rojo-1", "Edit the first image. Keep EVERYTHING exactly the same - "
+        "the velvet, the paper, the chain, the clasp, the extender, the name \"Elena\" and the size and position of "
+        "the small crystal - and change only the colour of the crystal: it is now a deep ruby red, like a red "
+        "zircon, bright and transparent. No text anywhere. "),
+    "abrir-sara-verde": ("3:4", "circulo-sara-verde-1", ABRIR),
+    "abrir-laura-rosa": ("3:4", "circulo-laura-rosa-1", ABRIR),
     "plateado-elena": ("3:4", "base", PLATEADO),
     "prospecto": ("3:4", "base", PROSPECTO),
     "polvoron": ("3:4", None, POLVORON),
@@ -116,7 +138,8 @@ TOMAS = {
 def generar(toma, n):
     formato, refs, prompt = TOMAS[toma]
     try:
-        fotos = {"base": [base(), *C.MUESTRA], "marta": [SALIDA / "circulo-marta-azul-2.png", *C.MUESTRA], None: []}[refs]
+        fotos = ({"base": [base(), *C.MUESTRA], "marta": [SALIDA / "circulo-marta-azul-2.png", *C.MUESTRA], None: []}[refs]
+                 if refs in ("base", "marta", None) else [SALIDA / f"{refs}.png", *C.MUESTRA])
         urls = [higgsfield_client.upload_file(r) for r in fotos]
         res = higgsfield_client.subscribe(C.MODELO, arguments={
             "prompt": prompt, "image_urls": urls, "aspect_ratio": formato, "resolution": C.RESOLUCION,

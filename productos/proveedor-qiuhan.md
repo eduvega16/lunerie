@@ -70,6 +70,26 @@ Thank you, friend! Then:
 When you confirm, I will send you the first order.
 ```
 
+## Cuarta respuesta (7-nov): letra, material y baño
+- **Letra (Edu, 7-nov): la de su primer dibujo de «Isa»** (amarillo, letra ancha, anillas a los lados a media
+  altura), no la estrecha de la muestra «Marta». Edu les devolvió esa foto como referencia. Pedirla en **todos** los pedidos. Las fotos de IA de la
+  ficha llevan la letra estrecha («nombres de ejemplo»): rehacerlas poco a poco con esta. Su I mayúscula parece una J:
+  mirar el dibujo en nombres con I.
+- **Material:** todo 316L (cadena, nombre, anillas, cierre y alargador) **salvo el engaste de la piedra**.
+- **Baño:** normal o **PVD**, 0,03 micras. El normal dura ~3 meses de uso diario; el PVD bastante más (dorado algo más
+  oscuro). Con la garantía legal de 3 años, **pedir PVD** (preguntado: precio, grosor y si #LUN1004 va en PVD).
+- **Agua:** «water-resistant», pero piden evitar perfume, cremas y sudor → en la ficha **no** poner «resistente al agua»;
+  en Cuidados, quitárselo para ducharse, piscina y mar. La descripción dice «sin quitárselo»: cambiarlo (pendiente de OK).
+- **Hipoalergénico:** buscan el informe SGS → no ponerlo hasta tenerlo.
+- Revisan cada collar (nombre, piedra, cierre y baño) antes de enviarlo.
+
+## Quinta respuesta (10-nov): pedidos de varias piezas en un solo paquete (#LUN1006)
+- **+1 $ por cada pieza extra metida en el mismo paquete** (cada collar va en su cajita y abulta más). Lo aplican a
+  todos sus clientes de dropshipping.
+- Cuentas de #LUN1006 (3 collares): por separado 3 × 13,22 = 39,66 $; en un paquete 3 × 5,22 + 3 × 1 (cajitas) + 7
+  (envío) + 2 (2 piezas extra) = **27,66 $** + el IVA que cobra Alibaba. **Siempre juntar los pedidos de la misma clienta.**
+- Edu lo acepta y pide el total final, la letra de «Isa», foto de cada collar antes de enviar y el precio con PVD.
+
 ## Yiwu Shangjie (la de la muestra que ya tiene Edu) · a la vez que QIUHAN
 Su calidad ya se conoce (muestra «Marta», lágrima azul, caja de terciopelo verde por dentro negra; pedida el 9-oct,
 llegó el 23-oct). Ya no tiene el anuncio publicado, pero dice que lo sigue haciendo: el pedido tendría que ser un

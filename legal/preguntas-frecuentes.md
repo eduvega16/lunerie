@@ -4,7 +4,8 @@
 
 **¿Cuánto tarda en llegar?**
 7-12 días laborables a península, con número de seguimiento por email. Las piezas con nombre se hacen para ti en
-3-5 días laborables y después el envío tarda 3-5 días laborables.
+3-5 días laborables y después el envío tarda 3-5 días laborables. Si al revisarla el acabado no sale perfecto, se
+rehace y puede tardar unos días más (te avisamos).
 
 **¿Llega a tiempo para Navidad?**
 Si lo pides antes del 5 de diciembre, sí. Las piezas con nombre tardan más, porque se hacen para ti: pídelas con
@@ -15,16 +16,30 @@ Sí, a península. A Baleares también enviamos, con un pequeño coste que verá
 a Canarias, Ceuta ni Melilla.
 
 **¿Llega envuelto para regalar?**
-Cada pieza viaja protegida en su funda.
+El collar Signé llega en una cajita de terciopelo beige, listo para regalar. El resto de piezas viajan protegidas en
+su funda.
 
 **¿Cómo funciona la oferta de Black Friday?**
-Vale para toda la tienda hasta el 5 de diciembre y puedes mezclar relojes y joyas. Con 2 piezas, la más barata te
-sale al 50 %; con 3, la más barata es gratis. No hace falta código: el descuento se aplica solo en la cesta. No se
-suma a otros códigos de descuento.
+Vale para toda la tienda hasta el 5 de diciembre y puedes mezclar relojes y joyas. Con 2 piezas, una te sale al
+50 %; con 3, una te sale gratis. El descuento va siempre a la pieza de menor precio, y en la cesta ves en cada pieza
+cuánto te descuenta antes de pagar. No hace falta código: se aplica solo. No se suma a otros códigos de descuento.
 
 **Si pido varias piezas, ¿llegan juntas?**
 No siempre. Cada pieza puede salir de un almacén distinto, así que a veces llegan en paquetes separados y en días
 distintos. Te mandamos el seguimiento de cada uno por email.
+
+## El collar Signé
+
+**¿De qué está hecho?**
+Acero inoxidable con baño PVD dorado o plateado. La lágrima es de circonita, del color del mes que elijas.
+
+**¿La letra será igual que en las fotos?**
+Las fotos llevan nombres de ejemplo y la vista previa de la ficha es orientativa. El nombre se hace tal cual lo
+escribes, mayúsculas incluidas, en letra de firma; la forma exacta de cada letra puede variar un poco.
+
+**¿Se puede devolver?**
+Al llevar su nombre, no tiene derecho de desistimiento. Si llega con un defecto o con un nombre distinto del que
+escribiste, lo rehacemos sin coste.
 
 ## El reloj Lune
 
@@ -45,7 +60,7 @@ No, es pequeña: 12 mm. Es un reloj delicado; si buscas uno grande, este no es e
 Sí, viene puesta. Cuando se gaste, cualquier relojería la cambia: es una pila de cuarzo estándar.
 
 **¿Es un reloj de lujo?**
-No, ni lo pretende. Es un reloj de cuarzo con acabado dorado o plateado y aspecto vintage, pensado para llevar a
+No, ni lo pretende. Es un reloj de cuarzo con acabado dorado y aspecto vintage, pensado para llevar a
 diario y para regalar.
 
 ## Devoluciones y garantía

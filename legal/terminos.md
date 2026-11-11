@@ -13,6 +13,10 @@ Describimos cada pieza con sus medidas, materiales y avisos (por ejemplo, si no 
 intentan ser fieles, pero el color puede variar un poco según la pantalla. Las piedras decorativas son de resina,
 vidrio o circonita salvo que se diga otra cosa.
 
+**Piezas con nombre:** las fotos llevan nombres de ejemplo y la vista previa de la ficha es orientativa. El nombre se
+hace tal cual lo escribes, en letra de firma; la forma exacta de cada letra puede variar ligeramente respecto a las
+fotos.
+
 ## 3. Precios
 
 Los precios están en euros e **incluyen el IVA**. El envío a península es gratis; si hubiera algún coste de envío,
@@ -46,6 +50,13 @@ derecho de desistimiento. Todo el detalle está en la [política de devoluciones
 
 Las promociones (por ejemplo, un código de descuento) se aplican en la cesta mientras estén activas y no se
 acumulan con otras salvo que se diga.
+
+**Black Friday (hasta el 5 de diciembre de 2026 a las 23:59, hora peninsular):** vale para relojes y joyas, que se
+pueden mezclar. Con 2 piezas en el mismo pedido, una de ellas sale al 50 %; con 3, una de ellas sale gratis. El
+descuento se aplica siempre a la pieza de **menor precio** del grupo, y se repite por cada grupo de piezas (por
+ejemplo, con 6 piezas, 2 salen gratis). Se aplica solo en la cesta, sin código, y no se suma a otros códigos de
+descuento. Si devuelves alguna pieza de un pedido con esta oferta, te devolvemos lo que pagaste de verdad por ella,
+con el descuento ya aplicado.
 
 ## 9. Atención al cliente y reclamaciones
 

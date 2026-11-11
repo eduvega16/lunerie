@@ -852,82 +852,36 @@ if not SEGUNDO_RELOJ:
 # le cuesta de verdad con la promo y botón «Añadir» que la mete sin salir de la cesta. El precio se calcula como Shopify:
 # se rebaja la mitad de la más barata, en céntimos y hacia abajo (19,95 → 9,98 €).
 CESTA_EXTRA = ["aros-boucle", "anillo-duo", "pendientes-larme", "collar-lune"]   # se enseñan las 3 primeras que no estén en la cesta
+# 11-nov (Edu): fuera el bloque verde con el carrusel de piezas (distraía); solo una barra de progreso fina con los
+# 3 pasos de la promo (1 pieza · 2.ª al 50 % · 3.ª gratis) y una línea de texto. El carrusel de 8-nov está en git (604c792).
 if PROMO:
     UPSELL = (
-        "{%- comment -%} Generado por tema/build.py (PROMO): aviso de la promo en la cesta {%- endcomment -%}\n"
+        "{%- comment -%} Generado por tema/build.py (PROMO): barra de progreso de la promo en la cesta {%- endcomment -%}\n"
         "{%- assign lu_n = cart.item_count -%}\n"
-        "{%- if lu_n > 0 -%}\n"
-        '<div class="lu-promo">\n'
-        "  {%- if lu_n == 1 -%}\n"
-        '    <p class="lu-promo__t">Black Friday · Añade otra pieza y la más barata te sale al 50 %</p>\n'
-        "    {%- assign lu_item = cart.items.first -%}{%- assign lu_m = lu_item.original_price -%}{%- assign lu_vistas = 0 -%}\n"
-        '    <ul class="lu-extra" role="list">\n'
-        "    {%- assign lu_lista = '" + ",".join(CESTA_EXTRA) + "' | split: ',' -%}\n"
-        "    {%- for lu_h in lu_lista -%}\n"
-        "      {%- assign p = all_products[lu_h] -%}\n"
-        "      {%- if p.available and p.handle != lu_item.product.handle and lu_vistas < 3 -%}\n"
-        "        {%- assign lu_vistas = lu_vistas | plus: 1 -%}\n"
-        "        {%- assign lu_baja = p.price | at_most: lu_m | divided_by: 2 -%}{%- assign lu_paga = p.price | minus: lu_baja -%}\n"
-        '      <li class="lu-extra__i"><form class="lu-extra__f" action="{{ routes.cart_add_url }}" method="post">\n'
-        '        <a class="lu-extra__img" href="{{ p.url }}" tabindex="-1">{{ p.featured_image | image_url: width: 300 | '
-        "image_tag: loading: 'lazy', alt: p.title, sizes: '140px' }}</a>\n"
-        '        <span class="lu-extra__n">{{ p.title }}</span>\n'
-        '        <span class="lu-extra__p"><s>{{ p.price | money }}</s> {{ lu_paga | money }}</span>\n'
-        "        {%- if p.has_only_default_variant -%}\n"
-        '        <input type="hidden" name="id" value="{{ p.selected_or_first_available_variant.id }}">\n'
-        "        {%- else -%}\n"
-        '        <select class="lu-extra__s" name="id" aria-label="{{ p.title | escape }}: {{ p.options.first | escape }}">'
-        "{%- for v in p.variants -%}{%- if v.available -%}<option value=\"{{ v.id }}\">{{ v.title }}</option>"
-        "{%- endif -%}{%- endfor -%}</select>\n"
-        "        {%- endif -%}\n"
-        '        <input type="hidden" name="quantity" value="1"><input type="hidden" name="return_to" value="{{ routes.cart_url }}">\n'
-        '        <button type="submit" class="lu-extra__btn">Añadir</button>\n'
-        "      </form></li>\n"
-        "      {%- endif -%}\n"
-        "    {%- endfor -%}\n"
-        "    </ul>\n"
-        "  {%- elsif lu_n == 2 -%}\n"
-        '    <p class="lu-promo__t">Black Friday · Añade una tercera y la más barata te sale gratis</p>\n'
-        "  {%- else -%}\n"
-        '    <p class="lu-promo__t">Black Friday · Tu descuento ya está en la cesta</p>\n'
-        "  {%- endif -%}\n"
+        "{%- if lu_n > 0 -%}{%- assign lu_paso = lu_n | at_most: 3 -%}\n"
+        '<div class="lu-promo" role="status">\n'
+        '  <p class="lu-promo__t">{%- if lu_n == 1 -%}Añade otra pieza y la 2.ª te sale <strong>al 50 %</strong>'
+        '{%- elsif lu_n == 2 -%}Añade una tercera y te sale <strong>gratis</strong>'
+        '{%- else -%}Black Friday · <strong>tu descuento ya está aplicado</strong>{%- endif -%}</p>\n'
+        '  <div class="lu-promo__barra" aria-hidden="true"><span style="width:{% if lu_paso == 1 %}0{% elsif lu_paso == 2 %}50{% else %}100{% endif %}%"></span></div>\n'
+        '  <ol class="lu-promo__pasos" aria-hidden="true">'
+        '<li class="is-on">1 pieza</li>'
+        '<li{% if lu_paso >= 2 %} class="is-on"{% endif %}>2.ª al 50 %</li>'
+        '<li{% if lu_paso >= 3 %} class="is-on"{% endif %}>3.ª gratis</li></ol>\n'
         "</div>\n"
         "<style>"
-        # 8-nov (Edu): en el verde de Lunerie y arriba de la cesta. Tarjetas en horizontal (foto pequeña a la izquierda)
-        # para que, arriba, no empuje demasiado la pieza de la cesta.
-        ".lu-promo{margin:0 0 16px;padding:14px 0 14px 16px;background:" + GREEN + ";color:#fff;display:grid;gap:12px}"
-        ".lu-promo p{margin:0;padding-right:16px}"
-        ".lu-promo__t{font-size:.8125rem;letter-spacing:.08em;text-transform:uppercase}"
-        ".lu-extra{list-style:none;margin:0;padding:0 16px 2px 0!important;display:flex;gap:12px;overflow-x:auto;"
-        "scroll-snap-type:x mandatory;scrollbar-width:none}"
-        ".lu-extra::-webkit-scrollbar{display:none}"
-        ".lu-extra__i{flex:0 0 216px;scroll-snap-align:start}"
-        ".lu-extra__f{margin:0;display:grid;grid-template-columns:64px 1fr;grid-template-rows:auto auto minmax(30px,auto) auto;column-gap:10px;row-gap:4px;align-content:start}"
-        ".lu-extra__img{grid-row:1/span 4;display:block;aspect-ratio:4/5;background:" + MIST + ";overflow:hidden}"
-        ".lu-extra__img img{width:100%;height:100%;object-fit:cover;display:block}"
-        ".lu-extra__n{font-size:.8125rem;line-height:1.25}"
-        ".lu-extra__p{font-size:.8125rem}.lu-extra__p s{opacity:.65;margin-right:4px}"
-        ".lu-extra__s{font:inherit;font-size:.75rem;color:" + INK + ";background:#fff;border:0;border-radius:0;"
-        "padding:4px 6px;width:100%;min-height:30px}"
-        ".lu-extra__btn{appearance:none;border:0;border-radius:0;background:#fff;color:" + GREEN + ";font:inherit;"
-        "font-size:.6875rem;letter-spacing:.14em;text-transform:uppercase;padding:8px 6px;cursor:pointer;min-height:32px;"
-        "grid-column:2;grid-row:4}"
-        ".lu-extra__btn:disabled{opacity:.6}"
-        ".lu-extra__btn:focus-visible,.lu-extra__s:focus-visible{outline:2px solid #fff;outline-offset:2px}"
-        # Cajón: debajo de las piezas, con el margen del cajón; la pieza de la cesta no se encoge (si no cabe todo, se baja con el dedo)
+        ".lu-promo{margin:0 0 16px;display:grid;gap:8px;color:" + INK + "}"
+        ".lu-promo__t{margin:0;font-size:.875rem;line-height:1.35}.lu-promo__t strong{font-weight:500}"
+        ".lu-promo__barra{position:relative;height:3px;background:#E3E6E3;margin:6px 6px 0}"
+        ".lu-promo__barra span{position:absolute;inset:0 auto 0 0;background:" + GREEN + ";transition:width .4s}"
+        ".lu-promo__pasos{list-style:none;margin:0;padding:0!important;display:flex;justify-content:space-between;"
+        "font-size:.6875rem;letter-spacing:.06em;text-transform:uppercase;color:#7A827D}"
+        ".lu-promo__pasos li.is-on{color:" + GREEN + "}"
         ".cart-drawer__content>.lu-promo{margin:16px var(--cart-drawer-padding,16px) 0}"
-        ".cart-drawer__items{flex-shrink:0}"
-        # Página de la cesta: entre el título y las piezas. En PC, columna izquierda (la derecha es el resumen fijo)
         ".cart-page>.lu-promo{margin-top:16px}"
         "@media screen and (min-width:750px){.cart-page>.lu-promo{grid-column:1;grid-row:2;align-self:start}"
         ".cart-page:has(>.lu-promo)>.cart-page__items{grid-row:3}}"
         "</style>\n"
-        # Añadir con fetch y volver a la cesta (ya con el descuento); sin JS, el formulario normal hace lo mismo
-        "<script>if(!window.luExtra){window.luExtra=1;document.addEventListener('submit',function(e){"
-        "var f=e.target.closest&&e.target.closest('.lu-extra__f');if(!f)return;"
-        "e.preventDefault();var b=f.querySelector('button');b.disabled=true;b.textContent='Añadiendo…';"
-        "fetch('{{ routes.cart_add_url }}.js',{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}})"
-        ".then(function(r){if(!r.ok)throw 0;location.href='{{ routes.cart_url }}'}).catch(function(){f.submit()})})}</script>\n"
         "{%- endif -%}\n")
 (OUT / "codigo" / "snippets" / "lunerie-segundo-reloj.liquid").write_text(UPSELL, encoding="utf8")
 

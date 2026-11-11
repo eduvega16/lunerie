@@ -571,6 +571,13 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
 - **Instagram:** el carrusel «Un martes cualquiera» (W46-10) del 10-nov 19:30 **falló** (Instagram no pudo bajar una foto
   del CDN de Shopify, error 2207052) y sigue «aprobado» sin publicar: reprogramarlo o publicarlo a mano. El reel madre e
   hija (W46-16) salió el 11-nov a las 13:32.
+- **Opiniones del Collar Signé (11-nov, en producción):** 5 de amigas (María R., Lucía S., Marta R., Sara V., Carmen L.;
+  5 estrellas, origen «Recibido como regalo», **sin foto todavía**), textos tal cual en
+  `productos/collar-signe/opiniones-amigas.json`. Campo nuevo **«Título»** en el metaobjeto Opinión (guardado, **el tema
+  aún no lo enseña**; Edu no ha dicho si lo quiere). **Fuera la fecha** de las tarjetas de opiniones (todas las fichas).
+  Falta: las fotos de cada una (`fileCreate` + `metaobjectUpdate`).
+- **Caja del nombre del collar (11-nov, en producción):** la letra de firma se ajusta sola al ancho (JS `ajustar` en
+  `lunerie-collar.liquid`): «Escribe su nombre» se cortaba según la pantalla.
 - **Trampa de Git Bash:** en los heredoc (`<<'E'`) que pasan por `python -`, las barras invertidas llegan mal (`\\n` → `\n`,
   `\b` en rutas Windows): para código con `\` usar la herramienta Edit o `bytes([92, …])`, y rutas con `/`.
 

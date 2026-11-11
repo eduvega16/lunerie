@@ -85,7 +85,7 @@
         </p>
         {%- render 'lunerie-opiniones', parte: 'estrellas', valor: estrellas -%}
         <p class="lu-op__texto">{{ texto | escape | newline_to_br }}</p>
-        {%- if fecha != blank -%}<p class="lu-op__fecha">{{ fecha | date: '%d/%m/%Y' }}</p>{%- endif -%}
+        {%- comment -%} 11-nov (Edu): sin fecha en las tarjetas; el dato sigue en el metaobjeto {%- endcomment -%}
       </div>
       {%- if foto != blank -%}
         {%- assign alt_foto = 'Foto de ' | append: nombre -%}

@@ -139,8 +139,8 @@
   .lu-collar__cuenta { position: absolute; right: 12px; bottom: 8px; font-size: .75rem; color: #6B746F; pointer-events: none; }
   .lu-firma__nota { margin: 0; font-size: .75rem; color: #6B746F; }
   .lu-firma__nota b { font-weight: 500; color: #16201B; }
-  @media (max-width: 749px) { .lu-firma__campo { height: 84px; padding: 0 40px 14px; font-size: {{ firma_movil }}px; }
-    .lu-firma__campo::placeholder { font-size: .8em; } }
+  /* 11-nov: si el nombre o «Escribe su nombre» no caben en el ancho de la caja, el script baja la letra (ajustar) */
+  @media (max-width: 749px) { .lu-firma__campo { height: 84px; padding: 0 40px 14px; font-size: {{ firma_movil }}px; } }
 
   /* Panel de las piedras: entra por la derecha, como en Olivia */
   .lu-piedras { position: fixed; inset: 0 0 0 auto; width: min(460px, 92vw); max-width: none; height: 100dvh; max-height: none;
@@ -226,6 +226,21 @@
         b.textContent = v;   // textContent: lo que escriben nunca se interpreta como HTML
         nota.append(b, ' · vista previa orientativa de la letra.');
       };
+      // 11-nov: que el texto (nombre o marcador) quepa siempre en la caja: se mide con la letra de firma y, si se pasa
+      // del ancho, se baja el tamaño (nunca por debajo de 24 px). Con la pantalla o la letra cambiando, se vuelve a medir.
+      const lienzo = document.createElement('canvas').getContext('2d');
+      const ajustar = () => {
+        nombre.style.fontSize = '';
+        const cs = getComputedStyle(nombre);
+        const base = parseFloat(cs.fontSize);
+        const hueco = nombre.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight) - 6;
+        lienzo.font = `${base}px ${cs.fontFamily}`;
+        const ancho = lienzo.measureText(nombre.value || nombre.placeholder).width;
+        if (hueco > 0 && ancho > hueco) nombre.style.fontSize = `${Math.max(24, Math.floor(base * hueco / ancho))}px`;
+      };
+      nombre.addEventListener('input', ajustar);
+      new ResizeObserver(ajustar).observe(firma);
+      document.fonts?.load(`20px 'Lunerie Firma'`).then(ajustar, () => {});
       nombre.addEventListener('input', contar);
       document.addEventListener('change', (e) => { if (e.target.closest?.('[data-option-name="Color"], .variant-option')) setTimeout(metal, 0); });
       metal();

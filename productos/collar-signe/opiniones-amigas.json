@@ -1,0 +1,40 @@
+{
+  "_nota": "Opiniones de amigas de Edu sobre el Collar Signé (11-nov-2026). Textos tal cual los mandaron. SUBIDAS el 11-nov sin foto (metaobjetos «Opinión» signe-maria-r, signe-lucia-s, signe-marta-r, signe-sara-v, signe-carmen-l; activas, producto collar-signe, origen «Recibido como regalo», con el campo nuevo «titulo», que el tema aún no enseña). Faltan las fotos.",
+  "opiniones": [
+    {
+      "titulo": "Precioso y muy especial",
+      "estrellas": 5,
+      "nombre": "María R.",
+      "foto": null,
+      "texto": "Me ha encantado el resultado. El nombre queda precioso y la piedra tiene un color muy bonito. Además, viene presentado en una cajita ideal para regalar."
+    },
+    {
+      "titulo": "Un regalo perfecto",
+      "estrellas": 5,
+      "nombre": "Lucía S.",
+      "foto": null,
+      "texto": "Se lo regalé a mi madre por su cumpleaños y le hizo muchísima ilusión. Es un detalle diferente y muy bonito. Sin duda repetiría."
+    },
+    {
+      "titulo": "Me sorprendió muchísimo",
+      "estrellas": 5,
+      "nombre": "Marta R.",
+      "foto": null,
+      "texto": "Tenía dudas sobre cómo quedaría el nombre, pero el resultado ha superado mis expectativas. Es delicado, elegante y combina con todo."
+    },
+    {
+      "titulo": "Muy bonito en persona",
+      "estrellas": 5,
+      "nombre": "Sara V.",
+      "foto": null,
+      "texto": "Las fotos ya me gustaban, pero cuando lo recibí me gustó todavía más. La presentación está muy cuidada y se nota que han pensado en los detalles."
+    },
+    {
+      "titulo": "Un detalle con significado",
+      "estrellas": 5,
+      "nombre": "Carmen L.",
+      "foto": null,
+      "texto": "Elegí la piedra de mi mes de nacimiento y me parece una idea preciosa. Es un collar sencillo, pero tiene algo especial."
+    }
+  ]
+}

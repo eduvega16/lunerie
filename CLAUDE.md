@@ -542,10 +542,12 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
 
 ### Para empezar la próxima sesión (después del 2-nov) — abrir conversación nueva por sesión.
 **DÓNDE NOS QUEDAMOS (11-nov, sesión en `C:\Users\edu\lunerie`) — manda sobre los bloques del 9-10 nov:**
-- **Campaña de Meta de Black Friday PAUSADA** desde el 10-nov (Edu: «párala»; 186 € gastados, 2 pedidos reales,
-  ~99 €/pedido frente a ~21 € de breakeven). Comprobado el 11-nov: pausada, 0 € hoy. Siguen sin publicar 2 recomendaciones
-  de Meta a medias (anuncios 52566459471594 y 52566459911394) y el borrador «NO PUBLICAR»: no publicarlos sin el OK de Edu.
-  **Relanzar** solo después de reseñas reales (amigas con collares de QIUHAN, foto + texto suyo) y con 10-15 €/día.
+- **Campaña de Meta de Black Friday: pausada el 10-nov** (Edu: «párala»; 199,29 € gastados, 2 pedidos reales,
+  ~99 €/pedido frente a ~21 € de breakeven) y **REACTIVADA el 11-nov por la tarde** (ver más abajo: 15 €/día, tope 300 €,
+  anuncios 18, 21, 28 y 29; comprobado: campaña y los 4 anuncios ACTIVOS, aún 0 € gastados ese día). **No tocar nada
+  hasta el ~14-nov** (cada cambio reinicia el aprendizaje). Siguen sin publicar 2 recomendaciones de Meta a medias
+  (anuncios 52566459471594 y 52566459911394) y el borrador «NO PUBLICAR»: no publicarlos sin el OK de Edu (al publicar
+  cambios, siempre con `object_ids`). Las 5 opiniones de amigas ya están en la ficha (sin foto todavía).
 - **Collar Signé, en producción (11-nov):** descripción con «baño PVD» y «un pequeño recuerdo del mes en el que nació» ·
   «Llega en su cajita de regalo» bajo el botón y en la cesta · **vídeo de Marta en la mano** en la posición 2 de la galería
   (`marca/fotos-ia/mano/mano-ficha-4x5.mp4`; foto `mano-marta-tcorta-1.png`, «t» acortada a petición de Edu; Kling 3.0 pro,

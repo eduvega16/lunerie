@@ -1,6 +1,6 @@
 {
   "id": "2026-W46-18-reel-pellizco",
-  "estado": "aprobado",
+  "estado": "publicado",
   "plataforma": "instagram",
   "formato": "reel",
   "pieza": "collar-signe",
@@ -40,7 +40,11 @@
       "https://cdn.shopify.com/videos/c/vp/db6e774b1f144fc89b35a7c6246bf9ee/db6e774b1f144fc89b35a7c6246bf9ee.HD-1080p-4.8Mbps-100607017.mp4"
     ],
     "alt_text": "",
-    "ia": true
+    "ia": true,
+    "resultado": {
+      "media_id": "18118864628012137",
+      "fecha": "2026-11-11T19:32:20+0100"
+    }
   },
   "origen": "Plan de 2 publicaciones al día del 10 al 20-nov (OK de Edu, 9-nov).",
   "riesgos": "Nombres revisados a tamaño real; sin nombres de gemas ni material sin confirmar."

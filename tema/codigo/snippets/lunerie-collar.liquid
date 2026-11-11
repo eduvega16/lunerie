@@ -41,13 +41,13 @@
 -%}
 <div class="lu-collar" data-lu-collar data-form="{{ form_id }}" data-elegido="{{ elegido }}">
   <div class="lu-collar__campo">
-    <p class="lu-collar__etiqueta" id="lu-piedra-{{ section_id }}">Piedra del mes <span aria-hidden="true">*</span></p>
+    <p class="lu-collar__etiqueta" id="lu-piedra-{{ section_id }}">Piedra <span aria-hidden="true">*</span></p>
     <button type="button" class="lu-collar__elegir" data-lu-abrir aria-haspopup="dialog" aria-describedby="lu-piedra-{{ section_id }}">
       <svg class="lu-gota" data-lu-gota viewBox="0 0 24 32" width="18" height="24" aria-hidden="true" hidden><path d="M12 1.5C9 7 3.5 13.2 3.5 20.2a8.5 8.5 0 0 0 17 0C20.5 13.2 15 7 12 1.5Z"/></svg>
       <img class="lu-gota-foto" data-lu-gota-foto alt="" width="20" height="28" hidden>
-      <span data-lu-texto>Elige el mes de la piedra</span>
+      <span data-lu-texto>Elige su piedra</span>
     </button>
-    <p class="lu-collar__error" data-lu-error role="alert" hidden>Elige el mes de la piedra para añadirlo a la cesta.</p>
+    <p class="lu-collar__error" data-lu-error role="alert" hidden>Elige la piedra para añadirlo a la cesta.</p>
   </div>
 
   <div class="lu-collar__campo">
@@ -74,7 +74,7 @@
         <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="1.5"/></svg>
       </button>
     </div>
-    <p class="lu-piedras__texto">Una lágrima del color de su mes.</p>
+    <p class="lu-piedras__texto">La de su mes o la que más te guste.</p>
     <ul class="lu-piedras__lista" role="list">
       {%- for m in meses -%}
         {%- liquid

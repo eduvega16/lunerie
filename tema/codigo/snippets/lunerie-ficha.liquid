@@ -114,7 +114,8 @@
         <div class="lu-hst__fila">
           {%- for v in videos -%}
             {%- assign partes = v | split: '|' -%}
-            <figure class="lu-hst__item">
+            <button type="button" class="lu-hst__item" data-lu-hst="{{ forloop.index0 }}" data-lu-video="{{ partes[0] }}"
+              data-lu-foto="{{ partes[1] }}" aria-label="Ver el vídeo {{ forloop.index }} de {{ videos.size }} a pantalla completa">
               <video data-lu-auto data-lu-historia muted loop playsinline preload="none" aria-hidden="true" poster="{{ partes[1] }}">
                 <source src="{{ partes[0] }}" type="video/mp4">
               </video>
@@ -124,18 +125,96 @@
                 {%- if settings.favicon != blank -%}{{ settings.favicon | image_url: width: 64 | image_tag: alt: '', loading: 'lazy', width: 22, height: 22 }}{%- endif -%}
                 luneriejewelry
               </span>
-            </figure>
+            </button>
           {%- endfor -%}
         </div>
       </div>
+      {%- comment -%} 11-nov (Edu, visto en Lucce): al tocar un vídeo se abre a pantalla completa como una historia:
+        barritas de progreso (una por vídeo), @luneriejewelry, X para cerrar; al acabar pasa al siguiente y tras el
+        último se cierra. PC: flechas a los lados. Móvil: tocar a la izquierda/derecha o deslizar; hacia abajo, cerrar.
+        Sin botón de sonido: los clips no llevan audio. {%- endcomment -%}
+      <dialog class="lu-hstv" aria-label="Vídeos del Collar Signé">
+        <button type="button" class="lu-hstv__flecha" data-lu-ant aria-label="Vídeo anterior">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+        </button>
+        <div class="lu-hstv__marco">
+          <video playsinline muted preload="auto" aria-hidden="true"></video>
+          <span class="lu-hst__sombra" aria-hidden="true"></span>
+          <span class="lu-hstv__barras" aria-hidden="true">
+            {%- for v in videos -%}<span><i></i></span>{%- endfor -%}
+          </span>
+          <span class="lu-hstv__quien" aria-hidden="true">
+            {%- if settings.favicon != blank -%}{{ settings.favicon | image_url: width: 64 | image_tag: alt: '', loading: 'lazy', width: 28, height: 28 }}{%- endif -%}
+            luneriejewelry
+          </span>
+          <button type="button" class="lu-hstv__zona lu-hstv__zona--ant" data-lu-ant aria-label="Vídeo anterior"></button>
+          <button type="button" class="lu-hstv__zona lu-hstv__zona--sig" data-lu-sig aria-label="Vídeo siguiente"></button>
+          <button type="button" class="lu-hstv__cerrar" data-lu-cerrar aria-label="Cerrar">
+            <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+          </button>
+        </div>
+        <button type="button" class="lu-hstv__flecha" data-lu-sig aria-label="Vídeo siguiente">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+        </button>
+      </dialog>
       <script>
-        // La barrita de arriba avanza con el vídeo, como en las historias de Instagram
-        document.querySelectorAll('video[data-lu-historia]').forEach((v) => {
-          const barra = v.parentElement.querySelector('.lu-hst__barra i');
-          v.addEventListener('timeupdate', () => {
-            if (v.duration) barra.style.transform = `scaleX(${v.currentTime / v.duration})`;
+        (() => {
+          // La barrita de arriba de cada tarjeta avanza con su vídeo, como en las historias de Instagram
+          document.querySelectorAll('video[data-lu-historia]').forEach((v) => {
+            const barra = v.parentElement.querySelector('.lu-hst__barra i');
+            v.addEventListener('timeupdate', () => {
+              if (v.duration) barra.style.transform = `scaleX(${v.currentTime / v.duration})`;
+            });
           });
-        });
+          // Visor a pantalla completa
+          const items = [...document.querySelectorAll('.lu-hst [data-lu-hst]')];   // ojo: data-lu-abrir ya lo usa el panel de piedras
+          const dlg = document.querySelector('.lu-hstv');
+          if (!items.length || !dlg) return;
+          const vid = dlg.querySelector('video');
+          const barras = [...dlg.querySelectorAll('.lu-hstv__barras i')];
+          let actual = 0;
+          const pintar = (fraccion) => barras.forEach((b, i) => {
+            b.style.transform = `scaleX(${i < actual ? 1 : i > actual ? 0 : fraccion})`;
+          });
+          const cargar = (i) => {
+            actual = i;
+            vid.poster = items[i].dataset.luFoto;
+            vid.src = items[i].dataset.luVideo;
+            pintar(0);
+            vid.play().catch(() => {});
+          };
+          const cerrar = () => { vid.pause(); vid.removeAttribute('src'); vid.load(); if (dlg.open) dlg.close(); };
+          const sig = () => (actual < items.length - 1 ? cargar(actual + 1) : cerrar());
+          const ant = () => cargar(Math.max(0, actual - 1));
+          items.forEach((it, i) => it.addEventListener('click', () => {
+            dlg.showModal();
+            document.documentElement.classList.add('lu-sin-scroll');
+            cargar(i);
+          }));
+          dlg.addEventListener('close', () => {
+            document.documentElement.classList.remove('lu-sin-scroll');
+            vid.pause();
+            items[actual]?.focus({ preventScroll: true });
+          });
+          vid.addEventListener('timeupdate', () => { if (vid.duration) pintar(vid.currentTime / vid.duration); });
+          vid.addEventListener('ended', sig);
+          dlg.querySelectorAll('[data-lu-sig]').forEach((b) => b.addEventListener('click', sig));
+          dlg.querySelectorAll('[data-lu-ant]').forEach((b) => b.addEventListener('click', ant));
+          dlg.querySelector('[data-lu-cerrar]').addEventListener('click', cerrar);
+          dlg.addEventListener('click', (e) => { if (e.target === dlg) cerrar(); });   // clic fuera del vídeo
+          dlg.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') sig();
+            if (e.key === 'ArrowLeft') ant();
+          });
+          // Deslizar en el móvil: a los lados cambia de vídeo; hacia abajo, cierra
+          let x0 = 0, y0 = 0;
+          dlg.addEventListener('touchstart', (e) => { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, { passive: true });
+          dlg.addEventListener('touchend', (e) => {
+            const dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0;
+            if (dy > 90 && Math.abs(dy) > Math.abs(dx)) cerrar();
+            else if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy)) (dx < 0 ? sig : ant)();
+          }, { passive: true });
+        })();
       </script>
       {%- render 'lunerie-ficha', parte: 'reproducir' -%}
     {%- endif -%}
@@ -151,12 +230,12 @@
         <div class="lu-sg__texto">
           <p class="lu-sg__ceja">Collar Signé</p>
           <h2 class="lu-sg__titulo">Su nombre, <em>su piedra.</em></h2>
-          <p>Su nombre en letra de firma y, colgando en el centro, una lágrima del color del mes en que nació. Un regalo
+          <p>Su nombre en letra de firma y, colgando en el centro, una lágrima del color de su mes, o del que más le guste. Un regalo
             que es solo suyo.</p>
           <ul class="lu-sg__lista">
             <li><i aria-hidden="true"></i>Acero inoxidable; el dorado, con baño de oro de 18K</li>
             <li><i aria-hidden="true"></i>Hasta 10 letras, tal cual las escribes</li>
-            <li><i aria-hidden="true"></i>Doce colores de circonita, uno por mes</li>
+            <li><i aria-hidden="true"></i>Doce colores de circonita: el de su mes o el que más le guste</li>
             <li><i aria-hidden="true"></i>Llega en su cajita de regalo</li>
           </ul>
         </div>
@@ -278,5 +357,37 @@
   @media (max-width:749px){
     .lu-hst__fila{justify-content:flex-start;gap:8px}
     .lu-hst__item{flex-basis:40vw;border-radius:14px}
+  }
+  /* Las tarjetas son botones (se abren a pantalla completa) */
+  .lu-hst__item{padding:0;border:0;cursor:pointer;font:inherit;color:inherit;text-align:left}
+  .lu-hst__item:focus-visible{outline:2px solid #A6834A;outline-offset:3px}
+
+  /* Visor a pantalla completa, como una historia (11-nov) */
+  html.lu-sin-scroll{overflow:hidden}
+  .lu-hstv{width:100vw;height:100dvh;max-width:none;max-height:none;margin:0;padding:0;border:0;background:transparent;
+    color:#fff}
+  .lu-hstv[open]{display:flex;align-items:center;justify-content:center;gap:28px}
+  .lu-hstv::backdrop{background:rgba(10,14,12,.9)}
+  .lu-hstv__marco{position:relative;height:min(92dvh,calc(92vw * 16 / 9));aspect-ratio:9/16;border-radius:18px;
+    overflow:hidden;background:#000}
+  .lu-hstv__marco video{display:block;width:100%;height:100%;object-fit:cover}
+  .lu-hstv__barras{position:absolute;top:10px;left:10px;right:10px;z-index:2;display:flex;gap:4px}
+  .lu-hstv__barras span{flex:1;height:2px;border-radius:2px;background:rgba(255,255,255,.4);overflow:hidden}
+  .lu-hstv__barras i{display:block;height:100%;background:#fff;transform:scaleX(0);transform-origin:left}
+  .lu-hstv__quien{position:absolute;top:22px;left:12px;z-index:2;display:flex;align-items:center;gap:8px;
+    font-size:.8125rem;font-weight:500;text-shadow:0 1px 2px rgba(0,0,0,.35)}
+  .lu-hstv__quien img{width:28px;height:28px;border-radius:50%;box-shadow:0 0 0 1.5px #fff}
+  .lu-hstv__cerrar{position:absolute;top:16px;right:8px;z-index:3;width:40px;height:40px;display:grid;place-items:center;
+    padding:0;border:0;background:transparent;color:#fff;cursor:pointer;filter:drop-shadow(0 1px 2px rgba(0,0,0,.4))}
+  .lu-hstv__zona{position:absolute;top:64px;bottom:0;z-index:1;width:35%;padding:0;border:0;background:transparent;
+    cursor:pointer}
+  .lu-hstv__zona--ant{left:0}
+  .lu-hstv__zona--sig{right:0}
+  .lu-hstv__flecha{flex:0 0 44px;width:44px;height:44px;display:grid;place-items:center;padding:0;border:0;
+    border-radius:50%;background:rgba(255,255,255,.92);color:#16201B;cursor:pointer}
+  .lu-hstv button:focus-visible{outline:2px solid #A6834A;outline-offset:2px}
+  @media (max-width:749px){
+    .lu-hstv__marco{width:100vw;height:100dvh;aspect-ratio:auto;border-radius:0}
+    .lu-hstv__flecha{display:none}
   }
 {% endstylesheet %}

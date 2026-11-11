@@ -31,7 +31,7 @@ distintos. Te mandamos el seguimiento de cada uno por email.
 ## El collar Signé
 
 **¿De qué está hecho?**
-Acero inoxidable. El dorado, con baño de oro de 18K. La lágrima es de circonita, del color del mes que elijas.
+Acero inoxidable. El dorado, con baño de oro de 18K. La lágrima es de circonita, del color que elijas: el de su mes o el que más te guste.
 
 **¿La letra será igual que en las fotos?**
 Las fotos llevan nombres de ejemplo y la vista previa de la ficha es orientativa. El nombre se hace tal cual lo

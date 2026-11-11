@@ -591,6 +591,12 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
   título honesto, nunca «As seen on you»; `marca/historias_collar.py`) y bloque **«Su nombre, su piedra.»** (la mano con
   la lágrima cambiando de color, `marca/piedra_cambia.py`, y la cajita con pegatina «Cajita de regalo incluida»,
   `marca/pegatina_cajita.py`). Fuera «Te puede interesar» **solo del collar** (Edu no ha dicho si del resto).
+- **Visor de historias (11-nov, en producción):** al tocar un vídeo de «Así se lleva» se abre a pantalla completa como
+  una historia de Instagram (barritas por vídeo, @luneriejewelry, X; pasa solo al siguiente; flechas en PC, tocar o
+  deslizar en el móvil, deslizar abajo cierra). Atributo `data-lu-hst` (**no** `data-lu-abrir`: ya lo usa el panel de
+  piedras de `lunerie-collar.liquid`).
+- **Piedra «de su mes o la que más te guste» (11-nov, Edu):** selector («Piedra» · «Elige su piedra»), panel, bloque
+  «Su nombre, su piedra», descripción, inicio y FAQ. Las variantes siguen siendo meses (a QIUHAN le llega «Mayo» = verde).
 - **Fuera «la leyenda» de las joyas (11-nov, Edu: «carecen de sentido»):** el bloque del castillo de Lunerie ya no sale
   en ninguna ficha (quitado de `build.py`; el snippet `lunerie-leyenda.liquid` sigue en el tema sin usarse).
 - **Voz:** clave de ElevenLabs (plan **Starter**) en `.env.local` de este PC; Edu la pegó en el chat → regenerarla.

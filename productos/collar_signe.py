@@ -20,11 +20,11 @@ FOTOS = [("Signature_Name_and_Birthstone_Necklace.webp", "prod", .5, "Collar Sig
          ("Mask_group-26_ff4d6846-2898-459b-9369-eb9240a0ee8b.webp", "prod", .5, "Collar Signé plateado con lágrima verde"),
          ("script-initial-birthstone-necklace.webp", "vida", .5, "Collar Signé dorado de cerca, con lágrima roja")]
 FOTO_COLOR = {"Dorado": 0, "Plateado": 2}
-DESC = ("<p>Su nombre en letra de firma y, colgando en el centro, una lágrima del color de su mes. Un collar fino para llevar cada "
-        "día, y un pequeño recuerdo del mes en el que nació.</p><ul>"
+DESC = ("<p>Su nombre en letra de firma y, colgando en el centro, una lágrima del color de su mes, o del que más le guste. Un collar fino para llevar cada "
+        "día.</p><ul>"
         "<li>Acero inoxidable. El dorado, con baño de oro de 18K.</li>"
         "<li>El nombre que elijas, de hasta 10 letras, en letra de firma.</li>"
-        "<li>Circonita en forma de lágrima, del color del mes.</li>"
+        "<li>Circonita en forma de lágrima: el color de su mes o el que más te guste.</li>"
         "<li>Se hace para ti, con el nombre tal cual lo escribes.</li>"
         "<li>Llega en una cajita de terciopelo beige, lista para regalar.</li></ul>"
         "<p><strong>Los colores:</strong> " + " · ".join(f"{m.lower()}, {c}" for m, c in zip(MESES, COLORES)) + ".</p>"

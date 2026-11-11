@@ -786,6 +786,19 @@ _dd["blocks"]["envio"] = row(
 del _dd["blocks"]["devoluciones"]
 _dd["block_order"].remove("devoluciones")
 collar["sections"]["main"]["settings"]["enable_sticky_add_to_cart"] = False
+# 11-nov (Edu): fuera «Te puede interesar» de la columna de la ficha del collar (queda «También te puede gustar» abajo)
+_d["blocks"].pop("combina", None)
+if "combina" in _d["block_order"]:
+    _d["block_order"].remove("combina")
+# «Así se lleva» (11-nov, Edu): vídeos del collar con aspecto de historias de Instagram, justo debajo de la ficha
+# (parte 'historias' de lunerie-ficha.liquid; los vídeos, de marca/historias_collar.py). Título honesto: son de IA.
+collar["sections"]["historias"] = parte("historias", arriba=48, abajo=40, ancho="full-width", snippet="lunerie-ficha",
+                                        extra=", product: product")
+collar["order"].insert(collar["order"].index("main") + 1, "historias")
+# Bloque del collar (11-nov, Edu, visto en Lucce): texto + la mano con la piedra cambiando de color + la cajita
+collar["sections"]["signe"] = parte("signe", arriba=32, abajo=48, ancho="full-width", snippet="lunerie-ficha",
+                                    extra=", product: product")
+collar["order"].insert(collar["order"].index("historias") + 1, "signe")
 (OUT / "product.collar.json").write_text(json.dumps(collar, ensure_ascii=False, indent=2), encoding="utf8")
 
 (OUT / "codigo" / "snippets").mkdir(parents=True, exist_ok=True)

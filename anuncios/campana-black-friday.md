@@ -183,3 +183,21 @@ del 10 es el más barato de la tienda hoy: aros Boucle y anillo Duo).
   no hay carritos, el problema no es el presupuesto.
 - Nada de «últimas unidades», cuenta atrás inventada, «waterproof», opiniones de clientas inventadas ni marcas ajenas.
 - Las fotos son de IA (escenas): las piezas y los precios son los reales de la tienda.
+
+## Relanzamiento (11-nov, OK de Edu)
+
+Campaña reactivada a **15 €/día**, tope de gasto **300 €** (llevaba 199,29 €). Solo 4 anuncios: **18** (Carmen), **21**
+(madre e hija) y dos nuevos, los dos con voz de Silvia (ElevenLabs, filtro móvil) + «Holiday Bells», 4:5 en feed y 9:16
+en Stories/Reels, botón «Comprar», título *Collar Signé · 49,95 €*:
+
+- **28 · De cerca** (`marca/reel_macro.py --oro18` + `marca/doblar.py` + `marca/con_musica.py --bajo 11`):
+  la chica abrochándolo → primeros planos del nombre y la lágrima (foto 4K) → mano → 12 lágrimas → collar cayendo con
+  «El 3.º, gratis · hasta el 5 de diciembre». `utm_content=collar-de-cerca`.
+  Texto: «Te van a preguntar de dónde es. / Su nombre en letra de firma y una lágrima del color de su mes. Acero con
+  baño de oro de 18K, garantía de 3 años y su cajita de regalo. / Black Friday: el 3.º collar, gratis. Hasta el 5 de
+  diciembre.»
+- **29 · UGC Sarah** (`marca/reel_ugc_sarah.py`): Sarah con «Marta» azul y el mismo final. `utm_content=collar-sarah`.
+
+Estructura copiada (no el vídeo) del anuncio de Lucce Jewelry (Biblioteca de Meta 911578845041121). «Baño de oro de
+18K» confirmado por QIUHAN por escrito el 11-nov; **nada de waterproof** (0,03 micras). Regla: ~42 € sin ventas →
+parar; ≤ 30 €/pedido → subir un 20 % cada 2-3 días.

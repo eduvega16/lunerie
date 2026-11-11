@@ -95,6 +95,11 @@ When you confirm, I will send you the first order.
   (0,03 micras; el primero, #LUN1004, ya fue en PVD) · el informe de laboratorio se paga aparte (**no poner
   «hipoalergénico»**) · la piedra es **circonita** (cubic zirconia), como dice la ficha. Sigue sin poder decirse «no se
   oscurece» ni «resistente al agua».
+- **Por escrito (11-nov, chat de Alibaba, según Edu): baño de oro de 18K** → ya se puede escribir **«baño de oro de 18K»**
+  (siempre «baño de», nunca «oro de 18K» a secas). También dicen que con ese baño es **waterproof**, pero choca con lo
+  del 5-10 nov (0,03 micras, «evitar sudor y perfume»): **no se pone «waterproof» ni «resistente al agua»** hasta que
+  den las micras y se comprometan a rehacerlo gratis si se estropea en 12 meses. Falta saber si el 18K va encima del
+  PVD o en su lugar, y qué baño lleva el plateado.
 
 ## Yiwu Shangjie (la de la muestra que ya tiene Edu) · a la vez que QIUHAN
 Su calidad ya se conoce (muestra «Marta», lágrima azul, caja de terciopelo verde por dentro negra; pedida el 9-oct,

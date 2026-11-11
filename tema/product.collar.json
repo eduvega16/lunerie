@@ -291,13 +291,6 @@
                 "cuidados"
               ]
             },
-            "combina": {
-              "type": "custom-liquid",
-              "settings": {
-                "custom_liquid": "{% render 'lunerie-combina', product: product %}"
-              },
-              "blocks": {}
-            },
             "leyenda": {
               "type": "custom-liquid",
               "settings": {
@@ -324,8 +317,7 @@
             "comprar",
             "ventajas",
             "leyenda",
-            "detalles",
-            "combina"
+            "detalles"
           ]
         }
       },
@@ -436,11 +428,33 @@
         "padding-block-start": 48,
         "padding-block-end": 64
       }
+    },
+    "historias": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{% render 'lunerie-ficha', parte: 'historias', product: product %}",
+        "background_color": "",
+        "section_width": "full-width",
+        "padding-block-start": 48,
+        "padding-block-end": 40
+      }
+    },
+    "signe": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{% render 'lunerie-ficha', parte: 'signe', product: product %}",
+        "background_color": "",
+        "section_width": "full-width",
+        "padding-block-start": 32,
+        "padding-block-end": 48
+      }
     }
   },
   "order": [
     "migas",
     "main",
+    "historias",
+    "signe",
     "opiniones",
     "recomendados"
   ]

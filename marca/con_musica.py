@@ -6,16 +6,20 @@ normaliza a -14 LUFS (lo que usa Instagram). Sin créditos.
 (0,30) la música quedó POR ENCIMA de la voz de Silvia (Edu: «va súper fuerte la música»); por eso ahora se mide.
 La música tiene que tener licencia para anuncios (la de la biblioteca de sonidos de Meta vale en Facebook e Instagram).
 """
-import pathlib, re, subprocess, sys
+import pathlib, re, shutil, subprocess, sys
+
+# 11-nov: en C:/Users/edu/lunerie no hay ffmpeg en el PATH: se usa el de imageio-ffmpeg y la duración se lee de su salida
+FF = shutil.which("ffmpeg") or __import__("imageio_ffmpeg").get_ffmpeg_exe()
 
 
 def duracion(f):
-    return float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(f)],
-                                capture_output=True, text=True).stdout)
+    r = subprocess.run([FF, "-hide_banner", "-i", str(f)], capture_output=True, text=True).stderr
+    h, m, s = re.search(r"Duration: (\d+):(\d+):([\d.]+)", r).groups()
+    return int(h) * 3600 + int(m) * 60 + float(s)
 
 
 def media_db(f, filtro="anull"):
-    r = subprocess.run(["ffmpeg", "-hide_banner", "-i", str(f), "-vn", "-af", filtro + ",volumedetect", "-f", "null", "-"],
+    r = subprocess.run([FF, "-hide_banner", "-i", str(f), "-vn", "-af", filtro + ",volumedetect", "-f", "null", "-"],
                        capture_output=True, text=True).stderr
     return float(re.search(r"mean_volume: (-?[\d.]+) dB", r).group(1))
 
@@ -33,7 +37,7 @@ def mezclar(video, musica, inicio=0.5, bajo=18):
               "[0:a]asplit=2[voz][llave];"
               "[m][llave]sidechaincompress=threshold=0.03:ratio=6:attack=20:release=350[mb];"
               "[voz][mb]amix=inputs=2:duration=first:normalize=0,loudnorm=I=-14:TP=-1.5:LRA=11[a]")
-    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(video), "-i", str(musica), "-filter_complex", filtro,
+    subprocess.run([FF, "-v", "error", "-y", "-i", str(video), "-i", str(musica), "-filter_complex", filtro,
                     "-map", "0:v", "-map", "[a]", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-ar", "48000",
                     "-movflags", "+faststart", str(salida)], check=True)
     print(salida)

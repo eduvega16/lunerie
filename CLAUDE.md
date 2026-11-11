@@ -578,6 +578,19 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
   Falta: las fotos de cada una (`fileCreate` + `metaobjectUpdate`).
 - **Caja del nombre del collar (11-nov, en producción):** la letra de firma se ajusta sola al ancho (JS `ajustar` en
   `lunerie-collar.liquid`): «Escribe su nombre» se cortaba según la pantalla.
+- **CAMPAÑA REACTIVADA (11-nov, tarde, OK de Edu):** misma campaña de Black Friday a **15 €/día**, tope **300 €**
+  (llevaba 199,29 €). Solo 4 anuncios: 18 (Carmen), 21 (madre e hija) y **28 «De cerca»** y **29 «UGC Sarah»** (nuevos,
+  voz de Silvia + Holiday Bells, estructura del anuncio de Lucce Jewelry). Detalle en `anuncios/campana-black-friday.md`
+  y ids en `anuncios/campana-bf-meta.json`. Las 2 recomendaciones de Meta a medias (14 y 3) siguen sin publicar.
+  **Regla:** ~42 € sin ventas → parar; ≤ 30 €/pedido → +20 % cada 2-3 días.
+- **QIUHAN (11-nov): «baño de oro de 18K» confirmado por escrito** → ficha, FAQ y anuncios dicen «el dorado, con baño de
+  oro de 18K» (plateado: solo «acero inoxidable» hasta saber su baño). **Waterproof NO** (choca con las 0,03 micras).
+- **Ficha del collar (11-nov, en producción):** fila **«Así se lleva»** (6 vídeos de IA estilo historias de Instagram;
+  título honesto, nunca «As seen on you»; `marca/historias_collar.py`) y bloque **«Su nombre, su piedra.»** (la mano con
+  la lágrima cambiando de color, `marca/piedra_cambia.py`, y la cajita con pegatina «Cajita de regalo incluida»,
+  `marca/pegatina_cajita.py`). Fuera «Te puede interesar» **solo del collar** (Edu no ha dicho si del resto).
+- **Voz:** clave de ElevenLabs (plan **Starter**) en `.env.local` de este PC; Edu la pegó en el chat → regenerarla.
+  `marca/doblar.py` dobla los reels 28 y 29; `con_musica.py` ya funciona sin ffmpeg en el PATH.
 - **Trampa de Git Bash:** en los heredoc (`<<'E'`) que pasan por `python -`, las barras invertidas llegan mal (`\\n` → `\n`,
   `\b` en rutas Windows): para código con `\` usar la herramienta Edit o `bytes([92, …])`, y rutas con `/`.
 

@@ -101,6 +101,83 @@
       {%- render 'lunerie-ficha', parte: 'reproducir' -%}
     {%- endif -%}
 
+  {%- when 'historias' -%}
+    {%- comment -%} 11-nov (Edu, visto en otras tiendas como «As Seen On You»): fila de vídeos verticales del Collar
+      Signé con aspecto de historias de Instagram (barra de progreso arriba y @luneriejewelry). Título honesto: son
+      vídeos nuestros hechos con IA, no de clientas → nunca «As seen on you», «nuestras clientas» ni nombres de
+      personas. Los vídeos los prepara y sube marca/historias_collar.py (URL en marca/videos-ficha/collar-urls.json):
+      «mp4|foto», separados por comas. {%- endcomment -%}
+    {%- if product.handle == 'collar-signe' -%}
+      {%- assign videos = 'https://cdn.shopify.com/videos/c/vp/dbe9011fe237464d87b723e1e471ca87/dbe9011fe237464d87b723e1e471ca87.HD-720p-1.6Mbps-100899523.mp4|https://cdn.shopify.com/s/files/1/1113/4065/0835/files/collar-sarah-mirada.jpg?v=1794419504,https://cdn.shopify.com/videos/c/vp/4e682bb4fb604ccab29bced715f7974b/4e682bb4fb604ccab29bced715f7974b.HD-720p-1.6Mbps-100902905.mp4|https://cdn.shopify.com/s/files/1/1113/4065/0835/files/collar-mano-marta.jpg?v=1794420880,https://cdn.shopify.com/videos/c/vp/44fbafe694384436bc2e7f4cfffad26b/44fbafe694384436bc2e7f4cfffad26b.HD-720p-1.6Mbps-100903037.mp4|https://cdn.shopify.com/s/files/1/1113/4065/0835/files/collar-madre-hija-cuellos.jpg?v=1794420947,https://cdn.shopify.com/videos/c/vp/d9575ff3e7044af7b96546dc35b9878a/d9575ff3e7044af7b96546dc35b9878a.HD-720p-1.6Mbps-100899652.mp4|https://cdn.shopify.com/s/files/1/1113/4065/0835/files/collar-carmen-espejo.jpg?v=1794419548,https://cdn.shopify.com/videos/c/vp/73c44b669469495c95400b0345aad033/73c44b669469495c95400b0345aad033.HD-720p-1.6Mbps-100903203.mp4|https://cdn.shopify.com/s/files/1/1113/4065/0835/files/collar-hermanas-mesa.jpg?v=1794421016,https://cdn.shopify.com/videos/c/vp/60d736a0e9c34041a2060db6d6759eb8/60d736a0e9c34041a2060db6d6759eb8.HD-720p-1.6Mbps-100903357.mp4|https://cdn.shopify.com/s/files/1/1113/4065/0835/files/collar-madre-hija-palmas.jpg?v=1794421086' | split: ',' -%}
+      <div class="lu-hst">
+        <h2 class="lu-hst__titulo">Así se lleva</h2>
+        <div class="lu-hst__fila">
+          {%- for v in videos -%}
+            {%- assign partes = v | split: '|' -%}
+            <figure class="lu-hst__item">
+              <video data-lu-auto data-lu-historia muted loop playsinline preload="none" aria-hidden="true" poster="{{ partes[1] }}">
+                <source src="{{ partes[0] }}" type="video/mp4">
+              </video>
+              <span class="lu-hst__sombra" aria-hidden="true"></span>
+              <span class="lu-hst__barra" aria-hidden="true"><i></i></span>
+              <span class="lu-hst__quien" aria-hidden="true">
+                {%- if settings.favicon != blank -%}{{ settings.favicon | image_url: width: 64 | image_tag: alt: '', loading: 'lazy', width: 22, height: 22 }}{%- endif -%}
+                luneriejewelry
+              </span>
+            </figure>
+          {%- endfor -%}
+        </div>
+      </div>
+      <script>
+        // La barrita de arriba avanza con el vídeo, como en las historias de Instagram
+        document.querySelectorAll('video[data-lu-historia]').forEach((v) => {
+          const barra = v.parentElement.querySelector('.lu-hst__barra i');
+          v.addEventListener('timeupdate', () => {
+            if (v.duration) barra.style.transform = `scaleX(${v.currentTime / v.duration})`;
+          });
+        });
+      </script>
+      {%- render 'lunerie-ficha', parte: 'reproducir' -%}
+    {%- endif -%}
+
+  {%- when 'signe' -%}
+    {%- comment -%} 11-nov (Edu, visto en Lucce Jewelry): bloque del Collar Signé bajo los vídeos: texto + dos fotos.
+      · La de la mano: la lágrima cambia de color mes a mes (marca/piedra_cambia.py; sin IA, la foto real teñida).
+      · La de la cajita: con la pegatina «Cajita de regalo incluida» (marca/pegatina_cajita.py).
+      Solo cosas confirmadas: baño de oro de 18K (QIUHAN por escrito, 11-nov; solo el dorado), circonita, cajita.
+      Nada de «waterproof», «no se oscurece» ni «hipoalergénico». {%- endcomment -%}
+    {%- if product.handle == 'collar-signe' -%}
+      <div class="lu-sg">
+        <div class="lu-sg__texto">
+          <p class="lu-sg__ceja">Collar Signé</p>
+          <h2 class="lu-sg__titulo">Su nombre, <em>su piedra.</em></h2>
+          <p>Su nombre en letra de firma y, colgando en el centro, una lágrima del color del mes en que nació. Un regalo
+            que es solo suyo.</p>
+          <ul class="lu-sg__lista">
+            <li><i aria-hidden="true"></i>Acero inoxidable; el dorado, con baño de oro de 18K</li>
+            <li><i aria-hidden="true"></i>Hasta 10 letras, tal cual las escribes</li>
+            <li><i aria-hidden="true"></i>Doce colores de circonita, uno por mes</li>
+            <li><i aria-hidden="true"></i>Llega en su cajita de regalo</li>
+          </ul>
+        </div>
+        <div class="lu-sg__fotos">
+          <figure class="lu-sg__foto">
+            <video data-lu-auto muted loop playsinline preload="none" aria-label="El collar en la mano, con la lágrima de cada mes"
+              poster="https://cdn.shopify.com/s/files/1/1113/4065/0835/files/collar-piedra-mes.jpg?v=1794421185">
+              <source src="https://cdn.shopify.com/videos/c/vp/e41943c70c03441391b72fc485a2307f/e41943c70c03441391b72fc485a2307f.HD-1080p-2.5Mbps-100903552.mp4" type="video/mp4">
+            </video>
+          </figure>
+          <figure class="lu-sg__foto">
+            <img src="https://cdn.shopify.com/s/files/1/1113/4065/0835/files/collar-signe-cajita-pegatina.jpg?v=1794421196&width=900"
+              srcset="https://cdn.shopify.com/s/files/1/1113/4065/0835/files/collar-signe-cajita-pegatina.jpg?v=1794421196&width=600 600w, https://cdn.shopify.com/s/files/1/1113/4065/0835/files/collar-signe-cajita-pegatina.jpg?v=1794421196&width=900 900w, https://cdn.shopify.com/s/files/1/1113/4065/0835/files/collar-signe-cajita-pegatina.jpg?v=1794421196&width=1300 1300w"
+              sizes="(min-width: 750px) 33vw, 50vw" width="1744" height="2180" loading="lazy"
+              alt="El Collar Signé en su cajita de terciopelo beige, con la pegatina «Cajita de regalo incluida»">
+          </figure>
+        </div>
+      </div>
+      {%- render 'lunerie-ficha', parte: 'reproducir' -%}
+    {%- endif -%}
+
   {%- when 'reproducir' -%}
     {%- comment -%} Vídeos con data-lu-auto: se reproducen solos (sin sonido) mientras se ven y se paran al salir.
       Si el móvil pide «reducir movimiento», no se mueven solos: se quedan en la foto con los controles. {%- endcomment -%}
@@ -162,5 +239,44 @@
   @media (max-width:749px){
     .lu-vid__fila{justify-content:flex-start}
     .lu-vid__item{flex-basis:44vw}
+  }
+
+  /* Bloque del Collar Signé (11-nov): en PC, texto en un tercio y dos fotos 4:5; en el móvil, texto y fotos debajo */
+  .lu-sg{display:grid;grid-template-columns:1fr 2fr;gap:48px;align-items:center;padding-inline:48px;color:#16201B}
+  .lu-sg__ceja{margin:0 0 10px;font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:#A6834A}
+  .lu-sg__titulo{margin:0 0 18px;font-family:var(--font-heading--family);font-weight:400;
+    font-size:clamp(2rem,3.4vw,2.75rem);line-height:1.05}
+  .lu-sg__texto p{margin:0 0 18px;max-width:30rem;line-height:1.6}
+  .lu-sg__lista{margin:0;padding:0!important;list-style:none;display:grid;gap:8px;font-size:.9375rem}
+  .lu-sg__lista li{position:relative;padding-left:18px}
+  .lu-sg__lista li i{position:absolute;left:0;top:.6em;width:6px;height:6px;border-radius:50%;
+    background:#A6834A}
+  .lu-sg__fotos{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+  .lu-sg__foto{margin:0;aspect-ratio:4/5;overflow:hidden;background:#F2F4F2}
+  .lu-sg__foto video,.lu-sg__foto img{display:block;width:100%;height:100%;object-fit:cover}
+  @media (max-width:749px){
+    .lu-sg{grid-template-columns:1fr;gap:24px;padding-inline:16px}
+  }
+
+  /* «Así se lleva» (11-nov): vídeos del collar como historias de Instagram, con esquinas redondeadas */
+  .lu-hst__titulo{margin:0 0 22px;text-align:center;font-family:var(--font-heading--family);font-weight:400;
+    font-size:clamp(1.75rem,3.2vw,2.25rem);line-height:1.1;color:#16201B}
+  .lu-hst__fila{display:flex;justify-content:center;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;
+    scrollbar-width:none;padding-inline:16px;scroll-padding-inline:16px}
+  .lu-hst__fila::-webkit-scrollbar{display:none}
+  .lu-hst__item{position:relative;flex:0 0 200px;margin:0;aspect-ratio:9/16;overflow:hidden;border-radius:16px;
+    background:#F2F4F2;scroll-snap-align:start}
+  .lu-hst video{display:block;width:100%;height:100%;object-fit:cover}
+  .lu-hst__sombra{position:absolute;inset:0 0 auto;height:72px;z-index:1;pointer-events:none;
+    background:linear-gradient(rgba(0,0,0,.32),rgba(0,0,0,0))}
+  .lu-hst__barra{position:absolute;top:8px;left:8px;right:8px;z-index:2;height:2px;border-radius:2px;
+    background:rgba(255,255,255,.4);overflow:hidden}
+  .lu-hst__barra i{display:block;height:100%;background:#fff;transform:scaleX(0);transform-origin:left}
+  .lu-hst__quien{position:absolute;top:18px;left:10px;z-index:2;display:flex;align-items:center;gap:6px;
+    font-size:.6875rem;font-weight:500;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.35)}
+  .lu-hst__quien img{width:22px;height:22px;border-radius:50%;box-shadow:0 0 0 1.5px #fff}
+  @media (max-width:749px){
+    .lu-hst__fila{justify-content:flex-start;gap:8px}
+    .lu-hst__item{flex-basis:40vw;border-radius:14px}
   }
 {% endstylesheet %}

@@ -1,6 +1,6 @@
 {
   "id": "2026-W46-16-reel-madre-hija",
-  "estado": "aprobado",
+  "estado": "publicado",
   "plataforma": "instagram",
   "formato": "reel",
   "pieza": "collar-signe",
@@ -38,7 +38,11 @@
     "archivos": [],
     "urls": [
       "https://cdn.shopify.com/videos/c/vp/dbc9db12148d49afb6f91ca27606e4f3/dbc9db12148d49afb6f91ca27606e4f3.HD-1080p-7.2Mbps-100555149.mp4"
-    ]
+    ],
+    "resultado": {
+      "media_id": "18113002616462370",
+      "fecha": "2026-11-11T13:32:50+0100"
+    }
   },
   "origen": {
     "biblioteca": "ideas-reels.json · mensaje-tapado",

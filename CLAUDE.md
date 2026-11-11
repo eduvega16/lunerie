@@ -541,6 +541,39 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
 ## 8. Calendario y pendientes (a 11-nov-2026)
 
 ### Para empezar la próxima sesión (después del 2-nov) — abrir conversación nueva por sesión.
+**DÓNDE NOS QUEDAMOS (11-nov, sesión en `C:\Users\edu\lunerie`) — manda sobre los bloques del 9-10 nov:**
+- **Campaña de Meta de Black Friday PAUSADA** desde el 10-nov (Edu: «párala»; 186 € gastados, 2 pedidos reales,
+  ~99 €/pedido frente a ~21 € de breakeven). Comprobado el 11-nov: pausada, 0 € hoy. Siguen sin publicar 2 recomendaciones
+  de Meta a medias (anuncios 52566459471594 y 52566459911394) y el borrador «NO PUBLICAR»: no publicarlos sin el OK de Edu.
+  **Relanzar** solo después de reseñas reales (amigas con collares de QIUHAN, foto + texto suyo) y con 10-15 €/día.
+- **Collar Signé, en producción (11-nov):** descripción con «baño PVD» y «un pequeño recuerdo del mes en el que nació» ·
+  «Llega en su cajita de regalo» bajo el botón y en la cesta · **vídeo de Marta en la mano** en la posición 2 de la galería
+  (`marca/fotos-ia/mano/mano-ficha-4x5.mp4`; foto `mano-marta-tcorta-1.png`, «t» acortada a petición de Edu; Kling 3.0 pro,
+  primeros 3 s en ida y vuelta porque al final deforma el nombre) · **vídeos de la galería en bucle y en marcha solos al
+  verse** en las 5 plantillas de producto (`snippets/product-media.liquid` modificado, copia en `tema/codigo/`) · **foto
+  principal rehecha** (`marca/fotos-ia/collar/producto-verde-carmen-v2.jpg`) copiando el «Carmen» de la foto puesta (3.ª):
+  Edu quiere que **el mismo nombre se vea igual en todas las fotos** (letra, cola ondulada, cadena enganchada a un lado de
+  la mayúscula). Editar la foto vieja no servía (la IA volvía a poner la anilla arriba): lo que funcionó fue generar la de
+  producto con la foto puesta y un recorte de su nombre como referencias.
+- **Cesta (11-nov, en producción):** fuera el bloque verde con el carrusel de piezas (Edu: distraía); ahora solo una
+  **barra de progreso** fina (1 pieza · 2.ª al 50 % · 3.ª gratis) con «Añade otra pieza y la 2.ª te sale al 50 %» /
+  «Añade una tercera y te sale gratis» / «Black Friday · tu descuento ya está aplicado». **Edu no quiere «la más barata»
+  en los textos de venta** (resta); lo legal lo cubre: Condiciones de venta y FAQ dicen que el descuento va a la pieza de
+  menor precio. Snippet `lunerie-segundo-reloj.liquid` (generado por `build.py`).
+- **Legales (11-nov, subidos):** Condiciones §8 con las reglas del Black Friday (hasta el 5-dic 23:59, pieza de menor
+  precio, se repite por grupo, no se suma a códigos, devolución = lo pagado de verdad) y §2 «piezas con nombre: fotos con
+  nombres de ejemplo, vista previa orientativa, la letra puede variar ligeramente» · Envíos: cajita del collar y «si el
+  acabado no sale perfecto, se rehace y puede sumar unos días (te avisamos)» · FAQ: sección «El collar Signé» (PVD,
+  circonita, letra orientativa, sin desistimiento salvo defecto). `PYTHONIOENCODING=utf-8 python legal/subir.py <ficheros>`.
+- **Plazo del collar (QIUHAN, Susan, 11-nov):** la producción urgente **no cuesta más**, pero **no garantizan 3-5 días**
+  (lo intentan; si el PVD sale defectuoso lo rehacen con prioridad, ~3 días más). La web sigue con 3-5 días + la nota de
+  rehacer. **En cada pedido, escribir a QIUHAN antes de que empiece: «urgente, 3-5 días»** (si no, son 5-7).
+- **Instagram:** el carrusel «Un martes cualquiera» (W46-10) del 10-nov 19:30 **falló** (Instagram no pudo bajar una foto
+  del CDN de Shopify, error 2207052) y sigue «aprobado» sin publicar: reprogramarlo o publicarlo a mano. El reel madre e
+  hija (W46-16) salió el 11-nov a las 13:32.
+- **Trampa de Git Bash:** en los heredoc (`<<'E'`) que pasan por `python -`, las barras invertidas llegan mal (`\\n` → `\n`,
+  `\b` en rutas Windows): para código con `\` usar la herramienta Edit o `bytes([92, …])`, y rutas con `/`.
+
 **DÓNDE NOS QUEDAMOS (9 y 10-nov, sesión en `C:\Users\edu\lunerie`):**
 - **Instagram se publica y se programa ahora desde ESTE PC (`C:\Users\edu\lunerie`, 9-nov, Edu: «programa y sube»).**
   Claves en `.env.local` de aquí: token de la PÁGINA nuevo (app «Lunerie Claude Publisher» 2676185462837815, no caduca,

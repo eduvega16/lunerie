@@ -708,11 +708,8 @@ _det["blocks"]["cuidados"] = row("Cuidados",
 for _k in ("videos", "historia"):
     del joya["sections"][_k]
     joya["order"].remove(_k)
-# «Te puede interesar» (heredado de product, 28-oct) en todas las joyas y la leyenda de cada pieza (28-oct):
-# texto corto sobre los desplegables, con la historia inventada del castillo de Lunerie + por qué la elegimos.
-_dj = joya["sections"]["main"]["blocks"]["product-details"]
-_dj["blocks"]["leyenda"] = liquid("{% render 'lunerie-leyenda', product: product %}")
-_dj["block_order"].insert(_dj["block_order"].index("detalles"), "leyenda")
+# «Te puede interesar» (heredado de product, 28-oct) en todas las joyas. La «leyenda» del castillo de Lunerie (28-oct)
+# se quitó el 11-nov (Edu: «carecen de sentido»); el snippet lunerie-leyenda.liquid sigue en el tema, sin usarse.
 # Foto a pantalla completa en PC (Edu, 28-oct, como Olivia; 3-nov, 2/3 y 1/3 como PDPaola): igual que la del reloj.
 _ficha = joya["sections"]["main"]["settings"]
 _ficha.update({"content_width": "content-full-width", "equal_columns": False, "limit_details_width": True, "gap": 0})

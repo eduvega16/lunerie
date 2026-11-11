@@ -591,6 +591,8 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
   título honesto, nunca «As seen on you»; `marca/historias_collar.py`) y bloque **«Su nombre, su piedra.»** (la mano con
   la lágrima cambiando de color, `marca/piedra_cambia.py`, y la cajita con pegatina «Cajita de regalo incluida»,
   `marca/pegatina_cajita.py`). Fuera «Te puede interesar» **solo del collar** (Edu no ha dicho si del resto).
+- **Fuera «la leyenda» de las joyas (11-nov, Edu: «carecen de sentido»):** el bloque del castillo de Lunerie ya no sale
+  en ninguna ficha (quitado de `build.py`; el snippet `lunerie-leyenda.liquid` sigue en el tema sin usarse).
 - **Voz:** clave de ElevenLabs (plan **Starter**) en `.env.local` de este PC; Edu la pegó en el chat → regenerarla.
   `marca/doblar.py` dobla los reels 28 y 29; `con_musica.py` ya funciona sin ffmpeg en el PATH.
 - **Trampa de Git Bash:** en los heredoc (`<<'E'`) que pasan por `python -`, las barras invertidas llegan mal (`\\n` → `\n`,

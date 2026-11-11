@@ -291,13 +291,6 @@
                 "cuidados"
               ]
             },
-            "leyenda": {
-              "type": "custom-liquid",
-              "settings": {
-                "custom_liquid": "{% render 'lunerie-leyenda', product: product %}"
-              },
-              "blocks": {}
-            },
             "personalizar": {
               "type": "custom-liquid",
               "settings": {
@@ -316,7 +309,6 @@
             "personalizar",
             "comprar",
             "ventajas",
-            "leyenda",
             "detalles"
           ]
         }

@@ -538,10 +538,10 @@ KILL (se mira en la campaña) si gastas 1× CPA BE sin carritos o 2× sin ventas
 del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alertas si CTR < 1 % o CPC > 0,90 €.
 «Aprendizaje limitado» es normal con este presupuesto (Meta pide ~50 compras/semana). Máximo 2 productos en test.
 
-## 8. Calendario y pendientes (a 9-nov-2026)
+## 8. Calendario y pendientes (a 11-nov-2026)
 
 ### Para empezar la próxima sesión (después del 2-nov) — abrir conversación nueva por sesión.
-**DÓNDE NOS QUEDAMOS (9-nov, noche, sesión en `C:\Users\edu\lunerie`):**
+**DÓNDE NOS QUEDAMOS (9 y 10-nov, sesión en `C:\Users\edu\lunerie`):**
 - **Instagram se publica y se programa ahora desde ESTE PC (`C:\Users\edu\lunerie`, 9-nov, Edu: «programa y sube»).**
   Claves en `.env.local` de aquí: token de la PÁGINA nuevo (app «Lunerie Claude Publisher» 2676185462837815, no caduca,
   acceso a datos hasta ~feb-2027, **ya con `pages_manage_posts`** para Facebook) + `META_APP_ID/SECRET`, `IG_USER_ID`,
@@ -553,21 +553,28 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
   Falta: la foto `dedos-1.png` de W45-19 (11-nov 19:30) solo está en D: → subirla; las piezas nuevas del plan (3 pasos,
   kcal, meses, «un collar para cada una», Signé plateado, prospecto) y que `publicar.py` publique también en Facebook.
 - **Google Search Console verificado** (apartado 6). Falta: enviar `sitemap.xml` en Search Console (Sitemaps).
-- **#LUN1006 (3 Collares Signé, misma clienta):** mensaje para QIUHAN preparado con la dirección sacada de Shopify (la
-  dirección solo en Shopify y en el chat de Alibaba, nunca en git). Esperando que QIUHAN diga el **precio total en un solo
-  paquete**. Siguen pendientes de QIUHAN: foto de #LUN1004 antes de enviarlo, respuestas de calidad y la letra de «Isa».
-- **Reel de la cámara (W46-13)** sale a las 19:30 solo si `D:\LUNERIE` está suspendido o encendido (las tareas y las
-  claves de Instagram solo están allí; en este PC `publicar_programado.py tareas` = ninguna).
+- **10-nov (Collar Signé), hecho:** reel «Escribe su nombre» (W46-15) publicado a las 12:31 · descripción: «llega en una
+  cajita de terciopelo beige» (fuera «sin quitárselo») · **foto en la cajita** beige (7.ª de la galería, tras la lámina,
+  hecha con la cajita del catálogo de QIUHAN) · 10 piezas nuevas del plan de 2 al día aprobadas y programadas (10-20 nov) ·
+  carrusel kcal como el original (croissant, chocolate, polvorón, donut).
+  **En el tema de prueba, falta el OK de Edu para producción:** «Llega en su cajita de regalo» bajo el botón y en la cesta,
+  y el **vídeo del collar en la mano** (Carmen, Kling; `marca/fotos-ia/mano/`) en la posición 2 de la ficha, con los vídeos
+  de la galería en bucle y en marcha solos al verse. **Ojo antes de subirlo:** en esa toma la «n» de Carmen se une directa a
+  la cadena y la lágrima cuelga de una cadenita (Y), que no es como es el collar; las tomas de arreglo `mano-carmen-arreglo`
+  y `mano-marta-uniones` (`marca/collar_cada_una.py`, constante `UNIONES`) están generadas y sin revisar.
+- **QIUHAN (10-nov, por escrito):** #LUN1006 = 33,47 $ con IVA (2 dorados de marzo + 1 plateado de junio, un solo paquete,
+  +1 $ por pieza extra; la dirección, solo en Shopify y en el chat de Alibaba) · **PVD gratis en todos los pedidos** · la
+  letra de «Isa» en todos · piedra de circonita · sin informe de laboratorio → nada de «hipoalergénico», «no se oscurece»
+  ni «resistente al agua». Detalle en `productos/proveedor-qiuhan.md`.
 - **Biblioteca:** formatos 27-29 añadidos a `biblioteca/formatos-anuncio.json` (de 8 capturas de Instagram de Edu, en
   `oficina/referencias/instagram-2026-11-09/`): «Una joya para cada ocasión» (círculo + papelito), «Receta / prospecto»
   (con cuidado: Meta mira lo que parece medicina) y «Decisiones más saludables» (dulce de Navidad con sus kcal reales vs
   joya). Sirven para orgánico y para anuncios.
 - **Edu: «hay que duplicar la subida de contenido diaria» → 2 publicaciones al día (12:30 y 19:30) del 10 al 20-nov,
-  manteniendo el 80 % Collar Signé.** Plan propuesto, **falta el OK de Edu**. Primera pieza: reel gratis «Escribe su
+  manteniendo el 80 % Collar Signé.** **Aprobado y programado en este PC** (ver arriba). Primera pieza: reel gratis «Escribe su
   nombre» (grabación de la vista previa) el 10-nov 12:30. Nuevas: carrusel «3 pasos» (13), kcal (14), meses de invierno
   (15), «Un collar para cada una» + reel (16), Signé plateado (17), prospecto + reel kcal (19), meses de primavera (20).
   Reutilizadas: reel madre e hija (11), «Lo sentimos, mamá» (12), reel dos hijas (14), «Cinco relojes» (18). Coste ~3-4 $.
-  **Programar desde `D:\LUNERIE`.**
 - **Historias con 8-10 visualizaciones (Edu):** normal, los ~700 seguidores son de la cuenta antigua y no buscan joyas;
   las historias solo llegan a quien ya te sigue. Consejo dado: **campaña de tráfico NO** (clics baratos que no compran y
   quita dinero a la de ventas). **Campaña de seguidores SÍ, pequeña y de prueba, DESPUÉS del 11-nov** (cuando se decida la

@@ -1,6 +1,6 @@
 {
   "id": "2026-W46-15-reel-escribe-su-nombre",
-  "estado": "aprobado",
+  "estado": "publicado",
   "plataforma": "instagram",
   "formato": "reel",
   "pieza": "collar-signe",
@@ -38,7 +38,11 @@
     "archivos": [],
     "urls": [
       "https://cdn.shopify.com/videos/c/vp/2aaa4a25b0674d8fb2b5d86faa2eff27/2aaa4a25b0674d8fb2b5d86faa2eff27.HD-1080p-2.5Mbps-100604679.mp4"
-    ]
+    ],
+    "resultado": {
+      "media_id": "18154056316545953",
+      "fecha": "2026-11-10T12:31:17+0100"
+    }
   },
   "origen": {
     "biblioteca": "ideas-reels.json · mensaje-tapado",

@@ -117,6 +117,22 @@ MANO = (
     "necklace (\"Marta\") on a stand and on a man's hand: copy only the necklace build and lettering; the hand here is a "
     "woman's. No text, no logo, no watermark. ")
 
+# 10-nov (Edu): en la mano, la «n» de Carmen se unía directa a la cadena (sin anilla) y la lágrima colgaba de una
+# cadenita propia (Y). Cómo es de verdad: una anilla visible en cada extremo del nombre y la lágrima ensartada en la
+# cadena principal, en el punto más bajo de la V, 2-3 eslabones después de la anilla del final.
+UNIONES = (
+    "The name is joined to the chain ONLY through two small round jump rings, clearly visible: one ring at the left "
+    "end of the name, linking it to the left side of the chain, and one ring at the right end, at the tip of the long "
+    "straight tail stroke after the last letter, linking it to the right side of the chain. No letter touches the "
+    "chain directly. From the right ring the SAME chain continues two or three links to the lowest point of the V, "
+    "where the bail of the crystal is threaded directly onto that main chain, so the crystal hangs right at the bottom "
+    "of the V; from that same point the chain rises straight up to her fingers. There is NO separate little chain "
+    "hanging below the name and NO Y shape: the crystal sits on the main chain itself. ")
+ARREGLAR_MANO = (
+    "Edit the first image. Keep EVERYTHING the same - the hand, the sunlight, the dappled wall, the framing, the name "
+    "\"Carmen\" with exactly the same letters and lettering, the green crystal's size and colour - and fix ONLY how the "
+    "necklace is joined. " + UNIONES + "The other images are real photos of the necklace: copy their rings and chain. ")
+
 AZUL = "a vivid deep sapphire blue, exactly the blue of the real crystal in the reference photos"
 TOMAS = {
     "circulo-ana-azul": ("3:4", "base", CIRCULO.format(nombre="Ana", letras="a tall, clearly readable capital A, then "
@@ -150,6 +166,9 @@ TOMAS = {
                           "open on the right like a crescent - never a V, never pointed - then a-r-m-e-n)")),
     "mano-marta-verde": ("9:16", "base", MANO.replace("{nombre}", "\"Marta\" (a tall pointed capital M with a long "
                          "lead-in stroke, then a-r-t-a, exactly as in the reference photos)")),
+    "mano-carmen-arreglo": ("9:16", "mano-carmen-verde-2", ARREGLAR_MANO),
+    "mano-marta-uniones": ("9:16", "base", MANO.replace("{nombre}", "\"Marta\" (a tall pointed capital M with a long "
+                           "lead-in stroke, then a-r-t-a, exactly as in the reference photos)") + UNIONES),
     "plateado-elena": ("3:4", "base", PLATEADO),
     "prospecto": ("3:4", "base", PROSPECTO),
     "polvoron": ("3:4", None, POLVORON),

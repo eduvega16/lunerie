@@ -47,3 +47,8 @@ marca/referencias-reales/muestra-marta/*.mov
 # cámara del reel (6-nov): PNG de la IA, solo en este PC (como las demás de fotos-ia); en git va el reel montado
 marca/fotos-ia/reel-camara/*.png
 marca/fotos-ia/campana-bf/pantalla/
+# originales PNG de las fotos IA (10-nov): en git van los JPG y los vídeos montados
+marca/fotos-ia/cada-una/*.png
+marca/fotos-ia/cajita/*.png
+marca/fotos-ia/kcal/*.png
+marca/fotos-ia/reel-pellizco/*.png

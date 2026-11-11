@@ -166,6 +166,12 @@ TOMAS = {
                           "open on the right like a crescent - never a V, never pointed - then a-r-m-e-n)")),
     "mano-marta-verde": ("9:16", "base", MANO.replace("{nombre}", "\"Marta\" (a tall pointed capital M with a long "
                          "lead-in stroke, then a-r-t-a, exactly as in the reference photos)")),
+    "mano-marta-tcorta": ("9:16", "mano-marta-uniones-2", (
+        "Edit the first image. Keep EVERYTHING exactly the same - the hand, the sunlight, the wall, the framing, the chain, "
+        "the two jump rings, the green crystal, and every letter of the name \"Marta\" with the same lettering - and change "
+        "ONLY the final long straight tail stroke that starts at the crossbar of the last letter: make that tail clearly "
+        "SHORTER, about half its current length, still ending in the small jump ring that links to the chain. The other "
+        "images are real photos of the necklace: copy their rings and chain. ")),
     "mano-carmen-arreglo": ("9:16", "mano-carmen-verde-2", ARREGLAR_MANO),
     "mano-marta-uniones": ("9:16", "base", MANO.replace("{nombre}", "\"Marta\" (a tall pointed capital M with a long "
                            "lead-in stroke, then a-r-t-a, exactly as in the reference photos)") + UNIONES),

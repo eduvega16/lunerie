@@ -373,13 +373,6 @@
                 "custom_liquid": "{% render 'lunerie-combina', product: product %}"
               },
               "blocks": {}
-            },
-            "leyenda": {
-              "type": "custom-liquid",
-              "settings": {
-                "custom_liquid": "{% render 'lunerie-leyenda', product: product %}"
-              },
-              "blocks": {}
             }
           },
           "block_order": [
@@ -391,7 +384,6 @@
             "variantes",
             "comprar",
             "ventajas",
-            "leyenda",
             "detalles",
             "combina"
           ]

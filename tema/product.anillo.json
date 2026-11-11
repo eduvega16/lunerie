@@ -336,13 +336,6 @@
               },
               "blocks": {}
             },
-            "leyenda": {
-              "type": "custom-liquid",
-              "settings": {
-                "custom_liquid": "{% render 'lunerie-leyenda', product: product %}"
-              },
-              "blocks": {}
-            },
             "guia_talla": {
               "type": "custom-liquid",
               "settings": {
@@ -361,7 +354,6 @@
             "guia_talla",
             "comprar",
             "ventajas",
-            "leyenda",
             "detalles",
             "combina"
           ]

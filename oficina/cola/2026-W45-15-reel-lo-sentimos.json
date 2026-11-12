@@ -1,6 +1,6 @@
 {
   "id": "2026-W45-15-reel-lo-sentimos",
-  "estado": "aprobado",
+  "estado": "publicado",
   "plataforma": "instagram",
   "formato": "reel",
   "pieza": "reloj-lune",
@@ -31,7 +31,11 @@
       "https://cdn.shopify.com/videos/c/vp/969e086e955a44c58fba8f6219874d84/969e086e955a44c58fba8f6219874d84.HD-1080p-4.8Mbps-100057225.mp4"
     ],
     "alt_text": "Texto «Lo sentimos, mamá. Este año no es colonia.» y después una mano con el reloj Lune dorado de piedras verdes, con su precio.",
-    "ia": true
+    "ia": true,
+    "resultado": {
+      "media_id": "18118851785077372",
+      "fecha": "2026-11-12T12:31:19+0100"
+    }
   },
   "origen": "4-nov: anuncio animado de HyperFrames (marca/anuncios-hf) usado como reel orgánico; Edu: «lo que tú consideres» (solo Instagram).",
   "riesgos": [

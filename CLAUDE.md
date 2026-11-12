@@ -538,9 +538,37 @@ KILL (se mira en la campaña) si gastas 1× CPA BE sin carritos o 2× sin ventas
 del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alertas si CTR < 1 % o CPC > 0,90 €.
 «Aprendizaje limitado» es normal con este presupuesto (Meta pide ~50 compras/semana). Máximo 2 productos en test.
 
-## 8. Calendario y pendientes (a 11-nov-2026)
+## 8. Calendario y pendientes (a 12-nov-2026)
 
 ### Para empezar la próxima sesión (después del 2-nov) — abrir conversación nueva por sesión.
+**DÓNDE NOS QUEDAMOS (12-nov, sesión en `C:\Users\edu\lunerie`) — manda sobre los bloques anteriores:**
+- **Campaña de Black Friday (12-nov, ~mediodía):** ~210 € de 300 €, 84 carritos, 11 pagos, 2 compras. Desde la
+  reactivación (11-12 nov): 10,58 €, 28 clics, 9 carritos, 0 compras. El 18 (Carmen) se lleva casi todo; 28 y 29 casi no
+  gastan. **Sigue sin tocarse hasta el 14-nov.** Benchmark de Meta: carrito / visita 46 % (5 % mejor) pero carrito → pago
+  13 % (21 % peor) → el atasco es la cesta.
+- **Solo Instagram: NO** (Edu lo propuso): por carrito Facebook rinde igual (~2,5 €) y por pago, mejor. Detalle en
+  `anuncios/campana-black-friday.md` (sección «Retargeting»).
+- **Retargeting (OK de Edu):** Edu aceptó las condiciones de públicos personalizados; creados `RT · Carrito o pago · 30
+  días` (52568224227194) y `RT · Visitas ficha Collar Signé · 30 días` (52568224242194). **Anuncio 30 «El Black Friday ya
+  ha empezado»** (`marca/retargeting_bf.py`: animación del 23 + Reloj Lune 39,95 € y Anillo Nuit 19,95 € abajo, quietos),
+  OK de Edu y **subido a Archivos de Shopify**. **14-nov: meterlo en la campaña actual** con el resto de cambios (añadir
+  un anuncio también reinicia el aprendizaje). Retargeting aparte solo si el público del carrito pasa de ~200-300
+  personas (3-5 €/día). **Por decir «ya ha empezado», el 27-nov no se saca un descuento mejor (fuera el código del 10 %).**
+- **Pago en una sola página: APARCADO por Edu** (opciones habladas: botón «Comprar ahora» solo en el collar, recomendado,
+  o saltarse la cesta, que pierde el «2.ª al 50 %»).
+- **UGC «abrir la cajita» con IA (A MEDIAS):** réplica de la estructura de un anuncio de Lucce Jewelry
+  (`D:\Descargas\1740195767044826.mp4`; 8 planos en `oficina/referencias/lucce-2026-11-12/planos.jpg`: en 4 de 8 no sale la
+  cara, manda el collar). `python marca/ugc_lucce.py` → `marca/fotos-ia/ugc-lucce/`: chica nuestra (no la de Lucce), top
+  de satén moca, pared gris clara, «Carmen» verde como la foto 1 de la ficha (refs: `producto-verde-carmen-v2.jpg` + recorte
+  del nombre) y **cajita beige de QIUHAN**. Elegidas (hoja `seleccion.jpg`): caja-cara-2, caja-mano-2, delante-2,
+  colgando-1, abrochar-2, pellizco-2, pecho-1 y ancla-2 (de plano final). Nombre revisado a tamaño real en todas: bien.
+  **Edu está revisando los fotogramas antes de animar** (puede pedir cambios; en el plano 3 lo lleva puesto, en Lucce no).
+  Después: `python marca/ugc_animar.py caja-cara-2 … ancla-2 --carpeta ugc-lucce` (movimientos en `MOV_UNO`, Kling 3.0
+  pro 4 s, ~3-4 $; usar el principio de cada clip) → montaje ~20 s con el cierre del collar cayendo. Sin voz en primera
+  persona de la chica. Alternativa hablada: Edu graba y Kling 3.0 Motion Control lo cambia por la chica.
+- **API de Higgsfield recargada por Edu el 12-nov** (se quedó sin saldo a media tanda; 15 fotos ~2 $).
+- La carpeta de Descargas de Edu es **`D:\Descargas`** (no `C:\Users\edu\Downloads`).
+
 **DÓNDE NOS QUEDAMOS (11-nov, sesión en `C:\Users\edu\lunerie`) — manda sobre los bloques del 9-10 nov:**
 - **Campaña de Meta de Black Friday: pausada el 10-nov** (Edu: «párala»; 199,29 € gastados, 2 pedidos reales,
   ~99 €/pedido frente a ~21 € de breakeven) y **REACTIVADA el 11-nov por la tarde** (ver más abajo: 15 €/día, tope 300 €,

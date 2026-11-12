@@ -61,6 +61,26 @@ MOV_CARPETA = {
                   "slightly.",
     },
 }
+# 12-nov: UGC «abrir la cajita» (ugc_lucce.py, estructura del anuncio de Lucce): una sola chica y un solo collar → FIJO
+MOV_UNO = {
+    "ugc-lucce": {
+        "caja-cara": "She holds the open beige velvet box still towards the camera at chest height, smiles softly and "
+                     "tilts it very slightly so the necklace inside catches the light.",
+        "caja-mano": "The hand holding the open box moves very slightly closer to the camera and the light glints on the "
+                     "gold letters; the necklace stays lying still in the box.",
+        "delante": "She lifts the necklace a little with both hands, holding the chain on each side of the name, and "
+                   "smiles softly at the camera.",
+        "colgando": "The necklace hanging in the air sways gently and turns a little so the gold name catches the light.",
+        "abrochar": "She finishes fastening the clasp behind her neck, lowers her hands slowly and smiles softly at the "
+                    "camera.",
+        "pellizco": "Her fingertips gently hold the chain on each side of the name and tilt it slightly so the polished "
+                    "letters catch the light; her lips smile softly.",
+        "pecho": "Her hands slowly move in to frame the necklace on her chest, small natural movement; the teardrop sways "
+                 "slightly.",
+        "ancla": "She looks calmly at the camera, raises both hands and softly frames the necklace on her chest with open "
+                 "fingers, then smiles.",
+    },
+}
 DESPLAZAMIENTO = {"nombre": 0.10, "colgando": 0.0, "espejo": 0.75}   # dónde empieza el recorte 9:16 (0 = izquierda, 0.5 = centro)
 
 
@@ -77,7 +97,9 @@ def animar(plano, modo, seg):
     try:
         url = higgsfield_client.upload_file(recorte_916(CARPETA / f"{plano}.png"))
         clave, propios = plano.rsplit("-", 1)[0], MOV_CARPETA.get(CARPETA.name)
-        prompt = propios[clave] + FIJO_VARIOS if propios else MOVIMIENTO[clave] + FIJO
+        uno = MOV_UNO.get(CARPETA.name)
+        prompt = (uno[clave] + FIJO if uno else
+                  propios[clave] + FIJO_VARIOS if propios else MOVIMIENTO[clave] + FIJO)
         r = higgsfield_client.subscribe(f"kling-video/v3.0/{modo}/image-to-video", arguments={
             "image_url": url, "prompt": prompt, "duration": seg,
             "sound": "off", "aspect_ratio": "9:16"})

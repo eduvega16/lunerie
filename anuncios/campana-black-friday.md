@@ -201,3 +201,21 @@ en Stories/Reels, botón «Comprar», título *Collar Signé · 49,95 €*:
 Estructura copiada (no el vídeo) del anuncio de Lucce Jewelry (Biblioteca de Meta 911578845041121). «Baño de oro de
 18K» confirmado por QIUHAN por escrito el 11-nov; **nada de waterproof** (0,03 micras). Regla: ~42 € sin ventas →
 parar; ≤ 30 €/pedido → subir un 20 % cada 2-3 días.
+
+## Retargeting (12-nov, OK de Edu)
+
+- **Públicos creados** (se llenan solos con el píxel, 30 días): `RT · Carrito o pago · 30 días` **52568224227194** y
+  `RT · Visitas ficha Collar Signé · 30 días` **52568224242194**. Edu aceptó las condiciones de públicos personalizados.
+- **Anuncio 30 · «El Black Friday ya ha empezado»** (`python marca/retargeting_bf.py`): animación del 23 (collar
+  «Carmen» que baja, foto real) + «Su nombre, su piedra. La 2.ª pieza al 50 % y la 3.ª, gratis. Hasta el 5 de diciembre ·
+  Sale en 3-5 días laborables» + abajo, quietas, «También en lunerie.es»: Reloj Lune 39,95 € y Anillo Nuit 19,95 €.
+  7,5 s, sin sonido, 9:16 y 4:5, **ya subido a Archivos de Shopify** (URL en `creatividades-urls.json`). OK de Edu.
+- **Plan:** el 14-nov, con la revisión, meter el 30 en la campaña actual (añadir un anuncio también reinicia el
+  aprendizaje: todos los cambios ese día, de una vez). Retargeting aparte solo si el público del carrito pasa de
+  ~200-300 personas (finales de noviembre), 3-5 €/día con este vídeo, excluyendo compradores.
+- **Por el texto «ya ha empezado», el 27-nov NO se saca un descuento mejor** (el código del 10 % queda descartado
+  mientras dure esta promo).
+- **Solo Instagram: NO** (12-nov, toda la campaña): Instagram 154,54 €, 252 clics, 62 carritos, 6 pagos, 1 compra;
+  Facebook 55,99 €, 90 clics, 22 carritos, 5 pagos, 1 compra → por carrito igual (~2,5 €), por pago Facebook mejor.
+- **Benchmark de Meta (28 días):** carritos / visitas a la ficha 46 % (5 % mejor de anunciantes parecidos) pero
+  carrito → pago 13 % (21 % peor). El atasco sigue siendo la cesta.

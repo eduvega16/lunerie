@@ -1,6 +1,6 @@
 {
   "id": "2026-W46-01-regalo-por-precio",
-  "estado": "aprobado",
+  "estado": "publicado",
   "plataforma": "instagram",
   "formato": "carrusel",
   "pieza": "catalogo",
@@ -119,6 +119,10 @@
     ],
     "alt_text": "Nueve diapositivas con regalos para ella entre 20 y 40 euros: aros Boucle, anillo Duo, pendientes Larme, anillos Nuit y Étoile, collar Lune y reloj Lune.",
     "urls": [],
-    "ia": true
+    "ia": true,
+    "resultado": {
+      "media_id": "18083863862344967",
+      "fecha": "2026-11-13T19:35:55+0100"
+    }
   }
 }

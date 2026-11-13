@@ -556,6 +556,13 @@ manda así a QIUHAN.
   hablado y cortada con los tiempos de cada palabra (speech-to-text de ElevenLabs), filtro de móvil **sin eco**; frase a
   frase «suena poco natural». **30** = el retargeting con Holiday Bells. En este PC ffmpeg está en el PATH (no hay
   `imageio_ffmpeg`): los scripts usan `shutil.which("ffmpeg")` primero.
+- **INSTAGRAM SE PUBLICA DESDE `D:\LUNERIE` (13-nov, decisión de Edu; manda sobre la nota del 9-nov):** el otro PC estuvo
+  apagado y se perdieron el 12-nov 19:30 y el 13-nov 12:30. Aquí están programadas las 17 piezas del 14 al 22-nov (12:30 y
+  19:30; las 4 atrasadas —carrusel de dudas, Alba rojo, foto de los dedos y «Un martes cualquiera»— van del 20-nov 19:30 al
+  22-nov 12:30). Este PC tiene los temporizadores de activación encendidos y enchufado no se suspende solo: **dejarlo
+  encendido o suspendido, no apagado.** **En `C:\Users\edu\lunerie`, al encenderlo: `git pull` y `python
+  oficina/publicar_programado.py quitar`** (sus tareas son las mismas; si coinciden, `publicar.py` mira las 12 últimas
+  publicaciones y no repite, pero a la vez exacta podrían salir las dos). 13-nov 19:35: salió «Regalos por precio» (W46-01).
 - **Carritos (13-nov, EN PRODUCCIÓN, Edu):** de Meta (4-13 nov), 191 visitas → 59 con carrito → 7 al pago → 3 compras; quien
   añade y se va no deja email. **Ventana 5 s después de añadir a la cesta** (`tema/codigo/snippets/lunerie-email-cesta.liquid`,
   sección `email_cesta` del pie): con collar, «Black Friday · Te regalamos *su cajita.*» + email «te avisamos de los próximos

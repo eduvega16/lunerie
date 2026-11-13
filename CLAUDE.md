@@ -563,6 +563,16 @@ manda así a QIUHAN.
   encendido o suspendido, no apagado.** **En `C:\Users\edu\lunerie`, al encenderlo: `git pull` y `python
   oficina/publicar_programado.py quitar`** (sus tareas son las mismas; si coinciden, `publicar.py` mira las 12 últimas
   publicaciones y no repite, pero a la vez exacta podrían salir las dos). 13-nov 19:35: salió «Regalos por precio» (W46-01).
+- **Serie de Navidad en TERCIOPELO ROJO (13-nov, Edu: «quiero que subamos mucho contenido, las fotos en un fondo rojo
+  terciopelado rollo navidad» → «sí dale y programa la subida»), PROGRAMADA en este PC:** 12 fotos (`marca/terciopelo.py`,
+  ~2 $): se parte de fotos YA revisadas y solo se cambia el fondo (el collar no se rehace); nombres nuevos editando sobre
+  las de terciopelo (Ana, Paula, Eva; **«Nuria» salía «Muria»**: la N de firma parece una M, no usarla). Nada de
+  lágrimas rojas sobre rojo. Montaje sin IA con `marca/navidad_terciopelo.py` → `marca/fotos-ia/terciopelo/navidad/`:
+  posts 4:5 con una línea, carrusel «Ideas de regalo para Navidad» (7), historias 9:16 (foto con gancho + ficha con
+  precio y promo) y 2 reels con Holiday Bells. **Historias: una al día a las 11:00 del 14 al 24-nov** (11 piezas, 2
+  pantallas cada una; las pegatinas de encuesta no se pueden poner por API). **Feed en terciopelo detrás del plan:**
+  22-nov 19:30 reel «Su nombre, bajo el árbol» → 26-nov 12:30 (8 piezas, W47-08 y W48-01…07). Ojo: `publicar.py` no
+  publica una pieza si su **primera línea** ya está en las 12 últimas publicaciones: no repetir primeras líneas.
 - **Carritos (13-nov, EN PRODUCCIÓN, Edu):** de Meta (4-13 nov), 191 visitas → 59 con carrito → 7 al pago → 3 compras; quien
   añade y se va no deja email. **Ventana 5 s después de añadir a la cesta** (`tema/codigo/snippets/lunerie-email-cesta.liquid`,
   sección `email_cesta` del pie): con collar, «Black Friday · Te regalamos *su cajita.*» + email «te avisamos de los próximos

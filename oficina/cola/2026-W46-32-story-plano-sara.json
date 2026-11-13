@@ -1,0 +1,37 @@
+{
+  "id": "2026-W46-32-story-plano-sara",
+  "estado": "aprobado",
+  "plataforma": "instagram",
+  "formato": "story",
+  "pieza": "collar-signe",
+  "fecha_sugerida": "2026-11-15T11:00:00+01:00",
+  "gancho": "Historia de la serie de terciopelo",
+  "copy": "",
+  "hashtags": [],
+  "musica": {
+    "origen": "ninguna",
+    "pista": "",
+    "licencia": ""
+  },
+  "publicacion": {
+    "archivos": [
+      "marca/fotos-ia/terciopelo/navidad/st-plano-sara-1-1.jpg",
+      "marca/fotos-ia/terciopelo/navidad/st-plano-sara-1-2.jpg"
+    ],
+    "urls": [],
+    "alt_text": "",
+    "ia": true
+  },
+  "origen": {
+    "biblioteca": "terciopelo-navidad"
+  },
+  "riesgos": [
+    "Colores de la lágrima orientativos",
+    "Nada de «oro» en el plateado ni waterproof"
+  ],
+  "revision": {
+    "notas": "13-nov: Edu «quiero que subamos mucho contenido, las fotos en un fondo rojo terciopelado rollo navidad» → «sí dale y programa la subida». Serie en terciopelo rojo (marca/terciopelo.py + marca/navidad_terciopelo.py).",
+    "aprobado_por": "Edu",
+    "fecha": "2026-11-13"
+  }
+}

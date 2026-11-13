@@ -1,0 +1,40 @@
+{
+  "id": "2026-W48-06-lune-terciopelo",
+  "estado": "aprobado",
+  "plataforma": "instagram",
+  "formato": "foto",
+  "pieza": "reloj-lune",
+  "fecha_sugerida": "2026-11-25T19:30:00+01:00",
+  "gancho": "Un reloj que solo da la hora.",
+  "copy": "Un reloj que solo da la hora.\n\nReloj Lune: esfera ovalada de 12 mm y una correa de eslabones con piedras verdes. 39,95 €.\n\nMézclalo con un collar: la 2.ª pieza al 50 % y la 3.ª, gratis, hasta el 5 de diciembre.\n\nLo tienes en el enlace del perfil.",
+  "hashtags": [
+    "#relojdemujer",
+    "#relojvintage",
+    "#lunerie"
+  ],
+  "musica": {
+    "origen": "ninguna",
+    "pista": "",
+    "licencia": ""
+  },
+  "publicacion": {
+    "archivos": [
+      "marca/fotos-ia/terciopelo/navidad/post-reloj-lune-1.jpg"
+    ],
+    "urls": [],
+    "alt_text": "Reloj dorado pequeño de esfera ovalada con una correa de eslabones y piedras verdes, sobre terciopelo rojo.",
+    "ia": true
+  },
+  "origen": {
+    "biblioteca": "terciopelo-navidad"
+  },
+  "riesgos": [
+    "Colores de la lágrima orientativos",
+    "Nada de «oro» en el plateado ni waterproof"
+  ],
+  "revision": {
+    "notas": "13-nov: Edu «quiero que subamos mucho contenido, las fotos en un fondo rojo terciopelado rollo navidad» → «sí dale y programa la subida». Serie en terciopelo rojo (marca/terciopelo.py + marca/navidad_terciopelo.py).",
+    "aprobado_por": "Edu",
+    "fecha": "2026-11-13"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "2026-W48-02-carrusel-ideas-regalo",
+  "estado": "aprobado",
+  "plataforma": "instagram",
+  "formato": "carrusel",
+  "pieza": "catalogo",
+  "fecha_sugerida": "2026-11-23T19:30:00+01:00",
+  "gancho": "Ideas de regalo para Navidad",
+  "copy": "Ideas de regalo para Navidad, de 19,95 € a 49,95 €.\n\nCollar Signé con su nombre, Reloj Lune, Reloj Maille, Anillo Nuit y Aros Boucle. Mézclalos: la 2.ª pieza al 50 % y la 3.ª, gratis, hasta el 5 de diciembre.\n\n¿Para quién es el tuyo? Cuéntanoslo en comentarios.\n\nLo tienes en el enlace del perfil.",
+  "hashtags": [
+    "#regaloparaella",
+    "#ideasderegalo",
+    "#lunerie"
+  ],
+  "musica": {
+    "origen": "ninguna",
+    "pista": "",
+    "licencia": ""
+  },
+  "publicacion": {
+    "archivos": [
+      "marca/fotos-ia/terciopelo/navidad/car-1.jpg",
+      "marca/fotos-ia/terciopelo/navidad/car-2.jpg",
+      "marca/fotos-ia/terciopelo/navidad/car-3.jpg",
+      "marca/fotos-ia/terciopelo/navidad/car-4.jpg",
+      "marca/fotos-ia/terciopelo/navidad/car-5.jpg",
+      "marca/fotos-ia/terciopelo/navidad/car-6.jpg",
+      "marca/fotos-ia/terciopelo/navidad/car-7.jpg"
+    ],
+    "urls": [],
+    "alt_text": "Siete diapositivas sobre terciopelo rojo: ideas de regalo para Navidad de 19,95 a 49,95 euros: Collar Signé, Reloj Lune, Reloj Maille, Anillo Nuit y Aros Boucle, y la oferta de Black Friday.",
+    "ia": true
+  },
+  "origen": {
+    "biblioteca": "terciopelo-navidad"
+  },
+  "riesgos": [
+    "Colores de la lágrima orientativos",
+    "Nada de «oro» en el plateado ni waterproof"
+  ],
+  "revision": {
+    "notas": "13-nov: Edu «quiero que subamos mucho contenido, las fotos en un fondo rojo terciopelado rollo navidad» → «sí dale y programa la subida». Serie en terciopelo rojo (marca/terciopelo.py + marca/navidad_terciopelo.py).",
+    "aprobado_por": "Edu",
+    "fecha": "2026-11-13"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "2026-W47-08-reel-nombre-arbol",
+  "estado": "aprobado",
+  "plataforma": "instagram",
+  "formato": "reel",
+  "pieza": "collar-signe",
+  "fecha_sugerida": "2026-11-22T19:30:00+01:00",
+  "gancho": "Su nombre, bajo el árbol.",
+  "copy": "Su nombre, bajo el árbol.\n\nCollar Signé: su nombre en letra de firma y la lágrima de su mes, o la que más te guste. En dorado o plateado, 49,95 €, y llega en su cajita de terciopelo.\n\nHasta el 5 de diciembre, la 2.ª pieza al 50 % y la 3.ª, gratis.\n\nLo tienes en el enlace del perfil.",
+  "hashtags": [
+    "#collarconnombre",
+    "#regaloparaella",
+    "#lunerie"
+  ],
+  "musica": {
+    "origen": "pista con licencia",
+    "pista": "Holiday Bells (biblioteca de sonidos de Meta, la trajo Edu)",
+    "licencia": "biblioteca de Meta (Facebook e Instagram)"
+  },
+  "publicacion": {
+    "archivos": [],
+    "urls": [
+      "https://cdn.shopify.com/videos/c/vp/ba62227fe0ed48c3b8e3909fc9b28595/ba62227fe0ed48c3b8e3909fc9b28595.HD-1080p-4.8Mbps-101258370.mp4"
+    ],
+    "alt_text": "",
+    "ia": true
+  },
+  "origen": {
+    "biblioteca": "terciopelo-navidad"
+  },
+  "riesgos": [
+    "Colores de la lágrima orientativos",
+    "Nada de «oro» en el plateado ni waterproof"
+  ],
+  "revision": {
+    "notas": "13-nov: Edu «quiero que subamos mucho contenido, las fotos en un fondo rojo terciopelado rollo navidad» → «sí dale y programa la subida». Serie en terciopelo rojo (marca/terciopelo.py + marca/navidad_terciopelo.py).",
+    "aprobado_por": "Edu",
+    "fecha": "2026-11-13"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "2026-W48-05-laura-terciopelo",
+  "estado": "aprobado",
+  "plataforma": "instagram",
+  "formato": "foto",
+  "pieza": "collar-signe",
+  "fecha_sugerida": "2026-11-25T12:30:00+01:00",
+  "gancho": "Su nombre, bajo el árbol.",
+  "copy": "Su nombre, con lazo dorado.\n\nLaura, en letra de firma, y una lágrima azul en el punto más bajo de la cadena. Collar Signé, 49,95 €; el dorado, con baño de oro de 18K.\n\nHasta el 5 de diciembre, la 2.ª pieza al 50 % y la 3.ª, gratis.\n\nLo tienes en el enlace del perfil.",
+  "hashtags": [
+    "#collarconnombre",
+    "#regaloparaella",
+    "#lunerie"
+  ],
+  "musica": {
+    "origen": "ninguna",
+    "pista": "",
+    "licencia": ""
+  },
+  "publicacion": {
+    "archivos": [
+      "marca/fotos-ia/terciopelo/navidad/post-lazo-laura-1.jpg"
+    ],
+    "urls": [],
+    "alt_text": "Collar dorado con el nombre Laura en letra de firma y una lágrima azul sobre terciopelo rojo, con una cinta dorada y luces de Navidad desenfocadas. Texto: Su nombre, bajo el árbol. Collar Signé, 49,95 euros.",
+    "ia": true
+  },
+  "origen": {
+    "biblioteca": "terciopelo-navidad"
+  },
+  "riesgos": [
+    "Colores de la lágrima orientativos",
+    "Nada de «oro» en el plateado ni waterproof"
+  ],
+  "revision": {
+    "notas": "13-nov: Edu «quiero que subamos mucho contenido, las fotos en un fondo rojo terciopelado rollo navidad» → «sí dale y programa la subida». Serie en terciopelo rojo (marca/terciopelo.py + marca/navidad_terciopelo.py).",
+    "aprobado_por": "Edu",
+    "fecha": "2026-11-13"
+  }
+}

@@ -77,6 +77,15 @@
       "hace_falta": "Grabarlo con el móvil quieto (trípode o apoyado): pared lisa clara, una persona de espaldas que se estira y salta para tocar un punto alto de la pared 2-3 veces hasta que «llega» y se va andando; 10-15 s. Claude pinta el interruptor y el cartel encima (la cámara no se mueve, así que se quedan fijos en la pared) con la foto real. Alternativa sin persona: plano corto de una mano que enciende el interruptor en la pared. Con IA (Kling) también vale si hay saldo.",
       "prioridad": "alta",
       "estado": "propuesta (9-nov)"
+    },
+    {
+      "id": "maquina-gancho",
+      "fuente": "Reel de @evas_vision («Eva · ai creator»), enlace de Edu el 13-nov-2026: https://www.instagram.com/reel/DfmZyrDIVqm/ . Solo se pudo ver la portada (Instagram pide sesión para el vídeo).",
+      "numeros": "Sin datos (no se ven sin sesión)",
+      "como_es": "Hecho con IA. Una máquina de gancho de feria, llena de tarros naranjas de cosmética con tapa dorada y bolas de Navidad naranjas y cobre sobre nieve; el gancho baja a por un tarro y, detrás del cristal, una modelo pelirroja con americana mira a cámara. Disparadores: interrupción del patrón (producto donde irían peluches), curiosidad (¿lo cogerá?) y Navidad sin decirlo (bolas, nieve, el color de la marca en todo).",
+      "lunerie": "La máquina llena de cajitas de terciopelo beige (las de QIUHAN) y bolas de Navidad doradas y rojo vino sobre terciopelo rojo; el gancho coge una cajita, se abre y dentro está el Collar Signé con su nombre (foto ya revisada, no generada desde cero). Texto: «Su regalo no se deja al azar.» (el gancho es suerte; el collar lleva su nombre). Nada de «te ha tocado» ni nada que parezca un sorteo. Chica nuestra o sin cara, nunca la del original.",
+      "hace_falta": "Foto 9:16 de la máquina con IA (flare, refs: cajita de QIUHAN y cajita-carmen-1 de terciopelo) → Kling 3.0 pro 4 s con el gancho bajando y cogiendo la cajita (usar el principio) → plano de la cajita abierta (terciopelo) → ficha de cierre de navidad_terciopelo.py. ~1-2 $.",
+      "estado": "propuesta (13-nov), pendiente del OK de Edu"
     }
   ]
 }

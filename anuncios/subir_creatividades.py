@@ -51,10 +51,13 @@ def subir(ruta):
 
 if __name__ == "__main__":
     urls = json.loads(SALIDA.read_text(encoding="utf8")) if SALIDA.exists() else {}
-    for nombre in sys.argv[1:] or FICHEROS:
+    for arg in sys.argv[1:] or FICHEROS:
+        # 13-nov: también vale una ruta a otra carpeta (p. ej. marca/fotos-ia/ugc-lucce/…); se guarda con su nombre
+        ruta = pathlib.Path(arg) if pathlib.Path(arg).is_file() else CARPETA / arg
+        nombre = ruta.name
         if nombre in urls:
             continue
-        urls[nombre] = subir(CARPETA / nombre)
+        urls[nombre] = subir(ruta)
         SALIDA.write_text(json.dumps(urls, ensure_ascii=False, indent=1) + "\n", encoding="utf8")
         print(nombre, "->", urls[nombre][:90], flush=True)
     print("listo:", len(urls), "ficheros")

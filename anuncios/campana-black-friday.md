@@ -219,3 +219,23 @@ parar; ≤ 30 €/pedido → subir un 20 % cada 2-3 días.
   Facebook 55,99 €, 90 clics, 22 carritos, 5 pagos, 1 compra → por carrito igual (~2,5 €), por pago Facebook mejor.
 - **Benchmark de Meta (28 días):** carritos / visitas a la ficha 46 % (5 % mejor de anunciantes parecidos) pero
   carrito → pago 13 % (21 % peor). El atasco sigue siendo la cesta.
+
+## Anuncios 30 y 31 (13-nov, OK de Edu: «súbelo y activamos mañana»)
+
+Creados en el conjunto `52566459008194` como **borrador** (sin errores), para **activarlos el 14-nov** con
+`ads_activate_entity` y `object_ids` de los dos anuncios (no la campaña entera). Botón «Comprar», 4:5 en feed y 9:16 en
+Stories/Reels, título *Collar Signé · 49,95 €*, sin declarar IA. Vídeos en Archivos de Shopify (`creatividades-urls.json`).
+
+- **30 · El Black Friday ya ha empezado** (anuncio 52568555635194, creatividad 3363542310499754) · `utm_content=bf-empezado`
+  · vídeo `campana-bf/30-retargeting-musica-*.mp4` (el 30 de antes + Holiday Bells).
+  > El Black Friday ya ha empezado. El Collar Signé lleva su nombre en letra de firma y la piedra de su mes, o la que más
+  > te guste. Y en toda la tienda, la 2.ª pieza al 50 % y la 3.ª, gratis, hasta el 5 de diciembre. Envío gratis a península.
+- **31 · UGC «abrir la cajita»** (anuncio 52568555637594, creatividad 1831214424582351) · `utm_content=collar-cajita` ·
+  vídeo `ugc-lucce/31-ugc-cajita-voz-*-musica.mp4` (22 s; estructura del anuncio de Lucce, 8 planos de Kling +
+  `cierre_animado.py --cajita`; `marca/ugc_lucce_montaje.py` y después `marca/doblar.py 31`). Voz de **Jenni**
+  (ElevenLabs, eleven_v4) en **una sola toma** con texto hablado (Edu: las voces frase a frase «suenan poco naturales»),
+  cortada con los tiempos de cada palabra; filtro de móvil sin eco; Holiday Bells debajo.
+  > Así llega su collar: en su cajita de terciopelo, lista para regalar. Lleva su nombre en letra de firma y la piedra de
+  > su mes, o la que más te guste. El dorado, con baño de oro de 18K. Y por Black Friday te regalamos la cajita, y la 2.ª
+  > pieza va al 50 %. Hasta el 5 de diciembre.
+- **Al acabar el Black Friday (5-dic):** pausar los dos (hablan de la cajita gratis y de la promo).

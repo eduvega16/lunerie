@@ -8,9 +8,12 @@ Precios comprobados en Shopify: 1 Signé 49,95 € · 2 = 74,93 € (el 2.º al 
 Solo cosas verdaderas: el plazo es solo lo que tarda en salir (nunca la suma con el envío), la vista previa es
 «orientativa» y la garantía es la legal de 3 años (si llega mal hecho, se rehace).
 """
-import json, pathlib, subprocess, tempfile
+import shutil, json, pathlib, subprocess, tempfile
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
-import imageio_ffmpeg
+try:
+    import imageio_ffmpeg
+except ImportError:   # en D:\LUNERIE ffmpeg está en el PATH y no hay imageio-ffmpeg
+    imageio_ffmpeg = None
 
 RAIZ = pathlib.Path(__file__).resolve().parent.parent
 FUENTES = RAIZ / "marca" / "fuentes"
@@ -255,7 +258,7 @@ def video(w, h, final, salida):
         txt = tmp / "lista.txt"
         txt.write_text("".join(f"file '{a.as_posix()}'\nduration {s}\n" for a, s in lista)
                        + f"file '{lista[-1][0].as_posix()}'\n", encoding="utf-8")
-        subprocess.run([imageio_ffmpeg.get_ffmpeg_exe(), "-y", "-loglevel", "error", "-f", "concat", "-safe", "0",
+        subprocess.run([shutil.which("ffmpeg") or imageio_ffmpeg.get_ffmpeg_exe(), "-y", "-loglevel", "error", "-f", "concat", "-safe", "0",
                         "-i", str(txt), "-vf", "fps=30,format=yuv420p", "-c:v", "libx264", "-crf", "16",
                         "-preset", "slow", "-movflags", "+faststart", str(SALIDA / salida)], check=True)
     print(SALIDA / salida, round(sum(s for _, s in lista), 1), "s")

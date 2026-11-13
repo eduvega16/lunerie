@@ -4,7 +4,7 @@ no sale), no la persona: la chica es nuestra. Collar «Carmen» con lágrima ver
 (producto-verde-carmen-v2: letra, cola ondulada que acaba en anilla, lágrima en el punto más bajo de la cadena) y la
 cajita de terciopelo beige de QIUHAN, que es la que recibe la clienta.
     python marca/ugc_lucce.py ancla --n 2                              → marca/fotos-ia/ugc-lucce/ancla-1.png …
-    python marca/ugc_lucce.py caja-cara caja-mano … --ancla <png> [--n 2]
+    python marca/ugc_lucce.py caja-cara caja-mano … --ancla <png> [--n 2] [--desde 3]
 Tomas: caja-cara, caja-mano, delante, colgando, abrochar, pellizco, pecho, final (o «todas»).
 REVISAR a tamaño real antes de animar: «Carmen» bien escrito y con la misma letra, UNA lágrima en la cadena (forma de
 U, nunca colgando del nombre ni de una cadenita en Y), anillas a los dos lados del nombre y la misma cara.
@@ -48,9 +48,14 @@ TOMAS = {
     "caja-mano": ("Close-up: a woman's hand with natural nude nails holds " + CAJA_TXT + " towards the camera, filling "
                   "most of the frame; inside, laid flat on the beige velvet, " + COLLAR_TXT + ", the name large, sharp "
                   "and fully readable, the green teardrop next to it. The wall behind is out of focus. " + LOOK, True),
-    "delante": ("The same woman as the reference, facing the camera, holds " + COLLAR_TXT + " up by the chain with "
-                "both hands in front of her lower face so it hangs in the foreground at the height of her chin, the name "
-                "and the green teardrop sharp in focus; her face is softly behind it. Her neck is bare. " + LOOK, False),
+    # 13-nov: la 1.ª versión salía con el collar ya puesto (copiaba el ancla) → referencia de cara con el cuello
+    # desnudo (--ancla caja-cara-2.jpg) y el collar en el aire, lejos del cuerpo, como en Lucce
+    "delante": ("The same woman as the reference, seen from the chest up, facing the camera. She is NOT wearing any "
+                "necklace: her neck and collarbone are completely bare. With both hands raised near the top corners of "
+                "the frame she holds " + COLLAR_TXT + " by its chain, stretched out towards the camera at arm's length, "
+                "so the necklace hangs in the air in a U shape in the foreground, in front of her chin and neck but well "
+                "away from her body (it does not touch her skin and does not go around her neck); the name and the green "
+                "teardrop are large, sharp and in focus, and her face behind is slightly soft. " + LOOK, False),
     "colgando": ("Close-up of " + COLLAR_TXT + " hanging and gently swaying in the air in front of a plain light "
                  "warm-grey wall, held from above out of frame: the name \"Carmen\" large, sharp and perfectly "
                  "readable, the green teardrop below it. No person visible. " + LOOK, False),
@@ -94,13 +99,14 @@ if __name__ == "__main__":
     a = sys.argv[1:]
     res = "4k" if "--4k" in a else "2k"
     n = int(a[a.index("--n") + 1]) if "--n" in a else 1
+    desde = int(a[a.index("--desde") + 1]) if "--desde" in a else 1   # numerar desde aquí para no pisar tomas viejas
     ancla = a[a.index("--ancla") + 1] if "--ancla" in a else None
     SALIDA.mkdir(parents=True, exist_ok=True)
     pedidas = [t for t in TOMAS if t != "ancla"] if "todas" in a else [t for t in a if t in TOMAS]
     sube = lambda p: higgsfield_client.upload_file(pathlib.Path(p))
     base = ([sube(ancla)] if ancla else []) + [sube(COLLAR), sube(recorte_nombre())]
     caja = sube(CAJITA)
-    trabajos = [(TOMAS[t][0], SALIDA / f"{t}-{k + 1}.png", base + ([caja] if TOMAS[t][1] else []))
+    trabajos = [(TOMAS[t][0], SALIDA / f"{t}-{k + desde}.png", base + ([caja] if TOMAS[t][1] else []))
                 for t in pedidas for k in range(n)]
     with concurrent.futures.ThreadPoolExecutor(4) as ex:
         for linea in ex.map(lambda tr: generar(tr[0], tr[1], tr[2], res), trabajos):

@@ -68,8 +68,9 @@ MOV_UNO = {
                      "tilts it very slightly so the necklace inside catches the light.",
         "caja-mano": "The hand holding the open box moves very slightly closer to the camera and the light glints on the "
                      "gold letters; the necklace stays lying still in the box.",
-        "delante": "She lifts the necklace a little with both hands, holding the chain on each side of the name, and "
-                   "smiles softly at the camera.",
+        "delante": "She holds the necklace up in the air by its chain with both hands; it sways gently in front of her "
+                   "chin, away from her body, and the light glints on the gold name; she smiles softly at the camera. "
+                   "The necklace never touches her neck.",
         "colgando": "The necklace hanging in the air sways gently and turns a little so the gold name catches the light.",
         "abrochar": "She finishes fastening the clasp behind her neck, lowers her hands slowly and smiles softly at the "
                     "camera.",
@@ -84,6 +85,12 @@ MOV_UNO = {
 DESPLAZAMIENTO = {"nombre": 0.10, "colgando": 0.0, "espejo": 0.75}   # dónde empieza el recorte 9:16 (0 = izquierda, 0.5 = centro)
 
 
+def foto(plano):
+    """El .png original o, si no está (los .png no van a git: en el otro PC solo hay .jpg), el .jpg."""
+    png = CARPETA / f"{plano}.png"
+    return png if png.exists() else CARPETA / f"{plano}.jpg"
+
+
 def recorte_916(png):
     im = Image.open(png).convert("RGB")
     w = round(im.height * 9 / 16)
@@ -95,7 +102,7 @@ def recorte_916(png):
 
 def animar(plano, modo, seg):
     try:
-        url = higgsfield_client.upload_file(recorte_916(CARPETA / f"{plano}.png"))
+        url = higgsfield_client.upload_file(recorte_916(foto(plano)))
         clave, propios = plano.rsplit("-", 1)[0], MOV_CARPETA.get(CARPETA.name)
         uno = MOV_UNO.get(CARPETA.name)
         prompt = (uno[clave] + FIJO if uno else
@@ -120,7 +127,7 @@ if __name__ == "__main__":
     if "--carpeta" in a:
         CARPETA = RAIZ / "marca" / "fotos-ia" / a[a.index("--carpeta") + 1]
         CLIPS = CARPETA / "clips"
-    planos = [p for p in a if (CARPETA / f"{p}.png").exists()]
+    planos = [p for p in a if foto(p).exists()]
     CLIPS.mkdir(parents=True, exist_ok=True)
     with concurrent.futures.ThreadPoolExecutor(4) as ex:
         for linea in ex.map(lambda p: animar(p, modo, seg), planos):

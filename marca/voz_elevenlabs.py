@@ -62,8 +62,10 @@ def asegurar_voz(voice_id):
     mias = {v["voice_id"] for v in pedir("/v1/voices")["voices"]}
     if voice_id in mias:
         return
-    f = VOZ / "muestras" / "voces.json"
-    info = next((v for v in json.loads(f.read_text(encoding="utf8")) if v["voice_id"] == voice_id), None) if f.exists() else None
+    info = None
+    for f in (VOZ / "muestras" / "voces.json", VOZ / "muestras-casual" / "voces.json"):   # 13-nov: también las «casual»
+        if f.exists() and not info:
+            info = next((v for v in json.loads(f.read_text(encoding="utf8")) if v["voice_id"] == voice_id), None)
     if not info:
         sys.exit("No encuentro esa voz en muestras/voces.json: ejecuta antes «buscar».")
     pedir(f"/v1/voices/add/{info['public_owner_id']}/{voice_id}", {"new_name": f"Lunerie · {info['name']}"[:50]})

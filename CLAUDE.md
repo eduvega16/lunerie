@@ -545,7 +545,17 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
 transparente), nombre **«Maria José»** (así, sin tilde en la i y con tilde en la é), 49,95 €, Shopify Payments, Cantabria.
 Viene del **anuncio 18** (Instagram, `collar-carmen`). Campaña desde la reactivación (11-13 nov): 23,60 €, 1 compra, 30
 carritos, 2 pagos (~23,6 €/venta, breakeven ~20,8 €). Las 8 tareas de Instagram de este PC siguen puestas (quitarlas
-pedía el OK de Edu).
+pedía el OK de Edu). **#LUN1007:** Edu espera a que la clienta conteste sobre el nombre «Maria José»; si no contesta, se
+manda así a QIUHAN.
+- **14-nov: ACTIVAR los anuncios 30 y 31** (13-nov, OK de Edu: «súbelo y activamos mañana»): creados como borrador en el
+  conjunto, sin errores → `ads_activate_entity` con `object_ids` 52568555635194 (30) y 52568555637594 (31), no la campaña
+  entera. Ese día, revisión con la regla (~42 € sin ventas → parar; ≤ 30 €/pedido → +20 %). Detalle y textos en
+  `anuncios/campana-black-friday.md` (sección «Anuncios 30 y 31»). **31 = UGC «abrir la cajita»** (estructura de Lucce,
+  `marca/ugc_lucce.py` → `ugc_animar.py --carpeta ugc-lucce` → `marca/ugc_lucce_montaje.py` → `marca/doblar.py 31`), voz
+  de **Jenni** (ElevenLabs `IrS0oRyKeMCyPJVVpPyg`, eleven_v4). **Voz más natural (Edu):** una sola toma seguida con texto
+  hablado y cortada con los tiempos de cada palabra (speech-to-text de ElevenLabs), filtro de móvil **sin eco**; frase a
+  frase «suena poco natural». **30** = el retargeting con Holiday Bells. En este PC ffmpeg está en el PATH (no hay
+  `imageio_ffmpeg`): los scripts usan `shutil.which("ffmpeg")` primero.
 - **Carritos (13-nov, EN PRODUCCIÓN, Edu):** de Meta (4-13 nov), 191 visitas → 59 con carrito → 7 al pago → 3 compras; quien
   añade y se va no deja email. **Ventana 5 s después de añadir a la cesta** (`tema/codigo/snippets/lunerie-email-cesta.liquid`,
   sección `email_cesta` del pie): con collar, «Black Friday · Te regalamos *su cajita.*» + email «te avisamos de los próximos

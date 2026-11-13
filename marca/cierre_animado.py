@@ -3,13 +3,13 @@ se para con un pequeño rebote, la lágrima se balancea hasta quedarse quieta y 
 Es la foto REAL de la ficha (producto-verde-3) animada por partes, sin IA (Kling deforma el nombre): la lágrima con su
 anilla se recorta por el fondo claro y gira desde donde cuelga de la cadena.
     python marca/cierre_animado.py  → marca/fotos-ia/campana-bf/23-cierre-anim-9x16.mp4 y -4x5.mp4
+    python marca/cierre_animado.py --cajita  → 31-cierre-cajita-… (con «Te regalamos su cajita de terciopelo»)
 La cadena sale siempre por arriba del encuadre (como si hubiera una mano). En 9:16, nombre, lágrima y texto quedan
 dentro de la zona libre de Meta (y 270-1248).
 """
-import math, pathlib, subprocess
+import math, pathlib, shutil, subprocess, sys
 import numpy as np
 from PIL import Image, ImageDraw, ImageFilter
-import imageio_ffmpeg
 from mofu_bofu import FOTO, SALIDA, FONDO, TINTA, GRIS, ROJO, jost, corm, cormi, centro, mixto
 
 ESCALA = 0.42
@@ -43,6 +43,9 @@ def preparar():
     return base, colg
 
 
+CAJITA = "--cajita" in sys.argv   # 13-nov: cierre del UGC «abrir la cajita» (anuncio 31), con la cajita de regalo
+
+
 def texto(w):
     """Capa RGBA con el texto del cierre, entre y=915 y y≈1228."""
     capa = Image.new("RGBA", (w, 1350), (0, 0, 0, 0))
@@ -52,6 +55,13 @@ def texto(w):
     y += 50
     mixto(d, y, [("Su nombre, ", corm(96), TINTA), ("su piedra.", cormi(96), TINTA)], w)
     y += 113
+    if CAJITA:
+        centro(d, y, "Te regalamos su cajita de terciopelo.", jost(44, "Regular"), TINTA, w)
+        y += 64
+        centro(d, y, "La 2.ª pieza al 50 % y la 3.ª, gratis.", jost(34, "Regular"), GRIS, w)
+        y += 48
+        centro(d, y, "Collar Signé · 49,95 € · Envío gratis a península", jost(34, "Regular"), GRIS, w)
+        return capa
     centro(d, y, "La 2.ª pieza al 50 % y la 3.ª, gratis.", jost(44, "Regular"), TINTA, w)
     y += 64
     centro(d, y, "Collar Signé · 49,95 € · Hasta el 5 de diciembre", jost(34, "Regular"), GRIS, w)
@@ -98,7 +108,7 @@ def fotograma(t, w, h, base, colg, capa_texto):
 def video(w, h, salida):
     base, colg = preparar()
     capa_texto = texto(w)
-    ff = imageio_ffmpeg.get_ffmpeg_exe()
+    ff = shutil.which("ffmpeg") or __import__("imageio_ffmpeg").get_ffmpeg_exe()
     proc = subprocess.Popen([ff, "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{w}x{h}",
                              "-r", str(FPS), "-i", "-", "-c:v", "libx264", "-crf", "16", "-preset", "slow",
                              "-pix_fmt", "yuv420p", "-movflags", "+faststart", str(SALIDA / salida)],
@@ -111,5 +121,6 @@ def video(w, h, salida):
 
 
 if __name__ == "__main__":
-    video(1080, 1920, "23-cierre-anim-9x16.mp4")
-    video(1080, 1350, "23-cierre-anim-4x5.mp4")
+    nombre = "31-cierre-cajita" if CAJITA else "23-cierre-anim"
+    video(1080, 1920, f"{nombre}-9x16.mp4")
+    video(1080, 1350, f"{nombre}-4x5.mp4")

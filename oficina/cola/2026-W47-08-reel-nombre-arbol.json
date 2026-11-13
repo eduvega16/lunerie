@@ -1,6 +1,6 @@
 {
   "id": "2026-W47-08-reel-nombre-arbol",
-  "estado": "aprobado",
+  "estado": "publicado",
   "plataforma": "instagram",
   "formato": "reel",
   "pieza": "collar-signe",
@@ -23,7 +23,11 @@
       "https://cdn.shopify.com/videos/c/vp/ba62227fe0ed48c3b8e3909fc9b28595/ba62227fe0ed48c3b8e3909fc9b28595.HD-1080p-4.8Mbps-101258370.mp4"
     ],
     "alt_text": "",
-    "ia": true
+    "ia": true,
+    "resultado": {
+      "media_id": "18048700418821333",
+      "fecha": "2026-11-13T20:02:42+0100"
+    }
   },
   "origen": {
     "biblioteca": "terciopelo-navidad"

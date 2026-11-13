@@ -133,7 +133,7 @@
             "ventajas": {
               "type": "custom-liquid",
               "settings": {
-                "custom_liquid": "<ul class=\"lu-ventajas\"><li>Llega en su cajita de regalo</li><li>Se hace para ti y sale en 3-5 días laborables</li><li>Envío gratis a península</li><li>Garantía de 3 años</li></ul><style>.lu-ventajas{display:grid;gap:6px;margin:0;padding:0!important;list-style:none;font-family:var(--font-body--family);font-size:.8125rem;line-height:1.5;color:#3D4842}</style>"
+                "custom_liquid": "<ul class=\"lu-ventajas\"><li><span style=\"color:#CA3801;font-weight:500;letter-spacing:.12em;text-transform:uppercase;font-size:.92em\">Black Friday</span> · Te regalamos su cajita de terciopelo</li><li>Se hace para ti y sale en 3-5 días laborables</li><li>Envío gratis a península</li><li>Garantía de 3 años</li></ul><style>.lu-ventajas{display:grid;gap:6px;margin:0;padding:0!important;list-style:none;font-family:var(--font-body--family);font-size:.8125rem;line-height:1.5;color:#3D4842}</style>"
               },
               "blocks": {}
             },

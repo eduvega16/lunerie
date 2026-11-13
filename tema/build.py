@@ -301,6 +301,11 @@ footer = {
         "rasca": {"type": "custom-liquid", "name": "Rasca 10 %", "disabled": True, "settings": {
             "custom_liquid": "{% render 'lunerie-rasca' %}", "section_width": "full-width",
             "padding-block-start": 0, "padding-block-end": 0}},
+        # 13-nov (Edu): ventana 5 s después de añadir a la cesta: «Black Friday · Te regalamos su cajita» (con collar) y
+        # el email para avisar de los próximos descuentos (tema/codigo/snippets/lunerie-email-cesta.liquid)
+        "email_cesta": {"type": "custom-liquid", "name": "Email al añadir a la cesta", "settings": {
+            "custom_liquid": "{% render 'lunerie-email-cesta' %}", "section_width": "full-width",
+            "padding-block-start": 0, "padding-block-end": 0}},
         # «Preferencias de cookies» (menú pie-informacion, enlace /#preferencias-cookies) reabre el panel del banner
         "cookies": {"type": "custom-liquid", "name": "Preferencias de cookies", "settings": {
             # 29-oct: en móvil el banner de cookies ocupaba casi la mitad de la primera pantalla y tapaba título, precio y botón
@@ -321,7 +326,7 @@ footer = {
                              "e.preventDefault(); window.privacyBanner.showPreferences(); } });</script>",
             "section_width": "full-width", "padding-block-start": 0, "padding-block-end": 0}},
     },
-    "order": ["footer_m9NzUG", "footer_utilities_jLGE8U", "rasca", "cookies"],
+    "order": ["footer_m9NzUG", "footer_utilities_jLGE8U", "rasca", "email_cesta", "cookies"],
 }
 (OUT / "footer-group.json").write_text(json.dumps(footer, ensure_ascii=False, indent=2), encoding="utf8")
 
@@ -767,7 +772,9 @@ _d["blocks"]["personalizar"] = liquid("{% render 'lunerie-collar', product: prod
 _d["block_order"].insert(_d["block_order"].index("comprar"), "personalizar")
 # 10-nov (Edu): cada collar va en una cajita de terciopelo beige de QIUHAN (confirmado y pagado en cada pedido) →
 # «Llega en su cajita de regalo», primero, bajo el botón y en la cesta. Solo el collar: lo demás llega en bolsita.
-CAJITA_COLLAR = "Llega en su cajita de regalo"
+# 13-nov (Edu): por Black Friday, «Te regalamos su cajita», con «Black Friday» en el rojo de la barra.
+CAJITA_COLLAR = ('<span style="color:' + PROMO_ROJO + ';font-weight:500;letter-spacing:.12em;text-transform:uppercase;'
+                 'font-size:.92em">Black Friday</span> · Te regalamos su cajita de terciopelo')
 _d["blocks"]["ventajas"] = ventajas([CAJITA_COLLAR, f"Se hace para ti y sale en {HECHO_COLLAR}",
                                      "Envío gratis a península", "Garantía de 3 años"])
 _dd = _d["blocks"]["detalles"]

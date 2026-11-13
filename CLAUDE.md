@@ -541,6 +541,21 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
 ## 8. Calendario y pendientes (a 12-nov-2026)
 
 ### Para empezar la próxima sesión (después del 2-nov) — abrir conversación nueva por sesión.
+**13-nov (`D:\LUNERIE`): VENTA #LUN1007** (12-nov 18:23): Collar Signé **Dorado / Abril** (QIUHAN: «Apr Diamond»,
+transparente), nombre **«Maria José»** (así, sin tilde en la i y con tilde en la é), 49,95 €, Shopify Payments, Cantabria.
+Viene del **anuncio 18** (Instagram, `collar-carmen`). Campaña desde la reactivación (11-13 nov): 23,60 €, 1 compra, 30
+carritos, 2 pagos (~23,6 €/venta, breakeven ~20,8 €). Las 8 tareas de Instagram de este PC siguen puestas (quitarlas
+pedía el OK de Edu).
+- **Carritos (13-nov, EN PRODUCCIÓN, Edu):** de Meta (4-13 nov), 191 visitas → 59 con carrito → 7 al pago → 3 compras; quien
+  añade y se va no deja email. **Ventana 5 s después de añadir a la cesta** (`tema/codigo/snippets/lunerie-email-cesta.liquid`,
+  sección `email_cesta` del pie): con collar, «Black Friday · Te regalamos *su cajita.*» + email «te avisamos de los próximos
+  descuentos»; sin collar, solo el email con la foto de la pieza. Una vez (7 días si se cierra; nunca si se suscribe). El email
+  va al formulario de cliente de Shopify: **Clientes, etiqueta `cesta-black-friday`**, suscrita. Probado en lunerie.es; el envío
+  del email solo se probó hasta el captcha de Cloudflare (sale a navegadores automáticos; entonces se envía normal).
+  **Decisión de Edu: «Black Friday · Te regalamos su cajita de terciopelo»** en la ficha del collar (`CAJITA_COLLAR`), en el
+  bloque «Su nombre, su piedra» y en la cesta (antes «Llega en su cajita de regalo»). **Al acabar el Black Friday (5-dic),
+  quitar «Black Friday» de esos textos y de la ventana.** Falta: el correo automático a esas suscritas (Shopify Email).
+
 **DÓNDE NOS QUEDAMOS (12-nov, sesión en `C:\Users\edu\lunerie`) — manda sobre los bloques anteriores:**
 - **Campaña de Black Friday (12-nov, ~mediodía):** ~210 € de 300 €, 84 carritos, 11 pagos, 2 compras. Desde la
   reactivación (11-12 nov): 10,58 €, 28 clics, 9 carritos, 0 compras. El 18 (Carmen) se lleva casi todo; 28 y 29 casi no

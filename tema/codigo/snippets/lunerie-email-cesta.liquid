@@ -1,0 +1,187 @@
+{%- comment -%}
+  Ventana «Black Friday · email» (13-nov, Edu: «algo tenemos que hacer con los carritos»).
+  Del 4 al 13-nov, de Meta: 191 visitas, 59 con carrito y solo 7 llegaron al pago. Quien añade y se va no deja email
+  (Shopify solo escribe a quien llega al pago), así que no hay forma de volver a hablarle.
+  · Sale 5 s después de añadir algo a la cesta (cualquier fetch a /cart/add: ficha, packs…), una vez; si se cierra sin
+    dejar el email, no vuelve en 7 días; si lo deja, nunca más (localStorage «lu-email-cesta»).
+  · Con un Collar Signé en la cesta: «Black Friday · Te regalamos su cajita» con la foto de la cajita. Sin collar: solo el
+    email, con la foto de la pieza que ha añadido (la cajita es solo del collar: lo demás llega en bolsita).
+  · El email va con el formulario de cliente de Shopify (como el del pie): queda suscrita a «Cartas de Lunerie» con las
+    etiquetas newsletter y cesta-black-friday. Se manda por fetch; si Shopify pide el captcha, se envía normal.
+  · Espera al banner de cookies (como el rasca) y no sale en el editor del tema.
+  Se pinta desde la sección «email_cesta» del pie (footer-group.json en tema/build.py).
+{%- endcomment -%}
+{%- unless request.design_mode -%}
+  <dialog class="lu-ec" id="lu-ec" aria-labelledby="lu-ec-titulo" tabindex="-1">
+    <button type="button" class="lu-ec__cerrar" data-lu-ec-cerrar aria-label="Cerrar">
+      <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 2l12 12M14 2L2 14" stroke="currentColor" stroke-width="1.3"/></svg>
+    </button>
+    <div class="lu-ec__foto">
+      <img data-src="https://cdn.shopify.com/s/files/1/1113/4065/0835/files/collar-signe-cajita.jpg?v=1794304728&width=900"
+        alt="El Collar Signé en su cajita de terciopelo beige" width="900" height="1125">
+    </div>
+    <div class="lu-ec__texto">
+      <p class="lu-ec__ceja">Black Friday</p>
+      <h2 class="lu-ec__titulo" id="lu-ec-titulo">
+        <span class="lu-ec__collar">Te regalamos <em>su cajita.</em></span>
+        <span class="lu-ec__otro">Que no se te escape <em>ninguna oferta.</em></span>
+      </h2>
+      <p class="lu-ec__sub lu-ec__collar">Por Black Friday, tu collar llega en su cajita de terciopelo, lista para regalar.</p>
+      <div class="lu-ec__email" data-lu-ec-email>
+        <p class="lu-ec__pide">Déjanos tu email y te avisamos de los próximos descuentos.</p>
+        {%- form 'customer', id: 'lu-ec-form', class: 'lu-ec__form' -%}
+          <input type="hidden" name="contact[tags]" value="newsletter,cesta-black-friday">
+          <label class="lu-ec__oculto" for="lu-ec-correo">Tu email</label>
+          <input class="lu-ec__campo" id="lu-ec-correo" type="email" name="contact[email]" required
+            autocomplete="email" autocapitalize="off" spellcheck="false" placeholder="Tu email">
+          <button type="submit" class="lu-ec__boton">Avisadme</button>
+        {%- endform -%}
+        <p class="lu-ec__letra">Puedes darte de baja cuando quieras. <a href="{{ shop.privacy_policy.url | default: '/policies/privacy-policy' }}">Privacidad</a></p>
+      </div>
+      <p class="lu-ec__hecho" data-lu-ec-hecho hidden>Hecho. Te avisaremos de los próximos descuentos.</p>
+      <button type="button" class="lu-ec__seguir" data-lu-ec-cerrar>Seguir con mi pedido</button>
+    </div>
+  </dialog>
+
+  <script>
+    (() => {
+      const dlg = document.getElementById('lu-ec');
+      if (!dlg || typeof dlg.showModal !== 'function') return;
+      const CLAVE = 'lu-email-cesta';
+      const ESPERA = 5000;              // 5 s después de añadir a la cesta (Edu)
+      const SEMANA = 7 * 24 * 3600 * 1000;
+      const CESTA = {{ routes.cart_url | append: '.js' | json }};
+      const img = dlg.querySelector('.lu-ec__foto img');
+      const form = dlg.querySelector('form');
+      const leer = () => { try { return JSON.parse(localStorage.getItem(CLAVE) || 'null'); } catch (e) { return null; } };
+      const guardar = (v) => { try { localStorage.setItem(CLAVE, JSON.stringify(v)); } catch (e) {} };
+      const yaNo = () => { const v = leer(); return !!v && (v.suscrita || Date.now() - (v.visto || 0) < SEMANA); };
+      const conAncho = (u, w) => u + (u.includes('?') ? '&' : '?') + 'width=' + w;
+
+      // Espera al banner de cookies de Shopify (es fixed: se mira con getClientRects, no con offsetParent)
+      function cuandoNoHayBanner(fn) {
+        const b = document.getElementById('shopify-pc__banner');
+        const visible = b && b.getClientRects().length > 0 && getComputedStyle(b).visibility !== 'hidden';
+        if (visible) return setTimeout(() => cuandoNoHayBanner(fn), 1000);
+        fn();
+      }
+
+      // Mira qué hay en la cesta: con un Collar Signé, la cajita; si no, la foto de la pieza añadida
+      async function preparar() {
+        let items = [];
+        try { items = (await (await fetch(CESTA, { credentials: 'same-origin' })).json()).items || []; } catch (e) {}
+        if (!items.length) return false;
+        const collar = items.some((i) => i.handle === 'collar-signe');
+        dlg.classList.toggle('lu-ec--collar', collar);
+        if (!collar) {
+          const it = items[items.length - 1];
+          const src = (it.featured_image && it.featured_image.url) || it.image;
+          if (src) { img.src = conAncho(src, 900); img.alt = it.product_title || ''; }
+        }
+        return true;
+      }
+
+      function abrir() {
+        if (yaNo() || dlg.open) return;
+        preparar().then((ok) => {
+          if (!ok) return;
+          guardar({ visto: Date.now() });
+          document.documentElement.classList.add('lu-ec-abierto');
+          dlg.showModal();
+          dlg.focus({ preventScroll: true });   // el foco en la ventana, no en la X (si no, sale con el marco verde)
+        });
+      }
+
+      let programado = false;
+      function programar() {
+        if (programado || yaNo()) return;
+        programado = true;
+        if (!img.getAttribute('src')) img.src = img.dataset.src;   // la foto, cargada antes de abrir
+        setTimeout(() => cuandoNoHayBanner(abrir), ESPERA);
+      }
+
+      // «Añadir a la cesta» en cualquier sitio (Horizon, packs, cesta) termina en un fetch a /cart/add
+      const fetchOriginal = window.fetch;
+      window.fetch = function (entrada) {
+        const p = fetchOriginal.apply(this, arguments);
+        try {
+          const url = typeof entrada === 'string' ? entrada : (entrada && entrada.url) || '';
+          if (/\/cart\/add/.test(url)) p.then((r) => { if (r.ok) programar(); }).catch(() => {});
+        } catch (e) {}
+        return p;
+      };
+
+      function cerrar() {
+        if (dlg.open) dlg.close();
+      }
+      dlg.addEventListener('close', () => document.documentElement.classList.remove('lu-ec-abierto'));
+      dlg.querySelectorAll('[data-lu-ec-cerrar]').forEach((b) => b.addEventListener('click', cerrar));
+      dlg.addEventListener('click', (e) => { if (e.target === dlg) cerrar(); });   // clic fuera de la tarjeta
+
+      // El email: formulario de cliente de Shopify por fetch, sin salir de la página
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        if (!form.reportValidity()) return;
+        const boton = form.querySelector('button');
+        boton.disabled = true;
+        try {
+          const r = await fetchOriginal(form.action, { method: 'POST', body: new FormData(form), credentials: 'same-origin' });
+          // Shopify redirige con ?customer_posted=true si la ha apuntado; si pide el captcha (/challenge) o algo sale
+          // raro, se envía el formulario normal y Shopify se encarga
+          if (!r.url.includes('customer_posted=true')) { form.submit(); return; }
+        } catch (err) { form.submit(); return; }
+        guardar({ suscrita: true, visto: Date.now() });
+        dlg.querySelector('[data-lu-ec-email]').hidden = true;
+        dlg.querySelector('[data-lu-ec-hecho]').hidden = false;
+        setTimeout(cerrar, 2600);
+      });
+    })();
+  </script>
+{%- endunless -%}
+
+{% stylesheet %}
+  html.lu-ec-abierto{overflow:hidden}
+  .lu-ec{width:min(760px,calc(100vw - 24px));max-width:none;max-height:calc(100dvh - 24px);margin:auto;padding:0;
+    border:0;background:#fff;color:#16201B;overflow:auto;outline:none}
+  .lu-ec[open]{display:grid;grid-template-columns:1fr;animation:lu-ec-entra .35s ease both}
+  .lu-ec::backdrop{background:rgba(22,32,27,.45)}
+  @keyframes lu-ec-entra{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  .lu-ec [hidden]{display:none!important}
+  .lu-ec__cerrar{position:absolute;top:8px;right:8px;z-index:2;display:grid;place-items:center;width:44px;height:44px;
+    padding:0;border:0;background:rgba(255,255,255,.85);color:#16201B;cursor:pointer}
+  .lu-ec__foto{background:#F2F4F2;aspect-ratio:16/9;overflow:hidden}
+  .lu-ec__foto img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 72%}
+  .lu-ec__texto{display:flex;flex-direction:column;align-items:center;padding:24px 22px 18px;text-align:center}
+  .lu-ec__ceja{margin:0 0 8px;font-family:var(--font-body--family);font-size:.75rem;font-weight:500;letter-spacing:.16em;
+    text-transform:uppercase;color:#CA3801}
+  .lu-ec__titulo{margin:0 0 10px;font-family:var(--font-heading--family);font-weight:400;font-size:clamp(1.9rem,4vw,2.6rem);
+    line-height:1.05}
+  .lu-ec__sub{margin:0 0 6px;max-width:34ch;font-size:.9375rem;line-height:1.5;color:#3D4842}
+  .lu-ec:not(.lu-ec--collar) .lu-ec__collar,.lu-ec--collar .lu-ec__otro{display:none}
+  .lu-ec__email{width:100%;margin-top:14px;padding-top:16px;border-top:1px solid #E2E6E3}
+  .lu-ec__pide{margin:0 auto 12px;max-width:34ch;font-size:.875rem;line-height:1.5;color:#16201B}
+  .lu-ec__form{display:grid;gap:8px;margin:0}
+  .lu-ec__oculto{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .lu-ec__campo{width:100%;min-height:48px;padding:0 14px;border:1px solid #C9CFCB;border-radius:0;background:#fff;
+    color:#16201B;font:inherit;font-size:1rem}
+  .lu-ec__campo:focus{outline:none;border-color:#16201B}
+  .lu-ec__boton{min-height:48px;padding:0 26px;border:0;background:#006039;color:#fff;cursor:pointer;
+    font-family:var(--font-body--family);font-size:.8125rem;letter-spacing:.16em;text-transform:uppercase}
+  .lu-ec__boton:hover{background:#004d2e}
+  .lu-ec__boton:disabled{opacity:.6;cursor:wait}
+  .lu-ec__letra{margin:10px 0 0;font-size:.6875rem;color:#6B746F}
+  .lu-ec__letra a{color:inherit}
+  .lu-ec__hecho{margin:18px 0 4px;font-size:.9375rem;color:#006039}
+  .lu-ec__seguir{margin-top:10px;padding:8px;border:0;background:none;color:#3D4842;font:inherit;font-size:.8125rem;
+    text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+  .lu-ec :focus-visible{outline:2px solid #006039;outline-offset:3px}
+  @media (min-width:750px){
+    .lu-ec[open]{grid-template-columns:42% 1fr}
+    .lu-ec__foto{aspect-ratio:auto;min-height:440px}
+    .lu-ec__foto img{object-position:50% 50%}
+    .lu-ec__cerrar{top:12px;right:12px}
+    .lu-ec__texto{justify-content:center;padding:44px 40px 28px}
+    .lu-ec__form{grid-template-columns:1fr auto}
+  }
+  @media (prefers-reduced-motion:reduce){.lu-ec[open]{animation:none}}
+{% endstylesheet %}

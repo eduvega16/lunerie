@@ -550,8 +550,9 @@ pedía el OK de Edu).
   añade y se va no deja email. **Ventana 5 s después de añadir a la cesta** (`tema/codigo/snippets/lunerie-email-cesta.liquid`,
   sección `email_cesta` del pie): con collar, «Black Friday · Te regalamos *su cajita.*» + email «te avisamos de los próximos
   descuentos»; sin collar, solo el email con la foto de la pieza. Una vez (7 días si se cierra; nunca si se suscribe). El email
-  va al formulario de cliente de Shopify: **Clientes, etiqueta `cesta-black-friday`**, suscrita. Probado en lunerie.es; el envío
-  del email solo se probó hasta el captcha de Cloudflare (sale a navegadores automáticos; entonces se envía normal).
+  va al formulario de cliente de Shopify: **Clientes, etiqueta `cesta-black-friday`**, suscrita. **Probado por Edu en su móvil
+  (13-nov): llega bien.** Segmento **«Cesta Black Friday»** creado por Edu con Sidekick (la CLI no tiene `write_customers`).
+  El correo automático (Shopify Email) no se puede crear por API: lo monta Edu en Marketing → Automatizaciones.
   **Decisión de Edu: «Black Friday · Te regalamos su cajita de terciopelo»** en la ficha del collar (`CAJITA_COLLAR`), en el
   bloque «Su nombre, su piedra» y en la cesta (antes «Llega en su cajita de regalo»). **Al acabar el Black Friday (5-dic),
   quitar «Black Friday» de esos textos y de la ventana.** Falta: el correo automático a esas suscritas (Shopify Email).

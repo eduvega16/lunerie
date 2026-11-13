@@ -553,6 +553,11 @@ pedía el OK de Edu).
   va al formulario de cliente de Shopify: **Clientes, etiqueta `cesta-black-friday`**, suscrita. **Probado por Edu en su móvil
   (13-nov): llega bien.** Segmento **«Cesta Black Friday»** creado por Edu con Sidekick (la CLI no tiene `write_customers`).
   El correo automático (Shopify Email) no se puede crear por API: lo monta Edu en Marketing → Automatizaciones.
+  **Correo de bienvenida:** borrador en Flow hecho por Sidekick con el texto de Claude («Ya estás dentro»), **sin activar**:
+  activarlo cuando el dominio salga verificado. **DNS de lunerie.es: en Piensa Solutions** (ns97/ns98.piensasolutions.com),
+  no en Shopify; ahí están también el correo hola@ (MX `mx.buzondecorreo.com`, SPF, DKIM): no tocarlos. **13-nov: añadidos
+  los 6 CNAME de Shopify Email** (mailer4a2, 4a2._domainkey, 4a22._domainkey, mailer7wc, pdk1/pdk2._domainkey.mailer7wc);
+  en Piensa el nombre va completo, con «.lunerie.es». Falta: pulsar «Verificar» en Shopify.
   **Decisión de Edu: «Black Friday · Te regalamos su cajita de terciopelo»** en la ficha del collar (`CAJITA_COLLAR`), en el
   bloque «Su nombre, su piedra» y en la cesta (antes «Llega en su cajita de regalo»). **Al acabar el Black Friday (5-dic),
   quitar «Black Friday» de esos textos y de la ventana.** Falta: el correo automático a esas suscritas (Shopify Email).

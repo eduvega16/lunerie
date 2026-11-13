@@ -556,6 +556,22 @@ manda así a QIUHAN.
   hablado y cortada con los tiempos de cada palabra (speech-to-text de ElevenLabs), filtro de móvil **sin eco**; frase a
   frase «suena poco natural». **30** = el retargeting con Holiday Bells. En este PC ffmpeg está en el PATH (no hay
   `imageio_ffmpeg`): los scripts usan `shutil.which("ffmpeg")` primero.
+- **Campaña al cierre del 13-nov (~23:25):**
+  - **Desde la reactivación:** ~34 €, 1 compra (#LUN1007) → ~34 €/venta (breakeven ~20,8 €). Entre los dos límites de la
+    regla, así que ni parar ni subir.
+  - **Visitas de Meta en Shopify:** 53 visitas → 16 con carrito → 1 al pago → 1 compra.
+  - **Comparado con otras tiendas (Meta):** añadir al carrito, de los mejores; entrar al pago, 8 % frente al 23 % de la
+    mediana. El atasco sigue en la cesta.
+  - **El 18 se lleva casi todo** (32,93 €); 21, 28 y 29 casi no gastan.
+  - **Tope:** ~233 € de 300 €.
+  - **A vigilar:** la ventana del email sale a los 5 s de añadir a la cesta (puesta el 13-nov) y ese día hubo 0 pagos de 7
+    carritos. Si se repite, que salga solo al irse de la página.
+- **Referencia Lola Rose (13-nov, Edu: «perfe memoriza»):** su reel de UGC (3 chicas, solo música, corte cada segundo: caja
+  verde → reloj de cerca → puesto → varias piezas juntas en la muñeca) y ~103 anuncios activos (casi todos de los últimos
+  4 días). Notas y fotogramas en `oficina/referencias/competidores.md` y `oficina/referencias/lolarose-2026-11-13/`.
+  **Plan:** ver 3-4 días cómo va el anuncio 31 («abrir la cajita») y, si funciona, esa estructura con 3 chicas nuestras,
+  la cajita, el collar y el plano final con el Lune y el Nuit (vende el 3x2; ~4-5 $). Gancho posible: «Este año, algo
+  más que flores».
 - **INSTAGRAM SE PUBLICA DESDE `D:\LUNERIE` (13-nov, decisión de Edu; manda sobre la nota del 9-nov):** el otro PC estuvo
   apagado y se perdieron el 12-nov 19:30 y el 13-nov 12:30. Aquí están programadas las 17 piezas del 14 al 22-nov (12:30 y
   19:30; las 4 atrasadas —carrusel de dudas, Alba rojo, foto de los dedos y «Un martes cualquiera»— van del 20-nov 19:30 al

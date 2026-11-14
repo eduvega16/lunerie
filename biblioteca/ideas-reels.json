@@ -86,6 +86,15 @@
       "lunerie": "La máquina llena de cajitas de terciopelo beige (las de QIUHAN) y bolas de Navidad doradas y rojo vino sobre terciopelo rojo; el gancho coge una cajita, se abre y dentro está el Collar Signé con su nombre (foto ya revisada, no generada desde cero). Texto: «Su regalo no se deja al azar.» (el gancho es suerte; el collar lleva su nombre). Nada de «te ha tocado» ni nada que parezca un sorteo. Chica nuestra o sin cara, nunca la del original.",
       "hace_falta": "Foto 9:16 de la máquina con IA (flare, refs: cajita de QIUHAN y cajita-carmen-1 de terciopelo) → Kling 3.0 pro 4 s con el gancho bajando y cogiendo la cajita (usar el principio) → plano de la cajita abierta (terciopelo) → ficha de cierre de navidad_terciopelo.py. ~1-2 $.",
       "estado": "propuesta (13-nov), pendiente del OK de Edu"
+    },
+    {
+      "id": "mano-rompe-papel",
+      "fuente": "Reel de @memobottle (botellas), enlace de Edu el 14-nov-2026: https://www.instagram.com/reel/DZ_edNngHUH/ . Pie: «Sometimes all it takes is one cut». Fotogramas en oficina/referencias/memobottle-2026-11-14/.",
+      "numeros": "Sin datos (no se ven sin sesión)",
+      "como_es": "15 s, solo música (sin voz). 0-3,4 s: detrás de las cámaras, plano abierto de una caja de cartón forrada de papel verde lima (el color de la marca) en una mesa, un móvil en trípode grabándola y el chico escondido detrás; texto «Wait that actually worked?!!»; asoma una cuchilla y luego una mano. 3,4-12,2 s: lo que graba el móvil: el papel verde llena la pantalla, una cuchilla abre una raja, se ve la mano empujar y rompe el papel con la palma abierta, que lleva escrito a rotulador «UP TO 40% OFF». 12,2-14,9 s: tarjeta lisa del mismo verde con el logo y «MID SEASON SALE · UP TO 40% OFF». Disparadores: curiosidad (enseña el truco antes del resultado), interrupción del patrón (pantalla de un solo color que se raja), color de marca en todo, oferta escrita a mano.",
+      "lunerie": "Edu lo graba de verdad (regla: lo que parece real, real). Papel rojo #CA3801 (el de la barra de Black Friday) o verde Lunerie #006039 sobre una caja o un marco. Texto del principio: «Espera… ¿ha funcionado?». La mano rompe el papel y enseña la palma con «2.ª al 50 %» escrito a rotulador; en el segundo golpe sale con el Collar Signé colgando de los dedos (la lágrima balanceándose, nombre de ejemplo «Carmen»). Cierre con la tarjeta de la campaña: «Black Friday · 2.ª pieza al 50 % y la 3.ª, gratis · Hasta el 5 de diciembre». Nada de «hasta 40 %» ni escasez; música en Instagram.",
+      "hace_falta": "Edu, con el móvil: caja o marco forrado de papel de regalo liso (rojo o verde), cinta, cúter, trípode o algo donde apoyar el móvil, un collar de muestra y rotulador. Dos tomas: (1) plano abierto de lado con el montaje, 3-4 s; (2) el móvil pegado al papel, 8-10 s (raja, mano con la oferta, mano con el collar). Claude: corte, texto dentro de la zona libre de Meta, tarjeta final y versiones 9:16 y 4:5. Coste: 0 €. Alternativa con IA (Kling) posible pero arriesgada: deforma la mano y el nombre del collar.",
+      "estado": "propuesta (14-nov), pendiente del OK de Edu"
     }
   ]
 }

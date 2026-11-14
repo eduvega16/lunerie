@@ -1,6 +1,6 @@
 {
   "id": "2026-W46-31-story-cajita-carmen",
-  "estado": "aprobado",
+  "estado": "publicado",
   "plataforma": "instagram",
   "formato": "story",
   "pieza": "collar-signe",
@@ -20,7 +20,11 @@
     ],
     "urls": [],
     "alt_text": "",
-    "ia": true
+    "ia": true,
+    "resultado": {
+      "media_id": "18134651059801492,18131695688301653",
+      "fecha": "2026-11-14T12:15:53+0100"
+    }
   },
   "origen": {
     "biblioteca": "terciopelo-navidad"

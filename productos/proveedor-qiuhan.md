@@ -199,3 +199,13 @@ logo, factura ni precio, y si tiene caja de regalo; (9) foto de cada collar ante
 - Precio del envío → repetir las cuentas (`cli.py calc 49.95 <coste puesto> --modo tarjeta` en el radar).
 - **Si no envía con impuestos incluidos (IOSS)**, Correos le cobra el IVA y la gestión a la clienta al
   entregar: buscar otra línea de envío con él antes de vender más collares.
+
+## 14-nov: QIUHAN quiere subir el envío DDP de 7 $ a 12 $ por paquete
+- Su motivo: la tasa de gestión de la UE de **2 € por artículo**, que se suma al derecho de 3 € (cita el
+  Reglamento (UE) 2026/382). Comprobado en la web: la tasa de 2 € existe y **se aplica desde el 1 de noviembre de 2026**
+  (Reglamento Delegado (UE) 2026/2152, publicado el 22-oct). El 2026/382 que citan es el del **derecho de 3 €**, que se
+  aplica desde el 1 de julio de 2026 (ya estaba dentro de los 7 $).
+- Los 7 $ nos los dieron el 5-6 nov, **cuando la tasa ya se aplicaba**: este pedido va al precio acordado.
+- Lo nuevo de verdad son ~2 € (≈ 2,30 $) por artículo, no 5 $. Propuesta para los siguientes: ~9,30 $, o que manden el
+  desglose si de verdad les cuesta 12 $.
+- Cuentas: con 12 $, el CPA breakeven del collar baja de ~20,8 € a ~16,5 €; con ~9,30 $, a ~18,8 €.

@@ -547,7 +547,10 @@ Viene del **anuncio 18** (Instagram, `collar-carmen`). Campaña desde la reactiv
 carritos, 2 pagos (~23,6 €/venta, breakeven ~20,8 €). Las 8 tareas de Instagram de este PC siguen puestas (quitarlas
 pedía el OK de Edu). **#LUN1007:** Edu espera a que la clienta conteste sobre el nombre «Maria José»; si no contesta, se
 manda así a QIUHAN.
-- **14-nov: ACTIVAR los anuncios 30 y 31** (13-nov, OK de Edu: «súbelo y activamos mañana»): creados como borrador en el
+- **14-nov ~13:20: anuncios 30 y 31 ACTIVADOS** (Edu: «subimos la campaña?»; en revisión de Meta). Desde la reactivación
+  (11-14 nov): ~41,5 €, 1 compra; tope ~241 € de 300 €. Desde que salió la ventana del email (13-nov), 11 carritos de Meta y
+  0 pagos: propuesto a Edu que la ventana salga solo al irse de la página (pendiente de su OK).
+- **(hecho) 14-nov: ACTIVAR los anuncios 30 y 31** (13-nov, OK de Edu: «súbelo y activamos mañana»): creados como borrador en el
   conjunto, sin errores → `ads_activate_entity` con `object_ids` 52568555635194 (30) y 52568555637594 (31), no la campaña
   entera. Ese día, revisión con la regla (~42 € sin ventas → parar; ≤ 30 €/pedido → +20 %). Detalle y textos en
   `anuncios/campana-black-friday.md` (sección «Anuncios 30 y 31»). **31 = UGC «abrir la cajita»** (estructura de Lucce,

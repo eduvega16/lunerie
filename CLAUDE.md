@@ -550,6 +550,10 @@ manda así a QIUHAN.
 - **14-nov ~13:20: anuncios 30 y 31 ACTIVADOS** (Edu: «subimos la campaña?»; en revisión de Meta). Desde la reactivación
   (11-14 nov): ~41,5 €, 1 compra; tope ~241 € de 300 €. Desde que salió la ventana del email (13-nov), 11 carritos de Meta y
   0 pagos: propuesto a Edu que la ventana salga solo al irse de la página (pendiente de su OK).
+  **Permiso `read_customers` dado a la CLI el 14-nov** (Edu aceptó en el navegador): ya se leen los clientes
+  (`customers(query: "tag:cesta-black-friday")`; los emails, solo en el chat, nunca en git). A 14-nov ~19:45: **3
+  suscritas reales** por la ventana (13-nov ×2, 14-nov ×1; ninguna ha comprado) + la prueba de Edu; una escribió mal
+  el dominio («htmail.com»): no le llegará nada.
 - **(hecho) 14-nov: ACTIVAR los anuncios 30 y 31** (13-nov, OK de Edu: «súbelo y activamos mañana»): creados como borrador en el
   conjunto, sin errores → `ads_activate_entity` con `object_ids` 52568555635194 (30) y 52568555637594 (31), no la campaña
   entera. Ese día, revisión con la regla (~42 € sin ventas → parar; ≤ 30 €/pedido → +20 %). Detalle y textos en

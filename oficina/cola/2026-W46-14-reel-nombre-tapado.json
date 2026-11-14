@@ -1,6 +1,6 @@
 {
   "id": "2026-W46-14-reel-nombre-tapado",
-  "estado": "aprobado",
+  "estado": "publicado",
   "plataforma": "instagram",
   "formato": "reel",
   "pieza": "collar-signe",
@@ -40,7 +40,11 @@
       "https://cdn.shopify.com/videos/c/vp/e463b5c8692c42068ce11f478f67ef53/e463b5c8692c42068ce11f478f67ef53.HD-1080p-2.5Mbps-100572288.mp4"
     ],
     "alt_text": "Un collar dorado con un nombre en letra de firma y una lágrima verde baja desde arriba; el nombre está borroso y se enfoca al pararse: «Carmen». Debajo, la oferta de Black Friday de Lunerie.",
-    "ia": true
+    "ia": true,
+    "resultado": {
+      "media_id": "18101273456437432",
+      "fecha": "2026-11-14T19:31:11+0100"
+    }
   },
   "origen": {
     "biblioteca": "ideas-reels.json · mensaje-tapado",

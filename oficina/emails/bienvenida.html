@@ -1,0 +1,114 @@
+<!doctype html>
+<!--
+  Correo de bienvenida de Lunerie (14-nov; Edu: «lo que me preocupa es el tipo de email que le llega, el diseño»).
+  Le llega a quien se apunta desde la ventana de la cesta o desde el pie de la web.
+  · Asunto: Ya estás dentro · Vista previa: Te avisaremos de los próximos descuentos.
+  · Hecho con tablas y estilos en línea, como piden los correos (Gmail, Outlook, Apple Mail). Letras: Cormorant y Jost
+    si el programa de correo las tiene; si no, Georgia y Helvetica.
+  · Lo de dentro de <body> se puede pegar en una sección «Liquid personalizado» de Shopify Email; si no, se monta
+    igual con sus bloques (imagen, texto, botón, productos). El pie con «darse de baja» lo pone Shopify solo.
+  · BLACK FRIDAY: la barra roja y el bloque de la promo se quitan el 5-dic.
+-->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ya estás dentro</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body style="margin:0;padding:0;background:#F2F4F2;">
+<div style="display:none;max-height:0;overflow:hidden;">Te avisaremos de los próximos descuentos.</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#F2F4F2;">
+<tr><td align="center" style="padding:0;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;background:#FFFFFF;">
+
+  <!-- Barra de Black Friday (quitar el 5-dic) -->
+  <tr><td align="center" style="background:#CA3801;padding:10px 16px;font-family:Jost,Helvetica,Arial,sans-serif;font-size:11px;letter-spacing:2px;color:#FFFFFF;text-transform:uppercase;">
+    Black Friday · 2.ª pieza al 50 % · 3.ª gratis
+  </td></tr>
+
+  <!-- Logo -->
+  <tr><td align="center" style="padding:30px 16px 26px;">
+    <a href="https://lunerie.es" style="text-decoration:none;font-family:Cormorant,Georgia,'Times New Roman',serif;font-size:26px;letter-spacing:9px;color:#16201B;">LUNERIE</a>
+  </td></tr>
+
+  <!-- Foto -->
+  <tr><td style="padding:0;">
+    <a href="https://lunerie.es/products/collar-signe"><img src="https://cdn.shopify.com/s/files/1/1113/4065/0835/files/collar-signe-cajita.jpg?v=1794304728&width=1200" width="600" alt="El Collar Signé con su nombre, en su cajita de terciopelo" style="display:block;width:100%;max-width:600px;height:auto;border:0;"></a>
+  </td></tr>
+
+  <!-- Bienvenida -->
+  <tr><td align="center" style="padding:40px 36px 8px;">
+    <h1 style="margin:0;font-family:Cormorant,Georgia,'Times New Roman',serif;font-weight:400;font-size:40px;line-height:1.1;color:#16201B;">Ya estás <em>dentro.</em></h1>
+  </td></tr>
+  <tr><td align="center" style="padding:14px 40px 34px;font-family:Jost,Helvetica,Arial,sans-serif;font-weight:300;font-size:16px;line-height:1.65;color:#3D4842;">
+    Gracias por apuntarte a las cartas de Lunerie. Te escribiremos poco, y solo cuando merezca la pena: piezas nuevas y descuentos.
+  </td></tr>
+
+  <!-- Promo de Black Friday (quitar el 5-dic) -->
+  <tr><td style="padding:0 24px;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#F2F4F2;">
+      <tr><td align="center" style="padding:30px 24px 30px;">
+        <p style="margin:0 0 10px;font-family:Jost,Helvetica,Arial,sans-serif;font-weight:500;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#CA3801;">Black Friday<br>Hasta el 5&nbsp;de&nbsp;diciembre</p>
+        <p style="margin:0 0 12px;font-family:Cormorant,Georgia,'Times New Roman',serif;font-size:27px;line-height:1.2;color:#16201B;">La 2.ª pieza al 50&nbsp;%<br><em>y la 3.ª, gratis.</em></p>
+        <p style="margin:0;font-family:Jost,Helvetica,Arial,sans-serif;font-weight:300;font-size:14px;line-height:1.6;color:#3D4842;">Mezcla relojes y joyas: se descuenta solo en&nbsp;la&nbsp;cesta.<br>Y el Collar Signé llega en su cajita de&nbsp;terciopelo.</p>
+      </td></tr>
+    </table>
+  </td></tr>
+
+  <!-- Botón -->
+  <tr><td align="center" style="padding:32px 24px 12px;">
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+      <td align="center" style="background:#006039;">
+        <a href="https://lunerie.es/products/collar-signe" style="display:inline-block;padding:16px 34px;font-family:Jost,Helvetica,Arial,sans-serif;font-weight:400;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:#FFFFFF;text-decoration:none;">Ver el Collar Signé</a>
+      </td>
+    </tr></table>
+  </td></tr>
+  <tr><td align="center" style="padding:6px 24px 40px;">
+    <a href="https://lunerie.es/cart" style="font-family:Jost,Helvetica,Arial,sans-serif;font-weight:300;font-size:14px;color:#16201B;text-decoration:underline;">o vuelve a tu cesta</a>
+  </td></tr>
+
+  <!-- Tres piezas -->
+  <tr><td align="center" style="padding:0 24px 14px;border-top:1px solid #E2E6E3;">
+    <p style="margin:34px 0 0;font-family:Cormorant,Georgia,'Times New Roman',serif;font-size:24px;line-height:1.2;color:#16201B;">Tres piezas, <em>y una te sale gratis.</em></p>
+  </td></tr>
+  <tr><td style="padding:12px 16px 8px;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+      <td width="33%" valign="top" align="center" style="padding:0 6px;">
+        <a href="https://lunerie.es/products/collar-signe" style="text-decoration:none;color:#16201B;">
+          <img src="https://cdn.shopify.com/s/files/1/1113/4065/0835/files/collar-signe-1.jpg?v=1794402557&width=400" width="176" alt="Collar Signé" style="display:block;width:100%;height:auto;border:0;background:#F2F4F2;">
+          <p style="margin:10px 0 2px;font-family:Cormorant,Georgia,serif;font-size:17px;">Collar Signé</p>
+          <p style="margin:0;font-family:Jost,Helvetica,Arial,sans-serif;font-weight:300;font-size:13px;color:#3D4842;">49,95 €</p>
+        </a>
+      </td>
+      <td width="33%" valign="top" align="center" style="padding:0 6px;">
+        <a href="https://lunerie.es/products/reloj-lune" style="text-decoration:none;color:#16201B;">
+          <img src="https://cdn.shopify.com/s/files/1/1113/4065/0835/files/lune-verde-producto.jpg?v=1793045101&width=400" width="176" alt="Reloj Lune" style="display:block;width:100%;height:auto;border:0;background:#F2F4F2;">
+          <p style="margin:10px 0 2px;font-family:Cormorant,Georgia,serif;font-size:17px;">Reloj Lune</p>
+          <p style="margin:0;font-family:Jost,Helvetica,Arial,sans-serif;font-weight:300;font-size:13px;color:#3D4842;">39,95 €</p>
+        </a>
+      </td>
+      <td width="33%" valign="top" align="center" style="padding:0 6px;">
+        <a href="https://lunerie.es/products/anillo-nuit" style="text-decoration:none;color:#16201B;">
+          <img src="https://cdn.shopify.com/s/files/1/1113/4065/0835/files/S4fe7f17fb8f74ce0add7abb28ba073f8c.webp?v=1793193900&width=400&format=jpg" width="176" alt="Anillo Nuit" style="display:block;width:100%;height:auto;border:0;background:#F2F4F2;">
+          <p style="margin:10px 0 2px;font-family:Cormorant,Georgia,serif;font-size:17px;">Anillo Nuit</p>
+          <p style="margin:0;font-family:Jost,Helvetica,Arial,sans-serif;font-weight:300;font-size:13px;color:#3D4842;">19,95 €</p>
+        </a>
+      </td>
+    </tr></table>
+  </td></tr>
+
+  <!-- Firma -->
+  <tr><td align="center" style="padding:40px 24px 8px;font-family:Cormorant,Georgia,'Times New Roman',serif;font-style:italic;font-size:22px;color:#16201B;">
+    Con cariño, Lunerie
+  </td></tr>
+  <tr><td align="center" style="padding:6px 24px 36px;font-family:Jost,Helvetica,Arial,sans-serif;font-weight:300;font-size:12px;line-height:1.7;color:#6B746F;">
+    Envío gratis a península · Garantía de 3 años<br>
+    <a href="https://www.instagram.com/luneriejewelry/" style="color:#6B746F;">Instagram</a> · <a href="mailto:hola@lunerie.es" style="color:#6B746F;">hola@lunerie.es</a>
+  </td></tr>
+
+</table>
+</td></tr>
+</table>
+</body>
+</html>

@@ -2,8 +2,13 @@
   Ventana «Black Friday · email» (13-nov, Edu: «algo tenemos que hacer con los carritos»).
   Del 4 al 13-nov, de Meta: 191 visitas, 59 con carrito y solo 7 llegaron al pago. Quien añade y se va no deja email
   (Shopify solo escribe a quien llega al pago), así que no hay forma de volver a hablarle.
-  · Sale 5 s después de añadir algo a la cesta (cualquier fetch a /cart/add: ficha, packs…), una vez; si se cierra sin
-    dejar el email, no vuelve en 7 días; si lo deja, nunca más (localStorage «lu-email-cesta»).
+  · 14-nov (Edu: «dale a todo»): ya NO sale a los 5 s de añadir (desde que salía así, 11 carritos de Meta y 0 pagos).
+    Ahora solo se prepara al añadir algo a la cesta (cualquier fetch a /cart/add: ficha, packs…) y sale cuando la clienta
+    hace gesto de irse sin pagar: en PC, el ratón sale de la ventana por arriba; en el móvil, vuelve a la pestaña después
+    de irse a otra app o pestaña, o sube la página de golpe (hacia la barra del navegador). Quien pulsa «Pagar» no la ve.
+    Lo preparado vale para toda la visita (sessionStorage «lu-ec-lista»). Una vez; si se cierra sin dejar el email, no
+    vuelve en 7 días; si lo deja, nunca más (localStorage «lu-email-cesta»).
+  · Si el dominio del email parece mal escrito («htmail.com», «gmial.com»…), propone el bueno antes de enviar.
   · Con un Collar Signé en la cesta: «Black Friday · Te regalamos su cajita» con la foto de la cajita. Sin collar: solo el
     email, con la foto de la pieza que ha añadido (la cajita es solo del collar: lo demás llega en bolsita).
   · El email va con el formulario de cliente de Shopify (como el del pie): queda suscrita a «Cartas de Lunerie» con las
@@ -36,6 +41,9 @@
             autocomplete="email" autocapitalize="off" spellcheck="false" placeholder="Tu email">
           <button type="submit" class="lu-ec__boton">Avisadme</button>
         {%- endform -%}
+        <p class="lu-ec__quizas" data-lu-ec-quizas hidden>
+          ¿Querías decir <button type="button" data-lu-ec-arreglar></button>?
+        </p>
         <p class="lu-ec__letra">Puedes darte de baja cuando quieras. <a href="{{ shop.privacy_policy.url | default: '/policies/privacy-policy' }}">Privacidad</a></p>
       </div>
       <p class="lu-ec__hecho" data-lu-ec-hecho hidden>Hecho. Te avisaremos de los próximos descuentos.</p>
@@ -48,7 +56,7 @@
       const dlg = document.getElementById('lu-ec');
       if (!dlg || typeof dlg.showModal !== 'function') return;
       const CLAVE = 'lu-email-cesta';
-      const ESPERA = 5000;              // 5 s después de añadir a la cesta (Edu)
+      const LISTA = 'lu-ec-lista';      // ha añadido algo en esta visita (sessionStorage)
       const SEMANA = 7 * 24 * 3600 * 1000;
       const CESTA = {{ routes.cart_url | append: '.js' | json }};
       const img = dlg.querySelector('.lu-ec__foto img');
@@ -92,13 +100,58 @@
         });
       }
 
-      let programado = false;
-      function programar() {
-        if (programado || yaNo()) return;
-        programado = true;
+      // Se prepara al añadir algo a la cesta y sale solo cuando la clienta hace gesto de irse sin pagar
+      let lista = false;
+      let saliendo = false;             // ha pulsado un enlace o «Pagar»: ya no se abre
+      function armar() {
+        if (lista || yaNo()) return;
+        lista = true;
+        try { sessionStorage.setItem(LISTA, '1'); } catch (e) {}
         if (!img.getAttribute('src')) img.src = img.dataset.src;   // la foto, cargada antes de abrir
-        setTimeout(() => cuandoNoHayBanner(abrir), ESPERA);
       }
+      function seVa() {
+        if (!lista || saliendo || dlg.open || yaNo()) return;
+        cuandoNoHayBanner(abrir);
+      }
+
+      // PC: el ratón sale de la ventana por arriba (hacia las pestañas o la barra de direcciones)
+      document.addEventListener('mouseout', (e) => {
+        if (!e.relatedTarget && e.clientY <= 0) seVa();
+      });
+      // Móvil: vuelve a la pestaña después de irse a otra app o pestaña al menos 8 s…
+      let oculta = 0;
+      document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'hidden') { oculta = Date.now(); return; }
+        if (oculta && Date.now() - oculta > 8000) setTimeout(seVa, 600);
+        oculta = 0;
+      });
+      // …o sube la página de golpe hacia la barra del navegador (solo pantallas táctiles)
+      if (matchMedia('(pointer: coarse)').matches) {
+        let y0 = scrollY, t0 = performance.now();
+        addEventListener('scroll', () => {
+          const y = scrollY, t = performance.now();
+          if (t - t0 > 120) {
+            const vel = (y0 - y) / (t - t0);      // px/ms hacia arriba
+            if (vel > 2.2 && y < 600 && y0 > 900) seVa();
+            y0 = y; t0 = t;
+          }
+        }, { passive: true });
+      }
+      // Quien pulsa «Pagar» o se va por un enlace de la tienda no la ve
+      let tSalida;
+      function marcarSalida() {
+        saliendo = true;
+        clearTimeout(tSalida);
+        tSalida = setTimeout(() => { saliendo = false; }, 4000);   // si la página no cambia, vuelve a valer
+      }
+      document.addEventListener('click', (e) => {
+        const a = e.target.closest && e.target.closest('a[href], [name="checkout"]');
+        if (a && !dlg.contains(a)) marcarSalida();
+      }, true);
+      document.addEventListener('submit', (e) => { if (!dlg.contains(e.target)) marcarSalida(); }, true);
+
+      // Ya añadió algo antes en esta visita (en otra página): queda preparada
+      try { if (sessionStorage.getItem(LISTA)) armar(); } catch (e) {}
 
       // «Añadir a la cesta» en cualquier sitio (Horizon, packs, cesta) termina en un fetch a /cart/add
       const fetchOriginal = window.fetch;
@@ -106,7 +159,7 @@
         const p = fetchOriginal.apply(this, arguments);
         try {
           const url = typeof entrada === 'string' ? entrada : (entrada && entrada.url) || '';
-          if (/\/cart\/add/.test(url)) p.then((r) => { if (r.ok) programar(); }).catch(() => {});
+          if (/\/cart\/add/.test(url)) p.then((r) => { if (r.ok) armar(); }).catch(() => {});
         } catch (e) {}
         return p;
       };
@@ -118,10 +171,54 @@
       dlg.querySelectorAll('[data-lu-ec-cerrar]').forEach((b) => b.addEventListener('click', cerrar));
       dlg.addEventListener('click', (e) => { if (e.target === dlg) cerrar(); });   // clic fuera de la tarjeta
 
+      // Dominio mal escrito («htmail.com», «gmial.com», «gmail.con»…): se propone el bueno antes de enviar
+      const DOMINIOS = ['gmail.com', 'hotmail.com', 'hotmail.es', 'outlook.com', 'outlook.es', 'yahoo.com', 'yahoo.es',
+        'icloud.com', 'me.com', 'live.com', 'live.es', 'msn.com', 'telefonica.net', 'movistar.es', 'protonmail.com',
+        'proton.me', 'gmx.es', 'gmx.com', 'mail.com', 'ymail.com', 'aol.com', 'googlemail.com'];
+      function distancia(a, b) {
+        const d = Array.from({ length: a.length + 1 }, (_, i) => [i]);
+        for (let j = 1; j <= b.length; j++) d[0][j] = j;
+        for (let i = 1; i <= a.length; i++) {
+          for (let j = 1; j <= b.length; j++) {
+            d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+            if (i > 1 && j > 1 && a[i - 1] === b[j - 2] && a[i - 2] === b[j - 1]) d[i][j] = Math.min(d[i][j], d[i - 2][j - 2] + 1);
+          }
+        }
+        return d[a.length][b.length];
+      }
+      function sugerencia(email) {
+        const at = email.lastIndexOf('@');
+        if (at < 1) return null;
+        const dom = email.slice(at + 1).toLowerCase();
+        if (!dom || DOMINIOS.includes(dom)) return null;
+        let mejor = null, min = 99;
+        for (const d of DOMINIOS) { const n = distancia(dom, d); if (n < min) { min = n; mejor = d; } }
+        return min <= (dom.length < 8 ? 1 : 2) ? email.slice(0, at + 1) + mejor : null;
+      }
+      const campo = form.querySelector('input[type="email"]');
+      const quizas = dlg.querySelector('[data-lu-ec-quizas]');
+      const arreglar = dlg.querySelector('[data-lu-ec-arreglar]');
+      let avisado = '';
+      function revisarDominio() {
+        const s = sugerencia(campo.value.trim());
+        quizas.hidden = !s;
+        if (s) arreglar.textContent = s;
+        return s;
+      }
+      campo.addEventListener('blur', revisarDominio);
+      campo.addEventListener('input', () => { if (!quizas.hidden) revisarDominio(); });
+      arreglar.addEventListener('click', () => {
+        campo.value = arreglar.textContent;
+        quizas.hidden = true;
+        campo.focus();
+      });
+
       // El email: formulario de cliente de Shopify por fetch, sin salir de la página
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
         if (!form.reportValidity()) return;
+        const s = revisarDominio();       // la primera vez que hay sugerencia, se para y la enseña
+        if (s && avisado !== campo.value.trim()) { avisado = campo.value.trim(); arreglar.focus(); return; }
         const boton = form.querySelector('button');
         boton.disabled = true;
         try {
@@ -169,6 +266,9 @@
     font-family:var(--font-body--family);font-size:.8125rem;letter-spacing:.16em;text-transform:uppercase}
   .lu-ec__boton:hover{background:#004d2e}
   .lu-ec__boton:disabled{opacity:.6;cursor:wait}
+  .lu-ec__quizas{margin:10px 0 0;font-size:.875rem;color:#16201B}
+  .lu-ec__quizas button{padding:2px 0;border:0;background:none;color:#006039;font:inherit;font-weight:500;
+    text-decoration:underline;text-underline-offset:3px;cursor:pointer;word-break:break-all}
   .lu-ec__letra{margin:10px 0 0;font-size:.6875rem;color:#6B746F}
   .lu-ec__letra a{color:inherit}
   .lu-ec__hecho{margin:18px 0 4px;font-size:.9375rem;color:#006039}

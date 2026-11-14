@@ -538,7 +538,7 @@ KILL (se mira en la campaña) si gastas 1× CPA BE sin carritos o 2× sin ventas
 del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alertas si CTR < 1 % o CPC > 0,90 €.
 «Aprendizaje limitado» es normal con este presupuesto (Meta pide ~50 compras/semana). Máximo 2 productos en test.
 
-## 8. Calendario y pendientes (a 12-nov-2026)
+## 8. Calendario y pendientes (a 14-nov-2026)
 
 ### Para empezar la próxima sesión (después del 2-nov) — abrir conversación nueva por sesión.
 **13-nov (`D:\LUNERIE`): VENTA #LUN1007** (12-nov 18:23): Collar Signé **Dorado / Abril** (QIUHAN: «Apr Diamond»,
@@ -562,6 +562,18 @@ manda así a QIUHAN.
   **Correo de bienvenida diseñado** (`oficina/emails/bienvenida.html`, vista previa; `bienvenida-para-pegar.html` para
   una sección «Liquid personalizado» de Shopify Email), con OK de Edu al diseño. **Falta que Edu lo meta** en Marketing →
   Automatizaciones (asunto «Ya estás dentro»), se mande una prueba y lo active. Quitar la barra roja y la promo el 5-dic.
+- **Campaña al cierre del 14-nov (noche):** 245,85 € de 300 € (quedan ~54 €: a 15 €/día **se para sola hacia el 18-nov**).
+  Desde la reactivación (11-14 nov): 46,56 €, 1 compra (~46 €/venta). Por anuncio: **18** 44,07 €, 127 clics, 42 carritos,
+  2 pagos, 1 compra · 31 1,14 € · 29 0,90 € · 30 0,24 € · 28 0,21 € · 21 0 €. Los 30 y 31 se entregan (activos, sin
+  errores) pero Meta les da poco: normal el primer día; **no tocar**. Hoy el 18: 8 carritos y 0 pagos (la ventana nueva
+  entró a las 20:30). **Revisar el 16-nov** con datos del 31; si no vende y la cesta sigue sin pagos, dejarla acabar en el
+  tope y no renovar.
+  **Atribución (comprobada en Shopify y en Meta): las 3 ventas reales vienen del anuncio 18** (#LUN1004 Facebook, #LUN1006
+  al volver desde Instagram, #LUN1007 Instagram). **#LUN1007 entró por el anuncio, no por orgánico:** Shopify pone
+  «Instagram» por la app, pero la visita lleva las UTM del anuncio (`meta / paid / black-friday / collar-carmen`), que solo
+  están en su enlace; lo orgánico no puede traerlas (enlaces de posts no clicables y bio sin UTM). Cómo mirarlo:
+  `orders{ name customerJourneySummary{ firstVisit{ source utmParameters{source medium campaign content} landingPage }
+  lastVisit{ … } } }` con `shopify store execute`.
 - **(hecho) 14-nov: ACTIVAR los anuncios 30 y 31** (13-nov, OK de Edu: «súbelo y activamos mañana»): creados como borrador en el
   conjunto, sin errores → `ads_activate_entity` con `object_ids` 52568555635194 (30) y 52568555637594 (31), no la campaña
   entera. Ese día, revisión con la regla (~42 € sin ventas → parar; ≤ 30 €/pedido → +20 %). Detalle y textos en

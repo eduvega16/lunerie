@@ -554,6 +554,14 @@ manda así a QIUHAN.
   (`customers(query: "tag:cesta-black-friday")`; los emails, solo en el chat, nunca en git). A 14-nov ~19:45: **3
   suscritas reales** por la ventana (13-nov ×2, 14-nov ×1; ninguna ha comprado) + la prueba de Edu; una escribió mal
   el dominio («htmail.com»): no le llegará nada.
+  **14-nov ~20:30, EN PRODUCCIÓN (Edu: «dale a todo», «sí me gusta»):** la ventana ya no sale a los 5 s; solo se prepara
+  al añadir y sale al hacer gesto de irse (PC: ratón fuera por arriba; móvil: vuelve a la pestaña tras ≥ 8 s fuera o sube
+  la página de golpe); quien pulsa «Pagar» no la ve; propone el dominio bueno si está mal escrito. Probado con Playwright
+  en el tema de prueba y en lunerie.es (4 sesiones de prueba con carrito ese día, sin UTM de Meta). **Vigilar** si vuelven
+  los pagos desde la cesta y cuántos emails entran ahora.
+  **Correo de bienvenida diseñado** (`oficina/emails/bienvenida.html`, vista previa; `bienvenida-para-pegar.html` para
+  una sección «Liquid personalizado» de Shopify Email), con OK de Edu al diseño. **Falta que Edu lo meta** en Marketing →
+  Automatizaciones (asunto «Ya estás dentro»), se mande una prueba y lo active. Quitar la barra roja y la promo el 5-dic.
 - **(hecho) 14-nov: ACTIVAR los anuncios 30 y 31** (13-nov, OK de Edu: «súbelo y activamos mañana»): creados como borrador en el
   conjunto, sin errores → `ads_activate_entity` con `object_ids` 52568555635194 (30) y 52568555637594 (31), no la campaña
   entera. Ese día, revisión con la regla (~42 € sin ventas → parar; ≤ 30 €/pedido → +20 %). Detalle y textos en

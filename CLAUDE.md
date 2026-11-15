@@ -569,6 +569,14 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
   Sara verde (W46-12) pasada aquí a las 19:40, para que no salga dos veces. La historia del 15-nov (W46-32) se publicó a
   mano a las 18:27 con el precio nuevo.
 - QIUHAN (envío a 12 $): Edu ya les contestó el 15-nov. Reloj Lune: sigue con el tachado de 44,95 € desde el 30-oct.
+- **Pedido por Instagram (15-nov, noche):** 3 Collares Signé dorados (Laura · junio, Marta · enero, Loren · julio), 79,80 €
+  con el 3x2. Sin permiso de borradores en la CLI, el enlace de pago es una **cesta creada con la Storefront API sin token**
+  (`POST https://lunerie.es/api/2025-07/graphql.json`, `cartCreate` con `attributes: [{key: "Nombre", …}]` y
+  `buyerIdentity.countryCode: ES` → `checkoutUrl`): la promo se aplica sola y el pedido entra con el nombre de cada collar.
+  La cesta caduca a los ~10 días sin tocarla. Si paga: a QIUHAN «urgente, 3-5 días» (Jun Alexandrite, Jan Garnet, Jul Ruby).
+- **Correo de bienvenida (15-nov):** precio del collar cambiado a 39,90 € con 49,95 € tachado en
+  `oficina/emails/bienvenida*.html`. Los 6 CNAME de Shopify Email ya responden (comprobado con `nslookup`): **falta que
+  Edu pulse «Verificar»** en Shopify y meta el correo en Marketing → Automatizaciones (asunto «Ya estás dentro»).
 
 **13-nov (`D:\LUNERIE`): VENTA #LUN1007** (12-nov 18:23): Collar Signé **Dorado / Abril** (QIUHAN: «Apr Diamond»,
 transparente), nombre **«Maria José»** (así, sin tilde en la i y con tilde en la é), 49,95 €, Shopify Payments, Cantabria.

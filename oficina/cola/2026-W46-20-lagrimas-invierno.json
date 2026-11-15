@@ -1,6 +1,6 @@
 {
   "id": "2026-W46-20-lagrimas-invierno",
-  "estado": "aprobado",
+  "estado": "publicado",
   "plataforma": "instagram",
   "formato": "foto",
   "pieza": "collar-signe",
@@ -40,7 +40,11 @@
     ],
     "urls": [],
     "alt_text": "Tres lágrimas de circonita sobre fondo claro: diciembre azul, enero rojo oscuro y febrero morado. Texto: Las lágrimas del invierno. ¿Cuál es la suya?",
-    "ia": false
+    "ia": false,
+    "resultado": {
+      "media_id": "18018108900002806",
+      "fecha": "2026-11-15T12:30:30+0100"
+    }
   },
   "origen": "Plan de 2 publicaciones al día del 10 al 20-nov (OK de Edu, 9-nov).",
   "riesgos": "Nombres revisados a tamaño real; sin nombres de gemas ni material sin confirmar."

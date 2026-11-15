@@ -576,8 +576,16 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
   La cesta caduca a los ~10 días sin tocarla. Si paga: a QIUHAN «urgente, 3-5 días» (Jun Alexandrite, Jan Garnet, Jul Ruby).
 - **Correo de bienvenida (15-nov):** precio del collar cambiado a 39,90 € con 49,95 € tachado en
   `oficina/emails/bienvenida*.html`. Los 6 CNAME de Shopify Email responden y **el dominio ya sale verificado
-  en Shopify** (Edu, 15-nov). Falta que Edu meta el correo en Marketing → Automatizaciones (asunto «Ya estás dentro»;
-  no hay API para eso, y la extensión de Chrome no estaba conectada).
+  en Shopify** (Edu, 15-nov). **Automatización creada por Claude (15-nov, noche) en Messaging
+  (antes Shopify Email) → Automatizaciones**, plantilla «Da la bienvenida a nuevos suscriptores con un correo con
+  descuento» (se dispara al suscribirse, excluye a quien se suscribe al pagar) sin descuento: asunto «Ya estás dentro»,
+  vista previa «Te avisaremos de los próximos descuentos.», cabecera oculta (no se puede borrar), una sección «Liquid
+  personalizado» con `bienvenida-para-pegar.html` y el pie de Shopify con «Darse de baja». **En BORRADOR; prueba mandada
+  a luneriecompany@gmail.com y hola@lunerie.es; falta el OK de Edu para «Activar».** El editor se salta `align="center"`
+  y `<s>`: centrar con `text-align`/`margin:0 auto` en el estilo y tachar con `text-decoration:line-through`. El borrador
+  de Flow de Sidekick manda con la app **MailAction**: dejarlo sin activar y borrarlo. **Cómo maneja Claude el admin de
+  Shopify sin API:** Chrome aparte con `--remote-debugging-port=9222 --user-data-dir=D:/LUNERIE/.claude/shopify-perfil`
+  (Edu entra él), y Playwright con `connect_over_cdp`; el editor de correos va en el iframe `email.shopifyapps.com`.
 
 **13-nov (`D:\LUNERIE`): VENTA #LUN1007** (12-nov 18:23): Collar Signé **Dorado / Abril** (QIUHAN: «Apr Diamond»,
 transparente), nombre **«Maria José»** (así, sin tilde en la i y con tilde en la é), 49,95 €, Shopify Payments, Cantabria.

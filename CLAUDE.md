@@ -562,7 +562,9 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
   aprendizaje): decidirlo con Edu en la revisión. Los scripts (`ugc_montaje.py`, `reel_macro.py`, `mofu_bofu.py`,
   `cierre_animado.py`) ya tienen los precios nuevos.
 - **Instagram:** el otro PC sigue con sus tareas (publicó la de las 12:30 del 15-nov, que dice 49,95 €: editarla en la app
-  si se quiere). **En `C:\Users\edu\lunerie`: subir lo de hoy a git y `python oficina/publicar_programado.py quitar`.**
+  si se quiere). **Hecho en `C:\Users\edu\lunerie` el 15-nov:** tareas quitadas (`publicar_programado.py quitar`, ya
+  no queda ninguna) y git al día (su snippet del collar era igual al del tema publicado; «Las lágrimas del invierno»,
+  W46-20, salió desde allí a las 12:30 y queda como publicada).
   Sara verde (W46-12) pasada aquí a las 19:40, para que no salga dos veces. La historia del 15-nov (W46-32) se publicó a
   mano a las 18:27 con el precio nuevo.
 - QIUHAN (envío a 12 $): Edu ya les contestó el 15-nov. Reloj Lune: sigue con el tachado de 44,95 € desde el 30-oct.

@@ -583,9 +583,13 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
   personalizado» con `bienvenida-para-pegar.html` y el pie de Shopify con «Darse de baja». **En BORRADOR; prueba mandada
   a luneriecompany@gmail.com y hola@lunerie.es; falta el OK de Edu para «Activar».** El editor se salta `align="center"`
   y `<s>`: centrar con `text-align`/`margin:0 auto` en el estilo y tachar con `text-decoration:line-through`. El borrador
-  de Flow de Sidekick manda con la app **MailAction**: dejarlo sin activar y borrarlo. **Cómo maneja Claude el admin de
-  Shopify sin API:** Chrome aparte con `--remote-debugging-port=9222 --user-data-dir=D:/LUNERIE/.claude/shopify-perfil`
-  (Edu entra él), y Playwright con `connect_over_cdp`; el editor de correos va en el iframe `email.shopifyapps.com`.
+  de Flow de Sidekick manda con la app **MailAction**: dejarlo sin activar y borrarlo. **Ojo:** el pie de Shopify enseña
+  la **dirección completa de la tienda** (Configuración → General → Dirección de la tienda; Shopify la exige en el
+  marketing): avisado a Edu el 16-nov, si quiere otra la cambia ahí. **Cómo maneja Claude el admin de Shopify sin API:**
+  **`oficina/admin_shopify.py`** (instrucciones dentro): Chrome aparte con `--remote-debugging-port=9222
+  --user-data-dir=D:/LUNERIE/.claude/shopify-perfil` (Edu entra él; el perfil queda guardado), `python
+  oficina/admin_shopify.py esperar` y Playwright con `connect_over_cdp`; el editor de correos va en el iframe
+  `email.shopifyapps.com` (asunto, secciones y pegar el Liquid: funciones del mismo fichero).
 
 **13-nov (`D:\LUNERIE`): VENTA #LUN1007** (12-nov 18:23): Collar Signé **Dorado / Abril** (QIUHAN: «Apr Diamond»,
 transparente), nombre **«Maria José»** (así, sin tilde en la i y con tilde en la é), 49,95 €, Shopify Payments, Cantabria.

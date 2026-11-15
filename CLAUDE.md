@@ -575,8 +575,9 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
   `buyerIdentity.countryCode: ES` → `checkoutUrl`): la promo se aplica sola y el pedido entra con el nombre de cada collar.
   La cesta caduca a los ~10 días sin tocarla. Si paga: a QIUHAN «urgente, 3-5 días» (Jun Alexandrite, Jan Garnet, Jul Ruby).
 - **Correo de bienvenida (15-nov):** precio del collar cambiado a 39,90 € con 49,95 € tachado en
-  `oficina/emails/bienvenida*.html`. Los 6 CNAME de Shopify Email ya responden (comprobado con `nslookup`): **falta que
-  Edu pulse «Verificar»** en Shopify y meta el correo en Marketing → Automatizaciones (asunto «Ya estás dentro»).
+  `oficina/emails/bienvenida*.html`. Los 6 CNAME de Shopify Email responden y **el dominio ya sale verificado
+  en Shopify** (Edu, 15-nov). Falta que Edu meta el correo en Marketing → Automatizaciones (asunto «Ya estás dentro»;
+  no hay API para eso, y la extensión de Chrome no estaba conectada).
 
 **13-nov (`D:\LUNERIE`): VENTA #LUN1007** (12-nov 18:23): Collar Signé **Dorado / Abril** (QIUHAN: «Apr Diamond»,
 transparente), nombre **«Maria José»** (así, sin tilde en la i y con tilde en la é), 49,95 €, Shopify Payments, Cantabria.

@@ -73,7 +73,7 @@ def tarjeta(destino, tipo=""):
     def centro(t, f, y, c):
         d.text(((W - d.textlength(t, font=f)) / 2, y), t, font=f, fill=c)
     centro("Collar Signé", serif, y0 + 30, tinta)
-    precio = {"dos": "2 collares · 74,93 €", "tres": "3 collares · 99,90 €"}.get(tipo, "49,95 €")
+    precio = {"dos": "2 collares · 59,85 €", "tres": "3 collares · 79,80 €"}.get(tipo, "39,90 €")
     centro(precio, jost(56 if tipo not in ("dos", "tres") else 50, "Regular"), y0 + 170, tinta)
     if bf:
         rojo = (202, 56, 1, 255)   # el rojo de la barra de la tienda (PROMO_ROJO)

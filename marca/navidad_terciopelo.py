@@ -4,7 +4,7 @@ fondo rojo terciopelado rollo navidad» → «sí dale y programa la subida»). 
     posts 4:5 con una línea de texto · carrusel «Ideas de regalo para Navidad» · historias 9:16 (foto + ficha) · 2 reels
     python marca/navidad_terciopelo.py [posts|carrusel|historias|reels]   → marca/fotos-ia/terciopelo/navidad/
 En 9:16 el texto queda fuera de las zonas que tapan los botones de Instagram (arriba ~200 px, abajo ~250 px).
-Precios leídos de la tienda el 13-nov (si cambian, cambiarlos aquí y volver a montar).
+Precios leídos de la tienda el 15-nov (Signé a 39,90 €) (si cambian, cambiarlos aquí y volver a montar).
 """
 import pathlib, shutil, subprocess, sys, tempfile
 from PIL import Image, ImageDraw, ImageFilter, ImageEnhance
@@ -18,14 +18,14 @@ FF = shutil.which("ffmpeg") or __import__("imageio_ffmpeg").get_ffmpeg_exe()
 CREMA, ORO_CLARO, GRANATE = (246, 239, 228), (224, 193, 132), (58, 9, 14)
 
 PRODUCTOS = {   # foto: (nombre, precio, una línea verdadera)
-    "plano-sara-1": ("Collar Signé", "49,95 €", "Su nombre y la piedra de su mes"),
-    "lazo-laura-1": ("Collar Signé", "49,95 €", "Su nombre en letra de firma"),
-    "regalo-carmen-1": ("Collar Signé", "49,95 €", "Su nombre y la piedra de su mes"),
-    "cajita-carmen-1": ("Collar Signé", "49,95 €", "Llega en su cajita de terciopelo"),
-    "plata-elena-1": ("Collar Signé", "49,95 €", "También en plateado"),
-    "nombre-ana-1": ("Collar Signé", "49,95 €", "Marzo, azul agua"),
-    "nombre-paula-1": ("Collar Signé", "49,95 €", "Abril, blanco"),
-    "nombre-eva-1": ("Collar Signé", "49,95 €", "Febrero, morado"),
+    "plano-sara-1": ("Collar Signé", "39,90 €", "Su nombre y la piedra de su mes"),
+    "lazo-laura-1": ("Collar Signé", "39,90 €", "Su nombre en letra de firma"),
+    "regalo-carmen-1": ("Collar Signé", "39,90 €", "Su nombre y la piedra de su mes"),
+    "cajita-carmen-1": ("Collar Signé", "39,90 €", "Llega en su cajita de terciopelo"),
+    "plata-elena-1": ("Collar Signé", "39,90 €", "También en plateado"),
+    "nombre-ana-1": ("Collar Signé", "39,90 €", "Marzo, azul agua"),
+    "nombre-paula-1": ("Collar Signé", "39,90 €", "Abril, blanco"),
+    "nombre-eva-1": ("Collar Signé", "39,90 €", "Febrero, morado"),
     "reloj-lune-1": ("Reloj Lune", "39,95 €", "Pequeño, ovalado y con piedras"),
     "reloj-maille-1": ("Reloj Maille", "39,95 €", "Esfera ovalada y malla dorada"),
     "anillo-nuit-1": ("Anillo Nuit", "19,95 €", "Sello con circonita"),
@@ -58,7 +58,7 @@ REELS = {
                           ("plata-elena-1", 1.3, None), ("cajita-carmen-1", 2.0, "En su cajita de terciopelo."),
                           ("ficha:cajita-carmen-1", 2.8, None)],
     "reel-ideas-regalo": [("regalo-carmen-1", 2.0, "Ideas de regalo para Navidad"),
-                          ("plano-sara-1", 1.6, "Collar Signé · 49,95 €"), ("reloj-lune-1", 1.6, "Reloj Lune · 39,95 €"),
+                          ("plano-sara-1", 1.6, "Collar Signé · 39,90 €"), ("reloj-lune-1", 1.6, "Reloj Lune · 39,95 €"),
                           ("reloj-maille-1", 1.6, "Reloj Maille · 39,95 €"), ("anillo-nuit-1", 1.6, "Anillo Nuit · 19,95 €"),
                           ("aros-boucle-1", 1.6, "Aros Boucle · 19,95 €"), ("ficha:regalo-carmen-1", 2.8, None)],
 }
@@ -140,7 +140,7 @@ def carrusel():
     portada = degradado_abajo(a_45(foto(CARRUSEL[0])), 820, 175)
     portada = escribir(portada, [(1068, "Ideas de regalo", cormi(84), CREMA, 0),
                                  (1158, "para Navidad", cormi(84), CREMA, 0),
-                                 (1268, "DE 19,95 € A 49,95 €", jost(26, "Regular"), ORO_CLARO, 4)])
+                                 (1268, "DE 19,95 € A 39,95 €", jost(26, "Regular"), ORO_CLARO, 4)])
     print(guardar(portada, "car-1.jpg"))
     for i, n in enumerate(CARRUSEL[1:], 2):
         print(guardar(diapositiva(n), f"car-{i}.jpg"))

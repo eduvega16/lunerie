@@ -128,7 +128,7 @@ def cierre_promo(acabado):
     y += 128
     centro(d, y, "hasta el 5 de diciembre", jost(44, "Regular"), TINTA, W)
     y += 66
-    centro(d, y, "Collar Signé · 49,95 €", jost(38, "Regular"), GRIS, W)
+    centro(d, y, "Collar Signé · 39,90 €", jost(38, "Regular"), GRIS, W)
     y += 50
     centro(d, y, f"{acabado} · Garantía de 3 años", jost(34, "Regular"), GRIS, W)
     return capa

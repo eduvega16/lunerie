@@ -60,11 +60,11 @@ def texto(w):
         y += 64
         centro(d, y, "La 2.ª pieza al 50 % y la 3.ª, gratis.", jost(34, "Regular"), GRIS, w)
         y += 48
-        centro(d, y, "Collar Signé · 49,95 € · Envío gratis a península", jost(34, "Regular"), GRIS, w)
+        centro(d, y, "Collar Signé · 39,90 € · Envío gratis a península", jost(34, "Regular"), GRIS, w)
         return capa
     centro(d, y, "La 2.ª pieza al 50 % y la 3.ª, gratis.", jost(44, "Regular"), TINTA, w)
     y += 64
-    centro(d, y, "Collar Signé · 49,95 € · Hasta el 5 de diciembre", jost(34, "Regular"), GRIS, w)
+    centro(d, y, "Collar Signé · 39,90 € · Hasta el 5 de diciembre", jost(34, "Regular"), GRIS, w)
     y += 48
     centro(d, y, "Garantía de 3 años · Envío gratis a península", jost(34, "Regular"), GRIS, w)
     return capa

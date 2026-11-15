@@ -538,9 +538,35 @@ KILL (se mira en la campaña) si gastas 1× CPA BE sin carritos o 2× sin ventas
 del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alertas si CTR < 1 % o CPC > 0,90 €.
 «Aprendizaje limitado» es normal con este presupuesto (Meta pide ~50 compras/semana). Máximo 2 productos en test.
 
-## 8. Calendario y pendientes (a 14-nov-2026)
+## 8. Calendario y pendientes (a 15-nov-2026)
 
 ### Para empezar la próxima sesión (después del 2-nov) — abrir conversación nueva por sesión.
+**15-nov — manda sobre todo lo de abajo.** Los cambios de la tienda se hicieron desde `C:\Users\edu\lunerie` y allí
+**no se subieron a git**; estas notas son de `D:\LUNERIE`, con lo que se ve en Shopify.
+- **COLLAR SIGNÉ A 39,90 € con tachado 49,95 € («−20 %») hasta el final del Black Friday (5-dic)** (Edu: «se queda a ese
+  precio»). El tachado vale: el collar nunca estuvo más barato (49,95 € desde el 4-nov). Con la promo: **2 collares
+  59,85 € · 3 collares 79,80 €**. En la ficha, etiqueta roja «−20 %» junto al tachado (sale de los dos precios reales) y
+  botón **«Comprar ahora»** (contorno verde bajo «Agregar al carrito»: comprueba piedra y nombre, mete el collar y va
+  directo a `/checkout`, sin pasar por la cesta; motivo: de cada 100 carritos solo ~9 llegaban al pago). En producción
+  desde el 15-nov 17:36; `tema/codigo/snippets/lunerie-collar.liquid` copiado aquí desde el tema publicado.
+- **Rehecho con 39,90 € (sin IA):** serie de terciopelo (`navidad_terciopelo.py`: posts, carrusel «de 19,95 € a
+  39,95 €», historias, reels), `kcal-5.jpg` (`python marca/kcal.py cierre`, que ya no necesita las fotos de los dulces),
+  `24-dudas-6.jpg` (la 2 se queda: sus capturas no están en este PC) y el reel del cierre `23-cierre-anim` · textos de
+  15 piezas de la cola: «39,90 € (antes 49,95 €)». **Falta el OK de Edu a los 2 vídeos rehechos** para subirlos y cambiar
+  su URL en la cola: `23-cierre-anim-9x16.mp4` (W47-03, 17-nov 12:30) y `reel-ideas-regalo.mp4` (W48-04, 24-nov).
+- **Letra (trampa): el Pillow de `C:\Users\edu\lunerie` pinta cada peso de Jost un punto más fino** que el de aquí. Al
+  rehacer aquí piezas montadas allí (dudas, cierre 23…), bajar un peso (Light→ExtraLight, Regular→Light…) o cambia la
+  letra. Lo de terciopelo se montó aquí: sin cambio.
+- **Meta (revisión del 16-nov):** los anuncios activos llevan el precio viejo dentro (tarjeta final con 49,95 €, packs
+  74,93/99,90 € en el 21 y el 22, cierre 23 en el 30). Rehacerlos = creatividad nueva (vuelve a revisión y reinicia el
+  aprendizaje): decidirlo con Edu en la revisión. Los scripts (`ugc_montaje.py`, `reel_macro.py`, `mofu_bofu.py`,
+  `cierre_animado.py`) ya tienen los precios nuevos.
+- **Instagram:** el otro PC sigue con sus tareas (publicó la de las 12:30 del 15-nov, que dice 49,95 €: editarla en la app
+  si se quiere). **En `C:\Users\edu\lunerie`: subir lo de hoy a git y `python oficina/publicar_programado.py quitar`.**
+  Sara verde (W46-12) pasada aquí a las 19:40, para que no salga dos veces. La historia del 15-nov (W46-32) se publicó a
+  mano a las 18:27 con el precio nuevo.
+- QIUHAN (envío a 12 $): Edu ya les contestó el 15-nov. Reloj Lune: sigue con el tachado de 44,95 € desde el 30-oct.
+
 **13-nov (`D:\LUNERIE`): VENTA #LUN1007** (12-nov 18:23): Collar Signé **Dorado / Abril** (QIUHAN: «Apr Diamond»,
 transparente), nombre **«Maria José»** (así, sin tilde en la i y con tilde en la é), 49,95 €, Shopify Payments, Cantabria.
 Viene del **anuncio 18** (Instagram, `collar-carmen`). Campaña desde la reactivación (11-13 nov): 23,60 €, 1 compra, 30

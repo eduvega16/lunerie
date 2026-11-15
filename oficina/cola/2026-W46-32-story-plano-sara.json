@@ -1,6 +1,6 @@
 {
   "id": "2026-W46-32-story-plano-sara",
-  "estado": "aprobado",
+  "estado": "publicado",
   "plataforma": "instagram",
   "formato": "story",
   "pieza": "collar-signe",
@@ -20,7 +20,11 @@
     ],
     "urls": [],
     "alt_text": "",
-    "ia": true
+    "ia": true,
+    "resultado": {
+      "media_id": "18197969251400495,18113345669127400",
+      "fecha": "2026-11-15T18:28:31+0100"
+    }
   },
   "origen": {
     "biblioteca": "terciopelo-navidad"

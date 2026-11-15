@@ -30,6 +30,12 @@
     assign firma_pc = 54
     assign firma_movil = 48
   endif
+  # 15-nov: «−20 %» junto al precio tachado, calculado con los dos precios reales (nunca un número a mano)
+  assign v_desc = product.selected_or_first_available_variant
+  assign descuento = 0
+  if v_desc.compare_at_price > v_desc.price
+    assign descuento = v_desc.compare_at_price | minus: v_desc.price | times: 100 | divided_by: v_desc.compare_at_price
+  endif
   assign elegido = ''
   if product.selected_variant
     for o in product.selected_variant.options
@@ -39,7 +45,7 @@
     endfor
   endif
 -%}
-<div class="lu-collar" data-lu-collar data-form="{{ form_id }}" data-elegido="{{ elegido }}">
+<div class="lu-collar" data-lu-collar data-form="{{ form_id }}" data-elegido="{{ elegido }}" data-descuento="{{ descuento }}">
   <div class="lu-collar__campo">
     <p class="lu-collar__etiqueta" id="lu-piedra-{{ section_id }}">Piedra <span aria-hidden="true">*</span></p>
     <button type="button" class="lu-collar__elegir" data-lu-abrir aria-haspopup="dialog" aria-describedby="lu-piedra-{{ section_id }}">
@@ -165,6 +171,17 @@
   .lu-piedras__nombre { font-size: .875rem; }
   .lu-piedras__color { font-size: .75rem; color: #6B746F; }
   @media (prefers-reduced-motion: reduce) { .lu-piedras[open] { animation: none; } }
+  /* «Comprar ahora» (15-nov): mismo ancho y letra que «Agregar al carrito», en contorno verde para no competir con él */
+  .lu-comprar { display: block; width: 100%; min-height: 52px; margin-top: 10px; padding: 14px 20px; border: 1px solid #006039;
+    border-radius: 0; background: #fff; color: #006039; font-family: var(--font-body--family); font-size: .875rem;
+    font-weight: 500; letter-spacing: .12em; text-transform: uppercase; cursor: pointer; transition: background .2s, color .2s; }
+  .lu-comprar:hover { background: #006039; color: #fff; }
+  .lu-comprar:focus-visible { outline: 2px solid #006039; outline-offset: 2px; }
+  .lu-comprar:disabled { opacity: .6; cursor: progress; }
+  .lu-comprar + .lu-collar__error { margin: 8px 0 0; font-size: .8125rem; color: #B3261E; }
+  .lu-comprar + .lu-collar__error[hidden] { display: none; }
+  .lu-descuento { display: inline-block; margin-left: 10px; padding: 2px 8px; background: #CA3801; color: #fff;
+    font-family: var(--font-body--family); font-size: .8125rem; font-weight: 500; letter-spacing: .04em; vertical-align: middle; }
 </style>
 
 <script>
@@ -258,6 +275,71 @@
         abrir.scrollIntoView({ block: 'center', behavior: 'smooth' });
         abrir.focus({ preventScroll: true });
       }, true);
+
+      // 15-nov (Edu, la cesta no convierte: de cada 100 carritos solo ~9 llegan al pago): «Comprar ahora», debajo de
+      // «Agregar al carrito». Hace las mismas comprobaciones (piedra y nombre), mete el collar en la cesta y va directo
+      // al pago, sin pasar por la cesta. Si ya había algo en la cesta, entra también en el pago (y la promo se aplica).
+      // El form del tema va DESPUÉS de este script en la página: el botón se pone al cargar y se vuelve a poner si el tema
+      // redibuja los botones (al cambiar de variante).
+      const ponerComprar = () => {
+        const form = document.getElementById(raiz.dataset.form);
+        const add = form && form.querySelector('button[name="add"]');
+        if (!add || form.querySelector('[data-lu-comprar]')) return;
+        const comprar = document.createElement('button');
+        comprar.type = 'button';
+        comprar.className = 'lu-comprar';
+        comprar.setAttribute('data-lu-comprar', '');
+        comprar.textContent = 'Comprar ahora';
+        const fallo = document.createElement('p');
+        fallo.className = 'lu-collar__error';
+        fallo.setAttribute('role', 'alert');
+        fallo.hidden = true;
+        (add.closest('.product-form-buttons') || add).after(comprar, fallo);
+        comprar.addEventListener('click', async () => {
+          fallo.hidden = true;
+          if (!elegido) {
+            error.hidden = false;
+            abrir.scrollIntoView({ block: 'center', behavior: 'smooth' });
+            abrir.focus({ preventScroll: true });
+            return;
+          }
+          if (!nombre.reportValidity()) return;
+          comprar.disabled = true;
+          comprar.textContent = 'Un momento…';
+          try {
+            const f = document.getElementById(raiz.dataset.form) || form;
+            const r = await fetch('/cart/add.js', { method: 'POST', body: new FormData(f), headers: { Accept: 'application/json' } });
+            if (!r.ok) throw new Error(String(r.status));
+            window.location.href = '/checkout';
+          } catch (err) {
+            comprar.disabled = false;
+            comprar.textContent = 'Comprar ahora';
+            fallo.textContent = 'No se ha podido abrir el pago. Prueba con «Agregar al carrito».';
+            fallo.hidden = false;
+          }
+        });
+      };
+      // «−20 %» al lado del precio tachado de la ficha del collar: solo en su sección y nunca en las tarjetas de otros
+      // productos (resource-card), que tienen su propio tachado
+      const ponerDescuento = () => {
+        const pct = parseInt(raiz.dataset.descuento, 10);
+        const seccion = raiz.closest('.shopify-section') || document;
+        const tachado = [...seccion.querySelectorAll('.compare-at-price')].find((t) => !t.closest('.resource-card'));
+        if (!pct || !tachado || tachado.parentElement.querySelector('.lu-descuento')) return;
+        const e = document.createElement('span');
+        e.className = 'lu-descuento';
+        e.textContent = `−${pct} %`;
+        tachado.after(e);
+      };
+      const poner = () => { ponerComprar(); ponerDescuento(); };
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', poner);
+      else poner();
+      let pendiente = false;
+      new MutationObserver(() => {
+        if (pendiente) return;
+        pendiente = true;
+        requestAnimationFrame(() => { pendiente = false; poner(); });
+      }).observe(document.body, { childList: true, subtree: true });
     });
   })();
 </script>

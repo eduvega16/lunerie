@@ -4,7 +4,7 @@
       23-cierre-9x16.jpg / -4x5.jpg        BOFU: estático de cierre con la oferta real (fin 5-dic)
       24-dudas-1..6.jpg (4:5)              MOFU: carrusel de dudas
       25-vista-previa-9x16.mp4 / -4x5.mp4  MOFU: grabación de pantalla (elegir piedra → escribir el nombre)
-Precios comprobados en Shopify: 1 Signé 49,95 € · 2 = 74,93 € (el 2.º al 50 %, en céntimos hacia abajo) · 3 = 99,90 €.
+Precios (15-nov): 1 Signé 39,90 € · 2 = 59,85 € (el 2.º al 50 %, en céntimos hacia abajo) · 3 = 79,80 €.
 Solo cosas verdaderas: el plazo es solo lo que tarda en salir (nunca la suma con el envío), la vista previa es
 «orientativa» y la garantía es la legal de 3 años (si llega mal hecho, se rehace).
 """
@@ -119,7 +119,7 @@ def cierre(w, h):
     y += int(tam_t * 1.2)
     centro(d, y, "La 2.ª pieza al 50 % y la 3.ª, gratis.", jost(44, "Regular"), TINTA, w)
     y += 70
-    centro(d, y, "Collar Signé · 49,95 € · Hasta el 5 de diciembre", jost(34, "Regular"), GRIS, w)
+    centro(d, y, "Collar Signé · 39,90 € · Hasta el 5 de diciembre", jost(34, "Regular"), GRIS, w)
     y += 52
     centro(d, y, "Garantía de 3 años · Envío gratis a península", jost(34, "Regular"), GRIS, w)
     return im
@@ -154,14 +154,17 @@ def dudas():
     guardar(im, "24-dudas-1.jpg")
 
     # 2 · el nombre (captura real de la ficha: piedra elegida + nombre escrito + «Se hará así»)
-    im, d = base("¿Y si me equivoco con el nombre?")
-    cap = Image.open(PANTALLA / "011.png").convert("RGB").crop((0, 735, 1170, 1530))
-    cap = cap.resize((900, round(cap.height * 900 / 1170)), Image.Resampling.LANCZOS)
-    tarjeta(cap, im, 90, 395)
-    d = ImageDraw.Draw(im)
-    respuesta(d, "Lo ves escrito mientras lo tecleas y, debajo, cómo se hará. Se hace tal cual lo escribes, "
-                 "mayúsculas y tildes incluidas.", "Vista previa orientativa de la letra.", y=1060)
-    guardar(im, "24-dudas-2.jpg")
+    if not (PANTALLA / "011.png").exists():   # las capturas no van a git: sin ellas, la 2 se queda como está
+        print("sin capturas (marca/grabar_vista_previa.py): 24-dudas-2.jpg no se toca")
+    else:
+        im, d = base("¿Y si me equivoco con el nombre?")
+        cap = Image.open(PANTALLA / "011.png").convert("RGB").crop((0, 735, 1170, 1530))
+        cap = cap.resize((900, round(cap.height * 900 / 1170)), Image.Resampling.LANCZOS)
+        tarjeta(cap, im, 90, 395)
+        d = ImageDraw.Draw(im)
+        respuesta(d, "Lo ves escrito mientras lo tecleas y, debajo, cómo se hará. Se hace tal cual lo escribes, "
+                     "mayúsculas y tildes incluidas.", "Vista previa orientativa de la letra.", y=1060)
+        guardar(im, "24-dudas-2.jpg")
 
     # 3 · la piedra
     im, d = base("¿Qué piedra le pongo?")
@@ -202,7 +205,7 @@ def dudas():
     centro(d, 200, "BLACK FRIDAY", jost(34, "Medium"), ROJO, W, espaciado=8)
     parrafo(d, 275, "La segunda pieza al 50 % y la tercera, gratis.", cormi(96), TINTA, W, 860, 1.08)
     y = 600
-    for izq, der in [("1 collar", "49,95 €"), ("2 collares", "74,93 €"), ("3 collares", "99,90 €")]:
+    for izq, der in [("1 collar", "39,90 €"), ("2 collares", "59,85 €"), ("3 collares", "79,80 €")]:
         d.line((190, y + 78, 890, y + 78), fill=(214, 220, 216), width=2)
         d.text((190, y), izq, font=jost(46), fill=TINTA)
         fu = jost(46, "Regular")

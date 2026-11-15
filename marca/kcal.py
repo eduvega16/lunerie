@@ -3,6 +3,7 @@ croissant, chocolate y eso»). A la izquierda un dulce (IA, sobre fondo beige li
 a la derecha un Collar Signé (fotos ya revisadas, pegadas en local: el nombre no lo toca la IA) con «0 kcal».
     python marca/kcal.py comida [croissant chocolate polvoron donut] [--n 1]   → marca/fotos-ia/kcal/<dulce>-<n>.png
     python marca/kcal.py montar                                                → marca/fotos-ia/kcal/kcal-1..5.jpg (4:5)
+    python marca/kcal.py cierre                                                → solo kcal-5.jpg (la del precio)
 """
 import concurrent.futures, pathlib, sys, urllib.request
 import numpy as np
@@ -125,7 +126,12 @@ def montar():
             d.text((x - d.textlength(t, font=fn) / 2, 1160), t, font=fn, fill=GRIS)
         d.text((W - 60 - d.textlength(f"{i}/5", font=fn), 1270), f"{i}/5", font=fn, fill=GRIS)
         im.save(SALIDA / f"kcal-{i}.jpg", quality=97, subsampling=0); print("kcal", i)
-    # 5 · cierre
+    cierre()
+
+
+def cierre():
+    """5 · cierre (con el precio: «python marca/kcal.py cierre» la rehace sola, sin las fotos de los dulces)."""
+    W, H = 1080, 1350
     im = Image.new("RGB", (W, H), BEIGE)
     d = ImageDraw.Draw(im)
     j = joya(COLLAR / "producto-verde-3.jpg", 620)
@@ -133,7 +139,7 @@ def montar():
     f1 = fuente("Cormorant-Italic.ttf", 74)
     for k, t in enumerate(("Si vas a darte un capricho,", "que dure.")):
         d.text(((W - d.textlength(t, font=f1)) / 2, 830 + k * 90), t, font=f1, fill=TINTA)
-    espaciado(d, (W / 2, 1050), "COLLAR SIGNÉ · 49,95 €", fuente("Jost.ttf", 32, 400), TINTA, 5)
+    espaciado(d, (W / 2, 1050), "COLLAR SIGNÉ · 39,90 €", fuente("Jost.ttf", 32, 400), TINTA, 5)
     f3 = fuente("Jost.ttf", 28, 400)
     for k, t in enumerate(("Black Friday: la 2.ª pieza al 50 % y la 3.ª, gratis.", "Hasta el 5 de diciembre.")):
         d.text(((W - d.textlength(t, font=f3)) / 2, 1115 + k * 44), t, font=f3, fill=GRIS)
@@ -156,5 +162,7 @@ if __name__ == "__main__":
                 print(dulce, "->", r, flush=True)
     elif a and a[0] == "montar":
         montar()
+    elif a and a[0] == "cierre":
+        cierre()
     else:
         print(__doc__)

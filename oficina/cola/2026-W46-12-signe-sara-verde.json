@@ -1,6 +1,6 @@
 {
   "id": "2026-W46-12-signe-sara-verde",
-  "estado": "aprobado",
+  "estado": "publicado",
   "plataforma": "instagram",
   "formato": "foto",
   "pieza": "collar-signe",
@@ -30,7 +30,11 @@
     ],
     "urls": [],
     "alt_text": "Collar dorado con el nombre Sara en letra de firma en un lado de la cadena y una lágrima verde colgando en el centro, sobre fondo blanco. Texto: Un regalo (o un capricho). Collar con su nombre y su piedra.",
-    "ia": true
+    "ia": true,
+    "resultado": {
+      "media_id": "18140841316651865",
+      "fecha": "2026-11-15T19:41:13+0100"
+    }
   },
   "origen": {
     "biblioteca": "",

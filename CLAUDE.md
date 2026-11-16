@@ -585,6 +585,17 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
 - **Anuncio candidato 32 «¿Todavía lo estás pensando?»** (reel de Lucce que trajo Edu el 16-nov; formato 30 de la
   biblioteca). Edu: «memorízalo como posible anuncio». **Sin producir**: guion, coste (0,5-2,3 $) y cuándo hacerlo, en
   `anuncios/campana-black-friday.md`. Se valora en cada revisión de la campaña; sirve hasta el 5-dic.
+- **Carritos sin pago, investigado a fondo (16-nov, noche): `oficina/informes/carritos-2026-11-16.md`.** Móvil 11-16 nov:
+  111 visitas → 33 carritos → 4 al pago → 2 pedidos. En las 43 sesiones grabadas por **Propel Replays** (app de
+  grabaciones que instaló Edu): añaden a los ~41 s, miran la cesta ~20 s sin tocar nada y se van; «añadir» se usa para
+  guardarse el collar. Fallos nuestros vistos: la ventana del email se abre **encima de la cesta** cuando vuelven tras
+  más de 8 s (y promete «próximos descuentos»), el nombre corta en **10 letras** (los compuestos no caben; QIUHAN no pone
+  límite), el botón «Chat» tapa «Comprar ahora» (y pide iniciar sesión: 1 conversación en 30 días), **«Recuperar un
+  carrito abandonado» de Messaging está sin activar** (bienvenida y pedido abandonado ya salen «Activo») y añadir varios
+  collares con nombres distintos es torpe. **Bizum no aparece** en nuestro Shopify Payments. **Propuesto a Edu, sin tocar
+  nada todavía:** 4 arreglos + cesta nueva + probar «Comprar ahora» de botón principal (lista en el informe).
+  **Leer grabaciones sin ventana:** `python oficina/propel_replays.py` (Chrome `--headless=new` con el perfil
+  `.claude/shopify-perfil`; la sesión del admin del 15-nov seguía viva; datos en `.claude/propel/`, fuera de git).
 - **QIUHAN (16-nov): 12 $ DDP por paquete en los siguientes pedidos** (los 7 $ tampoco incluían el derecho de 3 €; el
   pedido en curso sigue a 7 $). A 39,90 €, **1 collar deja ~12 € antes de anuncios** (antes ~18 €); 2 collares ~20 €;
   3 collares ~28 € (con el cambio a euros que aplica Alibaba, ~0,916 € por $). **Aceptado por Edu; QIUHAN confirmó por escrito:** varios collares en un paquete = 12 $ + 1 $ por pieza

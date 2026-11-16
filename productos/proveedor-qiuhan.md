@@ -227,3 +227,9 @@ logo, factura ni precio, y si tiene caja de regalo; (9) foto de cada collar ante
   a un 7 o una J: es la letra que se eligió el 7-nov.
 - **#LUN1008 pagado** (15-nov, 79,80 €: Laura · junio, Marta · enero, Loren · julio, los 3 dorados): un solo paquete,
   urgente, 3-5 días.
+- **#LUN1008 en Alibaba (pedido 36277736501040795, 16-nov):** lista bien (3 × 5,22 $ + 3 cajitas 3 $ + envío 14 $ =
+  32,66 $; nombres, piedras y dirección de Marbella correctos). En el pedido de Alibaba: 29,93 € + 6,29 € de IVA =
+  **36,22 €** (Alibaba pasa a ~0,916 € por $, más caro que el cambio de #LUN1006). **La dirección de envío del pedido de
+  Alibaba venía mal** (la de otra persona, en León): corregirla antes de pagar. Fecha de envío por defecto: 30 días.
+- **Cuentas corregidas con ese cambio (~1,11 € por $ con IVA):** 1 collar ≈ 20,2 € → margen a 39,90 € ~12 € · 2 collares
+  ≈ 28,2 € → ~20 € · 3 collares ≈ 36,2 € → ~28 €.

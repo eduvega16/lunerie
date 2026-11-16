@@ -583,8 +583,8 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
   8,61 € (mediana 5,25 €). Shopify (utm meta): 99 visitas → 30 con carrito → 3 al pago. Propuesto a Edu: subir el tope a
   450 € con 15 €/día y no tocar los anuncios (pendiente de su OK).
 - **QIUHAN (16-nov): 12 $ DDP por paquete en los siguientes pedidos** (los 7 $ tampoco incluían el derecho de 3 €; el
-  pedido en curso sigue a 7 $). A 39,90 €, **1 collar deja ~13 € antes de anuncios** (antes ~18 €); 2 collares ~22 €;
-  3 collares ~30 €. **Aceptado por Edu; QIUHAN confirmó por escrito:** varios collares en un paquete = 12 $ + 1 $ por pieza
+  pedido en curso sigue a 7 $). A 39,90 €, **1 collar deja ~12 € antes de anuncios** (antes ~18 €); 2 collares ~20 €;
+  3 collares ~28 € (con el cambio a euros que aplica Alibaba, ~0,916 € por $). **Aceptado por Edu; QIUHAN confirmó por escrito:** varios collares en un paquete = 12 $ + 1 $ por pieza
   extra (los 5 € van por categoría de producto, no por pieza) y el IVA no se paga dos veces (el IOSS de Alibaba va en la
   aduana). Foto de «Isa» (#LUN1004) revisada: bien. Detalle en
   `productos/proveedor-qiuhan.md`.

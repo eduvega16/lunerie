@@ -209,3 +209,20 @@ logo, factura ni precio, y si tiene caja de regalo; (9) foto de cada collar ante
 - Lo nuevo de verdad son ~2 € (≈ 2,30 $) por artículo, no 5 $. Propuesta para los siguientes: ~9,30 $, o que manden el
   desglose si de verdad les cuesta 12 $.
 - Cuentas: con 12 $, el CPA breakeven del collar baja de ~20,8 € a ~16,5 €; con ~9,30 $, a ~18,8 €.
+
+## 16-nov: aclaran los 12 $ y llega la foto de «Isa» (#LUN1004)
+- **Los 7 $ tampoco incluían el derecho de 3 €** (según QIUHAN: solo envío básico + IVA con sus tarifas viejas; no
+  enviaban a la UE desde hacía tiempo). Se les pasaron el derecho de 3 € (desde julio) y la tasa de 2 € (desde
+  noviembre): 5 € ≈ 5,80 $ más → **12 $ DDP por paquete en los pedidos siguientes**. El pedido en curso lo mantienen a 7 $.
+  Con esto, la contrapropuesta del 14-nov (~9,30 $) se queda sin base: daba por hecho que los 3 € ya iban dentro.
+- **Preguntas que quedan (respuesta propuesta a Edu):** (1) si con varios collares en un paquete sigue siendo 12 $ + 1 $ por
+  pieza extra, o si los 3 € + 2 € se cobran por collar; (2) si su precio lleva IVA, porque Alibaba ya cobra el 21 % en el
+  pago y no hay que pagarlo dos veces.
+- **Coste con 12 $** (a ~1,04 € por $ con el IVA de Alibaba, como en #LUN1006): 1 collar 18,22 $ ≈ 19 € · 2 collares
+  25,44 $ ≈ 26,5 € · 3 collares 32,66 $ ≈ 34 €. **Margen antes de anuncios a 39,90 €** (sin IVA y con ~1 € de cobro):
+  1 collar ~13 € (con 7 $ eran ~18 €) · 2 por 59,85 € ~22 € · 3 por 79,80 € ~30 €.
+- **Foto de #LUN1004 «Isa», Dorado / Diciembre:** bien. Lágrima del azul de su «Dec Zircon», anillas a los lados, lágrima
+  ensartada en la cadena después del nombre (no colgando del nombre), cajita beige. La «I» de esta letra recuerda un poco
+  a un 7 o una J: es la letra que se eligió el 7-nov.
+- **#LUN1008 pagado** (15-nov, 79,80 €: Laura · junio, Marta · enero, Loren · julio, los 3 dorados): un solo paquete,
+  urgente, 3-5 días.

@@ -577,8 +577,9 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
   **PAGADO: #LUN1008 (15-nov 21:55, 79,80 €).** Visto el 16-nov; falta mandarlo a QIUHAN.
 - **QIUHAN (16-nov): 12 $ DDP por paquete en los siguientes pedidos** (los 7 $ tampoco incluían el derecho de 3 €; el
   pedido en curso sigue a 7 $). A 39,90 €, **1 collar deja ~13 € antes de anuncios** (antes ~18 €); 2 collares ~22 €;
-  3 collares ~30 €. Pendiente: confirmar que en un paquete de varios collares es 12 $ + 1 $ por pieza extra, y que el
-  IVA no se paga dos veces (Alibaba ya lo cobra). Foto de «Isa» (#LUN1004) revisada: bien. Detalle en
+  3 collares ~30 €. **Aceptado por Edu; QIUHAN confirmó por escrito:** varios collares en un paquete = 12 $ + 1 $ por pieza
+  extra (los 5 € van por categoría de producto, no por pieza) y el IVA no se paga dos veces (el IOSS de Alibaba va en la
+  aduana). Foto de «Isa» (#LUN1004) revisada: bien. Detalle en
   `productos/proveedor-qiuhan.md`.
 - **Correo de bienvenida (15-nov):** precio del collar cambiado a 39,90 € con 49,95 € tachado en
   `oficina/emails/bienvenida*.html`. Los 6 CNAME de Shopify Email responden y **el dominio ya sale verificado

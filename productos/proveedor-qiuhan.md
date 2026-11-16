@@ -215,9 +215,10 @@ logo, factura ni precio, y si tiene caja de regalo; (9) foto de cada collar ante
   enviaban a la UE desde hacía tiempo). Se les pasaron el derecho de 3 € (desde julio) y la tasa de 2 € (desde
   noviembre): 5 € ≈ 5,80 $ más → **12 $ DDP por paquete en los pedidos siguientes**. El pedido en curso lo mantienen a 7 $.
   Con esto, la contrapropuesta del 14-nov (~9,30 $) se queda sin base: daba por hecho que los 3 € ya iban dentro.
-- **Preguntas que quedan (respuesta propuesta a Edu):** (1) si con varios collares en un paquete sigue siendo 12 $ + 1 $ por
-  pieza extra, o si los 3 € + 2 € se cobran por collar; (2) si su precio lleva IVA, porque Alibaba ya cobra el 21 % en el
-  pago y no hay que pagarlo dos veces.
+- **Aceptado por Edu (16-nov) y contestado por escrito:** (1) **varios collares en un paquete = 12 $ + 1 $ por pieza
+  extra**: los 3 € + 2 € van por categoría de producto (código arancelario), no por pieza; (2) **el IVA no se paga dos
+  veces**: Alibaba lo cobra al pagar y genera un número IOSS que QIUHAN mete en aduana con Cainiao; los 12 $ son solo
+  flete + los 5 € de derecho y tasa, que Alibaba no cobra.
 - **Coste con 12 $** (a ~1,04 € por $ con el IVA de Alibaba, como en #LUN1006): 1 collar 18,22 $ ≈ 19 € · 2 collares
   25,44 $ ≈ 26,5 € · 3 collares 32,66 $ ≈ 34 €. **Margen antes de anuncios a 39,90 €** (sin IVA y con ~1 € de cobro):
   1 collar ~13 € (con 7 $ eran ~18 €) · 2 por 59,85 € ~22 € · 3 por 79,80 € ~30 €.

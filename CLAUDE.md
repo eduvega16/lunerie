@@ -574,7 +574,14 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
   (`POST https://lunerie.es/api/2025-07/graphql.json`, `cartCreate` con `attributes: [{key: "Nombre", …}]` y
   `buyerIdentity.countryCode: ES` → `checkoutUrl`): la promo se aplica sola y el pedido entra con el nombre de cada collar.
   La cesta caduca a los ~10 días sin tocarla. Si paga: a QIUHAN «urgente, 3-5 días» (Jun Alexandrite, Jan Garnet, Jul Ruby).
-  **PAGADO: #LUN1008 (15-nov 21:55, 79,80 €).** Visto el 16-nov; falta mandarlo a QIUHAN.
+  **PAGADO: #LUN1008 (15-nov 21:55, 79,80 €)**, mandado a QIUHAN por Edu el 16-nov. **Vino del anuncio 18**: primera
+  visita a las 21:10 con las UTM de `collar-carmen`, luego escribió por DM y pagó con el enlace (Meta la cuenta como compra).
+- **Revisión de Meta (16-nov, mañana):** 266,23 € de 300 € (se para sola hacia el 18-nov). Desde la reactivación (11-16 nov):
+  66,94 €, **2 pedidos (#LUN1007 y #LUN1008, 129,75 €), los dos del anuncio 18** → ~33,5 €/pedido; margen ~55 € frente a
+  67 € de anuncios (casi en tablas). El 18 se lleva 64,30 €; 21, 28, 29, 30 y 31 casi no reciben gasto (sin datos para
+  juzgar el 31). Comparado con tiendas parecidas (Meta): añadir al carrito, 8 % mejor; entrar al pago, cuartil peor; CPM
+  8,61 € (mediana 5,25 €). Shopify (utm meta): 99 visitas → 30 con carrito → 3 al pago. Propuesto a Edu: subir el tope a
+  450 € con 15 €/día y no tocar los anuncios (pendiente de su OK).
 - **QIUHAN (16-nov): 12 $ DDP por paquete en los siguientes pedidos** (los 7 $ tampoco incluían el derecho de 3 €; el
   pedido en curso sigue a 7 $). A 39,90 €, **1 collar deja ~13 € antes de anuncios** (antes ~18 €); 2 collares ~22 €;
   3 collares ~30 €. **Aceptado por Edu; QIUHAN confirmó por escrito:** varios collares en un paquete = 12 $ + 1 $ por pieza

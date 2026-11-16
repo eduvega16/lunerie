@@ -239,3 +239,38 @@ Stories/Reels, título *Collar Signé · 49,95 €*, sin declarar IA. Vídeos en
   > su mes, o la que más te guste. El dorado, con baño de oro de 18K. Y por Black Friday te regalamos la cajita, y la 2.ª
   > pieza va al 50 %. Hasta el 5 de diciembre.
 - **Al acabar el Black Friday (5-dic):** pausar los dos (hablan de la cajita gratis y de la promo).
+
+## Candidato 32 · «¿Todavía lo estás pensando?» (16-nov, SIN PRODUCIR)
+
+Idea de Edu: reel de Lucce Jewelry (https://www.instagram.com/p/DapjzBuA89M/), que en Meta sigue activo como «Still
+Thinking About It? It's 50% OFF». Notas en `oficina/referencias/competidores.md` y formato 30 de
+`biblioteca/formatos-anuncio.json`. **Edu: «memorízalo como posible anuncio, salvo que lo veas muy potente para la
+conversión».** Valoración del 16-nov: bueno, pero **no urgente**:
+- El atasco está en la cesta (30 cestas, 3 pagos), y eso se ataca en la web: el botón «Comprar ahora» lleva un día.
+- El 18 es el que vende, y el 30 (otro mensaje de cierre) casi no recibe gasto.
+- Un segundo anuncio de cierre en el mismo conjunto Advantage+ se reparte el mismo público pequeño.
+
+**Cuándo producirlo:**
+- Si se abre un **conjunto de retargeting aparte**, cuando `RT · Carrito o pago · 30 días` pase de ~200-300 personas.
+  Este sería su anuncio natural.
+- O si, con el «Comprar ahora», la cesta sigue sin pagos y Edu renueva la campaña.
+
+Siempre con el «sí» de Edu al coste.
+
+**Guion (~18 s, voz de Jenni en una sola toma, segunda persona):**
+> ¿Todavía lo estás pensando? *(mismo cuello, cortes de ~1 s: Carmen verde → Laura azul → Alba roja → Sara verde)*
+> Su nombre, escrito como una firma. Y la lágrima de su mes… o la que más te guste.
+> Con baño de oro de 18K y tres años de garantía.
+> Si llevas días mirándolo, es una señal.
+> Ahora, 39,90 €, y el segundo, a mitad de precio. Hasta el 5 de diciembre.
+> *(final: el collar bajando a la cajita beige con `cierre_animado.py --cajita`, «Cajita de regalo incluida»)*
+
+**Material:**
+- Las 4 tomas del gancho se hacen editando UNA foto con `CAMBIO_NOMBRE` de `marca/collar_ia.py` (~0,13 $ cada una).
+- **A**, unos 2,3 $: animarlas con Kling (con cortes de ~1 s no da tiempo a que deforme el nombre).
+- **B**, unos 0,5 $: quietas, con un zoom suave.
+- El resto, con clips ya aprobados (Carmen dorada, Sarah, la cajita).
+- Revisar cada nombre a tamaño real (la N de firma sale M; la C, V; la I, V).
+
+**No se copia:** «I ordered mine… arrived in days» (testimonio inventado y plazo), waterproof, tarnish-free y «50 %… not
+for long». **Fecha límite de uso:** el 5-dic (precio y promo).

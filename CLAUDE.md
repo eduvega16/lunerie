@@ -582,6 +582,9 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
   juzgar el 31). Comparado con tiendas parecidas (Meta): añadir al carrito, 8 % mejor; entrar al pago, cuartil peor; CPM
   8,61 € (mediana 5,25 €). Shopify (utm meta): 99 visitas → 30 con carrito → 3 al pago. Propuesto a Edu: subir el tope a
   450 € con 15 €/día y no tocar los anuncios (pendiente de su OK).
+- **Anuncio candidato 32 «¿Todavía lo estás pensando?»** (reel de Lucce que trajo Edu el 16-nov; formato 30 de la
+  biblioteca). Edu: «memorízalo como posible anuncio». **Sin producir**: guion, coste (0,5-2,3 $) y cuándo hacerlo, en
+  `anuncios/campana-black-friday.md`. Se valora en cada revisión de la campaña; sirve hasta el 5-dic.
 - **QIUHAN (16-nov): 12 $ DDP por paquete en los siguientes pedidos** (los 7 $ tampoco incluían el derecho de 3 €; el
   pedido en curso sigue a 7 $). A 39,90 €, **1 collar deja ~12 € antes de anuncios** (antes ~18 €); 2 collares ~20 €;
   3 collares ~28 € (con el cambio a euros que aplica Alibaba, ~0,916 € por $). **Aceptado por Edu; QIUHAN confirmó por escrito:** varios collares en un paquete = 12 $ + 1 $ por pieza

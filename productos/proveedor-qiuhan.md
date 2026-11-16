@@ -233,3 +233,6 @@ logo, factura ni precio, y si tiene caja de regalo; (9) foto de cada collar ante
   Alibaba venía mal** (la de otra persona, en León): corregirla antes de pagar. Fecha de envío por defecto: 30 días.
 - **Cuentas corregidas con ese cambio (~1,11 € por $ con IVA):** 1 collar ≈ 20,2 € → margen a 39,90 € ~12 € · 2 collares
   ≈ 28,2 € → ~20 € · 3 collares ≈ 36,2 € → ~28 €.
+- **Regla (16-nov, Edu): QIUHAN monta cada pedido de Alibaba copiando el anterior** (por eso #LUN1008 salió con la dirección
+  de León de #LUN1004) y contesta con mensajes de plantilla. **En cada pedido, antes de pagar: revisar la dirección del
+  pedido de Alibaba, y cuando manden la etiqueta de Cainiao, comprobar que el destinatario es el de ese pedido de Shopify.**

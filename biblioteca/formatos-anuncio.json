@@ -232,6 +232,13 @@
    "que_es": "Carrusel con el mismo fondo crema y una raya fina en el centro: a la izquierda un dulce con sus calorías («130 kcal», «272 kcal», «370 kcal») y a la derecha una joya con «0 kcal». Título fijo «TOMANDO DECISIONES MÁS SALUDABLES:». Texto: «Si vas a darte un gusto, que sea…».",
    "lunerie": "Con dulces de Navidad españoles: turrón, polvorones, roscón de Reyes, churros con chocolate → Collar Signé, Reloj Lune, aros Boucle… a «0 kcal». Fondo niebla, título en Jost espaciado, «LUNERIE» pequeño en lugar del logo. Última foto: la promo («Y la 3.ª pieza, gratis»). Las joyas, con las fotos en niebla de las fichas (reales de forma); el dulce, con IA (~0,13 $). Las kcal tienen que ser las de verdad de una ración. Es humor, sin hablar de cuerpos ni de dietas.",
    "encaja": "sí"
+  },
+  {
+   "n": 30,
+   "nombre": "«¿Todavía lo estás pensando?» (mismo cuello, nombre que cambia)",
+   "que_es": "Vídeo de ~19 s con voz y una frase corta por plano. Arranca con la pregunta sobre el mismo cuello y, en cada corte de ~1 s, cambian el nombre del collar y el color de la piedra. Luego vienen las ventajas, con el collar puesto en otra chica, y cierra con la oferta y su fin, sobre la joya en su caja.",
+   "lunerie": "Gancho para quien ya lo ha visto o lo dejó en la cesta: «¿Todavía lo estás pensando?». Voz en segunda persona (nunca «yo lo pedí»). Solo cosas verdaderas: su nombre, su piedra (la de su mes o la que más te guste), baño de oro de 18K (en el dorado), 3 años de garantía, 39,90 € (antes 49,95 €), la 2.ª al 50 %, hasta el 5 de diciembre y cajita de regalo incluida. Nada de waterproof ni de plazos. El cambio de nombre, con ediciones de UNA foto (CAMBIO_NOMBRE de collar_ia.py) y cortes de ~1 s.",
+   "encaja": "sí"
   }
  ],
  "ejemplos_vistos": [
@@ -278,6 +285,13 @@
    "captura": "9 nov 2026",
    "formato": 29,
    "como_es": "«TOMANDO DECISIONES MÁS SALUDABLES:» helado 130 kcal / aros 0 kcal · croissant 272 kcal / collar de esmeraldas 0 kcal · tarta de chocolate 370 kcal / solitario 0 kcal. Fondo crema. Texto: «Si vas a darte un gusto, que sea…». Capturas en oficina/referencias/instagram-2026-11-09/"
+  },
+  {
+   "marca": "Lucce Jewelry (@lucce.jewelry)",
+   "donde": "reel de Instagram del 11-jul-2026, que sigue activo como anuncio («Still Thinking About It? It's 50% OFF», biblioteca 1717911073131634)",
+   "captura": "16 nov 2026",
+   "formato": 30,
+   "como_es": "Cuello con jersey blanco y el nombre y la piedra cambiando en cada corte → chica rubia con el collar (en la mano, bajo el grifo) → «this is your sign» → «50% off right now» → collar en su caja (plano hecho con Veo). Fotogramas en oficina/referencias/lucce-2026-11-16/"
   }
  ]
 }

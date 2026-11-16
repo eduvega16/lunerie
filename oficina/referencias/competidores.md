@@ -42,3 +42,28 @@ Enlace que mandó Edu: un reel de 25 s del 2-nov. Fotogramas en `oficina/referen
 - «Limited remaining stock» si no es verdad.
 - Nombres de piedras: lo nuestro es circonita.
 - Sus colgantes de trébol, que recuerdan a otra marca.
+
+## Lucce Jewelry · @lucce.jewelry, página de Meta 962222773647587 (visto el 16-nov-2026)
+Es la marca de la que salió la estructura de los anuncios 29 y 31. El 16-nov Edu mandó otro reel suyo:
+https://www.instagram.com/p/DapjzBuA89M/ (publicado el 11-jul).
+- **Fotogramas:** `oficina/referencias/lucce-2026-11-16/planos.jpg`, uno por segundo.
+- **En la biblioteca:** el mismo vídeo sigue activo como anuncio, «Still Thinking About It? It's 50% OFF» (id 1717911073131634), en una tanda que relanzaron el 12-nov.
+- **Anuncios activos:** ~472 de la marca. Casi todos se titulan «Your Name. Your Birthstone. Yours Forever».
+
+**El vídeo:** 19 s y 1 frase por plano, con subtítulo blanco pequeño en el centro. Lleva voz de chica, música suave y un corte cada ~1 s.
+- **0-4,5 s · gancho «Still thinking about it?»:** el mismo cuello y el mismo jersey blanco, pero en cada corte cambian el nombre y el color de la lágrima (verde, rosa, morada, amarilla). Así se ve que hay uno para cada una sin decirlo.
+- **5-13 s:** otra chica, rubia, con el collar puesto (mano en el pecho, el collar en la palma, bajo el grifo) mientras la voz dice lo que tiene.
+- **13-17 s · cierre:** la rubia a cara completa, abrochándoselo. La voz: «If it's been on your mind, this is your sign. It's 50% off right now, but not for long».
+- **17-19 s · último plano:** el collar en su caja blanca con el logo y «before the sale ends!». **Este plano lleva la marca de agua «Veo»**: lo hicieron con IA (Google Veo).
+- **Voz completa:** «Still thinking about it? I ordered mine from Lucce Jewelry, and it arrived in days. Your name, your birthstone, there's literally nothing else like it. It's completely waterproof, tarnish-free, and backed by a three-year warranty. If it's been on your mind, this is your sign. It's 50% off right now, but not for long. Get yours now before the sale ends.»
+
+**Qué se coge para Lunerie:**
+- El gancho «¿Todavía lo estás pensando?». Le habla a quien ya lo ha visto o lo ha metido en la cesta, que es justo nuestro atasco (muchas cestas y pocos pagos).
+- **El mismo cuello con nombres y piedras que cambian en cada corte.** Con cortes de ~1 s, Kling no tiene tiempo de deformar el nombre (lo hace a los 2,5-3 s).
+- La caja de regalo como último plano, con la fecha de fin de la oferta.
+
+**Qué no se coge:**
+- «I ordered mine… it arrived in days»: es un testimonio en primera persona inventado y da un plazo.
+- «Waterproof» y «tarnish-free»: QIUHAN no lo confirma.
+- «50% off… not for long»: lo nuestro es −20 % y la 2.ª al 50 %, con fecha real (5-dic).
+- Su caja con logo.

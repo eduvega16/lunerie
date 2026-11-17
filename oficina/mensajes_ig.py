@@ -16,6 +16,7 @@ Uso:
     python oficina/mensajes_ig.py hilo "<nombre>"          → la conversación entera
     python oficina/mensajes_ig.py responder "<nombre>" "<texto>"              → ENSAYO: enseña lo que mandaría
     python oficina/mensajes_ig.py responder "<nombre>" "<texto>" --confirmar  → lo manda (solo con el OK de Edu)
+    python oficina/mensajes_ig.py vigilar                  → avisa (una línea) de cada mensaje nuevo de una clienta
     python oficina/mensajes_ig.py cerrar                   → cierra el Chrome sin ventana
 En el texto, «\\n» o un salto de línea = nueva línea en el mismo mensaje. Los datos de las clientas no van a git.
 """
@@ -142,6 +143,22 @@ def main():
             print(lista(pg))
         elif cmd == "hilo":
             print(abrir(pg, sys.argv[2]))
+        elif cmd == "vigilar":
+            # una línea por mensaje NUEVO de una clienta (no los nuestros); para el Monitor de Claude
+            def fotos():
+                ls = [x.strip() for x in lista(pg).splitlines() if x.strip()]
+                return {(ls[k], ls[k + 1]) for k in range(0, len(ls) - 1, 4)}
+            visto = fotos()
+            while True:
+                time.sleep(30)
+                try:
+                    ahora = fotos()
+                except Exception:  # noqa: BLE001
+                    continue
+                for nombre, ultimo in ahora - visto:
+                    if not ultimo.startswith(("You", "Tú")):
+                        print(f"NUEVO · {nombre}: {ultimo}", flush=True)
+                visto = ahora
         elif cmd == "responder":
             responder(pg, sys.argv[2], sys.argv[3].replace("\\n", "\n"), "--confirmar" in sys.argv)
         else:

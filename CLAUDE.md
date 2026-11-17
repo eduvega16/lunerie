@@ -580,7 +580,9 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
   Mayo «Virginia» (May Emerald) + Pendientes Larme Verde + Anillo Étoile Mayo / talla 17. Collares a QIUHAN «urgente, 3-5
   días» (revisar la dirección del pedido de Alibaba); el resto, Edu a mano en AliExpress.
 - **Dayana (DM, 17-nov):** quiere el Signé Dorado / Febrero «Dayana», Madrid. Enlace de pago (cesta Storefront, 39,90 €)
-  mandado por Instagram a las ~23:15; si paga, entra como pedido normal.
+  mandado por Instagram a las ~23:15. **No compra hasta el 30-nov** (lo quiere para ella, para Navidad; seguramente
+  espera a cobrar). **El 30-nov: escribirle con un enlace nuevo** (el de ahora caduca antes); se paga con tarjeta,
+  PayPal o Apple Pay (preguntó por transferencia).
 - **Mensajes de Instagram (17-nov): Claude los lee y contesta con `python oficina/mensajes_ig.py`** (`lista`, `hilo`,
   `responder … --confirmar` solo con el OK de Edu). Va por la bandeja de Meta Business Suite con Chrome sin ventana
   (perfil `.claude/meta-perfil`, puerto 9223; Edu entró con la cuenta de Lunerie, no con «Eduardo Vega», que solo ve

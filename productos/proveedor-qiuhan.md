@@ -224,7 +224,8 @@ logo, factura ni precio, y si tiene caja de regalo; (9) foto de cada collar ante
   1 collar ~13 € (con 7 $ eran ~18 €) · 2 por 59,85 € ~22 € · 3 por 79,80 € ~30 €.
 - **Foto de #LUN1004 «Isa», Dorado / Diciembre:** bien. Lágrima del azul de su «Dec Zircon», anillas a los lados, lágrima
   ensartada en la cadena después del nombre (no colgando del nombre), cajita beige. La «I» de esta letra recuerda un poco
-  a un 7 o una J: es la letra que se eligió el 7-nov.
+  a un 7 o una J: es la letra que se eligió el 7-nov. **Etiqueta de Cainiao (17-nov) comprobada:** destinatario y
+  dirección iguales a Shopify, 1 collar. QIUHAN le puso de referencia «DXLLV1106», no el número del pedido.
 - **Foto de #LUN1006 (17-nov), los 3 en su cajita beige:** metal y piedra de cada uno coinciden con Shopify. Carla
   (dorado, marzo, azul) y Marta (plateado, junio, lila) se leen bien. Francisca (dorado, marzo) **no se puede comprobar
   letra a letra**: la foto llegó pequeña (360 px). Hay que ver el nombre de cerca antes de dar el OK al envío. El azul de

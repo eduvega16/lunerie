@@ -1,6 +1,6 @@
 {
   "id": "2026-W46-22-carrusel-cada-una",
-  "estado": "aprobado",
+  "estado": "publicado",
   "plataforma": "instagram",
   "formato": "carrusel",
   "pieza": "collar-signe",
@@ -46,7 +46,11 @@
     ],
     "urls": [],
     "alt_text": "Cuatro Collares Signé dorados en círculo sobre terciopelo verde, con los nombres Marta, Elena, Sara y Laura y lágrimas azul, roja, verde y rosa; en el centro, un papel que dice para mamá, para tu hermana, para tu mejor amiga y para ti.",
-    "ia": true
+    "ia": true,
+    "resultado": {
+      "media_id": "18122036797966189",
+      "fecha": "2026-11-16T19:32:23+0100"
+    }
   },
   "origen": "Plan de 2 publicaciones al día del 10 al 20-nov (OK de Edu, 9-nov).",
   "riesgos": "Nombres revisados a tamaño real; sin nombres de gemas ni material sin confirmar. 10-nov (Edu): versión con el collar abierto (cierre y alargador) y la lágrima más pequeña."

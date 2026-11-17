@@ -575,6 +575,16 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
   - Para reactivarlas hace falta otra dirección en la tienda (apartado de correos u oficina virtual).
   - No se ha comprobado si los correos de pedido (confirmación, envío) la enseñan: mirar el pie de uno real.
 - **La chica de Instagram (16-nov)** aún no ha comprado: seguimiento suave por DM (texto en la sesión).
+- **Campaña al cierre del 17-nov (noche):** desde la reactivación (11-nov), ~95 € (92,76 € el anuncio 18; los demás < 3 €),
+  **4 pedidos (#LUN1007-1010, 244,48 €), todos del 18** → ~24 €/pedido. Margen estimado de esos 4 (sin IVA, con QIUHAN y
+  AliExpress) ~73 € → ~20 € por debajo, mejorando. Benchmark 11-17 nov: añadir a la cesta mejor que el 97 % de tiendas
+  parecidas, pero cesta → pago 9 % (mediana 34 %); CPM 8,37 € (mediana 4,85 €). Tope: 294,72 € de 450 € → a 15 €/día
+  llega a ~28-nov. **Viernes 20-nov:** con 2 ventas desde el 17-nov, sigue sin subir; mirar si la cesta convierte mejor
+  (cajita + ventana al cerrar) y, si sí, valorar subir un poco para la semana del Black Friday.
+- **App de Meta «Lunerie Claude Publisher» (17-nov):** para publicarla, Meta pedía 1 llamada de prueba con
+  `instagram_manage_comments` (hecha, 15 lecturas de comentarios; tarda horas en contar). Si Edu quiere la API de mensajes:
+  cuando salga «Completada», probar «Publicar» y después `conversations?platform=instagram`. Mientras, mensajes por
+  `oficina/mensajes_ig.py`.
 - **Cajita como línea de regalo en la cesta (17-nov, EN PRODUCCIÓN, Edu: «a ver si así convertimos más»):** con un
   Collar Signé, entre las piezas sale «Cajita de terciopelo · BLACK FRIDAY · REGALO · Gratis» (foto de la cajita, «2 ×
   Gratis» con dos collares). Solo visual, no es un producto ni va al pedido. `tema/codigo/snippets/lunerie-cesta-cajita.liquid`,

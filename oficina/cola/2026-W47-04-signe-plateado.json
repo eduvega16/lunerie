@@ -1,6 +1,6 @@
 {
   "id": "2026-W47-04-signe-plateado",
-  "estado": "aprobado",
+  "estado": "publicado",
   "plataforma": "instagram",
   "formato": "foto",
   "pieza": "collar-signe",
@@ -40,7 +40,11 @@
     ],
     "urls": [],
     "alt_text": "Collar plateado con el nombre Elena en letra de firma y una lágrima azul claro, sobre fondo blanco. Texto: También en plateado. Collar con su nombre y su piedra.",
-    "ia": true
+    "ia": true,
+    "resultado": {
+      "media_id": "18058796297657009",
+      "fecha": "2026-11-17T19:30:29+0100"
+    }
   },
   "origen": "Plan de 2 publicaciones al día del 10 al 20-nov (OK de Edu, 9-nov).",
   "riesgos": "Nombres revisados a tamaño real; sin nombres de gemas ni material sin confirmar."

@@ -1,6 +1,6 @@
 {
   "id": "2026-W46-21-reel-cada-una",
-  "estado": "aprobado",
+  "estado": "publicado",
   "plataforma": "instagram",
   "formato": "reel",
   "pieza": "collar-signe",
@@ -40,7 +40,11 @@
       "https://cdn.shopify.com/videos/c/vp/c5a039b3bf5343d0a35d3f14d29407f7/c5a039b3bf5343d0a35d3f14d29407f7.HD-1080p-7.2Mbps-100669498.mp4"
     ],
     "alt_text": "",
-    "ia": true
+    "ia": true,
+    "resultado": {
+      "media_id": "18111786122254234",
+      "fecha": "2026-11-16T12:31:12+0100"
+    }
   },
   "origen": "Plan de 2 publicaciones al día del 10 al 20-nov (OK de Edu, 9-nov).",
   "riesgos": "Nombres revisados a tamaño real; sin nombres de gemas ni material sin confirmar."

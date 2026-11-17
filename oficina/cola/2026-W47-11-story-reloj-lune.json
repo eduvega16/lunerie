@@ -1,6 +1,6 @@
 {
   "id": "2026-W47-11-story-reloj-lune",
-  "estado": "aprobado",
+  "estado": "publicado",
   "plataforma": "instagram",
   "formato": "story",
   "pieza": "reloj-lune",
@@ -20,7 +20,11 @@
     ],
     "urls": [],
     "alt_text": "",
-    "ia": true
+    "ia": true,
+    "resultado": {
+      "media_id": "18100583861433990,18359804977169508",
+      "fecha": "2026-11-16T11:01:14+0100"
+    }
   },
   "origen": {
     "biblioteca": "terciopelo-navidad"

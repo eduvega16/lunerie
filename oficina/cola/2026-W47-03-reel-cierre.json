@@ -1,6 +1,6 @@
 {
   "id": "2026-W47-03-reel-cierre",
-  "estado": "aprobado",
+  "estado": "publicado",
   "plataforma": "instagram",
   "formato": "reel",
   "pieza": "collar-signe",
@@ -40,7 +40,11 @@
       "https://cdn.shopify.com/videos/c/vp/915c56972b6c4fba8e90edc010900767/915c56972b6c4fba8e90edc010900767.HD-1080p-2.5Mbps-101672852.mp4"
     ],
     "alt_text": "",
-    "ia": true
+    "ia": true,
+    "resultado": {
+      "media_id": "18136959283789134",
+      "fecha": "2026-11-17T12:31:19+0100"
+    }
   },
   "origen": "Plan de 2 publicaciones al día del 10 al 20-nov (OK de Edu, 9-nov).",
   "riesgos": "Nombres revisados a tamaño real; sin nombres de gemas ni material sin confirmar."

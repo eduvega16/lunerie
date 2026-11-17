@@ -541,6 +541,30 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
 ## 8. Calendario y pendientes (a 15-nov-2026)
 
 ### Para empezar la próxima sesión (después del 2-nov) — abrir conversación nueva por sesión.
+**17-nov (mañana), Edu: «dale caña a todo»:**
+- **Reels con el precio nuevo:**
+  - W47-03 (cierre, sale hoy a las 12:30) y W48-04 (ideas de regalo, 24-nov) ya apuntan a vídeos con 39,90 €.
+  - Los subidos antes enseñaban 49,95 €.
+  - En `creatividades-urls.json` quedan con el sufijo `-3990`.
+- **Meta:** tope de la campaña de Black Friday subido a **450 €** (llevaba 279,96 €), a 15 €/día; comprobado. Quedan
+  ~170 €, unos 11 días: llega al Black Friday.
+- **Arreglos de la cesta, en el tema de prueba «Prueba carritos 17-nov» (212311638355, copia del publicado de hoy).**
+  **Falta el OK de Edu para producción.** Probado en un móvil simulado, sin errores de JS:
+  - Fuera el chat de Inbox (app embed desactivado en `settings_data.json`).
+  - Nombre de hasta **14 letras** (`max_letras`).
+  - «¿Dudas con el nombre o la piedra? Escríbenos por Instagram» bajo los botones (enlace `ig.me/m/luneriejewelry`).
+  - La ventana del email ya no sale si la cesta está abierta o en `/cart`. Texto nuevo: «¿Lo dejas para luego? … te lo
+    recordamos antes de que acabe el Black Friday», botón «Recordádmelo», sin «próximos descuentos».
+  - Bajo «Pagar», «¿Lo dejas para luego? Te lo recordamos» (abre la ventana) · «¿Dudas? Escríbenos».
+  - **Compromiso:** mandar a las suscritas de la cesta (segmento «Cesta Black Friday») un recordatorio antes del 5-dic.
+  - **Para subirlo:** bajar esos 4 ficheros del tema de prueba (`theme(id){files}`) y pasarlos a `tema/codigo` y
+    `build.py` (el texto de la cesta sale de `CONFIANZA`). Después, `build.py` + subir al publicado. `max_letras` 14 también en
+    la descripción del producto (`DESC` de `productos/collar_signe.py` dice «hasta 10 letras»).
+- **Messaging:** creada **«Recupera el carrito abandonado» INACTIVA**. Es la plantilla de Shopify en español: asunto «Guardamos tu
+  carrito para ti», de LUNERIE - hola@lunerie.es, solo a suscritas. Activarla = un clic con el OK de Edu.
+  «Recupera el pedido abandonado» sigue activa; «Complete your order» es solo el nombre del mensaje, el correo va en español.
+- **La chica de Instagram (16-nov)** aún no ha comprado: seguimiento suave por DM (texto en la sesión).
+
 **15-nov — manda sobre todo lo de abajo.** Los cambios de la tienda se hicieron desde `C:\Users\edu\lunerie` y allí
 **no se subieron a git**; estas notas son de `D:\LUNERIE`, con lo que se ve en Shopify.
 - **COLLAR SIGNÉ A 39,90 € con tachado 49,95 € («−20 %») hasta el final del Black Friday (5-dic)** (Edu: «se queda a ese

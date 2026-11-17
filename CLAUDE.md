@@ -575,6 +575,12 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
   - Para reactivarlas hace falta otra dirección en la tienda (apartado de correos u oficina virtual).
   - No se ha comprobado si los correos de pedido (confirmación, envío) la enseñan: mirar el pie de uno real.
 - **La chica de Instagram (16-nov)** aún no ha comprado: seguimiento suave por DM (texto en la sesión).
+- **2 VENTAS el 17-nov, las dos del anuncio 18 (`collar-carmen`):** **#LUN1009** (18:49, 49,88 €): Collar Signé Dorado /
+  Noviembre «Daniela» (QIUHAN: Nov Topaz) + Aros Boucle Mediano 18 mm · **#LUN1010** (21:00, 64,85 €): Collar Signé Dorado /
+  Mayo «Virginia» (May Emerald) + Pendientes Larme Verde + Anillo Étoile Mayo / talla 17. Collares a QIUHAN «urgente, 3-5
+  días» (revisar la dirección del pedido de Alibaba); el resto, Edu a mano en AliExpress.
+- **Dayana (DM, 17-nov):** quiere el Signé Dorado / Febrero «Dayana», Madrid. Enlace de pago (cesta Storefront, 39,90 €)
+  mandado por Instagram a las ~23:15; si paga, entra como pedido normal.
 - **Mensajes de Instagram (17-nov): Claude los lee y contesta con `python oficina/mensajes_ig.py`** (`lista`, `hilo`,
   `responder … --confirmar` solo con el OK de Edu). Va por la bandeja de Meta Business Suite con Chrome sin ventana
   (perfil `.claude/meta-perfil`, puerto 9223; Edu entró con la cuenta de Lunerie, no con «Eduardo Vega», que solo ve

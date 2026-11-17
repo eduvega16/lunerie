@@ -33,20 +33,20 @@
       </h2>
       <p class="lu-ec__sub lu-ec__collar">Por Black Friday, tu collar llega en su cajita de terciopelo, lista para regalar.</p>
       <div class="lu-ec__email" data-lu-ec-email>
-        <p class="lu-ec__pide">Déjanos tu email y te avisamos de los próximos descuentos.</p>
+        <p class="lu-ec__pide">¿Lo dejas para luego? Déjanos tu email y te lo recordamos antes de que acabe el Black Friday.</p>
         {%- form 'customer', id: 'lu-ec-form', class: 'lu-ec__form' -%}
           <input type="hidden" name="contact[tags]" value="newsletter,cesta-black-friday">
           <label class="lu-ec__oculto" for="lu-ec-correo">Tu email</label>
           <input class="lu-ec__campo" id="lu-ec-correo" type="email" name="contact[email]" required
             autocomplete="email" autocapitalize="off" spellcheck="false" placeholder="Tu email">
-          <button type="submit" class="lu-ec__boton">Avisadme</button>
+          <button type="submit" class="lu-ec__boton">Recordádmelo</button>
         {%- endform -%}
         <p class="lu-ec__quizas" data-lu-ec-quizas hidden>
           ¿Querías decir <button type="button" data-lu-ec-arreglar></button>?
         </p>
         <p class="lu-ec__letra">Puedes darte de baja cuando quieras. <a href="{{ shop.privacy_policy.url | default: '/policies/privacy-policy' }}">Privacidad</a></p>
       </div>
-      <p class="lu-ec__hecho" data-lu-ec-hecho hidden>Hecho. Te avisaremos de los próximos descuentos.</p>
+      <p class="lu-ec__hecho" data-lu-ec-hecho hidden>Hecho. Te escribimos antes del 5 de diciembre.</p>
       <button type="button" class="lu-ec__seguir" data-lu-ec-cerrar>Seguir con mi pedido</button>
     </div>
   </dialog>
@@ -109,8 +109,11 @@
         try { sessionStorage.setItem(LISTA, '1'); } catch (e) {}
         if (!img.getAttribute('src')) img.src = img.dataset.src;   // la foto, cargada antes de abrir
       }
+      // 17-nov (grabaciones de Propel): nunca encima de la cesta abierta, que tapaba «Pagar» al volver a la pestaña
+      const cestaAbierta = () => location.pathname.startsWith('/cart')
+        || !!document.querySelector('#cart-drawer dialog[open], .theme-drawer__dialog[open]');
       function seVa() {
-        if (!lista || saliendo || dlg.open || yaNo()) return;
+        if (!lista || saliendo || dlg.open || yaNo() || cestaAbierta()) return;
         cuandoNoHayBanner(abrir);
       }
 
@@ -167,6 +170,21 @@
       function cerrar() {
         if (dlg.open) dlg.close();
       }
+      document.addEventListener('click', (e) => {
+        const b = e.target.closest && e.target.closest('[data-lu-ec-abrir]');
+        if (!b) return;
+        e.preventDefault();
+        const v = leer();
+        if (v && v.suscrita) { b.textContent = 'Ya te lo recordaremos'; return; }
+        if (dlg.open) return;
+        preparar().then((ok) => {
+          if (!ok) return;
+          guardar({ visto: Date.now() });
+          document.documentElement.classList.add('lu-ec-abierto');
+          dlg.showModal();
+          dlg.focus({ preventScroll: true });
+        });
+      });
       dlg.addEventListener('close', () => document.documentElement.classList.remove('lu-ec-abierto'));
       dlg.querySelectorAll('[data-lu-ec-cerrar]').forEach((b) => b.addEventListener('click', cerrar));
       dlg.addEventListener('click', (e) => { if (e.target === dlg) cerrar(); });   // clic fuera de la tarjeta

@@ -913,12 +913,17 @@ CONFIANZA = (
     "  {%- if lu_nombre -%}<p>" + CAJITA_COLLAR + "</p><p>Se hace para ti y sale en " + HECHO_COLLAR + "</p>"
     "{%- endif -%}\n"
     "  <p>Garantía de 3 años · Pago seguro</p>\n"
+    # 17-nov (grabaciones de Propel): guardar para luego sin que la ventana tape «Pagar», y las dudas por Instagram
+    '  <p class="lu-confianza__mas"><button type="button" data-lu-ec-abrir>¿Lo dejas para luego? Te lo recordamos</button>'
+    ' · <a href="https://ig.me/m/luneriejewelry" target="_blank" rel="noopener">¿Dudas? Escríbenos</a></p>\n'
     "</div>\n"
     # 9-nov: fuera el campo «Descuento» de la cesta (la promo se aplica sola y el campo invitaba a irse a buscar un
     # cupón); quien tenga un código lo mete en la página de pago
     "<style>.cart-discount{display:none!important}"
     ".lu-confianza{text-align:center;font-size:.75rem;line-height:1.5;color:" + SOFT + ";margin-top:2px}"
-    ".lu-confianza p{margin:0}</style>\n"
+    ".lu-confianza p{margin:0}.lu-confianza__mas{margin-top:6px!important}"
+    ".lu-confianza__mas button,.lu-confianza__mas a{all:unset;cursor:pointer;color:inherit;text-decoration:underline;"
+    "text-underline-offset:2px}</style>\n"
     "{%- endif -%}\n")
 (OUT / "codigo" / "snippets" / "lunerie-cesta-confianza.liquid").write_text(CONFIANZA, encoding="utf8")
 

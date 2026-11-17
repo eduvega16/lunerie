@@ -23,7 +23,7 @@ FOTO_COLOR = {"Dorado": 0, "Plateado": 2}
 DESC = ("<p>Su nombre en letra de firma y, colgando en el centro, una lágrima del color de su mes, o del que más le guste. Un collar fino para llevar cada "
         "día.</p><ul>"
         "<li>Acero inoxidable. El dorado, con baño de oro de 18K.</li>"
-        "<li>El nombre que elijas, de hasta 10 letras, en letra de firma.</li>"
+        "<li>El nombre que elijas, de hasta 14 letras, en letra de firma.</li>"
         "<li>Circonita en forma de lágrima: el color de su mes o el que más te guste.</li>"
         "<li>Se hace para ti, con el nombre tal cual lo escribes.</li>"
         "<li>Llega en una cajita de terciopelo beige, lista para regalar.</li></ul>"

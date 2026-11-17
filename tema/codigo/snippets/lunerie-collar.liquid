@@ -16,7 +16,7 @@
   assign meses = 'Enero,Febrero,Marzo,Abril,Mayo,Junio,Julio,Agosto,Septiembre,Octubre,Noviembre,Diciembre' | split: ','
   assign colores = 'rojo oscuro,morado,azul agua,blanco,verde,violeta,rojo,verde oliva,azul oscuro,rosa,amarillo,azul' | split: ','
   assign tonos = '#7A1420,#8E6CB8,#7CC6E6,#E4E8EF,#1E7A3C,#5B3E99,#C2183B,#6B6A1E,#1F3A8A,#E7A3C6,#E8B21C,#2F86D8' | split: ','
-  assign max_letras = 10
+  assign max_letras = 14
   # letra de la vista previa del nombre (7-nov): 'hurricane' (assets/lunerie-firma.woff2) o 'herr' (Herr Von Muellerhoff,
   # assets/lunerie-firma-herr.woff2, más fina y con las minúsculas pequeñas: va más grande)
   # 7-nov: Edu probó 'herr' y dijo «esta es demasiado»
@@ -176,6 +176,8 @@
     border-radius: 0; background: #fff; color: #006039; font-family: var(--font-body--family); font-size: .875rem;
     font-weight: 500; letter-spacing: .12em; text-transform: uppercase; cursor: pointer; transition: background .2s, color .2s; }
   .lu-comprar:hover { background: #006039; color: #fff; }
+  .lu-dudas { margin: 12px 0 0; text-align: center; font-size: .8125rem; color: #5B635E; }
+  .lu-dudas a { color: inherit; text-underline-offset: 2px; }
   .lu-comprar:focus-visible { outline: 2px solid #006039; outline-offset: 2px; }
   .lu-comprar:disabled { opacity: .6; cursor: progress; }
   .lu-comprar + .lu-collar__error { margin: 8px 0 0; font-size: .8125rem; color: #B3261E; }
@@ -294,7 +296,10 @@
         fallo.className = 'lu-collar__error';
         fallo.setAttribute('role', 'alert');
         fallo.hidden = true;
-        (add.closest('.product-form-buttons') || add).after(comprar, fallo);
+        const dudas = document.createElement('p');
+        dudas.className = 'lu-dudas';
+        dudas.innerHTML = '¿Dudas con el nombre o la piedra? <a href="https://ig.me/m/luneriejewelry" target="_blank" rel="noopener">Escríbenos por Instagram</a>';
+        (add.closest('.product-form-buttons') || add).after(comprar, fallo, dudas);
         comprar.addEventListener('click', async () => {
           fallo.hidden = true;
           if (!elegido) {

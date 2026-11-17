@@ -575,6 +575,11 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
   - Para reactivarlas hace falta otra dirección en la tienda (apartado de correos u oficina virtual).
   - No se ha comprobado si los correos de pedido (confirmación, envío) la enseñan: mirar el pie de uno real.
 - **La chica de Instagram (16-nov)** aún no ha comprado: seguimiento suave por DM (texto en la sesión).
+- **Cajita como línea de regalo en la cesta (17-nov, EN PRODUCCIÓN, Edu: «a ver si así convertimos más»):** con un
+  Collar Signé, entre las piezas sale «Cajita de terciopelo · BLACK FRIDAY · REGALO · Gratis» (foto de la cajita, «2 ×
+  Gratis» con dos collares). Solo visual, no es un producto ni va al pedido. `tema/codigo/snippets/lunerie-cesta-cajita.liquid`,
+  pintado desde `cart-products.liquid`; fuera la línea de la cajita de debajo de «Pagar». Al acabar el Black Friday
+  (5-dic), quitar «Black Friday» de la etiqueta. Mirar el viernes si sube carrito → pago.
 - **2 VENTAS el 17-nov, las dos del anuncio 18 (`collar-carmen`):** **#LUN1009** (18:49, 49,88 €): Collar Signé Dorado /
   Noviembre «Daniela» (QIUHAN: Nov Topaz) + Aros Boucle Mediano 18 mm · **#LUN1010** (21:00, 64,85 €): Collar Signé Dorado /
   Mayo «Virginia» (May Emerald) + Pendientes Larme Verde + Anillo Étoile Mayo / talla 17. Collares a QIUHAN «urgente, 3-5

@@ -1,0 +1,42 @@
+{%- comment -%}
+  Lunerie 17-nov (Edu: «¿se puede poner en el carrito lo de la cajita de regalo?»): la cajita de terciopelo del Collar
+  Signé como una línea más de la cesta, con su foto y «Gratis». Solo se pinta: no es un producto ni va al pedido
+  (QIUHAN la pone en cada collar, ya pagada en su precio). Se pinta desde cart-products.liquid, dentro de la tabla.
+  Al acabar el Black Friday (5-dic), quitar «Black Friday» de la etiqueta.
+{%- endcomment -%}
+{%- assign lu_cajitas = 0 -%}
+{%- for it in cart.items -%}
+  {%- if it.product.handle == 'collar-signe' -%}{%- assign lu_cajitas = lu_cajitas | plus: it.quantity -%}{%- endif -%}
+{%- endfor -%}
+{%- if lu_cajitas > 0 -%}
+  <tr role="row" class="cart-items__table-row lu-cajita">
+    <td class="cart-items__media" role="cell">
+      <div class="cart-items__media-container" style="--ratio:1;">
+        {%- assign lu_img = images['collar-signe-cajita.jpg'] -%}
+        {%- if lu_img -%}
+          {{- lu_img | image_url: width: 250, height: 250, crop: 'center' | image_tag: class: 'cart-items__media-image border-style', alt: 'Cajita de terciopelo beige', loading: 'lazy' -}}
+        {%- endif -%}
+      </div>
+    </td>
+    <td class="cart-items__details cart-primary-typography" role="cell">
+      <div class="cart-items__product-info">
+        <div class="cart-items__title-row"><span class="cart-items__title">Cajita de terciopelo</span></div>
+        <p class="lu-cajita__eti"><span>Black Friday</span> · Regalo</p>
+        <p class="lu-cajita__sub">
+          {%- if lu_cajitas > 1 -%}Una para cada collar, lista para regalar{%- else -%}Su collar llega en ella, listo para regalar{%- endif -%}
+        </p>
+      </div>
+      <style>
+        .lu-cajita .cart-items__media-container{display:block;aspect-ratio:1;overflow:hidden}
+        .lu-cajita .cart-items__media-image{width:100%;height:100%;object-fit:cover}
+        .lu-cajita__eti{margin-top:6px!important;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:#3D4842}
+        .lu-cajita__eti span{color:#CA3801;font-weight:500}
+        .lu-cajita__sub{margin-top:4px!important;font-size:.8rem;color:#5B6660}
+        .lu-cajita .cart-items__price{color:#006039;font-weight:500}
+      </style>
+    </td>
+    <td class="cart-items__price cart-secondary-typography" role="cell">
+      {%- if lu_cajitas > 1 -%}{{ lu_cajitas }} × {% endif -%}Gratis
+    </td>
+  </tr>
+{%- endif -%}

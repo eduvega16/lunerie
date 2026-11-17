@@ -910,7 +910,8 @@ CONFIANZA = (
     "{%- assign lu_nombre = false -%}{%- for item in cart.items -%}{%- if item.product.handle == 'collar-signe' -%}"
     "{%- assign lu_nombre = true -%}{%- endif -%}{%- endfor -%}\n"
     '<div class="lu-confianza">\n'
-    "  {%- if lu_nombre -%}<p>" + CAJITA_COLLAR + "</p><p>Se hace para ti y sale en " + HECHO_COLLAR + "</p>"
+    # 17-nov: la cajita ya sale como una línea de regalo entre las piezas (lunerie-cesta-cajita.liquid): aquí no se repite
+    "  {%- if lu_nombre -%}<p>Se hace para ti y sale en " + HECHO_COLLAR + "</p>"
     "{%- endif -%}\n"
     "  <p>Garantía de 3 años · Pago seguro</p>\n"
     # 17-nov (grabaciones de Propel): guardar para luego sin que la ventana tape «Pagar», y las dudas por Instagram

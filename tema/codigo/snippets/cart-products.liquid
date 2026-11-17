@@ -425,6 +425,8 @@
                 </td>
               </tr>
             {% endfor %}
+            {%- comment -%} Lunerie 17-nov: la cajita de regalo del collar como una línea más {%- endcomment -%}
+            {%- render 'lunerie-cesta-cajita' -%}
           </tbody>
         </table>
         {% for item in cart.items %}

@@ -228,7 +228,9 @@ logo, factura ni precio, y si tiene caja de regalo; (9) foto de cada collar ante
 - **Foto de #LUN1006 (17-nov), los 3 en su cajita beige:** metal y piedra de cada uno coinciden con Shopify. Carla
   (dorado, marzo, azul) y Marta (plateado, junio, lila) se leen bien. Francisca (dorado, marzo) **no se puede comprobar
   letra a letra**: la foto llegó pequeña (360 px). Hay que ver el nombre de cerca antes de dar el OK al envío. El azul de
-  marzo sale más intenso que el de la lámina, pero es la piedra de marzo de QIUHAN.
+  marzo sale más intenso que el de la lámina, pero es la piedra de marzo de QIUHAN. **La etiqueta de Cainiao (17-nov)
+  está comprobada:** destinataria, calle, código postal y ciudad iguales a Shopify, referencia DXL-LUN1006, 3 collares.
+  En Shopify sigue sin marcar como enviado.
 - **#LUN1008 pagado** (15-nov, 79,80 €: Laura · junio, Marta · enero, Loren · julio, los 3 dorados): un solo paquete,
   urgente, 3-5 días.
 - **#LUN1008 en Alibaba (pedido 36277736501040795, 16-nov):** lista bien (3 × 5,22 $ + 3 cajitas 3 $ + envío 14 $ =

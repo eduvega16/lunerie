@@ -19,6 +19,7 @@ Uso:
     python oficina/mensajes_ig.py cerrar                   → cierra el Chrome sin ventana
 En el texto, «\\n» o un salto de línea = nueva línea en el mismo mensaje. Los datos de las clientas no van a git.
 """
+import re
 import subprocess
 import sys
 import time
@@ -119,7 +120,8 @@ def responder(pg, nombre, mensaje, confirmar):
     pg.wait_for_timeout(400)
     pg.keyboard.press("Enter")
     pg.wait_for_timeout(4000)
-    ultimo = partes[-1].strip() or partes[0].strip()
+    # los emojis salen como imagen y no están en el texto de la página: se comparan solo letras y signos
+    ultimo = re.sub(r"[^\w\s¿?¡!,.:;«»€%()'-]", "", partes[-1] or partes[0]).strip()
     ok = ultimo[:40] in abrir(pg, nombre)
     print("MANDADO y visto en el hilo." if ok else "OJO: no veo el mensaje en el hilo; revisar a mano.")
 

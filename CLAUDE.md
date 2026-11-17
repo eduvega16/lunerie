@@ -584,6 +584,12 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
   Noviembre «Daniela» (QIUHAN: Nov Topaz) + Aros Boucle Mediano 18 mm · **#LUN1010** (21:00, 64,85 €): Collar Signé Dorado /
   Mayo «Virginia» (May Emerald) + Pendientes Larme Verde + Anillo Étoile Mayo / talla 17. Collares a QIUHAN «urgente, 3-5
   días» (revisar la dirección del pedido de Alibaba); el resto, Edu a mano en AliExpress.
+  **Lección de AliExpress (17-nov): cada tipo de artículo paga ~6 € de aduanas** (3 € de tasa de la UE + gestión, con IVA):
+  unos aros de 2,81 € salieron por 10,82 €. Las piezas de un mismo pedido de Shopify, **juntas en un solo pedido de
+  «Enviado por AliExpress» (Choice)**: AliExpress descuenta parte de las aduanas (#LUN1010: 15,17 € en vez de 21,87 € con
+  un vendedor suelto, que además tardaba hasta el 15-dic). **La dirección de AliExpress sale por defecto la de Edu:
+  cambiarla siempre por la de la clienta.** Pendiente de decidir: precio de las joyas de AliExpress (con la promo casi no
+  dejan nada) o pedirle a QIUHAN su catálogo para que vayan con el collar.
 - **Dayana (DM, 17-nov):** quiere el Signé Dorado / Febrero «Dayana», Madrid. Enlace de pago (cesta Storefront, 39,90 €)
   mandado por Instagram a las ~23:15. **No compra hasta el 30-nov** (lo quiere para ella, para Navidad; seguramente
   espera a cobrar). **El 30-nov: escribirle con un enlace nuevo** (el de ahora caduca antes); se paga con tarjeta,

@@ -6,6 +6,7 @@
     Ahora solo se prepara al añadir algo a la cesta (cualquier fetch a /cart/add: ficha, packs…) y sale cuando la clienta
     hace gesto de irse sin pagar: en PC, el ratón sale de la ventana por arriba; en el móvil, vuelve a la pestaña después
     de irse a otra app o pestaña, o sube la página de golpe (hacia la barra del navegador). Quien pulsa «Pagar» no la ve.
+  · 17-nov (Edu): sale también al cerrar el cajón de la cesta sin pagar (1,2 s después), nunca con la cesta abierta.
     Lo preparado vale para toda la visita (sessionStorage «lu-ec-lista»). Una vez; si se cierra sin dejar el email, no
     vuelve en 7 días; si lo deja, nunca más (localStorage «lu-email-cesta»).
   · Si el dominio del email parece mal escrito («htmail.com», «gmial.com»…), propone el bueno antes de enviar.
@@ -152,6 +153,19 @@
         if (a && !dlg.contains(a)) marcarSalida();
       }, true);
       document.addEventListener('submit', (e) => { if (!dlg.contains(e.target)) marcarSalida(); }, true);
+
+      // 17-nov (Edu): también al CERRAR la cesta sin pagar. En las grabaciones añaden, miran la cesta ~20 s, la cierran y
+      // se vuelven a Instagram: es el momento de ofrecer el recordatorio, ya sin tapar nada. «close» no burbujea: se
+      // escucha en la fase de captura. Si está escribiendo otro nombre (foco en un campo), no se interrumpe.
+      document.addEventListener('close', (e) => {
+        const d = e.target;
+        if (!d || !d.closest || !d.closest('#cart-drawer')) return;
+        setTimeout(() => {
+          const foco = document.activeElement;
+          if (foco && foco.matches && foco.matches('input, textarea, select')) return;
+          seVa();
+        }, 1200);
+      }, true);
 
       // Ya añadió algo antes en esta visita (en otra página): queda preparada
       try { if (sessionStorage.getItem(LISTA)) armar(); } catch (e) {}

@@ -555,6 +555,15 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
   - Bajo los botones del collar, «¿Dudas con el nombre o la piedra? Escríbenos por Instagram» (`ig.me/m/luneriejewelry`).
   - La ventana del email ya no sale con la cesta abierta ni en `/cart`. Texto: «¿Lo dejas para luego? … te lo recordamos antes
     de que acabe el Black Friday», botón «Recordádmelo».
+  - **17-nov (tarde, Edu: «súbelo»): la ventana sale también al CERRAR la cesta sin pagar** (1,2 s después; no si está
+    escribiendo un nombre ni si pulsó Pagar o Comprar ahora; una vez, 7 días si la cierra). Motivo, en Propel: añaden en
+    15-40 s, cierran la cesta y se van a Instagram 10-30 s después; nadie dejaba el email desde el 14-nov. Probado en
+    lunerie.es en móvil y PC. **Mirar el viernes 20-nov** si entran emails (`customers(query: "tag:cesta-black-friday")`).
+- **Campaña (17-nov, revisión):** 11-17 nov, 87 €, 2 pedidos (los dos del anuncio 18, que se lleva 84 €) → ~43 €/pedido,
+  ~40 € abajo. Benchmark: carrito/visita mejor que el 92 % de tiendas parecidas, carrito → pago 9,7 % (mediana 33 %). Los
+  públicos de retargeting son de ~20 personas: **nada de campaña de retargeting aparte** (lo propuso Edu, estilo Hermo Benito).
+  **Decisión: no tocar hasta el viernes 20-nov**: con ≥ 1 venta, seguir sin subir; sin ventas, pausar y guardar lo que queda
+  del tope para el 24-30 nov. Si sigue, campaña pequeña de prueba (31 cajita + 30, 5 €/día × 4 días) con OK de Edu.
   - Bajo «Pagar» (`CONFIANZA` en `build.py`): «¿Lo dejas para luego? Te lo recordamos» (abre la ventana) · «¿Dudas?
     Escríbenos».
   - **Compromiso:** recordatorio a las suscritas de la cesta (segmento «Cesta Black Friday») antes del 5-dic. **Ojo:** con

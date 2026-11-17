@@ -575,6 +575,12 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
   - Para reactivarlas hace falta otra dirección en la tienda (apartado de correos u oficina virtual).
   - No se ha comprobado si los correos de pedido (confirmación, envío) la enseñan: mirar el pie de uno real.
 - **La chica de Instagram (16-nov)** aún no ha comprado: seguimiento suave por DM (texto en la sesión).
+- **Mensajes de Instagram (17-nov): Claude los lee y contesta con `python oficina/mensajes_ig.py`** (`lista`, `hilo`,
+  `responder … --confirmar` solo con el OK de Edu). Va por la bandeja de Meta Business Suite con Chrome sin ventana
+  (perfil `.claude/meta-perfil`, puerto 9223; Edu entró con la cuenta de Lunerie, no con «Eduardo Vega», que solo ve
+  southshoes). **La API no sirve:** la clave ya tiene `instagram_manage_messages`, pero con la app en modo desarrollo
+  devuelve 0 conversaciones, y publicarla pide requisitos sin especificar (descartado). La app quedó suscrita a la
+  página (`subscribed_apps`: messages) y con icono, privacidad y categoría rellenados (no molesta).
 
 **15-nov — manda sobre todo lo de abajo.** Los cambios de la tienda se hicieron desde `C:\Users\edu\lunerie` y allí
 **no se subieron a git**; estas notas son de `D:\LUNERIE`, con lo que se ve en Shopify.

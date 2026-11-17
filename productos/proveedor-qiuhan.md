@@ -241,7 +241,10 @@ logo, factura ni precio, y si tiene caja de regalo; (9) foto de cada collar ante
 - **Cuentas corregidas con ese cambio (~1,11 € por $ con IVA):** 1 collar ≈ 20,2 € → margen a 39,90 € ~12 € · 2 collares
   ≈ 28,2 € → ~20 € · 3 collares ≈ 36,2 € → ~28 €.
 - **Regla (16-nov, Edu): QIUHAN monta cada pedido de Alibaba copiando el anterior** (por eso #LUN1008 salió con la dirección
-  de León de #LUN1004) y contesta con mensajes de plantilla. **En cada pedido, antes de pagar: revisar la dirección del
+  de León de #LUN1004) y contesta con mensajes de plantilla.
+- **#LUN1007 (17-nov):** la clienta no contestó sobre el nombre → Edu lo manda a QIUHAN tal cual, «Maria José» (Dorado,
+  Apr Diamond), urgente, con el envío nuevo de 12 $. Al llegar la lista de Alibaba, revisar la dirección (será la de
+  Cantabria, no la de Marbella de #LUN1008). **En cada pedido, antes de pagar: revisar la dirección del
   pedido de Alibaba, y cuando manden la etiqueta de Cainiao, comprobar que el destinatario es el de ese pedido de Shopify.**
 - **#LUN1008 pagado por Edu el 16-nov: 37,31 € con PayPal** (36,22 € + ~3 % de comisión del pago, 1,09 €) → ~1,14 € por $
   de la lista. Margen del pedido (79,80 €) antes de anuncios ≈ 27 €. Mandado a QIUHAN: «envíalo a la dirección de tu lista».

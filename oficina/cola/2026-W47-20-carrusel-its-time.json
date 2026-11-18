@@ -1,0 +1,98 @@
+{
+  "id": "2026-W47-20-carrusel-its-time",
+  "estado": "publicado",
+  "plataforma": "instagram",
+  "formato": "carrusel",
+  "pieza": "collar-signe",
+  "fecha_sugerida": "2026-11-18T17:30:00+01:00",
+  "gancho": "It's timeeee… de encontrar su regalo.",
+  "copy": "It's timeeee… de encontrar su regalo.\n\nSu nombre en letra de firma y la lágrima de su mes, en su cajita de terciopelo. Collar Signé, 39,90 € (antes 49,95 €). Hasta el 5 de diciembre, la 2.ª pieza al 50 % y la 3.ª, gratis. Lo tienes en el enlace del perfil.",
+  "hashtags": [
+    "#collarconnombre",
+    "#regaloparaella",
+    "#lunerie"
+  ],
+  "guion": [
+    {
+      "segundos": "1",
+      "imagen": "Rojo vino: «It's tim» y la cadena de «e» que empieza",
+      "texto_en_pantalla": "It's timeeee",
+      "voz": ""
+    },
+    {
+      "segundos": "2",
+      "imagen": "La cadena de «e» hace una ola",
+      "texto_en_pantalla": "",
+      "voz": ""
+    },
+    {
+      "segundos": "3",
+      "imagen": "La cadena hace un bucle",
+      "texto_en_pantalla": "",
+      "voz": ""
+    },
+    {
+      "segundos": "4",
+      "imagen": "La cadena baja y sube",
+      "texto_en_pantalla": "",
+      "voz": ""
+    },
+    {
+      "segundos": "5",
+      "imagen": "Collar Signé «Carmen» en su cajita, en un óvalo con filo dorado; Reloj Lune y Anillo Nuit recortados; destellos dorados y nieve; LUNERIE pequeño",
+      "texto_en_pantalla": "de encontrar su regalo.",
+      "voz": ""
+    }
+  ],
+  "assets": {
+    "existentes": [
+      "marca/fotos-ia/terciopelo/cajita-carmen-1.jpg",
+      "marca/anuncios-hf/assets/img/reloj-lune-recorte.png",
+      "marca/anuncios-hf/assets/img/anillo-nuit-recorte.png"
+    ],
+    "generar": []
+  },
+  "musica": {
+    "origen": "ninguna",
+    "pista": "",
+    "licencia": "La API no pone música. Si se quiere el audio del trend, Edu lo añade desde la app."
+  },
+  "montaje": [
+    "python marca/its_time.py en"
+  ],
+  "publicacion": {
+    "archivos": [
+      "marca/fotos-ia/its-time/en/its-time-1.jpg",
+      "marca/fotos-ia/its-time/en/its-time-2.jpg",
+      "marca/fotos-ia/its-time/en/its-time-3.jpg",
+      "marca/fotos-ia/its-time/en/its-time-4.jpg",
+      "marca/fotos-ia/its-time/en/its-time-5.jpg"
+    ],
+    "urls": [],
+    "alt_text": "Carrusel sobre fondo rojo vino: «It's timeeee» y una cadena de letras e que ondula de foto en foto hasta «de encontrar su regalo», con el Collar Signé con el nombre Carmen en su cajita de terciopelo, el Reloj Lune y el Anillo Nuit.",
+    "ia": true,
+    "resultado": {
+      "media_id": "17957435829338444",
+      "fecha": "2026-11-18T18:09:40+0100",
+      "permalink": "https://www.instagram.com/p/Df5AjzmFhHA/"
+    },
+    "facebook": {
+      "post_id": "1376893392171782_122119418661502221",
+      "permalink": "https://www.facebook.com/122119418859502221/posts/122119418661502221",
+      "fecha": "2026-11-18T18:11:00+0100"
+    }
+  },
+  "origen": {
+    "biblioteca": "",
+    "referencia": "Trend «It's timeeee» de @embroidera.us (https://www.instagram.com/p/Dfn7yTPFlen/, 11-nov), que trajo Edu el 18-nov. Notas en oficina/referencias/edu-2026-11-18/."
+  },
+  "riesgos": [
+    "Sin el audio del trend (la API no lo pone).",
+    "La foto del collar en la cajita es de IA (serie de terciopelo, ya revisada)."
+  ],
+  "revision": {
+    "notas": "18-nov: Edu eligió la versión A («la A y súbelo ya a Instagram y Facebook»). Fuera del plan de 2 al día.",
+    "aprobado_por": "Edu",
+    "fecha": "2026-11-18"
+  }
+}

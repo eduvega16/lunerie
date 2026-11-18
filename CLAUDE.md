@@ -550,6 +550,16 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
   2.º collar te sale a 19,95 €» · «Añade otro collar y una de las tres piezas te sale gratis» · «Añade un tercer collar y
   te sale gratis» + enlace «Elegir otro collar» (`COLLAR_HANDLE` en `build.py`). Sin collar, los textos de antes. **Fuera
   «También te puede gustar» de la página de la cesta** (`"disabled": true` en `tema/cart.json`). Probado en lunerie.es.
+- **Carrusel «It's timeeee» PUBLICADO (18-nov ~18:10, Edu: «la A y súbelo ya a Instagram y Facebook»)**: trend de
+  @embroidera.us (5 fotos que son una sola imagen; cadena de «e» que ondula hasta «…de encontrar su regalo.» con el
+  Signé en la cajita, Lune y Nuit). Sin IA: `python marca/its_time.py en|es` → `marca/fotos-ia/its-time/`. Sin audio (la
+  API no lo pone). IG https://www.instagram.com/p/Df5AjzmFhHA/ · FB con **`python oficina/publicar_facebook.py <id>`**
+  (nuevo: varias fotos en la página con el token de página, que ya tiene `pages_manage_posts`). Pieza W47-20.
+- **Instagram en cifras (Business Suite, 30 días a 17-nov):** 767 seguidores (+32/−7); 27,3 mil visualizaciones, 92 % de
+  no seguidores = casi todo anuncios. Lo orgánico: 20-50 visualizaciones y 6-25 cuentas por publicación, historias 10-27.
+  La clave de la API no tiene `instagram_manage_insights`: las cifras se leen de Business Suite sin ventana (perfil
+  `.claude/meta-perfil`, como `mensajes_ig.py`). DM: Rocío Gómez (UGC, @rociioo.gc26) propuso colaborar el 28-oct y no se le
+  contestó: borrador en la sesión, pendiente del OK de Edu.
 - **Siguiente (plan hablado con Edu):** viernes 20-nov, revisar si sube carrito → pago · Edu recuerda a QIUHAN el
   catálogo de complementos con nombre (mismo paquete, +1 $) para ir sustituyendo las joyas de AliExpress · el 5-dic, el
   collar vuelve a 49,95 € (1 collar deja ~19 € en vez de ~11 €).

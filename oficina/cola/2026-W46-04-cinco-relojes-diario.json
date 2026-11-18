@@ -1,6 +1,6 @@
 {
   "id": "2026-W46-04-cinco-relojes-diario",
-  "estado": "aprobado",
+  "estado": "publicado",
   "plataforma": "instagram",
   "formato": "carrusel",
   "pieza": "catalogo",
@@ -70,7 +70,11 @@
     ],
     "urls": [],
     "alt_text": "Cinco relojes pequeños de mujer sobre la muñeca: Lune con piedras verdes, Sépia rectangular con correa marrón, Maille de malla dorada, Galet ovalado y Perle con perlas de imitación.",
-    "ia": true
+    "ia": true,
+    "resultado": {
+      "media_id": "18129838343478392",
+      "fecha": "2026-11-18T12:33:56+0100"
+    }
   },
   "origen": {
     "biblioteca": "principiantes-9",

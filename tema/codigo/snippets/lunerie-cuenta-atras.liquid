@@ -1,0 +1,28 @@
+{%- comment -%} Generado por tema/build.py: cuenta atrás del Black Friday en la barra de arriba {%- endcomment -%}
+<style>.lu-cuenta,[data-lu-reloj]{white-space:nowrap;font-variant-numeric:tabular-nums}@media screen and (max-width:749px){.lu-cuenta{display:block;margin-top:6px}.lu-cuenta__sep{display:none}}</style>
+<script>
+(() => {
+  if (window.luRelojBF) return;
+  window.luRelojBF = true;
+  const fin = Date.parse('2026-12-05T23:59:59+01:00');
+  const barra = document.querySelector('.announcement-bar__text');
+  if (barra && Date.now() < fin && !barra.querySelector('[data-lu-reloj]')) {
+    const caja = document.createElement('span');
+    caja.className = 'lu-cuenta';
+    caja.setAttribute('data-lu-reloj-caja', '');
+    caja.innerHTML = '<span class="lu-cuenta__sep"> · </span><span data-lu-reloj></span>';
+    barra.append(caja);
+  }
+  const dos = (n) => String(n).padStart(2, '0');
+  const pintar = () => {
+    let r = Math.floor((fin - Date.now()) / 1000);
+    if (r <= 0) { document.querySelectorAll('[data-lu-reloj-caja]').forEach((e) => e.remove()); return false; }
+    const d = Math.floor(r / 86400); r %= 86400;
+    const h = Math.floor(r / 3600); r %= 3600;
+    const s = 'Termina en ' + (d ? d + 'd ' : '') + dos(h) + 'h ' + dos(Math.floor(r / 60)) + 'm ' + dos(r % 60) + 's';
+    document.querySelectorAll('[data-lu-reloj]').forEach((e) => { if (e.textContent !== s) e.textContent = s; });
+    return true;
+  };
+  if (pintar()) { const reloj = setInterval(() => { if (!pintar()) clearInterval(reloj); }, 1000); }
+})();
+</script>

@@ -116,7 +116,7 @@
             "oferta": {
               "type": "custom-liquid",
               "settings": {
-                "custom_liquid": "<div class=\"lu-oferta-ficha\"><p class=\"lu-oferta-ficha__t\"><span>Black Friday</span>2.ª pieza al 50 % · 3.ª gratis</p><p class=\"lu-oferta-ficha__p\">Mezcla relojes y joyas: se descuenta solo en la cesta. Hasta el 5 de diciembre.</p></div><style>.lu-oferta-ficha{font-family:var(--font-body--family)}.lu-oferta-ficha p{margin:0}.lu-oferta-ficha__t{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 12px;font-size:.9375rem;color:#16201B}.lu-oferta-ficha__t span{font-size:.75rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#CA3801}.lu-oferta-ficha__p{margin-top:4px!important;font-size:.8125rem;line-height:1.5;color:#3D4842}</style>"
+                "custom_liquid": "<div class=\"lu-oferta-ficha\"><p class=\"lu-oferta-ficha__e\">Black Friday{%- assign lu_ahora = 'now' | date: '%s' | plus: 0 -%}{%- if lu_ahora < 1796511599 -%}<span data-lu-reloj-caja> · <span data-lu-reloj>Hasta el 5 de diciembre</span></span>{%- endif -%}</p><p class=\"lu-oferta-ficha__t\">2.ª pieza al 50 % · 3.ª gratis</p><p class=\"lu-oferta-ficha__p\">Mezcla relojes y joyas: se descuenta solo en la cesta. Hasta el 5 de diciembre.</p></div><style>.lu-oferta-ficha{font-family:var(--font-body--family)}.lu-oferta-ficha p{margin:0}.lu-oferta-ficha__t{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 12px;font-size:.9375rem;color:#16201B}.lu-oferta-ficha__t span{font-size:.75rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#CA3801}.lu-oferta-ficha__e{font-size:.75rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#CA3801}.lu-oferta-ficha__e+.lu-oferta-ficha__t{margin-top:4px!important}.lu-oferta-ficha__p{margin-top:4px!important;font-size:.8125rem;line-height:1.5;color:#3D4842}.lu-oferta-ficha__p strong{font-weight:500;color:#16201B}</style>"
               },
               "blocks": {}
             },
@@ -133,7 +133,7 @@
             "ventajas": {
               "type": "custom-liquid",
               "settings": {
-                "custom_liquid": "<ul class=\"lu-ventajas\"><li>Envío gratis a península, con seguimiento · 7-12 días laborables</li><li>Para Navidad, pídelo antes del 5 de diciembre</li><li>Garantía de 3 años · 14 días para devolverlo</li></ul><style>.lu-ventajas{display:grid;gap:6px;margin:0;padding:0!important;list-style:none;font-family:var(--font-body--family);font-size:.8125rem;line-height:1.5;color:#3D4842}</style>"
+                "custom_liquid": "<ul class=\"lu-ventajas\">{%- assign lu_ahora = 'now' | date: '%s' | plus: 0 -%}{%- if lu_ahora < 1796511599 -%}<li class=\"lu-ventajas__navidad\">Pídelo ahora y llega para Navidad</li>{%- endif -%}<li>Envío gratis a península, con seguimiento · 7-12 días laborables</li><li>Garantía de 3 años · 14 días para devolverlo</li></ul><style>.lu-ventajas{display:grid;gap:6px;margin:0;padding:0!important;list-style:none;font-family:var(--font-body--family);font-size:.8125rem;line-height:1.5;color:#3D4842}.lu-ventajas__navidad{color:#16201B;font-weight:500}</style>"
               },
               "blocks": {}
             },

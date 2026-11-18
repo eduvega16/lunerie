@@ -316,6 +316,16 @@
         "padding-block-start": 0,
         "padding-block-end": 0
       }
+    },
+    "cuenta_atras": {
+      "type": "custom-liquid",
+      "name": "Cuenta atrás del Black Friday",
+      "settings": {
+        "custom_liquid": "{% render 'lunerie-cuenta-atras' %}",
+        "section_width": "full-width",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
     }
   },
   "order": [
@@ -323,6 +333,7 @@
     "footer_utilities_jLGE8U",
     "rasca",
     "email_cesta",
-    "cookies"
+    "cookies",
+    "cuenta_atras"
   ]
 }

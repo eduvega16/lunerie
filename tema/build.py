@@ -1,5 +1,6 @@
 """Genera los JSON del tema 'Lunerie · marca' (Horizon 4.2) a partir de la página de marca."""
 import copy, json, pathlib, re
+from datetime import datetime
 
 OUT = pathlib.Path(__file__).parent
 INK, GREEN, GOLD, MIST, LINE, SOFT = "#16201B", "#006039", "#A6834A", "#F2F4F2", "#E2E6E3", "#3D4842"
@@ -90,6 +91,21 @@ PROMO = True
 PROMO_BARRA = "Black Friday · 2.ª pieza al 50 % · 3.ª gratis"
 # 3-nov (Edu): con la promo, la barra en rojo, como la de Black Friday de Olivia Jewelry (su mismo tono, medido en su web)
 PROMO_ROJO = "#CA3801"
+# 18-nov (Edu: «dale, haz la 1, 2 y 3»): urgencia, pero solo la que es verdad (nada de «alta demanda» ni pedidos
+# inventados). PROMO_FIN es el fin real de los dos descuentos en Shopify (endsAt 2026-12-05T22:59:59Z = 23:59:59 en
+# España). Lo usan (1) la cuenta atrás de la barra roja y (3) «Pídelo ahora y llega para Navidad», que se apaga solo ese
+# día (AliExpress tarda 7-12 días laborables: después ya no se puede prometer; el collar, 3-5 + 3-5, aguantaría algo más).
+# Si se alarga la promo en Shopify, cambiar esta fecha.
+PROMO_FIN = "2026-12-05T23:59:59+01:00"
+PROMO_FIN_TS = int(datetime.fromisoformat(PROMO_FIN).timestamp())
+NAVIDAD_LLEGA = "Pídelo ahora y llega para Navidad"
+# Condición en Liquid para lo que se apaga al acabar la promo ('now' es la hora a la que Shopify pinta la página)
+HASTA_FIN = "{%- assign lu_ahora = 'now' | date: '%s' | plus: 0 -%}{%- if lu_ahora < " + str(PROMO_FIN_TS) + " -%}"
+# 18-nov (Edu: «¿y si lo ponemos en la PDP y en el carrito, integrado?»): la cuenta atrás también junto a «Black
+# Friday» en la ficha y en la cesta. Este trozo la pinta; lunerie-cuenta-atras.liquid (pie) la rellena cada segundo.
+# Mientras carga (o sin JavaScript) dice «Hasta el 5 de diciembre», que también es verdad.
+CUENTA_HTML = (HASTA_FIN + '<span data-lu-reloj-caja> · <span data-lu-reloj>Hasta el 5 de diciembre</span></span>'
+               + "{%- endif -%}")
 
 header = {
     "type": "header", "name": "t:names.header",
@@ -328,6 +344,45 @@ footer = {
     },
     "order": ["footer_m9NzUG", "footer_utilities_jLGE8U", "rasca", "email_cesta", "cookies"],
 }
+# (1) 18-nov: cuenta atrás real del Black Friday dentro de la barra roja de arriba. El texto de la barra es un ajuste
+# del tema (no admite código), así que este snippet, pintado desde el pie, le añade «Termina en 16d 04h 12m 33s»
+# (en PC en la misma línea; en el móvil, debajo). Hasta PROMO_FIN; después desaparece sola.
+CUENTA_ATRAS = (
+    "{%- comment -%} Generado por tema/build.py: cuenta atrás del Black Friday en la barra de arriba {%- endcomment -%}\n"
+    "<style>.lu-cuenta,[data-lu-reloj]{white-space:nowrap;font-variant-numeric:tabular-nums}"
+    "@media screen and (max-width:749px){.lu-cuenta{display:block;margin-top:6px}.lu-cuenta__sep{display:none}}</style>\n"
+    # Un solo reloj para toda la página: rellena cada [data-lu-reloj] (barra, ficha, cesta; también los que el cajón
+    # de la cesta vuelve a pintar al cambiar algo) y, al llegar a cero, quita cada [data-lu-reloj-caja].
+    "<script>\n(() => {\n"
+    "  if (window.luRelojBF) return;\n"
+    "  window.luRelojBF = true;\n"
+    f"  const fin = Date.parse('{PROMO_FIN}');\n"
+    "  const barra = document.querySelector('.announcement-bar__text');\n"
+    "  if (barra && Date.now() < fin && !barra.querySelector('[data-lu-reloj]')) {\n"
+    "    const caja = document.createElement('span');\n"
+    "    caja.className = 'lu-cuenta';\n"
+    "    caja.setAttribute('data-lu-reloj-caja', '');\n"
+    "    caja.innerHTML = '<span class=\"lu-cuenta__sep\"> · </span><span data-lu-reloj></span>';\n"
+    "    barra.append(caja);\n"
+    "  }\n"
+    "  const dos = (n) => String(n).padStart(2, '0');\n"
+    "  const pintar = () => {\n"
+    "    let r = Math.floor((fin - Date.now()) / 1000);\n"
+    "    if (r <= 0) { document.querySelectorAll('[data-lu-reloj-caja]').forEach((e) => e.remove()); return false; }\n"
+    "    const d = Math.floor(r / 86400); r %= 86400;\n"
+    "    const h = Math.floor(r / 3600); r %= 3600;\n"
+    "    const s = 'Termina en ' + (d ? d + 'd ' : '') + dos(h) + 'h ' + dos(Math.floor(r / 60)) + 'm ' + dos(r % 60) + 's';\n"
+    "    document.querySelectorAll('[data-lu-reloj]').forEach((e) => { if (e.textContent !== s) e.textContent = s; });\n"
+    "    return true;\n"
+    "  };\n"
+    "  if (pintar()) { const reloj = setInterval(() => { if (!pintar()) clearInterval(reloj); }, 1000); }\n"
+    "})();\n</script>\n")
+(OUT / "codigo" / "snippets" / "lunerie-cuenta-atras.liquid").write_text(CUENTA_ATRAS, encoding="utf8")
+if PROMO:
+    footer["sections"]["cuenta_atras"] = {"type": "custom-liquid", "name": "Cuenta atrás del Black Friday", "settings": {
+        "custom_liquid": "{% render 'lunerie-cuenta-atras' %}", "section_width": "full-width",
+        "padding-block-start": 0, "padding-block-end": 0}}
+    footer["order"].append("cuenta_atras")
 (OUT / "footer-group.json").write_text(json.dumps(footer, ensure_ascii=False, indent=2), encoding="utf8")
 
 
@@ -477,20 +532,26 @@ def liquid(codigo):
 CAJA_REGALO = False
 # Ventajas bajo el botón. 3-nov (Edu, «lujo como PDPaola»): en texto pequeño gris, sin iconos ni la bolita roja que
 # latía. Plazo real (22-oct): AliExpress tardó 6-7 días laborables → se promete 7-12; para Navidad, antes del 5-dic.
+# (3) 18-nov: primera línea «Pídelo ahora y llega para Navidad» en tinta (algo más visible que el resto), hasta PROMO_FIN.
 def ventajas(lineas):
-    return liquid('<ul class="lu-ventajas">' + "".join(f"<li>{l}</li>" for l in lineas) + "</ul>"
+    navidad = HASTA_FIN + f'<li class="lu-ventajas__navidad">{NAVIDAD_LLEGA}</li>' + "{%- endif -%}"
+    return liquid('<ul class="lu-ventajas">' + navidad + "".join(f"<li>{l}</li>" for l in lineas) + "</ul>"
                   "<style>.lu-ventajas{display:grid;gap:6px;margin:0;padding:0!important;list-style:none;"
-                  "font-family:var(--font-body--family);font-size:.8125rem;line-height:1.5;color:" + SOFT + "}</style>")
+                  "font-family:var(--font-body--family);font-size:.8125rem;line-height:1.5;color:" + SOFT + "}"
+                  ".lu-ventajas__navidad{color:" + INK + ";font-weight:500}</style>")
 
 
+# 18-nov: fuera «Para Navidad, pídelo antes del 5 de diciembre» (ahora va «Pídelo ahora y llega para Navidad», sin fecha,
+# que se apaga sola el 5-dic)
 VENTAJAS = ventajas((["Llega en su caja de regalo"] if CAJA_REGALO else []) + [
     "Envío gratis a península, con seguimiento · 7-12 días laborables",
-    "Para Navidad, pídelo antes del 5 de diciembre",
     "Garantía de 3 años · 14 días para devolverlo"])
 # La promo junto al precio, en una línea y sin caja de color (3-nov; antes, caja verde bajo el botón): la palabra
 # «Black Friday» en el rojo de la barra de arriba y el resto en tinta.
 OFERTA_FICHA = liquid(
-    ('<div class="lu-oferta-ficha"><p class="lu-oferta-ficha__t"><span>Black Friday</span>2.ª pieza al 50 % · 3.ª gratis</p>'
+    # 18-nov: «Black Friday» sube a su propia línea, en rojo y pequeño, con la cuenta atrás al lado; la oferta, debajo
+    ('<div class="lu-oferta-ficha"><p class="lu-oferta-ficha__e">Black Friday' + CUENTA_HTML + '</p>'
+     '<p class="lu-oferta-ficha__t">2.ª pieza al 50 % · 3.ª gratis</p>'
      '<p class="lu-oferta-ficha__p">Mezcla relojes y joyas: se descuenta solo en la cesta. Hasta el 5 de diciembre.</p></div>'
      if PROMO else
      '<div class="lu-oferta-ficha"><p class="lu-oferta-ficha__t"><span>Oferta</span>Segundo reloj por 19,95 €</p>'
@@ -498,7 +559,10 @@ OFERTA_FICHA = liquid(
     + "<style>.lu-oferta-ficha{font-family:var(--font-body--family)}.lu-oferta-ficha p{margin:0}"
     ".lu-oferta-ficha__t{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 12px;font-size:.9375rem;color:" + INK + "}"
     ".lu-oferta-ficha__t span{font-size:.75rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:" + PROMO_ROJO + "}"
-    ".lu-oferta-ficha__p{margin-top:4px!important;font-size:.8125rem;line-height:1.5;color:" + SOFT + "}</style>")
+    ".lu-oferta-ficha__e{font-size:.75rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:" + PROMO_ROJO + "}"
+    ".lu-oferta-ficha__e+.lu-oferta-ficha__t{margin-top:4px!important}"
+    ".lu-oferta-ficha__p{margin-top:4px!important;font-size:.8125rem;line-height:1.5;color:" + SOFT + "}"
+    ".lu-oferta-ficha__p strong{font-weight:500;color:" + INK + "}</style>")
 
 
 def icon_text(icono, html, ancho=18):  # (sin uso desde el 3-nov: las ventajas van sin iconos)
@@ -777,6 +841,18 @@ CAJITA_COLLAR = ('<span style="color:' + PROMO_ROJO + ';font-weight:500;letter-s
                  'font-size:.92em">Black Friday</span> · Te regalamos su cajita de terciopelo')
 _d["blocks"]["ventajas"] = ventajas([CAJITA_COLLAR, f"Se hace para ti y sale en {HECHO_COLLAR}",
                                      "Envío gratis a península", "Garantía de 3 años"])
+# (2) 18-nov (Edu): bajo el precio, que después del Black Friday el collar vuelve a su precio. Sale del precio tachado
+# real de la variante (nunca un número a mano) y solo mientras haya tachado y no haya acabado la promo.
+# ¡Compromiso! El 6-dic hay que poner de verdad el collar a ese precio (quitar el tachado y subir el precio).
+if PROMO:
+    _txt = _d["blocks"]["oferta"]["settings"]["custom_liquid"]
+    _viejo = '<p class="lu-oferta-ficha__p">Mezcla relojes y joyas: se descuenta solo en la cesta. Hasta el 5 de diciembre.</p>'
+    assert _viejo in _txt
+    _d["blocks"]["oferta"]["settings"]["custom_liquid"] = _txt.replace(_viejo, (
+        '<p class="lu-oferta-ficha__p">Se descuenta solo en la cesta, hasta el 5 de diciembre.'
+        "{%- assign lu_v = product.selected_or_first_available_variant -%}"
+        + HASTA_FIN + "{%- if lu_v.compare_at_price > lu_v.price %} "
+        "<strong>Después, el collar vuelve a {{ lu_v.compare_at_price | money }}.</strong>{%- endif -%}{%- endif -%}</p>"))
 _dd = _d["blocks"]["detalles"]
 _dd["blocks"]["envio"] = row(
     "Envío y devoluciones",
@@ -885,15 +961,18 @@ if PROMO:
         "{%- assign lu_col = lu_col | plus: lu_it.quantity -%}{%- assign lu_cprecio = lu_it.original_price -%}"
         "{%- assign lu_curl = lu_it.product.url -%}{%- endif -%}{%- endfor -%}\n"
         "{%- if lu_n > 0 -%}{%- assign lu_paso = lu_n | at_most: 3 -%}\n"
-        '<div class="lu-promo" role="status">\n'
-        '  <p class="lu-promo__t">'
+        # 18-nov: arriba, «Black Friday · Termina en…» (como en la ficha). El role="status" va solo en el mensaje, para
+        # que los lectores de pantalla no lean la cuenta atrás cada segundo.
+        '<div class="lu-promo">\n'
+        '  <p class="lu-promo__e">Black Friday' + CUENTA_HTML + '</p>\n'
+        '  <p class="lu-promo__t" role="status">'
         '{%- if lu_n == 1 and lu_col == 1 -%}¿Uno más para tu madre o tu hermana? El 2.º collar te sale a '
         '<strong>{{ lu_cprecio | divided_by: 2 | money }}</strong>'
         '{%- elsif lu_n == 1 -%}Añade otra pieza y la 2.ª te sale <strong>al 50 %</strong>'
         '{%- elsif lu_n == 2 and lu_col == 2 -%}Añade un tercer collar y te sale <strong>gratis</strong>'
         '{%- elsif lu_n == 2 and lu_col == 1 -%}Añade otro collar y una de las tres piezas te sale <strong>gratis</strong>'
         '{%- elsif lu_n == 2 -%}Añade una tercera y te sale <strong>gratis</strong>'
-        '{%- else -%}Black Friday · <strong>tu descuento ya está aplicado</strong>{%- endif -%}'
+        '{%- else -%}<strong>Tu descuento ya está aplicado</strong>{%- endif -%}'
         '{%- if lu_col > 0 and lu_n < 3 %} <a class="lu-promo__a" href="{{ lu_curl }}">Elegir otro collar</a>{%- endif -%}'
         '</p>\n'
         '  <div class="lu-promo__barra" aria-hidden="true"><span style="width:{% if lu_paso == 1 %}0{% elsif lu_paso == 2 %}50{% else %}100{% endif %}%"></span></div>\n'
@@ -904,6 +983,8 @@ if PROMO:
         "</div>\n"
         "<style>"
         ".lu-promo{margin:0 0 16px;display:grid;gap:8px;color:" + INK + "}"
+        ".lu-promo__e{margin:0 0 -4px;font-size:.6875rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;"
+        "color:" + PROMO_ROJO + "}"
         ".lu-promo__t{margin:0;font-size:.875rem;line-height:1.35}.lu-promo__t strong{font-weight:500}"
         ".lu-promo__a{color:" + GREEN + ";text-decoration:underline;text-underline-offset:3px;white-space:nowrap}"
         ".lu-promo__barra{position:relative;height:3px;background:#E3E6E3;margin:6px 6px 0}"
@@ -927,6 +1008,8 @@ CONFIANZA = (
     "{%- assign lu_nombre = false -%}{%- for item in cart.items -%}{%- if item.product.handle == 'collar-signe' -%}"
     "{%- assign lu_nombre = true -%}{%- endif -%}{%- endfor -%}\n"
     '<div class="lu-confianza">\n'
+    # (3) 18-nov: «Pídelo ahora y llega para Navidad», lo primero bajo «Pagar» y en tinta, hasta PROMO_FIN
+    "  " + HASTA_FIN + f'<p class="lu-confianza__navidad">{NAVIDAD_LLEGA}</p>' + "{%- endif -%}\n"
     # 17-nov: la cajita ya sale como una línea de regalo entre las piezas (lunerie-cesta-cajita.liquid): aquí no se repite
     "  {%- if lu_nombre -%}<p>Se hace para ti y sale en " + HECHO_COLLAR + "</p>"
     "{%- endif -%}\n"
@@ -940,6 +1023,7 @@ CONFIANZA = (
     "<style>.cart-discount{display:none!important}"
     ".lu-confianza{text-align:center;font-size:.75rem;line-height:1.5;color:" + SOFT + ";margin-top:2px}"
     ".lu-confianza p{margin:0}.lu-confianza__mas{margin-top:6px!important}"
+    ".lu-confianza__navidad{color:" + INK + ";font-weight:500;font-size:.8125rem}"
     ".lu-confianza__mas button,.lu-confianza__mas a{all:unset;cursor:pointer;color:inherit;text-decoration:underline;"
     "text-underline-offset:2px}</style>\n"
     "{%- endif -%}\n")

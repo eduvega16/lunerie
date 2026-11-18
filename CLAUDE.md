@@ -560,6 +560,20 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
   La clave de la API no tiene `instagram_manage_insights`: las cifras se leen de Business Suite sin ventana (perfil
   `.claude/meta-perfil`, como `mensajes_ig.py`). DM: Rocío Gómez (UGC, @rociioo.gc26) propuso colaborar el 28-oct y no se le
   contestó: borrador en la sesión, pendiente del OK de Edu.
+- **URGENCIA REAL EN PRODUCCIÓN (18-nov, Edu: «súbelo»).** Edu propuso inventar («alta demanda», «4 pedidos en la última
+  hora»): no se hizo (engañoso, Ley de Competencia Desleal). Se puso lo que es verdad (`PROMO_FIN`, `CUENTA_HTML`,
+  `NAVIDAD_LLEGA` en `build.py`):
+  - **Cuenta atrás** hasta el 5-dic 23:59 (el `endsAt` real de los dos descuentos) en la barra roja (en el móvil, 2.ª línea),
+    en la ficha («BLACK FRIDAY · TERMINA EN 17D…», en su propia línea encima de «2.ª pieza al 50 % · 3.ª gratis») y en la
+    cesta y el cajón (encima del mensaje de la barra de progreso; con 3+ piezas, «Tu descuento ya está aplicado»). Un solo
+    reloj en `snippets/lunerie-cuenta-atras.liquid` (sección `cuenta_atras` del pie) rellena cada `[data-lu-reloj]`;
+    **no usar `data-lu-cuenta`**: es el contador de letras del nombre en `lunerie-collar.liquid` (se pisaban). Desaparece sola.
+  - **Bajo el precio del collar:** «Después, el collar vuelve a 49,95 €» (sale del precio tachado real).
+    **COMPROMISO: el 6-dic subir el Collar Signé a 49,95 € de verdad** (quitar el tachado) y apagar la promo (`PROMO = False`).
+  - **«Pídelo ahora y llega para Navidad»**, 1.ª línea bajo los botones de todas las fichas y bajo «Pagar»; sustituye a
+    «Para Navidad, pídelo antes del 5 de diciembre». Se apaga sola el 5-dic (Liquid `'now'`), porque después AliExpress
+    (7-12 días laborables) ya no llega seguro. Si se alarga la promo, cambiar `PROMO_FIN`.
+  - Probado en el tema «Prueba carritos 17-nov» y en lunerie.es (móvil y PC, ficha, cesta, cajón, contador de letras).
 - **Etiqueta «hecho con IA» FUERA (18-nov, Edu: «que Instagram la ponga sola»):** `oficina/publicar.py` ya no manda
   `is_ai_generated` (vale para todas las tareas programadas); solo con `publicacion.etiqueta_ia: true` en una pieza. Las
   ya publicadas la conservan (se quita a mano en la app, si deja). Los archivos de Higgsfield no traen metadatos C2PA y se

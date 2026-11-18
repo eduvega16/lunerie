@@ -248,3 +248,8 @@ logo, factura ni precio, y si tiene caja de regalo; (9) foto de cada collar ante
   pedido de Alibaba, y cuando manden la etiqueta de Cainiao, comprobar que el destinatario es el de ese pedido de Shopify.**
 - **#LUN1008 pagado por Edu el 16-nov: 37,31 € con PayPal** (36,22 € + ~3 % de comisión del pago, 1,09 €) → ~1,14 € por $
   de la lista. Margen del pedido (79,80 €) antes de anuncios ≈ 27 €. Mandado a QIUHAN: «envíalo a la dirección de tu lista».
+- **#LUN1009 y #LUN1010 (18-nov):** lista comprobada contra Shopify (Daniela · Nov Topaz y Virginia · May Emerald, los dos
+  pvd gold, cajita, 12 $ de envío cada uno, dos paquetes) = 36,44 $ → pedido de Alibaba 36410032501040795: 33,49 € +
+  7,03 € de IVA = **40,51 €** (sin la comisión de PayPal). En el pedido de Alibaba pone la dirección de León (#LUN1004):
+  **Edu (18-nov): da igual**, QIUHAN la pone por ir rápido y envía a la de su lista; las dos direcciones de la lista,
+  comprobadas con Shopify. Lo que se revisa es la etiqueta de Cainiao.

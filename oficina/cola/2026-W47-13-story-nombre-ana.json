@@ -1,6 +1,6 @@
 {
   "id": "2026-W47-13-story-nombre-ana",
-  "estado": "aprobado",
+  "estado": "publicado",
   "plataforma": "instagram",
   "formato": "story",
   "pieza": "collar-signe",
@@ -20,7 +20,11 @@
     ],
     "urls": [],
     "alt_text": "",
-    "ia": true
+    "ia": true,
+    "resultado": {
+      "media_id": "18121320274994183,18006426390034278",
+      "fecha": "2026-11-18T11:00:52+0100"
+    }
   },
   "origen": {
     "biblioteca": "terciopelo-navidad"

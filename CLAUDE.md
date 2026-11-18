@@ -541,6 +541,19 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
 ## 8. Calendario y pendientes (a 15-nov-2026)
 
 ### Para empezar la próxima sesión (después del 2-nov) — abrir conversación nueva por sesión.
+**18-nov (`D:\LUNERIE`):**
+- **#LUN1009 y #LUN1010 pedidos a QIUHAN** (lista y direcciones comprobadas con Shopify; 41,73 € con PayPal). Margen de
+  los dos antes de anuncios ~24 € (#1009 ~8 €, los aros pierden ~2,60 €; #1010 ~16 €); con ~24 €/pedido de Meta, ~−24 €.
+  Detalle en `productos/proveedor-qiuhan.md`.
+- **Cesta EN PRODUCCIÓN (OK de Edu):** con un Collar Signé, la barra empuja **otro collar** (un collar más va en el mismo
+  paquete de QIUHAN y deja ~8 €; las joyas de AliExpress, con promo, casi nada): «¿Uno más para tu madre o tu hermana? El
+  2.º collar te sale a 19,95 €» · «Añade otro collar y una de las tres piezas te sale gratis» · «Añade un tercer collar y
+  te sale gratis» + enlace «Elegir otro collar» (`COLLAR_HANDLE` en `build.py`). Sin collar, los textos de antes. **Fuera
+  «También te puede gustar» de la página de la cesta** (`"disabled": true` en `tema/cart.json`). Probado en lunerie.es.
+- **Siguiente (plan hablado con Edu):** viernes 20-nov, revisar si sube carrito → pago · Edu recuerda a QIUHAN el
+  catálogo de complementos con nombre (mismo paquete, +1 $) para ir sustituyendo las joyas de AliExpress · el 5-dic, el
+  collar vuelve a 49,95 € (1 collar deja ~19 € en vez de ~11 €).
+
 **17-nov (mañana), Edu: «dale caña a todo»:**
 - **Reels con el precio nuevo:**
   - W47-03 (cierre, sale hoy a las 12:30) y W48-04 (ideas de regalo, 24-nov) ya apuntan a vídeos con 39,90 €.

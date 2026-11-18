@@ -871,15 +871,31 @@ if not SEGUNDO_RELOJ:
 CESTA_EXTRA = ["aros-boucle", "anillo-duo", "pendientes-larme", "collar-lune"]   # se enseñan las 3 primeras que no estén en la cesta
 # 11-nov (Edu): fuera el bloque verde con el carrusel de piezas (distraía); solo una barra de progreso fina con los
 # 3 pasos de la promo (1 pieza · 2.ª al 50 % · 3.ª gratis) y una línea de texto. El carrusel de 8-nov está en git (604c792).
+# 18-nov (Edu: «dale»): con un Collar Signé en la cesta, la barra empuja OTRO COLLAR y no cualquier pieza. Para QIUHAN
+# un collar más va en el mismo paquete (+1 $ de envío) y deja ~8 €; una joya de AliExpress va aparte, paga su aduana
+# (~6 €) y a mitad de precio o gratis pierde dinero. Enlace «Elegir otro collar» a la ficha (hay que poner nombre y
+# piedra). Sin «la más barata» (Edu): con collar + otra pieza, «una de las tres piezas te sale gratis».
+COLLAR_HANDLE = "collar-signe"
 if PROMO:
     UPSELL = (
         "{%- comment -%} Generado por tema/build.py (PROMO): barra de progreso de la promo en la cesta {%- endcomment -%}\n"
         "{%- assign lu_n = cart.item_count -%}\n"
+        "{%- assign lu_col = 0 -%}{%- assign lu_cprecio = 0 -%}{%- assign lu_curl = '' -%}\n"
+        "{%- for lu_it in cart.items -%}{%- if lu_it.product.handle == '" + COLLAR_HANDLE + "' -%}"
+        "{%- assign lu_col = lu_col | plus: lu_it.quantity -%}{%- assign lu_cprecio = lu_it.original_price -%}"
+        "{%- assign lu_curl = lu_it.product.url -%}{%- endif -%}{%- endfor -%}\n"
         "{%- if lu_n > 0 -%}{%- assign lu_paso = lu_n | at_most: 3 -%}\n"
         '<div class="lu-promo" role="status">\n'
-        '  <p class="lu-promo__t">{%- if lu_n == 1 -%}Añade otra pieza y la 2.ª te sale <strong>al 50 %</strong>'
+        '  <p class="lu-promo__t">'
+        '{%- if lu_n == 1 and lu_col == 1 -%}¿Uno más para tu madre o tu hermana? El 2.º collar te sale a '
+        '<strong>{{ lu_cprecio | divided_by: 2 | money }}</strong>'
+        '{%- elsif lu_n == 1 -%}Añade otra pieza y la 2.ª te sale <strong>al 50 %</strong>'
+        '{%- elsif lu_n == 2 and lu_col == 2 -%}Añade un tercer collar y te sale <strong>gratis</strong>'
+        '{%- elsif lu_n == 2 and lu_col == 1 -%}Añade otro collar y una de las tres piezas te sale <strong>gratis</strong>'
         '{%- elsif lu_n == 2 -%}Añade una tercera y te sale <strong>gratis</strong>'
-        '{%- else -%}Black Friday · <strong>tu descuento ya está aplicado</strong>{%- endif -%}</p>\n'
+        '{%- else -%}Black Friday · <strong>tu descuento ya está aplicado</strong>{%- endif -%}'
+        '{%- if lu_col > 0 and lu_n < 3 %} <a class="lu-promo__a" href="{{ lu_curl }}">Elegir otro collar</a>{%- endif -%}'
+        '</p>\n'
         '  <div class="lu-promo__barra" aria-hidden="true"><span style="width:{% if lu_paso == 1 %}0{% elsif lu_paso == 2 %}50{% else %}100{% endif %}%"></span></div>\n'
         '  <ol class="lu-promo__pasos" aria-hidden="true">'
         '<li class="is-on">1 pieza</li>'
@@ -889,6 +905,7 @@ if PROMO:
         "<style>"
         ".lu-promo{margin:0 0 16px;display:grid;gap:8px;color:" + INK + "}"
         ".lu-promo__t{margin:0;font-size:.875rem;line-height:1.35}.lu-promo__t strong{font-weight:500}"
+        ".lu-promo__a{color:" + GREEN + ";text-decoration:underline;text-underline-offset:3px;white-space:nowrap}"
         ".lu-promo__barra{position:relative;height:3px;background:#E3E6E3;margin:6px 6px 0}"
         ".lu-promo__barra span{position:absolute;inset:0 auto 0 0;background:" + GREEN + ";transition:width .4s}"
         ".lu-promo__pasos{list-style:none;margin:0;padding:0!important;display:flex;justify-content:space-between;"

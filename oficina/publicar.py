@@ -154,7 +154,9 @@ def pie(p):
 
 
 def publicar(fichero, p, confirmar):
-    pub, tipo, ia = p["publicacion"], TIPOS[p["formato"]], p["publicacion"].get("ia", True)
+    # 18-nov (Edu): sin la etiqueta «hecho con IA» de la API; si Instagram la detecta, que la ponga él. Solo se pone si la
+    # pieza lleva publicacion.etiqueta_ia = true. El campo «ia» queda como dato interno (si la pieza está hecha con IA).
+    pub, tipo, ia = p["publicacion"], TIPOS[p["formato"]], p["publicacion"].get("etiqueta_ia", False)
     ig = os.environ.get("IG_USER_ID", "<IG_USER_ID>")
     if pub.get("urls"):
         urls = list(pub["urls"])
@@ -182,7 +184,7 @@ def publicar(fichero, p, confirmar):
         raiz = dict(media_type=tipo, video_url=urls[0]) if video else dict(media_type=tipo, image_url=urls[0])
     if ia:
         raiz["is_ai_generated"] = "true"                    # autoetiqueta de IA (solo en el contenedor raíz del carrusel)
-    print(f"\n{p['id']} · {tipo} · {len(urls)} archivo(s) · IA={'sí' if ia else 'no'}")
+    print(f"\n{p['id']} · {tipo} · {len(urls)} archivo(s) · etiqueta de IA={'sí' if ia else 'no'}")
     if not confirmar:
         for d, par in pasos:
             print(f"  POST /{ig}/media {par}")
@@ -200,7 +202,7 @@ def publicar(fichero, p, confirmar):
     if tipo == "STORIES":                                   # el resto de stories, en orden, después de la primera
         otras = []
         for _, par in pasos:
-            if p["publicacion"].get("ia", True):
+            if ia:
                 par["is_ai_generated"] = "true"
             c = crear(f"{ig}/media", **par)
             esperar(c, "video_url" in par)

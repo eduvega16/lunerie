@@ -31,7 +31,7 @@ Un fichero JSON por pieza en `oficina/cola/`, con nombre `AAAA-Wss-NN-slug.json`
 
 ## Publicar (`oficina/publicar.py`)
 `publicacion` es lo que se sube a Instagram: `archivos` (rutas del repo; las imágenes se pasan a JPEG y se alojan en Archivos de Shopify) o
-`urls` (ya públicas; **obligatorio en los reels**, con el MP4 transcodificado). `ia: true` (por defecto) marca la publicación como contenido hecho con IA.
+`urls` (ya públicas; **obligatorio en los reels**, con el MP4 transcodificado). `ia: true` solo apunta que la pieza está hecha con IA (dato interno). La etiqueta «hecho con IA» de Instagram ya no se pone por defecto (Edu, 18-nov: que la ponga Instagram si la detecta); para ponerla en una pieza concreta, `"etiqueta_ia": true`.
 En un carrusel, todas las imágenes deben tener la misma proporción (se recortan según la primera).
 `python oficina/publicar.py` lista lo aprobado; con un id hace un ensayo; con `--confirmar` publica y deja `estado: publicado` y `publicacion.resultado`.
 

@@ -560,6 +560,18 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
   La clave de la API no tiene `instagram_manage_insights`: las cifras se leen de Business Suite sin ventana (perfil
   `.claude/meta-perfil`, como `mensajes_ig.py`). DM: Rocío Gómez (UGC, @rociioo.gc26) propuso colaborar el 28-oct y no se le
   contestó: borrador en la sesión, pendiente del OK de Edu.
+- **Etiqueta «hecho con IA» FUERA (18-nov, Edu: «que Instagram la ponga sola»):** `oficina/publicar.py` ya no manda
+  `is_ai_generated` (vale para todas las tareas programadas); solo con `publicacion.etiqueta_ia: true` en una pieza. Las
+  ya publicadas la conservan (se quita a mano en la app, si deja). Los archivos de Higgsfield no traen metadatos C2PA y se
+  vuelven a guardar con PIL: Instagram casi nunca la pondrá solo. Riesgo avisado: Meta pide etiquetar el vídeo realista
+  hecho con IA (los reels UGC de Kling).
+- **Prueba de creatividades de Meta (18-nov, reel de AgenciaTech; propuesta, SIN OK de Edu):** Meta mete casi todo en el
+  18 y el 31, 21, 28, 29 y 30 nunca se han probado (< 3 € cada uno). La cuenta es apta (`ads_experiment_check_eligibility`).
+  **Propuesta para el viernes 20-nov, solo si la campaña sigue:** prueba **18 contra 31**, campaña a 20 €/día y 10 €/día
+  para la prueba (5 € por anuncio) durante 6 días (~30 € por anuncio, cabe en lo que queda del tope de 450 €), KPI coste por
+  pago iniciado (`cost_per_action_type:omni_initiated_checkout`), mirando carritos y compras. No se puede cambiar una vez
+  empezada; empieza como pronto al día siguiente. Si gana el 31, se queda junto al 18. Crear con
+  `ads_experiment_abtest_create_test` solo con el OK de Edu. Notas en `oficina/referencias/edu-2026-11-18/notas.md` (4).
 - **Siguiente (plan hablado con Edu):** viernes 20-nov, revisar si sube carrito → pago · Edu recuerda a QIUHAN el
   catálogo de complementos con nombre (mismo paquete, +1 $) para ir sustituyendo las joyas de AliExpress · el 5-dic, el
   collar vuelve a 49,95 € (1 collar deja ~19 € en vez de ~11 €).
@@ -1330,7 +1342,7 @@ tienda) y mirar que la visita sale en Shopify.
 publicadas · reels de los anuncios animados programados: «Notas del móvil» 5-nov 19:30 y «Lo sentimos, mamá» 7-nov 19:30
 (`2026-W45-14/15`, vídeo desde la URL de Shopify de `anuncios/creatividades-urls.json`). `publicar.py` ahora sube **todas**
 las stories de una pieza (antes solo la primera), las deja en 9:16 (antes las recortaba a 4:5) y guarda a calidad 97.
-Fuera de todos los pies la frase «Imagen creada con IA» (Edu); la marca «hecho con IA» de la API sigue puesta.
+Fuera de todos los pies la frase «Imagen creada con IA» (Edu); la marca «hecho con IA» de la API siguió puesta hasta el 18-nov (ver ese día).
 
 **4-nov (tarde): biblioteca ampliada, anuncios animados y Instagram roto.**
 - **ARREGLADO (4-nov, ~17:30): la clave de Instagram volvió a funcionar sola** (Edu pidió probar de nuevo; la app se llama
@@ -1659,7 +1671,7 @@ Fuera de todos los pies la frase «Imagen creada con IA» (Edu); la marca «hech
   con un id hace un **ensayo** (sin red, sin publicar); con `--confirmar` publica y deja `estado: publicado` + `publicacion.resultado`. Solo publica piezas
   `aprobado` con material (`publicacion.archivos` o `publicacion.urls`, formato en `oficina/cola/ESQUEMA.md`). Convierte a JPEG y recorta a 4:5 (Instagram no admite
   más estrecho), aloja la imagen en **Archivos de Shopify** para tener URL pública (espera a que el CDN la sirva y reintenta si Instagram da el error 2207052) y marca
-  la publicación como **hecha con IA** (`is_ai_generated`). Límites de la API: **no programa** (la hora la pone quien lanza el script), **no añade música**, los reels
+  la publicación como **hecha con IA** (`is_ai_generated`; **desde el 18-nov ya no**, salvo `etiqueta_ia: true` en la pieza). Límites de la API: **no programa** (la hora la pone quien lanza el script), **no añade música**, los reels
   necesitan el MP4 ya público (`publicacion.urls`; sin hacer), carrusel con la misma proporción en todas las imágenes. **Probado de verdad:** 3 fotos publicadas el 29-oct en
   `@luneriejewelry`: mercado (`/p/DfFIJFGjpU6/`), terraza (`/p/DfFJlcdls6q/`) y metro (`/p/DfFJobvFlLy/`), todas con el OK de Edu al texto antes de publicar.
   **Montaje de Meta:** app de desarrollador id `2676185462837815` (cuenta «Lunerie Vega»), Facebook Login, **token de la PÁGINA «L U N E R I E»** (no caduca; sacado de un token de usuario

@@ -1,6 +1,6 @@
 {
   "id": "2026-W47-02-signe-marta-rojo",
-  "estado": "aprobado",
+  "estado": "publicado",
   "plataforma": "instagram",
   "formato": "foto",
   "pieza": "collar-signe",
@@ -30,7 +30,11 @@
     ],
     "urls": [],
     "alt_text": "Collar dorado con el nombre Marta en letra de firma en un lado de la cadena y una lágrima roja colgando en el centro, sobre fondo blanco. Texto: Un regalo (o un capricho). Collar con su nombre y su piedra.",
-    "ia": true
+    "ia": true,
+    "resultado": {
+      "media_id": "17966914443010523",
+      "fecha": "2026-11-18T19:30:30+0100"
+    }
   },
   "origen": {
     "biblioteca": "",

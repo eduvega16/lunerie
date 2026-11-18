@@ -17,3 +17,8 @@
    productos recortados, estrellas y nieve. Pie: «It's the most wonderful time of the year». La gracia: hay que deslizar
    para ver dónde acaba la frase. Hecho para Lunerie sin IA con `marca/its_time.py` (versión «It's timeeee… de encontrar
    su regalo.» y versión «Ya es horaaaa… de buscar su regalo.»).
+4. **AgenciaTech, reel** (https://www.instagram.com/reel/Df2yJ3iB4Oq/, 14-nov; solo se leyó el texto, sin login no hay
+   vídeo): «Subiste 5 anuncios al mismo conjunto y Meta le echó casi todo el dinero a uno. Eso es repartir, no probar.
+   Separar cada anuncio en su conjunto tampoco sirve. Usa la prueba de creatividades de Meta: de 2 a 5 anuncios, un poco
+   del presupuesto aparte y a partes iguales. No toques nada durante la prueba y decide por coste por resultado, no por
+   CTR ni CPM.» Es lo que nos pasa con el 18. La cuenta es apta (comprobado con el conector el 18-nov).

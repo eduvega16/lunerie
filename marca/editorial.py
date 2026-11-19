@@ -8,9 +8,13 @@ Reglas de la estética (oficina/referencias/estetica-2026-11-19/README.md):
 - la oferta, si va, en píldoras de borde fino; nada de bloques de color, emojis ni rojo chillón.
 
     python marca/editorial.py            # las 4 de muestra en 4:5 y 9:16
+    python marca/editorial.py --sin-revelar   # sin el acabado de película (para comparar)
 """
-import pathlib
+import pathlib, sys
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+from revelar import pelicula  # acabado de película: menos saturado, cálido, negros levantados y grano
 
 RAIZ = pathlib.Path(__file__).resolve().parent.parent
 F = RAIZ / "marca" / "fuentes"
@@ -107,6 +111,14 @@ def guardar(im, nombre):
     return ruta
 
 
+REVELAR = "--sin-revelar" not in sys.argv
+
+
+def rev(im):
+    """La foto (y el fondo) con acabado de película; el texto va después, nítido."""
+    return pelicula(im) if REVELAR else im
+
+
 def piezas(W, H, sufijo):
     fc = RAIZ / "marca" / "fotos-ia"
     hechas = []
@@ -116,6 +128,7 @@ def piezas(W, H, sufijo):
     # 1 · puesta, texto blanco sobre la piel (Able «Make it personal»)
     im = recorte(Image.open(fc / "collar/editar-hombro-2.png").convert("RGB"), W, H, 0.55)
     im = velo(im, True, 0.42, 0.55)
+    im = rev(im)
     bloque(im, [("marca", "LUNERIE"), ("titulo", "Su nombre,"), ("cursiva", "su piedra."),
                 ("linea", "COLLAR SIGNÉ · 39,90 €")], y_arriba, BLANCO)
     hechas.append(guardar(im, f"1-puesta-{sufijo}"))
@@ -123,6 +136,7 @@ def piezas(W, H, sufijo):
     # 2 · cajita sobre color liso (Monica Vinader «The gift she's guaranteed to love»)
     foto = Image.open(fc / "terciopelo/cajita-carmen-1.jpg").convert("RGB")
     im = sobre_color(foto, W, H, (74, 10, 16), 0.64 if alto < 1.5 else 0.60)
+    im = rev(im)
     bloque(im, [("marca", "LUNERIE"), ("titulo", "El regalo que"), ("cursiva", "lleva su nombre."),
                 ("linea", "LLEGA EN SU CAJITA DE TERCIOPELO")], y_arriba, BLANCO)
     hechas.append(guardar(im, f"2-cajita-{sufijo}"))
@@ -143,6 +157,7 @@ def piezas(W, H, sufijo):
     else:  # 9:16: el texto arriba (zona libre de Meta: 14-65 % del alto) y la cadena entra fundida
         im.paste(velo(ph, True, 1.0, 0.18, fondo), ((W - ph.width) // 2, round(H * 0.33)))
         y_txt = y_arriba
+    im = rev(im)
     bloque(im, [("marca", "LUNERIE"), ("titulo", "Collar Signé"),
                 ("linea", "SU NOMBRE EN LETRA DE FIRMA")], y_txt, TINTA)
     hechas.append(guardar(im, f"3-producto-{sufijo}"))
@@ -150,6 +165,7 @@ def piezas(W, H, sufijo):
     # 4 · oferta discreta en píldoras (Atolea «Buy 2, get 2 free»), sobre crema y con la foto abajo
     foto = Image.open(fc / "collar/dedos-1.png").convert("RGB")
     im = sobre_color(foto, W, H, (244, 239, 231), 0.62 if alto < 1.5 else 0.58)
+    im = rev(im)
     bloque(im, [("marca", "LUNERIE"), ("titulo", "Black Friday"), ("cursiva", "con su nombre.")],
            y_arriba, TINTA, pildoras=["2.ª PIEZA AL 50 %", "3.ª GRATIS"])
     hechas.append(guardar(im, f"4-oferta-{sufijo}"))
@@ -158,5 +174,5 @@ def piezas(W, H, sufijo):
 
 if __name__ == "__main__":
     for W, H, s in ((1080, 1350, "4x5"), (1080, 1920, "9x16")):
-        for r in piezas(W, H, s):
+        for r in piezas(W, H, s if REVELAR else s + "-sin-revelar"):
             print(r)

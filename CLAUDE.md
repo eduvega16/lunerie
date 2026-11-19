@@ -31,7 +31,11 @@
   Pendiente: buscar la marca en la OEPM (consultas2.oepm.es/LocalizadorWeb).
 - **Estilo:** como **Calné** (calne.co): páginas limpias, fondo blanco, mucho aire, **la pieza manda y la marca casi
   no se ve** (logo pequeño, solo texto).
-- **Página de marca (maqueta + ajustes):** https://claude.ai/artifact/MDZWWTrx5E6xxfgC8gfv2A
+- **Manual de marca (v2, 19-nov, propuesta; misma URL que la vieja página de marca):** https://claude.ai/artifact/MDZWWTrx5E6xxfgC8gfv2A
+  (fuente en `marca/manual/`): objetivo «la joyería personalizable de referencia en España», idea «lo que se escribe a mano
+  no se olvida», frase «Con su nombre.» (por decidir), voz, fotos que no parezcan de IA, plantillas (`marca/editorial.py`,
+  con revelado de película), colección (Signé → Su piedra → Initiale → Famille) y pasos para escalar (OEPM, fotos reales,
+  tarjeta en el paquete). Estética de referencia: `oficina/referencias/estetica-2026-11-19/`.
 - **Logos (13-oct), en `marca/logos/`:** logo LUNERIE en tinta / blanco / oro (SVG + PNG, `marca/logos.py`).
   **Monograma oficial: L cursiva (Cormorant Italic) + destello dorado de 4 puntas, fondo verde** →
   `oficial-avatar-redes.png` (perfil de Instagram/TikTok) y `oficial-favicon.png` (pestaña, ya puesto en la tienda).

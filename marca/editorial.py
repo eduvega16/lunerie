@@ -10,6 +10,7 @@ Lo que se copia de @oliviajewelryco (oficina/referencias/olivia-ig-2026-11-19/RE
 
     python marca/editorial.py                 # todas, en 4:5 y 9:16
     python marca/editorial.py --sin-revelar   # sin el acabado de película (para comparar)
+    python marca/editorial.py --color naranja # solo los bloques de color (promo, regalo, marca) en ese color, 4:5
 """
 import math
 import pathlib
@@ -28,6 +29,11 @@ SALIDA = FOTOS / "editorial-limpio"
 TINTA, BLANCO = (22, 32, 27), (255, 255, 255)
 VERDE, BURDEOS = (0, 96, 57), (74, 10, 16)
 REVELAR = "--sin-revelar" not in sys.argv
+# Prueba de color de marca para los bloques (Edu, 19-nov: «me gusta el naranja y el azul… podríamos probar»).
+# El naranja es un punto más ámbar que el de Olivia (#C84011) para no ser idéntico; el azul es azul noche, por la luna.
+COLORES = {"verde": VERDE, "naranja": (194, 83, 27), "azul": (27, 42, 78)}
+COLOR = sys.argv[sys.argv.index("--color") + 1] if "--color" in sys.argv else None
+MARCA = COLORES[COLOR] if COLOR else VERDE
 
 
 # ───────────────────────── letra ─────────────────────────
@@ -175,6 +181,8 @@ def textura(W, H, color, semilla=3):
 
 
 def guardar(im, nombre):
+    if COLOR:
+        nombre = f"{nombre}-{COLOR}"
     SALIDA.mkdir(parents=True, exist_ok=True)
     ruta = SALIDA / f"{nombre}.jpg"
     im.save(ruta, quality=95, subsampling=0)
@@ -244,7 +252,7 @@ def piezas(W, H, suf):
     if not vertical:  # mitad y mitad, en vertical
         mitad = W // 2
         lienzo = Image.new("RGB", (W, H))
-        lienzo.paste(textura(mitad, H, VERDE), (0, 0))
+        lienzo.paste(textura(mitad, H, MARCA), (0, 0))
         ph, _ = caja(src, W - mitad, H, 0.47, 0.50, 0.50)
         lienzo.paste(revelar(ph), (mitad, 0))
         c = Capa(lienzo)
@@ -257,7 +265,7 @@ def piezas(W, H, suf):
     else:  # arriba el bloque, abajo la foto
         alto = round(H * 0.47)
         lienzo = Image.new("RGB", (W, H))
-        lienzo.paste(textura(W, alto, VERDE), (0, 0))
+        lienzo.paste(textura(W, alto, MARCA), (0, 0))
         ph, _ = caja(src, W, H - alto, 0.42, 0.50, 0.40)
         lienzo.paste(revelar(ph), (0, alto))
         c = Capa(lienzo)
@@ -270,7 +278,7 @@ def piezas(W, H, suf):
     src = Image.open(FOTOS / "terciopelo/cajita-carmen-1.jpg").convert("RGB")
     alto = round(H * (0.36 if not vertical else 0.42))
     lienzo = Image.new("RGB", (W, H))
-    lienzo.paste(textura(W, alto, BURDEOS, 5), (0, 0))
+    lienzo.paste(textura(W, alto, MARCA if COLOR else BURDEOS, 5), (0, 0))
     ph, _ = caja(src, W, H - alto, 0.5, 0.58, 0.78 if not vertical else 0.80)
     lienzo.paste(revelar(ph), (0, alto))
     c = Capa(lienzo)
@@ -285,7 +293,26 @@ def piezas(W, H, suf):
     return hechas
 
 
+def bloque_marca(W, H, suf):
+    """7 · La marca sola en su color (como la portada naranja de Olivia), para anuncios de novedad o temporada."""
+    lienzo = textura(W, H, MARCA, 9)
+    c = Capa(lienzo)
+    k = c.k
+    f = fuente("Cormorant.ttf", 64 * k, b"Medium")
+    asc, desc = f.getmetrics()
+    texto(c.d, W / 2, H * 0.40, "LUNERIE", f, BLANCO, 26 * k)
+    c.bloque([("cursiva", "Con tu nombre.")], 0.40 + (asc + desc + 30 * k) / H, BLANCO)
+    c.bloque([("nota", "TU NOMBRE  ·  TU INICIAL  ·  TU PIEDRA")], 0.90, BLANCO)
+    return guardar(c.pegar(), f"7-marca-{suf}")
+
+
 if __name__ == "__main__":
-    for W, H, s in ((1080, 1350, "4x5"), (1080, 1920, "9x16")):
-        for r in piezas(W, H, s if REVELAR else s + "-sin-revelar"):
+    if COLOR:  # prueba de color: solo lo que lleva el bloque de color
+        hechas = [r for r in piezas(1080, 1350, "4x5") if any(n in r.name for n in ("4-promo", "5-regalo"))]
+        hechas.append(bloque_marca(1080, 1350, "4x5"))
+        for r in hechas:
             print(r)
+    else:
+        for W, H, s in ((1080, 1350, "4x5"), (1080, 1920, "9x16")):
+            for r in piezas(W, H, s if REVELAR else s + "-sin-revelar"):
+                print(r)

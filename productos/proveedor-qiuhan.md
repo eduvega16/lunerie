@@ -277,3 +277,8 @@ logo, factura ni precio, y si tiene caja de regalo; (9) foto de cada collar ante
 - **Aros de QIUHAN (foto del 19-nov):** misma forma que los Boucle (U alargada, lisos, con bisagra), pero **solo tienen
   15 × 10 mm** (los nuestros: pequeño 14 × 12, mediano 18 × 12). **#LUN1009 era el mediano de 18 mm → se queda en
   AliExpress.** Para pedidos futuros, valen como «pequeño», cambiando la medida de la ficha a 15 × 10 mm.
+- **Susan (19-nov): si las piezas extra van en la misma caja del collar, no cobran el +1 $** (pesan poco). Se les pide
+  meterlas en la cajita del collar, cada una en su bolsita. Joya extra **≈ 2,5 € puesta** (2 € + IVA + PayPal). Collar
+  + Larme a mitad de precio ≈ +8 € sobre el collar solo, lo mismo que un 2.º collar. Collar + anillo a mitad ≈ +6 €.
+- #LUN1010: los Larme ya salieron de AliExpress. Solo se cambia el anillo, si la foto cuadra y el reembolso de
+  AliExpress pasa de ~2,5 €.

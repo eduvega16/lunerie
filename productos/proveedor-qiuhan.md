@@ -253,3 +253,14 @@ logo, factura ni precio, y si tiene caja de regalo; (9) foto de cada collar ante
   7,03 € de IVA = **40,51 €** (sin la comisión de PayPal). En el pedido de Alibaba pone la dirección de León (#LUN1004):
   **Edu (18-nov): da igual**, QIUHAN la pone por ir rápido y envía a la de su lista; las dos direcciones de la lista,
   comprobadas con Shopify. Lo que se revisa es la etiqueta de Cainiao.
+
+## 19-nov: QIUHAN tiene el anillo Étoile por 2 €
+- Edu les preguntó por las piezas de AliExpress y dicen que tienen **el anillo de piedra del mes** (el Étoile de #LUN1010)
+  por **2 €**. **Solo sale a cuenta si va en el mismo paquete que un collar:** +1 $ por pieza extra; el derecho de 3 € va
+  por código arancelario y collar y anillo son bisutería de metal, así que seguramente comparten código. Con IVA y PayPal,
+  unos **3,5 € puesto**, frente a ~4 € + ~6 € de aduanas en AliExpress. Suelto, con los 12 $ de envío, sale peor que
+  AliExpress.
+- #LUN1010 se queda como está: el anillo ya está pedido en AliExpress (15,17 € con los pendientes).
+- **Sin confirmar:** que sea el mismo anillo (foto real), las tallas US 6/7/8 (nuestras 12 / 14-15 / 17), que los colores
+  de los meses sean los de sus collares, el material y el baño, si son 2 € o 2 $, y si sale sin costes de envío ni aduanas
+  aparte, y en cuántos días. Mensaje en inglés en la sesión del 19-nov.

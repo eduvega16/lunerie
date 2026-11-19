@@ -264,3 +264,6 @@ logo, factura ni precio, y si tiene caja de regalo; (9) foto de cada collar ante
 - **Sin confirmar:** que sea el mismo anillo (foto real), las tallas US 6/7/8 (nuestras 12 / 14-15 / 17), que los colores
   de los meses sean los de sus collares, el material y el baño, si son 2 € o 2 $, y si sale sin costes de envío ni aduanas
   aparte, y en cuántos días. Mensaje en inglés en la sesión del 19-nov.
+- **También tienen los pendientes** (los Larme de #LUN1010, según Edu; precio aún sin decir). Se aplica lo mismo: solo
+  junto a un collar. Larme en AliExpress: 1,88 € + ~6 € de aduanas. Falta saber su precio, los colores y si tienen
+  también los aros Boucle.

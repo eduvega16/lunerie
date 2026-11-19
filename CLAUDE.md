@@ -586,6 +586,9 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
   pago iniciado (`cost_per_action_type:omni_initiated_checkout`), mirando carritos y compras. No se puede cambiar una vez
   empezada; empieza como pronto al día siguiente. Si gana el 31, se queda junto al 18. Crear con
   `ads_experiment_abtest_create_test` solo con el OK de Edu. Notas en `oficina/referencias/edu-2026-11-18/notas.md` (4).
+- **QIUHAN tiene el anillo Étoile, los pendientes Larme y los aros Boucle a 2 € (19-nov, por confirmar con fotos):**
+  junto a un collar, ~3,6 € puesto por pieza (en AliExpress, ~8-10 € con aduanas). Cuentas y regla propuesta en
+  `productos/proveedor-qiuhan.md`. #LUN1010 se queda en AliExpress (ya pedido).
 - **Siguiente (plan hablado con Edu):** viernes 20-nov, revisar si sube carrito → pago · Edu recuerda a QIUHAN el
   catálogo de complementos con nombre (mismo paquete, +1 $) para ir sustituyendo las joyas de AliExpress · el 5-dic, el
   collar vuelve a 49,95 € (1 collar deja ~19 € en vez de ~11 €).

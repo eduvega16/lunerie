@@ -267,3 +267,10 @@ logo, factura ni precio, y si tiene caja de regalo; (9) foto de cada collar ante
 - **También tienen los pendientes** (los Larme de #LUN1010, según Edu; precio aún sin decir). Se aplica lo mismo: solo
   junto a un collar. Larme en AliExpress: 1,88 € + ~6 € de aduanas. Falta saber su precio, los colores y si tienen
   también los aros Boucle.
+- **Edu (19-nov): «los tiene todos por 2 €»** (anillo Étoile, pendientes Larme y aros Boucle). Con +1 $ por pieza extra,
+  el IVA y PayPal, **~3,6 € puesto por pieza** si va junto a un collar. Lo que habrían dejado antes de anuncios los
+  pedidos del 17-nov con las joyas de QIUHAN: **#LUN1009** (collar + aros, 49,88 €) ~16 € en vez de ~8 € · **#LUN1010**
+  (collar + Larme + Étoile, 64,85 €) ~24 € en vez de ~16 €. Collar + 1 joya a mitad de precio ≈ +4-6 € sobre el collar
+  solo (2.º collar ≈ +8 €).
+- **Regla propuesta (sin OK de Edu):** pedido con collar → todo a QIUHAN en un paquete, con foto de cada pieza antes de
+  enviar (como los collares). Pedido sin collar → AliExpress, como hasta ahora. Relojes → AliExpress.

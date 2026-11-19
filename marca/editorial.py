@@ -31,13 +31,21 @@ VERDE, BURDEOS = (0, 96, 57), (74, 10, 16)
 REVELAR = "--sin-revelar" not in sys.argv
 # Prueba de color de marca para los bloques (Edu, 19-nov: «me gusta el naranja y el azul… podríamos probar»).
 # El naranja es un punto más ámbar que el de Olivia (#C84011) para no ser idéntico; el azul es azul noche, por la luna.
-NARANJA, AZUL, NARANJA_VIVO = (194, 83, 27), (27, 42, 78), (234, 114, 46)
+# Colores de marca (Edu, 19-nov): el naranja de Olivia («me mola como el de Olivia, pon ese color») combinado con el azul
+# noche. NARANJA_TEXTO es el mismo naranja algo más claro, para que el texto pequeño se lea sobre el azul.
+NARANJA, AZUL, NARANJA_TEXTO = (200, 64, 17), (27, 42, 78), (234, 104, 52)
 # combinación → (fondo del bloque, texto, acento). Edu (19-nov): «es la combinación de ambos».
-COMBOS = {"verde": (VERDE, BLANCO, BLANCO), "naranja": (NARANJA, BLANCO, BLANCO), "azul": (AZUL, BLANCO, BLANCO),
-          "azul-naranja": (AZUL, BLANCO, NARANJA_VIVO), "naranja-azul": (NARANJA, AZUL, BLANCO)}
+# combinación → (fondo del bloque, texto pequeño, acento de lo grande, cinta entre bloque y foto)
+COMBOS = {"verde": (VERDE, BLANCO, BLANCO, None), "naranja": (NARANJA, BLANCO, BLANCO, None),
+          "azul": (AZUL, BLANCO, BLANCO, None), "burdeos": (BURDEOS, BLANCO, BLANCO, None),
+          "naranja-azul": (NARANJA, BLANCO, AZUL, AZUL), "azul-naranja": (AZUL, BLANCO, NARANJA_TEXTO, NARANJA)}
 COLOR = sys.argv[sys.argv.index("--color") + 1] if "--color" in sys.argv else None
-MARCA, TXT, ACC = COMBOS[COLOR] if COLOR else (VERDE, BLANCO, BLANCO)
-CINTA = {"azul-naranja": NARANJA_VIVO, "naranja-azul": AZUL}.get(COLOR)  # la cinta del otro color entre bloque y foto
+# De serie se alternan: la promo y el bloque de marca en naranja con cinta azul; el regalo en azul con cinta naranja.
+SERIE = {"promo": "naranja-azul", "regalo": "azul-naranja", "marca": "naranja-azul"}
+
+
+def combo(plantilla):
+    return COMBOS[COLOR or SERIE[plantilla]]
 
 
 # ───────────────────────── letra ─────────────────────────
@@ -264,8 +272,9 @@ def piezas(W, H, suf):
              0.775 if not vertical else y_arriba, TINTA)
     hechas.append(guardar(c.pegar(), f"3-producto-{suf}"))
 
-    # 4 · Promo partida (como el Black Friday de Olivia): bloque verde Lunerie con relieve + foto de cerca
+    # 4 · Promo partida (como el Black Friday de Olivia): bloque naranja con relieve, cinta azul y foto de cerca
     src = Image.open(FOTOS / "ugc-lucce/pecho-1.jpg").convert("RGB")
+    MARCA, TXT, ACC, CINTA = combo("promo")
     if not vertical:  # mitad y mitad, en vertical
         mitad = W // 2
         lienzo = Image.new("RGB", (W, H))
@@ -276,7 +285,7 @@ def piezas(W, H, suf):
         cx = mitad / 2
         if CINTA:
             cinta(lienzo, (mitad - round(7 * lienzo.width / 1080), 0, mitad + round(7 * lienzo.width / 1080), H), CINTA)
-        c.bloque([("marca", "LUNERIE")], 0.075, ACC, cx)
+        c.bloque([("marca", "LUNERIE")], 0.075, TXT, cx)
         c.bloque([("titulo", "Black Friday")], 0.25, TXT, cx)
         y = c.bloque([("cifra", "3x2")], 0.33, ACC, cx)
         c.bloque([("linea", "LA 2.ª AL 50 %"), ("linea", "Y LA 3.ª, GRATIS")], (y + 10 * c.k) / H, TXT, cx)
@@ -287,17 +296,21 @@ def piezas(W, H, suf):
         lienzo.paste(textura(W, alto, MARCA), (0, 0))
         ph, _ = caja(src, W, H - alto, 0.42, 0.50, 0.40)
         lienzo.paste(revelar(ph), (0, alto))
+        if CINTA:
+            cinta(lienzo, (0, alto - round(7 * W / 1080), W, alto + round(7 * W / 1080)), CINTA)
         c = Capa(lienzo)
-        c.bloque([("marca", "LUNERIE"), ("titulo", "Black Friday")], 0.15, BLANCO)
-        y = c.bloque([("cifra", "3x2")], 0.225, BLANCO)
-        c.bloque([("linea", "LA 2.ª AL 50 % Y LA 3.ª, GRATIS")], (y + 6 * c.k) / H, BLANCO)
+        c.bloque([("marca", "LUNERIE")], 0.15, TXT)
+        c.bloque([("titulo", "Black Friday")], 0.15 + 64 * c.k / H, TXT)
+        y = c.bloque([("cifra", "3x2")], 0.225, ACC)
+        c.bloque([("linea", "LA 2.ª AL 50 % Y LA 3.ª, GRATIS")], (y + 6 * c.k) / H, TXT)
     hechas.append(guardar(c.pegar(), f"4-promo-{suf}"))
 
-    # 5 · Regalo partido: bloque burdeos con relieve arriba y la cajita abajo, borde limpio
+    # 5 · Regalo partido: bloque azul noche con relieve arriba, cinta naranja y la cajita abajo, borde limpio
     src = Image.open(FOTOS / "terciopelo/cajita-carmen-1.jpg").convert("RGB")
+    MARCA, TXT, ACC, CINTA = combo("regalo")
     alto = round(H * (0.36 if not vertical else 0.42))
     lienzo = Image.new("RGB", (W, H))
-    lienzo.paste(textura(W, alto, MARCA if COLOR else BURDEOS, 5), (0, 0))
+    lienzo.paste(textura(W, alto, MARCA, 5), (0, 0))
     ph, _ = caja(src, W, H - alto, 0.5, 0.58, 0.78 if not vertical else 0.80)
     lienzo.paste(revelar(ph), (0, alto))
     if CINTA:
@@ -318,6 +331,7 @@ def piezas(W, H, suf):
 
 def bloque_marca(W, H, suf):
     """7 · La marca sola en su color (como la portada naranja de Olivia), para anuncios de novedad o temporada."""
+    MARCA, TXT, ACC, CINTA = combo("marca")
     lienzo = textura(W, H, MARCA, 9)
     c = Capa(lienzo)
     k = c.k
@@ -340,5 +354,5 @@ if __name__ == "__main__":
             print(r)
     else:
         for W, H, s in ((1080, 1350, "4x5"), (1080, 1920, "9x16")):
-            for r in piezas(W, H, s if REVELAR else s + "-sin-revelar"):
+            for r in piezas(W, H, s if REVELAR else s + "-sin-revelar") + [bloque_marca(W, H, s)]:
                 print(r)

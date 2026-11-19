@@ -38,7 +38,10 @@
   análisis en `oficina/referencias/olivia-ig-2026-11-19/README.md`): encuadre cerrado en la joya (sin brazo ni reloj de
   relleno), texto blanco sobre la piel sin degradados, flechas que anotan la pieza, promos partidas en bloque de color con
   relieve. Plantillas: `python marca/editorial.py` (6, en 4:5 y 9:16; revelado de película solo en piel y fondo, la joya
-  intacta). Contenido: 45 % para ti, 30 % para regalar (con «y otro para ti»), 15 % la pieza, 10 % promos. **Fotos reales: no
+  intacta). Contenido: 45 % para ti, 30 % para regalar (con «y otro para ti»), 15 % la pieza, 10 % promos.
+  **Colores de Instagram y anuncios (Edu, 19-nov): el naranja de Olivia #C84011 combinado con azul noche #1B2A4E**
+  (bloque de un color + cinta de raso del otro; de serie: promo y bloque de marca en naranja con cinta azul, regalo en azul
+  con cinta naranja; `--color` para otras). La web sigue en verde hasta que Edu diga si se cambia. **Fotos reales: no
   por ahora (Edu): IA con buenas referencias reales del producto.**
 - **Logos (13-oct), en `marca/logos/`:** logo LUNERIE en tinta / blanco / oro (SVG + PNG, `marca/logos.py`).
   **Monograma oficial: L cursiva (Cormorant Italic) + destello dorado de 4 puntas, fondo verde** →

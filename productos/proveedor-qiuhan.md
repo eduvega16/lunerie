@@ -274,3 +274,6 @@ logo, factura ni precio, y si tiene caja de regalo; (9) foto de cada collar ante
   solo (2.º collar ≈ +8 €).
 - **Regla propuesta (sin OK de Edu):** pedido con collar → todo a QIUHAN en un paquete, con foto de cada pieza antes de
   enviar (como los collares). Pedido sin collar → AliExpress, como hasta ahora. Relojes → AliExpress.
+- **Aros de QIUHAN (foto del 19-nov):** misma forma que los Boucle (U alargada, lisos, con bisagra), pero **solo tienen
+  15 × 10 mm** (los nuestros: pequeño 14 × 12, mediano 18 × 12). **#LUN1009 era el mediano de 18 mm → se queda en
+  AliExpress.** Para pedidos futuros, valen como «pequeño», cambiando la medida de la ficha a 15 × 10 mm.

@@ -32,10 +32,14 @@
 - **Estilo:** como **Calné** (calne.co): páginas limpias, fondo blanco, mucho aire, **la pieza manda y la marca casi
   no se ve** (logo pequeño, solo texto).
 - **Manual de marca (v2, 19-nov, propuesta; misma URL que la vieja página de marca):** https://claude.ai/artifact/MDZWWTrx5E6xxfgC8gfv2A
-  (fuente en `marca/manual/`): objetivo «la joyería personalizable de referencia en España», idea «lo que se escribe a mano
-  no se olvida», frase «Con su nombre.» (por decidir), voz, fotos que no parezcan de IA, plantillas (`marca/editorial.py`,
-  con revelado de película), colección (Signé → Su piedra → Initiale → Famille) y pasos para escalar (OEPM, fotos reales,
-  tarjeta en el paquete). Estética de referencia: `oficina/referencias/estetica-2026-11-19/`.
+  (fuente en `marca/manual/`, v2.1): objetivo «la joyería personalizable de referencia en España», idea «Lo tuyo, en una
+  joya» y frase «Con tu nombre.» (por decidir; Edu rechazó «lo que se escribe a mano»: la piedra del mes no se escribe).
+  **Instagram y anuncios = como @oliviajewelryco** (Edu, 19-nov: «a eso quiero que nos parezcamos lo máximo posible»,
+  análisis en `oficina/referencias/olivia-ig-2026-11-19/README.md`): encuadre cerrado en la joya (sin brazo ni reloj de
+  relleno), texto blanco sobre la piel sin degradados, flechas que anotan la pieza, promos partidas en bloque de color con
+  relieve. Plantillas: `python marca/editorial.py` (6, en 4:5 y 9:16; revelado de película solo en piel y fondo, la joya
+  intacta). Contenido: 45 % para ti, 30 % para regalar (con «y otro para ti»), 15 % la pieza, 10 % promos. **Fotos reales: no
+  por ahora (Edu): IA con buenas referencias reales del producto.**
 - **Logos (13-oct), en `marca/logos/`:** logo LUNERIE en tinta / blanco / oro (SVG + PNG, `marca/logos.py`).
   **Monograma oficial: L cursiva (Cormorant Italic) + destello dorado de 4 puntas, fondo verde** →
   `oficial-avatar-redes.png` (perfil de Instagram/TikTok) y `oficial-favicon.png` (pestaña, ya puesto en la tienda).

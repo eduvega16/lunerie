@@ -1,6 +1,6 @@
 {
   "id": "2026-W47-05-kcal",
-  "estado": "aprobado",
+  "estado": "publicado",
   "plataforma": "instagram",
   "formato": "carrusel",
   "pieza": "collar-signe",
@@ -48,7 +48,11 @@
     ],
     "urls": [],
     "alt_text": "Cinco tarjetas sobre fondo beige: un croissant, una tableta de chocolate, un polvorón y un donut con sus kcal aproximadas, frente a Collares Signé con 0 kcal; la última dice: Si vas a darte un capricho, que dure.",
-    "ia": true
+    "ia": true,
+    "resultado": {
+      "media_id": "18115568411169855",
+      "fecha": "2026-11-19T12:33:09+0100"
+    }
   },
   "origen": "Plan de 2 publicaciones al día del 10 al 20-nov (OK de Edu, 9-nov).",
   "riesgos": "Kcal aproximadas por pieza según etiquetas habituales (con «unas» y nota en la última tarjeta). Las joyas son fotos ya revisadas."

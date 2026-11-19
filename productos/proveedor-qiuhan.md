@@ -310,3 +310,12 @@ collar no cobran el +1 $; suelto, se suman los 12 $ de envío.
   mensaje y es fácil que salga mal.
 - **Falta preguntar:** tallas del Nuit (vendemos US 6/7/8), si la Gravée y el Toi & Moi los hay en plateado, máximo de
   letras de la Gravée (barra de 20 × 3 mm), si tienen el Anillo Fil, y foto real de cada pieza antes del primer pedido.
+
+### Mensaje para Susan (en inglés, sin mandar a 19-nov)
+> Hi Susan! A few more questions:
+> 1. Anillo Nuit (the marquise signet ring): which sizes do you have?
+> 2. Name bar bracelet and two-birthstone ring: are they available in silver too?
+> 3. Name bar bracelet (bar 20 × 3 mm): what is the maximum number of letters that still looks good?
+> 4. Do you have this thin open ring with a rectangular birthstone? [foto del Anillo Fil]
+> 5. Before the first order of each new piece, could you send me a real photo?
+> Thank you!

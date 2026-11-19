@@ -1,0 +1,38 @@
+- [Sin ventanas de terminal](sin-ventanas-terminal.md) — REGLA FIJA: ejecutar siempre dentro de VS Code (segundo plano si es largo), nunca abrir ventanas; logins con consola invisible
+- [No sacar el alta de autónomo](no-sacar-alta-autonomo.md) — Edu no se da de alta hasta vender; no volver a plantearlo
+- [Skills de Instagram](skills-instagram.md) — ig-* instaladas en el usuario, revisadas; usar `python`, no `python3`
+- [Vista previa Lunerie](lunerie-vista-previa.md) — contraseña de la tienda en D:\LUNERIE\.claude\store-password (fuera de git)
+- [Ver en la tienda real](ver-en-tienda-real.md) — cambios de diseño: primero vista previa en el tema de prueba con capturas aquí; con el OK de Edu, a lunerie.es
+- [No atribuir notas a Edu](no-atribuir-notas-a-edu.md) — lo de CLAUDE.md lo escribe Claude; citar la línea, no decir «tú apuntaste»
+- [Preguntar antes de cambios fuera de la tarea](preguntar-antes-cambios-fuera-de-tarea.md) — en la tienda en vivo, aunque CLAUDE.md lo tenga como pendiente
+- [Olivia como referencia](olivia-referencia-diseno.md) — «como Olivia»: copiar estructura y proporciones midiendo oliviajewelry.com con Playwright, sin sus afirmaciones
+- [Pruebas visuales](pruebas-visuales-lunerie.md) — pantalla de Edu 2554×1316 + 1440 + móvil 390; Playwright con el Chrome instalado
+- [Biblioteca de contenido](biblioteca-contenido.md) — hooks y skills de las capturas de Edu, en la carpeta biblioteca/ del repo; adaptar la forma, sin testimonios inventados
+- [La oficina de Lunerie](oficina-lunerie.md) — 4 agentes (ideas, community, vídeo, ads) con cola de aprobación; Edu aprueba y confirma el dinero
+- [Estilo de contenido juvenil](estilo-contenido-juvenil.md) — reloj+joya en escenas diarias, ojo de pez; revisar color a tamaño real; Edu quiere autosuficiencia
+- [Publicación Instagram por API](instagram-publicacion-api.md) — se publica solo desde D:\LUNERIE (13-nov); 19-26 nov Edu en el portátil: allí nunca `programar` sin id; no repetir primeras líneas; nunca claves en git ni en el chat
+- [Lecciones de Meta Ads](meta-ads-lecciones.md) — Audience Network, cookies, estilo vs. mentiras, filtrar los consejos del asistente de Meta, cambiar botón = reiniciar
+- [Lujo como PDPaola](lujo-pdpaola.md) — solo grita la barra roja; promo y venta cruzada en pequeño, fotos grandes, sin cajas de color
+- [Referencias reales para la IA](referencias-reales-ia.md) — generar con fotos REALES (proveedor, amigas), nunca IA sobre IA; el Lune es algo más grande de lo que lo saco
+- [Redes: Instagram y Facebook](redes-solo-instagram.md) — 8-nov: Edu quiere también Facebook (falta permiso pages_manage_posts); sin «creada con IA» en los pies; Claude elige el contenido orgánico, el dinero sigue con OK de Edu
+- [Calidad de fotos en Shopify](calidad-fotos-shopify.md) — generar en 4K y subir JPEG 97 sin submuestreo; el WebP de Shopify no se controla
+- [Enlaces locales](enlaces-locales.md) — dar siempre la ruta clicable de cada vídeo/foto que se le enseña
+- [Plazos sin sumar](plazos-sin-sumar.md) — fabricación y envío por separado, nunca el total; collar 3-5 + 3-5 (Edu); en la ficha solo «se hace y sale en»
+- [ElevenLabs](elevenlabs-voz.md) — Starter; voz natural = una sola toma con texto hablado (Jenni, eleven_v4), sin eco; frase a frase suena a doblaje
+- [Cambios de precio](cambios-de-precio.md) — al cambiar un precio, rehacer reels/vídeos/cola que lo enseñan; Meta solo al revisar la campaña
+- [Enseñar antes de subir](ensenar-antes-de-subir.md) — ruta local + OK de Edu antes de meter un vídeo en anuncios o programarlo, también al rehacerlo
+- [Vídeos UGC](videos-ugc.md) — gusto de Edu (chica normal con móvil, variedad, lágrima pequeña, música baja), fallos de Kling a los 2,5-3 s; reels con material real del móvil = «demasiado casero»
+- [Enfoque personalizables](enfoque-personalizables.md) — desde 6-nov Lunerie se centra en personalizables tipo Olivia; relojes = complementos; 80 % de Instagram = Collar Signé
+- [Mensajes a clientas](mensajes-clientas.md) — cálidos y persuasivos sin mentir, algún emoji (solo en privado); cancelación: ofrecer cambio antes de devolver
+- [Siempre en español](siempre-en-espanol.md) — todo a Edu en español, aunque la sesión vaya en inglés; inglés solo para proveedores
+- [Letra de firma](gusto-letra-firma.md) — Hurricane (legible) en la vista previa del Signé; Herr Von «es demasiado»
+- [Terciopelo rojo de Navidad](terciopelo-navidad.md) — cambiar solo el fondo de fotos revisadas; sin lágrimas rojas sobre rojo; la N de firma sale M; mucho contenido = historias diarias
+- [Higgsfield solo con permiso](higgsfield-solo-con-permiso.md) — nada en Higgsfield (ni APIs de pago) sin un «sí» de Edu a esa tanda con su coste; las ideas de reel se guardan, no se producen
+- [Reels de referencia](reels-referencia.md) — ver reels de Instagram sin login (og:video + ffmpeg + STT), biblioteca por page_id, guardar en oficina/referencias; Lola Rose = UGC 3 chicas, esperar al 31
+- [Admin de Shopify con el navegador](shopify-admin-navegador.md) — lo que la API no deja (Messaging, grabaciones de Propel…) con Chrome de depuración + Playwright; sin ventana si la sesión sigue viva; Edu inicia sesión
+- [Hacerlo Claude, no Sidekick](hacerlo-claude-no-sidekick.md) — si Claude puede hacerlo en Shopify, lo hace él («hazlo tú»); activar/gastar/publicar sigue con OK
+- [Pedidos por Instagram](pedidos-por-instagram.md) — enlace de pago = cesta Storefront cartCreate con «Nombre» por línea; promo sola; caduca ~10 días
+- [QIUHAN: revisar dirección](qiuhan-revisar-direccion.md) — copian el pedido anterior de Alibaba; en cada pedido comprobar dirección y etiqueta contra Shopify antes de pagar
+- [Mensajes de Instagram](instagram-mensajes.md) — DM con oficina/mensajes_ig.py (Business Suite sin ventana); la API no ve los DM; enviar solo con OK
+- [Sin dirección de casa](sin-direccion-de-casa.md) — Edu no quiere su dirección en ningún correo; Messaging la pone en el pie → automatizaciones inactivas hasta tener otra dirección
+- [Estética limpia y elegante](estetica-limpia-elegante.md) — 19-nov: Instagram y anuncios como Able/Monica Vinader: foto a sangre, serif fina, oferta en píldoras; marca/editorial.py

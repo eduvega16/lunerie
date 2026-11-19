@@ -1,6 +1,6 @@
 {
   "id": "2026-W47-14-story-plata-elena",
-  "estado": "aprobado",
+  "estado": "publicado",
   "plataforma": "instagram",
   "formato": "story",
   "pieza": "collar-signe",
@@ -20,7 +20,11 @@
     ],
     "urls": [],
     "alt_text": "",
-    "ia": true
+    "ia": true,
+    "resultado": {
+      "media_id": "18016835306989240,18196310092406350",
+      "fecha": "2026-11-19T11:02:10+0100"
+    }
   },
   "origen": {
     "biblioteca": "terciopelo-navidad"

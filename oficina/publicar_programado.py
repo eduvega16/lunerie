@@ -7,6 +7,7 @@ estaba apagado, la tarea corre al encenderlo (`-StartWhenAvailable`) pero solo p
 RETRASO_MAX horas; si no, la pieza sigue «aprobado» para publicarla a mano. Todo queda en oficina/publicaciones.log (fuera de git).
 
     python oficina/publicar_programado.py programar          crea o rehace una tarea por pieza aprobada con fecha futura
+    python oficina/publicar_programado.py programar ID…      solo esas piezas (en el otro PC, para no duplicar las de este)
     python oficina/publicar_programado.py tareas             lista las tareas de Lunerie
     python oficina/publicar_programado.py quitar [ID]        borra la tarea de una pieza (o todas)
     pythonw oficina/publicar_programado.py publicar ID [--ensayo]   lo que ejecuta cada tarea
@@ -49,10 +50,12 @@ def powershell(script):
                           text=True, encoding="utf8", errors="replace", creationflags=SIN_VENTANA)
 
 
-def programar():
+def programar(ids=()):
     ahora = datetime.datetime.now().astimezone()
     for f in sorted(COLA.glob("20*.json")):
         p = json.loads(f.read_text(encoding="utf8"))
+        if ids and not any(p.get("id", "").startswith(i) for i in ids):
+            continue
         if p.get("estado") != "aprobado" or p.get("plataforma") != "instagram" or not p.get("fecha_sugerida"):
             continue
         cuando = datetime.datetime.fromisoformat(p["fecha_sugerida"])
@@ -76,7 +79,7 @@ if __name__ == "__main__":
     if accion == "publicar":
         publicar(resto[0], ensayo="--ensayo" in resto)
     elif accion == "programar":
-        programar()
+        programar(resto)
     elif accion == "quitar":
         nombre = f"-TaskName '{resto[0]}'" if resto else ""
         print(powershell(f"Get-ScheduledTask -TaskPath '{CARPETA}' {nombre} | Unregister-ScheduledTask -Confirm:$false").stderr or "hecho")

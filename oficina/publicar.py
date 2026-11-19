@@ -69,7 +69,8 @@ def shopify(consulta, variables):
         q, v = pathlib.Path(d, "q.graphql"), pathlib.Path(d, "v.json")
         q.write_text(consulta, encoding="utf-8"); v.write_text(json.dumps(variables), encoding="utf-8")
         r = subprocess.run(["shopify", "store", "execute", "-s", TIENDA, "--query-file", str(q), "--variable-file", str(v),
-                            "--json", "--no-input", "--allow-mutations"], capture_output=True, text=True, shell=os.name == "nt")
+                            "--json", "--no-input", "--allow-mutations"], capture_output=True, text=True, encoding="utf8",
+                           errors="replace", shell=os.name == "nt")
     d = json.loads(r.stdout or "{}")
     if "error" in d or "errors" in d or r.returncode:
         raise RuntimeError(f"Shopify: {(r.stdout or r.stderr)[:400]}")

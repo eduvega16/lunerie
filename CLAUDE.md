@@ -582,9 +582,90 @@ KILL (se mira en la campaña) si gastas 1× CPA BE sin carritos o 2× sin ventas
 del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alertas si CTR < 1 % o CPC > 0,90 €.
 «Aprendizaje limitado» es normal con este presupuesto (Meta pide ~50 compras/semana). Máximo 2 productos en test.
 
-## 8. Calendario y pendientes (a 15-nov-2026)
+## 8. Calendario y pendientes (a 19-nov-2026)
 
 ### Para empezar la próxima sesión (después del 2-nov) — abrir conversación nueva por sesión.
+**19-nov → SEMANA EN EL PORTÁTIL (`C:\Users\edu\lunerie`), hasta ~26-nov. Leer esto primero: manda sobre todo lo de abajo.**
+
+*Instagram sigue saliendo SOLO desde `D:\LUNERIE`, que se queda en casa encendido:*
+- **18 tareas programadas en D: hasta el miércoles 25-nov 19:30**, revisadas en seco el 19-nov (los 39 archivos están y
+  todas dicen 39,90 €):
+  - historias a las 11:00 del 20 al 24-nov;
+  - feed a las 12:30 y 19:30 del 19 al 25-nov;
+  - el reel «Cinco ideas de regalo» (W48-04), el 24-nov a las 12:30.
+
+  Desde el 26-nov la cola está vacía.
+- **D: tiene que quedarse encendido o en suspensión, enchufado y con la sesión de Edu abierta.** Bloquear la pantalla
+  vale; cerrar sesión o apagar, no. Las tareas son «Interactive»: tras un reinicio de Windows Update no corren hasta
+  que alguien entre. Por eso: **pausar las actualizaciones una semana** (Configuración → Windows Update).
+- **En el portátil NUNCA `publicar_programado.py programar` sin id.** Allí la cola sigue diciendo «aprobado» en las piezas
+  que publica D: (D: no hace commit mientras nadie lo toca), así que saldrían dos veces.
+  - Al empezar: `python oficina/publicar_programado.py tareas` tiene que decir «ninguna». Si sale algo, `quitar`.
+  - Piezas nuevas hechas en el portátil, con el OK de Edu, se publican de dos maneras:
+    - programando solo su id: `python oficina/publicar_programado.py programar <ID>` (opción nueva del 19-nov);
+    - a mano: `python oficina/publicar.py <id> --confirmar`.
+
+    Mientras tanto el portátil tiene que estar encendido. Sus claves de Instagram están en su `.env.local`.
+- **No tocar desde el portátil las piezas programadas en D:.** D: lee su propia copia: el cambio no llega y además da
+  conflicto en git.
+- Para saber qué ha salido: Instagram `/<IG_USER_ID>/media?fields=caption,timestamp`. La cola del portátil no se entera.
+- Facebook va aparte y a mano: `python oficina/publicar_facebook.py <id>`.
+- **Al volver a D:**
+  1. `git add oficina/cola && git commit` (lo publicado durante la semana).
+  2. `git pull`.
+  3. Mirar `oficina/publicaciones.log`: código ≠ 0 o «NO publicada» = publicarla a mano.
+
+*Poner en marcha el portátil:*
+- `git pull`.
+- **Notas de Claude de D:, copiadas el 19-nov en `memoria/`** (el índice es `memoria/MEMORY.md`). Leerlas al empezar.
+  Las que falten en la memoria del portátil, copiarlas allí.
+- **Lo que NO viaja por git:**
+  - `.claude/meta-perfil` (mensajes de Instagram con `mensajes_ig.py`, cifras de Business Suite).
+  - `.claude/shopify-perfil` (Propel Replays, `admin_shopify.py`).
+
+    En el portátil Edu tendría que iniciar sesión una vez en ese Chrome aparte. Claude no inicia sesión por él.
+  - Los PNG originales de las fotos IA: solo viajan los JPG.
+  - `tema/tienda/`: antes de tocar el tema, `shopify theme pull` y comparar con el tema publicado.
+- Trampa del Pillow: en el portátil cada peso de Jost se pinta un punto más fino (ver 15-nov).
+- La CLI de Shopify del portátil puede no tener los permisos dados en D: (por ejemplo `read_customers`, 14-nov). Si da
+  ACCESS_DENIED: `shopify store auth --store qjxvnn-xq.myshopify.com --scopes <lista>` en segundo plano, y Edu acepta
+  en el navegador.
+- Temas: el publicado es 209073799507. El de prueba, «Prueba carritos 17-nov» 212311638355, vuelve a estar en verde.
+
+*Pendiente de la semana, por fecha:*
+- **Viernes 20-nov, revisión de Meta** (regla del 17-nov):
+  - con ≥ 1 venta desde el 17-nov, seguir sin subir;
+  - sin ventas, pausar y guardar lo que queda del tope (450 €) para el 24-30 nov.
+
+  Ese día mirar también:
+  - si entran emails: `customers(query: "tag:cesta-black-friday")`;
+  - si sube carrito → pago.
+
+  La prueba 18 contra 31, solo con el OK de Edu (ver 18-nov).
+- **QIUHAN:**
+  - **Fotos de los aros de 18 mm (DXL-LUN1009) y del anillo verde US 8 (DXL-LUN1010)** → pagar el extra → solo entonces
+    cancelar en AliExpress, con reembolso.
+  - **Preguntas para Susan** sobre las piezas nuevas: mensaje en inglés en `productos/proveedor-qiuhan.md`, sin mandar.
+- **Personalizables nuevos (5.5), en borrador.** Para publicarlos:
+  - OK de Edu a nombres y precios;
+  - decidir si se quitan el Anillo Fil (se parece al Étoile) y el Collar Initiale (deja poco);
+  - el campo del nombre de la Gravée y el selector de dos piedras del Toi & Moi, en el tema de prueba primero;
+  - fotos puestas con IA solo con OK y coste.
+- **Marca:** idea y frase por decidir (manual v2.4).
+- **Instagram:**
+  - DM de Rocío Gómez (UGC) sin contestar;
+  - seguimiento a la chica del 16-nov.
+- **Contenido desde el 26-nov:** estilo limpio como Olivia (`marca/editorial.py`, reparto 45/30/15/10, apartado 3).
+  Enseñarlo antes de programarlo.
+- **24-30 nov, semana del Black Friday:** el tope de 450 € de Meta llega hasta ~28-nov. Decidir en la revisión si se
+  alarga.
+- **30-nov:** enlace nuevo a Dayana.
+- **Antes del 5-dic:** recordatorio a las suscritas de «Cesta Black Friday», a mano desde hola@lunerie.es (las
+  automatizaciones siguen apagadas por la dirección de casa).
+- **5-dic:** fin de la promo: `PROMO = False` y fuera «Black Friday» de cajita, ventana y cesta. Preguntar a Edu si
+  renueva ElevenLabs.
+- **6-dic:** Collar Signé a 49,95 €, sin tachado.
+
 **18-nov (`D:\LUNERIE`):**
 - **#LUN1009 y #LUN1010 pedidos a QIUHAN** (lista y direcciones comprobadas con Shopify; 41,73 € con PayPal). Margen de
   los dos antes de anuncios ~24 € (#1009 ~8 €, los aros pierden ~2,60 €; #1010 ~16 €); con ~24 €/pedido de Meta, ~−24 €.

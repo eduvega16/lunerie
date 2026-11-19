@@ -32,8 +32,13 @@
 - **Estilo:** como **Calné** (calne.co): páginas limpias, fondo blanco, mucho aire, **la pieza manda y la marca casi
   no se ve** (logo pequeño, solo texto).
 - **Manual de marca (v2, 19-nov, propuesta; misma URL que la vieja página de marca):** https://claude.ai/artifact/MDZWWTrx5E6xxfgC8gfv2A
-  (fuente en `marca/manual/`, v2.1): objetivo «la joyería personalizable de referencia en España», idea «Lo tuyo, en una
-  joya» y frase «Con tu nombre.» (por decidir; Edu rechazó «lo que se escribe a mano»: la piedra del mes no se escribe).
+  (fuente en `marca/manual/`, v2.3): objetivo «la joyería personalizable de referencia en España». Idea y frase POR DECIDIR:
+  propuestas «Joyas con nombre propio» y «Con tu nombre. O con el suyo.» (la dirección de Edu: «con tu nombre o el suyo»).
+  Descartadas por Edu: «lo que se escribe a mano» (la piedra del mes no se escribe) y «Lo tuyo, en una joya».
+  Edu (19-nov): ✨ sí en el texto de las publicaciones; OEPM, por ahora no; banco de fotos IA, espera.
+  **Colores nuevos en la web SOLO en el tema de prueba** «Prueba carritos 17-nov» (212311638355): botones azul noche #1B2A4E
+  y barra naranja #C84011 (`python tema/build.py --naranja-azul` + subir solo al tema de prueba; los botones van en su
+  `settings_data.json`, que se editó en vivo para no perder el bloque de Loox). Sin la opción, build.py deja el verde.
   **Instagram y anuncios = como @oliviajewelryco** (Edu, 19-nov: «a eso quiero que nos parezcamos lo máximo posible»,
   análisis en `oficina/referencias/olivia-ig-2026-11-19/README.md`): encuadre cerrado en la joya (sin brazo ni reloj de
   relleno), texto blanco sobre la piel sin degradados, flechas que anotan la pieza, promos partidas en bloque de color con
@@ -63,7 +68,8 @@
   barra superior verde con una frase, fotos todas 1:1 o 4:5 con el mismo fondo claro.
 - **Voz:** pocas palabras, cálida, sin gritar. Ej.: anuncio *«Pequeño, ovalado y con piedras. El reloj que parece
   heredado.»* · tarjeta en la caja *«Para llevar cerca.»*
-- **Reglas para que parezca cara:** sin emojis, sin «¡OFERTA!», sin contadores; verde solo en lo que se pulsa;
+- **Reglas para que parezca cara:** sin emojis en imágenes ni anuncios (en el texto de una publicación de Instagram, como
+  mucho uno, ✨, como Olivia: Edu, 19-nov), sin «¡OFERTA!», sin contadores falsos; verde solo en lo que se pulsa;
   cada pieza con nombre corto (Lune, Étoile, Nuit…).
 
 ---

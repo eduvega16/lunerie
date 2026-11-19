@@ -1,9 +1,16 @@
 """Genera los JSON del tema 'Lunerie · marca' (Horizon 4.2) a partir de la página de marca."""
-import copy, json, pathlib, re
+import copy, json, pathlib, re, sys
 from datetime import datetime
 
 OUT = pathlib.Path(__file__).parent
 INK, GREEN, GOLD, MIST, LINE, SOFT = "#16201B", "#006039", "#A6834A", "#F2F4F2", "#E2E6E3", "#3D4842"
+# 19-nov (Edu: «en el tema de prueba»): prueba de los colores nuevos de la marca en la web. Con --naranja-azul, los
+# botones y todo lo verde pasan a azul noche y la barra y las etiquetas de Black Friday al naranja de Olivia. Solo
+# para subir al tema de prueba: sin la opción, todo sigue como en el tema publicado.
+NARANJA_AZUL = "--naranja-azul" in sys.argv
+AZUL_NOCHE, NARANJA_OLIVIA = "#1B2A4E", "#C84011"
+if NARANJA_AZUL:
+    GREEN = AZUL_NOCHE
 FG = "{{ settings.color_palette.foreground }}"
 BG = "{{ settings.color_palette.background }}"
 C1 = "{{ settings.color_palette.color1 }}"
@@ -90,7 +97,7 @@ LOGO_CSS = (".header-logo { font-family: var(--font-heading--family); font-weigh
 PROMO = True
 PROMO_BARRA = "Black Friday · 2.ª pieza al 50 % · 3.ª gratis"
 # 3-nov (Edu): con la promo, la barra en rojo, como la de Black Friday de Olivia Jewelry (su mismo tono, medido en su web)
-PROMO_ROJO = "#CA3801"
+PROMO_ROJO = NARANJA_OLIVIA if NARANJA_AZUL else "#CA3801"
 # 18-nov (Edu: «dale, haz la 1, 2 y 3»): urgencia, pero solo la que es verdad (nada de «alta demanda» ni pedidos
 # inventados). PROMO_FIN es el fin real de los dos descuentos en Shopify (endsAt 2026-12-05T22:59:59Z = 23:59:59 en
 # España). Lo usan (1) la cuenta atrás de la barra roja y (3) «Pídelo ahora y llega para Navidad», que se apaga solo ese
@@ -1038,7 +1045,10 @@ DESTINO = {"password.json": "templates", "cart.json": "templates", "settings_dat
 if TIENDA.exists():
     # código del tema modificado (tema/codigo/<carpeta>/<fichero>), p. ej. snippets/variant-main-picker.liquid
     for f in [*(OUT / "codigo").rglob("*.liquid"), *(OUT / "codigo" / "assets").glob("*.js")]:   # también assets/*.js (zoom del móvil)
-        (TIENDA / f.relative_to(OUT / "codigo")).write_text(f.read_text(encoding="utf8"), encoding="utf8")
+        texto_f = f.read_text(encoding="utf8")
+        if NARANJA_AZUL:  # los snippets llevan el verde y el rojo escritos a mano
+            texto_f = texto_f.replace("#006039", AZUL_NOCHE).replace("#CA3801", NARANJA_OLIVIA)
+        (TIENDA / f.relative_to(OUT / "codigo")).write_text(texto_f, encoding="utf8")
     # 7-nov: letras alojadas en el tema (assets/*.woff2, binario), p. ej. la de la vista previa del nombre del collar
     for f in (OUT / "codigo" / "assets").glob("*.woff2"):
         (TIENDA / f.relative_to(OUT / "codigo")).write_bytes(f.read_bytes())

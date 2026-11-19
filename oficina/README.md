@@ -29,7 +29,7 @@ Creada el 29-oct-2026. Los agentes viven en `.claude/agents/` y el ciclo semanal
 ## Reglas de la oficina
 1. **Nada se publica sin `estado: aprobado`**, que solo pone Edu (o Claude cuando Edu lo dice).
 2. **El dinero lo confirma Edu**: presupuesto de anuncios, créditos de IA y cualquier compra. Los agentes declaran el coste, no lo gastan.
-3. **Marca** (CLAUDE.md, apartado 3): pocas palabras, cálida, sin emojis, sin «¡OFERTA!», sin contadores, sin urgencia falsa.
+3. **Marca** (CLAUDE.md, apartado 3): pocas palabras, cálida, sin emojis en imágenes (en el texto, como mucho ✨), sin «¡OFERTA!», sin contadores, sin urgencia falsa.
 4. **Legal** (apartado 4): nada de oro, piedras preciosas, waterproof ni hipoalergénico; el reloj no es sumergible; plazos y garantías reales.
 5. **Nada inventado**: ni testimonios ni reseñas, ni siquiera «de ejemplo». La leyenda del castillo es un cuento («cuentan que…»), nunca un dato.
 6. De la competencia se copia la **forma** (estructura, formato, gancho), nunca el texto ni sus promesas.

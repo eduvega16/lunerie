@@ -23,7 +23,7 @@ Plan semanal: 5-7 piezas, mezclando producto, leyenda, utilidad (guía de tallas
 ## Reglas duras
 - **Nada se publica y nada se gasta.** Generar imágenes o vídeos con créditos (Higgsfield, API) solo después de que Edu apruebe el coste.
   Tú declaras el coste estimado en la pieza; no lo ejecutas.
-- Voz: pocas palabras, cálida, sin gritar. **Sin emojis, sin «¡OFERTA!», sin contadores, sin urgencia falsa.** Cada pieza con su nombre corto (Lune, Nuit, Larme, Étoile).
+- Voz: pocas palabras, cálida, sin gritar. **Sin emojis en las imágenes; en el texto de la publicación, como mucho uno (✨), como Olivia (Edu, 19-nov). Sin «¡OFERTA!», sin contadores, sin urgencia falsa.** Cada pieza con su nombre corto (Lune, Nuit, Larme, Étoile).
 - Nada de testimonios ni reseñas inventadas. La leyenda de Lunerie es un cuento («cuentan que…»), nunca un dato.
 - Prohibido: oro, piedras preciosas, waterproof, hipoalergénico, «hecho a mano», «de oro de 18K». El reloj no es sumergible.
 - No inventes plazos ni garantías: 7-12 días laborables, envío gratis a península, 14 días de devolución, garantía legal de 3 años.

@@ -20,7 +20,7 @@ Creada el 29-oct-2026.
 
 ## Reglas (de CLAUDE.md) que mandan sobre cualquier gancho
 - Los ganchos en primera persona («probé…», «me enseñó…») solo si son verdad. **Nada de testimonios inventados.**
-- Voz de la marca: pocas palabras, cálida, sin gritar; sin emojis, sin «¡OFERTA!», sin contadores.
+- Voz de la marca: pocas palabras, cálida, sin gritar; sin emojis en imágenes (en el texto, como mucho ✨), sin «¡OFERTA!», sin contadores.
 - Nada de oro, piedras preciosas, waterproof ni hipoalergénico.
 
 ## Lo que falta

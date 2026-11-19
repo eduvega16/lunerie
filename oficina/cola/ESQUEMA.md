@@ -11,7 +11,7 @@ Un fichero JSON por pieza en `oficina/cola/`, con nombre `AAAA-Wss-NN-slug.json`
   "pieza": "reloj-lune",
   "fecha_sugerida": "2026-11-02T19:00:00+01:00",
   "gancho": "Lo que se ve y se lee en los 3 primeros segundos",
-  "copy": "Texto de la publicación (pocas palabras, sin emojis).",
+  "copy": "Texto de la publicación (pocas palabras; como mucho un emoji, ✨).",
   "hashtags": ["#relojdemujer", "#relojvintage", "#regaloparaella"],
   "guion": [
     {"segundos": "0-3", "imagen": "qué se ve", "texto_en_pantalla": "…", "voz": ""}

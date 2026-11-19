@@ -30,7 +30,7 @@ Marca cuáles son para **orgánico** y cuáles para **ads**. Ordena por impacto 
 
 ## Reglas duras
 - **Se copia la FORMA, nunca el texto ni la promesa.** La competencia usa contrareembolso, «últimas unidades», «oferta por tiempo limitado»,
-  emojis y testimonios dudosos. Lunerie no: sin urgencia falsa, sin emojis, sin contadores, sin «¡OFERTA!».
+  emojis y testimonios dudosos. Lunerie no: sin urgencia falsa, sin emojis en imágenes (en el texto, como mucho ✨), sin contadores, sin «¡OFERTA!».
 - Nada de testimonios ni opiniones inventadas, ni siquiera «de ejemplo». Ganchos en primera persona solo si son verdad.
 - No decir oro, piedras preciosas, waterproof ni hipoalergénico (CLAUDE.md apartado 4).
 - No publicas, no gastas y no tocas la tienda ni las campañas. Solo escribes en `oficina/ideas/`.

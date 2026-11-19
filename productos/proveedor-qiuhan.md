@@ -282,3 +282,7 @@ logo, factura ni precio, y si tiene caja de regalo; (9) foto de cada collar ante
   + Larme a mitad de precio ≈ +8 € sobre el collar solo, lo mismo que un 2.º collar. Collar + anillo a mitad ≈ +6 €.
 - #LUN1010: los Larme ya salieron de AliExpress. Solo se cambia el anillo, si la foto cuadra y el reembolso de
   AliExpress pasa de ~2,5 €.
+- **Aros de 18 mm: la fábrica de QIUHAN sí los tiene** (19-nov) y los manda a tiempo para que salgan con el collar.
+  En AliExpress, el anillo y los aros se cancelan con reembolso completo (los Larme ya salieron). Pedido: aros 18 mm en
+  DXL-LUN1009 y anillo verde (mayo) US 8 en DXL-LUN1010, dentro de la cajita del collar. Cancelar en AliExpress **solo
+  después** de ver las fotos y pagar el extra.

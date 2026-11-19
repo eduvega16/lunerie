@@ -286,3 +286,27 @@ logo, factura ni precio, y si tiene caja de regalo; (9) foto de cada collar ante
   En AliExpress, el anillo y los aros se cancelan con reembolso completo (los Larme ya salieron). Pedido: aros 18 mm en
   DXL-LUN1009 y anillo verde (mayo) US 8 en DXL-LUN1010, dentro de la cajita del collar. Cancelar en AliExpress **solo
   después** de ver las fotos y pagar el extra.
+
+## 19-nov (tarde): catálogo de QIUHAN para las piezas nuevas y las de AliExpress
+Edu les pasó los productos nuevos (importados con DSers el 19-nov, en borrador) y los de AliExpress que ya vendemos.
+Precios por pieza (Susan, chat del 19-nov). Puesto en España con IVA y PayPal: **~1,14 € por $**. En la cajita de un
+collar no cobran el +1 $; suelto, se suman los 12 $ de envío.
+
+| Pieza | QIUHAN | En la cajita de un collar | Suelto QIUHAN | Suelto AliExpress (+ ~6 € de aduana) |
+|---|---|---|---|---|
+| Collar Initiale (perlas + inicial) | 10,5 $ | ~12 € | ~25,7 € | ~23,7 € |
+| Collar Croix (cruz de colores; la de cadena de eslabón plano) | 2 $ | ~2,3 € | ~16 € | ~8,4 € |
+| Pendientes Baroque (versión de aro) | 1,8 $ | ~2 € | ~15,7 € | ~8,2 € |
+| Anillo Duo (el mismo de la foto) | 1,5 $ | ~1,7 € | ~15,4 € | — |
+| Anillo Nuit (solo sus 4 colores, los mismos que la ficha) | 4,3 $ | ~4,9 € | ~18,6 € | ~9,5-10,7 € |
+| Anillo Toi & Moi (dos piedras; tallas US 6-9) | 4,5 $ | ~5,1 € | ~18,8 € | ~9,8 € |
+| Pulsera Charme (bolitas + cruz + piedra; las 12 piedras, solo dorada) | 4,5 $ | ~5,1 € | ~18,8 € | ~11,1 € |
+| Pulsera Gravée (barra con nombre grabado + piedra; las 12 piedras) | 4,5 $ con el grabado | ~5,1 € | ~18,8 € | ~11,5 € |
+| Anillo Étoile, Pendientes Larme, Aros Boucle | 2 € (antes) | ~2,5 € | — | — |
+| Anillo Fil (fino, piedra rectangular) | sin precio | — | — | ~8,5 € |
+
+- **Regla:** pedido con collar → todo a QIUHAN en la cajita. Sin collar → AliExpress, salvo lo que lleva **nombre o piedras
+  a elegir** (Gravée, Toi & Moi), que va siempre a QIUHAN aunque salga más caro: en AliExpress el grabado se pide por
+  mensaje y es fácil que salga mal.
+- **Falta preguntar:** tallas del Nuit (vendemos US 6/7/8), si la Gravée y el Toi & Moi los hay en plateado, máximo de
+  letras de la Gravée (barra de 20 × 3 mm), si tienen el Anillo Fil, y foto real de cada pieza antes del primer pedido.

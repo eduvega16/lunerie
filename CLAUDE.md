@@ -302,6 +302,31 @@ aros con perla y collar de perlas «plata 925»). Plantilla `joya`, vendor Luner
   anuncios) · «Joyas» en los menús `main-menu` y `pie-tienda` · `curl -sI` de cada ficha = 200 · pedir una muestra
   de cada una.
 
+### 5.5 Personalizables nuevos (19-nov) — normalizados, **EN BORRADOR**
+Edu los importó con DSers el 19-nov (entraron activos, a coste y con tachado = coste, sin canal → a borrador al momento)
+y le pidió precio a QIUHAN de cada uno (tabla en `productos/proveedor-qiuhan.md`). Normalizados con
+`python productos/normalizar_19nov.py <carpeta con lote.json y fotos mNN.png> <clave>…` (varias opciones por producto;
+fotos del proveedor 4:5, las de producto suelto en niebla; texto de eManco borrado con OpenCV en el collar de inicial).
+Nombres y precios **propuestos por Claude, sin OK de Edu**:
+- **Collar Initiale** `collar-initiale` · perlas de imitación + inicial + circonita · Color × Inicial (A-Z) · **44,95 €** ·
+  QIUHAN 10,5 $ (caro suelto: ~25,7 € puesto).
+- **Collar Croix** `collar-croix` · cruz de circonitas de colores, cadena de eslabón plano (la de QIUHAN) · Dorado /
+  Plateado · **24,95 €**. Las fotos puestas del proveedor llevan otra cadena: no se usan (foto puesta con IA, con OK).
+- **Pendientes Baroque** `pendientes-baroque` · perla irregular en aro · Dorado / Plateado (fuera la versión de gancho) ·
+  **24,95 €**. Nada de «perla natural» sin confirmación por escrito.
+- **Anillo Toi & Moi** `anillo-toi-et-moi` · dos piedras a elegir · Color × Talla 12 / 14-15 / 17 (QIUHAN tiene US 6-9:
+  la 19 se puede añadir) · **29,95 €** · plantilla `anillo`. **Falta el selector de las dos piedras** en la ficha.
+- **Anillo Fil** `anillo-fil` · fino, abierto, piedra rectangular · Mes (12) · **19,95 €**. Se parece al Étoile (mismo
+  precio y piedra del mes). QIUHAN: sin precio.
+- **Pulsera Gravée** `pulsera-gravee` · barra 20 × 3 mm con nombre grabado + piedra · solo dorada · Mes (12) ·
+  **34,95 €**. **Falta el campo del nombre** en la ficha (reutilizar `lunerie-collar.liquid` con letra grabada y piedra
+  redonda; máximo de letras por confirmar con QIUHAN). Siempre por QIUHAN (el grabado en AliExpress va por mensaje).
+- **Pulsera Charme** `pulsera-charme` · bolitas + cruz + piedra rectangular · solo dorada · Mes (12) · 18 cm · **29,95 €**.
+- Tipo nuevo **«Pulseras»** añadido a la colección automática «Joyas» (19-nov), así entran en el «2.ª al 50 % / 3x2».
+- **Para publicar:** OK de Edu a nombres y precios · selector de piedras del Toi & Moi y nombre de la Gravée (tema de
+  prueba primero) · foto puesta con IA de los que no la tienen (Initiale, Croix, Charme sin foto suelta buena), con OK y
+  coste · ACTIVE + solo Tienda online · `/products/<handle>.js` con `available: true`.
+
 ---
 
 ## 6. Montaje de la tienda — estado

@@ -31,9 +31,13 @@ VERDE, BURDEOS = (0, 96, 57), (74, 10, 16)
 REVELAR = "--sin-revelar" not in sys.argv
 # Prueba de color de marca para los bloques (Edu, 19-nov: «me gusta el naranja y el azul… podríamos probar»).
 # El naranja es un punto más ámbar que el de Olivia (#C84011) para no ser idéntico; el azul es azul noche, por la luna.
-COLORES = {"verde": VERDE, "naranja": (194, 83, 27), "azul": (27, 42, 78)}
+NARANJA, AZUL, NARANJA_VIVO = (194, 83, 27), (27, 42, 78), (234, 114, 46)
+# combinación → (fondo del bloque, texto, acento). Edu (19-nov): «es la combinación de ambos».
+COMBOS = {"verde": (VERDE, BLANCO, BLANCO), "naranja": (NARANJA, BLANCO, BLANCO), "azul": (AZUL, BLANCO, BLANCO),
+          "azul-naranja": (AZUL, BLANCO, NARANJA_VIVO), "naranja-azul": (NARANJA, AZUL, BLANCO)}
 COLOR = sys.argv[sys.argv.index("--color") + 1] if "--color" in sys.argv else None
-MARCA = COLORES[COLOR] if COLOR else VERDE
+MARCA, TXT, ACC = COMBOS[COLOR] if COLOR else (VERDE, BLANCO, BLANCO)
+CINTA = {"azul-naranja": NARANJA_VIVO, "naranja-azul": AZUL}.get(COLOR)  # la cinta del otro color entre bloque y foto
 
 
 # ───────────────────────── letra ─────────────────────────
@@ -180,6 +184,19 @@ def textura(W, H, color, semilla=3):
     return Image.fromarray(base.clip(0, 255).astype(np.uint8))
 
 
+def cinta(im, rec, color):
+    """Franja de raso: el color con un brillo suave en el centro, como una cinta de regalo."""
+    x0, y0, x1, y1 = rec
+    w, h = x1 - x0, y1 - y0
+    vertical = h > w
+    n = w if vertical else h
+    perfil = np.array([1 + 0.16 * math.sin(math.pi * i / max(1, n - 1)) ** 2 - 0.06 for i in range(n)], dtype=np.float32)
+    base = np.array(color, dtype=np.float32)
+    fila = (base[None, :] * perfil[:, None]).clip(0, 255).astype(np.uint8)
+    arr = np.repeat(fila[None, :, :], h, axis=0) if vertical else np.repeat(fila[:, None, :], w, axis=1)
+    im.paste(Image.fromarray(arr), (x0, y0))
+
+
 def guardar(im, nombre):
     if COLOR:
         nombre = f"{nombre}-{COLOR}"
@@ -257,11 +274,13 @@ def piezas(W, H, suf):
         lienzo.paste(revelar(ph), (mitad, 0))
         c = Capa(lienzo)
         cx = mitad / 2
-        c.bloque([("marca", "LUNERIE")], 0.075, BLANCO, cx)
-        c.bloque([("titulo", "Black Friday")], 0.25, BLANCO, cx)
-        y = c.bloque([("cifra", "3x2")], 0.33, BLANCO, cx)
-        c.bloque([("linea", "LA 2.ª AL 50 %"), ("linea", "Y LA 3.ª, GRATIS")], (y + 10 * c.k) / H, BLANCO, cx)
-        c.bloque([("nota", "HASTA EL 5 DE DICIEMBRE")], 0.86, BLANCO, cx)
+        if CINTA:
+            cinta(lienzo, (mitad - round(7 * lienzo.width / 1080), 0, mitad + round(7 * lienzo.width / 1080), H), CINTA)
+        c.bloque([("marca", "LUNERIE")], 0.075, ACC, cx)
+        c.bloque([("titulo", "Black Friday")], 0.25, TXT, cx)
+        y = c.bloque([("cifra", "3x2")], 0.33, ACC, cx)
+        c.bloque([("linea", "LA 2.ª AL 50 %"), ("linea", "Y LA 3.ª, GRATIS")], (y + 10 * c.k) / H, TXT, cx)
+        c.bloque([("nota", "HASTA EL 5 DE DICIEMBRE")], 0.86, TXT, cx)
     else:  # arriba el bloque, abajo la foto
         alto = round(H * 0.47)
         lienzo = Image.new("RGB", (W, H))
@@ -281,9 +300,13 @@ def piezas(W, H, suf):
     lienzo.paste(textura(W, alto, MARCA if COLOR else BURDEOS, 5), (0, 0))
     ph, _ = caja(src, W, H - alto, 0.5, 0.58, 0.78 if not vertical else 0.80)
     lienzo.paste(revelar(ph), (0, alto))
+    if CINTA:
+        cinta(lienzo, (0, alto - round(7 * W / 1080), W, alto + round(7 * W / 1080)), CINTA)
     c = Capa(lienzo)
-    c.bloque([("marca", "LUNERIE"), ("titulo", "El regalo que"), ("cursiva", "lleva su nombre."),
-              ("linea", "LLEGA EN SU CAJITA DE TERCIOPELO")], 0.06 if not vertical else 0.15, BLANCO)
+    y0 = 0.06 if not vertical else 0.15
+    y = c.bloque([("marca", "LUNERIE")], y0, ACC)
+    c.bloque([("titulo", "El regalo que"), ("cursiva", "lleva su nombre."),
+              ("linea", "LLEGA EN SU CAJITA DE TERCIOPELO")], y / H, TXT)
     hechas.append(guardar(c.pegar(), f"5-regalo-{suf}"))
 
     # 6 · En la mano: sin texto, como los reels de Olivia (la foto se basta sola)
@@ -300,9 +323,12 @@ def bloque_marca(W, H, suf):
     k = c.k
     f = fuente("Cormorant.ttf", 64 * k, b"Medium")
     asc, desc = f.getmetrics()
-    texto(c.d, W / 2, H * 0.40, "LUNERIE", f, BLANCO, 26 * k)
-    c.bloque([("cursiva", "Con tu nombre.")], 0.40 + (asc + desc + 30 * k) / H, BLANCO)
-    c.bloque([("nota", "TU NOMBRE  ·  TU INICIAL  ·  TU PIEDRA")], 0.90, BLANCO)
+    if CINTA:  # una cinta del otro color cruzando el bloque, como un lazo de regalo
+        cinta(lienzo, (0, round(H * 0.72), W, round(H * 0.72 + 30 * k)), CINTA)
+        c = Capa(lienzo)
+    texto(c.d, W / 2, H * 0.40, "LUNERIE", f, TXT, 26 * k)
+    c.bloque([("cursiva", "Con tu nombre.")], 0.40 + (asc + desc + 30 * k) / H, ACC)
+    c.bloque([("nota", "TU NOMBRE  ·  TU INICIAL  ·  TU PIEDRA")], 0.90, TXT)
     return guardar(c.pegar(), f"7-marca-{suf}")
 
 

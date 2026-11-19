@@ -1,29 +1,38 @@
-"""Piezas «limpias y elegantes» para Instagram y anuncios (referencia de Edu del 19-nov: plantillas de Able,
-Monica Vinader, Atolea, Brilliant Earth, Kendra Scott). Sin IA: foto ya revisada + letra de Lunerie.
+"""Piezas de Instagram y anuncios con la estética de Olivia Jewelry (Edu, 19-nov: «a eso quiero que nos parezcamos,
+lo máximo posible»). Sin IA: fotos ya revisadas + letra de Lunerie.
 
-Reglas de la estética (oficina/referencias/estetica-2026-11-19/README.md):
-- foto a sangre que manda; texto corto y centrado en el tercio de arriba (o abajo si arriba está la pieza);
-- LUNERIE pequeño en mayúsculas espaciadas · titular en Cormorant fina, la 2.ª línea en cursiva · línea pequeña en
-  Jost con mayúsculas espaciadas;
-- la oferta, si va, en píldoras de borde fino; nada de bloques de color, emojis ni rojo chillón.
+Lo que se copia de @oliviajewelryco (oficina/referencias/olivia-ig-2026-11-19/README.md):
+- encuadres muy cerrados en la joya: cuello de la barbilla al pecho, sin brazo ni reloj de relleno;
+- texto blanco, pequeño, directamente sobre la piel (sin franjas ni degradados), con una sombra casi invisible;
+- anotaciones con flechas finas que señalan la pieza («tu nombre, en letra de firma» → el nombre);
+- promos en un bloque de color de marca con textura, partido con una foto de cerca (borde limpio, sin fundidos);
+- revelado de película solo en la piel y el fondo: la joya conserva su brillo y su color.
 
-    python marca/editorial.py            # las 4 de muestra en 4:5 y 9:16
+    python marca/editorial.py                 # todas, en 4:5 y 9:16
     python marca/editorial.py --sin-revelar   # sin el acabado de película (para comparar)
 """
-import pathlib, sys
-from PIL import Image, ImageDraw, ImageFont, ImageFilter
+import math
+import pathlib
+import sys
 
-sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
-from revelar import pelicula  # acabado de película: menos saturado, cálido, negros levantados y grano
+import numpy as np
+from PIL import Image, ImageChops, ImageDraw, ImageFilter, ImageFont
 
 RAIZ = pathlib.Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(RAIZ / "marca"))
+from revelar import pelicula  # noqa: E402
+
 F = RAIZ / "marca" / "fuentes"
-SALIDA = RAIZ / "marca" / "fotos-ia" / "editorial-limpio"
+FOTOS = RAIZ / "marca" / "fotos-ia"
+SALIDA = FOTOS / "editorial-limpio"
 TINTA, BLANCO = (22, 32, 27), (255, 255, 255)
+VERDE, BURDEOS = (0, 96, 57), (74, 10, 16)
+REVELAR = "--sin-revelar" not in sys.argv
 
 
+# ───────────────────────── letra ─────────────────────────
 def fuente(nombre, tam, peso=None):
-    f = ImageFont.truetype(str(F / nombre), tam)
+    f = ImageFont.truetype(str(F / nombre), max(8, round(tam)))
     if peso:
         f.set_variation_by_name(peso)
     return f
@@ -33,9 +42,10 @@ def ancho(txt, f, esp):
     return sum(f.getlength(c) for c in txt) + esp * (len(txt) - 1)
 
 
-def texto(d, cx, y, txt, f, color, esp=0.0):
-    """Texto centrado en cx con espacio entre letras (esp en px). Devuelve la altura de la línea."""
-    x = cx - ancho(txt, f, esp) / 2
+def texto(d, x, y, txt, f, color, esp=0.0, alinear="centro"):
+    """Escribe con espacio entre letras. x es el centro, el borde izquierdo o el derecho según `alinear`."""
+    w = ancho(txt, f, esp)
+    x = x - w / 2 if alinear == "centro" else (x - w if alinear == "derecha" else x)
     for c in txt:
         d.text((x, y), c, font=f, fill=color)
         x += f.getlength(c) + esp
@@ -43,65 +53,125 @@ def texto(d, cx, y, txt, f, color, esp=0.0):
     return asc + desc
 
 
-def recorte(im, W, H, foco_y=0.5):
-    """Recorta a W×H llenando el lienzo; foco_y = qué altura de la foto se conserva (0 arriba, 1 abajo)."""
-    r = max(W / im.width, H / im.height)
-    im = im.resize((round(im.width * r), round(im.height * r)), Image.LANCZOS)
-    x = (im.width - W) // 2
-    y = round((im.height - H) * foco_y)
-    return im.crop((x, y, x + W, y + H))
-
-
-def velo(im, arriba=True, fuerza=0.38, alto=0.5, color=(0, 0, 0)):
-    """Degradado suave para que el texto se lea (arriba o abajo)."""
-    W, H = im.size
-    m = Image.new("L", (1, H))
-    for y in range(H):
-        t = y / (H * alto) if arriba else (H - y) / (H * alto)
-        m.putpixel((0, y), round(255 * fuerza * max(0.0, 1 - t) ** 1.6))
-    capa = Image.new("RGB", (W, H), color)
-    return Image.composite(capa, im, m.resize((W, H)))
-
-
-def bloque(im, lineas, y0, color, pildoras=None):
-    """lineas: [(tipo, texto)] con tipo marca | titulo | cursiva | linea. y0 en fracción del alto."""
-    W, H = im.size
-    k = W / 1080
-    d = ImageDraw.Draw(im)
-    estilos = {
-        "marca": (fuente("Cormorant.ttf", round(30 * k), b"Medium"), 11 * k, 34 * k),
-        "titulo": (fuente("Cormorant.ttf", round(78 * k), b"Light"), 0, -4 * k),
-        "cursiva": (fuente("Cormorant-Italic.ttf", round(78 * k), b"Light Italic"), 0, 26 * k),
-        "linea": (fuente("Jost.ttf", round(21 * k), b"Regular"), 5.5 * k, 14 * k),
+def estilos(k):
+    return {
+        "marca": (fuente("Cormorant.ttf", 30 * k, b"Medium"), 11 * k, 30 * k),
+        "grande": (fuente("Cormorant.ttf", 120 * k, b"Light"), 6 * k, 8 * k),
+        "titulo": (fuente("Cormorant.ttf", 78 * k, b"Light"), 0, -4 * k),
+        "cursiva": (fuente("Cormorant-Italic.ttf", 78 * k, b"Light Italic"), 0, 24 * k),
+        "linea": (fuente("Jost.ttf", 21 * k, b"Regular"), 5.5 * k, 14 * k),
+        "nota": (fuente("Jost.ttf", 19 * k, b"Regular"), 4.5 * k, 6 * k),
+        "cifra": (fuente("Cormorant-Italic.ttf", 230 * k, b"Light Italic"), 0, 6 * k),
     }
-    y = H * y0
-    for tipo, txt in lineas:
-        f, esp, despues = estilos[tipo]
-        y += texto(d, W / 2, y, txt, f, color, esp) + despues
-    if pildoras:
-        f = fuente("Jost.ttf", round(19 * k), b"Regular")
+
+
+class Capa:
+    """Texto y trazos en una capa aparte: así se les pone una sombra suave sin manchar la foto."""
+
+    def __init__(self, im):
+        self.im = im
+        self.k = im.width / 1080
+        self.capa = Image.new("RGBA", im.size, (0, 0, 0, 0))
+        self.d = ImageDraw.Draw(self.capa)
+
+    def bloque(self, lineas, y0, color, cx=None, alinear="centro"):
+        """lineas: [(estilo, texto)]; y0 en fracción del alto. Devuelve la y (px) donde acaba."""
+        W, H = self.im.size
+        cx = W / 2 if cx is None else cx
+        y = H * y0
+        est = estilos(self.k)
+        for tipo, txt in lineas:
+            f, esp, despues = est[tipo]
+            y += texto(self.d, cx, y, txt, f, color, esp, alinear) + despues
+        return y
+
+    def pildoras(self, textos, y, color):
+        k = self.k
+        f = fuente("Jost.ttf", 19 * k, b"Regular")
         esp, alto, sep = 3.5 * k, 46 * k, 14 * k
-        anchos = [ancho(p, f, esp) + 44 * k for p in pildoras]
-        x = W / 2 - (sum(anchos) + sep * (len(anchos) - 1)) / 2
-        y += 10 * k
-        for p, a in zip(pildoras, anchos):
-            d.rounded_rectangle((x, y, x + a, y + alto), radius=alto / 2, outline=color, width=max(1, round(1.4 * k)))
+        anchos = [ancho(p, f, esp) + 44 * k for p in textos]
+        x = self.im.width / 2 - (sum(anchos) + sep * (len(anchos) - 1)) / 2
+        for p, a in zip(textos, anchos):
+            self.d.rounded_rectangle((x, y, x + a, y + alto), radius=alto / 2, outline=color, width=max(1, round(1.4 * k)))
             asc, desc = f.getmetrics()
-            texto(d, x + a / 2, y + (alto - asc - desc) / 2 - 1 * k, p, f, color, esp)
+            texto(self.d, x + a / 2, y + (alto - asc - desc) / 2 - k, p, f, color, esp)
             x += a + sep
-    return im
+
+    def flecha(self, desde, hasta, color, curva=0.25):
+        """Trazo fino y algo curvo, como dibujado a mano, con la punta en `hasta`."""
+        (x0, y0), (x1, y1) = desde, hasta
+        mx, my = (x0 + x1) / 2, (y0 + y1) / 2
+        cx, cy = mx - (y1 - y0) * curva, my + (x1 - x0) * curva
+        pts = [((1 - t) ** 2 * x0 + 2 * (1 - t) * t * cx + t ** 2 * x1,
+                (1 - t) ** 2 * y0 + 2 * (1 - t) * t * cy + t ** 2 * y1) for t in np.linspace(0, 1, 40)]
+        w = max(1, round(2 * self.k))
+        self.d.line(pts, fill=color, width=w, joint="curve")
+        ang = math.atan2(y1 - pts[-4][1], x1 - pts[-4][0])
+        L = 16 * self.k
+        for s in (-1, 1):
+            a = ang + math.pi - s * 0.45
+            self.d.line([(x1, y1), (x1 + L * math.cos(a), y1 + L * math.sin(a))], fill=color, width=w)
+
+    def pegar(self, sombra=0.0):
+        """sombra = opacidad de un halo muy difuso bajo el texto blanco (0 = sin sombra)."""
+        base = self.im.convert("RGBA")
+        if sombra:
+            a = self.capa.getchannel("A").filter(ImageFilter.GaussianBlur(9 * self.k))
+            negro = Image.new("RGBA", base.size, (0, 0, 0, 0))
+            negro.putalpha(a.point(lambda v: round(v * sombra)))
+            base = Image.alpha_composite(base, negro)
+        return Image.alpha_composite(base, self.capa).convert("RGB")
 
 
-def sobre_color(foto, W, H, color, alto_foto=0.66):
-    """La foto abajo y un color liso arriba que se funde con ella (como el anuncio de Monica Vinader)."""
-    lienzo = Image.new("RGB", (W, H), color)
-    h = round(H * alto_foto)
-    ph = recorte(foto, W, h, 0.6)
-    m = Image.new("L", (1, h))
-    for y in range(h):
-        m.putpixel((0, y), round(255 * min(1.0, y / (h * 0.30)) ** 1.3))
-    lienzo.paste(ph, (0, H - h), m.resize((W, h)))
-    return lienzo
+# ───────────────────────── foto ─────────────────────────
+def caja(im, W, H, cx, cy, alto):
+    """Recorta de la foto una caja con la proporción W:H, centrada en (cx, cy) y de `alto` (fracción del alto)."""
+    h = im.height * alto
+    w = h * W / H
+    if w > im.width:
+        w, h = im.width, im.width * H / W
+    x = min(max(cx * im.width - w / 2, 0), im.width - w)
+    y = min(max(cy * im.height - h / 2, 0), im.height - h)
+    rec = (x, y, x + w, y + h)
+    return im.crop(tuple(round(v) for v in rec)).resize((W, H), Image.LANCZOS), rec
+
+
+def a_lienzo(pt, rec, W, H, im):
+    """Pasa un punto de la foto original (fracciones) a píxeles del lienzo recortado."""
+    x0, y0, x1, y1 = rec
+    return ((pt[0] * im.width - x0) / (x1 - x0) * W, (pt[1] * im.height - y0) / (y1 - y0) * H)
+
+
+def mascara_joya(im):
+    """Dónde está la joya: oro (amarillo saturado y luminoso) y piedras (colores muy saturados que no son piel)."""
+    hsv = np.asarray(im.convert("HSV"), dtype=np.float32)
+    h, s, v = hsv[..., 0] * 360 / 255, hsv[..., 1] / 255, hsv[..., 2] / 255
+    oro = (h > 28) & (h < 58) & (s > 0.42) & (v > 0.45)
+    piedra = (s > 0.38) & (v > 0.12) & ((h > 70) & (h < 330))
+    m = Image.fromarray(((oro | piedra) * 255).astype(np.uint8))
+    return m.filter(ImageFilter.MaxFilter(5)).filter(ImageFilter.GaussianBlur(3))
+
+
+def revelar(im):
+    """Acabado de película en la piel y el fondo; la joya, casi intacta (Edu: «sin afectar tanto a la joya»)."""
+    if not REVELAR:
+        return im
+    pel = pelicula(im)
+    m = mascara_joya(im).point(lambda v: round(v * 0.85))
+    return Image.composite(im, pel, m)
+
+
+def textura(W, H, color, semilla=3):
+    """Bloque de color con relieve de papel (como el naranja de Olivia), no un color plano de ordenador."""
+    rng = np.random.default_rng(semilla)
+    ruido = Image.fromarray(((rng.standard_normal((H // 2, W // 2)) * 0.5 + 0.5).clip(0, 1) * 255).astype(np.uint8))
+    ruido = ruido.resize((W, H), Image.BICUBIC).filter(ImageFilter.GaussianBlur(1.2)).filter(ImageFilter.EMBOSS)
+    r = (np.asarray(ruido, dtype=np.float32) - 128) / 128
+    base = np.ones((H, W, 3), dtype=np.float32) * np.array(color, dtype=np.float32)
+    base += r[..., None] * 9
+    yy, xx = np.mgrid[0:H, 0:W].astype(np.float32)
+    base *= (1 - 0.06 * (((xx - W / 2) / W) ** 2 + ((yy - H / 2) / H) ** 2))[..., None]  # luz algo más viva en el centro
+    return Image.fromarray(base.clip(0, 255).astype(np.uint8))
 
 
 def guardar(im, nombre):
@@ -111,64 +181,107 @@ def guardar(im, nombre):
     return ruta
 
 
-REVELAR = "--sin-revelar" not in sys.argv
-
-
-def rev(im):
-    """La foto (y el fondo) con acabado de película; el texto va después, nítido."""
-    return pelicula(im) if REVELAR else im
-
-
-def piezas(W, H, sufijo):
-    fc = RAIZ / "marca" / "fotos-ia"
+# ───────────────────────── plantillas ─────────────────────────
+def piezas(W, H, suf):
+    vertical = H / W > 1.5
+    y_arriba = 0.165 if vertical else 0.075  # en 9:16, por debajo de lo que tapa Instagram arriba
     hechas = []
-    alto = H / W  # 1,25 en 4:5; 1,78 en 9:16
-    y_arriba = 0.10 if alto < 1.5 else 0.17  # en 9:16, por debajo de la zona que tapa Instagram arriba
 
-    # 1 · puesta, texto blanco sobre la piel (Able «Make it personal»)
-    im = recorte(Image.open(fc / "collar/editar-hombro-2.png").convert("RGB"), W, H, 0.55)
-    im = velo(im, True, 0.42, 0.55)
-    im = rev(im)
-    bloque(im, [("marca", "LUNERIE"), ("titulo", "Su nombre,"), ("cursiva", "su piedra."),
-                ("linea", "COLLAR SIGNÉ · 39,90 €")], y_arriba, BLANCO)
-    hechas.append(guardar(im, f"1-puesta-{sufijo}"))
+    # 1 · De cerca: el cuello de Carmen, sin brazo ni reloj; texto blanco sobre la piel
+    src = Image.open(FOTOS / "collar/editar-hombro-2.png").convert("RGB")
+    im, _ = caja(src, W, H, 0.33, 0.36 if not vertical else 0.40, 0.50 if not vertical else 0.62)
+    im = revelar(im)
+    c = Capa(im)
+    c.bloque([("marca", "LUNERIE"), ("titulo", "Tu nombre,"), ("cursiva", "tu piedra."),
+              ("linea", "COLLAR SIGNÉ · 39,90 €")], y_arriba, BLANCO)
+    hechas.append(guardar(c.pegar(0.35), f"1-de-cerca-{suf}"))
 
-    # 2 · cajita sobre color liso (Monica Vinader «The gift she's guaranteed to love»)
-    foto = Image.open(fc / "terciopelo/cajita-carmen-1.jpg").convert("RGB")
-    im = sobre_color(foto, W, H, (74, 10, 16), 0.64 if alto < 1.5 else 0.60)
-    im = rev(im)
-    bloque(im, [("marca", "LUNERIE"), ("titulo", "El regalo que"), ("cursiva", "lleva su nombre."),
-                ("linea", "LLEGA EN SU CAJITA DE TERCIOPELO")], y_arriba, BLANCO)
-    hechas.append(guardar(im, f"2-cajita-{sufijo}"))
+    # 2 · Anotada (como «NEW IN» de Olivia): el cuello de Elena con flechas al nombre y a la piedra
+    src = Image.open(FOTOS / "collar/editar-tirantes-1.png").convert("RGB")
+    im, rec = caja(src, W, H, 0.47, 0.50 if not vertical else 0.57, 0.56 if not vertical else 0.62)
+    im = revelar(im)
+    c = Capa(im)
+    k = c.k
+    c.bloque([("grande", "SIGNÉ"), ("linea", "EL COLLAR CON TU NOMBRE")], y_arriba + (0.0 if vertical else 0.01), BLANCO)
+    nombre = a_lienzo((0.34, 0.545), rec, W, H, src)
+    piedra = a_lienzo((0.555, 0.70), rec, W, H, src)
+    est = estilos(k)["nota"][0]
+    # nota del nombre: a la izquierda y por debajo, la flecha sube hacia el nombre
+    nx, ny = nombre[0] - 40 * k, nombre[1] + 150 * k
+    texto(c.d, nx, ny, "TU NOMBRE,", est, BLANCO, 4.5 * k)
+    texto(c.d, nx, ny + 28 * k, "EN LETRA DE FIRMA", est, BLANCO, 4.5 * k)
+    c.flecha((nx + 10 * k, ny - 12 * k), (nombre[0] - 6 * k, nombre[1] + 42 * k), BLANCO, 0.22)
+    # nota de la piedra: a la derecha y por encima, la flecha baja hacia la piedra
+    px, py = piedra[0] + 150 * k, piedra[1] - 150 * k
+    texto(c.d, px, py, "EL COLOR", est, BLANCO, 4.5 * k)
+    texto(c.d, px, py + 28 * k, "DE TU MES", est, BLANCO, 4.5 * k)
+    c.flecha((px - 30 * k, py + 66 * k), (piedra[0] + 30 * k, piedra[1] - 6 * k), BLANCO, -0.25)
+    hechas.append(guardar(c.pegar(0.38), f"2-anotada-{suf}"))
 
-    # 3 · producto solo sobre su fondo, texto abajo en tinta (Brilliant Earth). La foto se corta justo bajo la
-    #     piedra (debajo tiene un reflejo) y se funde con un lienzo del mismo color.
-    foto = Image.open(fc / "collar/producto-verde-carmen-v2.jpg").convert("RGB")
+    # 3 · Producto: la pieza sola sobre su fondo y el nombre debajo
+    foto = Image.open(FOTOS / "collar/producto-verde-carmen-v2.jpg").convert("RGB")
     fondo = foto.getpixel((10, 10))
     foto = foto.crop((0, 0, foto.width, round(foto.height * 0.789)))
-    im = Image.new("RGB", (W, H), fondo)
-    h_foto = round(H * (0.74 if alto < 1.5 else 0.60))
-    r = h_foto / foto.height  # entera, sin recortar la piedra; a los lados queda el mismo fondo
-    ph = foto.resize((round(foto.width * r), h_foto), Image.LANCZOS)
-    ph = velo(ph, False, 1.0, 0.012, fondo)
-    if alto < 1.5:  # 4:5: la pieza arriba y el texto abajo
-        im.paste(ph, ((W - ph.width) // 2, 0))
-        y_txt = 0.775
-    else:  # 9:16: el texto arriba (zona libre de Meta: 14-65 % del alto) y la cadena entra fundida
-        im.paste(velo(ph, True, 1.0, 0.18, fondo), ((W - ph.width) // 2, round(H * 0.33)))
-        y_txt = y_arriba
-    im = rev(im)
-    bloque(im, [("marca", "LUNERIE"), ("titulo", "Collar Signé"),
-                ("linea", "SU NOMBRE EN LETRA DE FIRMA")], y_txt, TINTA)
-    hechas.append(guardar(im, f"3-producto-{sufijo}"))
+    lienzo = Image.new("RGB", (W, H), fondo)
+    h_foto = round(H * (0.74 if not vertical else 0.60))
+    ph = foto.resize((round(foto.width * h_foto / foto.height), h_foto), Image.LANCZOS)
+    m = Image.new("L", ph.size, 255)  # funde solo el último 1 % con el fondo (debajo había un reflejo)
+    dm = ImageDraw.Draw(m)
+    for i in range(round(h_foto * 0.012)):
+        dm.line((0, h_foto - 1 - i, ph.width, h_foto - 1 - i), fill=round(255 * i / (h_foto * 0.012)))
+    if vertical:  # la cadena entra fundida desde arriba
+        for i in range(round(h_foto * 0.16)):
+            dm.line((0, i, ph.width, i), fill=round(255 * i / (h_foto * 0.16)))
+    lienzo.paste(ph, ((W - ph.width) // 2, 0 if not vertical else round(H * 0.33)), m)
+    lienzo = revelar(lienzo)
+    c = Capa(lienzo)
+    c.bloque([("marca", "LUNERIE"), ("titulo", "Collar Signé"), ("linea", "TU NOMBRE EN LETRA DE FIRMA")],
+             0.775 if not vertical else y_arriba, TINTA)
+    hechas.append(guardar(c.pegar(), f"3-producto-{suf}"))
 
-    # 4 · oferta discreta en píldoras (Atolea «Buy 2, get 2 free»), sobre crema y con la foto abajo
-    foto = Image.open(fc / "collar/dedos-1.png").convert("RGB")
-    im = sobre_color(foto, W, H, (244, 239, 231), 0.62 if alto < 1.5 else 0.58)
-    im = rev(im)
-    bloque(im, [("marca", "LUNERIE"), ("titulo", "Black Friday"), ("cursiva", "con su nombre.")],
-           y_arriba, TINTA, pildoras=["2.ª PIEZA AL 50 %", "3.ª GRATIS"])
-    hechas.append(guardar(im, f"4-oferta-{sufijo}"))
+    # 4 · Promo partida (como el Black Friday de Olivia): bloque verde Lunerie con relieve + foto de cerca
+    src = Image.open(FOTOS / "ugc-lucce/pecho-1.jpg").convert("RGB")
+    if not vertical:  # mitad y mitad, en vertical
+        mitad = W // 2
+        lienzo = Image.new("RGB", (W, H))
+        lienzo.paste(textura(mitad, H, VERDE), (0, 0))
+        ph, _ = caja(src, W - mitad, H, 0.47, 0.50, 0.50)
+        lienzo.paste(revelar(ph), (mitad, 0))
+        c = Capa(lienzo)
+        cx = mitad / 2
+        c.bloque([("marca", "LUNERIE")], 0.075, BLANCO, cx)
+        c.bloque([("titulo", "Black Friday")], 0.25, BLANCO, cx)
+        y = c.bloque([("cifra", "3x2")], 0.33, BLANCO, cx)
+        c.bloque([("linea", "LA 2.ª AL 50 %"), ("linea", "Y LA 3.ª, GRATIS")], (y + 10 * c.k) / H, BLANCO, cx)
+        c.bloque([("nota", "HASTA EL 5 DE DICIEMBRE")], 0.86, BLANCO, cx)
+    else:  # arriba el bloque, abajo la foto
+        alto = round(H * 0.47)
+        lienzo = Image.new("RGB", (W, H))
+        lienzo.paste(textura(W, alto, VERDE), (0, 0))
+        ph, _ = caja(src, W, H - alto, 0.42, 0.50, 0.40)
+        lienzo.paste(revelar(ph), (0, alto))
+        c = Capa(lienzo)
+        c.bloque([("marca", "LUNERIE"), ("titulo", "Black Friday")], 0.15, BLANCO)
+        y = c.bloque([("cifra", "3x2")], 0.225, BLANCO)
+        c.bloque([("linea", "LA 2.ª AL 50 % Y LA 3.ª, GRATIS")], (y + 6 * c.k) / H, BLANCO)
+    hechas.append(guardar(c.pegar(), f"4-promo-{suf}"))
+
+    # 5 · Regalo partido: bloque burdeos con relieve arriba y la cajita abajo, borde limpio
+    src = Image.open(FOTOS / "terciopelo/cajita-carmen-1.jpg").convert("RGB")
+    alto = round(H * (0.36 if not vertical else 0.42))
+    lienzo = Image.new("RGB", (W, H))
+    lienzo.paste(textura(W, alto, BURDEOS, 5), (0, 0))
+    ph, _ = caja(src, W, H - alto, 0.5, 0.58, 0.78 if not vertical else 0.80)
+    lienzo.paste(revelar(ph), (0, alto))
+    c = Capa(lienzo)
+    c.bloque([("marca", "LUNERIE"), ("titulo", "El regalo que"), ("cursiva", "lleva su nombre."),
+              ("linea", "LLEGA EN SU CAJITA DE TERCIOPELO")], 0.06 if not vertical else 0.15, BLANCO)
+    hechas.append(guardar(c.pegar(), f"5-regalo-{suf}"))
+
+    # 6 · En la mano: sin texto, como los reels de Olivia (la foto se basta sola)
+    src = Image.open(FOTOS / "collar/dedos-1.png").convert("RGB")
+    im, _ = caja(src, W, H, 0.5, 0.5, 1.0)
+    hechas.append(guardar(revelar(im), f"6-en-la-mano-{suf}"))
     return hechas
 
 

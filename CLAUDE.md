@@ -36,9 +36,11 @@
   propuestas «Joyas con nombre propio» y «Con tu nombre. O con el suyo.» (la dirección de Edu: «con tu nombre o el suyo»).
   Descartadas por Edu: «lo que se escribe a mano» (la piedra del mes no se escribe) y «Lo tuyo, en una joya».
   Edu (19-nov): ✨ sí en el texto de las publicaciones; OEPM, por ahora no; banco de fotos IA, espera.
-  **Colores nuevos en la web SOLO en el tema de prueba** «Prueba carritos 17-nov» (212311638355): botones azul noche #1B2A4E
-  y barra naranja #C84011 (`python tema/build.py --naranja-azul` + subir solo al tema de prueba; los botones van en su
-  `settings_data.json`, que se editó en vivo para no perder el bloque de Loox). Sin la opción, build.py deja el verde.
+  **La web se queda con sus colores (verde y la barra roja del Black Friday), decidido por Edu el 19-nov:** se probó el
+  azul noche en los botones y el naranja en la barra en el tema de prueba y en los botones no le gustó («Olivia no pinta
+  el naranja en los botones, los mantiene en negro»). El naranja y el azul son para Instagram y anuncios, no para lo que
+  se pulsa. Tema de prueba devuelto al verde el mismo día (`settings_data.json` editado en vivo por el bloque de Loox).
+  `python tema/build.py --naranja-azul` sigue ahí por si algún día se vuelve a probar; sin la opción, sale el verde.
   **Instagram y anuncios = como @oliviajewelryco** (Edu, 19-nov: «a eso quiero que nos parezcamos lo máximo posible»,
   análisis en `oficina/referencias/olivia-ig-2026-11-19/README.md`): encuadre cerrado en la joya (sin brazo ni reloj de
   relleno), texto blanco sobre la piel sin degradados, flechas que anotan la pieza, promos partidas en bloque de color con
@@ -46,7 +48,7 @@
   intacta). Contenido: 45 % para ti, 30 % para regalar (con «y otro para ti»), 15 % la pieza, 10 % promos.
   **Colores de Instagram y anuncios (Edu, 19-nov): el naranja de Olivia #C84011 combinado con azul noche #1B2A4E**
   (bloque de un color + cinta de raso del otro; de serie: promo y bloque de marca en naranja con cinta azul, regalo en azul
-  con cinta naranja; `--color` para otras). La web sigue en verde hasta que Edu diga si se cambia. **Fotos reales: no
+  con cinta naranja; `--color` para otras). La web, en verde. **Fotos reales: no
   por ahora (Edu): IA con buenas referencias reales del producto.**
 - **Logos (13-oct), en `marca/logos/`:** logo LUNERIE en tinta / blanco / oro (SVG + PNG, `marca/logos.py`).
   **Monograma oficial: L cursiva (Cormorant Italic) + destello dorado de 4 puntas, fondo verde** →

@@ -1,6 +1,6 @@
 {
   "id": "2026-W47-15-story-aros-boucle",
-  "estado": "aprobado",
+  "estado": "publicado",
   "plataforma": "instagram",
   "formato": "story",
   "pieza": "aros-boucle",
@@ -20,7 +20,11 @@
     ],
     "urls": [],
     "alt_text": "",
-    "ia": true
+    "ia": true,
+    "resultado": {
+      "media_id": "18078036731771151,18649756654025649",
+      "fecha": "2026-11-20T11:20:25+0100"
+    }
   },
   "origen": {
     "biblioteca": "terciopelo-navidad"

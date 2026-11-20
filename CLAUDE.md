@@ -585,6 +585,19 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
 ## 8. Calendario y pendientes (a 19-nov-2026)
 
 ### Para empezar la próxima sesión (después del 2-nov) — abrir conversación nueva por sesión.
+**20-nov (portátil) — manda sobre el bloque del 19-nov:**
+- **D: está APAGADO → Instagram se publica ahora desde el PORTÁTIL.** Anoche no salió el prospecto (W47-06, 19-nov 19:30):
+  pasado al 26-nov 12:30. La historia de los aros (W47-15) se publicó a mano a las ~11:15. **17 tareas programadas aquí**
+  hasta el 26-nov (`programar` sin id, ya sin riesgo). El portátil tiene que quedarse encendido o suspendido y enchufado.
+  **Si se enciende D:, lo primero `python oficina/publicar_programado.py quitar` allí** (si no, salen dos veces).
+- **Publicados (OK de Edu: «ya los revisé»):** Collar Initiale, Anillo Fil, Collar Croix, Pendientes Baroque y Pulsera
+  Charme → ACTIVE, solo Tienda online, `.js` con `available: true`. **Siguen en borrador** el Anillo Toi & Moi (no hay
+  forma de elegir las dos piedras: solo metal y talla) y la Pulsera Gravée (no hay campo para el nombre).
+- **Revisión de Meta (20-nov):** 17-20 nov, 51,86 € y 2 pedidos (los dos del 17-nov: #LUN1009 del anuncio 18 y #LUN1010
+  directo). 18-20 nov: 34,13 €, 35 carritos, 6 pagos empezados, 0 compras. El 18 se sigue llevando casi todo (el 31, 0,07 €).
+  Benchmark 17-20 nov: CPM 13,4 € (mediana 6 €), carrito → pago 11 % (mediana 34 %). Emails de la ventana: 6 nuevos desde el
+  17-nov (9 reales en total). Tope: ~329 € de 450 €.
+
 **19-nov → SEMANA EN EL PORTÁTIL (`C:\Users\edu\lunerie`), hasta ~26-nov. Leer esto primero: manda sobre todo lo de abajo.**
 
 *Instagram sigue saliendo SOLO desde `D:\LUNERIE`, que se queda en casa encendido:*

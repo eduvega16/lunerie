@@ -585,6 +585,14 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
 ## 8. Calendario y pendientes (a 19-nov-2026)
 
 ### Para empezar la próxima sesión (después del 2-nov) — abrir conversación nueva por sesión.
+**20-nov (noche, portátil): 2 VENTAS MÁS.** **#LUN1011** (14:17, 39,90 €, Signé Dorado / Noviembre «Lidia», Lugo; sin
+datos de visita = cookies rechazadas, origen desconocido) · **#LUN1012** (22:24, 39,90 €, Signé Dorado / Mayo **«INMA»**
+en mayúsculas, Madrid; del **anuncio 18** por Facebook). Los dos a QIUHAN «urgente, 3-5 días» (comprobar la dirección).
+«INMA» se hace tal cual (la ficha avisa de las mayúsculas), salvo que Edu prefiera preguntarle. Meta 17-20 nov: 62,20 €,
+3 compras (el 18 se lleva 60,64 €); con #LUN1011, 4 pedidos → ~15,5 €/pedido (antes ~24 €). Tope: 339,26 € de 450 € →
+a 15 €/día dura hasta ~28-nov. Regla del 20-nov cumplida (≥ 1 venta): **seguir sin subir**. El carrusel de dudas (W46-19)
+no salió el 20-nov 19:30 (portátil apagado) → reprogramado aquí el 26-nov 19:30.
+
 **20-nov (portátil) — manda sobre el bloque del 19-nov:**
 - **D: está APAGADO → Instagram se publica ahora desde el PORTÁTIL.** Anoche no salió el prospecto (W47-06, 19-nov 19:30):
   pasado al 26-nov 12:30. La historia de los aros (W47-15) se publicó a mano a las ~11:15. **17 tareas programadas aquí**

@@ -1,6 +1,6 @@
 {
   "id": "2026-W47-07-lagrimas-primavera",
-  "estado": "aprobado",
+  "estado": "publicado",
   "plataforma": "instagram",
   "formato": "foto",
   "pieza": "collar-signe",
@@ -40,7 +40,11 @@
     ],
     "urls": [],
     "alt_text": "Tres lágrimas de circonita sobre fondo claro: marzo azul agua, abril blanco y mayo verde. Texto: Las lágrimas de la primavera. ¿Cuál es la suya?",
-    "ia": false
+    "ia": false,
+    "resultado": {
+      "media_id": "18063940193801200",
+      "fecha": "2026-11-20T12:30:43+0100"
+    }
   },
   "origen": "Plan de 2 publicaciones al día del 10 al 20-nov (OK de Edu, 9-nov).",
   "riesgos": "Nombres revisados a tamaño real; sin nombres de gemas ni material sin confirmar."

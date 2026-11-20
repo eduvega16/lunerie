@@ -233,9 +233,10 @@ logo, factura ni precio, y si tiene caja de regalo; (9) foto de cada collar ante
   está comprobada:** destinataria, calle, código postal y ciudad iguales a Shopify, referencia DXL-LUN1006, 3 collares.
   En Shopify sigue sin marcar como enviado.
 - **#LUN1006 retenido (aviso de QIUHAN, 21-nov):** las 3 cajitas juntas pasaban del límite de peso de su línea de envío
-  (Cainiao: «No channel available» el 18-nov). El 20-nov lo pasaron a otra línea, «S5058 POSTLINK-LW», con etiqueta nueva y
-  **el mismo número LP1000073859962CN**: en Shopify no hay que cambiar nada. Etiqueta nueva comprobada: destinataria,
-  dirección y 3 collares iguales a Shopify (0,10 kg). A 21-nov, la web de Cainiao aún no enseña la línea nueva.
+  (Cainiao: «No channel available» el 18-nov con LP1000073859962CN, línea «S5058 POSTLINK-LW»). Lo pasaron a la línea
+  **«S5191 POSTLINK-S5191»** con **número nuevo 32300035731159301082239** (en Cainiao: recogido y medido el 19-nov, destino
+  España). Etiqueta nueva comprobada: destinataria, dirección y 3 collares iguales a Shopify (0,30 kg, ref DXL-LUN1006).
+  El seguimiento de Shopify lo tiene que cambiar Edu a mano: la CLI no tiene `write_merchant_managed_fulfillment_orders`.
   **Lección:** en pedidos de 3 collares (#LUN1008 también lo es), pedir a QIUHAN que los mande por la línea que admite ese
   peso desde el principio.
 - **#LUN1008 pagado** (15-nov, 79,80 €: Laura · junio, Marta · enero, Loren · julio, los 3 dorados): un solo paquete,

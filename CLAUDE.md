@@ -585,6 +585,14 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
 ## 8. Calendario y pendientes (a 19-nov-2026)
 
 ### Para empezar la próxima sesión (después del 2-nov) — abrir conversación nueva por sesión.
+**21-nov — PRIMERO, FRANCISCA (#LUN1006, 3 collares, pedido el 7-nov):** mandó un correo enfadada («quiero saber de
+verdad cuándo lo voy a recibir»). QIUHAN cambió de línea por el peso de las 3 cajitas → **número nuevo
+32300035731159301082239** (Cainiao; el viejo LP1000073859962CN se paró el 18-nov). QIUHAN dice que su sistema va un día por
+delante de la web pública y que el 21-nov habrá movimiento. **Por la mañana:** mirar el seguimiento → retocar y que Edu
+mande el correo de `oficina/emails/francisca-lun1006.md` (sin fechas; nada de «alto volumen» ni «a mano») → escribirle
+en cada novedad hasta que lo reciba. **Seguimiento de Shopify ya cambiado al número nuevo** (21-nov, sin avisar a la clienta). La CLI tiene
+desde el 21-nov `write_merchant_managed_fulfillment_orders`: Claude puede cambiar seguimientos (`fulfillmentTrackingInfoUpdate`).
+
 **20-nov (noche, portátil): 2 VENTAS MÁS.** **#LUN1011** (14:17, 39,90 €, Signé Dorado / Noviembre «Lidia», Lugo; sin
 datos de visita = cookies rechazadas, origen desconocido) · **#LUN1012** (22:24, 39,90 €, Signé Dorado / Mayo **«INMA»**
 en mayúsculas, Madrid; del **anuncio 18** por Facebook). Los dos a QIUHAN «urgente, 3-5 días» (comprobar la dirección).

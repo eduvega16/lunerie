@@ -236,7 +236,7 @@ logo, factura ni precio, y si tiene caja de regalo; (9) foto de cada collar ante
   (Cainiao: «No channel available» el 18-nov con LP1000073859962CN, línea «S5058 POSTLINK-LW»). Lo pasaron a la línea
   **«S5191 POSTLINK-S5191»** con **número nuevo 32300035731159301082239** (en Cainiao: recogido y medido el 19-nov, destino
   España). Etiqueta nueva comprobada: destinataria, dirección y 3 collares iguales a Shopify (0,30 kg, ref DXL-LUN1006).
-  El seguimiento de Shopify lo tiene que cambiar Edu a mano: la CLI no tiene `write_merchant_managed_fulfillment_orders`.
+  Seguimiento de Shopify cambiado al número nuevo el 21-nov (sin avisar a la clienta).
   **Lección:** en pedidos de 3 collares (#LUN1008 también lo es), pedir a QIUHAN que los mande por la línea que admite ese
   peso desde el principio.
 - **#LUN1008 pagado** (15-nov, 79,80 €: Laura · junio, Marta · enero, Loren · julio, los 3 dorados): un solo paquete,

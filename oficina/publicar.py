@@ -213,6 +213,14 @@ def publicar(fichero, p, confirmar):
     p["publicacion"]["resultado"] = {"media_id": media, "fecha": time.strftime("%Y-%m-%dT%H:%M:%S%z")}
     fichero.write_text(json.dumps(p, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"  Publicado. media_id={media}")
+    # 21-nov (Edu): todo lo de Instagram sale también en la página de Facebook. Si falla, Instagram ya está hecho y el
+    # error queda en el registro; se repite con `python oficina/publicar_facebook.py <id> --confirmar`.
+    try:
+        sys.path.insert(0, str(RAIZ / "oficina"))
+        import publicar_facebook
+        publicar_facebook.publicar_fb(fichero, p, confirmar=True)
+    except Exception as e:
+        print(f"  Facebook FALLÓ (Instagram sí está publicado): {e}")
 
 
 def ya_publicada(p):

@@ -585,6 +585,14 @@ del CPA BE (subir el presupuesto de la campaña un 20 % cada 2-3 días) · alert
 ## 8. Calendario y pendientes (a 19-nov-2026)
 
 ### Para empezar la próxima sesión (después del 2-nov) — abrir conversación nueva por sesión.
+**21-nov (madrugada): TODO LO DE INSTAGRAM SALE TAMBIÉN EN FACEBOOK** (Edu creía que ya era así). `publicar.py` llama a
+`publicar_facebook.publicar_fb()` después de Instagram; los reels se suben bajando el MP4 (con `file_url` Facebook no baja
+los del CDN de Shopify). Subidas a la página 12 piezas ya publicadas (las de precio actual: Lune café, Galet, regalos por
+precio, cinco relojes, Sara verde, «cada una» carrusel y reel, plateado, Marta rojo, cierre, kcal, primavera). **No se
+subieron 18** con precio viejo (49,95 € el collar o el Lune, Nuit 29,95 €, packs 74,93/99,90 €): marcadas
+`publicacion.facebook.omitida`. Antes, en la página solo estaba «It's time» desde el 28-oct. **Mirar el 21-nov a las 12:30**
+(Alba rojo) que el log diga también «Publicado en Facebook».
+
 **21-nov — PRIMERO, FRANCISCA (#LUN1006, 3 collares, pedido el 7-nov):** mandó un correo enfadada («quiero saber de
 verdad cuándo lo voy a recibir»). QIUHAN cambió de línea por el peso de las 3 cajitas → **número nuevo
 32300035731159301082239** (Cainiao; el viejo LP1000073859962CN se paró el 18-nov). QIUHAN dice que su sistema va un día por
@@ -638,7 +646,9 @@ no salió el 20-nov 19:30 (portátil apagado) → reprogramado aquí el 26-nov 1
 - **No tocar desde el portátil las piezas programadas en D:.** D: lee su propia copia: el cambio no llega y además da
   conflicto en git.
 - Para saber qué ha salido: Instagram `/<IG_USER_ID>/media?fields=caption,timestamp`. La cola del portátil no se entera.
-- Facebook va aparte y a mano: `python oficina/publicar_facebook.py <id>`.
+- **Facebook, automático desde el 21-nov:** `publicar.py` sube cada pieza a la página justo después de Instagram (fotos,
+  carruseles y reels; las stories no). Si falla, sale en el log y se repite con `python oficina/publicar_facebook.py <id> --confirmar`;
+  `--pendientes` lista lo que falta.
 - **Al volver a D:**
   1. `git add oficina/cola && git commit` (lo publicado durante la semana).
   2. `git pull`.

@@ -293,6 +293,11 @@ logo, factura ni precio, y si tiene caja de regalo; (9) foto de cada collar ante
   En AliExpress, el anillo y los aros se cancelan con reembolso completo (los Larme ya salieron). Pedido: aros 18 mm en
   DXL-LUN1009 y anillo verde (mayo) US 8 en DXL-LUN1010, dentro de la cajita del collar. Cancelar en AliExpress **solo
   después** de ver las fotos y pagar el extra.
+- **21-nov, cómo quedó:** los aros de #LUN1009 **no se pudieron cancelar** en AliExpress (siguen en camino a la clienta,
+  18 × 12, los de la ficha) → a QIUHAN se le dice que **no los mande** y devuelva esa parte. Además, sus aros «de 18 mm»
+  miden en realidad 18 × 15 (lo avisó Susan). Si algún día pasamos los Boucle medianos a QIUHAN, la ficha debe decir
+  18 × 15 mm. El anillo de #LUN1010 **sí se canceló** en AliExpress → **QIUHAN lo manda** (verde, mayo, US 8, en la cajita del
+  collar, con foto antes). Los Larme de #LUN1010 ya salieron de AliExpress.
 
 ## 19-nov (tarde): catálogo de QIUHAN para las piezas nuevas y las de AliExpress
 Edu les pasó los productos nuevos (importados con DSers el 19-nov, en borrador) y los de AliExpress que ya vendemos.
